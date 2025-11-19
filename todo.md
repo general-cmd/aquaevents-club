@@ -103,6 +103,10 @@
 - [x] Fix filter dropdowns to show ALL available disciplines and regions (increased limit to 500)
 - [ ] Add federation detail pages
 
+## New Tasks (User Feedback)
+- [x] Ensure EuroSwimCaps button links to euroswimcaps.com on all pages (already correct)
+- [x] Fix Suscríbete Gratis button to scroll to hero form on homepage
+
 ## Critical Bugs (User Feedback)
 - [x] Fix event detail page showing 404 (switched to tRPC, now working correctly)
 - [x] Restore EuroSwimCaps sponsor button visibility (already present in code, visible on homepage)

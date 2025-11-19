@@ -52,7 +52,10 @@ export default function Home() {
             <a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Blog
             </a>
-            <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
+            <Button 
+              className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
+              onClick={() => document.getElementById('newsletter-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Suscríbete Gratis
             </Button>
           </nav>
@@ -93,7 +96,10 @@ export default function Home() {
               </a>
               <Button 
                 className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 w-full"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  document.getElementById('newsletter-form')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Suscríbete Gratis
               </Button>
@@ -103,7 +109,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 md:py-20">
+      <section id="newsletter-form" className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent leading-tight">
             Calendario Completo de Eventos Acuáticos en España 2026
