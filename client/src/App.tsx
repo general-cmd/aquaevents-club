@@ -7,6 +7,10 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
+import Federations from "./pages/Federations";
+import FederationDetail from "./pages/FederationDetail";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -15,6 +19,10 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path="/eventos" component={Events} />
       <Route path="/eventos/:id" component={EventDetail} />
+      <Route path="/federaciones" component={Federations} />
+      <Route path="/federaciones/:id" component={FederationDetail} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

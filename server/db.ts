@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, federations, blogPosts, InsertBlogPost } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -85,7 +85,67 @@ export async function getUser(id: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Federation queries
+export async function getAllFederations() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db.select().from(federations);
+  return result;
+}
+
+export async function getFederationById(id: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const result = await db.select().from(federations).where(eq(federations.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+// Blog post queries
+export async function getPublishedBlogPosts() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db
+    .select()
+    .from(blogPosts)
+    .where(eq(blogPosts.status, "published"))
+    .orderBy(blogPosts.publishedAt);
+  
+  return result;
+}
+
+export async function getBlogPostBySlug(slug: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const result = await db.select().from(blogPosts).where(eq(blogPosts.slug, slug)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getAllBlogPosts() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db.select().from(blogPosts).orderBy(blogPosts.createdAt);
+  return result;
+}
+
+export async function createBlogPost(post: InsertBlogPost) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(blogPosts).values(post);
+  return post;
+}
+
+export async function updateBlogPost(id: string, updates: Partial<InsertBlogPost>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.update(blogPosts).set(updates).where(eq(blogPosts.id, id));
+}
 
 
 // MongoDB connection for events (existing database)

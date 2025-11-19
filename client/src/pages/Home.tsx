@@ -49,6 +49,9 @@ export default function Home() {
             <a href="/eventos" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Eventos
             </a>
+            <a href="/federaciones" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              Federaciones
+            </a>
             <a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Blog
             </a>
@@ -86,6 +89,13 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Eventos
+              </a>
+              <a 
+                href="/federaciones" 
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Federaciones
               </a>
               <a 
                 href="/blog" 

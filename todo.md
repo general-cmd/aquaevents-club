@@ -101,7 +101,9 @@
 - [x] Fix event detail page URL encoding (canonical slug has special characters)
 - [x] Fix Systeme.io form not displaying properly in hero section (replaced with direct form)
 - [x] Fix filter dropdowns to show ALL available disciplines and regions (increased limit to 500)
-- [ ] Add federation detail pages
+- [x] Add 2026 events from database (N/A - only 6 events from Nov-Dec 2025 in DB)
+- [x] Build federation detail pages with event listings
+- [x] Implement blog system with listing and detail pages
 
 ## New Tasks (User Feedback)
 - [x] Ensure EuroSwimCaps button links to euroswimcaps.com on all pages (already correct)
