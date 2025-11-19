@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, federations, blogPosts, InsertBlogPost } from "../drizzle/schema";
+import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -145,6 +145,110 @@ export async function updateBlogPost(id: string, updates: Partial<InsertBlogPost
   if (!db) throw new Error("Database not available");
   
   await db.update(blogPosts).set(updates).where(eq(blogPosts.id, id));
+}
+
+// Event submission queries
+export async function createEventSubmission(submission: InsertEventSubmission) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(eventSubmissions).values(submission);
+  return submission;
+}
+
+export async function getAllEventSubmissions() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db.select().from(eventSubmissions).orderBy(eventSubmissions.createdAt);
+  return result;
+}
+
+export async function getPendingEventSubmissions() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db
+    .select()
+    .from(eventSubmissions)
+    .where(eq(eventSubmissions.status, "pending"))
+    .orderBy(eventSubmissions.createdAt);
+  
+  return result;
+}
+
+export async function getEventSubmissionById(id: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const result = await db.select().from(eventSubmissions).where(eq(eventSubmissions.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function updateEventSubmission(id: string, updates: Partial<InsertEventSubmission>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.update(eventSubmissions).set(updates).where(eq(eventSubmissions.id, id));
+}
+
+// User favorites queries
+export async function addUserFavorite(favorite: InsertUserFavorite) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(userFavorites).values(favorite);
+  return favorite;
+}
+
+export async function removeUserFavorite(userId: string, eventId: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const { and } = await import("drizzle-orm");
+  await db.delete(userFavorites)
+    .where(and(
+      eq(userFavorites.userId, userId),
+      eq(userFavorites.eventId, eventId)
+    ));
+}
+
+export async function getUserFavorites(userId: string) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db
+    .select()
+    .from(userFavorites)
+    .where(eq(userFavorites.userId, userId))
+    .orderBy(userFavorites.createdAt);
+  
+  return result;
+}
+
+export async function isEventFavorited(userId: string, eventId: string): Promise<boolean> {
+  const db = await getDb();
+  if (!db) return false;
+  
+  const { and } = await import("drizzle-orm");
+  const result = await db
+    .select()
+    .from(userFavorites)
+    .where(and(
+      eq(userFavorites.userId, userId),
+      eq(userFavorites.eventId, eventId)
+    ))
+    .limit(1);
+  
+  return result.length > 0;
+}
+
+// User profile updates
+export async function updateUserProfile(userId: string, updates: Partial<InsertUser>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.update(users).set(updates).where(eq(users.id, userId));
 }
 
 

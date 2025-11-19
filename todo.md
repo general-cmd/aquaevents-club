@@ -149,3 +149,23 @@
 - [x] Fix blog featured images not displaying
 - [x] Remove "Made with Manus" branding from all pages (not in code - controlled by platform settings)
 
+
+
+
+## New Features - User Request (Event Submission, User Accounts, Admin Dashboard)
+- [x] Remove federation status filters (Active/Inactive/Pending tabs) - static data
+- [x] Create event submission form with fields: title, discipline, category, region, city, dates, contact info
+- [x] Add admin approval workflow for submitted events (API ready)
+- [x] Build user registration form with email consent checkbox (GDPR)
+- [x] Add user type field (Club/Swimmer/Federation/Other)
+- [x] Add preferred disciplines multi-select for users
+- [x] Store email consent timestamp for GDPR compliance
+- [x] Implement user favorites system for events
+- [ ] Build email notification system for new events matching user preferences (requires scheduled job - future enhancement)
+- [x] Create admin dashboard at /admin route
+- [x] Add admin panel for approving/rejecting event submissions
+- [x] Add admin panel for managing blog posts
+- [x] Add admin panel for managing federations (view only - managed via DB)
+- [ ] Add admin analytics view (future enhancement)
+- [x] Write vitest tests for new features
+

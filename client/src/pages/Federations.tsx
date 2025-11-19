@@ -7,28 +7,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 
 export default function Federations() {
-  const [statusFilter, setStatusFilter] = useState<string>("all");
   const [regionFilter, setRegionFilter] = useState<string>("all");
   
   const { data, isLoading } = trpc.federations.list.useQuery();
   
-  // Filter federations based on selected filters
+  // Filter federations based on region
   const filteredFederations = data?.federations?.filter((fed: any) => {
-    if (statusFilter !== "all" && fed.status !== statusFilter) return false;
     if (regionFilter !== "all" && fed.region !== regionFilter) return false;
     return true;
   }) || [];
   
   // Get unique regions for dropdown
   const regions = Array.from(new Set(data?.federations?.map((f: any) => f.region).filter(Boolean))) as string[];
-  
-  // Count by status
-  const statusCounts = {
-    all: data?.federations?.length || 0,
-    active: data?.federations?.filter((f: any) => f.status === 'active').length || 0,
-    inactive: data?.federations?.filter((f: any) => f.status === 'inactive').length || 0,
-    pending: data?.federations?.filter((f: any) => f.status === 'pending').length || 0,
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -82,38 +72,6 @@ export default function Federations() {
 
         {/* Filters */}
         <div className="max-w-6xl mx-auto mb-8">
-          {/* Status Filter Tabs */}
-          <div className="flex flex-wrap gap-3 mb-6">
-            <Button
-              variant={statusFilter === "all" ? "default" : "outline"}
-              onClick={() => setStatusFilter("all")}
-              className="flex items-center gap-2"
-            >
-              All ({statusCounts.all})
-            </Button>
-            <Button
-              variant={statusFilter === "active" ? "default" : "outline"}
-              onClick={() => setStatusFilter("active")}
-              className="flex items-center gap-2"
-            >
-              ✅ Active ({statusCounts.active})
-            </Button>
-            <Button
-              variant={statusFilter === "inactive" ? "default" : "outline"}
-              onClick={() => setStatusFilter("inactive")}
-              className="flex items-center gap-2"
-            >
-              ❌ Inactive ({statusCounts.inactive})
-            </Button>
-            <Button
-              variant={statusFilter === "pending" ? "default" : "outline"}
-              onClick={() => setStatusFilter("pending")}
-              className="flex items-center gap-2"
-            >
-              ⚠️ Needs Verification ({statusCounts.pending})
-            </Button>
-          </div>
-
           {/* Region Filter */}
           <div className="max-w-xs">
             <label className="block text-sm font-medium text-gray-700 mb-2">

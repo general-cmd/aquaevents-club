@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, Share2, Heart } from "lucide-react";
 import { Link, useParams, useLocation } from "wouter";
 import EventStructuredData from "@/components/EventStructuredData";
 import { trpc } from "@/lib/trpc";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { toast } from "sonner";
 
 interface Event {
   _id: string;
@@ -38,6 +40,7 @@ export default function EventDetail() {
   const [, setLocation] = useLocation();
   const eventId = params.id;
   const decodedId = eventId ? decodeURIComponent(eventId) : '';
+  const { isAuthenticated } = useAuth();
   
   const { data: eventData, isLoading, error } = trpc.events.getById.useQuery(
     { id: decodedId },
@@ -47,6 +50,34 @@ export default function EventDetail() {
   const event = (eventData?.event as any) || null;
   const loading = isLoading;
   const notFound = error || (eventData && !eventData.success);
+
+  // Check if event is favorited
+  const { data: favoriteCheck } = trpc.favorites.check.useQuery(
+    { eventId: event?._id?.toString() || "" },
+    { enabled: isAuthenticated && !!event?._id }
+  );
+  const isFavorited = favoriteCheck?.isFavorited || false;
+
+  // Favorite mutations
+  const addFavoriteMutation = trpc.favorites.add.useMutation({
+    onSuccess: () => {
+      toast.success("Evento añadido a favoritos");
+      trpc.useUtils().favorites.check.invalidate();
+    },
+    onError: () => {
+      toast.error("Error al añadir a favoritos");
+    },
+  });
+
+  const removeFavoriteMutation = trpc.favorites.remove.useMutation({
+    onSuccess: () => {
+      toast.success("Evento eliminado de favoritos");
+      trpc.useUtils().favorites.check.invalidate();
+    },
+    onError: () => {
+      toast.error("Error al eliminar de favoritos");
+    },
+  });
 
   const getDisciplineLabel = (discipline: string) => {
     const labels: Record<string, string> = {
@@ -303,6 +334,22 @@ export default function EventDetail() {
                     <Share2 className="w-4 h-4 mr-2" />
                     Compartir Evento
                   </Button>
+                  {isAuthenticated && (
+                    <Button
+                      onClick={() => {
+                        if (isFavorited) {
+                          removeFavoriteMutation.mutate({ eventId: event._id.toString() });
+                        } else {
+                          addFavoriteMutation.mutate({ eventId: event._id.toString() });
+                        }
+                      }}
+                      variant={isFavorited ? "default" : "outline"}
+                      className={isFavorited ? "bg-red-500 hover:bg-red-600" : ""}
+                    >
+                      <Heart className={`w-4 h-4 mr-2 ${isFavorited ? 'fill-current' : ''}`} />
+                      {isFavorited ? "Eliminar de Favoritos" : "Guardar en Favoritos"}
+                    </Button>
+                  )}
                   {event.seo?.canonical && (
                     <Button variant="outline" asChild>
                       <a href={event.seo.canonical} target="_blank" rel="noopener noreferrer">

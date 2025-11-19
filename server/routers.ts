@@ -3,7 +3,13 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
-import { getEventById, getEvents, getEventStats, getAllFederations, getFederationById, getPublishedBlogPosts, getBlogPostBySlug, getAllBlogPosts, createBlogPost, updateBlogPost } from "./db";
+import { 
+  getEventById, getEvents, getEventStats, getAllFederations, getFederationById, 
+  getPublishedBlogPosts, getBlogPostBySlug, getAllBlogPosts, createBlogPost, updateBlogPost,
+  createEventSubmission, getAllEventSubmissions, getPendingEventSubmissions, updateEventSubmission,
+  addUserFavorite, removeUserFavorite, getUserFavorites, isEventFavorited,
+  updateUserProfile
+} from "./db";
 import { protectedProcedure } from "./_core/trpc";
 import { nanoid } from "nanoid";
 
@@ -182,6 +188,177 @@ export const appRouter = router({
         });
         return {
           success: true,
+        };
+      }),
+  }),
+
+  eventSubmissions: router({
+    submit: publicProcedure
+      .input(z.object({
+        title: z.string().min(1),
+        discipline: z.string().min(1),
+        category: z.string().optional(),
+        region: z.string().min(1),
+        city: z.string().min(1),
+        startDate: z.string(), // ISO date string
+        endDate: z.string().optional(),
+        contactName: z.string().optional(),
+        contactEmail: z.string().email(),
+        contactPhone: z.string().optional(),
+        website: z.string().optional(),
+        description: z.string().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const submission = await createEventSubmission({
+          id: nanoid(),
+          ...input,
+          startDate: new Date(input.startDate),
+          endDate: input.endDate ? new Date(input.endDate) : undefined,
+          submittedBy: ctx.user?.id,
+          status: 'pending',
+        });
+        return {
+          success: true,
+          submission,
+        };
+      }),
+
+    list: protectedProcedure.query(async ({ ctx }) => {
+      if (ctx.user.role !== 'admin') {
+        throw new Error('Unauthorized');
+      }
+      const submissions = await getAllEventSubmissions();
+      return {
+        success: true,
+        submissions,
+      };
+    }),
+
+    pending: protectedProcedure.query(async ({ ctx }) => {
+      if (ctx.user.role !== 'admin') {
+        throw new Error('Unauthorized');
+      }
+      const submissions = await getPendingEventSubmissions();
+      return {
+        success: true,
+        submissions,
+      };
+    }),
+
+    approve: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+        adminNotes: z.string().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        await updateEventSubmission(input.id, {
+          status: 'approved',
+          reviewedAt: new Date(),
+          reviewedBy: ctx.user.id,
+          adminNotes: input.adminNotes,
+        });
+        return {
+          success: true,
+        };
+      }),
+
+    reject: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+        adminNotes: z.string().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        await updateEventSubmission(input.id, {
+          status: 'rejected',
+          reviewedAt: new Date(),
+          reviewedBy: ctx.user.id,
+          adminNotes: input.adminNotes,
+        });
+        return {
+          success: true,
+        };
+      }),
+  }),
+
+  userProfile: router({
+    update: protectedProcedure
+      .input(z.object({
+        userType: z.enum(['club', 'swimmer', 'federation', 'other']).optional(),
+        preferredDisciplines: z.array(z.string()).optional(),
+        emailConsent: z.boolean().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const updates: any = {};
+        
+        if (input.userType) {
+          updates.userType = input.userType;
+        }
+        
+        if (input.preferredDisciplines) {
+          updates.preferredDisciplines = JSON.stringify(input.preferredDisciplines);
+        }
+        
+        if (input.emailConsent !== undefined) {
+          updates.emailConsent = input.emailConsent ? new Date() : null;
+        }
+        
+        await updateUserProfile(ctx.user.id, updates);
+        return {
+          success: true,
+        };
+      }),
+  }),
+
+  favorites: router({
+    add: protectedProcedure
+      .input(z.object({
+        eventId: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        await addUserFavorite({
+          id: nanoid(),
+          userId: ctx.user.id,
+          eventId: input.eventId,
+        });
+        return {
+          success: true,
+        };
+      }),
+
+    remove: protectedProcedure
+      .input(z.object({
+        eventId: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        await removeUserFavorite(ctx.user.id, input.eventId);
+        return {
+          success: true,
+        };
+      }),
+
+    list: protectedProcedure.query(async ({ ctx }) => {
+      const favorites = await getUserFavorites(ctx.user.id);
+      return {
+        success: true,
+        favorites,
+      };
+    }),
+
+    check: protectedProcedure
+      .input(z.object({
+        eventId: z.string(),
+      }))
+      .query(async ({ input, ctx }) => {
+        const isFavorited = await isEventFavorited(ctx.user.id, input.eventId);
+        return {
+          success: true,
+          isFavorited,
         };
       }),
   }),

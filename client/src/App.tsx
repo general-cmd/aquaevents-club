@@ -11,6 +11,10 @@ import Federations from "./pages/Federations";
 import FederationDetail from "./pages/FederationDetail";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import SubmitEvent from "./pages/SubmitEvent";
+import UserProfile from "./pages/UserProfile";
+import UserFavorites from "./pages/UserFavorites";
+import Admin from "./pages/Admin";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -23,6 +27,10 @@ function Router() {
       <Route path="/federaciones/:id" component={FederationDetail} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/enviar-evento" component={SubmitEvent} />
+      <Route path="/perfil" component={UserProfile} />
+      <Route path="/mis-favoritos" component={UserFavorites} />
+      <Route path="/admin" component={Admin} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
