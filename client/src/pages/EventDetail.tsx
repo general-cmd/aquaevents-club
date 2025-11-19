@@ -2,9 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Users, ExternalLink, Mail, Phone, Globe, Trophy } from "lucide-react";
-import { useEffect, useState } from "react";
+
 import { Link, useParams } from "wouter";
 import EventStructuredData from "@/components/EventStructuredData";
+import { trpc } from "@/lib/trpc";
 
 interface Event {
   _id: string;
@@ -36,47 +37,18 @@ interface Event {
 export default function EventDetail() {
   const params = useParams();
   const eventId = params.id;
-  const [event, setEvent] = useState<Event | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
-
-  useEffect(() => {
-    if (!eventId) return;
-
-    // Decode the URL parameter in case it's encoded
-    const decodedId = decodeURIComponent(eventId);
-
-    // Fetch event details
-    fetch(`/api/events/${encodeURIComponent(decodedId)}`)
-      .then(res => {
-        if (!res.ok) {
-          setNotFound(true);
-          setLoading(false);
-          return null;
-        }
-        return res.json();
-      })
-      .then(data => {
-        if (data && data.success) {
-          setEvent(data.event);
-          
-          // Update page title and meta tags
-          if (data.event.seo?.metaTitle) {
-            document.title = data.event.seo.metaTitle;
-          } else {
-            document.title = `${data.event.name.es} - AquaEvents.club`;
-          }
-        } else if (data !== null) {
-          setNotFound(true);
-        }
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Error fetching event:', err);
-        setNotFound(true);
-        setLoading(false);
-      });
-  }, [eventId]);
+  // Decode the URL parameter in case it's encoded
+  const decodedId = eventId ? decodeURIComponent(eventId) : '';
+  
+  // Use tRPC to fetch event details
+  const { data: eventData, isLoading, error } = trpc.events.getById.useQuery(
+    { id: decodedId },
+    { enabled: !!decodedId }
+  );
+  
+  const event = (eventData?.event as any) || null;
+  const loading = isLoading;
+  const notFound = error || (eventData && !eventData.success);
 
   const getDisciplineIcon = (discipline: string) => {
     const icons: Record<string, string> = {
@@ -269,8 +241,7 @@ export default function EventDetail() {
                 <CardContent className="p-6">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Sobre el Evento</h2>
                   <div className="prose prose-blue max-w-none text-gray-700 leading-relaxed">
-                    {event.description.es.split('\n').map((paragraph, idx) => (
-                      <p key={idx} className="mb-4">{paragraph}</p>
+                      {event.description?.es.split('\n\n').map((paragraph: string, idx: number) => (                  <p key={idx} className="mb-4">{paragraph}</p>
                     ))}
                   </div>
                 </CardContent>
@@ -283,8 +254,7 @@ export default function EventDetail() {
                 <CardContent className="p-6">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Categorías</h2>
                   <div className="flex flex-wrap gap-2">
-                    {event.categories.map((category, idx) => (
-                      <Badge key={idx} variant="outline" className="text-sm">
+                      {event.categories?.map((category: string, idx: number) => (                    <Badge key={idx} variant="outline" className="text-sm">
                         {category}
                       </Badge>
                     ))}
