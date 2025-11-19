@@ -103,3 +103,8 @@
 - [x] Fix filter dropdowns to show ALL available disciplines and regions (increased limit to 500)
 - [ ] Add federation detail pages
 
+## Critical Bugs (User Feedback)
+- [x] Fix event detail page showing 404 (URL has full canonical URL instead of slug)
+- [x] Restore EuroSwimCaps sponsor button visibility (already present in code, visible on homepage)
+- [x] Verify only 6 upcoming events exist in database (confirmed: 6 events from Nov 20 to Dec 20, 2025)
+

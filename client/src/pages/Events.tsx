@@ -245,7 +245,14 @@ export default function Events() {
                     <span>{event.location.city}, {event.location.region}</span>
                   </div>
 
-                  <Link href={`/eventos/${event.seo?.canonical || event._id}`}>
+                  <Link href={`/eventos/${(() => {
+                    // Extract slug from canonical URL or use _id as fallback
+                    if (event.seo?.canonical) {
+                      const parts = event.seo.canonical.split('/');
+                      return encodeURIComponent(parts[parts.length - 1]);
+                    }
+                    return event._id;
+                  })()}`}>
                     <a>
                       <Button 
                         className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
