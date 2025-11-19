@@ -43,8 +43,11 @@ export default function EventDetail() {
   useEffect(() => {
     if (!eventId) return;
 
+    // Decode the URL parameter in case it's encoded
+    const decodedId = decodeURIComponent(eventId);
+
     // Fetch event details
-    fetch(`/api/events/${eventId}`)
+    fetch(`/api/events/${encodeURIComponent(decodedId)}`)
       .then(res => {
         if (!res.ok) {
           setNotFound(true);

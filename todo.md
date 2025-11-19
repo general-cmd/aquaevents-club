@@ -97,3 +97,9 @@
 - [x] Fix hamburger menu not working on mobile
 - [x] Fix newsletter form appearing in footer instead of hero section (iframe working correctly)
 
+## New Issues (User Feedback)
+- [x] Fix event detail page URL encoding (canonical slug has special characters)
+- [x] Fix Systeme.io form not displaying properly in hero section (replaced with direct form)
+- [x] Fix filter dropdowns to show ALL available disciplines and regions (increased limit to 500)
+- [ ] Add federation detail pages
+

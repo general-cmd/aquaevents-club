@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calendar, MapPin, Search, Filter } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
+import { trpc } from "@/lib/trpc";
 
 interface Event {
   _id: string;
@@ -27,35 +28,29 @@ export default function Events() {
   const [disciplines, setDisciplines] = useState<string[]>([]);
   const [regions, setRegions] = useState<string[]>([]);
 
+  // Use tRPC to fetch ALL upcoming events (no limit)
+  const { data: eventsData, isLoading } = trpc.events.list.useQuery({ limit: 500 });
+
   useEffect(() => {
-    // Fetch all upcoming events
-    fetch('/api/events?limit=100')
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          setEvents(data.events);
-          setFilteredEvents(data.events);
-          
-          // Extract unique disciplines and regions
-          const disciplineSet = new Set<string>();
-          const regionSet = new Set<string>();
-          data.events.forEach((e: Event) => {
-            if (e.discipline) disciplineSet.add(e.discipline);
-            if (e.location?.region) regionSet.add(e.location.region);
-          });
-          const uniqueDisciplines = Array.from(disciplineSet);
-          const uniqueRegions = Array.from(regionSet);
-          
-          setDisciplines(uniqueDisciplines.filter(Boolean));
-          setRegions(uniqueRegions.filter(Boolean));
-        }
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Error fetching events:', err);
-        setLoading(false);
+    if (eventsData?.events) {
+      setEvents(eventsData.events as any);
+      setFilteredEvents(eventsData.events as any);
+      
+      // Extract unique disciplines and regions
+      const disciplineSet = new Set<string>();
+      const regionSet = new Set<string>();
+      eventsData.events.forEach((e: any) => {
+        if (e.discipline) disciplineSet.add(e.discipline);
+        if (e.location?.region) regionSet.add(e.location.region);
       });
-  }, []);
+      const uniqueDisciplines = Array.from(disciplineSet);
+      const uniqueRegions = Array.from(regionSet);
+      
+      setDisciplines(uniqueDisciplines.filter(Boolean));
+      setRegions(uniqueRegions.filter(Boolean));
+      setLoading(false);
+    }
+  }, [eventsData]);
 
   useEffect(() => {
     // Apply filters

@@ -153,8 +153,15 @@ export async function getEventById(id: string) {
   try {
     const collection = db.collection('events');
     
-    // Try to find by canonical URL first, then by _id
-    let event = await collection.findOne({ 'seo.canonical': id });
+    // Try to find by slug that matches the end of canonical URL
+    let event = await collection.findOne({
+      'seo.canonical': { $regex: `/${id}$`, $options: 'i' }
+    });
+    
+    if (!event) {
+      // Try exact match on full canonical URL
+      event = await collection.findOne({ 'seo.canonical': id });
+    }
     
     if (!event) {
       // Try to find by MongoDB ObjectId
@@ -162,8 +169,11 @@ export async function getEventById(id: string) {
       try {
         event = await collection.findOne({ _id: new ObjectId(id) });
       } catch (err) {
-        // Invalid ObjectId format, return null
-        return null;
+        // Invalid ObjectId format, try one more search
+        // Search by event name (case insensitive)
+        event = await collection.findOne({
+          'name.es': { $regex: id.replace(/-/g, ' '), $options: 'i' }
+        });
       }
     }
 

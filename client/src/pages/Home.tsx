@@ -133,13 +133,27 @@ export default function Home() {
                   <span>Sistemas que Ahorran 10+ Horas Semanales</span>
                 </li>
               </ul>
-              {/* Systeme.io form - Using iframe embed for better compatibility */}
-              <iframe 
-                src="https://go.aquaevents.club/page/333287841dd1b4e8a4dd8be9446652d6ece139e0" 
-                style={{ width: '100%', border: 'none', minHeight: '200px' }}
-                title="Newsletter Signup Form"
-                loading="lazy"
-              />
+              {/* Newsletter signup form */}
+              <form 
+                action="https://go.aquaevents.club/form/process/333287841dd1b4e8a4dd8be9446652d6ece139e0" 
+                method="POST"
+                className="w-full"
+              >
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Tu email"
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg mb-4 focus:border-blue-500 focus:outline-none text-base"
+                />
+                <Button 
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-lg font-bold"
+                >
+                  Descargar Mi Guía Gratis 📥
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>
@@ -305,8 +319,14 @@ export default function Home() {
                     variant="outline" 
                     className="w-full"
                     onClick={() => {
-                      const slug = event.seo?.canonical?.split('/').pop() || event._id;
-                      window.location.href = `/eventos/${slug}`;
+                      // Extract slug from canonical URL or use _id as fallback
+                      let slug = event._id;
+                      if (event.seo?.canonical) {
+                        const parts = event.seo.canonical.split('/');
+                        slug = parts[parts.length - 1];
+                      }
+                      // Navigate using the slug (browser will handle encoding)
+                      window.location.href = `/eventos/${encodeURIComponent(slug)}`;
                     }}
                   >
                     Ver Detalles
