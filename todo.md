@@ -87,4 +87,8 @@
 - [x] Simplify and shorten footer
 - [x] Add FAQ section to homepage with schema markup
 - [x] Add rich SEO descriptions and content
+- [ ] Fix Systeme.io form to display email input field and submit button properly (DEFERRED)
+- [x] Create Events Listing Page (/eventos) with filters
+- [x] Build Event Detail Pages with SEO optimization
+- [x] Add structured data schema to event pages
 

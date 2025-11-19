@@ -49,6 +49,25 @@ export default function Home() {
         console.error('Error fetching stats:', err);
         setLoading(false);
       });
+
+    // Load Systeme.io form script dynamically
+    const loadFormScript = () => {
+      const script = document.createElement('script');
+      script.id = 'form-script-tag-20543028';
+      script.src = 'https://go.aquaevents.club/public/remote/page/333287841dd1b4e8a4dd8be9446652d6ece139e0.js';
+      script.async = true;
+      document.body.appendChild(script);
+      
+      return () => {
+        const existingScript = document.getElementById('form-script-tag-20543028');
+        if (existingScript) {
+          existingScript.remove();
+        }
+      };
+    };
+
+    const cleanup = loadFormScript();
+    return cleanup;
   }, []);
 
   return (
@@ -112,12 +131,12 @@ export default function Home() {
                   <span>Sistemas que Ahorran 10+ Horas Semanales</span>
                 </li>
               </ul>
-              {/* Systeme.io form */}
-              <div 
-                id="newsletter-form" 
-                dangerouslySetInnerHTML={{
-                  __html: `<script id="form-script-tag-20543028" src="https://go.aquaevents.club/public/remote/page/333287841dd1b4e8a4dd8be9446652d6ece139e0.js"></script>`
-                }}
+              {/* Systeme.io form - Using iframe embed for better compatibility */}
+              <iframe 
+                src="https://go.aquaevents.club/page/333287841dd1b4e8a4dd8be9446652d6ece139e0" 
+                style={{ width: '100%', border: 'none', minHeight: '200px' }}
+                title="Newsletter Signup Form"
+                loading="lazy"
               />
             </CardContent>
           </Card>

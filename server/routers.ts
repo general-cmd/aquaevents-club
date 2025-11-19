@@ -2,6 +2,8 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
+import { z } from "zod";
+import { getEventById, getEvents, getEventStats } from "./db";
 
 export const appRouter = router({
   system: systemRouter,
@@ -17,12 +19,47 @@ export const appRouter = router({
     }),
   }),
 
-  // TODO: add feature routers here, e.g.
-  // todo: router({
-  //   list: protectedProcedure.query(({ ctx }) =>
-  //     db.getUserTodos(ctx.user.id)
-  //   ),
-  // }),
+  events: router({
+    list: publicProcedure
+      .input(z.object({
+        limit: z.number().optional(),
+        discipline: z.string().optional(),
+        region: z.string().optional(),
+      }).optional())
+      .query(async ({ input }) => {
+        const events = await getEvents(input?.limit, input?.discipline, input?.region);
+        return {
+          success: true,
+          events,
+        };
+      }),
+
+    getById: publicProcedure
+      .input(z.object({
+        id: z.string(),
+      }))
+      .query(async ({ input }) => {
+        const event = await getEventById(input.id);
+        if (!event) {
+          return {
+            success: false,
+            error: 'Event not found',
+          };
+        }
+        return {
+          success: true,
+          event,
+        };
+      }),
+
+    stats: publicProcedure.query(async () => {
+      const stats = await getEventStats();
+      return {
+        success: true,
+        stats,
+      };
+    }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
