@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE blogPosts SET featuredImage = CASE \n  WHEN title = 'Preparación Mental para Competiciones de Natación' THEN '/blog-preparacion.jpg'\n  WHEN title = 'Beneficios de la Natación en Aguas Abiertas' THEN '/blog-aguas-abiertas.jpg'\n  WHEN title = 'Técnicas Avanzadas de Natación para Competidores' THEN '/blog-competicion.jpg'\n  WHEN title = 'Nutrición Óptima para Nadadores de Competición' THEN '/blog-nutricion.jpg'\nEND\nWHERE title IN ('Preparación Mental para Competiciones de Natación', 'Beneficios de la Natación en Aguas Abiertas', 'Técnicas Avanzadas de Natación para Competidores', 'Nutrición Óptima para Nadadores de Competición')",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute UPDATE blogPosts SET featuredImage = CASE \n  WHEN title = 'Preparación Mental para Competiciones de Natación' THEN '/blog-preparacion.jpg'\n  WHEN title = 'Beneficios de la Natación en Aguas Abiertas' THEN '/blog-aguas-abiertas.jpg'\n  WHEN title = 'Técnicas Avanzadas de Natación para Competidores' THEN '/blog-competicion.jpg'\n  WHEN title = 'Nutrición Óptima para Nadadores de Competición' THEN '/blog-nutricion.jpg'\nEND\nWHERE title IN ('Preparación Mental para Competiciones de Natación', 'Beneficios de la Natación en Aguas Abiertas', 'Técnicas Avanzadas de Natación para Competidores', 'Nutrición Óptima para Nadadores de Competición')",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 54
+}

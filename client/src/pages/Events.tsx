@@ -24,9 +24,13 @@ export default function Events() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDiscipline, setSelectedDiscipline] = useState<string>("all");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
+  const [selectedMonth, setSelectedMonth] = useState<string>("all");
   const [disciplines, setDisciplines] = useState<string[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
   const [regions, setRegions] = useState<string[]>([]);
+  const [months, setMonths] = useState<string[]>([]);
 
   // Use tRPC to fetch ALL upcoming events (no limit)
   const { data: eventsData, isLoading } = trpc.events.list.useQuery({ limit: 500 });
@@ -36,18 +40,26 @@ export default function Events() {
       setEvents(eventsData.events as any);
       setFilteredEvents(eventsData.events as any);
       
-      // Extract unique disciplines and regions
+      // Extract unique disciplines, categories, regions, and months
       const disciplineSet = new Set<string>();
+      const categorySet = new Set<string>();
       const regionSet = new Set<string>();
+      const monthSet = new Set<string>();
+      
       eventsData.events.forEach((e: any) => {
         if (e.discipline) disciplineSet.add(e.discipline);
+        if (e.category) categorySet.add(e.category);
         if (e.location?.region) regionSet.add(e.location.region);
+        if (e.date) {
+          const month = new Date(e.date).toLocaleString('es-ES', { month: 'long', year: 'numeric' });
+          monthSet.add(month);
+        }
       });
-      const uniqueDisciplines = Array.from(disciplineSet);
-      const uniqueRegions = Array.from(regionSet);
       
-      setDisciplines(uniqueDisciplines.filter(Boolean));
-      setRegions(uniqueRegions.filter(Boolean));
+      setDisciplines(Array.from(disciplineSet).filter(Boolean));
+      setCategories(Array.from(categorySet).filter(Boolean));
+      setRegions(Array.from(regionSet).filter(Boolean));
+      setMonths(Array.from(monthSet).filter(Boolean));
       setLoading(false);
     }
   }, [eventsData]);
@@ -70,13 +82,26 @@ export default function Events() {
       filtered = filtered.filter(event => event.discipline === selectedDiscipline);
     }
 
+    // Category filter
+    if (selectedCategory !== "all") {
+      filtered = filtered.filter((event: any) => event.category === selectedCategory);
+    }
+
     // Region filter
     if (selectedRegion !== "all") {
       filtered = filtered.filter(event => event.location.region === selectedRegion);
     }
 
+    // Month filter
+    if (selectedMonth !== "all") {
+      filtered = filtered.filter(event => {
+        const eventMonth = new Date(event.date).toLocaleString('es-ES', { month: 'long', year: 'numeric' });
+        return eventMonth === selectedMonth;
+      });
+    }
+
     setFilteredEvents(filtered);
-  }, [searchTerm, selectedDiscipline, selectedRegion, events]);
+  }, [searchTerm, selectedDiscipline, selectedCategory, selectedRegion, selectedMonth, events]);
 
   const getDisciplineIcon = (discipline: string) => {
     const icons: Record<string, string> = {
@@ -159,7 +184,7 @@ export default function Events() {
               <h2 className="text-xl font-bold text-gray-900">Filtrar Eventos</h2>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-5 gap-4">
               {/* Search */}
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -187,6 +212,21 @@ export default function Events() {
                 </SelectContent>
               </Select>
 
+              {/* Category Filter */}
+              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Todas" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Todas</SelectItem>
+                  {categories.map(category => (
+                    <SelectItem key={category} value={category}>
+                      {category}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
               {/* Region Filter */}
               <Select value={selectedRegion} onValueChange={setSelectedRegion}>
                 <SelectTrigger>
@@ -197,6 +237,21 @@ export default function Events() {
                   {regions.map(region => (
                     <SelectItem key={region} value={region}>
                       {region}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {/* Month Filter */}
+              <Select value={selectedMonth} onValueChange={setSelectedMonth}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Todos los meses" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Todos los meses</SelectItem>
+                  {months.map(month => (
+                    <SelectItem key={month} value={month}>
+                      {month}
                     </SelectItem>
                   ))}
                 </SelectContent>
