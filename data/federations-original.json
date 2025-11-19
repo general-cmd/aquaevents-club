@@ -1,0 +1,295 @@
+[
+  {
+    "name": "Euskadiko Triatloi Federazioa",
+    "type": "regional",
+    "region": "País Vasco",
+    "email": "etf@triatloi.org",
+    "website": "https://www.triatloi.org",
+    "status": "active"
+  },
+  {
+    "name": "Euskal Herriko Igeriketa Federazioa",
+    "type": "regional",
+    "region": "País Vasco",
+    "email": "info@ehsf.eus",
+    "status": "needs_verification"
+  },
+  {
+    "name": "Federació Balear de Natació",
+    "type": "regional",
+    "region": "Baleares",
+    "email": "fbn@fbnatacion.org",
+    "website": "https://www.fbnatacion.org",
+    "status": "active"
+  },
+  {
+    "name": "Federació Balear de Triatlón",
+    "type": "regional",
+    "region": "Baleares",
+    "email": "secretaria@fetrib.com",
+    "website": "https://www.fetrib.com",
+    "status": "active"
+  },
+  {
+    "name": "Federació Catalana de Natació",
+    "type": "regional",
+    "region": "Cataluña",
+    "email": "federacio@natacio.cat",
+    "website": "https://www.natacio.cat",
+    "status": "active"
+  },
+  {
+    "name": "Federació Catalana de Triatlón",
+    "type": "regional",
+    "region": "Cataluña",
+    "website": "https://www.triatlocatalunya.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación Andaluza de Natación",
+    "type": "regional",
+    "region": "Andalucía",
+    "email": "fan@fan.es",
+    "website": "https://www.fan.es",
+    "status": "active"
+  },
+  {
+    "name": "Federación Aragonesa de Natación",
+    "type": "regional",
+    "region": "Aragón",
+    "email": "info@fanaragon.com",
+    "website": "https://www.fanaragon.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación Aragonesa de Triatlón",
+    "type": "regional",
+    "region": "Aragón",
+    "email": "secretario@triatlonaragon.org",
+    "website": "https://www.triatlonaragon.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación Asturiana de Natación",
+    "type": "regional",
+    "region": "Asturias",
+    "email": "info@fanasturias.com",
+    "website": "https://www.fanasturias.com",
+    "status": "needs_verification"
+  },
+  {
+    "name": "Federación Asturiana de Triatlón",
+    "type": "regional",
+    "region": "Asturias",
+    "email": "info@fastri.com",
+    "website": "https://www.fastri.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación Canaria de Natación",
+    "type": "regional",
+    "region": "Canarias",
+    "email": "info@fedecanat.es",
+    "website": "https://www.fedecanat.es",
+    "status": "active"
+  },
+  {
+    "name": "Federación Canaria de Triatlón",
+    "type": "regional",
+    "region": "Canarias",
+    "email": "competiciones@fecantri.org",
+    "website": "https://www.fecantri.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación Cántabra de Natación",
+    "type": "regional",
+    "region": "Cantabria",
+    "email": "info@fncantabria.com",
+    "website": "https://www.fncantabria.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación Cántabra de Triatlón",
+    "type": "regional",
+    "region": "Cantabria",
+    "email": "fetricantabria@hotmail.com",
+    "website": "https://www.fetricantabria.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación Española de Triatlón",
+    "type": "national",
+    "region": "Nacional",
+    "email": "info@triatlon.org",
+    "website": "https://www.triatlon.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación Extremeña de Natación",
+    "type": "regional",
+    "region": "Extremadura",
+    "email": "administracion@fexnatacion.com",
+    "website": "https://www.fexnatacion.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación Extremeña de Triatlón",
+    "type": "regional",
+    "region": "Extremadura",
+    "website": "https://www.fextri.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación Gallega de Natación",
+    "type": "regional",
+    "region": "Galicia",
+    "email": "info@fegan.org",
+    "website": "https://www.fegan.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación Gallega de Triatlón",
+    "type": "regional",
+    "region": "Galicia",
+    "email": "INFO@FEGATRI.ORG",
+    "website": "https://www.fegatri.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación Madrileña de Natación",
+    "type": "regional",
+    "region": "Madrid",
+    "email": "info@federacionmadridnatacion.es",
+    "website": "https://www.federacionmadridnatacion.es",
+    "status": "active"
+  },
+  {
+    "name": "Federación Madrileña de Triatlón",
+    "type": "regional",
+    "region": "Madrid",
+    "email": "federacion@triatlonmadrid.org",
+    "website": "https://www.triatlonmadrid.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación Navarra de Natación",
+    "type": "regional",
+    "region": "Navarra",
+    "email": "info@fnn-nif.com",
+    "website": "https://www.fnn-nif.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación Navarra de Triatlón",
+    "type": "regional",
+    "region": "Navarra",
+    "email": "info@navarratriatlon.com",
+    "website": "https://www.navarratriatlon.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación Riojana de Natación",
+    "type": "regional",
+    "region": "La Rioja",
+    "email": "frnatacion@frnatacion.es",
+    "website": "https://www.frnatacion.es",
+    "status": "active"
+  },
+  {
+    "name": "Federación Riojana de Triatlón",
+    "type": "regional",
+    "region": "La Rioja",
+    "email": "presidente@fertriatlon.com",
+    "website": "https://www.fertriatlon.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Natación de Castilla y León",
+    "type": "regional",
+    "region": "Castilla y León",
+    "email": "federacion@fenacyl.org",
+    "website": "https://www.fenacyl.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Natación de Castilla-La Mancha",
+    "type": "regional",
+    "region": "Castilla-La Mancha",
+    "email": "info@fnclm.com",
+    "website": "https://www.fnclm.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Natación de Melilla",
+    "type": "regional",
+    "region": "Melilla",
+    "email": "info@fnmelilla.es",
+    "website": "https://www.fnmelilla.es",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Natación de la Comunidad Valenciana",
+    "type": "regional",
+    "region": "Valencia",
+    "email": "licencias@fncv.es",
+    "website": "https://www.fncv.es",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Natación de la Región de Murcia",
+    "type": "regional",
+    "region": "Murcia",
+    "email": "info@fnmurcia.org",
+    "website": "https://www.fnmurcia.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Triatlón de Andalucía",
+    "type": "regional",
+    "region": "Andalucía",
+    "email": "info@triatlonandalucia.org",
+    "website": "https://www.triatlonandalucia.org",
+    "status": "inactive"
+  },
+  {
+    "name": "Federación de Triatlón de Castilla y León",
+    "type": "regional",
+    "region": "Castilla y León",
+    "website": "https://www.triatlon-cyl.com",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Triatlón de Castilla-La Mancha",
+    "type": "regional",
+    "region": "Castilla-La Mancha",
+    "email": "federacion@triatlonclm.org",
+    "website": "https://www.triatlonclm.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Triatlón de la Comunidad Valenciana",
+    "type": "regional",
+    "region": "Valencia",
+    "email": "lopd@triatlocv.org",
+    "website": "https://www.triatlocv.org",
+    "status": "active"
+  },
+  {
+    "name": "Federación de Triatlón de la Región de Murcia",
+    "type": "regional",
+    "region": "Murcia",
+    "email": "ftrm@trimurcia.org",
+    "website": "https://www.trimurcia.org",
+    "status": "active"
+  },
+  {
+    "name": "Real Federación Española de Natación",
+    "type": "national",
+    "region": "Nacional",
+    "email": "rfen@rfen.es",
+    "website": "https://www.rfen.es",
+    "status": "active"
+  }
+]
+

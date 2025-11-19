@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, ExternalLink, Mail, Phone, Globe, Trophy } from "lucide-react";
-
-import { Link, useParams } from "wouter";
+import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, Share2 } from "lucide-react";
+import { Link, useParams, useLocation } from "wouter";
 import EventStructuredData from "@/components/EventStructuredData";
 import { trpc } from "@/lib/trpc";
 
@@ -36,11 +35,10 @@ interface Event {
 
 export default function EventDetail() {
   const params = useParams();
+  const [, setLocation] = useLocation();
   const eventId = params.id;
-  // Decode the URL parameter in case it's encoded
   const decodedId = eventId ? decodeURIComponent(eventId) : '';
   
-  // Use tRPC to fetch event details
   const { data: eventData, isLoading, error } = trpc.events.getById.useQuery(
     { id: decodedId },
     { enabled: !!decodedId }
@@ -49,18 +47,6 @@ export default function EventDetail() {
   const event = (eventData?.event as any) || null;
   const loading = isLoading;
   const notFound = error || (eventData && !eventData.success);
-
-  const getDisciplineIcon = (discipline: string) => {
-    const icons: Record<string, string> = {
-      swimming: "🏊",
-      triathlon: "🏃",
-      waterpolo: "🤽",
-      "open-water": "🌊",
-      duathlon: "🚴",
-      synchronized_swimming: "💃",
-    };
-    return icons[discipline] || "🏆";
-  };
 
   const getDisciplineLabel = (discipline: string) => {
     const labels: Record<string, string> = {
@@ -84,13 +70,40 @@ export default function EventDetail() {
     }).format(date);
   };
 
-  const formatShortDate = (dateString: string) => {
+  const formatTime = (dateString: string) => {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat('es-ES', { 
-      day: 'numeric', 
-      month: 'short',
-      year: 'numeric'
+      hour: '2-digit',
+      minute: '2-digit'
     }).format(date);
+  };
+
+  const handleAddToCalendar = () => {
+    if (!event) return;
+    const startDate = new Date(event.date).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    const title = encodeURIComponent(event.name.es);
+    const location = encodeURIComponent(`${event.location.venue || ''}, ${event.location.city}`);
+    const description = encodeURIComponent(event.description?.es || '');
+    
+    const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${startDate}&location=${location}&details=${description}`;
+    window.open(googleCalUrl, '_blank');
+  };
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: event.name.es,
+          text: event.description?.es || '',
+          url: window.location.href,
+        });
+      } catch (err) {
+        console.log('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Enlace copiado al portapapeles');
+    }
   };
 
   if (loading) {
@@ -103,277 +116,293 @@ export default function EventDetail() {
 
   if (notFound || !event) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-white">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">Evento no encontrado</h1>
-        <p className="text-gray-600 mb-6">El evento que buscas no existe o ha sido eliminado.</p>
-        <Link href="/eventos">
-          <a>
-            <Button className="bg-gradient-to-r from-blue-600 to-cyan-500">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white p-4">
+        <Card className="max-w-md w-full">
+          <CardContent className="pt-6 text-center">
+            <div className="text-6xl mb-4">❗</div>
+            <h2 className="text-2xl font-bold mb-2">Evento no encontrado</h2>
+            <p className="text-gray-600 mb-6">
+              El evento que buscas no existe o ha sido eliminado.
+            </p>
+            <Button onClick={() => setLocation('/eventos')}>
               Ver todos los eventos
             </Button>
-          </a>
-        </Link>
+          </CardContent>
+        </Card>
       </div>
     );
   }
 
   return (
     <>
-      {/* Add structured data for SEO */}
-      {event && <EventStructuredData event={event} />}
+      <EventStructuredData event={event} />
       
-      <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
-      {/* Header/Navigation */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-3">
-              <img src="/logo.png" alt="AquaEvents.club" className="h-14 w-14 object-contain" />
-              <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                AquaEvents.club
-              </span>
-            </a>
-          </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/eventos">
-              <a className="text-blue-600 font-semibold">Eventos</a>
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+        {/* Header with Logo and Navigation */}
+        <header className="bg-white border-b sticky top-0 z-50">
+          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+            <Link href="/">
+              <a className="flex items-center gap-2">
+                <img src="/logo.png" alt="AquaEvents.club" className="h-10 w-10" />
+                <span className="text-2xl font-bold text-blue-600">AquaEvents.club</span>
+              </a>
             </Link>
-            <Link href="/blog">
-              <a className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Blog</a>
-            </Link>
-            <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
-              Suscríbete Gratis
-            </Button>
+            <nav className="hidden md:flex gap-6">
+              <Link href="/"><a className="text-gray-700 hover:text-blue-600">Inicio</a></Link>
+              <Link href="/eventos"><a className="text-gray-700 hover:text-blue-600">Eventos</a></Link>
+              <Link href="/federaciones"><a className="text-gray-700 hover:text-blue-600">Federaciones</a></Link>
+              <Link href="/blog"><a className="text-gray-700 hover:text-blue-600">Blog</a></Link>
+            </nav>
+          </div>
+        </header>
+
+        {/* Breadcrumb Navigation */}
+        <div className="container mx-auto px-4 py-4">
+          <nav className="flex items-center gap-2 text-sm text-gray-600">
+            <Link href="/"><a className="hover:text-blue-600">Inicio</a></Link>
+            <span>/</span>
+            <Link href="/eventos"><a className="hover:text-blue-600">Eventos</a></Link>
+            <span>/</span>
+            <span className="text-gray-900">{getDisciplineLabel(event.discipline)}</span>
+            <span>/</span>
+            <span className="text-gray-900">{event.name.es}</span>
           </nav>
         </div>
-      </header>
 
-      {/* Breadcrumb */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center gap-2 text-sm text-gray-600">
-          <Link href="/">
-            <a className="hover:text-blue-600">Inicio</a>
-          </Link>
-          <span>/</span>
-          <Link href="/eventos">
-            <a className="hover:text-blue-600">Eventos</a>
-          </Link>
-          <span>/</span>
-          <span className="text-gray-900 font-medium">{event.name.es}</span>
+        {/* Back Button */}
+        <div className="container mx-auto px-4 mb-6">
+          <Button variant="outline" onClick={() => setLocation('/eventos')}>
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Volver a eventos
+          </Button>
         </div>
-      </div>
 
-      {/* Event Header */}
-      <section className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 text-base px-4 py-1">
-              {getDisciplineIcon(event.discipline)} {getDisciplineLabel(event.discipline)}
-            </Badge>
-            {event.federation && (
-              <Badge variant="outline" className="text-base px-4 py-1">
-                {event.federation}
-              </Badge>
-            )}
-          </div>
-
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            {event.name.es}
-          </h1>
-
-          <div className="grid md:grid-cols-2 gap-4 mb-8">
-            <div className="flex items-center gap-3 text-gray-700">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <Calendar className="w-5 h-5 text-blue-600" />
-              </div>
-              <div>
-                <div className="text-sm text-gray-500">Fecha</div>
-                <div className="font-semibold">{formatDate(event.date)}</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 text-gray-700">
-              <div className="w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-5 h-5 text-cyan-600" />
-              </div>
-              <div>
-                <div className="text-sm text-gray-500">Ubicación</div>
-                <div className="font-semibold">{event.location.city}, {event.location.region}</div>
-                {event.location.venue && (
-                  <div className="text-sm text-gray-600">{event.location.venue}</div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Registration CTA */}
-          {event.registrationUrl && (
-            <Card className="bg-gradient-to-r from-blue-600 to-cyan-500 border-0 mb-8">
-              <CardContent className="p-6">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                  <div className="text-white text-center md:text-left">
-                    <h3 className="text-xl font-bold mb-1">¿Quieres participar?</h3>
-                    <p className="text-blue-100">Inscríbete ahora en este evento</p>
-                  </div>
-                  <Button 
-                    size="lg"
-                    className="bg-white text-blue-600 hover:bg-blue-50"
-                    onClick={() => window.open(event.registrationUrl, '_blank')}
-                  >
-                    Inscribirse Ahora
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
+        {/* Main Content */}
+        <div className="container mx-auto px-4 pb-12">
+          <Card className="max-w-4xl mx-auto">
+            <CardContent className="p-8">
+              {/* Title and Badges */}
+              <div className="mb-6">
+                <h1 className="text-4xl font-bold mb-4">{event.name.es}</h1>
+                <div className="flex gap-2">
+                  <Badge variant="secondary" className="text-sm">
+                    {getDisciplineLabel(event.discipline)}
+                  </Badge>
+                  <Badge variant="outline" className="text-sm">
+                    Próximo
+                  </Badge>
                 </div>
-              </CardContent>
-            </Card>
-          )}
-        </div>
-      </section>
+              </div>
 
-      {/* Event Details */}
-      <section className="container mx-auto px-4 pb-12">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
-          {/* Main Content */}
-          <div className="md:col-span-2 space-y-6">
-            {/* Description */}
-            {event.description?.es && (
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Sobre el Evento</h2>
-                  <div className="prose prose-blue max-w-none text-gray-700 leading-relaxed">
-                      {event.description?.es.split('\n\n').map((paragraph: string, idx: number) => (                  <p key={idx} className="mb-4">{paragraph}</p>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Categories */}
-            {event.categories && event.categories.length > 0 && (
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Categorías</h2>
-                  <div className="flex flex-wrap gap-2">
-                      {event.categories?.map((category: string, idx: number) => (                    <Badge key={idx} variant="outline" className="text-sm">
-                        {category}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Sponsor CTA */}
-            <Card className="border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  🎯 ¿Tu club necesita gorros personalizados?
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  <span className="font-semibold">Entrega rápida</span> • 
-                  <span className="font-semibold"> Diseño gratis</span> • 
-                  <span className="font-semibold"> Calidad premium</span>
+              {/* Description */}
+              {event.description?.es && (
+                <p className="text-gray-700 mb-8 text-lg">
+                  {event.description.es}
                 </p>
-                <p className="text-lg font-bold text-blue-600 mb-4">
-                  Usa AQUA20 para 20% descuento
-                </p>
-                <Button 
-                  className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
-                  onClick={() => window.open('https://euroswimcaps.com?coupon=AQUA20', '_blank')}
-                >
-                  Personaliza Ahora →
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+              )}
 
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Contact Information */}
-            {event.contact && (
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Información de Contacto</h3>
+              {/* Two Column Layout */}
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                {/* Left Column - Event Info */}
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Información del Evento</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <Calendar className="w-5 h-5 text-red-500 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Fecha:</span>
+                        <span className="ml-2">{formatDate(event.date)}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-5 h-5 text-gray-500 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Hora:</span>
+                        <span className="ml-2">{formatTime(event.date)}</span>
+                      </div>
+                    </div>
+                    {event.categories && event.categories.length > 0 && (
+                      <div className="flex items-start gap-3">
+                        <Users className="w-5 h-5 text-orange-500 mt-0.5" />
+                        <div>
+                          <span className="font-medium">Categoría:</span>
+                          <span className="ml-2">{event.categories[0]}</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right Column - Location */}
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Ubicación</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Ciudad:</span>
+                        <span className="ml-2">{event.location.city}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-5 h-5 text-blue-500 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Región:</span>
+                        <span className="ml-2">{event.location.region}</span>
+                      </div>
+                    </div>
+                    {event.location.venue && (
+                      <div className="flex items-start gap-3">
+                        <MapPin className="w-5 h-5 text-orange-500 mt-0.5" />
+                        <div>
+                          <span className="font-medium">Lugar:</span>
+                          <span className="ml-2">{event.location.venue}</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Section */}
+              {(event.contact?.email || event.contact?.website) && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold mb-4">Contacto</h3>
                   <div className="space-y-3">
                     {event.contact.email && (
-                      <a 
-                        href={`mailto:${event.contact.email}`}
-                        className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
-                      >
-                        <Mail className="w-4 h-4 text-blue-500" />
-                        <span className="text-sm break-all">{event.contact.email}</span>
-                      </a>
-                    )}
-                    {event.contact.phone && (
-                      <a 
-                        href={`tel:${event.contact.phone}`}
-                        className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
-                      >
-                        <Phone className="w-4 h-4 text-blue-500" />
-                        <span className="text-sm">{event.contact.phone}</span>
-                      </a>
+                      <div className="flex items-center gap-3">
+                        <Mail className="w-5 h-5 text-blue-500" />
+                        <span className="font-medium">Email:</span>
+                        <a href={`mailto:${event.contact.email}`} className="text-blue-600 hover:underline">
+                          {event.contact.email}
+                        </a>
+                      </div>
                     )}
                     {event.contact.website && (
-                      <a 
-                        href={event.contact.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
-                      >
-                        <Globe className="w-4 h-4 text-blue-500" />
-                        <span className="text-sm break-all">Sitio web oficial</span>
-                      </a>
+                      <div className="flex items-center gap-3">
+                        <Globe className="w-5 h-5 text-blue-500" />
+                        <span className="font-medium">Web:</span>
+                        <a href={event.contact.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                          {event.contact.website}
+                        </a>
+                      </div>
                     )}
                   </div>
-                </CardContent>
-              </Card>
-            )}
+                </div>
+              )}
 
-            {/* Quick Info */}
-            <Card className="bg-gradient-to-br from-blue-600 to-cyan-500 text-white border-0">
-              <CardContent className="p-6">
-                <Trophy className="w-8 h-8 mb-3" />
-                <h3 className="text-lg font-bold mb-2">Evento Oficial</h3>
-                <p className="text-blue-100 text-sm">
-                  Este evento está registrado en el calendario oficial de competiciones acuáticas de España
-                </p>
-              </CardContent>
-            </Card>
+              {/* Event Actions */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold mb-4">Acciones del Evento</h3>
+                <div className="flex flex-wrap gap-3">
+                  <Button onClick={handleAddToCalendar} className="bg-blue-600 hover:bg-blue-700">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Añadir al Calendario
+                  </Button>
+                  <Button onClick={handleShare} variant="outline">
+                    <Share2 className="w-4 h-4 mr-2" />
+                    Compartir Evento
+                  </Button>
+                  {event.seo?.canonical && (
+                    <Button variant="outline" asChild>
+                      <a href={event.seo.canonical} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Ver Original
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              </div>
 
-            {/* Newsletter CTA */}
-            <Card className="border-2 border-blue-200">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  📬 No te pierdas ningún evento
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Suscríbete para recibir el calendario actualizado cada mes
-                </p>
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500">
-                  Suscribirme Gratis
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+              {/* Related Resources */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Recursos Relacionados</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Link href="/blog/guia-subvenciones-clubes-acuaticos">
+                    <a className="block p-4 border-2 border-pink-200 rounded-lg hover:border-pink-400 transition-colors">
+                      <div className="text-2xl mb-2">💰</div>
+                      <h4 className="font-semibold mb-1">Guía de Subvenciones para Clubes</h4>
+                      <p className="text-sm text-gray-600">
+                        Descubre todas las ayudas disponibles del CSD y comunidades autónomas para tu club deportivo.
+                      </p>
+                    </a>
+                  </Link>
+
+                  <Link href="/blog/preparacion-competicion-natacion">
+                    <a className="block p-4 border-2 border-purple-200 rounded-lg hover:border-purple-400 transition-colors">
+                      <div className="text-2xl mb-2">🏊‍♂️</div>
+                      <h4 className="font-semibold mb-1">Preparación para Competiciones</h4>
+                      <p className="text-sm text-gray-600">
+                        Consejos de entrenadores profesionales para preparar competiciones de alto nivel.
+                      </p>
+                    </a>
+                  </Link>
+
+                  <a 
+                    href="https://euroswimcaps.com?coupon=AQUA20" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block p-4 border-2 border-orange-200 rounded-lg hover:border-orange-400 transition-colors"
+                  >
+                    <div className="text-2xl mb-2">🎽</div>
+                    <h4 className="font-semibold mb-1">Material de Natación</h4>
+                    <p className="text-sm text-gray-600">
+                      Gorros personalizados para tu club. Usa AQUA20 para 20% descuento.
+                    </p>
+                  </a>
+
+                  <Link href={`/eventos?disciplina=${event.discipline}&region=${event.location.region}`}>
+                    <a className="block p-4 border-2 border-green-200 rounded-lg hover:border-green-400 transition-colors">
+                      <div className="text-2xl mb-2">📅</div>
+                      <h4 className="font-semibold mb-1">Más Eventos Similares</h4>
+                      <p className="text-sm text-gray-600">
+                        Encuentra más eventos de {getDisciplineLabel(event.discipline)} en {event.location.region}.
+                      </p>
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-auto">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <img src="/logo.png" alt="AquaEvents.club" className="h-10 w-10 object-contain" />
-            <span className="text-xl font-bold">AquaEvents.club</span>
+        {/* Footer */}
+        <footer className="bg-gray-900 text-white py-12">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div>
+                <h3 className="text-xl font-bold mb-4">AquaEvents.club</h3>
+                <p className="text-gray-400">
+                  El calendario más completo de eventos acuáticos en España
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-4">Enlaces</h4>
+                <div className="space-y-2">
+                  <Link href="/"><a className="block text-gray-400 hover:text-white">Inicio</a></Link>
+                  <Link href="/eventos"><a className="block text-gray-400 hover:text-white">Eventos</a></Link>
+                  <Link href="/federaciones"><a className="block text-gray-400 hover:text-white">Federaciones</a></Link>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-4">Patrocinado por</h4>
+                <a 
+                  href="https://euroswimcaps.com?coupon=AQUA20" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300"
+                >
+                  EuroSwimCaps.com
+                </a>
+                <p className="text-sm text-gray-400 mt-2">Official Equipment Partner</p>
+              </div>
+            </div>
+            <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+              <p>© 2025 AquaEvents.club. Todos los derechos reservados.</p>
+            </div>
           </div>
-          <p className="text-gray-400 text-sm mb-4">
-            El calendario más completo de eventos acuáticos en España
-          </p>
-          <div className="text-sm text-gray-500">
-            © 2025 AquaEvents.club. Todos los derechos reservados.
-          </div>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
     </>
   );
 }
