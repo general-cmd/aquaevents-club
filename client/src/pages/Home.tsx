@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { APP_LOGO } from "@/const";
 import { Calendar, MapPin, Trophy, Users, Clock, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { trpc } from "@/lib/trpc";
 
 interface Event {
   _id: string;
@@ -21,54 +22,17 @@ interface Stats {
 }
 
 export default function Home() {
-  const [events, setEvents] = useState<Event[]>([]);
-  const [stats, setStats] = useState<Stats | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Use tRPC hooks for data fetching
+  const { data: eventsData, isLoading: eventsLoading } = trpc.events.list.useQuery({ limit: 6 });
+  const { data: statsData, isLoading: statsLoading } = trpc.events.stats.useQuery();
+  
+  const events = eventsData?.events || [];
+  const stats = statsData?.stats || null;
+  const loading = eventsLoading || statsLoading;
 
-  useEffect(() => {
-    // Fetch upcoming events
-    fetch('/api/events?limit=6')
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          setEvents(data.events);
-        }
-      })
-      .catch(err => console.error('Error fetching events:', err));
-
-    // Fetch stats
-    fetch('/api/events/stats')
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          setStats(data.stats);
-        }
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Error fetching stats:', err);
-        setLoading(false);
-      });
-
-    // Load Systeme.io form script dynamically
-    const loadFormScript = () => {
-      const script = document.createElement('script');
-      script.id = 'form-script-tag-20543028';
-      script.src = 'https://go.aquaevents.club/public/remote/page/333287841dd1b4e8a4dd8be9446652d6ece139e0.js';
-      script.async = true;
-      document.body.appendChild(script);
-      
-      return () => {
-        const existingScript = document.getElementById('form-script-tag-20543028');
-        if (existingScript) {
-          existingScript.remove();
-        }
-      };
-    };
-
-    const cleanup = loadFormScript();
-    return cleanup;
-  }, []);
+  // No useEffect needed - tRPC handles data fetching automatically
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
@@ -92,12 +56,50 @@ export default function Home() {
               Suscríbete Gratis
             </Button>
           </nav>
-          <button className="md:hidden p-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          <button 
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t bg-white">
+            <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+              <a 
+                href="/eventos" 
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Eventos
+              </a>
+              <a 
+                href="/blog" 
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
+              </a>
+              <Button 
+                className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 w-full"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Suscríbete Gratis
+              </Button>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -280,7 +282,7 @@ export default function Home() {
           </div>
         ) : events.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event) => (
+            {events.map((event: any) => (
               <Card key={event._id} className="hover:shadow-lg transition-shadow border-2 hover:border-blue-300">
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-3">

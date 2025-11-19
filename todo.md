@@ -92,3 +92,8 @@
 - [x] Build Event Detail Pages with SEO optimization
 - [x] Add structured data schema to event pages
 
+## Critical Fixes (User Feedback)
+- [x] Fix events not displaying on homepage (switched to tRPC)
+- [x] Fix hamburger menu not working on mobile
+- [x] Fix newsletter form appearing in footer instead of hero section (iframe working correctly)
+
