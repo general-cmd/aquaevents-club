@@ -77,3 +77,14 @@
 - [ ] Verify SEO implementation
 - [ ] Final review and launch
 
+
+
+## Immediate Fixes (User Feedback)
+- [x] Display real events on homepage (fetch from API)
+- [x] Fix Systeme.io newsletter form integration
+- [x] Fix stats section with real database numbers
+- [x] Fix logo placement in header
+- [x] Simplify and shorten footer
+- [x] Add FAQ section to homepage with schema markup
+- [x] Add rich SEO descriptions and content
+

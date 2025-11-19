@@ -1,35 +1,78 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { APP_LOGO } from "@/const";
-import { Calendar, MapPin, Trophy, Users } from "lucide-react";
+import { Calendar, MapPin, Trophy, Users, Clock, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+
+interface Event {
+  _id: string;
+  name: { es: string; en: string };
+  date: string;
+  location: { city: string; region: string };
+  discipline: string;
+  seo?: { canonical: string };
+}
+
+interface Stats {
+  total: number;
+  upcoming: number;
+  byDiscipline: Array<{ _id: string; count: number }>;
+}
 
 export default function Home() {
+  const [events, setEvents] = useState<Event[]>([]);
+  const [stats, setStats] = useState<Stats | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch upcoming events
+    fetch('/api/events?limit=6')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          setEvents(data.events);
+        }
+      })
+      .catch(err => console.error('Error fetching events:', err));
+
+    // Fetch stats
+    fetch('/api/events/stats')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          setStats(data.stats);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching stats:', err);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
       {/* Header/Navigation */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src={APP_LOGO} alt="AquaEvents.club" className="h-12 w-12 rounded-full" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <a href="/" className="flex items-center gap-3">
+            <img src="/logo.png" alt="AquaEvents.club" className="h-14 w-14 object-contain" />
+            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               AquaEvents.club
             </span>
-          </div>
+          </a>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="/eventos" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="/eventos" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Eventos
             </a>
-            <a href="/federaciones" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Federaciones
-            </a>
-            <a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Blog
             </a>
             <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
               Suscríbete Gratis
             </Button>
           </nav>
-          {/* Mobile menu button */}
           <button className="md:hidden p-2">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -39,75 +82,83 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
+      <section className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
-            Tu Calendario Completo de Eventos Acuáticos en España 2026
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent leading-tight">
+            Calendario Completo de Eventos Acuáticos en España 2026
           </h1>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Descubre competiciones de natación, triatlón, waterpolo y aguas abiertas. 
-            Actualizado mensualmente con eventos de la RFEN, FETRI y federaciones autonómicas.
+          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+            Descubre todas las competiciones de natación, triatlón, waterpolo y aguas abiertas. 
+            Actualizado mensualmente con eventos oficiales de federaciones nacionales y autonómicas.
           </p>
           
           {/* Newsletter CTA */}
-          <Card className="max-w-2xl mx-auto bg-white shadow-lg">
-            <CardContent className="p-6">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+          <Card className="max-w-2xl mx-auto bg-white shadow-xl border-2 border-blue-100">
+            <CardContent className="p-6 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">
                 🏊 Descarga GRATIS la Guía de Supervivencia para Clubes Acuáticos 2025
               </h3>
               <ul className="text-left mb-6 space-y-2 text-gray-700">
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600">✅</span>
-                  Más de €10,000 en Subvenciones Ocultas
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold mt-0.5">✓</span>
+                  <span>Más de €10,000 en Subvenciones Ocultas</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600">✅</span>
-                  30 Días para Aumentar Ingresos en 25%
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold mt-0.5">✓</span>
+                  <span>30 Días para Aumentar Ingresos en 25%</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600">✅</span>
-                  Sistemas que Ahorran 10+ Horas Semanales
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold mt-0.5">✓</span>
+                  <span>Sistemas que Ahorran 10+ Horas Semanales</span>
                 </li>
               </ul>
-              {/* Systeme.io form will be injected here */}
-              <div id="newsletter-form">
-                <script
-                  id="form-script-tag-20543028"
-                  src="https://go.aquaevents.club/public/remote/page/333287841dd1b4e8a4dd8be9446652d6ece139e0.js"
-                ></script>
-              </div>
+              {/* Systeme.io form */}
+              <div 
+                id="newsletter-form" 
+                dangerouslySetInnerHTML={{
+                  __html: `<script id="form-script-tag-20543028" src="https://go.aquaevents.club/public/remote/page/333287841dd1b4e8a4dd8be9446652d6ece139e0.js"></script>`
+                }}
+              />
             </CardContent>
           </Card>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-cyan-500 py-12">
+      <section className="bg-gradient-to-r from-blue-600 to-cyan-500 py-10">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center text-white">
             <div>
-              <div className="text-4xl font-bold mb-2">300+</div>
-              <div className="text-blue-100">Eventos Anuales</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">
+                {loading ? "..." : stats?.upcoming || 0}+
+              </div>
+              <div className="text-blue-100 text-sm md:text-base">Eventos Próximos</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">17</div>
-              <div className="text-blue-100">Federaciones</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">
+                {loading ? "..." : (stats?.byDiscipline?.length || 0)}
+              </div>
+              <div className="text-blue-100 text-sm md:text-base">Disciplinas</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">4</div>
-              <div className="text-blue-100">Deportes</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">
+                Toda
+              </div>
+              <div className="text-blue-100 text-sm md:text-base">España</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <div className="text-blue-100">Gratis</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">
+                100%
+              </div>
+              <div className="text-blue-100 text-sm md:text-base">Gratis</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+      <section className="container mx-auto px-4 py-12 md:py-16">
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 text-gray-900">
           ¿Por qué AquaEvents.club?
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -162,13 +213,13 @@ export default function Home() {
       </section>
 
       {/* Sponsor CTA Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-cyan-50 py-12">
+      <section className="bg-gradient-to-r from-blue-50 to-cyan-50 py-10">
         <div className="container mx-auto px-4">
           <Card className="max-w-3xl mx-auto border-2 border-blue-200 shadow-xl">
-            <CardContent className="p-8">
+            <CardContent className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row items-center gap-6">
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">
                     🎯 ¿Tu club necesita gorros personalizados?
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -194,27 +245,136 @@ export default function Home() {
       </section>
 
       {/* Upcoming Events Preview */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
             Próximos Eventos
           </h2>
-          <Button variant="outline" className="hidden md:inline-flex">
-            Ver Todos →
+          <Button variant="outline" className="hidden md:inline-flex" onClick={() => window.location.href = '/eventos'}>
+            Ver Todos <ChevronRight className="ml-1 w-4 h-4" />
           </Button>
         </div>
-        <div className="text-center text-gray-600 py-12">
-          <p>Cargando eventos...</p>
+        
+        {loading ? (
+          <div className="text-center text-gray-600 py-12">
+            <p>Cargando eventos...</p>
+          </div>
+        ) : events.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {events.map((event) => (
+              <Card key={event._id} className="hover:shadow-lg transition-shadow border-2 hover:border-blue-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                      {event.discipline}
+                    </Badge>
+                    <span className="text-sm text-gray-500 flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      {new Date(event.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900 line-clamp-2">
+                    {event.name.es}
+                  </h3>
+                  <p className="text-sm text-gray-600 flex items-center gap-1 mb-4">
+                    <MapPin className="w-4 h-4" />
+                    {event.location.city}, {event.location.region}
+                  </p>
+                  <Button 
+                    variant="outline" 
+                    className="w-full"
+                    onClick={() => {
+                      const slug = event.seo?.canonical?.split('/').pop() || event._id;
+                      window.location.href = `/eventos/${slug}`;
+                    }}
+                  >
+                    Ver Detalles
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center text-gray-600 py-12">
+            <p>No hay eventos próximos disponibles.</p>
+          </div>
+        )}
+        
+        <div className="text-center mt-8 md:hidden">
+          <Button variant="outline" onClick={() => window.location.href = '/eventos'}>
+            Ver Todos los Eventos <ChevronRight className="ml-1 w-4 h-4" />
+          </Button>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-gray-50 py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 text-gray-900">
+            Preguntas Frecuentes
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                  ¿Dónde puedo encontrar eventos de natación en España 2026?
+                </h3>
+                <p className="text-gray-700">
+                  AquaEvents.club es el calendario más completo de eventos acuáticos en España 2026. 
+                  Recopilamos competiciones de natación, triatlón, waterpolo y aguas abiertas de todas 
+                  las federaciones oficiales, actualizado mensualmente el día 15.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                  ¿Cómo puedo inscribirme en una competición?
+                </h3>
+                <p className="text-gray-700">
+                  Cada evento incluye información de contacto y enlaces directos a la página oficial 
+                  de inscripción. Haz clic en "Ver Detalles" del evento que te interese para acceder 
+                  a toda la información necesaria.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                  ¿Cuándo se actualiza el calendario?
+                </h3>
+                <p className="text-gray-700">
+                  Actualizamos el calendario automáticamente el día 15 de cada mes con los últimos 
+                  eventos publicados por la RFEN, FETRI y todas las federaciones autonómicas. 
+                  Suscríbete a nuestro newsletter para recibir las novedades.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                  ¿Es gratis usar AquaEvents.club?
+                </h3>
+                <p className="text-gray-700">
+                  Sí, completamente gratis. Nuestro objetivo es facilitar el acceso a la información 
+                  de eventos acuáticos para clubes, nadadores, triatletas y aficionados en toda España.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 mt-auto">
+      <footer className="bg-gray-900 text-white py-10 mt-auto">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src={APP_LOGO} alt="AquaEvents.club" className="h-10 w-10 rounded-full" />
+                <img src="/logo.png" alt="AquaEvents.club" className="h-10 w-10 rounded-full" />
                 <span className="font-bold text-lg">AquaEvents.club</span>
               </div>
               <p className="text-gray-400 text-sm">
@@ -225,17 +385,9 @@ export default function Home() {
               <h4 className="font-bold mb-4">Eventos</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li><a href="/eventos" className="hover:text-white">Todos los Eventos</a></li>
-                <li><a href="/eventos?sport=natacion" className="hover:text-white">Natación</a></li>
-                <li><a href="/eventos?sport=triatlon" className="hover:text-white">Triatlón</a></li>
-                <li><a href="/eventos?sport=waterpolo" className="hover:text-white">Waterpolo</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Recursos</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+                <li><a href="/eventos?discipline=swimming" className="hover:text-white">Natación</a></li>
+                <li><a href="/eventos?discipline=triathlon" className="hover:text-white">Triatlón</a></li>
                 <li><a href="/blog" className="hover:text-white">Blog</a></li>
-                <li><a href="/federaciones" className="hover:text-white">Federaciones</a></li>
-                <li><a href="/guia-subvenciones" className="hover:text-white">Guía de Subvenciones</a></li>
               </ul>
             </div>
             <div>
@@ -243,11 +395,11 @@ export default function Home() {
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li><a href="/privacidad" className="hover:text-white">Política de Privacidad</a></li>
                 <li><a href="/terminos" className="hover:text-white">Términos de Servicio</a></li>
-                <li><a href="/contacto" className="hover:text-white">Contacto</a></li>
+                <li><a href="mailto:general@aquaevents.club" className="hover:text-white">Contacto</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+          <div className="border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
             <p>© 2025 AquaEvents.club. Todos los derechos reservados.</p>
           </div>
         </div>
