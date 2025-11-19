@@ -114,3 +114,9 @@
 - [x] Restore EuroSwimCaps sponsor button visibility (already present in code, visible on homepage)
 - [x] Verify only 6 upcoming events exist in database (confirmed: 6 events from Nov 20 to Dec 20, 2025)
 
+
+
+## Content Population (User Request)
+- [x] Add Spanish aquatic federations (RFEN + regional) to database
+- [x] Write 5 SEO-optimized blog articles
+
