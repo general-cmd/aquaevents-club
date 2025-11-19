@@ -184,7 +184,7 @@ export default function Events() {
               <h2 className="text-xl font-bold text-gray-900">Filtrar Eventos</h2>
             </div>
             
-            <div className="grid md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
               {/* Search */}
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />

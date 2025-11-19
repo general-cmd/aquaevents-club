@@ -1,0 +1,35 @@
+{
+  "query": "SELECT slug, title, category FROM blogPosts ORDER BY createdAt DESC LIMIT 10",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute SELECT slug, title, category FROM blogPosts ORDER BY createdAt DESC LIMIT 10",
+  "rows": [
+    {
+      "slug": "tecnicas-mejora-viraje-natacion",
+      "title": "Técnicas Avanzadas para Mejorar tu Viraje en Natación",
+      "category": "Técnica"
+    },
+    {
+      "slug": "como-elegir-competicion-natacion-adecuada",
+      "title": "Cómo Elegir la Competición de Natación Adecuada para tu Nivel",
+      "category": "Competición"
+    },
+    {
+      "slug": "guia-completa-preparacion-competicion-natacion",
+      "title": "Guía Completa para la Preparación de una Competición de Natación",
+      "category": "Entrenamiento"
+    },
+    {
+      "slug": "nutricion-nadadores-alto-rendimiento",
+      "title": "Nutrición para Nadadores de Alto Rendimiento: Guía Práctica",
+      "category": "Nutrición"
+    },
+    {
+      "slug": "beneficios-natacion-aguas-abiertas",
+      "title": "Los Beneficios de la Natación en Aguas Abiertas: Más Allá de la Piscina",
+      "category": "Aguas Abiertas"
+    }
+  ],
+  "messages": [],
+  "stdout": "slug\ttitle\tcategory\ntecnicas-mejora-viraje-natacion\tTécnicas Avanzadas para Mejorar tu Viraje en Natación\tTécnica\ncomo-elegir-competicion-natacion-adecuada\tCómo Elegir la Competición de Natación Adecuada para tu Nivel\tCompetición\nguia-completa-preparacion-competicion-natacion\tGuía Completa para la Preparación de una Competición de Natación\tEntrenamiento\nnutricion-nadadores-alto-rendimiento\tNutrición para Nadadores de Alto Rendimiento: Guía Práctica\tNutrición\nbeneficios-natacion-aguas-abiertas\tLos Beneficios de la Natación en Aguas Abiertas: Más Allá de la Piscina\tAguas Abiertas\n",
+  "stderr": "",
+  "execution_time_ms": 140
+}

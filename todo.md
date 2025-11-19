@@ -169,3 +169,21 @@
 - [ ] Add admin analytics view (future enhancement)
 - [x] Write vitest tests for new features
 
+
+
+## Bug Fixes - User Reported Issues
+- [ ] Fix filter dropdowns overlapping on Events page
+- [ ] Remove "Made with Manus" footer text from all pages
+- [ ] Integrate Systeme.io API for email notifications
+- [ ] Add email notification for event submission confirmation
+- [ ] Add email notification for approval/rejection
+- [ ] Add email notification for new events matching user preferences
+
+
+
+## New Tasks - Related Content Links
+- [x] Update "Guía de Subvenciones para Clubes" to link to blog post (blog post created)
+- [x] Update "Preparación para Competiciones" to link to blog post (blog post created)
+- [x] Update "Material de Natación" to link to Euroswimcaps.com (already done)
+- [x] Update "Más Eventos Similares" to link to /eventos page (already done with filters)
+
