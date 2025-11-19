@@ -187,3 +187,10 @@
 - [x] Update "Material de Natación" to link to Euroswimcaps.com (already done)
 - [x] Update "Más Eventos Similares" to link to /eventos page (already done with filters)
 
+
+
+## Blog Images - User Request
+- [x] Add cover image to Guía de Subvenciones blog post
+- [x] Add cover image to Preparación para Competiciones blog post
+- [x] Check if Calendario Fiscal blog post needs to be created (not needed - user confirmed)
+

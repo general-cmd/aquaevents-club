@@ -83,9 +83,9 @@ export default function BlogPost() {
             </Button>
           </Link>
 
-          {post.featuredImage && (
+          {post.coverImage && (
             <img 
-              src={post.featuredImage} 
+              src={post.coverImage} 
               alt={post.title}
               className="w-full h-96 object-cover rounded-lg mb-8"
             />
@@ -100,7 +100,7 @@ export default function BlogPost() {
                 "@type": "BlogPosting",
                 headline: post.title,
                 description: post.metaDescription || post.excerpt,
-                image: post.featuredImage ? `https://aquaevents.club${post.featuredImage}` : undefined,
+                image: post.coverImage ? `https://aquaevents.club${post.coverImage}` : undefined,
                 datePublished: post.publishedAt,
                 dateModified: post.updatedAt || post.publishedAt,
                 author: {
