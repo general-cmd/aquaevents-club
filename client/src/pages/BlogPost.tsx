@@ -83,13 +83,41 @@ export default function BlogPost() {
             </Button>
           </Link>
 
-          {post.coverImage && (
+          {post.featuredImage && (
             <img 
-              src={post.coverImage} 
+              src={post.featuredImage} 
               alt={post.title}
               className="w-full h-96 object-cover rounded-lg mb-8"
             />
           )}
+
+          {/* Schema.org markup for SEO */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                headline: post.title,
+                description: post.metaDescription || post.excerpt,
+                image: post.featuredImage ? `https://aquaevents.club${post.featuredImage}` : undefined,
+                datePublished: post.publishedAt,
+                dateModified: post.updatedAt || post.publishedAt,
+                author: {
+                  "@type": "Organization",
+                  name: "AquaEvents.club"
+                },
+                publisher: {
+                  "@type": "Organization",
+                  name: "AquaEvents.club",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://aquaevents.club/logo.png"
+                  }
+                }
+              })
+            }}
+          />
 
           <div className="flex items-center gap-4 mb-6">
             {post.category && <Badge>{post.category}</Badge>}

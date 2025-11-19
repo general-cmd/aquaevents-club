@@ -120,3 +120,16 @@
 - [x] Add Spanish aquatic federations (RFEN + regional) to database
 - [x] Write 5 SEO-optimized blog articles
 
+
+
+## Blog & Federation Issues (User Feedback)
+- [x] Fix federations missing from MongoDB (federations are in MySQL and working correctly)
+- [x] Add featured images to all blog posts
+- [x] Improve blog text formatting with clear H2/H3 headings
+- [x] Add FAQ sections to blog posts with schema markup
+- [x] Add SEO meta descriptions and structured data
+- [x] Include references/sources in blog articles
+- [x] Add EuroSwimCaps CTA buttons to blog posts
+- [x] Add internal linking between blog posts
+- [x] Add internal linking from blog posts to related events
+

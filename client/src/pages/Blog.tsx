@@ -78,9 +78,9 @@ export default function Blog() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.posts.map((post: any) => (
               <Card key={post.id} className="hover:shadow-lg transition-shadow overflow-hidden">
-                {post.coverImage && (
+                {post.featuredImage && (
                   <img 
-                    src={post.coverImage} 
+                    src={post.featuredImage} 
                     alt={post.title}
                     className="w-full h-48 object-cover"
                   />

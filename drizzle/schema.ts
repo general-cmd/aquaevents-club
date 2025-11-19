@@ -46,6 +46,8 @@ export const blogPosts = mysqlTable("blogPosts", {
   excerpt: text("excerpt"),
   content: text("content").notNull(),
   coverImage: text("coverImage"),
+  featuredImage: text("featuredImage"),
+  metaDescription: text("metaDescription"),
   authorId: varchar("authorId", { length: 64 }).notNull(),
   status: mysqlEnum("status", ["draft", "pending", "published", "archived"]).default("draft").notNull(),
   category: varchar("category", { length: 100 }),

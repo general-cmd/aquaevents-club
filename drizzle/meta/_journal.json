@@ -15,6 +15,13 @@
       "when": 1763575575959,
       "tag": "0001_left_jimmy_woo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1763578641577,
+      "tag": "0002_jazzy_wallop",
+      "breakpoints": true
     }
   ]
 }
