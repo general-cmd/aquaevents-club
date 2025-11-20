@@ -50,6 +50,16 @@ export default function Admin() {
     },
   });
 
+  const publishMutation = trpc.eventSubmissions.publish.useMutation({
+    onSuccess: () => {
+      toast.success("¡Evento publicado en el calendario!");
+      refetchSubmissions();
+    },
+    onError: (error) => {
+      toast.error("Error al publicar evento: " + error.message);
+    },
+  });
+
   const updateBlogStatusMutation = trpc.blog.updateStatus.useMutation({
     onSuccess: () => {
       toast.success("Estado del artículo actualizado");
@@ -324,14 +334,23 @@ export default function Admin() {
                         />
                       </div>
 
-                      <div className="flex gap-3">
+                      <div className="flex gap-3 flex-wrap">
                         <Button
                           onClick={() => approveMutation.mutate({ id: submission.id, adminNotes: adminNotes[submission.id] })}
                           className="bg-green-600 hover:bg-green-700"
                           disabled={approveMutation.isPending}
                         >
                           <CheckCircle className="w-4 h-4 mr-2" />
-                          Aprobar Evento
+                          Aprobar
+                        </Button>
+                        <Button
+                          onClick={() => publishMutation.mutate({ id: submission.id })}
+                          className="bg-blue-600 hover:bg-blue-700"
+                          disabled={publishMutation.isPending || submission.status !== 'approved'}
+                          title={submission.status !== 'approved' ? 'Debes aprobar el evento primero' : 'Publicar evento en el calendario público'}
+                        >
+                          <Calendar className="w-4 h-4 mr-2" />
+                          Publicar al Calendario
                         </Button>
                         <Button
                           onClick={() => rejectMutation.mutate({ id: submission.id, adminNotes: adminNotes[submission.id] })}

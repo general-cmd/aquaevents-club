@@ -173,6 +173,18 @@ export async function getPendingEventSubmissions() {
     .from(eventSubmissions)
     .where(eq(eventSubmissions.status, "pending"))
     .orderBy(eventSubmissions.createdAt);
+  return result;
+}
+
+export async function getUserEventSubmissions(userId: string) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db
+    .select()
+    .from(eventSubmissions)
+    .where(eq(eventSubmissions.submittedBy, userId))
+    .orderBy(eventSubmissions.createdAt);
   
   return result;
 }

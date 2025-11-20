@@ -82,8 +82,10 @@ export const eventSubmissions = mysqlTable("eventSubmissions", {
   status: mysqlEnum("status", ["pending", "approved", "rejected"]).default("pending").notNull(),
   adminNotes: text("adminNotes"),
   createdAt: timestamp("createdAt").defaultNow(),
+  updatedAt: timestamp("updatedAt").defaultNow(),
   reviewedAt: timestamp("reviewedAt"),
   reviewedBy: varchar("reviewedBy", { length: 64 }), // Admin user ID
+  publishedAt: timestamp("publishedAt"), // When event was published to MongoDB
 });
 
 export type EventSubmission = typeof eventSubmissions.$inferSelect;

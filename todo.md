@@ -213,3 +213,16 @@
 - [x] Add BreadcrumbList to event detail, blog post, and other key pages
 - [x] Test all schema markup with Google Rich Results Test (visual verification complete)
 
+
+
+
+## New Features - User Request (Auto-publish, Tracking, Emails)
+- [x] Add auto-publish button to admin dashboard for approved events
+- [x] Create tRPC procedure to copy approved event from MySQL to MongoDB
+- [x] Add "Mis Eventos Enviados" section to user profile page
+- [x] Show submission status badges (pending/approved/rejected)
+- [x] Integrate Systeme.io email for event submission confirmation
+- [x] Integrate Systeme.io email for approval notification
+- [x] Integrate Systeme.io email for rejection notification
+- [x] Write vitest tests for new features
+

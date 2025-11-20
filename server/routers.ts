@@ -6,10 +6,14 @@ import { z } from "zod";
 import { 
   getEventById, getEvents, getEventStats, getAllFederations, getFederationById, 
   getPublishedBlogPosts, getBlogPostBySlug, getAllBlogPosts, createBlogPost, updateBlogPost,
-  createEventSubmission, getAllEventSubmissions, getPendingEventSubmissions, updateEventSubmission,
+  createEventSubmission, getAllEventSubmissions, getPendingEventSubmissions, getUserEventSubmissions, updateEventSubmission,
   addUserFavorite, removeUserFavorite, getUserFavorites, isEventFavorited,
-  updateUserProfile
+  updateUserProfile, getDb
 } from "./db";
+import { eventSubmissions } from "../drizzle/schema";
+import { eq } from "drizzle-orm";
+import { publishEventToMongo } from "./publishEvent";
+import { sendEventSubmissionConfirmation, sendEventApprovalNotification, sendEventRejectionNotification } from "./_core/systemeio";
 import { protectedProcedure } from "./_core/trpc";
 import { nanoid } from "nanoid";
 
@@ -217,6 +221,19 @@ export const appRouter = router({
           submittedBy: ctx.user?.id,
           status: 'pending',
         });
+        
+        // Send confirmation email via Systeme.io
+        try {
+          await sendEventSubmissionConfirmation(
+            input.contactEmail,
+            input.title,
+            input.contactName
+          );
+        } catch (error) {
+          console.error('[Event Submission] Failed to send confirmation email:', error);
+          // Don't fail the submission if email fails
+        }
+        
         return {
           success: true,
           submission,
@@ -245,6 +262,14 @@ export const appRouter = router({
       };
     }),
 
+    mySubmissions: protectedProcedure.query(async ({ ctx }) => {
+      const submissions = await getUserEventSubmissions(ctx.user.id);
+      return {
+        success: true,
+        submissions,
+      };
+    }),
+
     approve: protectedProcedure
       .input(z.object({
         id: z.string(),
@@ -254,12 +279,34 @@ export const appRouter = router({
         if (ctx.user.role !== 'admin') {
           throw new Error('Unauthorized');
         }
-        await updateEventSubmission(input.id, {
-          status: 'approved',
-          reviewedAt: new Date(),
-          reviewedBy: ctx.user.id,
-          adminNotes: input.adminNotes,
-        });
+        
+        // Get submission details for email
+        const db = await getDb();
+        if (db) {
+          const submissions = await db.select().from(eventSubmissions).where(eq(eventSubmissions.id, input.id)).limit(1);
+          if (submissions.length > 0) {
+            const submission = submissions[0];
+            
+            // Update status
+            await updateEventSubmission(input.id, {
+              status: 'approved',
+              reviewedAt: new Date(),
+              reviewedBy: ctx.user.id,
+              adminNotes: input.adminNotes,
+            });
+            
+            // Send approval email via Systeme.io
+            try {
+              await sendEventApprovalNotification(
+                submission.contactEmail,
+                submission.title
+              );
+            } catch (error) {
+              console.error('[Event Approval] Failed to send approval email:', error);
+            }
+          }
+        }
+        
         return {
           success: true,
         };
@@ -274,14 +321,55 @@ export const appRouter = router({
         if (ctx.user.role !== 'admin') {
           throw new Error('Unauthorized');
         }
-        await updateEventSubmission(input.id, {
-          status: 'rejected',
-          reviewedAt: new Date(),
-          reviewedBy: ctx.user.id,
-          adminNotes: input.adminNotes,
-        });
+        
+        // Get submission details for email
+        const db = await getDb();
+        if (db) {
+          const submissions = await db.select().from(eventSubmissions).where(eq(eventSubmissions.id, input.id)).limit(1);
+          if (submissions.length > 0) {
+            const submission = submissions[0];
+            
+            // Update status
+            await updateEventSubmission(input.id, {
+              status: 'rejected',
+              reviewedAt: new Date(),
+              reviewedBy: ctx.user.id,
+              adminNotes: input.adminNotes,
+            });
+            
+            // Send rejection email via Systeme.io
+            try {
+              await sendEventRejectionNotification(
+                submission.contactEmail,
+                submission.title,
+                input.adminNotes
+              );
+            } catch (error) {
+              console.error('[Event Rejection] Failed to send rejection email:', error);
+            }
+          }
+        }
+        
         return {
           success: true,
+        };
+      }),
+
+    publish: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        const result = await publishEventToMongo(input.id);
+        if (!result.success) {
+          throw new Error(result.error || 'Failed to publish event');
+        }
+        return {
+          success: true,
+          eventId: result.eventId,
         };
       }),
   }),

@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { User, Mail, CheckCircle, Heart } from "lucide-react";
+import { User, Mail, CheckCircle, Heart, Calendar, Clock, XCircle } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -26,6 +27,11 @@ export default function UserProfile() {
   const { user, loading, isAuthenticated } = useAuth();
   const [, setLocation] = useLocation();
   const [saved, setSaved] = useState(false);
+  
+  // Fetch user's event submissions
+  const { data: submissionsData } = trpc.eventSubmissions.mySubmissions.useQuery(undefined, {
+    enabled: isAuthenticated,
+  });
   
   const [formData, setFormData] = useState<{
     userType: "club" | "swimmer" | "federation" | "other" | "";
@@ -325,6 +331,80 @@ export default function UserProfile() {
               </form>
             </CardContent>
           </Card>
+
+          {/* My Event Submissions */}
+          {submissionsData && (
+            <Card className="mt-6">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calendar className="w-5 h-5" />
+                  Mis Eventos Enviados
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                {submissionsData.submissions.length === 0 ? (
+                  <div className="text-center py-8 text-gray-500">
+                    <Calendar className="w-12 h-12 mx-auto mb-3 text-gray-400" />
+                    <p>No has enviado ningún evento aún</p>
+                    <Link href="/enviar-evento">
+                      <Button className="mt-4 bg-gradient-to-r from-blue-600 to-cyan-500">
+                        Enviar Evento
+                      </Button>
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {submissionsData.submissions.map((submission: any) => (
+                    <div key={submission.id} className="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-lg mb-1">{submission.title}</h3>
+                          <p className="text-sm text-gray-600 mb-2">
+                            {submission.city}, {submission.region} • {submission.discipline}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            {new Date(submission.startDate).toLocaleDateString('es-ES', { 
+                              day: 'numeric', 
+                              month: 'long', 
+                              year: 'numeric' 
+                            })}
+                          </p>
+                        </div>
+                        <div className="flex flex-col items-end gap-2">
+                          <Badge 
+                            variant={submission.status === 'approved' ? 'default' : submission.status === 'rejected' ? 'destructive' : 'secondary'}
+                            className="whitespace-nowrap"
+                          >
+                            {submission.status === 'pending' && (
+                              <><Clock className="w-3 h-3 mr-1" /> Pendiente</>
+                            )}
+                            {submission.status === 'approved' && (
+                              <><CheckCircle className="w-3 h-3 mr-1" /> Aprobado</>
+                            )}
+                            {submission.status === 'rejected' && (
+                              <><XCircle className="w-3 h-3 mr-1" /> Rechazado</>
+                            )}
+                          </Badge>
+                          {submission.publishedAt && (
+                            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                              Publicado
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                      {submission.adminNotes && (
+                        <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded text-sm">
+                          <p className="font-medium text-blue-900 mb-1">Nota del administrador:</p>
+                          <p className="text-blue-700">{submission.adminNotes}</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          )}
 
           {/* Privacy Notice */}
           <Card className="mt-6 bg-gray-50 border-gray-200">
