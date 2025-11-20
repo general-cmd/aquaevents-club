@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Calendar, ArrowLeft, Share2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 
 export default function BlogPost() {
   const [, params] = useRoute("/blog/:slug");
@@ -45,7 +46,13 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <>
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: post.title, url: `/blog/${slug}` }
+      ]} />
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -177,6 +184,7 @@ export default function BlogPost() {
         </div>
       </article>
     </div>
+    </>
   );
 }
 

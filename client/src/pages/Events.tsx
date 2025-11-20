@@ -7,6 +7,8 @@ import { Calendar, MapPin, Search, Filter } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
+import ItemListSchema from "@/components/schema/ItemListSchema";
+import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 
 interface Event {
   _id: string;
@@ -136,8 +138,27 @@ export default function Events() {
     }).format(date);
   };
 
+  // Prepare data for ItemList schema
+  const schemaItems = filteredEvents.slice(0, 50).map(event => ({
+    name: event.name.es,
+    url: `/evento/${event.seo?.canonical || event._id}`,
+    description: `${event.name.es} en ${event.location.city}, ${event.location.region}`,
+    date: event.date,
+    location: `${event.location.city}, ${event.location.region}`
+  }));
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
+      {/* Schema.org Structured Data for AI SEO */}
+      <ItemListSchema 
+        items={schemaItems}
+        listName="Eventos Acuáticos en España 2026"
+        listDescription="Calendario completo de competiciones de natación, triatlón, waterpolo y aguas abiertas en España"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Eventos", url: "/eventos" }
+      ]} />
       {/* Header/Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">

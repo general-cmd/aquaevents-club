@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, Share2, Heart } from "lucide-react";
 import { Link, useParams, useLocation } from "wouter";
 import EventStructuredData from "@/components/EventStructuredData";
+import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { toast } from "sonner";
@@ -167,6 +168,11 @@ export default function EventDetail() {
   return (
     <>
       <EventStructuredData event={event} />
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Eventos", url: "/eventos" },
+        { name: event.name.es, url: `/evento/${params.id}` }
+      ]} />
       
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
         {/* Header with Logo and Navigation */}

@@ -5,6 +5,9 @@ import { APP_LOGO } from "@/const";
 import { Calendar, MapPin, Trophy, Users, Clock, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { trpc } from "@/lib/trpc";
+import WebSiteSchema from "@/components/schema/WebSiteSchema";
+import OrganizationSchema from "@/components/schema/OrganizationSchema";
+import FAQSchema from "@/components/schema/FAQSchema";
 
 interface Event {
   _id: string;
@@ -34,8 +37,32 @@ export default function Home() {
 
   // No useEffect needed - tRPC handles data fetching automatically
 
+  // FAQ data for schema markup
+  const faqs = [
+    {
+      question: "¿Dónde puedo encontrar eventos de natación en España 2026?",
+      answer: "AquaEvents.club es el calendario más completo de eventos acuáticos en España 2026. Recopilamos competiciones de natación, triatlón, waterpolo y aguas abiertas de todas las federaciones oficiales, actualizado mensualmente el día 15."
+    },
+    {
+      question: "¿Cómo puedo inscribirme en una competición?",
+      answer: "Cada evento incluye información de contacto y enlaces directos a la página oficial de inscripción. Haz clic en 'Ver Detalles' del evento que te interese para acceder a toda la información necesaria."
+    },
+    {
+      question: "¿Cuándo se actualiza el calendario?",
+      answer: "Actualizamos el calendario automáticamente el día 15 de cada mes con los últimos eventos publicados por la RFEN, FETRI y todas las federaciones autonómicas. Suscríbete a nuestro newsletter para recibir las novedades."
+    },
+    {
+      question: "¿Es gratis usar AquaEvents.club?",
+      answer: "Sí, completamente gratis. Nuestro objetivo es facilitar el acceso a la información de eventos acuáticos para clubes, nadadores, triatletas y aficionados en toda España."
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
+      {/* Schema.org Structured Data for AI SEO */}
+      <WebSiteSchema />
+      <OrganizationSchema />
+      <FAQSchema faqs={faqs} />
       {/* Header/Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
