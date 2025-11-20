@@ -55,6 +55,12 @@ export default function Home() {
             <a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Blog
             </a>
+            <a href="/enviar-evento" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              Enviar Evento
+            </a>
+            <a href="/perfil" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              Mi Perfil
+            </a>
             <Button 
               className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
               onClick={() => document.getElementById('newsletter-form')?.scrollIntoView({ behavior: 'smooth' })}
@@ -103,6 +109,20 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Blog
+              </a>
+              <a 
+                href="/enviar-evento" 
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Enviar Evento
+              </a>
+              <a 
+                href="/perfil" 
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Mi Perfil
               </a>
               <Button 
                 className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 w-full"

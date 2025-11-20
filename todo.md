@@ -194,3 +194,11 @@
 - [x] Add cover image to Preparación para Competiciones blog post
 - [x] Check if Calendario Fiscal blog post needs to be created (not needed - user confirmed)
 
+
+
+## UI Improvements - User Request
+- [x] Add "Enviar Evento" link to header navigation
+- [x] Add "Mi Perfil" link to header navigation
+- [x] Add cover images to blog listing page
+- [x] Create Systeme.io email template documentation
+
