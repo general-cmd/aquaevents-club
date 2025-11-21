@@ -332,3 +332,17 @@
 - [x] Test end-to-end: profile update → Systeme.io contact created with correct tag
 
 
+
+
+
+## Google Search Console - XML Sitemap
+
+- [x] Create dynamic sitemap.xml endpoint
+- [x] Include all static pages (home, eventos, federaciones, blog, enviar-evento)
+- [x] Include all published events from database
+- [x] Include all blog posts
+- [x] Include all federation pages
+- [x] Add robots.txt with sitemap reference
+- [x] Test sitemap generation and XML format
+
+

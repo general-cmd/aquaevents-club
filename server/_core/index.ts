@@ -7,6 +7,7 @@ import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import eventsRouter from "../routes/events";
+import sitemapRouter from "../sitemap";
 import { serveStatic, setupVite } from "./vite";
 
 function isPortAvailable(port: number): Promise<boolean> {
@@ -38,6 +39,8 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Events API
   app.use("/api/events", eventsRouter);
+  // Sitemap for Google Search Console
+  app.use("", sitemapRouter);
   // tRPC API
   app.use(
     "/api/trpc",

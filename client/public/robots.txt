@@ -1,0 +1,12 @@
+# robots.txt for AquaEvents.club
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aquaevents.club/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /admin
+Disallow: /api/
+
