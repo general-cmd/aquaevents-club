@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Calendar, CheckCircle, XCircle, Clock, User, FileText, Building2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -15,6 +16,7 @@ export default function Admin() {
   const [, setLocation] = useLocation();
   const [activeTab, setActiveTab] = useState<"submissions" | "blog" | "federations">("submissions");
   const [adminNotes, setAdminNotes] = useState<Record<string, string>>({});
+  const [selectedSubmissions, setSelectedSubmissions] = useState<Set<string>>(new Set());
 
   // Check if user is admin
   const isAdmin = user?.role === "admin";
@@ -59,6 +61,61 @@ export default function Admin() {
       toast.error("Error al publicar evento: " + error.message);
     },
   });
+
+  // Bulk operations handlers
+  const handleBulkApprove = async () => {
+    if (selectedSubmissions.size === 0) {
+      toast.error("Selecciona al menos un evento");
+      return;
+    }
+    for (const id of Array.from(selectedSubmissions)) {
+      await approveMutation.mutateAsync({ id });
+    }
+    setSelectedSubmissions(new Set());
+    toast.success(`${selectedSubmissions.size} eventos aprobados`);
+  };
+
+  const handleBulkReject = async () => {
+    if (selectedSubmissions.size === 0) {
+      toast.error("Selecciona al menos un evento");
+      return;
+    }
+    for (const id of Array.from(selectedSubmissions)) {
+      await rejectMutation.mutateAsync({ id, adminNotes: "Rechazado en lote" });
+    }
+    setSelectedSubmissions(new Set());
+    toast.success(`${selectedSubmissions.size} eventos rechazados`);
+  };
+
+  const handleBulkPublish = async () => {
+    if (selectedSubmissions.size === 0) {
+      toast.error("Selecciona al menos un evento");
+      return;
+    }
+    for (const id of Array.from(selectedSubmissions)) {
+      await publishMutation.mutateAsync({ id });
+    }
+    setSelectedSubmissions(new Set());
+    toast.success(`${selectedSubmissions.size} eventos publicados`);
+  };
+
+  const toggleSelection = (id: string) => {
+    const newSelection = new Set(selectedSubmissions);
+    if (newSelection.has(id)) {
+      newSelection.delete(id);
+    } else {
+      newSelection.add(id);
+    }
+    setSelectedSubmissions(newSelection);
+  };
+
+  const toggleSelectAll = () => {
+    if (selectedSubmissions.size === submissionsData?.submissions.length) {
+      setSelectedSubmissions(new Set());
+    } else {
+      setSelectedSubmissions(new Set(submissionsData?.submissions.map((s: any) => s.id) || []));
+    }
+  };
 
   const updateBlogStatusMutation = trpc.blog.updateStatus.useMutation({
     onSuccess: () => {
@@ -232,6 +289,50 @@ export default function Admin() {
 
           {/* Event Submissions Tab */}
           {activeTab === "submissions" && (
+            <>
+            {/* Bulk Actions */}
+            {pendingSubmissions.length > 0 && (
+              <div className="mb-6 p-4 bg-white rounded-lg border flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <Checkbox
+                    checked={selectedSubmissions.size === pendingSubmissions.length && pendingSubmissions.length > 0}
+                    onCheckedChange={toggleSelectAll}
+                  />
+                  <span className="text-sm font-medium">
+                    {selectedSubmissions.size} de {pendingSubmissions.length} seleccionados
+                  </span>
+                </div>
+                {selectedSubmissions.size > 0 && (
+                  <div className="flex gap-2">
+                    <Button
+                      onClick={handleBulkApprove}
+                      className="bg-green-600 hover:bg-green-700"
+                      disabled={approveMutation.isPending}
+                    >
+                      <CheckCircle className="w-4 h-4 mr-2" />
+                      Aprobar ({selectedSubmissions.size})
+                    </Button>
+                    <Button
+                      onClick={handleBulkReject}
+                      variant="destructive"
+                      disabled={rejectMutation.isPending}
+                    >
+                      <XCircle className="w-4 h-4 mr-2" />
+                      Rechazar ({selectedSubmissions.size})
+                    </Button>
+                    <Button
+                      onClick={handleBulkPublish}
+                      className="bg-blue-600 hover:bg-blue-700"
+                      disabled={publishMutation.isPending}
+                    >
+                      <Calendar className="w-4 h-4 mr-2" />
+                      Publicar ({selectedSubmissions.size})
+                    </Button>
+                  </div>
+                )}
+              </div>
+            )}
+
             <div className="space-y-6">
               {pendingSubmissions.length === 0 ? (
                 <Card>
@@ -249,8 +350,13 @@ export default function Admin() {
                 pendingSubmissions.map((submission: any) => (
                   <Card key={submission.id}>
                     <CardHeader>
-                      <div className="flex justify-between items-start">
-                        <div>
+                      <div className="flex justify-between items-start gap-4">
+                        <Checkbox
+                          checked={selectedSubmissions.has(submission.id)}
+                          onCheckedChange={() => toggleSelection(submission.id)}
+                          className="mt-1"
+                        />
+                        <div className="flex-1">
                           <CardTitle className="text-2xl mb-2">{submission.title}</CardTitle>
                           <div className="flex gap-2">
                             <Badge>{submission.discipline}</Badge>
@@ -366,6 +472,7 @@ export default function Admin() {
                 ))
               )}
             </div>
+            </>
           )}
 
           {/* Blog Tab */}

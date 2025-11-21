@@ -1,10 +1,12 @@
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Calendar, MapPin, User } from "lucide-react";
+import { Heart, Calendar, MapPin, User, Download } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
+import { generateICS } from "@/utils/icsExport";
+import { toast } from "sonner";
 
 export default function UserFavorites() {
   const { user, loading, isAuthenticated } = useAuth();
@@ -21,6 +23,25 @@ export default function UserFavorites() {
       trpc.useUtils().favorites.list.invalidate();
     },
   });
+
+  const handleExportCalendar = () => {
+    if (!favoriteEvents || favoriteEvents.length === 0) {
+      toast.error("No tienes eventos favoritos para exportar");
+      return;
+    }
+
+    const icsEvents = favoriteEvents.map((event: any) => ({
+      title: event.title,
+      startDate: event.date,
+      endDate: event.endDate || event.date,
+      location: `${event.city}, ${event.region}`,
+      description: `${event.discipline}${event.category ? ` - ${event.category}` : ''}\n\n${event.description || ''}`,
+      url: `https://aquaevents.club/evento/${event.slug}`
+    }));
+
+    generateICS(icsEvents, 'mis-eventos-favoritos.ics');
+    toast.success(`${favoriteEvents.length} eventos exportados al calendario`);
+  };
 
   if (loading || favoritesLoading) {
     return (
@@ -144,9 +165,18 @@ export default function UserFavorites() {
             <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Mis Eventos Favoritos
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 mb-4">
               Eventos que has guardado para seguir de cerca
             </p>
+            {favoriteEvents && favoriteEvents.length > 0 && (
+              <Button
+                onClick={handleExportCalendar}
+                className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Exportar al Calendario ({favoriteEvents.length} eventos)
+              </Button>
+            )}
           </div>
 
           {favoriteEvents.length === 0 ? (

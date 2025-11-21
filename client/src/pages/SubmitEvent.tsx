@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, MapPin, Mail, Phone, Globe, CheckCircle } from "lucide-react";
+import { Calendar, MapPin, Mail, Phone, Globe, CheckCircle, FileText } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { EVENT_TEMPLATES } from "@/data/eventTemplates";
 
 const DISCIPLINES = [
   "Natación",
@@ -55,6 +56,7 @@ const REGIONS = [
 export default function SubmitEvent() {
   const [, setLocation] = useLocation();
   const [submitted, setSubmitted] = useState(false);
+  const [selectedTemplate, setSelectedTemplate] = useState<string>("");
   
   const [formData, setFormData] = useState({
     title: "",
@@ -94,6 +96,18 @@ export default function SubmitEvent() {
 
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const applyTemplate = (templateId: string) => {
+    const template = EVENT_TEMPLATES.find(t => t.id === templateId);
+    if (template) {
+      setFormData(prev => ({
+        ...prev,
+        ...template.data
+      }));
+      setSelectedTemplate(templateId);
+      toast.success(`Plantilla "${template.name}" aplicada`);
+    }
   };
 
   if (submitted) {
@@ -243,6 +257,32 @@ export default function SubmitEvent() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Template Selector */}
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center gap-2 mb-3">
+                    <FileText className="w-5 h-5 text-blue-600" />
+                    <h3 className="font-semibold text-blue-900">Plantillas de Eventos</h3>
+                  </div>
+                  <p className="text-sm text-blue-700 mb-3">
+                    Selecciona una plantilla para rellenar automáticamente el formulario con información típica del tipo de evento.
+                  </p>
+                  <Select value={selectedTemplate} onValueChange={applyTemplate}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Selecciona una plantilla (opcional)" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {EVENT_TEMPLATES.map(template => (
+                        <SelectItem key={template.id} value={template.id}>
+                          <div>
+                            <div className="font-medium">{template.name}</div>
+                            <div className="text-xs text-gray-500">{template.description}</div>
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
                 {/* Title */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">

@@ -3,10 +3,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, MapPin, Search, Filter } from "lucide-react";
+import { Calendar, MapPin, Search, Filter, Download } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
+import { generateICS } from "@/utils/icsExport";
+import { toast } from "sonner";
 import ItemListSchema from "@/components/schema/ItemListSchema";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 
@@ -36,6 +38,25 @@ export default function Events() {
 
   // Use tRPC to fetch ALL upcoming events (no limit)
   const { data: eventsData, isLoading } = trpc.events.list.useQuery({ limit: 500 });
+
+  const handleExportCalendar = () => {
+    if (!filteredEvents || filteredEvents.length === 0) {
+      toast.error("No hay eventos para exportar");
+      return;
+    }
+
+    const icsEvents = filteredEvents.map((event: any) => ({
+      title: event.name?.es || event.name,
+      startDate: event.date,
+      endDate: event.endDate || event.date,
+      location: `${event.location?.city}, ${event.location?.region}`,
+      description: `${event.discipline || ''}`,
+      url: event.seo?.canonical || `https://aquaevents.club/evento/${event._id}`
+    }));
+
+    generateICS(icsEvents, 'eventos-acuaticos.ics');
+    toast.success(`${filteredEvents.length} eventos exportados al calendario`);
+  };
 
   useEffect(() => {
     if (eventsData?.events) {
@@ -279,9 +300,22 @@ export default function Events() {
               </Select>
             </div>
 
-            {/* Results Count */}
-            <div className="mt-4 text-sm text-gray-600">
-              Mostrando <span className="font-semibold text-blue-600">{filteredEvents.length}</span> eventos
+            {/* Results Count and Export */}
+            <div className="mt-4 flex items-center justify-between">
+              <div className="text-sm text-gray-600">
+                Mostrando <span className="font-semibold text-blue-600">{filteredEvents.length}</span> eventos
+              </div>
+              {filteredEvents.length > 0 && (
+                <Button
+                  onClick={handleExportCalendar}
+                  variant="outline"
+                  size="sm"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Exportar ({filteredEvents.length})
+                </Button>
+              )}
             </div>
           </CardContent>
         </Card>

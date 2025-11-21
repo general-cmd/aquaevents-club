@@ -226,3 +226,24 @@
 - [x] Integrate Systeme.io email for rejection notification
 - [x] Write vitest tests for new features
 
+
+
+
+## New Features - User Request
+
+- [x] Add bulk operations to admin dashboard (checkboxes and batch actions)
+- [x] Add batch approve button for multiple submissions
+- [x] Add batch reject button for multiple submissions
+- [x] Add batch publish button for multiple submissions
+- [x] Create event submission templates for common event types
+- [x] Add template for regional championships
+- [x] Add template for club meets
+- [x] Add template for open water races
+- [x] Add template for waterpolo tournaments
+- [x] Add template for triathlon events
+- [x] Add ICS calendar export functionality
+- [x] Add export button to favorites page
+- [x] Add export button to events listing page
+- [x] Generate ICS files compatible with Google/Apple Calendar
+- [x] Write vitest tests for new features
+
