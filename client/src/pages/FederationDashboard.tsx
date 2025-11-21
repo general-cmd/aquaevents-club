@@ -5,7 +5,8 @@ import { Calendar, Eye, Users, TrendingUp, Plus } from "lucide-react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { toast } from "sonner";
+import { getLoginUrl } from "@/const";
+import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 
 export default function FederationDashboard() {
   const { user, isAuthenticated } = useAuth();
@@ -70,9 +71,14 @@ export default function FederationDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-12">
+    <>
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Panel de Federación", url: "/federacion" }
+      ]} />
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-2">Panel de Federación</h1>
           <p className="text-blue-100">
@@ -208,6 +214,7 @@ export default function FederationDashboard() {
         </Card>
       </div>
     </div>
+    </>
   );
 }
 

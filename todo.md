@@ -297,3 +297,25 @@
 - [x] Update event templates interface to include registration fields
 
 
+
+
+
+## Critical Bug Fixes - User Reported
+
+- [ ] Fix "2 errors" message appearing on /perfil page
+- [ ] Fix admin dashboard not loading at /admin
+- [ ] Verify SEO/AISEO schema markup on new pages (reminder, registration, federation dashboard)
+- [ ] Add BreadcrumbList schema to new pages if missing
+- [ ] Test all pages for proper metadata and structured data
+
+
+
+
+## SEO/AISEO Schema Markup - Completed
+
+- [x] Verify EventDetail has Event schema and BreadcrumbList (already present)
+- [x] Add BreadcrumbSchema to FederationDashboard
+- [x] Add BreadcrumbSchema to SubmitEvent page
+- [x] All new pages now have proper structured data for search engines
+
+

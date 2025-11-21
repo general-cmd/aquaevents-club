@@ -9,6 +9,7 @@ import { Calendar, MapPin, Mail, Phone, Globe, CheckCircle, FileText, ExternalLi
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { EVENT_TEMPLATES } from "@/data/eventTemplates";
+import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 
 const DISCIPLINES = [
   "Natación",
@@ -205,9 +206,14 @@ export default function SubmitEvent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+    <>
+      <BreadcrumbSchema items={[
+        { name: "Inicio", url: "/" },
+        { name: "Enviar Evento", url: "/enviar-evento" }
+      ]} />
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+        {/* Header */}
+        <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
@@ -541,6 +547,7 @@ export default function SubmitEvent() {
         </div>
       </section>
     </div>
+    </>
   );
 }
 
