@@ -8,7 +8,8 @@ import {
   getPublishedBlogPosts, getBlogPostBySlug, getAllBlogPosts, createBlogPost, updateBlogPost,
   createEventSubmission, getAllEventSubmissions, getPendingEventSubmissions, getUserEventSubmissions, updateEventSubmission,
   addUserFavorite, removeUserFavorite, getUserFavorites, isEventFavorited,
-  updateUserProfile, getDb
+  updateUserProfile, getDb,
+  createEventReminder, getUserReminders, getEventReminders, deleteEventReminder
 } from "./db";
 import { eventSubmissions } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
@@ -211,6 +212,8 @@ export const appRouter = router({
         contactPhone: z.string().optional(),
         website: z.string().optional(),
         description: z.string().optional(),
+        registrationUrl: z.string().optional(),
+        maxCapacity: z.string().optional(),
       }))
       .mutation(async ({ input, ctx }) => {
         const submission = await createEventSubmission({
@@ -447,6 +450,83 @@ export const appRouter = router({
         return {
           success: true,
           isFavorited,
+        };
+      }),
+  }),
+
+  reminders: router({
+    create: protectedProcedure
+      .input(z.object({
+        eventId: z.string(),
+        eventTitle: z.string(),
+        eventDate: z.string(),
+        reminderType: z.enum(["1_week", "3_days", "1_day", "same_day"]),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const eventDate = new Date(input.eventDate);
+        let reminderDate = new Date(eventDate);
+        
+        // Calculate reminder date based on type
+        switch (input.reminderType) {
+          case "1_week":
+            reminderDate.setDate(reminderDate.getDate() - 7);
+            break;
+          case "3_days":
+            reminderDate.setDate(reminderDate.getDate() - 3);
+            break;
+          case "1_day":
+            reminderDate.setDate(reminderDate.getDate() - 1);
+            break;
+          case "same_day":
+            reminderDate.setHours(9, 0, 0, 0); // 9 AM on event day
+            break;
+        }
+
+        const reminder = await createEventReminder({
+          id: nanoid(),
+          userId: ctx.user.id,
+          eventId: input.eventId,
+          eventTitle: input.eventTitle,
+          eventDate: eventDate,
+          reminderType: input.reminderType,
+          reminderDate: reminderDate,
+          sent: false,
+        });
+
+        return {
+          success: true,
+          reminder,
+        };
+      }),
+
+    list: protectedProcedure.query(async ({ ctx }) => {
+      const reminders = await getUserReminders(ctx.user.id);
+      return {
+        success: true,
+        reminders,
+      };
+    }),
+
+    listForEvent: protectedProcedure
+      .input(z.object({
+        eventId: z.string(),
+      }))
+      .query(async ({ input, ctx }) => {
+        const reminders = await getEventReminders(ctx.user.id, input.eventId);
+        return {
+          success: true,
+          reminders,
+        };
+      }),
+
+    delete: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const success = await deleteEventReminder(input.id, ctx.user.id);
+        return {
+          success,
         };
       }),
   }),

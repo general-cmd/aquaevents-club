@@ -36,6 +36,20 @@
       "when": 1763673838825,
       "tag": "0004_hot_sunset_bain",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1763705106245,
+      "tag": "0005_silky_moonstone",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1763705464462,
+      "tag": "0006_sour_beast",
+      "breakpoints": true
     }
   ]
 }

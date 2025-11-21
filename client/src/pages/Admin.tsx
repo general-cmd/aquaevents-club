@@ -417,6 +417,19 @@ export default function Admin() {
                                 </a>
                               </div>
                             )}
+                            {submission.registrationUrl && (
+                              <div>
+                                <span className="font-medium">Inscripción:</span>{" "}
+                                <a href={submission.registrationUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                  {submission.registrationUrl}
+                                </a>
+                              </div>
+                            )}
+                            {submission.maxCapacity && (
+                              <div>
+                                <span className="font-medium">Capacidad:</span> {submission.maxCapacity}
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>

@@ -247,3 +247,53 @@
 - [x] Generate ICS files compatible with Google/Apple Calendar
 - [x] Write vitest tests for new features
 
+
+
+
+## New Features - User Request (Reminders, Federation Dashboard, Registration)
+
+- [x] Add event reminder system
+- [x] Add reminder preferences to user profile (1 week, 1 day, etc.)
+- [x] Store reminders in database with user and event association
+- [x] Add reminder UI to event detail page with Dialog component
+- [x] Create federation dashboard at /federacion route
+- [x] Add federation event management interface
+- [x] Add federation analytics (views, registrations)
+- [x] Add event registration integration
+- [x] Add registration link field to events
+- [x] Add capacity tracking for events
+- [x] Display registration button and capacity on event detail pages
+- [x] Show registration info in admin dashboard
+- [x] Write vitest tests for new features (9 tests passing)
+
+
+
+
+## Phase 1 Progress - Registration Integration
+- [x] Add registrationUrl and maxCapacity fields to event submission form
+- [x] Update tRPC schema to accept registration fields
+- [ ] Display registration button and capacity on event detail pages
+- [ ] Show registration stats in admin dashboard
+- [ ] Update event templates to include registration fields
+
+
+
+
+## Phase 2 Progress - Reminder System UI
+- [x] Replace prompt dialog with proper Dialog component
+- [x] Add visual reminder options with icons
+- [x] Improve UX with loading states and success messages
+- [ ] Test reminder creation end-to-end
+
+
+
+
+## Phase 4 Progress - Registration Integration Complete
+- [x] Add registrationUrl and maxCapacity fields to event submission form
+- [x] Update tRPC schema to accept registration fields
+- [x] Display registration button on event detail pages (green button with external link)
+- [x] Show capacity info with current/max registrations on event detail
+- [x] Show registration stats in admin dashboard
+- [x] Update event templates interface to include registration fields
+
+

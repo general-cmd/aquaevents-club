@@ -1,4 +1,4 @@
-import { mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { boolean, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -10,7 +10,7 @@ export const users = mysqlTable("users", {
   name: text("name"),
   email: varchar("email", { length: 320 }),
   loginMethod: varchar("loginMethod", { length: 64 }),
-  role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
+  role: mysqlEnum("role", ["user", "admin", "federation"]).default("user").notNull(),
   userType: mysqlEnum("userType", ["club", "swimmer", "federation", "other"]),
   preferredDisciplines: text("preferredDisciplines"), // JSON array stored as text
   emailConsent: timestamp("emailConsent"), // Timestamp when user consented to emails (GDPR)
@@ -20,6 +20,22 @@ export const users = mysqlTable("users", {
 
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
+
+// Event reminders table
+export const eventReminders = mysqlTable("eventReminders", {
+  id: varchar("id", { length: 64 }).primaryKey(),
+  userId: varchar("userId", { length: 64 }).notNull(),
+  eventId: varchar("eventId", { length: 255 }).notNull(), // MongoDB event ID
+  eventTitle: text("eventTitle").notNull(),
+  eventDate: timestamp("eventDate").notNull(),
+  reminderType: mysqlEnum("reminderType", ["1_week", "3_days", "1_day", "same_day"]).notNull(),
+  reminderDate: timestamp("reminderDate").notNull(),
+  sent: boolean("sent").default(false).notNull(),
+  createdAt: timestamp("createdAt").defaultNow(),
+});
+
+export type EventReminder = typeof eventReminders.$inferSelect;
+export type InsertEventReminder = typeof eventReminders.$inferInsert;
 
 // Federations table
 export const federations = mysqlTable("federations", {
@@ -86,6 +102,9 @@ export const eventSubmissions = mysqlTable("eventSubmissions", {
   reviewedAt: timestamp("reviewedAt"),
   reviewedBy: varchar("reviewedBy", { length: 64 }), // Admin user ID
   publishedAt: timestamp("publishedAt"), // When event was published to MongoDB
+  registrationUrl: text("registrationUrl"), // URL for event registration
+  maxCapacity: varchar("maxCapacity", { length: 20 }), // Maximum participants (can be number or "unlimited")
+  currentRegistrations: varchar("currentRegistrations", { length: 20 }).default("0"), // Current number of registrations
 });
 
 export type EventSubmission = typeof eventSubmissions.$inferSelect;

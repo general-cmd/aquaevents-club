@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, MapPin, Mail, Phone, Globe, CheckCircle, FileText } from "lucide-react";
+import { Calendar, MapPin, Mail, Phone, Globe, CheckCircle, FileText, ExternalLink, Users } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { EVENT_TEMPLATES } from "@/data/eventTemplates";
@@ -71,6 +71,8 @@ export default function SubmitEvent() {
     contactPhone: "",
     website: "",
     description: "",
+    registrationUrl: "",
+    maxCapacity: "",
   });
 
   const submitMutation = trpc.eventSubmissions.submit.useMutation({
@@ -187,6 +189,8 @@ export default function SubmitEvent() {
                       contactPhone: "",
                       website: "",
                       description: "",
+                      registrationUrl: "",
+                      maxCapacity: "",
                     });
                   }}
                 >
@@ -457,6 +461,45 @@ export default function SubmitEvent() {
                         onChange={(e) => handleChange("website", e.target.value)}
                         placeholder="https://ejemplo.com"
                       />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Registration Information */}
+                <div className="border-t pt-6">
+                  <h3 className="text-lg font-semibold mb-4">Información de Inscripción</h3>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <ExternalLink className="w-4 h-4 inline mr-1" />
+                        URL de Inscripción
+                      </label>
+                      <Input
+                        type="url"
+                        value={formData.registrationUrl}
+                        onChange={(e) => handleChange("registrationUrl", e.target.value)}
+                        placeholder="https://inscripciones.ejemplo.com"
+                      />
+                      <p className="text-xs text-gray-500 mt-1">
+                        Enlace donde los participantes pueden inscribirse al evento
+                      </p>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <Users className="w-4 h-4 inline mr-1" />
+                        Capacidad Máxima
+                      </label>
+                      <Input
+                        type="text"
+                        value={formData.maxCapacity}
+                        onChange={(e) => handleChange("maxCapacity", e.target.value)}
+                        placeholder="Ej: 200 o 'ilimitado'"
+                      />
+                      <p className="text-xs text-gray-500 mt-1">
+                        Número máximo de participantes o escribe "ilimitado"
+                      </p>
                     </div>
                   </div>
                 </div>

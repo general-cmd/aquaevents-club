@@ -7,6 +7,8 @@ export interface EventTemplate {
     discipline?: string;
     category?: string;
     description?: string;
+    registrationUrl?: string;
+    maxCapacity?: string;
   };
 }
 

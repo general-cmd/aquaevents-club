@@ -15,6 +15,7 @@ import SubmitEvent from "./pages/SubmitEvent";
 import UserProfile from "./pages/UserProfile";
 import UserFavorites from "./pages/UserFavorites";
 import Admin from "./pages/Admin";
+import FederationDashboard from "./pages/FederationDashboard";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -31,6 +32,7 @@ function Router() {
       <Route path="/perfil" component={UserProfile} />
       <Route path="/mis-favoritos" component={UserFavorites} />
       <Route path="/admin" component={Admin} />
+      <Route path="/federacion" component={FederationDashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

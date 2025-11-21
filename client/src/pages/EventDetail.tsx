@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, Share2, Heart } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, Share2, Heart, Bell } from "lucide-react";
 import { Link, useParams, useLocation } from "wouter";
 import EventStructuredData from "@/components/EventStructuredData";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
@@ -39,6 +41,7 @@ interface Event {
 export default function EventDetail() {
   const params = useParams();
   const [, setLocation] = useLocation();
+  const [reminderDialogOpen, setReminderDialogOpen] = useState(false);
   const eventId = params.id;
   const decodedId = eventId ? decodeURIComponent(eventId) : '';
   const { isAuthenticated } = useAuth();
@@ -79,6 +82,27 @@ export default function EventDetail() {
       toast.error("Error al eliminar de favoritos");
     },
   });
+
+  // Reminder mutation
+  const createReminderMutation = trpc.reminders.create.useMutation({
+    onSuccess: () => {
+      toast.success("Recordatorio creado correctamente");
+      setReminderDialogOpen(false);
+    },
+    onError: () => {
+      toast.error("Error al crear recordatorio");
+    },
+  });
+
+  const handleCreateReminder = (reminderType: "1_week" | "3_days" | "1_day" | "same_day") => {
+    if (!event) return;
+    createReminderMutation.mutate({
+      eventId: event._id.toString(),
+      eventTitle: event.name.es,
+      eventDate: event.date,
+      reminderType,
+    });
+  };
 
   const getDisciplineLabel = (discipline: string) => {
     const labels: Record<string, string> = {
@@ -267,6 +291,20 @@ export default function EventDetail() {
                         </div>
                       </div>
                     )}
+                    {(event as any).maxCapacity && (
+                      <div className="flex items-start gap-3">
+                        <Users className="w-5 h-5 text-green-500 mt-0.5" />
+                        <div>
+                          <span className="font-medium">Capacidad:</span>
+                          <span className="ml-2">
+                            {(event as any).currentRegistrations || 0} / {(event as any).maxCapacity}
+                            {(event as any).maxCapacity !== 'ilimitado' && (event as any).currentRegistrations >= parseInt((event as any).maxCapacity) && (
+                              <Badge variant="destructive" className="ml-2">Completo</Badge>
+                            )}
+                          </span>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -332,6 +370,14 @@ export default function EventDetail() {
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4">Acciones del Evento</h3>
                 <div className="flex flex-wrap gap-3">
+                  {event.registrationUrl && (
+                    <Button asChild className="bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600">
+                      <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Inscribirse al Evento
+                      </a>
+                    </Button>
+                  )}
                   <Button onClick={handleAddToCalendar} className="bg-blue-600 hover:bg-blue-700">
                     <Calendar className="w-4 h-4 mr-2" />
                     Añadir al Calendario
@@ -355,6 +401,62 @@ export default function EventDetail() {
                       <Heart className={`w-4 h-4 mr-2 ${isFavorited ? 'fill-current' : ''}`} />
                       {isFavorited ? "Eliminar de Favoritos" : "Guardar en Favoritos"}
                     </Button>
+                  )}
+                  {isAuthenticated && (
+                    <Dialog open={reminderDialogOpen} onOpenChange={setReminderDialogOpen}>
+                      <DialogTrigger asChild>
+                        <Button variant="outline">
+                          <Bell className="w-4 h-4 mr-2" />
+                          Recordarme
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DialogHeader>
+                          <DialogTitle>¿Cuándo quieres recibir el recordatorio?</DialogTitle>
+                          <DialogDescription>
+                            Selecciona cuándo te gustaría recibir una notificación sobre este evento.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="grid gap-3 py-4">
+                          <Button
+                            onClick={() => handleCreateReminder("1_week")}
+                            variant="outline"
+                            className="justify-start"
+                            disabled={createReminderMutation.isPending}
+                          >
+                            <Calendar className="w-4 h-4 mr-2" />
+                            Una semana antes
+                          </Button>
+                          <Button
+                            onClick={() => handleCreateReminder("3_days")}
+                            variant="outline"
+                            className="justify-start"
+                            disabled={createReminderMutation.isPending}
+                          >
+                            <Calendar className="w-4 h-4 mr-2" />
+                            Tres días antes
+                          </Button>
+                          <Button
+                            onClick={() => handleCreateReminder("1_day")}
+                            variant="outline"
+                            className="justify-start"
+                            disabled={createReminderMutation.isPending}
+                          >
+                            <Calendar className="w-4 h-4 mr-2" />
+                            Un día antes
+                          </Button>
+                          <Button
+                            onClick={() => handleCreateReminder("same_day")}
+                            variant="outline"
+                            className="justify-start"
+                            disabled={createReminderMutation.isPending}
+                          >
+                            <Calendar className="w-4 h-4 mr-2" />
+                            El mismo día
+                          </Button>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   )}
                   {event.seo?.canonical && (
                     <Button variant="outline" asChild>

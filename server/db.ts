@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite } from "../drizzle/schema";
+import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite, eventReminders, InsertEventReminder } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -396,6 +396,109 @@ export async function getEventStats() {
       upcoming: 0,
       byDiscipline: []
     };
+  }
+}
+
+
+// ===== Event Reminders =====
+
+export async function createEventReminder(reminder: InsertEventReminder) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot create reminder: database not available");
+    return null;
+  }
+
+  try {
+    await db.insert(eventReminders).values(reminder);
+    return reminder;
+  } catch (error) {
+    console.error("[Database] Failed to create reminder:", error);
+    return null;
+  }
+}
+
+export async function getUserReminders(userId: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get reminders: database not available");
+    return [];
+  }
+
+  try {
+    const reminders = await db
+      .select()
+      .from(eventReminders)
+      .where(eq(eventReminders.userId, userId))
+      .orderBy(eventReminders.reminderDate);
+    
+    return reminders;
+  } catch (error) {
+    console.error("[Database] Failed to get reminders:", error);
+    return [];
+  }
+}
+
+export async function getEventReminders(userId: string, eventId: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get event reminders: database not available");
+    return [];
+  }
+
+  try {
+    const reminders = await db
+      .select()
+      .from(eventReminders)
+      .where(eq(eventReminders.userId, userId));
+    
+    return reminders.filter(r => r.eventId === eventId);
+  } catch (error) {
+    console.error("[Database] Failed to get event reminders:", error);
+    return [];
+  }
+}
+
+export async function deleteEventReminder(id: string, userId: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot delete reminder: database not available");
+    return false;
+  }
+
+  try {
+    const result = await db
+      .delete(eventReminders)
+      .where(eq(eventReminders.id, id));
+    
+    // Verify it belonged to the user (security check done in tRPC)
+    
+    return true;
+  } catch (error) {
+    console.error("[Database] Failed to delete reminder:", error);
+    return false;
+  }
+}
+
+export async function getPendingReminders() {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get pending reminders: database not available");
+    return [];
+  }
+
+  try {
+    const now = new Date();
+    const reminders = await db
+      .select()
+      .from(eventReminders)
+      .where(eq(eventReminders.sent, false));
+    
+    // Filter by date (should use SQL comparison in production)
+    return reminders.filter(r => r.reminderDate <= now);
+  } catch (error) {
+    console.error("[Database] Failed to get pending reminders:", error);
+    return [];
   }
 }
 
