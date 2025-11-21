@@ -14,7 +14,7 @@ import {
 import { eventSubmissions } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 import { publishEventToMongo } from "./publishEvent";
-import { sendEventSubmissionConfirmation, sendEventApprovalNotification, sendEventRejectionNotification } from "./_core/systemeio";
+import { sendEventSubmissionConfirmation, sendEventApprovalNotification, sendEventRejectionNotification, createOrUpdateContact, addTagToContact } from "./_core/systemeio";
 import { protectedProcedure } from "./_core/trpc";
 import { nanoid } from "nanoid";
 
@@ -400,6 +400,38 @@ export const appRouter = router({
         }
         
         await updateUserProfile(ctx.user.id, updates);
+        
+        // Sync to Systeme.io if email consent is given
+        if (input.emailConsent && ctx.user.email) {
+          try {
+            // Create/update contact in Systeme.io
+            await createOrUpdateContact(ctx.user.email, {
+              name: ctx.user.name || undefined,
+              userType: input.userType,
+              disciplines: input.preferredDisciplines,
+              locale: 'es',
+            });
+            
+            // Add appropriate tag based on user type
+            if (input.userType) {
+              const tagMap: Record<string, string> = {
+                'swimmer': 'Swimmer',
+                'club': 'Club Deportivo',
+                'federation': 'Federation',
+              };
+              
+              const tag = tagMap[input.userType];
+              if (tag) {
+                await addTagToContact(ctx.user.email, tag);
+                console.log(`[Systeme.io] Added tag "${tag}" to ${ctx.user.email}`);
+              }
+            }
+          } catch (error) {
+            // Log error but don't fail the profile update
+            console.error('[Systeme.io] Failed to sync user profile:', error);
+          }
+        }
+        
         return {
           success: true,
         };

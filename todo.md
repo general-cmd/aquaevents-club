@@ -319,3 +319,16 @@
 - [x] All new pages now have proper structured data for search engines
 
 
+
+
+
+## Systeme.io Integration - User Profile Sync
+
+- [x] Check existing Systeme.io API configuration
+- [x] Implement user sync to Systeme.io when email consent is given
+- [x] Map user types to Systeme tags: Nadador/a → "Swimmer", Club Deportivo → "Club Deportivo", Federación → "Federation"
+- [x] Only sync when "Acepto recibir notificaciones por email" is checked (GDPR compliant)
+- [x] Write vitest tests for Systeme.io integration (8 tests passing)
+- [x] Test end-to-end: profile update → Systeme.io contact created with correct tag
+
+
