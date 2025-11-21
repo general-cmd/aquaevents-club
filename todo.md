@@ -346,3 +346,15 @@
 - [x] Test sitemap generation and XML format
 
 
+
+
+
+## Bug Fix - Sitemap 404 on Production
+
+- [x] Fix sitemap.xml returning 404 on production
+- [x] Ensure sitemap route is registered before React Router catch-all
+- [x] Modified serveStatic catch-all to skip /sitemap.xml and /robots.txt
+- [ ] Test sitemap accessibility on production domain after republish
+- [ ] Verify Google Search Console can fetch sitemap
+
+

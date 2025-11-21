@@ -39,8 +39,6 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Events API
   app.use("/api/events", eventsRouter);
-  // Sitemap for Google Search Console
-  app.use("", sitemapRouter);
   // tRPC API
   app.use(
     "/api/trpc",
@@ -49,6 +47,8 @@ async function startServer() {
       createContext,
     })
   );
+  // Sitemap for Google Search Console (must be before static files)
+  app.use("", sitemapRouter);
   // development mode uses Vite, production mode uses static files
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);
