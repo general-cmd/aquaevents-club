@@ -527,3 +527,13 @@
 - [ ] Verify admin contacts page shows all newsletter subscribers
 - [ ] User needs to publish changes to production (https://aquaevents.club) using Publish button in Management UI
 
+
+
+
+## Admin Features - User Requested
+
+- [x] Add event deletion functionality to admin dashboard (/admin) - allow removing approved test events
+- [x] Verify admin contacts page (/admin/contacts) displays all newsletter subscribers
+- [x] Ensure contacts page has CSV export functionality
+- [x] Add blog edit functionality - added "Editar" button and dialog with title, category, excerpt, and content editing
+

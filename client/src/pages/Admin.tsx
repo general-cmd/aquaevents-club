@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Calendar, CheckCircle, XCircle, Clock, User, FileText, Building2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -17,6 +20,8 @@ export default function Admin() {
   const [activeTab, setActiveTab] = useState<"submissions" | "blog" | "federations">("submissions");
   const [adminNotes, setAdminNotes] = useState<Record<string, string>>({});
   const [selectedSubmissions, setSelectedSubmissions] = useState<Set<string>>(new Set());
+  const [editingBlog, setEditingBlog] = useState<any>(null);
+  const [blogEditForm, setBlogEditForm] = useState({ title: "", excerpt: "", content: "", category: "" });
 
   // Check if user is admin
   const isAdmin = user?.role === "admin";
@@ -59,6 +64,16 @@ export default function Admin() {
     },
     onError: (error) => {
       toast.error("Error al publicar evento: " + error.message);
+    },
+  });
+
+  const deleteMutation = trpc.eventSubmissions.delete.useMutation({
+    onSuccess: () => {
+      toast.success("Evento eliminado correctamente");
+      refetchSubmissions();
+    },
+    onError: (error) => {
+      toast.error("Error al eliminar evento: " + error.message);
     },
   });
 
@@ -123,7 +138,18 @@ export default function Admin() {
       trpc.useUtils().blog.adminList.invalidate();
     },
     onError: (error) => {
-      toast.error("Error al actualizar: " + error.message);
+      toast.error("Error: " + error.message);
+    },
+  });
+
+  const updateBlogMutation = trpc.blog.update.useMutation({
+    onSuccess: () => {
+      toast.success("Artículo actualizado correctamente");
+      setEditingBlog(null);
+      trpc.useUtils().blog.adminList.invalidate();
+    },
+    onError: (error) => {
+      toast.error("Error: " + error.message);
     },
   });
 
@@ -479,6 +505,19 @@ export default function Admin() {
                           <XCircle className="w-4 h-4 mr-2" />
                           Rechazar
                         </Button>
+                        <Button
+                          onClick={() => {
+                            if (confirm('¿Estás seguro de que quieres eliminar este evento? Esta acción no se puede deshacer.')) {
+                              deleteMutation.mutate({ id: submission.id });
+                            }
+                          }}
+                          variant="outline"
+                          className="border-red-300 text-red-600 hover:bg-red-50"
+                          disabled={deleteMutation.isPending}
+                        >
+                          <XCircle className="w-4 h-4 mr-2" />
+                          Eliminar
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>
@@ -542,6 +581,21 @@ export default function Admin() {
                               Despublicar
                             </Button>
                           )}
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => {
+                              setEditingBlog(post);
+                              setBlogEditForm({
+                                title: post.title || "",
+                                excerpt: post.excerpt || "",
+                                content: post.content || "",
+                                category: post.category || "",
+                              });
+                            }}
+                          >
+                            Editar
+                          </Button>
                           <Link href={`/blog/${post.slug}`}>
                             <Button size="sm" variant="outline">Ver</Button>
                           </Link>
@@ -573,6 +627,68 @@ export default function Admin() {
           )}
         </div>
       </section>
+
+      {/* Blog Edit Dialog */}
+      <Dialog open={!!editingBlog} onOpenChange={() => setEditingBlog(null)}>
+        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Editar Artículo</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div>
+              <Label htmlFor="title">Título</Label>
+              <Input
+                id="title"
+                value={blogEditForm.title}
+                onChange={(e) => setBlogEditForm({ ...blogEditForm, title: e.target.value })}
+              />
+            </div>
+            <div>
+              <Label htmlFor="category">Categoría</Label>
+              <Input
+                id="category"
+                value={blogEditForm.category}
+                onChange={(e) => setBlogEditForm({ ...blogEditForm, category: e.target.value })}
+              />
+            </div>
+            <div>
+              <Label htmlFor="excerpt">Extracto</Label>
+              <Textarea
+                id="excerpt"
+                value={blogEditForm.excerpt}
+                onChange={(e) => setBlogEditForm({ ...blogEditForm, excerpt: e.target.value })}
+                rows={3}
+              />
+            </div>
+            <div>
+              <Label htmlFor="content">Contenido (Markdown)</Label>
+              <Textarea
+                id="content"
+                value={blogEditForm.content}
+                onChange={(e) => setBlogEditForm({ ...blogEditForm, content: e.target.value })}
+                rows={15}
+                className="font-mono text-sm"
+              />
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setEditingBlog(null)}>
+              Cancelar
+            </Button>
+            <Button
+              onClick={() => {
+                updateBlogMutation.mutate({
+                  id: editingBlog.id,
+                  ...blogEditForm,
+                });
+              }}
+              disabled={updateBlogMutation.isPending}
+            >
+              Guardar Cambios
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

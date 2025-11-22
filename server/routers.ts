@@ -6,7 +6,7 @@ import { z } from "zod";
 import { 
   getEventById, getEvents, getEventStats, getAllFederations, getFederationById, 
   getPublishedBlogPosts, getBlogPostBySlug, getAllBlogPosts, createBlogPost, updateBlogPost,
-  createEventSubmission, getAllEventSubmissions, getPendingEventSubmissions, getUserEventSubmissions, updateEventSubmission,
+  createEventSubmission, getAllEventSubmissions, getPendingEventSubmissions, getUserEventSubmissions, updateEventSubmission, deleteEventSubmission,
   addUserFavorite, removeUserFavorite, getUserFavorites, isEventFavorited,
   updateUserProfile, getDb,
   createEventReminder, getUserReminders, getEventReminders, deleteEventReminder
@@ -199,7 +199,7 @@ export const appRouter = router({
     updateStatus: protectedProcedure
       .input(z.object({
         id: z.string(),
-        status: z.enum(['draft', 'pending', 'published', 'archived']),
+        status: z.enum(['draft', 'published']),
       }))
       .mutation(async ({ input, ctx }) => {
         if (ctx.user.role !== 'admin') {
@@ -209,6 +209,25 @@ export const appRouter = router({
           status: input.status,
           publishedAt: input.status === 'published' ? new Date() : undefined,
         });
+        return {
+          success: true,
+        };
+      }),
+
+    update: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+        title: z.string().optional(),
+        excerpt: z.string().optional(),
+        content: z.string().optional(),
+        category: z.string().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        const { id, ...updates } = input;
+        await updateBlogPost(id, updates);
         return {
           success: true,
         };
@@ -408,6 +427,20 @@ export const appRouter = router({
         return {
           success: true,
           eventId: result.eventId,
+        };
+      }),
+
+    delete: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        await deleteEventSubmission(input.id);
+        return {
+          success: true,
         };
       }),
   }),

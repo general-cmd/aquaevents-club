@@ -206,6 +206,13 @@ export async function updateEventSubmission(id: string, updates: Partial<InsertE
   await db.update(eventSubmissions).set(updates).where(eq(eventSubmissions.id, id));
 }
 
+export async function deleteEventSubmission(id: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.delete(eventSubmissions).where(eq(eventSubmissions.id, id));
+}
+
 // User favorites queries
 export async function addUserFavorite(favorite: InsertUserFavorite) {
   const db = await getDb();
