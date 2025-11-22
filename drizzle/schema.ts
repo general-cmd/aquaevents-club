@@ -4,14 +4,13 @@ import { boolean, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzl
  * Core user table backing auth flow.
  * Extend this file with additional tables as your product grows.
  * Columns use camelCase to match both database fields and generated types.
- */
-export const users = mysqlTable("users", {
+ */export const users = mysqlTable("users", {
   id: varchar("id", { length: 64 }).primaryKey(),
   name: text("name"),
   email: varchar("email", { length: 320 }),
   loginMethod: varchar("loginMethod", { length: 64 }),
-  role: mysqlEnum("role", ["user", "admin", "federation"]).default("user").notNull(),
-  userType: mysqlEnum("userType", ["club", "swimmer", "federation", "other"]),
+  role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
+  userType: varchar("userType", { length: 50 }), // "swimmer", "club", "federation"
   preferredDisciplines: text("preferredDisciplines"), // JSON array stored as text
   emailConsent: timestamp("emailConsent"), // Timestamp when user consented to emails (GDPR)
   
@@ -25,9 +24,10 @@ export const users = mysqlTable("users", {
   organizationDescription: text("organizationDescription"),
   
   // Verification status (for clubs and federations)
+  verified: mysqlEnum("verified", ["yes", "no"]).default("no").notNull(),
+  verifiedAt: timestamp("verifiedAt"),
   verificationStatus: mysqlEnum("verificationStatus", ["pending", "approved", "rejected"]).default("pending"),
   verificationNotes: text("verificationNotes"), // Admin notes for call scheduling, rejection reasons
-  verifiedAt: timestamp("verifiedAt"),
   
   createdAt: timestamp("createdAt").defaultNow(),
   lastSignedIn: timestamp("lastSignedIn").defaultNow(),

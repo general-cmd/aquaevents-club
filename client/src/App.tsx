@@ -15,6 +15,7 @@ import SubmitEvent from "./pages/SubmitEvent";
 import UserProfile from "./pages/UserProfile";
 import UserFavorites from "./pages/UserFavorites";
 import Admin from "./pages/Admin";
+import AdminContacts from "./pages/AdminContacts";
 import FederationDashboard from "./pages/FederationDashboard";
 
 function Router() {
@@ -32,6 +33,7 @@ function Router() {
       <Route path="/perfil" component={UserProfile} />
       <Route path="/mis-favoritos" component={UserFavorites} />
       <Route path="/admin" component={Admin} />
+      <Route path="/admin/contacts" component={AdminContacts} />
       <Route path="/federacion" component={FederationDashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

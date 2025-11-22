@@ -12,7 +12,7 @@ export default function FederationDashboard() {
   const { user, isAuthenticated } = useAuth();
   
   // Check if user is a federation
-  const isFederation = user?.role === "federation";
+  const isFederation = user?.userType === "federation";
   
   // Get federation's event submissions
   const { data: submissionsData } = trpc.eventSubmissions.mySubmissions.useQuery(

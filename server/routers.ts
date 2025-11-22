@@ -599,6 +599,80 @@ export const appRouter = router({
       }),
   }),
 
+  admin: router({
+    // Verify a user (grant verified status)
+    verifyUser: protectedProcedure
+      .input(z.object({
+        userId: z.string(),
+        verificationNotes: z.string().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        // Only admins can verify users
+        if (ctx.user.role !== "admin") {
+          throw new Error("Unauthorized");
+        }
+
+        const { getDb } = await import("./db");
+        const { users } = await import("../drizzle/schema");
+        const { eq } = await import("drizzle-orm");
+        
+        const db = await getDb();
+        if (!db) {
+          throw new Error("Database not available");
+        }
+
+        await db.update(users)
+          .set({
+            verified: "yes",
+            verifiedAt: new Date(),
+            verificationStatus: "approved",
+            verificationNotes: input.verificationNotes,
+          })
+          .where(eq(users.id, input.userId));
+
+        return {
+          success: true,
+          message: "Usuario verificado correctamente",
+        };
+      }),
+
+    // Revoke verified status
+    unverifyUser: protectedProcedure
+      .input(z.object({
+        userId: z.string(),
+        reason: z.string().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        // Only admins can unverify users
+        if (ctx.user.role !== "admin") {
+          throw new Error("Unauthorized");
+        }
+
+        const { getDb } = await import("./db");
+        const { users } = await import("../drizzle/schema");
+        const { eq } = await import("drizzle-orm");
+        
+        const db = await getDb();
+        if (!db) {
+          throw new Error("Database not available");
+        }
+
+        await db.update(users)
+          .set({
+            verified: "no",
+            verifiedAt: null,
+            verificationStatus: "rejected",
+            verificationNotes: input.reason,
+          })
+          .where(eq(users.id, input.userId));
+
+        return {
+          success: true,
+          message: "Verificación revocada",
+        };
+      }),
+  }),
+
   newsletter: router({
     subscribe: publicProcedure
       .input(z.object({

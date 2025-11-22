@@ -455,12 +455,21 @@
 
 
 
-## Future: Verified Club/Federation System
-- [ ] Add "verified" status field to users table
+## Verified Club/Federation System (Current)
+- [x] Add "verified" status field to users table
+- [x] Add "verifiedAt" timestamp to track when verification was granted
+- [x] Create admin procedures to grant/revoke verified status
+- [x] Build unified admin contacts page with verification controls
+- [x] Add route /admin/contacts for admin panel
 - [ ] Create verification badge UI component
+- [ ] Display verified badge on user profiles
+- [ ] Display verified badge on event submissions in admin panel
+- [ ] Fast-track approval workflow for verified users (quick check vs full review)
+- [ ] Update SubmitEvent form UI to remove contact email/name fields (use logged-in user)
+
+## Future Enhancements
 - [ ] Auto-approve event submissions from verified clubs/federations
-- [ ] Admin panel to grant/revoke verified status
-- [ ] Admin can still remove events from verified users if duplicated/erroneous
 - [ ] Email notification when club/federation gets verified status
-- [ ] Display verified badge on event listings
+- [ ] Display verified badge on public event listings
+- [ ] Admin can remove events from verified users if duplicated/erroneous
 

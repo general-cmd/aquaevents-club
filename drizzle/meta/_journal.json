@@ -64,6 +64,13 @@
       "when": 1763825438507,
       "tag": "0008_nifty_jack_power",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1763826130126,
+      "tag": "0009_aberrant_kate_bishop",
+      "breakpoints": true
     }
   ]
 }
