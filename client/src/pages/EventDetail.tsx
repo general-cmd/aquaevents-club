@@ -225,6 +225,8 @@ export default function EventDetail() {
               <Link href="/eventos"><a className="text-gray-700 hover:text-blue-600">Eventos</a></Link>
               <Link href="/federaciones"><a className="text-gray-700 hover:text-blue-600">Federaciones</a></Link>
               <Link href="/blog"><a className="text-gray-700 hover:text-blue-600">Blog</a></Link>
+              <Link href="/enviar-evento"><a className="text-gray-700 hover:text-blue-600">Enviar Evento</a></Link>
+              <Link href="/perfil"><a className="text-gray-700 hover:text-blue-600">Mi Perfil</a></Link>
             </nav>
           </div>
         </header>

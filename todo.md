@@ -579,3 +579,10 @@
 - [ ] Implement email notifications: send confirmation email when event is submitted
 - [ ] Implement email notifications: send approval email when admin approves event
 
+
+
+
+## Critical Bugs - User Reported (Current Session)
+- [x] Fix missing "Enviar Evento" link in header navigation
+- [x] Fix event deletion not working in admin dashboard for approved events
+

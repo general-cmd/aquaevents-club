@@ -198,6 +198,12 @@ export default function Events() {
             <Link href="/blog">
               <a className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Blog</a>
             </Link>
+            <Link href="/enviar-evento">
+              <a className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Enviar Evento</a>
+            </Link>
+            <Link href="/perfil">
+              <a className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Mi Perfil</a>
+            </Link>
             <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
               Suscríbete Gratis
             </Button>
