@@ -1,4 +1,4 @@
-import { MongoClient, Db } from "mongodb";
+import { MongoClient, Db, ObjectId } from "mongodb";
 
 let cachedClient: MongoClient | null = null;
 let cachedDb: Db | null = null;
@@ -27,5 +27,28 @@ export async function connectToDatabase() {
 export async function getEventsCollection() {
   const { db } = await connectToDatabase();
   return db.collection("events");
+}
+
+
+
+export async function getEventBySlug(slug: string) {
+  try {
+    const collection = await getEventsCollection();
+    
+    // Try to match by canonical URL first
+    let event = await collection.findOne({
+      "seo.canonical": { $regex: slug, $options: "i" }
+    });
+    
+    // If not found and slug looks like an ObjectId, try _id
+    if (!event && ObjectId.isValid(slug)) {
+      event = await collection.findOne({ _id: new ObjectId(slug) });
+    }
+    
+    return event;
+  } catch (error) {
+    console.error('[MongoDB] Error fetching event by slug:', error);
+    return null;
+  }
 }
 

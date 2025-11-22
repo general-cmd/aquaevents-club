@@ -394,9 +394,11 @@
 
 ## Critical SEO Bugs - User Reported
 
-- [x] Fix sitemap.xml returning 404 on production (moved router registration before static files)
+- [ ] Fix sitemap.xml returning 404 on production (previous fix didn't work - still 404)
 - [x] Add robots.txt to sitemap router for dynamic serving
 - [x] Fix Event structured data - added required fields (eventStatus, eventAttendanceMode, image, offers)
+- [ ] Investigate production build process and static file serving
+- [ ] Implement working solution for sitemap on production
 - [ ] Test sitemap accessibility after republish
 - [ ] Test rich results with Google Rich Results Test tool after republish
 
