@@ -627,3 +627,11 @@
 - [x] Test event detail pages render structured data correctly - WORKING ON DEV
 - [x] Fix event URL routing (404 on /eventos/v-duatlón-cros-jerez-la-bazana) - WORKING ON DEV
 
+
+
+
+## New Features (Current Session)
+- [x] Add favicon to website
+- [x] Implement event filtering by federation on events page
+- [x] Implement event filtering by club on events page
+

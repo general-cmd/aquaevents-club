@@ -31,10 +31,12 @@ export default function Events() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [selectedMonth, setSelectedMonth] = useState<string>("all");
+  const [selectedOrganizer, setSelectedOrganizer] = useState<string>("all");
   const [disciplines, setDisciplines] = useState<string[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [regions, setRegions] = useState<string[]>([]);
   const [months, setMonths] = useState<string[]>([]);
+  const [organizers, setOrganizers] = useState<string[]>([]);
 
   // Use tRPC to fetch ALL upcoming events (no limit)
   const { data: eventsData, isLoading } = trpc.events.list.useQuery({ limit: 500 });
@@ -68,11 +70,13 @@ export default function Events() {
       const categorySet = new Set<string>();
       const regionSet = new Set<string>();
       const monthSet = new Set<string>();
+      const organizerSet = new Set<string>();
       
       eventsData.events.forEach((e: any) => {
         if (e.discipline) disciplineSet.add(e.discipline);
         if (e.category) categorySet.add(e.category);
         if (e.location?.region) regionSet.add(e.location.region);
+        if (e.federation) organizerSet.add(e.federation);
         if (e.date) {
           const month = new Date(e.date).toLocaleString('es-ES', { month: 'long', year: 'numeric' });
           monthSet.add(month);
@@ -83,6 +87,7 @@ export default function Events() {
       setCategories(Array.from(categorySet).filter(Boolean));
       setRegions(Array.from(regionSet).filter(Boolean));
       setMonths(Array.from(monthSet).filter(Boolean));
+      setOrganizers(Array.from(organizerSet).filter(Boolean));
       setLoading(false);
     }
   }, [eventsData]);
@@ -123,8 +128,13 @@ export default function Events() {
       });
     }
 
+    // Organizer filter (federation/club)
+    if (selectedOrganizer !== "all") {
+      filtered = filtered.filter((event: any) => event.federation === selectedOrganizer);
+    }
+
     setFilteredEvents(filtered);
-  }, [searchTerm, selectedDiscipline, selectedCategory, selectedRegion, selectedMonth, events]);
+  }, [searchTerm, selectedDiscipline, selectedCategory, selectedRegion, selectedMonth, selectedOrganizer, events]);
 
   const getDisciplineIcon = (discipline: string) => {
     const icons: Record<string, string> = {
@@ -232,7 +242,7 @@ export default function Events() {
               <h2 className="text-xl font-bold text-gray-900">Filtrar Eventos</h2>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
               {/* Search */}
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -300,6 +310,21 @@ export default function Events() {
                   {months.map(month => (
                     <SelectItem key={month} value={month}>
                       {month}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {/* Organizer Filter (Federation/Club) */}
+              <Select value={selectedOrganizer} onValueChange={setSelectedOrganizer}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Todos los organizadores" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Todos los organizadores</SelectItem>
+                  {organizers.map(organizer => (
+                    <SelectItem key={organizer} value={organizer}>
+                      {organizer}
                     </SelectItem>
                   ))}
                 </SelectContent>
