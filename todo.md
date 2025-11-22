@@ -598,3 +598,11 @@
 - [x] Add re-approval workflow: edited published events return to pending status
 - [x] Update admin dashboard to show re-submitted events after editing
 
+
+
+
+## Systeme.io Integration Bug (Current Session)
+- [x] Fix Event Organizer tag not being applied to contacts when submitting events
+- [x] Verify automation triggers correctly after tag is applied
+- [ ] Test with real email submission (requires user to test)
+

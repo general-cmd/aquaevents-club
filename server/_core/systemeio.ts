@@ -47,10 +47,14 @@ async function systemeRequest<T>(
 ): Promise<T> {
   const apiKey = getApiKey();
   
+  // Determine content type based on method
+  const isPatch = options.method === 'PATCH';
+  const contentType = isPatch ? 'application/merge-patch+json' : 'application/json';
+  
   const response = await fetch(`${SYSTEME_API_BASE}${endpoint}`, {
     ...options,
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': contentType,
       'X-API-Key': apiKey,
       'Accept': 'application/json',
       ...options.headers,
@@ -83,33 +87,12 @@ export async function createOrUpdateContact(
     locale?: string;
   }
 ): Promise<any> {
+  // Simplified contact data - only email and locale
+  // Custom fields removed as they don't exist in Systeme.io account
   const contactData: SystemeContact = {
     email,
     locale: data?.locale || 'es',
-    fields: [],
   };
-
-  // Add custom fields if provided
-  if (data?.name) {
-    contactData.fields?.push({
-      slug: 'name',
-      value: data.name,
-    });
-  }
-
-  if (data?.userType) {
-    contactData.fields?.push({
-      slug: 'user_type',
-      value: data.userType,
-    });
-  }
-
-  if (data?.disciplines && data.disciplines.length > 0) {
-    contactData.fields?.push({
-      slug: 'disciplines',
-      value: data.disciplines.join(', '),
-    });
-  }
 
   try {
     // First, try to find existing contact
@@ -171,9 +154,10 @@ export async function addTagToContact(
       });
     }
 
-    // Assign tag to contact
+    // Assign tag to contact using PUT method
     await systemeRequest<any>(`/contacts/${contactId}/tags/${tag.id}`, {
-      method: 'POST',
+      method: 'PUT',
+      body: JSON.stringify({}),
     });
   } catch (error) {
     console.error('[Systeme.io] Error adding tag to contact:', error);
