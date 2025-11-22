@@ -616,3 +616,13 @@
 - [ ] Verify rich results appear in Google Search Console (requires user testing)
 - [x] Auto-update sitemap when new events are published to MongoDB
 
+
+
+
+## Production Sitemap Issues (Current Session)
+- [ ] Fix sitemap.xml returning 404 on production (aquaevents.club/sitemap.xml)
+- [ ] Ensure Google Search Console can fetch sitemap.xml
+- [ ] Fix rich results not being detected by Google Rich Results Test
+- [ ] Verify sitemap router is properly registered in production build
+- [ ] Test event detail pages render structured data correctly
+
