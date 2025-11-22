@@ -402,3 +402,16 @@
 - [ ] Test sitemap accessibility after republish
 - [ ] Test rich results with Google Rich Results Test tool after republish
 
+
+
+
+## Critical SEO Fixes - Production Issues
+
+- [x] Verify SSR structured data is working on dev server
+- [x] Fix sitemap.xml to show all URLs (now shows 55+ URLs with events, blog posts, federations)
+- [x] Ensure dynamic sitemap route includes all events with SEO-friendly slug URLs
+- [x] Extract slugs from canonical URLs for sitemap generation
+- [ ] Republish site to production
+- [ ] Test event pages with Google Rich Results Test after republishing
+- [ ] Submit complete sitemap to Google Search Console
+

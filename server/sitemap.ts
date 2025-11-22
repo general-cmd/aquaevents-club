@@ -67,8 +67,19 @@ router.get('/sitemap.xml', async (req, res) => {
 
     // Add events
     for (const event of events) {
+      // Extract slug from canonical URL if available
+      let eventUrl = `/evento/${encodeURIComponent(String(event._id))}`;
+      
+      if (event.seo?.canonical) {
+        const match = event.seo.canonical.match(/\/eventos?\/([^?#]+)/);
+        if (match) {
+          const slug = match[1];
+          eventUrl = `/eventos/${slug}`; // Already encoded in canonical URL
+        }
+      }
+      
       xml += '  <url>\n';
-      xml += `    <loc>${BASE_URL}/evento/${encodeURIComponent(String(event._id))}</loc>\n`;
+      xml += `    <loc>${BASE_URL}${eventUrl}</loc>\n`;
       xml += `    <lastmod>${new Date(event.date).toISOString().split('T')[0]}</lastmod>\n`;
       xml += '    <changefreq>monthly</changefreq>\n';
       xml += '    <priority>0.8</priority>\n';
