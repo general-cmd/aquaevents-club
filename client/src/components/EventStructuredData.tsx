@@ -1,8 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 
 interface Event {
+  _id?: string;
   name: { es: string; en: string };
   date: string;
+  endDate?: string;
   location: {
     city: string;
     region: string;
@@ -17,6 +19,11 @@ interface Event {
     phone?: string;
     website?: string;
   };
+  seo?: {
+    canonical?: string;
+    metaTitle?: string;
+    metaDescription?: string;
+  };
 }
 
 interface EventStructuredDataProps {
@@ -24,12 +31,17 @@ interface EventStructuredDataProps {
 }
 
 export default function EventStructuredData({ event }: EventStructuredDataProps) {
+  // Generate event URL from canonical or ID
+  const eventUrl = event.seo?.canonical || 
+    `https://aquaevents.club/evento/${event._id || ''}`;
+  
   // Create structured data for SportsEvent schema
   const structuredData: any = {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": event.name.es,
     "startDate": event.date,
+    "endDate": event.endDate || event.date, // Required by Google
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
@@ -42,8 +54,15 @@ export default function EventStructuredData({ event }: EventStructuredDataProps)
         "addressCountry": "ES"
       }
     },
-    "image": "https://aquaevents.club/logo.svg",
+    "image": [
+      "https://aquaevents.club/logo.svg"
+    ],
     "description": event.description?.es || `${event.name.es} en ${event.location.city}, ${event.location.region}`,
+    "url": eventUrl,
+    "performer": {
+      "@type": "SportsTeam",
+      "name": "Participantes"
+    },
     "organizer": {
       "@type": "Organization",
       "name": "AquaEvents.club",

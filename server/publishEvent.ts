@@ -2,6 +2,7 @@ import { MongoClient, ObjectId } from 'mongodb';
 import { getDb } from './db';
 import { eq } from 'drizzle-orm';
 import { eventSubmissions } from '../drizzle/schema';
+import { enrichEventSEO } from './seoEnrichment';
 
 const MONGODB_URI = process.env.MONGODB_URI || process.env.DATABASE_URL_MONGO || '';
 
@@ -44,7 +45,19 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
     const mongoDb = mongoClient.db();
     const eventsCollection = mongoDb.collection('events');
 
-    // 3. Create event document for MongoDB
+    // 3. Generate AI-enriched SEO metadata
+    console.log(`[Publish] Generating AI SEO metadata for: ${submission.title}`);
+    const seoData = await enrichEventSEO({
+      title: submission.title,
+      city: submission.city,
+      region: submission.region,
+      discipline: submission.discipline,
+      startDate: submission.startDate.toISOString(),
+      description: submission.description || undefined,
+      category: submission.category || undefined
+    });
+
+    // 4. Create event document for MongoDB with AI-enriched data
     const eventDoc = {
       name: {
         es: submission.title,
@@ -67,14 +80,15 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
         website: submission.website || ''
       },
       description: {
-        es: submission.description || '',
-        en: submission.description || ''
+        es: seoData.richDescription, // AI-enriched description
+        en: seoData.richDescription
       },
       registrationUrl: submission.website || '',
       seo: {
-        canonical: `${submission.title.toLowerCase().replace(/\s+/g, '-')}-${submission.city.toLowerCase()}-${submission.startDate.toISOString().split('T')[0]}`,
-        metaTitle: `${submission.title} - ${submission.city}, ${submission.region}`,
-        metaDescription: submission.description || `${submission.title} en ${submission.city}, ${submission.region}. ${submission.discipline}.`
+        canonical: `https://aquaevents.club/eventos/${seoData.slug}`,
+        metaTitle: seoData.metaTitle,
+        metaDescription: seoData.metaDescription,
+        keywords: seoData.keywords
       },
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -82,7 +96,7 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
       submissionId: submissionId
     };
 
-    // 4. Insert into MongoDB
+    // 5. Insert into MongoDB
     const result = await eventsCollection.insertOne(eventDoc);
 
     await mongoClient.close();

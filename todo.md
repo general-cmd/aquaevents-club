@@ -606,3 +606,13 @@
 - [x] Verify automation triggers correctly after tag is applied
 - [ ] Test with real email submission (requires user to test)
 
+
+
+
+## SEO Issues (Current Session)
+- [x] Add AI SEO enrichment for manually created events in MongoDB
+- [x] Fix static sitemap.xml (currently showing "Couldn't fetch")
+- [x] Ensure structured data (JSON-LD) is properly rendered in EventDetail pages
+- [ ] Verify rich results appear in Google Search Console (requires user testing)
+- [x] Auto-update sitemap when new events are published to MongoDB
+

@@ -71,16 +71,27 @@ router.get('/sitemap.xml', async (req, res) => {
       let eventUrl = `/evento/${encodeURIComponent(String(event._id))}`;
       
       if (event.seo?.canonical) {
-        const match = event.seo.canonical.match(/\/eventos?\/([^?#]+)/);
-        if (match) {
-          const slug = match[1];
-          eventUrl = `/eventos/${slug}`; // Already encoded in canonical URL
+        // If canonical is full URL, extract path
+        if (event.seo.canonical.startsWith('http')) {
+          try {
+            const url = new URL(event.seo.canonical);
+            eventUrl = url.pathname;
+          } catch {
+            // Fallback to regex if URL parsing fails
+            const match = event.seo.canonical.match(/\/eventos?\/([^?#]+)/);
+            if (match) {
+              eventUrl = `/eventos/${match[1]}`;
+            }
+          }
+        } else {
+          // If canonical is relative path, use it directly
+          eventUrl = event.seo.canonical;
         }
       }
       
       xml += '  <url>\n';
       xml += `    <loc>${BASE_URL}${eventUrl}</loc>\n`;
-      xml += `    <lastmod>${new Date(event.date).toISOString().split('T')[0]}</lastmod>\n`;
+      xml += `    <lastmod>${new Date(event.updatedAt || event.date).toISOString().split('T')[0]}</lastmod>\n`;
       xml += '    <changefreq>monthly</changefreq>\n';
       xml += '    <priority>0.8</priority>\n';
       xml += '  </url>\n';
