@@ -1,0 +1,19 @@
+{
+  "query": "SELECT id, name, email, role, userType, preferredDisciplines, emailConsent FROM users WHERE email = 'general@bruandyou.com' LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute SELECT id, name, email, role, userType, preferredDisciplines, emailConsent FROM users WHERE email = 'general@bruandyou.com' LIMIT 1;",
+  "rows": [
+    {
+      "id": "iwsTGnfwAcRK3m3JEmXKDb",
+      "name": "Bruno Martin",
+      "email": "general@bruandyou.com",
+      "role": "admin",
+      "userType": "other",
+      "preferredDisciplines": "[\"Otros\"]",
+      "emailConsent": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\temail\trole\tuserType\tpreferredDisciplines\temailConsent\niwsTGnfwAcRK3m3JEmXKDb\tBruno Martin\tgeneral@bruandyou.com\tadmin\tother\t[\"Otros\"]\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 265
+}

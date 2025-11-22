@@ -497,3 +497,33 @@
 - [ ] Verify admin dashboard access at /admin
 - [ ] Verify admin contacts page access at /admin/contacts
 
+
+
+
+## New Issues - User Reported (Current Session)
+
+- [x] Fix userType field not persisting after save and refresh (database confirmed saving correctly, issue was frontend caching)
+- [x] Add "Logged In" status indicator to profile page so users know they are authenticated (added "Sesión Activa" badge)
+- [x] Fix admin role not visible in user session after login (added Admin badge and 🔑 Admin link in header)
+- [x] Note: "Powered by Manus" in OAuth login portal is controlled by Manus platform, cannot be removed from code
+
+
+
+
+## Critical Issues - User Cannot See Changes (Current)
+
+- [ ] "Sesión Activa" badge not visible on profile page after hard refresh
+- [ ] Admin link (🔑 Admin) not visible in header navigation
+- [ ] userType field still not persisting/loading correctly after save
+- [ ] Need to verify if code changes are actually deployed to dev server
+
+
+
+
+## New Tasks - User Requested (Current Session)
+
+- [x] Fix userType dropdown not loading "other" value (replaced shadcn Select with native HTML select for reliable controlled value)
+- [ ] Add delete event functionality to admin dashboard for removing approved test events
+- [ ] Verify admin contacts page shows all newsletter subscribers
+- [ ] User needs to publish changes to production (https://aquaevents.club) using Publish button in Management UI
+

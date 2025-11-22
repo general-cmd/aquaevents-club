@@ -64,6 +64,8 @@ export async function upsertUser(user: InsertUser): Promise<void> {
       updateSet.lastSignedIn = new Date();
     }
 
+    // When updating existing user, only update the fields that were explicitly provided
+    // This prevents overwriting userType, preferredDisciplines, etc. when only updating lastSignedIn
     await db.insert(users).values(values).onDuplicateKeyUpdate({
       set: updateSet,
     });

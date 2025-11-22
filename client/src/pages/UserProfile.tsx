@@ -46,10 +46,14 @@ export default function UserProfile() {
   // Load user data if available
   useEffect(() => {
     if (user) {
+      const userData = user as any;
+      const userType = userData.userType || "";
+      console.log('[UserProfile] Loading user data:', { userType, raw: userData.userType });
+      
       setFormData({
-        userType: (user as any).userType || "",
-        preferredDisciplines: (user as any).preferredDisciplines ? JSON.parse((user as any).preferredDisciplines) : [],
-        emailConsent: !!(user as any).emailConsent,
+        userType: userType as "club" | "swimmer" | "federation" | "other" | "",
+        preferredDisciplines: userData.preferredDisciplines ? JSON.parse(userData.preferredDisciplines) : [],
+        emailConsent: !!userData.emailConsent,
       });
     }
   }, [user]);
@@ -193,6 +197,13 @@ export default function UserProfile() {
                   Mi Perfil
                 </a>
               </Link>
+              {(user as any)?.role === 'admin' && (
+                <Link href="/admin">
+                  <a className="text-purple-600 hover:text-purple-700 transition-colors font-medium flex items-center gap-1">
+                    <span>🔑</span> Admin
+                  </a>
+                </Link>
+              )}
               <Button 
                 variant="outline" 
                 size="sm"
@@ -235,8 +246,15 @@ export default function UserProfile() {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* User Info (Read-only) */}
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg border border-green-200">
                   <div className="space-y-2">
+                    <div className="flex items-center gap-2 mb-3">
+                      <CheckCircle className="w-5 h-5 text-green-600" />
+                      <span className="text-sm font-semibold text-green-800">Sesión Activa</span>
+                      {(user as any)?.role === 'admin' && (
+                        <Badge className="ml-2 bg-purple-600 hover:bg-purple-700">Admin</Badge>
+                      )}
+                    </div>
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4 text-gray-500" />
                       <span className="text-sm font-medium text-gray-700">Nombre:</span>
@@ -255,17 +273,18 @@ export default function UserProfile() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     ¿Quién eres? <span className="text-red-500">*</span>
                   </label>
-                  <Select value={formData.userType} onValueChange={(value) => setFormData(prev => ({ ...prev, userType: value as "club" | "swimmer" | "federation" | "other" }))}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Selecciona tu tipo" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="swimmer">Nadador/a</SelectItem>
-                      <SelectItem value="club">Club Deportivo</SelectItem>
-                      <SelectItem value="federation">Federación</SelectItem>
-                      <SelectItem value="other">Otro</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <select
+                    value={formData.userType}
+                    onChange={(e) => setFormData(prev => ({ ...prev, userType: e.target.value as "club" | "swimmer" | "federation" | "other" }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  >
+                    <option value="">Selecciona tu tipo</option>
+                    <option value="swimmer">Nadador/a</option>
+                    <option value="club">Club Deportivo</option>
+                    <option value="federation">Federación</option>
+                    <option value="other">Otro</option>
+                  </select>
                 </div>
 
                 {/* Preferred Disciplines */}
