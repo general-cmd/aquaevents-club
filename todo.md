@@ -415,3 +415,12 @@
 - [ ] Test event pages with Google Rich Results Test after republishing
 - [ ] Submit complete sitemap to Google Search Console
 
+
+
+## Deployment Issue - RESOLVED
+- [x] User cannot see publish button for checkpoint 66078987
+- [x] Create new checkpoint with trivial change to trigger UI update
+- [x] Verify new checkpoint appears with publish button in UI
+
+<!-- Deployment ready: 2025-11-22 07:10 UTC -->
+
