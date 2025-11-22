@@ -1,0 +1,9 @@
+{
+  "query": "SHOW TABLES LIKE 'newsletter%'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute SHOW TABLES LIKE 'newsletter%'",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 732
+}

@@ -135,3 +135,20 @@ export const userFavorites = mysqlTable("userFavorites", {
 
 export type UserFavorite = typeof userFavorites.$inferSelect;
 export type InsertUserFavorite = typeof userFavorites.$inferInsert;
+
+// Newsletter subscribers table
+export const newsletterSubscribers = mysqlTable("newsletterSubscribers", {
+  id: varchar("id", { length: 64 }).primaryKey(),
+  email: varchar("email", { length: 320 }).notNull(),
+  name: text("name"),
+  userType: mysqlEnum("userType", ["club", "swimmer", "federation", "other"]),
+  source: varchar("source", { length: 100 }).default("website"), // Where they signed up from
+  systemeioSynced: boolean("systemeioSynced").default(false).notNull(), // Whether synced to systeme.io
+  systemeioContactId: varchar("systemeioContactId", { length: 100 }), // systeme.io contact ID
+  systemeioError: text("systemeioError"), // Last sync error if any
+  subscribedAt: timestamp("subscribedAt").defaultNow(),
+  unsubscribedAt: timestamp("unsubscribedAt"),
+});
+
+export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+export type InsertNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;

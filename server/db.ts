@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite, eventReminders, InsertEventReminder } from "../drizzle/schema";
+import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite, eventReminders, InsertEventReminder, newsletterSubscribers, InsertNewsletterSubscriber } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -500,5 +500,75 @@ export async function getPendingReminders() {
     console.error("[Database] Failed to get pending reminders:", error);
     return [];
   }
+}
+
+
+
+
+// Newsletter Subscribers
+export async function createNewsletterSubscriber(subscriber: InsertNewsletterSubscriber) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot create newsletter subscriber: database not available");
+    return null;
+  }
+
+  try {
+    await db.insert(newsletterSubscribers).values(subscriber);
+    return subscriber;
+  } catch (error) {
+    console.error("[Database] Failed to create newsletter subscriber:", error);
+    throw error;
+  }
+}
+
+export async function getNewsletterSubscriberByEmail(email: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get newsletter subscriber: database not available");
+    return null;
+  }
+
+  const result = await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.email, email)).limit(1);
+  return result.length > 0 ? result[0] : null;
+}
+
+export async function getAllNewsletterSubscribers() {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get newsletter subscribers: database not available");
+    return [];
+  }
+
+  return await db.select().from(newsletterSubscribers).orderBy(newsletterSubscribers.subscribedAt);
+}
+
+export async function updateNewsletterSubscriberSyncStatus(
+  id: string,
+  synced: boolean,
+  contactId?: string,
+  error?: string
+) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot update newsletter subscriber: database not available");
+    return;
+  }
+
+  const updateData: any = {
+    systemeioSynced: synced,
+  };
+
+  if (contactId) {
+    updateData.systemeioContactId = contactId;
+  }
+
+  if (error !== undefined) {
+    updateData.systemeioError = error;
+  }
+
+  await db.update(newsletterSubscribers)
+    .set(updateData)
+    .where(eq(newsletterSubscribers.id, id));
 }
 

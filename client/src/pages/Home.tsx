@@ -9,6 +9,7 @@ import WebSiteSchema from "@/components/schema/WebSiteSchema";
 import OrganizationSchema from "@/components/schema/OrganizationSchema";
 import FAQSchema from "@/components/schema/FAQSchema";
 import { SEOMeta } from "@/components/SEOMeta";
+import NewsletterSignupForm from "@/components/NewsletterSignupForm";
 
 interface Event {
   _id: string;
@@ -200,26 +201,7 @@ export default function Home() {
                 </li>
               </ul>
               {/* Newsletter signup form */}
-              <form 
-                action="https://go.aquaevents.club/form/process/333287841dd1b4e8a4dd8be9446652d6ece139e0" 
-                method="POST"
-                className="w-full"
-              >
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Tu email"
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg mb-4 focus:border-blue-500 focus:outline-none text-base"
-                />
-                <Button 
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-lg font-bold"
-                >
-                  Descargar Mi Guía Gratis 📥
-                </Button>
-              </form>
+              <NewsletterSignupForm />
             </CardContent>
           </Card>
         </div>

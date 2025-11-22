@@ -425,3 +425,42 @@
 
 <!-- Deployment ready: 2025-11-22 07:10 UTC -->
 
+
+
+
+## reCAPTCHA Enterprise Integration
+- [ ] Add reCAPTCHA Enterprise script to index.html
+- [ ] Implement frontend token generation in event submission form
+- [ ] Add server-side token verification endpoint
+- [ ] Verify reCAPTCHA token before accepting event submissions
+- [ ] Add environment variable for reCAPTCHA secret key
+- [ ] Test reCAPTCHA integration with form submission
+
+
+
+
+## Unified Contact Management System
+- [x] Create newsletter_subscribers table in database
+- [x] Replace HTML form with tRPC mutation for newsletter signup
+- [x] Sync profile updates (/perfil) to systeme.io
+- [x] Sync event submissions to systeme.io
+- [x] Require authentication for event submission (must create profile first)
+- [x] Remove contact email/name fields from submission procedure (use logged-in user)
+- [x] Update event submission to use ctx.user instead of form inputs
+- [ ] Create unified admin contacts page showing ALL contacts (users + newsletter)
+- [ ] Add CSV export with all contact data
+- [ ] Add route /admin/contacts for admin panel
+- [ ] Test complete flow: newsletter → create profile → submit event
+
+
+
+
+## Future: Verified Club/Federation System
+- [ ] Add "verified" status field to users table
+- [ ] Create verification badge UI component
+- [ ] Auto-approve event submissions from verified clubs/federations
+- [ ] Admin panel to grant/revoke verified status
+- [ ] Admin can still remove events from verified users if duplicated/erroneous
+- [ ] Email notification when club/federation gets verified status
+- [ ] Display verified badge on event listings
+

@@ -216,7 +216,7 @@ export const appRouter = router({
   }),
 
   eventSubmissions: router({
-    submit: publicProcedure
+    submit: protectedProcedure
       .input(z.object({
         title: z.string().min(1),
         discipline: z.string().min(1),
@@ -225,8 +225,6 @@ export const appRouter = router({
         city: z.string().min(1),
         startDate: z.string(), // ISO date string
         endDate: z.string().optional(),
-        contactName: z.string().optional(),
-        contactEmail: z.string().email(),
         contactPhone: z.string().optional(),
         website: z.string().optional(),
         description: z.string().optional(),
@@ -234,25 +232,44 @@ export const appRouter = router({
         maxCapacity: z.string().optional(),
       }))
       .mutation(async ({ input, ctx }) => {
+        // Require email to be set in profile
+        if (!ctx.user.email) {
+          throw new Error("Debes completar tu perfil con un email antes de enviar eventos");
+        }
         const submission = await createEventSubmission({
           id: nanoid(),
           ...input,
           startDate: new Date(input.startDate),
           endDate: input.endDate ? new Date(input.endDate) : undefined,
-          submittedBy: ctx.user?.id,
+          contactEmail: ctx.user.email,
+          contactName: ctx.user.name || undefined,
+          submittedBy: ctx.user.id,
           status: 'pending',
         });
         
-        // Send confirmation email via Systeme.io
+        // Create/update contact in Systeme.io and send confirmation email
         try {
+          // Create or update contact
+          await createOrUpdateContact(
+            ctx.user.email,
+            {
+              name: ctx.user.name || undefined,
+              userType: ctx.user.userType || "club", // Event submitters are typically clubs/federations
+            }
+          );
+
+          // Add "Event Organizer" tag
+          await addTagToContact(ctx.user.email, "Event Organizer");
+
+          // Send confirmation email
           await sendEventSubmissionConfirmation(
-            input.contactEmail,
+            ctx.user.email,
             input.title,
-            input.contactName
+            ctx.user.name || undefined
           );
         } catch (error) {
-          console.error('[Event Submission] Failed to send confirmation email:', error);
-          // Don't fail the submission if email fails
+          console.error('[Event Submission] Failed to sync to systeme.io:', error);
+          // Don't fail the submission if systeme.io sync fails
         }
         
         return {
@@ -419,8 +436,9 @@ export const appRouter = router({
         
         await updateUserProfile(ctx.user.id, updates);
         
-        // Sync to Systeme.io if email consent is given
-        if (input.emailConsent && ctx.user.email) {
+        // Sync to Systeme.io if user has email consent (either existing or just given)
+        const hasConsent = input.emailConsent || ctx.user.emailConsent;
+        if (hasConsent && ctx.user.email) {
           try {
             // Create/update contact in Systeme.io
             await createOrUpdateContact(ctx.user.email, {
@@ -577,6 +595,207 @@ export const appRouter = router({
         const success = await deleteEventReminder(input.id, ctx.user.id);
         return {
           success,
+        };
+      }),
+  }),
+
+  newsletter: router({
+    subscribe: publicProcedure
+      .input(z.object({
+        email: z.string().email(),
+        name: z.string().optional(),
+        userType: z.enum(["club", "swimmer", "federation", "other"]).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const { createNewsletterSubscriber, getNewsletterSubscriberByEmail, updateNewsletterSubscriberSyncStatus } = await import("./db");
+        const { nanoid } = await import("nanoid");
+        
+        // Check if already subscribed
+        const existing = await getNewsletterSubscriberByEmail(input.email);
+        if (existing && !existing.unsubscribedAt) {
+          return {
+            success: true,
+            alreadySubscribed: true,
+            message: "Ya estás suscrito a nuestro newsletter",
+          };
+        }
+
+        // Create subscriber in database
+        const subscriber = await createNewsletterSubscriber({
+          id: nanoid(),
+          email: input.email,
+          name: input.name || null,
+          userType: input.userType || null,
+          source: "website",
+          systemeioSynced: false,
+        });
+
+        if (!subscriber) {
+          throw new Error("Failed to create newsletter subscriber");
+        }
+
+        // Sync to systeme.io in background
+        try {
+          const contact = await createOrUpdateContact(
+            input.email,
+            {
+              name: input.name,
+              userType: input.userType || "swimmer",
+            }
+          );
+
+          // Add "swimmer" tag
+          await addTagToContact(input.email, input.userType || "swimmer");
+
+          // Update sync status
+          await updateNewsletterSubscriberSyncStatus(
+            subscriber.id,
+            true,
+            contact.id?.toString(),
+            undefined
+          );
+        } catch (error: any) {
+          console.error("[Newsletter] Failed to sync to systeme.io:", error);
+          // Update with error but don't fail the request
+          await updateNewsletterSubscriberSyncStatus(
+            subscriber.id,
+            false,
+            undefined,
+            error.message
+          );
+        }
+
+        return {
+          success: true,
+          alreadySubscribed: false,
+          message: "¡Gracias por suscribirte! Revisa tu email para confirmar.",
+        };
+      }),
+
+    list: protectedProcedure
+      .query(async ({ ctx }) => {
+        // Only admins can view subscribers
+        if (ctx.user.role !== "admin") {
+          throw new Error("Unauthorized");
+        }
+
+        const { getAllNewsletterSubscribers } = await import("./db");
+        const subscribers = await getAllNewsletterSubscribers();
+        
+        return {
+          success: true,
+          subscribers,
+        };
+      }),
+
+    allContacts: protectedProcedure
+      .query(async ({ ctx }) => {
+        // Only admins can view all contacts
+        if (ctx.user.role !== "admin") {
+          throw new Error("Unauthorized");
+        }
+
+        const { getDb } = await import("./db");
+        const { users, newsletterSubscribers, eventSubmissions } = await import("../drizzle/schema");
+        
+        const db = await getDb();
+        if (!db) {
+          return {
+            success: true,
+            contacts: [],
+          };
+        }
+
+        // Get all users
+        const allUsers = await db.select().from(users);
+        
+        // Get all newsletter subscribers
+        const allSubscribers = await db.select().from(newsletterSubscribers);
+        
+        // Get all event submitters
+        const allSubmissions = await db.select().from(eventSubmissions);
+        
+        // Merge contacts by email
+        const contactMap = new Map<string, any>();
+        
+        // Add users
+        for (const user of allUsers) {
+          if (user.email) {
+            contactMap.set(user.email, {
+              email: user.email,
+              name: user.name,
+              userType: user.userType,
+              source: "profile",
+              createdAt: user.createdAt,
+              emailConsent: !!user.emailConsent,
+              preferredDisciplines: user.preferredDisciplines ? JSON.parse(user.preferredDisciplines) : [],
+              hasProfile: true,
+              hasNewsletter: false,
+              hasSubmittedEvent: false,
+            });
+          }
+        }
+        
+        // Add newsletter subscribers
+        for (const sub of allSubscribers) {
+          const existing = contactMap.get(sub.email);
+          if (existing) {
+            existing.hasNewsletter = true;
+            existing.systemeioSynced = sub.systemeioSynced;
+            existing.systemeioContactId = sub.systemeioContactId;
+            existing.systemeioError = sub.systemeioError;
+          } else {
+            contactMap.set(sub.email, {
+              email: sub.email,
+              name: sub.name,
+              userType: sub.userType,
+              source: "newsletter",
+              createdAt: sub.subscribedAt,
+              emailConsent: true,
+              preferredDisciplines: [],
+              hasProfile: false,
+              hasNewsletter: true,
+              hasSubmittedEvent: false,
+              systemeioSynced: sub.systemeioSynced,
+              systemeioContactId: sub.systemeioContactId,
+              systemeioError: sub.systemeioError,
+            });
+          }
+        }
+        
+        // Add event submitters
+        for (const submission of allSubmissions) {
+          if (submission.contactEmail) {
+            const existing = contactMap.get(submission.contactEmail);
+            if (existing) {
+              existing.hasSubmittedEvent = true;
+            } else {
+              contactMap.set(submission.contactEmail, {
+                email: submission.contactEmail,
+                name: submission.contactName,
+                userType: "club",
+                source: "event_submission",
+                createdAt: submission.createdAt,
+                emailConsent: true,
+                preferredDisciplines: [],
+                hasProfile: false,
+                hasNewsletter: false,
+                hasSubmittedEvent: true,
+              });
+            }
+          }
+        }
+        
+        // Convert map to array and sort by creation date
+        const contacts = Array.from(contactMap.values()).sort((a, b) => {
+          const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+          const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+          return dateB - dateA; // Most recent first
+        });
+        
+        return {
+          success: true,
+          contacts,
         };
       }),
   }),
