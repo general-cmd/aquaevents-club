@@ -110,3 +110,40 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
   }
 }
 
+/**
+ * Deletes an event from MongoDB events collection
+ * @param eventId - MongoDB _id as string
+ */
+export async function deleteEventFromMongo(eventId: string): Promise<{ success: boolean; error?: string }> {
+  try {
+    if (!MONGODB_URI) {
+      return { success: false, error: 'MongoDB URI not configured' };
+    }
+
+    const mongoClient = new MongoClient(MONGODB_URI);
+    await mongoClient.connect();
+
+    const mongoDb = mongoClient.db();
+    const eventsCollection = mongoDb.collection('events');
+
+    // Delete the event by _id
+    const { ObjectId } = require('mongodb');
+    const result = await eventsCollection.deleteOne({ _id: new ObjectId(eventId) });
+
+    await mongoClient.close();
+
+    if (result.deletedCount === 0) {
+      return { success: false, error: 'Event not found' };
+    }
+
+    return { success: true };
+
+  } catch (error) {
+    console.error('[deleteEventFromMongo] Error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error'
+    };
+  }
+}
+

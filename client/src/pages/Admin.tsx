@@ -17,7 +17,7 @@ import { getLoginUrl } from "@/const";
 export default function Admin() {
   const { user, loading, isAuthenticated } = useAuth();
   const [, setLocation] = useLocation();
-  const [activeTab, setActiveTab] = useState<"submissions" | "blog" | "federations">("submissions");
+  const [activeTab, setActiveTab] = useState<"submissions" | "blog" | "federations" | "published-events">("submissions");
   const [adminNotes, setAdminNotes] = useState<Record<string, string>>({});
   const [selectedSubmissions, setSelectedSubmissions] = useState<Set<string>>(new Set());
   const [editingBlog, setEditingBlog] = useState<any>(null);
@@ -32,8 +32,24 @@ export default function Admin() {
   });
 
   // Fetch all blog posts for admin
-  const { data: blogData, isLoading: blogLoading } = trpc.blog.adminList.useQuery(undefined, {
-    enabled: isAuthenticated && isAdmin,
+  const { data: blogData, isLoading: blogLoading } = trpc.blog.adminList.useQuery(
+    undefined,
+    { enabled: isAdmin }
+  );
+
+  const { data: publishedEventsData, isLoading: publishedEventsLoading, refetch: refetchPublishedEvents } = trpc.events.list.useQuery(
+    { limit: 100 },
+    { enabled: isAdmin }
+  );
+
+  const deleteEventMutation = trpc.events.delete.useMutation({
+    onSuccess: () => {
+      toast.success("Evento eliminado correctamente");
+      refetchPublishedEvents();
+    },
+    onError: (error) => {
+      toast.error("Error al eliminar evento: " + error.message);
+    },
   });
 
   // Mutations
@@ -153,7 +169,7 @@ export default function Admin() {
     },
   });
 
-  if (loading || (isAuthenticated && isAdmin && (submissionsLoading || blogLoading))) {
+  if (loading || (isAuthenticated && isAdmin && (submissionsLoading || blogLoading || publishedEventsLoading))) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center">
         <div className="text-center">
@@ -240,6 +256,7 @@ export default function Admin() {
 
   const pendingSubmissions = submissionsData?.submissions || [];
   const blogPosts = blogData?.posts || [];
+  const publishedEvents = publishedEventsData?.events || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -311,6 +328,23 @@ export default function Admin() {
               <Building2 className="w-4 h-4 mr-2" />
               Federaciones
             </Button>
+            <Button
+              variant={activeTab === "published-events" ? "default" : "ghost"}
+              onClick={() => setActiveTab("published-events")}
+              className="rounded-b-none"
+            >
+              <Calendar className="w-4 h-4 mr-2" />
+              Eventos Publicados ({publishedEvents.length})
+            </Button>
+            <Link href="/admin/contacts">
+              <Button
+                variant="ghost"
+                className="rounded-b-none"
+              >
+                <User className="w-4 h-4 mr-2" />
+                Contactos
+              </Button>
+            </Link>
           </div>
 
           {/* Event Submissions Tab */}
@@ -600,6 +634,62 @@ export default function Admin() {
                             <Button size="sm" variant="outline">Ver</Button>
                           </Link>
                         </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))
+              )}
+            </div>
+          )}
+
+          {/* Published Events Tab */}
+          {activeTab === "published-events" && (
+            <div className="space-y-4">
+              {publishedEventsLoading ? (
+                <Card>
+                  <CardContent className="p-12 text-center">
+                    <p className="text-gray-600">Cargando eventos...</p>
+                  </CardContent>
+                </Card>
+              ) : publishedEvents.length === 0 ? (
+                <Card>
+                  <CardContent className="p-12 text-center">
+                    <Calendar className="w-16 h-16 mx-auto mb-4 text-gray-400" />
+                    <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                      No hay eventos publicados
+                    </h3>
+                    <p className="text-gray-600">
+                      Los eventos aprobados y publicados aparecerán aquí
+                    </p>
+                  </CardContent>
+                </Card>
+              ) : (
+                publishedEvents.map((event: any) => (
+                  <Card key={event._id}>
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold mb-2">{event.name?.es || event.name}</h3>
+                          <div className="space-y-1 text-sm text-gray-600">
+                            <p><strong>Fecha:</strong> {event.date} {event.endDate && `- ${event.endDate}`}</p>
+                            <p><strong>Ubicación:</strong> {event.location?.city}, {event.location?.region}</p>
+                            <p><strong>Disciplina:</strong> {event.discipline}</p>
+                            <p><strong>Categoría:</strong> {event.category}</p>
+                          </div>
+                        </div>
+                        <Button
+                          onClick={() => {
+                            if (confirm('¿Estás seguro de que quieres eliminar este evento? Esta acción no se puede deshacer.')) {
+                              deleteEventMutation.mutate({ id: event._id });
+                            }
+                          }}
+                          variant="destructive"
+                          size="sm"
+                          disabled={deleteEventMutation.isPending}
+                        >
+                          <XCircle className="w-4 h-4 mr-2" />
+                          Eliminar
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>

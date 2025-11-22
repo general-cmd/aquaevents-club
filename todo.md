@@ -537,3 +537,13 @@
 - [x] Ensure contacts page has CSV export functionality
 - [x] Add blog edit functionality - added "Editar" button and dialog with title, category, excerpt, and content editing
 
+
+
+
+## User Feedback - Admin Navigation
+
+- [x] Add "Contactos" navigation link to admin page header for easy access to /admin/contacts
+- [x] Show approved/published events in admin dashboard with delete functionality (added "Eventos Publicados" tab)
+- [x] Make it clear where to find event deletion and contact export features (added "Contactos" tab button and "Eventos Publicados" tab)
+
+

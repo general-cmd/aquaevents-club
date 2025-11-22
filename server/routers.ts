@@ -13,7 +13,7 @@ import {
 } from "./db";
 import { eventSubmissions } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
-import { publishEventToMongo } from "./publishEvent";
+import { publishEventToMongo, deleteEventFromMongo } from "./publishEvent";
 import { sendEventSubmissionConfirmation, sendEventApprovalNotification, sendEventRejectionNotification, createOrUpdateContact, addTagToContact } from "./_core/systemeio";
 import { protectedProcedure } from "./_core/trpc";
 import { nanoid } from "nanoid";
@@ -88,6 +88,23 @@ export const appRouter = router({
         return {
           success: true,
           events: relatedEvents,
+        };
+      }),
+
+    delete: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        const result = await deleteEventFromMongo(input.id);
+        if (!result.success) {
+          throw new Error(result.error || 'Failed to delete event');
+        }
+        return {
+          success: true,
         };
       }),
   }),
