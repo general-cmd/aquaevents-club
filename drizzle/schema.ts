@@ -14,6 +14,21 @@ export const users = mysqlTable("users", {
   userType: mysqlEnum("userType", ["club", "swimmer", "federation", "other"]),
   preferredDisciplines: text("preferredDisciplines"), // JSON array stored as text
   emailConsent: timestamp("emailConsent"), // Timestamp when user consented to emails (GDPR)
+  
+  // Organization profile fields (for clubs and federations)
+  organizationName: text("organizationName"),
+  organizationLogo: text("organizationLogo"),
+  organizationWebsite: text("organizationWebsite"),
+  organizationPhone: varchar("organizationPhone", { length: 50 }),
+  organizationAddress: text("organizationAddress"),
+  organizationLegalId: varchar("organizationLegalId", { length: 50 }), // CIF/NIF for Spain
+  organizationDescription: text("organizationDescription"),
+  
+  // Verification status (for clubs and federations)
+  verificationStatus: mysqlEnum("verificationStatus", ["pending", "approved", "rejected"]).default("pending"),
+  verificationNotes: text("verificationNotes"), // Admin notes for call scheduling, rejection reasons
+  verifiedAt: timestamp("verifiedAt"),
+  
   createdAt: timestamp("createdAt").defaultNow(),
   lastSignedIn: timestamp("lastSignedIn").defaultNow(),
 });

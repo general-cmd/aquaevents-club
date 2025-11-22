@@ -8,6 +8,7 @@ import { trpc } from "@/lib/trpc";
 import WebSiteSchema from "@/components/schema/WebSiteSchema";
 import OrganizationSchema from "@/components/schema/OrganizationSchema";
 import FAQSchema from "@/components/schema/FAQSchema";
+import { SEOMeta } from "@/components/SEOMeta";
 
 interface Event {
   _id: string;
@@ -58,11 +59,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
-      {/* Schema.org Structured Data for AI SEO */}
-      <WebSiteSchema />
-      <OrganizationSchema />
-      <FAQSchema faqs={faqs} />
+    <>
+      <SEOMeta />
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
+        {/* Schema.org Structured Data for AI SEO */}
+        <WebSiteSchema />
+        <OrganizationSchema />
+        <FAQSchema faqs={faqs} />
       {/* Header/Navigation */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -508,7 +511,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
 

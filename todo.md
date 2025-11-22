@@ -358,3 +358,34 @@
 - [ ] Verify Google Search Console can fetch sitemap
 
 
+
+
+
+## SEO Improvements - Meta Descriptions & Internal Linking
+
+- [x] Add unique meta descriptions to all pages (Home, Events, Blog, Federations)
+- [x] Add dynamic meta descriptions to EventDetail pages (first 155 chars of description)
+- [ ] Add dynamic meta descriptions to BlogPost pages
+- [x] Add "Related Events" section to EventDetail pages (by discipline)
+- [x] Add Open Graph and Twitter Card meta tags for social sharing
+- [ ] Test structured data with Google Rich Results Test (user action required)
+
+## Profile-Gated Event Submission System
+
+- [x] Update user schema to add organization profile fields (org name, logo, website, contact, legal info)
+- [x] Add verification status field to users (pending, approved, rejected)
+- [x] Add verification notes field for admin (call scheduling, rejection reasons)
+- [x] Push database schema changes with pnpm db:push
+- [ ] Require login before accessing /enviar-evento page
+- [ ] Check user type: only "Club Deportivo" or "Federación" can access submission
+- [ ] Check verification status: only approved users can submit events
+- [ ] Add "Apply for Verification" flow for unverified clubs/federations
+- [ ] Build admin verification dashboard (approve/reject with notes)
+- [ ] Add "My Events" page for organizations to view/edit their submissions
+- [ ] Link events to submitting user in database
+- [ ] Allow organizations to edit their own events
+- [ ] Admin can moderate/remove any event
+- [ ] Send email notifications for verification status changes
+- [ ] Write vitest tests for verification workflow
+
+

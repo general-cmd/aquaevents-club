@@ -72,6 +72,24 @@ export const appRouter = router({
         stats,
       };
     }),
+
+    getRelated: publicProcedure
+      .input(z.object({
+        eventId: z.string(),
+        discipline: z.string(),
+        limit: z.number().optional().default(3),
+      }))
+      .query(async ({ input }) => {
+        // Get events with same discipline, excluding current event
+        const allEvents = await getEvents(100, input.discipline);
+        const relatedEvents = allEvents
+          .filter((e: any) => e._id !== input.eventId)
+          .slice(0, input.limit);
+        return {
+          success: true,
+          events: relatedEvents,
+        };
+      }),
   }),
 
   federations: router({

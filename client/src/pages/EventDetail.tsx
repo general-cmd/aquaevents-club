@@ -7,6 +7,8 @@ import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, S
 import { Link, useParams, useLocation } from "wouter";
 import EventStructuredData from "@/components/EventStructuredData";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
+import { SEOMeta, truncateForMeta } from "@/components/SEOMeta";
+import RelatedEvents from "@/components/RelatedEvents";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { toast } from "sonner";
@@ -189,8 +191,18 @@ export default function EventDetail() {
     );
   }
 
+  const metaDescription = event.description?.es 
+    ? truncateForMeta(event.description.es) 
+    : `${event.name.es} - ${formatDate(event.date)} en ${event.location.city}, ${event.location.region}. Evento de ${getDisciplineLabel(event.discipline)}.`;
+
   return (
     <>
+      <SEOMeta 
+        title={`${event.name.es} | AquaEvents.club`}
+        description={metaDescription}
+        url={`https://aquaevents.club/evento/${params.id}`}
+        type="article"
+      />
       <EventStructuredData event={event} />
       <BreadcrumbSchema items={[
         { name: "Inicio", url: "/" },
@@ -520,6 +532,9 @@ export default function EventDetail() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Related Events */}
+        <RelatedEvents eventId={event._id.toString()} discipline={event.discipline} />
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-12">
