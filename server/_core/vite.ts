@@ -123,16 +123,17 @@ export function serveStatic(app: Express) {
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
-  // Skip for API routes (sitemap and robots.txt are handled by router registered earlier)
+  // Skip for API routes, sitemap, and robots.txt (handled by routers registered earlier)
   app.use("*", async (req, res, next) => {
     // Don't serve index.html for API routes
     if (req.originalUrl.startsWith('/api/')) {
       return res.status(404).json({ error: 'Not found' });
     }
     
-    // Skip sitemap and robots - they should have been handled by the router already
+    // Skip sitemap and robots - they are handled by dedicated router before this middleware
     if (req.originalUrl === '/sitemap.xml' || req.originalUrl === '/robots.txt') {
-      return next(); // Let the router handle it
+      // If we reach here, the router didn't handle it, so return 404
+      return res.status(404).send('Not found');
     }
 
     const url = req.originalUrl;

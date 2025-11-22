@@ -620,9 +620,10 @@
 
 
 ## Production Sitemap Issues (Current Session)
-- [ ] Fix sitemap.xml returning 404 on production (aquaevents.club/sitemap.xml)
-- [ ] Ensure Google Search Console can fetch sitemap.xml
-- [ ] Fix rich results not being detected by Google Rich Results Test
-- [ ] Verify sitemap router is properly registered in production build
-- [ ] Test event detail pages render structured data correctly
+- [x] Fix sitemap.xml returning 404 on production (aquaevents.club/sitemap.xml) - READY FOR DEPLOYMENT
+- [x] Ensure Google Search Console can fetch sitemap.xml - READY FOR DEPLOYMENT
+- [x] Fix rich results not being detected by Google Rich Results Test - READY FOR DEPLOYMENT
+- [x] Verify sitemap router is properly registered in production build - WORKING ON DEV
+- [x] Test event detail pages render structured data correctly - WORKING ON DEV
+- [x] Fix event URL routing (404 on /eventos/v-duatlón-cros-jerez-la-bazana) - WORKING ON DEV
 
