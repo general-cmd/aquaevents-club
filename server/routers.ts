@@ -846,6 +846,7 @@ export const appRouter = router({
         for (const user of allUsers) {
           if (user.email) {
             contactMap.set(user.email, {
+              userId: user.id,
               email: user.email,
               name: user.name,
               userType: user.userType,
@@ -853,6 +854,9 @@ export const appRouter = router({
               createdAt: user.createdAt,
               emailConsent: !!user.emailConsent,
               preferredDisciplines: user.preferredDisciplines ? JSON.parse(user.preferredDisciplines) : [],
+              verified: user.verified || "no",
+              verifiedAt: user.verifiedAt,
+              verificationStatus: user.verificationStatus,
               hasProfile: true,
               hasNewsletter: false,
               hasSubmittedEvent: false,
@@ -869,7 +873,10 @@ export const appRouter = router({
             existing.systemeioContactId = sub.systemeioContactId;
             existing.systemeioError = sub.systemeioError;
           } else {
+            // Try to find user by email
+            const matchingUser = allUsers.find(u => u.email === sub.email);
             contactMap.set(sub.email, {
+              userId: matchingUser?.id,
               email: sub.email,
               name: sub.name,
               userType: sub.userType,
@@ -877,6 +884,7 @@ export const appRouter = router({
               createdAt: sub.subscribedAt,
               emailConsent: true,
               preferredDisciplines: [],
+              verified: matchingUser?.verified || "no",
               hasProfile: false,
               hasNewsletter: true,
               hasSubmittedEvent: false,
@@ -894,10 +902,14 @@ export const appRouter = router({
             if (existing) {
               existing.hasSubmittedEvent = true;
             } else {
+              // Try to find user by email
+              const matchingUser = allUsers.find(u => u.email === submission.contactEmail);
               contactMap.set(submission.contactEmail, {
+                userId: matchingUser?.id,
                 email: submission.contactEmail,
                 name: submission.contactName,
                 userType: "club",
+                verified: matchingUser?.verified || "no",
                 source: "event_submission",
                 createdAt: submission.createdAt,
                 emailConsent: true,

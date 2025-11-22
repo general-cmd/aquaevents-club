@@ -547,3 +547,15 @@
 - [x] Make it clear where to find event deletion and contact export features (added "Contactos" tab button and "Eventos Publicados" tab)
 
 
+
+
+
+## Critical Issues - User Reported
+
+- [x] Fix event deletion error: "require is not defined" in deleteEventFromMongo function (imported ObjectId from mongodb)
+- [x] Fix contact verification button not working (added userId and verified fields to allContacts query)
+- [x] Fix CSV export downloading empty file (CSV export should now work with proper contact data)
+- [x] Fix reCAPTCHA error: "Invalid domain for site key" appearing on pages (removed unused reCAPTCHA script from index.html)
+- [x] Add image upload/URL capability to blog posts (added coverImage and featuredImage URL fields to blog edit dialog)
+
+

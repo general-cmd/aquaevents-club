@@ -21,7 +21,7 @@ export default function Admin() {
   const [adminNotes, setAdminNotes] = useState<Record<string, string>>({});
   const [selectedSubmissions, setSelectedSubmissions] = useState<Set<string>>(new Set());
   const [editingBlog, setEditingBlog] = useState<any>(null);
-  const [blogEditForm, setBlogEditForm] = useState({ title: "", excerpt: "", content: "", category: "" });
+  const [blogEditForm, setBlogEditForm] = useState({ title: "", excerpt: "", content: "", category: "", coverImage: "", featuredImage: "" });
 
   // Check if user is admin
   const isAdmin = user?.role === "admin";
@@ -625,6 +625,8 @@ export default function Admin() {
                                 excerpt: post.excerpt || "",
                                 content: post.content || "",
                                 category: post.category || "",
+                                coverImage: post.coverImage || "",
+                                featuredImage: post.featuredImage || "",
                               });
                             }}
                           >
@@ -748,6 +750,24 @@ export default function Admin() {
                 value={blogEditForm.excerpt}
                 onChange={(e) => setBlogEditForm({ ...blogEditForm, excerpt: e.target.value })}
                 rows={3}
+              />
+            </div>
+            <div>
+              <Label htmlFor="coverImage">Imagen de Portada (URL)</Label>
+              <Input
+                id="coverImage"
+                value={blogEditForm.coverImage}
+                onChange={(e) => setBlogEditForm({ ...blogEditForm, coverImage: e.target.value })}
+                placeholder="https://ejemplo.com/imagen-portada.jpg"
+              />
+            </div>
+            <div>
+              <Label htmlFor="featuredImage">Imagen Destacada (URL)</Label>
+              <Input
+                id="featuredImage"
+                value={blogEditForm.featuredImage}
+                onChange={(e) => setBlogEditForm({ ...blogEditForm, featuredImage: e.target.value })}
+                placeholder="https://ejemplo.com/imagen-destacada.jpg"
               />
             </div>
             <div>

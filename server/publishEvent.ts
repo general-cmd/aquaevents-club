@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 import { getDb } from './db';
 import { eq } from 'drizzle-orm';
 import { eventSubmissions } from '../drizzle/schema';
@@ -127,7 +127,6 @@ export async function deleteEventFromMongo(eventId: string): Promise<{ success: 
     const eventsCollection = mongoDb.collection('events');
 
     // Delete the event by _id
-    const { ObjectId } = require('mongodb');
     const result = await eventsCollection.deleteOne({ _id: new ObjectId(eventId) });
 
     await mongoClient.close();
