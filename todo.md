@@ -586,3 +586,15 @@
 - [x] Fix missing "Enviar Evento" link in header navigation
 - [x] Fix event deletion not working in admin dashboard for approved events
 
+
+
+
+## User Event Management - New Features (Current Session)
+- [x] Add "Enviar Evento" button to profile page for submitting multiple events
+- [x] Add Edit button for user's own submitted events
+- [x] Add Delete button for user's own submitted events
+- [x] Implement backend procedure for editing event submissions
+- [x] Implement backend procedure for deleting event submissions
+- [x] Add re-approval workflow: edited published events return to pending status
+- [x] Update admin dashboard to show re-submitted events after editing
+

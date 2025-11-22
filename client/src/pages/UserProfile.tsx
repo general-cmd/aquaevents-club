@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { User, Mail, CheckCircle, Heart, Calendar, Clock, XCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
@@ -27,6 +30,8 @@ export default function UserProfile() {
   const { user, loading, isAuthenticated, logout, refresh } = useAuth();
   const [, setLocation] = useLocation();
   const [saved, setSaved] = useState(false);
+  const [editingSubmission, setEditingSubmission] = useState<any>(null);
+  const [editFormData, setEditFormData] = useState<any>({});
   
   // Fetch user's event submissions
   const { data: submissionsData } = trpc.eventSubmissions.mySubmissions.useQuery(undefined, {
@@ -57,6 +62,33 @@ export default function UserProfile() {
       });
     }
   }, [user]);
+
+  const utils = trpc.useUtils();
+
+  const deleteSubmissionMutation = trpc.eventSubmissions.deleteOwn.useMutation({
+    onSuccess: () => {
+      toast.success("¡Evento eliminado correctamente!");
+      utils.eventSubmissions.mySubmissions.invalidate();
+    },
+    onError: (error) => {
+      toast.error("Error al eliminar evento: " + error.message);
+    },
+  });
+
+  const updateSubmissionMutation = trpc.eventSubmissions.update.useMutation({
+    onSuccess: (data) => {
+      if (data.requiresReapproval) {
+        toast.success("¡Evento actualizado! Será revisado nuevamente por el administrador.");
+      } else {
+        toast.success("¡Evento actualizado correctamente!");
+      }
+      setEditingSubmission(null);
+      utils.eventSubmissions.mySubmissions.invalidate();
+    },
+    onError: (error) => {
+      toast.error("Error al actualizar evento: " + error.message);
+    },
+  });
 
   const updateMutation = trpc.userProfile.update.useMutation({
     onSuccess: async () => {
@@ -389,9 +421,17 @@ export default function UserProfile() {
                     </Link>
                   </div>
                 ) : (
-                  <div className="space-y-4">
-                    {submissionsData.submissions.map((submission: any) => (
-                    <div key={submission.id} className="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                  <>
+                    <div className="mb-4 flex justify-end">
+                      <Link href="/enviar-evento">
+                        <Button className="bg-gradient-to-r from-blue-600 to-cyan-500">
+                          Enviar Otro Evento
+                        </Button>
+                      </Link>
+                    </div>
+                    <div className="space-y-4">
+                      {submissionsData.submissions.map((submission: any) => (
+                      <div key={submission.id} className="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
                           <h3 className="font-semibold text-lg mb-1">{submission.title}</h3>
@@ -424,8 +464,44 @@ export default function UserProfile() {
                           {submission.publishedAt && (
                             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
                               Publicado
-                            </Badge>
-                          )}
+                            </Badge>                          )}
+                        </div>
+                        <div className="flex gap-2 mt-2">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => {
+                              setEditingSubmission(submission);
+                              setEditFormData({
+                                title: submission.title,
+                                discipline: submission.discipline,
+                                category: submission.category || '',
+                                region: submission.region,
+                                city: submission.city,
+                                startDate: new Date(submission.startDate).toISOString().split('T')[0],
+                                endDate: submission.endDate ? new Date(submission.endDate).toISOString().split('T')[0] : '',
+                                contactPhone: submission.contactPhone || '',
+                                website: submission.website || '',
+                                description: submission.description || '',
+                                registrationUrl: submission.registrationUrl || '',
+                                maxCapacity: submission.maxCapacity || '',
+                              });
+                            }}
+                          >
+                            Editar
+                          </Button>
+                          <Button 
+                            size="sm" 
+                            variant="destructive"
+                            onClick={() => {
+                              if (confirm('¿Estás seguro de que quieres eliminar este evento?')) {
+                                deleteSubmissionMutation.mutate({ id: submission.id });
+                              }
+                            }}
+                            disabled={deleteSubmissionMutation.isPending}
+                          >
+                            {deleteSubmissionMutation.isPending ? 'Eliminando...' : 'Eliminar'}
+                          </Button>
                         </div>
                       </div>
                       {submission.adminNotes && (
@@ -436,7 +512,8 @@ export default function UserProfile() {
                       )}
                     </div>
                   ))}
-                  </div>
+                    </div>
+                  </>
                 )}
               </CardContent>
             </Card>
@@ -457,6 +534,153 @@ export default function UserProfile() {
           </Card>
         </div>
       </section>
+
+      {/* Edit Event Dialog */}
+      <Dialog open={!!editingSubmission} onOpenChange={(open) => !open && setEditingSubmission(null)}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Editar Evento</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div>
+              <Label htmlFor="edit-title">Título del Evento *</Label>
+              <Input
+                id="edit-title"
+                value={editFormData.title || ''}
+                onChange={(e) => setEditFormData({ ...editFormData, title: e.target.value })}
+                placeholder="Ej: Campeonato Regional de Natación"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="edit-discipline">Disciplina *</Label>
+                <select
+                  id="edit-discipline"
+                  value={editFormData.discipline || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, discipline: e.target.value })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                >
+                  <option value="">Selecciona disciplina</option>
+                  <option value="Natación">Natación</option>
+                  <option value="Waterpolo">Waterpolo</option>
+                  <option value="Natación Sincronizada">Natación Sincronizada</option>
+                  <option value="Saltos">Saltos</option>
+                  <option value="Aguas Abiertas">Aguas Abiertas</option>
+                  <option value="Triatlón">Triatlón</option>
+                  <option value="Salvamento y Socorrismo">Salvamento y Socorrismo</option>
+                  <option value="Otros">Otros</option>
+                </select>
+              </div>
+              <div>
+                <Label htmlFor="edit-category">Categoría</Label>
+                <Input
+                  id="edit-category"
+                  value={editFormData.category || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, category: e.target.value })}
+                  placeholder="Ej: Absoluto, Infantil, Master"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="edit-region">Región *</Label>
+                <Input
+                  id="edit-region"
+                  value={editFormData.region || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, region: e.target.value })}
+                  placeholder="Ej: Comunidad de Madrid"
+                />
+              </div>
+              <div>
+                <Label htmlFor="edit-city">Ciudad *</Label>
+                <Input
+                  id="edit-city"
+                  value={editFormData.city || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, city: e.target.value })}
+                  placeholder="Ej: Madrid"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="edit-startDate">Fecha de Inicio *</Label>
+                <Input
+                  id="edit-startDate"
+                  type="date"
+                  value={editFormData.startDate || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, startDate: e.target.value })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="edit-endDate">Fecha de Fin</Label>
+                <Input
+                  id="edit-endDate"
+                  type="date"
+                  value={editFormData.endDate || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, endDate: e.target.value })}
+                />
+              </div>
+            </div>
+            <div>
+              <Label htmlFor="edit-description">Descripción</Label>
+              <Textarea
+                id="edit-description"
+                value={editFormData.description || ''}
+                onChange={(e) => setEditFormData({ ...editFormData, description: e.target.value })}
+                placeholder="Describe el evento, categorías, pruebas, etc."
+                rows={4}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="edit-contactPhone">Teléfono de Contacto</Label>
+                <Input
+                  id="edit-contactPhone"
+                  value={editFormData.contactPhone || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, contactPhone: e.target.value })}
+                  placeholder="+34 XXX XXX XXX"
+                />
+              </div>
+              <div>
+                <Label htmlFor="edit-website">Sitio Web</Label>
+                <Input
+                  id="edit-website"
+                  value={editFormData.website || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, website: e.target.value })}
+                  placeholder="https://ejemplo.com"
+                />
+              </div>
+            </div>
+            {editingSubmission?.publishedAt && (
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                <p className="text-sm text-yellow-800">
+                  ⚠️ Este evento ya está publicado. Al editarlo, volverá a estado pendiente y requerirá aprobación del administrador.
+                </p>
+              </div>
+            )}
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setEditingSubmission(null)}>
+              Cancelar
+            </Button>
+            <Button
+              onClick={() => {
+                if (!editFormData.title || !editFormData.discipline || !editFormData.region || !editFormData.city || !editFormData.startDate) {
+                  toast.error('Por favor completa todos los campos obligatorios');
+                  return;
+                }
+                updateSubmissionMutation.mutate({
+                  id: editingSubmission.id,
+                  ...editFormData,
+                });
+              }}
+              disabled={updateSubmissionMutation.isPending}
+            >
+              {updateSubmissionMutation.isPending ? 'Guardando...' : 'Guardar Cambios'}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

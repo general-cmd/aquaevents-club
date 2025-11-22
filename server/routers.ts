@@ -472,6 +472,107 @@ export const appRouter = router({
           success: true,
         };
       }),
+
+    update: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+        title: z.string().min(1).optional(),
+        discipline: z.string().min(1).optional(),
+        category: z.string().optional(),
+        region: z.string().min(1).optional(),
+        city: z.string().min(1).optional(),
+        startDate: z.string().optional(),
+        endDate: z.string().optional(),
+        contactPhone: z.string().optional(),
+        website: z.string().optional(),
+        description: z.string().optional(),
+        registrationUrl: z.string().optional(),
+        maxCapacity: z.string().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const db = await getDb();
+        if (!db) {
+          throw new Error('Database not available');
+        }
+
+        // Get the submission to verify ownership
+        const submissions = await db.select().from(eventSubmissions).where(eq(eventSubmissions.id, input.id)).limit(1);
+        if (submissions.length === 0) {
+          throw new Error('Submission not found');
+        }
+
+        const submission = submissions[0];
+        
+        // Only allow owner or admin to edit
+        if (submission.submittedBy !== ctx.user.id && ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+
+        const { id, ...updates } = input;
+        const updateData: any = {};
+
+        // Build update object with only provided fields
+        if (updates.title) updateData.title = updates.title;
+        if (updates.discipline) updateData.discipline = updates.discipline;
+        if (updates.category) updateData.category = updates.category;
+        if (updates.region) updateData.region = updates.region;
+        if (updates.city) updateData.city = updates.city;
+        if (updates.startDate) updateData.startDate = new Date(updates.startDate);
+        if (updates.endDate) updateData.endDate = new Date(updates.endDate);
+        if (updates.contactPhone) updateData.contactPhone = updates.contactPhone;
+        if (updates.website) updateData.website = updates.website;
+        if (updates.description) updateData.description = updates.description;
+        if (updates.registrationUrl) updateData.registrationUrl = updates.registrationUrl;
+        if (updates.maxCapacity) updateData.maxCapacity = updates.maxCapacity;
+
+        // If event was published, reset to pending for re-approval
+        if (submission.publishedAt) {
+          updateData.status = 'pending';
+          updateData.publishedAt = null;
+          updateData.reviewedAt = null;
+          updateData.reviewedBy = null;
+          updateData.adminNotes = null;
+        }
+
+        updateData.updatedAt = new Date();
+
+        await updateEventSubmission(id, updateData);
+
+        return {
+          success: true,
+          requiresReapproval: !!submission.publishedAt,
+        };
+      }),
+
+    deleteOwn: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const db = await getDb();
+        if (!db) {
+          throw new Error('Database not available');
+        }
+
+        // Get the submission to verify ownership
+        const submissions = await db.select().from(eventSubmissions).where(eq(eventSubmissions.id, input.id)).limit(1);
+        if (submissions.length === 0) {
+          throw new Error('Submission not found');
+        }
+
+        const submission = submissions[0];
+        
+        // Only allow owner or admin to delete
+        if (submission.submittedBy !== ctx.user.id && ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+
+        await deleteEventSubmission(input.id);
+
+        return {
+          success: true,
+        };
+      }),
   }),
 
   userProfile: router({
