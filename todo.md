@@ -389,3 +389,14 @@
 - [ ] Write vitest tests for verification workflow
 
 
+
+
+
+## Critical SEO Bugs - User Reported
+
+- [x] Fix sitemap.xml returning 404 on production (moved router registration before static files)
+- [x] Add robots.txt to sitemap router for dynamic serving
+- [x] Fix Event structured data - added required fields (eventStatus, eventAttendanceMode, image, offers)
+- [ ] Test sitemap accessibility after republish
+- [ ] Test rich results with Google Rich Results Test tool after republish
+

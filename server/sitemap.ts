@@ -18,6 +18,24 @@ const BASE_URL = 'https://aquaevents.club';
 /**
  * Generate XML sitemap
  */
+/**
+ * Serve robots.txt
+ */
+router.get('/robots.txt', (req, res) => {
+  const robotsTxt = `User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: ${BASE_URL}/sitemap.xml`;
+  
+  res.header('Content-Type', 'text/plain');
+  res.send(robotsTxt);
+});
+
+/**
+ * Generate XML sitemap
+ */
 router.get('/sitemap.xml', async (req, res) => {
   try {
     // Static pages with priority and change frequency

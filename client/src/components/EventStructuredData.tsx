@@ -31,6 +31,8 @@ export default function EventStructuredData({ event }: EventStructuredDataProps)
       "@type": "SportsEvent",
       "name": event.name.es,
       "startDate": event.date,
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
         "name": event.location.venue || event.location.city,
@@ -41,6 +43,7 @@ export default function EventStructuredData({ event }: EventStructuredDataProps)
           "addressCountry": "ES"
         }
       },
+      "image": "https://aquaevents.club/logo.svg",
       "description": event.description?.es || `${event.name.es} en ${event.location.city}, ${event.location.region}`,
       "organizer": {
         "@type": "Organization",
@@ -52,6 +55,11 @@ export default function EventStructuredData({ event }: EventStructuredDataProps)
     // Add optional fields
     if (event.registrationUrl) {
       structuredData.url = event.registrationUrl;
+      structuredData.offers = {
+        "@type": "Offer",
+        "url": event.registrationUrl,
+        "availability": "https://schema.org/InStock"
+      };
     }
 
     if (event.contact?.email) {

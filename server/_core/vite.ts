@@ -61,13 +61,11 @@ export function serveStatic(app: Express) {
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
-  // BUT skip for API routes, sitemap, and robots.txt
-  app.use("*", (req, res, next) => {
-    // Skip catch-all for these paths - they're handled by other middleware
-    if (req.originalUrl.startsWith('/api/') || 
-        req.originalUrl === '/sitemap.xml' || 
-        req.originalUrl === '/robots.txt') {
-      return next();
+  // Skip for API routes (sitemap and robots.txt are handled before this)
+  app.use("*", (req, res) => {
+    // Don't serve index.html for API routes
+    if (req.originalUrl.startsWith('/api/')) {
+      return res.status(404).json({ error: 'Not found' });
     }
     res.sendFile(path.resolve(distPath, "index.html"));
   });
