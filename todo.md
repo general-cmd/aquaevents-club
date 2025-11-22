@@ -559,3 +559,13 @@
 - [x] Add image upload/URL capability to blog posts (added coverImage and featuredImage URL fields to blog edit dialog)
 
 
+
+
+
+## User-Requested Improvements
+
+- [x] Fix CSV export format - headers and contacts should be on separate rows (fixed newline character from \\n to \n)
+- [x] Add verified badge to user profile page (added green "✓ Verificado" badge next to Admin badge)
+- [x] Replace blog image URL input with S3 upload functionality for easier image management (added file upload inputs with S3 storage)
+
+

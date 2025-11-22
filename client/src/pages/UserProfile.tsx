@@ -254,6 +254,9 @@ export default function UserProfile() {
                       {(user as any)?.role === 'admin' && (
                         <Badge className="ml-2 bg-purple-600 hover:bg-purple-700">Admin</Badge>
                       )}
+                      {(user as any)?.verified === 'yes' && (
+                        <Badge className="ml-2 bg-green-600 hover:bg-green-700">✓ Verificado</Badge>
+                      )}
                     </div>
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4 text-gray-500" />

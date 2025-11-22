@@ -7,6 +7,7 @@ import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import eventsRouter from "../routes/events";
+import uploadImageRouter from "../routes/upload-image";
 import sitemapRouter from "../sitemap";
 import { serveStatic, setupVite } from "./vite";
 
@@ -42,6 +43,8 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Events API
   app.use("/api/events", eventsRouter);
+  // Image upload API
+  app.use("/api/upload-image", uploadImageRouter);
   // tRPC API
   app.use(
     "/api/trpc",

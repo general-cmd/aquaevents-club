@@ -753,22 +753,72 @@ export default function Admin() {
               />
             </div>
             <div>
-              <Label htmlFor="coverImage">Imagen de Portada (URL)</Label>
-              <Input
-                id="coverImage"
-                value={blogEditForm.coverImage}
-                onChange={(e) => setBlogEditForm({ ...blogEditForm, coverImage: e.target.value })}
-                placeholder="https://ejemplo.com/imagen-portada.jpg"
-              />
+              <Label htmlFor="coverImage">Imagen de Portada</Label>
+              <div className="space-y-2">
+                <Input
+                  type="file"
+                  accept="image/*"
+                  onChange={async (e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      const formData = new FormData();
+                      formData.append('file', file);
+                      try {
+                        const response = await fetch('/api/upload-image', {
+                          method: 'POST',
+                          body: formData,
+                        });
+                        const data = await response.json();
+                        if (data.url) {
+                          setBlogEditForm({ ...blogEditForm, coverImage: data.url });
+                          toast.success('Imagen subida correctamente');
+                        }
+                      } catch (error) {
+                        toast.error('Error al subir imagen');
+                      }
+                    }
+                  }}
+                />
+                {blogEditForm.coverImage && (
+                  <div className="text-sm text-gray-600">
+                    URL actual: <a href={blogEditForm.coverImage} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{blogEditForm.coverImage}</a>
+                  </div>
+                )}
+              </div>
             </div>
             <div>
-              <Label htmlFor="featuredImage">Imagen Destacada (URL)</Label>
-              <Input
-                id="featuredImage"
-                value={blogEditForm.featuredImage}
-                onChange={(e) => setBlogEditForm({ ...blogEditForm, featuredImage: e.target.value })}
-                placeholder="https://ejemplo.com/imagen-destacada.jpg"
-              />
+              <Label htmlFor="featuredImage">Imagen Destacada</Label>
+              <div className="space-y-2">
+                <Input
+                  type="file"
+                  accept="image/*"
+                  onChange={async (e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      const formData = new FormData();
+                      formData.append('file', file);
+                      try {
+                        const response = await fetch('/api/upload-image', {
+                          method: 'POST',
+                          body: formData,
+                        });
+                        const data = await response.json();
+                        if (data.url) {
+                          setBlogEditForm({ ...blogEditForm, featuredImage: data.url });
+                          toast.success('Imagen subida correctamente');
+                        }
+                      } catch (error) {
+                        toast.error('Error al subir imagen');
+                      }
+                    }
+                  }}
+                />
+                {blogEditForm.featuredImage && (
+                  <div className="text-sm text-gray-600">
+                    URL actual: <a href={blogEditForm.featuredImage} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{blogEditForm.featuredImage}</a>
+                  </div>
+                )}
+              </div>
             </div>
             <div>
               <Label htmlFor="content">Contenido (Markdown)</Label>
