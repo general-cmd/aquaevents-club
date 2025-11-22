@@ -369,6 +369,18 @@ export const appRouter = router({
               adminNotes: input.adminNotes,
             });
             
+            // Auto-publish approved event to MongoDB
+            try {
+              const publishResult = await publishEventToMongo(input.id);
+              if (publishResult.success) {
+                console.log(`[Event Approval] Auto-published event: ${submission.title}`);
+              } else {
+                console.error(`[Event Approval] Failed to auto-publish: ${publishResult.error}`);
+              }
+            } catch (error) {
+              console.error('[Event Approval] Failed to auto-publish event:', error);
+            }
+            
             // Send approval email via Systeme.io
             try {
               await sendEventApprovalNotification(

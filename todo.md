@@ -569,3 +569,13 @@
 - [x] Replace blog image URL input with S3 upload functionality for easier image management (added file upload inputs with S3 storage)
 
 
+
+
+
+## Critical Event Workflow Issues - User Reported
+
+- [x] Fix auto-publish: approved events should automatically appear on calendar without manual publish step (added publishEventToMongo call in approve mutation)
+- [ ] Fix systeme.io integration: event submission data not being sent to systeme.io
+- [ ] Implement email notifications: send confirmation email when event is submitted
+- [ ] Implement email notifications: send approval email when admin approves event
+
