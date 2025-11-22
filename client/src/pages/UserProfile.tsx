@@ -24,7 +24,7 @@ const DISCIPLINES = [
 ];
 
 export default function UserProfile() {
-  const { user, loading, isAuthenticated } = useAuth();
+  const { user, loading, isAuthenticated, logout, refresh } = useAuth();
   const [, setLocation] = useLocation();
   const [saved, setSaved] = useState(false);
   
@@ -55,10 +55,12 @@ export default function UserProfile() {
   }, [user]);
 
   const updateMutation = trpc.userProfile.update.useMutation({
-    onSuccess: () => {
+    onSuccess: async () => {
       setSaved(true);
       toast.success("¡Perfil actualizado correctamente!");
       setTimeout(() => setSaved(false), 3000);
+      // Refetch user data to get updated profile fields
+      await refresh();
     },
     onError: (error) => {
       toast.error("Error al actualizar perfil: " + error.message);
@@ -191,6 +193,13 @@ export default function UserProfile() {
                   Mi Perfil
                 </a>
               </Link>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={logout}
+              >
+                Cerrar Sesión
+              </Button>
             </nav>
           </div>
         </div>

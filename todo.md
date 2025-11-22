@@ -473,3 +473,27 @@
 - [ ] Display verified badge on public event listings
 - [ ] Admin can remove events from verified users if duplicated/erroneous
 
+
+
+
+## UX Improvements
+- [x] Add logout button to UserProfile page (/perfil)
+
+
+
+
+## Bugs to Fix
+- [ ] Profile userType ("¿Quién eres?") not saving when user updates profile
+- [ ] Logout button not visible on /perfil page (may be caching issue)
+
+
+
+
+## Latest Fixes (Session Continuation)
+
+- [x] Fixed userType field not saving/loading in profile page (added refresh() after successful update)
+- [x] Applied database migration for verified column to production database
+- [ ] User needs to logout/login to refresh session with admin role
+- [ ] Verify admin dashboard access at /admin
+- [ ] Verify admin contacts page access at /admin/contacts
+
