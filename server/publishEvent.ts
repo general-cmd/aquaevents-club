@@ -63,8 +63,8 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
         es: submission.title,
         en: submission.title
       },
-      date: submission.startDate.toISOString().split('T')[0], // Format: YYYY-MM-DD
-      endDate: submission.endDate ? submission.endDate.toISOString().split('T')[0] : undefined,
+      date: submission.startDate.toISOString(), // Full ISO string with time
+      endDate: submission.endDate ? submission.endDate.toISOString() : undefined, // Full ISO string with time
       location: {
         city: submission.city,
         region: submission.region,
@@ -84,7 +84,8 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
         en: seoData.richDescription
       },
       registrationUrl: submission.registrationUrl || submission.website || '',
-      maxCapacity: submission.maxCapacity || undefined,
+      maxCapacity: submission.maxCapacity ? parseInt(submission.maxCapacity.toString()) : undefined,
+      currentRegistrations: submission.currentRegistrations ? parseInt(submission.currentRegistrations.toString()) : undefined,
       seo: {
         canonical: `https://aquaevents.club/eventos/${seoData.slug}`,
         metaTitle: seoData.metaTitle,

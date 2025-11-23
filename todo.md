@@ -670,3 +670,12 @@
 - [x] Make capacity and optional fields conditional - only show when filled (already implemented in EventDetail)
 - [x] Add current capacity display on event cards showing "X/Y plazas" format (already implemented in EventDetail)
 
+
+
+
+## New User-Reported Issues (Current Session)
+- [x] Fix: Edited event changes (time, capacity) not showing on detail page after admin approval - FIXED: publishEventToMongo now saves full ISO timestamps and numeric values
+- [x] Rename: "Sitio Web" field to "SitioWeb/Enlace Inscripción" to clarify it can be either website or registration link - DONE in SubmitEvent and UserProfile
+- [x] Investigate: Why MongoDB document not updating with edited values after re-approval - FOUND: time fields and currentRegistrations not being saved to MongoDB
+- [x] Fix: publishEventToMongo to properly save startDate/endDate with time, currentRegistrations as number, and maxCapacity as number - DONE
+

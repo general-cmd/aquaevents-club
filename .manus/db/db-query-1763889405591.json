@@ -1,0 +1,18 @@
+{
+  "query": "SELECT id, title, startDate, endDate, maxCapacity, currentRegistrations FROM eventSubmissions WHERE id = 'rKirmb1MOk3KzDQHb8Gs1'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute SELECT id, title, startDate, endDate, maxCapacity, currentRegistrations FROM eventSubmissions WHERE id = 'rKirmb1MOk3KzDQHb8Gs1'",
+  "rows": [
+    {
+      "id": "rKirmb1MOk3KzDQHb8Gs1",
+      "title": "Torneo natacion artistica",
+      "startDate": "2025-12-30 00:00:00",
+      "endDate": "2026-01-02 14:00:00",
+      "maxCapacity": "200",
+      "currentRegistrations": "55"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tstartDate\tendDate\tmaxCapacity\tcurrentRegistrations\nrKirmb1MOk3KzDQHb8Gs1\tTorneo natacion artistica\t2025-12-30 00:00:00\t2026-01-02 14:00:00\t200\t55\n",
+  "stderr": "",
+  "execution_time_ms": 87
+}

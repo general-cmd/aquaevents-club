@@ -667,7 +667,7 @@ export default function UserProfile() {
                 />
               </div>
               <div>
-                <Label htmlFor="edit-website">Sitio Web</Label>
+                <Label htmlFor="edit-website">SitioWeb/Enlace Inscripción</Label>
                 <Input
                   id="edit-website"
                   value={editFormData.website || ''}
