@@ -650,3 +650,14 @@
 - [ ] Event image upload - S3 upload in event submission form
 - [ ] Advanced search - Autocomplete for city names and event titles
 
+
+
+
+## User-Reported Issues (Current Session)
+- [x] Fix: Cannot remove favorites from favorites list
+- [x] Fix: Deleted events from admin panel still show in user profile
+- [ ] Fix: Cannot edit all event fields (capacity, time, etc.) - make all fields editable (in progress)
+- [ ] Add: Time field to event creation and editing forms (in progress - added to SubmitEvent)
+- [x] Fix: Date format is MM/DD/YYYY, change to DD/MM/YYYY across entire site (utility created, needs to be applied)
+- [ ] Add: Current capacity field (e.g., 190/200) to track registrations (in progress)
+

@@ -157,6 +157,9 @@ export async function deleteEventFromMongo(eventId: string): Promise<{ success: 
     const mongoDb = mongoClient.db();
     const eventsCollection = mongoDb.collection('events');
 
+    // First, find the event to get its submissionId
+    const event = await eventsCollection.findOne({ _id: new ObjectId(eventId) });
+    
     // Delete the event by _id
     const result = await eventsCollection.deleteOne({ _id: new ObjectId(eventId) });
 
@@ -164,6 +167,15 @@ export async function deleteEventFromMongo(eventId: string): Promise<{ success: 
 
     if (result.deletedCount === 0) {
       return { success: false, error: 'Event not found' };
+    }
+
+    // If the event had a submissionId, also delete the submission from MySQL
+    if (event && event.submissionId) {
+      const db = await getDb();
+      if (db) {
+        await db.delete(eventSubmissions).where(eq(eventSubmissions.id, event.submissionId));
+        console.log(`[deleteEventFromMongo] Also deleted submission ${event.submissionId}`);
+      }
     }
 
     return { success: true };

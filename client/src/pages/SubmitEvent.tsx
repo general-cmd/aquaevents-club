@@ -66,7 +66,9 @@ export default function SubmitEvent() {
     region: "",
     city: "",
     startDate: "",
+    startTime: "",
     endDate: "",
+    endTime: "",
     contactName: "",
     contactEmail: "",
     contactPhone: "",
@@ -74,6 +76,7 @@ export default function SubmitEvent() {
     description: "",
     registrationUrl: "",
     maxCapacity: "",
+    currentRegistrations: "0",
   });
 
   const submitMutation = trpc.eventSubmissions.submit.useMutation({
@@ -184,7 +187,9 @@ export default function SubmitEvent() {
                       region: "",
                       city: "",
                       startDate: "",
+                      startTime: "",
                       endDate: "",
+                      endTime: "",
                       contactName: "",
                       contactEmail: "",
                       contactPhone: "",
@@ -192,6 +197,7 @@ export default function SubmitEvent() {
                       description: "",
                       registrationUrl: "",
                       maxCapacity: "",
+                      currentRegistrations: "0",
                     });
                   }}
                 >
@@ -389,6 +395,18 @@ export default function SubmitEvent() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Hora de Inicio
+                    </label>
+                    <Input
+                      type="time"
+                      value={formData.startTime}
+                      onChange={(e) => handleChange("startTime", e.target.value)}
+                      placeholder="09:00"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       <Calendar className="w-4 h-4 inline mr-1" />
                       Fecha de Fin
                     </label>
@@ -396,6 +414,18 @@ export default function SubmitEvent() {
                       type="date"
                       value={formData.endDate}
                       onChange={(e) => handleChange("endDate", e.target.value)}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Hora de Fin
+                    </label>
+                    <Input
+                      type="time"
+                      value={formData.endTime}
+                      onChange={(e) => handleChange("endTime", e.target.value)}
+                      placeholder="18:00"
                     />
                   </div>
                 </div>

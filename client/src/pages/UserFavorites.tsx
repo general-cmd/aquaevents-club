@@ -17,10 +17,15 @@ export default function UserFavorites() {
 
   const { data: eventsData } = trpc.events.list.useQuery({ limit: 500 });
 
+  const utils = trpc.useUtils();
   const removeFavoriteMutation = trpc.favorites.remove.useMutation({
     onSuccess: () => {
       // Invalidate favorites list to refresh
-      trpc.useUtils().favorites.list.invalidate();
+      utils.favorites.list.invalidate();
+      toast.success("Evento eliminado de favoritos");
+    },
+    onError: () => {
+      toast.error("Error al eliminar el favorito");
     },
   });
 

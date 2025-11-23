@@ -260,23 +260,48 @@ export const appRouter = router({
         region: z.string().min(1),
         city: z.string().min(1),
         startDate: z.string(), // ISO date string
+        startTime: z.string().optional(), // HH:mm format
         endDate: z.string().optional(),
+        endTime: z.string().optional(), // HH:mm format
         contactPhone: z.string().optional(),
         website: z.string().optional(),
         description: z.string().optional(),
         registrationUrl: z.string().optional(),
         maxCapacity: z.string().optional(),
+        currentRegistrations: z.string().optional(),
       }))
       .mutation(async ({ input, ctx }) => {
         // Require email to be set in profile
         if (!ctx.user.email) {
           throw new Error("Debes completar tu perfil con un email antes de enviar eventos");
         }
+        
+        // Combine date and time into proper timestamps
+        const startDateTime = input.startTime 
+          ? new Date(`${input.startDate}T${input.startTime}:00`)
+          : new Date(input.startDate);
+        
+        const endDateTime = input.endDate
+          ? (input.endTime 
+              ? new Date(`${input.endDate}T${input.endTime}:00`)
+              : new Date(input.endDate))
+          : undefined;
+        
         const submission = await createEventSubmission({
           id: nanoid(),
-          ...input,
-          startDate: new Date(input.startDate),
-          endDate: input.endDate ? new Date(input.endDate) : undefined,
+          title: input.title,
+          discipline: input.discipline,
+          category: input.category,
+          region: input.region,
+          city: input.city,
+          startDate: startDateTime,
+          endDate: endDateTime,
+          contactPhone: input.contactPhone,
+          website: input.website,
+          description: input.description,
+          registrationUrl: input.registrationUrl,
+          maxCapacity: input.maxCapacity,
+          currentRegistrations: input.currentRegistrations || "0",
           contactEmail: ctx.user.email,
           contactName: ctx.user.name || undefined,
           submittedBy: ctx.user.id,
@@ -482,12 +507,15 @@ export const appRouter = router({
         region: z.string().min(1).optional(),
         city: z.string().min(1).optional(),
         startDate: z.string().optional(),
+        startTime: z.string().optional(),
         endDate: z.string().optional(),
+        endTime: z.string().optional(),
         contactPhone: z.string().optional(),
         website: z.string().optional(),
         description: z.string().optional(),
         registrationUrl: z.string().optional(),
         maxCapacity: z.string().optional(),
+        currentRegistrations: z.string().optional(),
       }))
       .mutation(async ({ input, ctx }) => {
         const db = await getDb();
@@ -517,13 +545,25 @@ export const appRouter = router({
         if (updates.category) updateData.category = updates.category;
         if (updates.region) updateData.region = updates.region;
         if (updates.city) updateData.city = updates.city;
-        if (updates.startDate) updateData.startDate = new Date(updates.startDate);
-        if (updates.endDate) updateData.endDate = new Date(updates.endDate);
+        
+        // Handle date and time combination
+        if (updates.startDate) {
+          updateData.startDate = updates.startTime 
+            ? new Date(`${updates.startDate}T${updates.startTime}:00`)
+            : new Date(updates.startDate);
+        }
+        if (updates.endDate) {
+          updateData.endDate = updates.endTime 
+            ? new Date(`${updates.endDate}T${updates.endTime}:00`)
+            : new Date(updates.endDate);
+        }
+        
         if (updates.contactPhone) updateData.contactPhone = updates.contactPhone;
         if (updates.website) updateData.website = updates.website;
         if (updates.description) updateData.description = updates.description;
         if (updates.registrationUrl) updateData.registrationUrl = updates.registrationUrl;
         if (updates.maxCapacity) updateData.maxCapacity = updates.maxCapacity;
+        if (updates.currentRegistrations) updateData.currentRegistrations = updates.currentRegistrations;
 
         // If event was published, reset to pending for re-approval
         if (submission.publishedAt) {
