@@ -679,3 +679,11 @@
 - [x] Investigate: Why MongoDB document not updating with edited values after re-approval - FOUND: time fields and currentRegistrations not being saved to MongoDB
 - [x] Fix: publishEventToMongo to properly save startDate/endDate with time, currentRegistrations as number, and maxCapacity as number - DONE
 
+
+
+
+## New User-Reported Issue (Favorites Error)
+- [x] Fix: Error message appears when adding event to favorites (despite successful operation) - FIXED: Added duplicate check before insert
+- [x] Investigate: favorites.add mutation error handling - FOUND: No duplicate prevention in addUserFavorite
+- [x] Verify: Remove from favorites works correctly (no error) - CONFIRMED: Working correctly
+

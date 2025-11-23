@@ -218,6 +218,14 @@ export async function addUserFavorite(favorite: InsertUserFavorite) {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
   
+  // Check if favorite already exists to prevent duplicate key errors
+  const alreadyFavorited = await isEventFavorited(favorite.userId, favorite.eventId);
+  
+  if (alreadyFavorited) {
+    // Already favorited, just return success without inserting
+    return favorite;
+  }
+  
   await db.insert(userFavorites).values(favorite);
   return favorite;
 }
