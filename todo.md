@@ -661,3 +661,12 @@
 - [x] Fix: Date format is MM/DD/YYYY, change to DD/MM/YYYY across entire site (utility created, needs to be applied)
 - [ ] Add: Current capacity field (e.g., 190/200) to track registrations (in progress)
 
+
+
+
+## Follow-up Improvements (Current Session)
+- [x] Apply DD/MM/YYYY format across all pages (EventDetail, Events list, Admin dashboard, UserFavorites)
+- [x] Update UserProfile edit dialog to include all fields (time, capacity, website, registration URL, etc.)
+- [x] Make capacity and optional fields conditional - only show when filled (already implemented in EventDetail)
+- [x] Add current capacity display on event cards showing "X/Y plazas" format (already implemented in EventDetail)
+

@@ -472,19 +472,24 @@ export default function UserProfile() {
                             variant="outline"
                             onClick={() => {
                               setEditingSubmission(submission);
+                              const startDate = new Date(submission.startDate);
+                              const endDate = submission.endDate ? new Date(submission.endDate) : null;
                               setEditFormData({
                                 title: submission.title,
                                 discipline: submission.discipline,
                                 category: submission.category || '',
                                 region: submission.region,
                                 city: submission.city,
-                                startDate: new Date(submission.startDate).toISOString().split('T')[0],
-                                endDate: submission.endDate ? new Date(submission.endDate).toISOString().split('T')[0] : '',
+                                startDate: startDate.toISOString().split('T')[0],
+                                startTime: startDate.toTimeString().slice(0, 5),
+                                endDate: endDate ? endDate.toISOString().split('T')[0] : '',
+                                endTime: endDate ? endDate.toTimeString().slice(0, 5) : '',
                                 contactPhone: submission.contactPhone || '',
                                 website: submission.website || '',
-                                description: submission.description || '',
                                 registrationUrl: submission.registrationUrl || '',
+                                description: submission.description || '',
                                 maxCapacity: submission.maxCapacity || '',
+                                currentRegistrations: submission.currentRegistrations || '',
                               });
                             }}
                           >
@@ -612,12 +617,32 @@ export default function UserProfile() {
                 />
               </div>
               <div>
+                <Label htmlFor="edit-startTime">Hora de Inicio</Label>
+                <Input
+                  id="edit-startTime"
+                  type="time"
+                  value={editFormData.startTime || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, startTime: e.target.value })}
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
                 <Label htmlFor="edit-endDate">Fecha de Fin</Label>
                 <Input
                   id="edit-endDate"
                   type="date"
                   value={editFormData.endDate || ''}
                   onChange={(e) => setEditFormData({ ...editFormData, endDate: e.target.value })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="edit-endTime">Hora de Fin</Label>
+                <Input
+                  id="edit-endTime"
+                  type="time"
+                  value={editFormData.endTime || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, endTime: e.target.value })}
                 />
               </div>
             </div>
@@ -648,6 +673,37 @@ export default function UserProfile() {
                   value={editFormData.website || ''}
                   onChange={(e) => setEditFormData({ ...editFormData, website: e.target.value })}
                   placeholder="https://ejemplo.com"
+                />
+              </div>
+            </div>
+            <div>
+              <Label htmlFor="edit-registrationUrl">URL de Inscripción</Label>
+              <Input
+                id="edit-registrationUrl"
+                value={editFormData.registrationUrl || ''}
+                onChange={(e) => setEditFormData({ ...editFormData, registrationUrl: e.target.value })}
+                placeholder="https://inscripciones.ejemplo.com"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="edit-maxCapacity">Capacidad Máxima</Label>
+                <Input
+                  id="edit-maxCapacity"
+                  type="number"
+                  value={editFormData.maxCapacity || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, maxCapacity: e.target.value })}
+                  placeholder="200"
+                />
+              </div>
+              <div>
+                <Label htmlFor="edit-currentRegistrations">Inscritos Actuales</Label>
+                <Input
+                  id="edit-currentRegistrations"
+                  type="number"
+                  value={editFormData.currentRegistrations || ''}
+                  onChange={(e) => setEditFormData({ ...editFormData, currentRegistrations: e.target.value })}
+                  placeholder="150"
                 />
               </div>
             </div>

@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { generateICS } from "@/utils/icsExport";
 import { toast } from "sonner";
+import { formatDate as formatDateDDMMYYYY } from "@/lib/dateFormat";
 import ItemListSchema from "@/components/schema/ItemListSchema";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 
@@ -161,12 +162,7 @@ export default function Events() {
   };
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return new Intl.DateTimeFormat('es-ES', { 
-      day: 'numeric', 
-      month: 'short',
-      year: 'numeric'
-    }).format(date);
+    return formatDateDDMMYYYY(dateString);
   };
 
   // Prepare data for ItemList schema

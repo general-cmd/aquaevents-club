@@ -11,6 +11,7 @@ import { SEOMeta, truncateForMeta } from "@/components/SEOMeta";
 import RelatedEvents from "@/components/RelatedEvents";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { formatDate as formatDateDDMMYYYY, formatDateTime } from "@/lib/dateFormat";
 import { toast } from "sonner";
 
 interface Event {
@@ -118,13 +119,13 @@ export default function EventDetail() {
     return labels[discipline] || discipline;
   };
 
-  const formatDate = (dateString: string) => {
+  const formatDateLong = (dateString: string) => {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat('es-ES', { 
       weekday: 'long',
-      day: 'numeric', 
+      year: 'numeric',
       month: 'long',
-      year: 'numeric'
+      day: 'numeric'
     }).format(date);
   };
 
@@ -193,7 +194,7 @@ export default function EventDetail() {
 
   const metaDescription = event.description?.es 
     ? truncateForMeta(event.description.es) 
-    : `${event.name.es} - ${formatDate(event.date)} en ${event.location.city}, ${event.location.region}. Evento de ${getDisciplineLabel(event.discipline)}.`;
+    : `${event.name.es} - ${formatDateLong(event.date)} en ${event.location.city}, ${event.location.region}. Evento de ${getDisciplineLabel(event.discipline)}.`;
 
   return (
     <>
@@ -286,7 +287,7 @@ export default function EventDetail() {
                       <Calendar className="w-5 h-5 text-red-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Fecha:</span>
-                        <span className="ml-2">{formatDate(event.date)}</span>
+                        <span className="ml-2">{formatDateLong(event.date)}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">

@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Calendar, MapPin, User, Download } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { formatDate as formatDateDDMMYYYY } from "@/lib/dateFormat";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
 import { generateICS } from "@/utils/icsExport";
@@ -238,11 +239,7 @@ export default function UserFavorites() {
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center gap-2 text-sm text-gray-600">
                           <Calendar className="w-4 h-4" />
-                          {new Date(eventDate).toLocaleDateString("es-ES", {
-                            day: "numeric",
-                            month: "long",
-                            year: "numeric"
-                          })}
+                          {formatDateDDMMYYYY(eventDate)}
                         </div>
                         <div className="flex items-center gap-2 text-sm text-gray-600">
                           <MapPin className="w-4 h-4" />
