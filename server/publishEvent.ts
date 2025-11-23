@@ -83,7 +83,8 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
         es: seoData.richDescription, // AI-enriched description
         en: seoData.richDescription
       },
-      registrationUrl: submission.website || '',
+      registrationUrl: submission.registrationUrl || submission.website || '',
+      maxCapacity: submission.maxCapacity || undefined,
       seo: {
         canonical: `https://aquaevents.club/eventos/${seoData.slug}`,
         metaTitle: seoData.metaTitle,
@@ -96,8 +97,24 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
       submissionId: submissionId
     };
 
-    // 5. Insert into MongoDB
-    const result = await eventsCollection.insertOne(eventDoc);
+    // 5. Check if event already exists (from previous publication)
+    const existingEvent = await eventsCollection.findOne({ submissionId: submissionId });
+    
+    let eventId: string;
+    if (existingEvent) {
+      // Update existing event
+      await eventsCollection.updateOne(
+        { _id: existingEvent._id },
+        { $set: { ...eventDoc, updatedAt: new Date() } }
+      );
+      eventId = existingEvent._id.toString();
+      console.log(`[Publish] Updated existing event in MongoDB: ${eventId}`);
+    } else {
+      // Insert new event
+      const result = await eventsCollection.insertOne(eventDoc);
+      eventId = result.insertedId.toString();
+      console.log(`[Publish] Created new event in MongoDB: ${eventId}`);
+    }
 
     await mongoClient.close();
 
@@ -112,7 +129,7 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
 
     return {
       success: true,
-      eventId: result.insertedId.toString()
+      eventId: eventId
     };
 
   } catch (error) {

@@ -635,3 +635,18 @@
 - [x] Implement event filtering by federation on events page
 - [x] Implement event filtering by club on events page
 
+
+
+
+## Critical Bugs - User Reported (Current Session)
+- [x] Fix Systeme.io tag workflow: send contact with event-submitted tag first, then append event-approved/rejected tags (don't replace existing tags)
+- [x] Update all scraped events in MongoDB to have proper federation names instead of generic "Federation" - 304 events updated
+- [x] Fix event duplication when editing approved events (should update, not create duplicate)
+- [x] Add missing event fields to detail page: inscription link, website, max capacity - fields already displayed, fixed MongoDB save
+- [x] Fix date update not working when editing events in MongoDB - fixed by MongoDB update logic
+
+## Future Enhancements (After Bugs Fixed)
+- [ ] Bulk event import tool - CSV/Excel upload for federations
+- [ ] Event image upload - S3 upload in event submission form
+- [ ] Advanced search - Autocomplete for city names and event titles
+

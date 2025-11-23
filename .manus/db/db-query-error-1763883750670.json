@@ -1,0 +1,11 @@
+{
+  "query": "db.events.aggregate([\n  { $group: { _id: \"$federation\", count: { $sum: 1 } } },\n  { $sort: { count: -1 } }\n])",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute db.events.aggregate([\n  { $group: { _id: \"$federation\", count: { $sum: 1 } } },\n  { $sort: { count: -1 } }\n])",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 1 column 2 near \"db.events.aggregate([",
+    "  { $group: { _id: \"$federation\", count: { $sum: 1 } } },",
+    "  { $sort: { count: -1 } }",
+    "])\""
+  ]
+}
