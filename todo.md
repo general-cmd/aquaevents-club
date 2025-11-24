@@ -687,3 +687,58 @@
 - [x] Investigate: favorites.add mutation error handling - FOUND: No duplicate prevention in addUserFavorite
 - [x] Verify: Remove from favorites works correctly (no error) - CONFIRMED: Working correctly
 
+
+
+
+## RFEN Scraper Issue
+- [ ] Investigate: RFEN scraper missing multiple 2026 events
+- [ ] Fix: Update scraper logic to capture all events
+- [ ] Verify: Test scraper against RFEN website to ensure complete coverage
+
+
+
+
+## Federation Scraper Prompts (Created)
+- [x] Create TASK_1_RFEN_SCRAPER_PROMPT.md for national swimming events
+- [x] Create TASK_2_FETRI_SCRAPER_PROMPT.md for national triathlon events
+- [x] Create TASK_3_REGIONAL_SCRAPER_PROMPT.md for 31 regional federations
+- [x] Create SCRAPER_PROMPTS_README.md with setup instructions
+- [ ] User action: Insert MongoDB password into prompt connection strings
+- [ ] User action: Create 3 scheduled tasks in Manus dashboard using the prompts
+- [ ] User action: Test tasks by manually triggering them before Monday
+
+
+
+
+## Database Cleanup & Scraper Quality Control
+- [x] Analyze MongoDB for invalid events (non-events, duplicates, incomplete data) - DONE: Found 282 invalid events
+- [x] Create cleanup script to remove invalid events - DONE: cleanup-database.mjs created
+- [x] Add quality control validation to scraping task - DONE: UPDATED_SCRAPER_WITH_QUALITY_CONTROL.md
+- [x] Test cleanup script and verify database integrity - DONE: 511 valid events remaining
+- [x] Update scraper prompt with stricter validation rules - DONE: Minimum 10 char names, pattern rejection
+
+
+
+
+## Stricter Database Cleanup (Round 2)
+- [x] Remove events where city equals region (not specific enough) - DONE: Kept major cities only
+- [x] Remove events with date-like names (e.g., "2025-12-30") - DONE: None found
+- [x] Remove events without ANY contact info (no email, phone, or website) - DONE: 38 deleted
+- [x] Remove events without actionable next steps - DONE: 404 total deleted
+- [x] Verify all remaining events have minimum quality for user action - DONE: 107 high-quality events remain
+
+
+
+
+## City Data Quality Issue & Reliable Scraper Development
+- [x] Investigate: Events showing wrong city (region name instead of actual city) - FOUND: Scraper using calendar summary, not detail pages
+- [x] Example: "ENCUENTRO AMAZONAS 2025" shows Valencia but should be Elche - CONFIRMED: Calendar table has correct city
+- [x] Research: Federation website structures (RFEN, FETRI, regional federations) - DONE: Identified 3 types (modern, table, PDF)
+- [x] Design: Scraping strategy for calendar pages + individual event detail pages - DONE: Browser automation workflow
+- [x] Create: Comprehensive scraper that extracts from event detail pages - DONE: BUSINESS_GRADE_SCRAPER_PROMPT.md
+- [ ] Test: Validate scraper extracts complete data (city, contact, dates, description) - PENDING: User will run
+- [x] Quality review: Check current 107 events and remove invalid ones - DONE: 5 deleted, 4 cities fixed
+- [x] Fix city names from event titles - DONE: Elche, Cheste, Castellón, Santa Pola corrected
+- [x] Final cleanup before Monday launch - DONE: 102 high-quality events remaining
+- [ ] Deploy: Replace current scraper with reliable version - PENDING: User will update scheduled task
+
