@@ -751,3 +751,13 @@
 - [x] Remove events with time ranges in names ("@ 9:30 am - 1:30 pm") - DONE
 - [x] Verify all remaining events have proper event names - DONE: 68 high-quality events
 
+
+
+
+## Date Parsing Issues
+- [x] Investigate: Events showing December 31, 2025 when actual date is different (e.g., November 8) - FOUND: 48 events with wrong dates
+- [x] Fix: Events with incorrect dates in MongoDB - DONE: Deleted all 48 events with December 31, 2025
+- [x] Remove final invalid events - DONE: Deleted 2 more (assembly meeting + no contact)
+- [x] Final result: 18 verified high-quality events with correct dates and contact info
+- [ ] Update scraper: Improve date parsing logic to extract correct dates from federation calendars - PENDING
+
