@@ -742,3 +742,12 @@
 - [x] Final cleanup before Monday launch - DONE: 102 high-quality events remaining
 - [ ] Deploy: Replace current scraper with reliable version - PENDING: User will update scheduled task
 
+
+
+
+## Aggressive Cleanup - Remove Calendar UI Elements
+- [x] Remove events with date-like names ("noviembre 30", "noviembre 29", etc.) - DONE: 34 deleted
+- [x] Remove events with UI text ("Este mes noviembre 2025 Seleccionar fecha") - DONE
+- [x] Remove events with time ranges in names ("@ 9:30 am - 1:30 pm") - DONE
+- [x] Verify all remaining events have proper event names - DONE: 68 high-quality events
+
