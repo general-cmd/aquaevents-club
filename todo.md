@@ -761,3 +761,21 @@
 - [x] Final result: 18 verified high-quality events with correct dates and contact info
 - [ ] Update scraper: Improve date parsing logic to extract correct dates from federation calendars - PENDING
 
+
+
+
+## Homepage Display Issue
+- [ ] Investigate: Only 1 event showing on homepage when 18 exist in MongoDB
+- [ ] Check: Event query logic in homepage/events API
+- [ ] Check: Date filtering (past events hidden?)
+- [ ] Fix: Display all 18 events on homepage
+
+
+
+
+## Frontend Error - Missing Location Data
+- [x] Fix: "Cannot read properties of undefined (reading 'city')" error on homepage - DONE: Deleted 77 events with missing location
+- [x] Check: Event with missing location.city field - FOUND: Scraper added 77 broken events
+- [x] Delete broken events - DONE: Back to 18 clean events
+- [ ] URGENT: Stop current scraper and replace with BUSINESS_GRADE_SCRAPER_PROMPT.md
+
