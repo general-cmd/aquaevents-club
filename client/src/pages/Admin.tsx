@@ -8,11 +8,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Calendar, CheckCircle, XCircle, Clock, User, FileText, Building2 } from "lucide-react";
+import { Calendar, CheckCircle, XCircle, Clock, User, FileText, Building2, Plus } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { toast } from "sonner";
 import { getLoginUrl } from "@/const";
+import CreateEventDialog from "@/components/CreateEventDialog";
 
 export default function Admin() {
   const { user, loading, isAuthenticated } = useAuth();
@@ -22,6 +23,7 @@ export default function Admin() {
   const [selectedSubmissions, setSelectedSubmissions] = useState<Set<string>>(new Set());
   const [editingBlog, setEditingBlog] = useState<any>(null);
   const [blogEditForm, setBlogEditForm] = useState({ title: "", excerpt: "", content: "", category: "", coverImage: "", featuredImage: "" });
+  const [createEventDialogOpen, setCreateEventDialogOpen] = useState(false);
 
   // Check if user is admin
   const isAdmin = user?.role === "admin";
@@ -647,6 +649,17 @@ export default function Admin() {
           {/* Published Events Tab */}
           {activeTab === "published-events" && (
             <div className="space-y-4">
+              {/* Create Event Button */}
+              <div className="flex justify-end mb-4">
+                <Button
+                  onClick={() => setCreateEventDialogOpen(true)}
+                  className="bg-blue-600 hover:bg-blue-700"
+                >
+                  <Plus className="w-4 h-4 mr-2" />
+                  Crear Evento Manualmente
+                </Button>
+              </div>
+
               {publishedEventsLoading ? (
                 <Card>
                   <CardContent className="p-12 text-center">
@@ -849,6 +862,13 @@ export default function Admin() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Create Event Dialog */}
+      <CreateEventDialog
+        open={createEventDialogOpen}
+        onOpenChange={setCreateEventDialogOpen}
+        onSuccess={() => refetchPublishedEvents()}
+      />
     </div>
   );
 }

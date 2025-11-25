@@ -146,6 +146,97 @@ export async function publishEventToMongo(submissionId: string): Promise<{ succe
  * Deletes an event from MongoDB events collection
  * @param eventId - MongoDB _id as string
  */
+/**
+ * Creates an event directly in MongoDB (admin function)
+ * @param eventData - Event data from admin form
+ */
+export async function createEventDirectly(eventData: any): Promise<{ success: boolean; eventId?: string; error?: string }> {
+  try {
+    if (!MONGODB_URI) {
+      return { success: false, error: 'MongoDB URI not configured' };
+    }
+
+    const mongoClient = new MongoClient(MONGODB_URI);
+    await mongoClient.connect();
+
+    const mongoDb = mongoClient.db();
+    const eventsCollection = mongoDb.collection('events');
+
+    // Generate AI-enriched SEO metadata
+    console.log(`[CreateDirect] Generating AI SEO metadata for: ${eventData.nameEs}`);
+    const seoData = await enrichEventSEO({
+      title: eventData.nameEs,
+      city: eventData.city,
+      region: eventData.region,
+      discipline: eventData.discipline,
+      startDate: eventData.date,
+      description: eventData.descriptionEs || undefined,
+      category: eventData.category || undefined
+    });
+
+    // Create event document
+    const eventDoc = {
+      name: {
+        es: eventData.nameEs,
+        en: eventData.nameEn
+      },
+      date: eventData.date,
+      endDate: eventData.endDate,
+      time: eventData.time || '09:00',
+      endTime: eventData.endTime,
+      location: {
+        city: eventData.city,
+        region: eventData.region,
+        venue: eventData.venue || '',
+        address: eventData.address || ''
+      },
+      discipline: eventData.discipline,
+      category: eventData.category || 'regional',
+      federation: eventData.organizerName,
+      contact: {
+        email: eventData.contactEmail || null,
+        phone: eventData.contactPhone || null,
+        website: eventData.contactWebsite || null
+      },
+      description: {
+        es: eventData.descriptionEs || seoData.richDescription,
+        en: eventData.descriptionEn || seoData.richDescription
+      },
+      registrationUrl: eventData.registrationUrl || '',
+      maxCapacity: eventData.maxCapacity,
+      currentRegistrations: eventData.currentRegistrations || 0,
+      seo: {
+        canonical: `https://aquaevents.club/eventos/${seoData.slug}`,
+        metaTitle: seoData.metaTitle,
+        metaDescription: seoData.metaDescription,
+        keywords: seoData.keywords
+      },
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      source: `admin-${eventData.organizerType}`,
+      organizerType: eventData.organizerType
+    };
+
+    const result = await eventsCollection.insertOne(eventDoc);
+    const eventId = result.insertedId.toString();
+    console.log(`[CreateDirect] Created new event in MongoDB: ${eventId}`);
+
+    await mongoClient.close();
+
+    return {
+      success: true,
+      eventId: eventId
+    };
+
+  } catch (error) {
+    console.error('[createEventDirectly] Error:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error'
+    };
+  }
+}
+
 export async function deleteEventFromMongo(eventId: string): Promise<{ success: boolean; error?: string }> {
   try {
     if (!MONGODB_URI) {

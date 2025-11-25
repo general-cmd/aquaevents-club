@@ -13,7 +13,7 @@ import {
 } from "./db";
 import { eventSubmissions } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
-import { publishEventToMongo, deleteEventFromMongo } from "./publishEvent";
+import { publishEventToMongo, deleteEventFromMongo, createEventDirectly } from "./publishEvent";
 import { sendEventSubmissionConfirmation, sendEventApprovalNotification, sendEventRejectionNotification, createOrUpdateContact, addTagToContact } from "./_core/systemeio";
 import { protectedProcedure } from "./_core/trpc";
 import { nanoid } from "nanoid";
@@ -106,6 +106,156 @@ export const appRouter = router({
         return {
           success: true,
         };
+      }),
+
+    create: protectedProcedure
+      .input(z.object({
+        nameEs: z.string(),
+        nameEn: z.string(),
+        descriptionEs: z.string().optional(),
+        descriptionEn: z.string().optional(),
+        date: z.string(),
+        endDate: z.string().optional(),
+        time: z.string().optional(),
+        endTime: z.string().optional(),
+        city: z.string(),
+        region: z.string(),
+        venue: z.string().optional(),
+        address: z.string().optional(),
+        discipline: z.string(),
+        category: z.string().optional(),
+        organizerType: z.enum(['federation', 'club', 'other']),
+        organizerName: z.string(),
+        contactEmail: z.string().optional(),
+        contactPhone: z.string().optional(),
+        contactWebsite: z.string().optional(),
+        registrationUrl: z.string().optional(),
+        maxCapacity: z.number().optional(),
+        currentRegistrations: z.number().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+
+        // Create event directly in MongoDB
+        const eventData = {
+          nameEs: input.nameEs,
+          nameEn: input.nameEn,
+          descriptionEs: input.descriptionEs || '',
+          descriptionEn: input.descriptionEn || '',
+          date: input.date,
+          endDate: input.endDate,
+          time: input.time || '09:00',
+          endTime: input.endTime,
+          city: input.city,
+          region: input.region,
+          venue: input.venue || '',
+          address: input.address || '',
+          discipline: input.discipline,
+          category: input.category || 'regional',
+          organizerType: input.organizerType,
+          organizerName: input.organizerName,
+          contactEmail: input.contactEmail,
+          contactPhone: input.contactPhone,
+          contactWebsite: input.contactWebsite,
+          registrationUrl: input.registrationUrl,
+          maxCapacity: input.maxCapacity,
+          currentRegistrations: input.currentRegistrations || 0,
+        };
+
+        const result = await createEventDirectly(eventData);
+        if (!result.success) {
+          throw new Error(result.error || 'Failed to create event');
+        }
+
+        return {
+          success: true,
+          eventId: result.eventId,
+        };
+      }),
+
+    update: protectedProcedure
+      .input(z.object({
+        id: z.string(),
+        nameEs: z.string().optional(),
+        nameEn: z.string().optional(),
+        descriptionEs: z.string().optional(),
+        descriptionEn: z.string().optional(),
+        date: z.string().optional(),
+        endDate: z.string().optional(),
+        time: z.string().optional(),
+        endTime: z.string().optional(),
+        city: z.string().optional(),
+        region: z.string().optional(),
+        venue: z.string().optional(),
+        address: z.string().optional(),
+        discipline: z.string().optional(),
+        category: z.string().optional(),
+        organizerType: z.enum(['federation', 'club', 'other']).optional(),
+        organizerName: z.string().optional(),
+        contactEmail: z.string().optional(),
+        contactPhone: z.string().optional(),
+        contactWebsite: z.string().optional(),
+        registrationUrl: z.string().optional(),
+        maxCapacity: z.number().optional(),
+        currentRegistrations: z.number().optional(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+
+        // Update event in MongoDB
+        const { MongoClient, ObjectId } = await import('mongodb');
+        const client = new MongoClient(process.env.MONGODB_URI!);
+        
+        try {
+          await client.connect();
+          const db = client.db('aquaevents_db');
+          const eventsCollection = db.collection('events');
+
+          const updateData: any = {};
+          if (input.nameEs) updateData['name.es'] = input.nameEs;
+          if (input.nameEn) updateData['name.en'] = input.nameEn;
+          if (input.descriptionEs) updateData['description.es'] = input.descriptionEs;
+          if (input.descriptionEn) updateData['description.en'] = input.descriptionEn;
+          if (input.date) updateData.date = input.date;
+          if (input.endDate) updateData.endDate = input.endDate;
+          if (input.time) updateData.time = input.time;
+          if (input.endTime) updateData.endTime = input.endTime;
+          if (input.city) updateData['location.city'] = input.city;
+          if (input.region) updateData['location.region'] = input.region;
+          if (input.venue) updateData['location.venue'] = input.venue;
+          if (input.address) updateData['location.address'] = input.address;
+          if (input.discipline) updateData.discipline = input.discipline;
+          if (input.category) updateData.category = input.category;
+          if (input.organizerName) updateData.federation = input.organizerName;
+          if (input.contactEmail) updateData['contact.email'] = input.contactEmail;
+          if (input.contactPhone) updateData['contact.phone'] = input.contactPhone;
+          if (input.contactWebsite) updateData['contact.website'] = input.contactWebsite;
+          if (input.registrationUrl) updateData.registrationUrl = input.registrationUrl;
+          if (input.maxCapacity !== undefined) updateData.maxCapacity = input.maxCapacity;
+          if (input.currentRegistrations !== undefined) updateData.currentRegistrations = input.currentRegistrations;
+
+          updateData.updated_at = new Date().toISOString();
+          updateData.updatedAt = new Date().toISOString();
+
+          const result = await eventsCollection.updateOne(
+            { _id: new ObjectId(input.id) },
+            { $set: updateData }
+          );
+
+          if (result.matchedCount === 0) {
+            throw new Error('Event not found');
+          }
+
+          return {
+            success: true,
+          };
+        } finally {
+          await client.close();
+        }
       }),
   }),
 
