@@ -779,3 +779,21 @@
 - [x] Delete broken events - DONE: Back to 18 clean events
 - [ ] URGENT: Stop current scraper and replace with BUSINESS_GRADE_SCRAPER_PROMPT.md
 
+
+
+
+## Scraper Documentation Improvement
+- [ ] Create improved scraper with strict validation before saving events
+- [ ] Add error handling for AI extraction failures
+- [ ] Add defensive coding to prevent undefined/null values
+- [ ] Add quality control reporting
+- [ ] Test improved scraper with real federation websites
+
+
+
+## Database Cleanup After Bad Scraper Run (Nov 25, 2025)
+- [x] Analyze current events in database
+- [x] Remove invalid events (calendar UI, date headers, missing data, wrong dates)
+- [x] Verify only quality events remain
+- [x] Report final event count - 1 verified event remaining
+
