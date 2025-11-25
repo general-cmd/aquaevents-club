@@ -811,3 +811,12 @@
 - [x] Test creating federation events manually
 - [x] Test editing and deleting events
 
+
+
+
+## Fix Discipline Value Inconsistency (Nov 25, 2025)
+- [x] Check current events in database for discipline values
+- [x] Update old event from "swimming" to "natacion"
+- [x] Verify all discipline dropdowns and filters use Spanish values consistently
+- [x] Test that filtering shows all natacion events together
+
