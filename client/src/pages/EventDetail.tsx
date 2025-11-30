@@ -525,18 +525,15 @@ export default function EventDetail() {
                     </a>
                   </Link>
 
-                  <a 
-                    href="https://euroswimcaps.com?coupon=AQUA20" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block p-4 border-2 border-orange-200 rounded-lg hover:border-orange-400 transition-colors"
-                  >
-                    <div className="text-2xl mb-2">🎽</div>
-                    <h4 className="font-semibold mb-1">Material de Natación</h4>
-                    <p className="text-sm text-gray-600">
-                      Gorros personalizados para tu club. Usa AQUA20 para 20% descuento.
-                    </p>
-                  </a>
+                  <Link href="/gorros-natacion">
+                    <a className="block p-4 border-2 border-orange-200 rounded-lg hover:border-orange-400 transition-colors">
+                      <div className="text-2xl mb-2">🎽</div>
+                      <h4 className="font-semibold mb-1">Gorros Personalizados para Eventos</h4>
+                      <p className="text-sm text-gray-600">
+                        25 años de experiencia | +1M gorros producidos | Envío gratis UE
+                      </p>
+                    </a>
+                  </Link>
 
                   <Link href={`/eventos?disciplina=${event.discipline}&region=${event.location.region}`}>
                     <a className="block p-4 border-2 border-green-200 rounded-lg hover:border-green-400 transition-colors">

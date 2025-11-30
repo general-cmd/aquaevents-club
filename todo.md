@@ -851,3 +851,11 @@
 - [x] Configure form to send to general@aquaevents.club (via notifyOwner)
 - [x] Replace Instagram links with contact form
 - [x] Test form submission end-to-end
+
+
+## Internal Linking for Swimming Caps Page (Nov 30, 2025)
+- [x] Add "Gorros Personalizados" link to header navigation (desktop + mobile)
+- [x] Add swimming caps CTA section to homepage (prominent blue banner)
+- [x] Add swimming caps link to event detail pages (Related Resources section)
+- [x] Add swimming caps link to footer (under Servicios)
+- [x] Test all internal links work correctly

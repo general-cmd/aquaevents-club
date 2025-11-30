@@ -86,6 +86,9 @@ export default function Home() {
             <a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Blog
             </a>
+            <a href="/gorros-natacion" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              Gorros Personalizados
+            </a>
             <a href="/enviar-evento" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Enviar Evento
             </a>
@@ -140,6 +143,13 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Blog
+              </a>
+              <a 
+                href="/gorros-natacion" 
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Gorros Personalizados
               </a>
               <a 
                 href="/enviar-evento" 
@@ -396,6 +406,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Swimming Caps CTA Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-cyan-500 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              ¿Organizas un Evento Acuático?
+            </h2>
+            <p className="text-xl mb-2 text-blue-50">
+              Gorros de natación personalizados de alta calidad para tu competición
+            </p>
+            <p className="text-lg mb-8 text-blue-100">
+              25 años de experiencia | Más de 1 millón de gorros producidos | Envío gratis a toda la UE
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
+                onClick={() => window.location.href = '/gorros-natacion'}
+              >
+                Ver Precios y Solicitar Presupuesto
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold"
+                onClick={() => window.open('https://www.instagram.com/euroswimcaps', '_blank')}
+              >
+                Ver Ejemplos en Instagram
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="bg-gray-50 py-12 md:py-16">
         <div className="container mx-auto px-4">
@@ -471,11 +515,11 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Eventos</h4>
+              <h4 className="font-bold mb-4">Servicios</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="/eventos" className="hover:text-white">Todos los Eventos</a></li>
-                <li><a href="/eventos?discipline=swimming" className="hover:text-white">Natación</a></li>
-                <li><a href="/eventos?discipline=triathlon" className="hover:text-white">Triatlón</a></li>
+                <li><a href="/eventos" className="hover:text-white">Calendario de Eventos</a></li>
+                <li><a href="/gorros-natacion" className="hover:text-white">Gorros Personalizados</a></li>
+                <li><a href="/enviar-evento" className="hover:text-white">Publicar Evento</a></li>
                 <li><a href="/blog" className="hover:text-white">Blog</a></li>
               </ul>
             </div>
