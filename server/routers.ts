@@ -14,6 +14,7 @@ import {
 import { eventSubmissions } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 import { publishEventToMongo, deleteEventFromMongo, createEventDirectly } from "./publishEvent";
+import { generateEventContent } from "./_core/eventContentGenerator";
 import { sendEventSubmissionConfirmation, sendEventApprovalNotification, sendEventRejectionNotification, createOrUpdateContact, addTagToContact } from "./_core/systemeio";
 import { protectedProcedure } from "./_core/trpc";
 import { nanoid } from "nanoid";
@@ -138,12 +139,45 @@ export const appRouter = router({
           throw new Error('Unauthorized');
         }
 
+        // Generate AI-powered description and FAQ if not provided
+        let descriptionEs = input.descriptionEs || '';
+        let descriptionEn = input.descriptionEn || '';
+        let faqItems: Array<{ question: string; answer: string }> = [];
+
+        if (!input.descriptionEs || !input.descriptionEn) {
+          try {
+            const generatedContent = await generateEventContent({
+              name: input.nameEs,
+              nameEn: input.nameEn,
+              discipline: input.discipline,
+              category: input.category || 'regional',
+              city: input.city,
+              region: input.region,
+              startDate: new Date(input.date),
+              endDate: input.endDate ? new Date(input.endDate) : undefined,
+              venue: input.venue,
+              organizerType: input.organizerType,
+              organizerName: input.organizerName,
+              description: input.descriptionEs,
+              descriptionEn: input.descriptionEn,
+            });
+
+            descriptionEs = input.descriptionEs || generatedContent.description;
+            descriptionEn = input.descriptionEn || generatedContent.descriptionEn;
+            faqItems = generatedContent.faqItems;
+          } catch (error) {
+            console.error('[Event Creation] AI content generation failed:', error);
+            // Continue with manual descriptions if AI fails
+          }
+        }
+
         // Create event directly in MongoDB
         const eventData = {
           nameEs: input.nameEs,
           nameEn: input.nameEn,
-          descriptionEs: input.descriptionEs || '',
-          descriptionEn: input.descriptionEn || '',
+          descriptionEs,
+          descriptionEn,
+          faqItems, // Add FAQ to event data
           date: input.date,
           endDate: input.endDate,
           time: input.time || '09:00',

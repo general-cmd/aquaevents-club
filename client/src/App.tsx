@@ -17,6 +17,7 @@ import UserFavorites from "./pages/UserFavorites";
 import Admin from "./pages/Admin";
 import AdminContacts from "./pages/AdminContacts";
 import FederationDashboard from "./pages/FederationDashboard";
+import GorrosNatacion from "./pages/GorrosNatacion";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/admin" component={Admin} />
       <Route path="/admin/contacts" component={AdminContacts} />
       <Route path="/federacion" component={FederationDashboard} />
+      <Route path="/gorros-natacion" component={GorrosNatacion} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

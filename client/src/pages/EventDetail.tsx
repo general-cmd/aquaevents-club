@@ -484,6 +484,23 @@ export default function EventDetail() {
                 </div>
               </div>
 
+              {/* FAQ Section */}
+              {(event as any).faqItems && (event as any).faqItems.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-2xl font-bold mb-6">Preguntas Frecuentes</h3>
+                  <div className="space-y-4">
+                    {(event as any).faqItems.map((faq: { question: string; answer: string }, index: number) => (
+                      <Card key={index} className="border-l-4 border-l-blue-500">
+                        <CardContent className="p-6">
+                          <h4 className="font-semibold text-lg mb-2">{faq.question}</h4>
+                          <p className="text-gray-700">{faq.answer}</p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Related Resources */}
               <div>
                 <h3 className="text-xl font-semibold mb-4">Recursos Relacionados</h3>

@@ -820,3 +820,25 @@
 - [x] Verify all discipline dropdowns and filters use Spanish values consistently
 - [x] Test that filtering shows all natacion events together
 
+
+
+## SEO Implementation for 2026 (Nov 30, 2025)
+- [ ] Create comprehensive swimming events blog post for 2026 with tables, citations, Q&A
+- [ ] Create triathlon events blog post for 2026 with SEO optimization
+- [ ] Create swimming caps landing page targeting "gorros de natación" keywords
+- [ ] Implement AI-powered event description generator
+- [ ] Implement AI-powered Q&A generator for each event
+- [ ] Add Event schema markup to all event pages
+- [ ] Publish all blog posts to website
+- [ ] Test SEO elements (schema, meta tags, internal links)
+
+
+## SEO Implementation for 2026 (Nov 30, 2025)
+- [x] Create comprehensive swimming events blog post for 2026 with tables, citations, Q&A
+- [ ] Create triathlon events blog post for 2026 (can be added later)
+- [x] Build swimming caps landing page to rank #1 for "gorros de natación"
+- [x] Implement AI-powered event description generator
+- [x] Implement AI-powered FAQ generator for each event
+- [x] Add FAQ section to event detail pages
+- [x] Add swimming caps route to App.tsx (/gorros-natacion)
+- [x] Test AI content generation with sample event
