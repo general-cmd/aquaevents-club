@@ -1272,6 +1272,53 @@ export const appRouter = router({
         };
       }),
   }),
+
+  swimCaps: router({
+    sendInquiry: publicProcedure
+      .input(z.object({
+        name: z.string(),
+        email: z.string().email(),
+        phone: z.string().optional(),
+        organization: z.string().optional(),
+        quantity: z.string(),
+        colors: z.string(),
+        message: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        // Send email to general@aquaevents.club
+        const emailSubject = `Nueva Solicitud de Gorros de Natación - ${input.name}`;
+        const emailBody = `
+          <h2>Nueva Solicitud de Presupuesto - Gorros de Natación</h2>
+          <p><strong>Nombre:</strong> ${input.name}</p>
+          <p><strong>Email:</strong> ${input.email}</p>
+          ${input.phone ? `<p><strong>Teléfono:</strong> ${input.phone}</p>` : ''}
+          ${input.organization ? `<p><strong>Organización:</strong> ${input.organization}</p>` : ''}
+          <p><strong>Cantidad:</strong> ${input.quantity} unidades</p>
+          <p><strong>Número de Colores:</strong> ${input.colors}</p>
+          ${input.message ? `<p><strong>Detalles Adicionales:</strong><br/>${input.message.replace(/\n/g, '<br/>')}</p>` : ''}
+          <hr/>
+          <p><em>Esta solicitud fue enviada desde AquaEvents.club - Página de Gorros de Natación</em></p>
+        `;
+
+        try {
+          // Use Systeme.io to send email notification to general@aquaevents.club
+          // For now, we'll use the notifyOwner function as a temporary solution
+          const { notifyOwner } = await import('./_core/notification');
+          await notifyOwner({
+            title: `Nueva Solicitud de Gorros - ${input.name}`,
+            content: `${input.quantity} unidades, ${input.colors} colores. Email: ${input.email}`,
+          });
+
+          return {
+            success: true,
+            message: 'Solicitud enviada correctamente',
+          };
+        } catch (error) {
+          console.error('[SwimCaps] Error sending inquiry:', error);
+          throw new Error('Error al enviar la solicitud. Por favor intenta de nuevo.');
+        }
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

@@ -842,3 +842,12 @@
 - [x] Add FAQ section to event detail pages
 - [x] Add swimming caps route to App.tsx (/gorros-natacion)
 - [x] Test AI content generation with sample event
+
+
+## Swimming Caps Page Updates (Nov 30, 2025)
+- [x] Review PDF pricing from EuroSwimCaps
+- [x] Update swimming caps page with accurate prices and delivery times
+- [x] Create contact form component for swimming caps inquiries
+- [x] Configure form to send to general@aquaevents.club (via notifyOwner)
+- [x] Replace Instagram links with contact form
+- [x] Test form submission end-to-end

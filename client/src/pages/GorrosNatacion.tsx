@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Mail, Phone, Globe } from "lucide-react";
 import { APP_LOGO, APP_TITLE } from "@/const";
+import SwimCapsInquiryForm from "@/components/SwimCapsInquiryForm";
 
 export default function GorrosNatacion() {
   return (
@@ -19,7 +20,7 @@ export default function GorrosNatacion() {
             <Button 
               size="lg" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
-              onClick={() => window.location.href = 'https://www.instagram.com/euroswimcaps'}
+              onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Solicitar Presupuesto
             </Button>
@@ -243,46 +244,74 @@ export default function GorrosNatacion() {
           Descuentos adicionales para pedidos recurrentes y grandes volúmenes.
         </p>
         
-        <div className="max-w-4xl mx-auto overflow-x-auto">
+        <div className="max-w-5xl mx-auto overflow-x-auto">
           <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-blue-600 text-white">
                 <th className="p-4 text-left">Cantidad</th>
-                <th className="p-4 text-left">Precio por Unidad</th>
-                <th className="p-4 text-left">Precio Total</th>
-                <th className="p-4 text-left">Plazo de Entrega</th>
+                <th className="p-4 text-left">1 Color</th>
+                <th className="p-4 text-left">2 Colores</th>
+                <th className="p-4 text-left">3 Colores</th>
+                <th className="p-4 text-left">4 Colores</th>
+                <th className="p-4 text-left">Envío UE</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b hover:bg-gray-50">
-                <td className="p-4 font-semibold">50-99 unidades</td>
-                <td className="p-4">3,50€</td>
-                <td className="p-4">175€ - 346,50€</td>
-                <td className="p-4">15 días laborables</td>
+                <td className="p-4 font-semibold">50 unidades</td>
+                <td className="p-4">5,55€</td>
+                <td className="p-4">7,55€</td>
+                <td className="p-4">9,40€</td>
+                <td className="p-4">11,00€</td>
+                <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50 bg-blue-50">
-                <td className="p-4 font-semibold">100-249 unidades</td>
-                <td className="p-4 text-green-600 font-semibold">2,90€</td>
-                <td className="p-4">290€ - 722,10€</td>
-                <td className="p-4">12 días laborables</td>
+                <td className="p-4 font-semibold">100 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">4,45€</td>
+                <td className="p-4">5,95€</td>
+                <td className="p-4">7,40€</td>
+                <td className="p-4">8,60€</td>
+                <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50">
-                <td className="p-4 font-semibold">250-499 unidades</td>
+                <td className="p-4 font-semibold">250 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">3,65€</td>
+                <td className="p-4">4,95€</td>
+                <td className="p-4">5,99€</td>
+                <td className="p-4">6,90€</td>
+                <td className="p-4 text-green-600 font-semibold">GRATIS</td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50 bg-blue-50">
+                <td className="p-4 font-semibold">500 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">2,99€</td>
+                <td className="p-4">3,99€</td>
+                <td className="p-4">4,99€</td>
+                <td className="p-4">5,99€</td>
+                <td className="p-4 text-green-600 font-semibold">GRATIS</td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50">
+                <td className="p-4 font-semibold">1.000 unidades</td>
                 <td className="p-4 text-green-600 font-semibold">2,50€</td>
-                <td className="p-4">625€ - 1.247,50€</td>
-                <td className="p-4">12 días laborables</td>
+                <td className="p-4">POA</td>
+                <td className="p-4">POA</td>
+                <td className="p-4">POA</td>
+                <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50 bg-blue-50">
-                <td className="p-4 font-semibold">500-999 unidades</td>
-                <td className="p-4 text-green-600 font-semibold">2,20€</td>
-                <td className="p-4">1.100€ - 2.197,80€</td>
-                <td className="p-4">10 días laborables</td>
+                <td className="p-4 font-semibold">2.000 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">2,30€</td>
+                <td className="p-4">POA</td>
+                <td className="p-4">POA</td>
+                <td className="p-4">POA</td>
+                <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50">
-                <td className="p-4 font-semibold">1.000+ unidades</td>
-                <td className="p-4 text-green-600 font-semibold">Consultar</td>
-                <td className="p-4">Precio especial</td>
-                <td className="p-4">10 días laborables</td>
+                <td className="p-4 font-semibold">5.000+ unidades</td>
+                <td className="p-4 text-green-600 font-semibold">POA</td>
+                <td className="p-4">POA</td>
+                <td className="p-4">POA</td>
+                <td className="p-4">POA</td>
+                <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
             </tbody>
           </table>
@@ -290,12 +319,12 @@ export default function GorrosNatacion() {
 
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600 mb-4">
-            * Impresión a dos caras: +0,40€ por unidad | Servicio express (7 días): +20% sobre precio base
+            * Gorros de silicona tipo gamuza: +0,50€ por unidad | Sin coste de configuración/pantallas | Coincidencia de color Pantone disponible | POA = Precio bajo consulta
           </p>
           <Button 
             size="lg" 
             className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg"
-            onClick={() => window.location.href = 'https://www.instagram.com/euroswimcaps'}
+            onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Solicitar Presupuesto Personalizado
           </Button>
@@ -418,7 +447,7 @@ export default function GorrosNatacion() {
             <Button 
               size="lg" 
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg"
-              onClick={() => window.location.href = 'https://www.instagram.com/euroswimcaps'}
+              onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Mail className="w-5 h-5 mr-2" />
               Solicitar Presupuesto
@@ -427,10 +456,10 @@ export default function GorrosNatacion() {
               size="lg" 
               variant="outline"
               className="border-white text-white hover:bg-blue-700 px-8 py-6 text-lg"
-              onClick={() => window.location.href = 'https://www.instagram.com/euroswimcaps'}
+              onClick={() => window.open('https://www.instagram.com/euroswimcaps', '_blank')}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Contactar por Instagram
+              Seguir en Instagram
             </Button>
           </div>
           <div className="flex items-center justify-center gap-6 text-blue-100">
@@ -440,6 +469,19 @@ export default function GorrosNatacion() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Inquiry Form Section */}
+      <section id="formulario" className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Solicita Tu Presupuesto Personalizado
+          </h2>
+          <p className="text-xl text-gray-700">
+            Completa el formulario y recibe un presupuesto detallado en menos de 24 horas
+          </p>
+        </div>
+        <SwimCapsInquiryForm />
       </section>
 
       {/* SEO Content Section */}
