@@ -1,0 +1,17 @@
+{
+  "query": "SELECT id, slug, title, LENGTH(content) as content_length, status FROM blogPosts WHERE slug = 'eventos-natacion-espana-2026'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute SELECT id, slug, title, LENGTH(content) as content_length, status FROM blogPosts WHERE slug = 'eventos-natacion-espana-2026'",
+  "rows": [
+    {
+      "id": "215b36ad-ce7f-11f0-96a9-924dee4ae336",
+      "slug": "eventos-natacion-espana-2026",
+      "title": "Guía Completa de Eventos de Natación en España 2026",
+      "content_length": "60",
+      "status": "published"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tslug\ttitle\tcontent_length\tstatus\n215b36ad-ce7f-11f0-96a9-924dee4ae336\teventos-natacion-espana-2026\tGuía Completa de Eventos de Natación en España 2026\t60\tpublished\n",
+  "stderr": "",
+  "execution_time_ms": 181
+}

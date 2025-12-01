@@ -898,3 +898,12 @@
 - [x] Fix text formatting at end of gorros-natacion page (prose wrapper applied correctly)
 - [x] Add prominent 20% discount mention with AQUA20 code on gorros page
 - [x] Update favicon to new AquaEvents.club swimmer logo on all pages
+
+
+## CRITICAL - Production Crash After Publishing
+
+- [x] Investigate production 404 error after publishing checkpoint b11cddfd
+- [x] Check blog post database entry for missing required fields (likely 'content' field is empty)
+- [x] Fix blog post content field or remove problematic entry
+- [x] Test all pages thoroughly before creating new checkpoint
+- [x] Create stable checkpoint for production deployment
