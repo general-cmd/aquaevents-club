@@ -1306,17 +1306,7 @@ export const appRouter = router({
           const { notifyOwner } = await import('./_core/notification');
           await notifyOwner({
             title: `Nueva Solicitud de Gorros - ${input.name}`,
-            content: `
-Nombre: ${input.name}
-Email: ${input.email}
-Teléfono: ${input.phone || 'No proporcionado'}
-Organización: ${input.organization || 'No proporcionado'}
-Cantidad: ${input.quantity} unidades
-Número de Colores: ${input.colors}
-Detalles Adicionales: ${input.message || 'Ninguno'}
-
-Esta solicitud fue enviada desde AquaEvents.club - Página de Gorros de Natación
-            `,
+            content: `${input.quantity} unidades, ${input.colors} colores. Email: ${input.email}`,
           });
 
           return {

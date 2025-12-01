@@ -1,8 +1,0 @@
-{
-  "query": "SELECT id, slug, title, published FROM blogPosts ORDER BY createdAt DESC",
-  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute SELECT id, slug, title, published FROM blogPosts ORDER BY createdAt DESC",
-  "returncode": 1,
-  "logs": [
-    "ERROR 1054 (42S22) at line 1: Unknown column 'published' in 'field list'"
-  ]
-}
