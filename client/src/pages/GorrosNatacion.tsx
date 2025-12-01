@@ -140,6 +140,101 @@ export default function GorrosNatacion() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-center mb-4">Galería de Gorros Personalizados</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Descubre algunos de los gorros que hemos producido para clubes, federaciones y eventos en toda España. 
+          Cada diseño refleja la identidad única de nuestros clientes.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely_20240215_101358125.jpg" 
+              alt="Gorros de natación personalizados para club deportivo con logo impreso" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely_20240215_103649612.jpg" 
+              alt="Gorros de silicona personalizados para campeonato de natación" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely_20240215_105756492.jpg" 
+              alt="Gorros de natación con diseño personalizado para federación autonómica" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely_20240215_92324576.jpg" 
+              alt="Gorros personalizados para evento de natación con múltiples colores" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/IMG-20231018-WA0001_20240215_85525270.jpg" 
+              alt="Gorros de natación personalizados para club con logo y nombre" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/IMG-20231213-WA0001_20240117_84322615.jpg" 
+              alt="Gorros de silicona personalizados para triatlón y aguas abiertas" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/IMG-20240202-WA0005_20240208_9442775.jpg" 
+              alt="Gorros personalizados para competición oficial de natación" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely_20240215_102330268.jpg" 
+              alt="Gorros de natación con impresión de alta calidad para eventos" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely_20240215_10581754.jpg" 
+              alt="Gorros personalizados para campeonato autonómico de natación" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely_20240215_11332995.jpg" 
+              alt="Gorros de silicona personalizados para club deportivo" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely_20240215_11431461.jpg" 
+              alt="Gorros personalizados para travesía en aguas abiertas" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <img 
+              src="/pebblely(15).jpg" 
+              alt="Gorros de natación personalizados con diseño exclusivo" 
+              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Use Cases */}
       <section className="bg-gray-50 py-16" id="ejemplos">
         <div className="container mx-auto px-4">
@@ -231,6 +326,102 @@ export default function GorrosNatacion() {
                   <span>Logos de ayuntamientos y patrocinadores locales</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">Nuestros Trabajos</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Más de 1 millón de gorros personalizados para clubes, federaciones y eventos en toda Europa
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/team-mermaids.jpg" 
+                alt="Gorros personalizados Team Mermaids - diseño morado con logo de cupcake" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/reykjavik-2023.jpg" 
+                alt="Gorros personalizados Reykjavik 2023 - diseño negro con mapa de Islandia" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/owl-design.jpg" 
+                alt="Gorros personalizados con diseño de búho multicolor artístico" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/school-of-fish.jpg" 
+                alt="Gorros personalizados School of Fish - diseño azul con peces" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/chirk-dragons.jpg" 
+                alt="Gorros personalizados Chirk Dragons Swimming Club - dragón galés" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/ice-swimmers.jpg" 
+                alt="Gorros personalizados Ice Swimmers - diseño blanco y azul para natación en aguas frías" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/peebles-triathlon.jpg" 
+                alt="Gorros personalizados Peebles Triathlon Club - diseño amarillo con caballitos de mar" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/watersedge.jpg" 
+                alt="Gorros personalizados Watersedge - diseño minimalista blanco" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/corsham-league.jpg" 
+                alt="Gorros personalizados Corsham League Team - diseño amarillo con logo de dragón" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/tri-race-team.jpg" 
+                alt="Gorros personalizados 100% Tri Race Team - diseño naranja para triatletas" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/hathersage-masters.jpg" 
+                alt="Gorros personalizados Hathersage Pool Masters - diseño rojo con ilustración de piscina" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src="/gallery/nc-spartans.jpg" 
+                alt="Gorros personalizados NC Spartans - diseño rojo con casco espartano" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

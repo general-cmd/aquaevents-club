@@ -859,3 +859,32 @@
 - [x] Add swimming caps link to event detail pages (Related Resources section)
 - [x] Add swimming caps link to footer (under Servicios)
 - [x] Test all internal links work correctly
+
+
+## Blog Publishing and Swim Caps Gallery (Nov 30, 2025)
+- [ ] Copy swimming caps product photos to project public folder
+- [ ] Add swimming caps gallery section to /gorros-natacion page
+- [ ] Create swimming events 2026 blog post page component
+- [ ] Add SEO meta tags (title, description, keywords, Open Graph)
+- [ ] Add JSON-LD structured data (Article schema, FAQ schema, BreadcrumbList, Organization)
+- [ ] Include citations to RFEN and federation sources
+- [ ] Add Q&A section optimized for ChatGPT/AI search
+- [ ] Add images with proper alt text
+- [ ] Fix homepage EuroSwimCaps CTA to link to /gorros-natacion
+- [ ] Add blog route to App.tsx
+- [ ] Test blog post renders correctly with all SEO elements
+
+
+
+## Blog Post Publication - Swimming Events 2026
+
+- [x] Copy swimming caps product photos to project public folder
+- [x] Add swimming caps gallery section to /gorros-natacion page
+- [x] Create swimming events 2026 blog post page component
+- [x] Add SEO meta tags (title, description, keywords, Open Graph)
+- [x] Add JSON-LD structured data (Article schema, FAQ schema, BreadcrumbList, Organization)
+- [ ] Add citations to RFEN and federation sources
+- [ ] Add Q&A section optimized for ChatGPT/AI search
+- [ ] Add images with proper alt text
+- [x] Fix homepage EuroSwimCaps CTA to link to /gorros-natacion
+- [ ] Ensure swimming caps is positioned as complementary service (not primary theme) for SEO benefit

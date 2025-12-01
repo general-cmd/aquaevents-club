@@ -326,7 +326,7 @@ export default function Home() {
                   <Button 
                     size="lg" 
                     className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 w-full md:w-auto"
-                    onClick={() => window.open('https://euroswimcaps.com?coupon=AQUA20', '_blank')}
+                    onClick={() => window.location.href = '/gorros-natacion'}
                   >
                     Personaliza Ahora →
                   </Button>

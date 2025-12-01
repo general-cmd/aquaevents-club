@@ -18,6 +18,7 @@ import Admin from "./pages/Admin";
 import AdminContacts from "./pages/AdminContacts";
 import FederationDashboard from "./pages/FederationDashboard";
 import GorrosNatacion from "./pages/GorrosNatacion";
+import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/federaciones" component={Federations} />
       <Route path="/federaciones/:id" component={FederationDetail} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/eventos-natacion-espana-2026" component={BlogSwimmingEvents2026} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/enviar-evento" component={SubmitEvent} />
       <Route path="/perfil" component={UserProfile} />
