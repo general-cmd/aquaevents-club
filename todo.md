@@ -888,3 +888,13 @@
 - [ ] Add images with proper alt text
 - [x] Fix homepage EuroSwimCaps CTA to link to /gorros-natacion
 - [ ] Ensure swimming caps is positioned as complementary service (not primary theme) for SEO benefit
+
+
+## CRITICAL - SSL/DNS Deployment Issue Investigation
+
+- [ ] Check vite.config.ts for deployment configuration issues
+- [ ] Check package.json for build script problems
+- [ ] Verify server configuration files
+- [ ] Check if any recent changes affected deployment
+- [ ] Create minimal test checkpoint to isolate issue
+- [ ] Escalate to infrastructure team if code is not the cause
