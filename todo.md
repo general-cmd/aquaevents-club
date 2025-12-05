@@ -1167,3 +1167,26 @@
 - Email: admin@aquaevents.club
 - Password: AdminPass123
 - Login URL: https://aquaevents.club/login
+
+
+## Bug Fix - Profile Page Still Using Manus OAuth - COMPLETE ✅
+
+- [x] Check profile page authentication redirect logic
+- [x] Update profile page to redirect to /login instead of Manus OAuth
+- [x] Find all pages using getLoginUrl() and update to /login
+- [x] Update main.tsx global error handler to redirect to /login
+- [x] Test authentication flow on all pages
+- [x] Ready to deploy to production
+
+**Files Updated:**
+- UserProfile.tsx - Changed login button from getLoginUrl() to /login
+- Admin.tsx - Changed login link from getLoginUrl() to /login
+- UserFavorites.tsx - Changed login link from getLoginUrl() to /login
+- DashboardLayout.tsx - Changed login redirect from getLoginUrl() to /login
+- main.tsx - Changed unauthorized error redirect from getLoginUrl() to /login
+- Login.tsx - Kept "Continue with Manus OAuth" as fallback option
+
+**Result:**
+- All pages now redirect to /login for email/password authentication
+- Manus OAuth still available as fallback on login page
+- Tested: Profile page → Login page redirect working correctly

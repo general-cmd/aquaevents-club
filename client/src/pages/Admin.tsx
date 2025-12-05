@@ -208,11 +208,11 @@ export default function Admin() {
               <p className="text-lg text-gray-600 mb-8">
                 Necesitas iniciar sesión como administrador para acceder al panel de administración.
               </p>
-              <a href={getLoginUrl()}>
+              <Link href="/login">
                 <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
                   Iniciar Sesión
                 </Button>
-              </a>
+              </Link>
             </CardContent>
           </Card>
         </section>

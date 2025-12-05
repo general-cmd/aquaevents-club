@@ -94,11 +94,11 @@ export default function UserFavorites() {
                 Necesitas iniciar sesión para ver tus eventos favoritos.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href={getLoginUrl()}>
+                <Link href="/login">
                   <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
                     Iniciar Sesión
                   </Button>
-                </a>
+                </Link>
                 <Link href="/">
                   <Button variant="outline">
                     Volver al Inicio
