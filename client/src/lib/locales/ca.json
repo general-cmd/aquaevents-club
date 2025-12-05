@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "events": "Esdeveniments",
+    "federations": "Federacions",
+    "blog": "Blog",
+    "customCaps": "Gorros Personalitzats",
+    "submitEvent": "Enviar Esdeveniment",
+    "myProfile": "El Meu Perfil",
+    "subscribeFree": "Subscriu-te Gratis",
+    "admin": "Admin",
+    "logout": "Tancar Sessió"
+  },
+  "home": {
+    "hero": {
+      "title": "Calendari Complet d'Esdeveniments Aquàtics a Espanya 2026",
+      "subtitle": "Descobreix totes les competicions de natació, triatló, waterpolo i aigües obertes. Actualitzat mensualment amb esdeveniments oficials de federacions nacionals i autonòmiques.",
+      "emailPlaceholder": "El teu email",
+      "subscribeButton": "Subscriu-te Gratis",
+      "consent": "Accepto rebre notificacions per email"
+    },
+    "stats": {
+      "events": "Esdeveniments",
+      "federations": "Federacions",
+      "disciplines": "Disciplines"
+    },
+    "features": {
+      "title": "Tot el que Necessites per Planificar la Teva Temporada",
+      "calendar": {
+        "title": "Calendari Actualitzat",
+        "description": "Accedeix a tots els esdeveniments oficials de natació, triatló, waterpolo i aigües obertes a Espanya"
+      },
+      "federations": {
+        "title": "Totes les Federacions",
+        "description": "Informació de contacte i esdeveniments de federacions nacionals i autonòmiques"
+      },
+      "filters": {
+        "title": "Filtres Avançats",
+        "description": "Troba esdeveniments per disciplina, categoria, regió i data"
+      },
+      "notifications": {
+        "title": "Notificacions",
+        "description": "Rep alertes de nous esdeveniments que coincideixin amb les teves preferències"
+      }
+    },
+    "cta": {
+      "title": "Ets un Club o Federació?",
+      "description": "Publica els teus esdeveniments gratis i arriba a milers de nedadors, triatletes i entusiastes de l'esport aquàtic",
+      "button": "Publicar Esdeveniment Gratis"
+    },
+    "sponsor": {
+      "title": "Gorros Personalitzats per al teu Club",
+      "description": "Dissenya gorros únics amb el logo del teu equip. Qualitat professional, enviament ràpid a tota Espanya.",
+      "button": "Veure Gorros Personalitzats"
+    },
+    "faq": {
+      "title": "Preguntes Freqüents",
+      "q1": {
+        "question": "Com puc publicar un esdeveniment?",
+        "answer": "Registra't com a club o federació, completa el teu perfil i envia el teu esdeveniment per a aprovació. És completament gratis."
+      },
+      "q2": {
+        "question": "Amb quina freqüència s'actualitza el calendari?",
+        "answer": "Actualitzem el calendari mensualment amb esdeveniments oficials de totes les federacions espanyoles."
+      },
+      "q3": {
+        "question": "Puc rebre notificacions d'esdeveniments?",
+        "answer": "Sí, subscriu-te gratis i configura les teves preferències de disciplina i regió per rebre alertes personalitzades."
+      },
+      "q4": {
+        "question": "Quines disciplines estan incloses?",
+        "answer": "Natació, aigües obertes, triatló, waterpolo, natació sincronitzada, salts i totes les modalitats aquàtiques oficials."
+      }
+    }
+  },
+  "events": {
+    "title": "Esdeveniments Aquàtics",
+    "upcoming": "Pròxims Esdeveniments",
+    "filters": {
+      "all": "Tots",
+      "discipline": "Disciplina",
+      "category": "Categoria",
+      "region": "Regió",
+      "month": "Mes",
+      "search": "Cercar esdeveniments..."
+    },
+    "empty": "No hi ha esdeveniments disponibles",
+    "viewDetails": "Veure Detalls",
+    "register": "Inscriure's",
+    "addToFavorites": "Afegir a Favorits",
+    "removeFromFavorites": "Treure de Favorits",
+    "share": "Compartir",
+    "export": "Exportar a Calendari"
+  },
+  "eventDetail": {
+    "date": "Data",
+    "location": "Ubicació",
+    "discipline": "Disciplina",
+    "category": "Categoria",
+    "federation": "Federació",
+    "contact": "Contacte",
+    "website": "Lloc Web",
+    "registration": "Inscripció",
+    "capacity": "Capacitat",
+    "available": "disponibles",
+    "full": "Complet",
+    "description": "Descripció",
+    "relatedEvents": "Esdeveniments Similars",
+    "remindMe": "Recorda'm",
+    "registered": "Inscrit"
+  },
+  "forms": {
+    "submitEvent": {
+      "title": "Enviar Esdeveniment",
+      "eventInfo": "Informació de l'Esdeveniment",
+      "name": "Nom de l'Esdeveniment",
+      "discipline": "Disciplina",
+      "category": "Categoria",
+      "description": "Descripció",
+      "startDate": "Data d'Inici",
+      "endDate": "Data de Fi",
+      "location": "Ubicació",
+      "city": "Ciutat",
+      "region": "Regió",
+      "contactInfo": "Informació de Contacte",
+      "contactName": "Nom de Contacte",
+      "contactEmail": "Email de Contacte",
+      "contactPhone": "Telèfon de Contacte",
+      "website": "Lloc Web",
+      "registrationUrl": "URL d'Inscripció",
+      "maxCapacity": "Capacitat Màxima",
+      "submit": "Enviar per a Aprovació",
+      "success": "Esdeveniment enviat correctament",
+      "error": "Error en enviar l'esdeveniment"
+    },
+    "profile": {
+      "title": "El Meu Perfil",
+      "personalInfo": "Informació Personal",
+      "name": "Nom",
+      "email": "Email",
+      "userType": "Tipus d'Usuari",
+      "swimmer": "Nedador/a",
+      "club": "Club Esportiu",
+      "federation": "Federació",
+      "other": "Altre",
+      "preferences": "Preferències",
+      "disciplines": "Disciplines d'Interès",
+      "emailConsent": "Accepto rebre notificacions per email",
+      "save": "Desar Canvis",
+      "success": "Perfil actualitzat correctament",
+      "error": "Error en actualitzar el perfil"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Llegir Més",
+    "relatedPosts": "Articles Relacionats",
+    "categories": "Categories",
+    "tags": "Etiquetes"
+  },
+  "federations": {
+    "title": "Federacions",
+    "national": "Nacional",
+    "regional": "Regional",
+    "contact": "Contacte",
+    "website": "Lloc Web",
+    "events": "Esdeveniments",
+    "viewEvents": "Veure Esdeveniments"
+  },
+  "admin": {
+    "title": "Panell d'Administració",
+    "dashboard": "Dashboard",
+    "events": "Esdeveniments",
+    "submissions": "Enviaments",
+    "blog": "Blog",
+    "users": "Usuaris",
+    "pending": "Pendents",
+    "approved": "Aprovats",
+    "rejected": "Rebutjats",
+    "approve": "Aprovar",
+    "reject": "Rebutjar",
+    "publish": "Publicar",
+    "edit": "Editar",
+    "delete": "Eliminar"
+  },
+  "common": {
+    "loading": "Carregant...",
+    "error": "Error",
+    "success": "Èxit",
+    "cancel": "Cancel·lar",
+    "confirm": "Confirmar",
+    "save": "Desar",
+    "close": "Tancar",
+    "back": "Tornar",
+    "next": "Següent",
+    "previous": "Anterior",
+    "search": "Cercar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "viewAll": "Veure Tots",
+    "showMore": "Mostrar Més",
+    "showLess": "Mostrar Menys"
+  },
+  "footer": {
+    "tagline": "El calendari més complet d'esdeveniments aquàtics a Espanya",
+    "quickLinks": "Enllaços Ràpids",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacitat",
+    "termsOfService": "Termes de Servei",
+    "contact": "Contacte",
+    "followUs": "Segueix-nos",
+    "copyright": "© 2025 AquaEvents.club. Tots els drets reservats."
+  }
+}

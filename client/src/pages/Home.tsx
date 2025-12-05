@@ -5,6 +5,8 @@ import { APP_LOGO } from "@/const";
 import { Calendar, MapPin, Trophy, Users, Clock, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { trpc } from "@/lib/trpc";
+import { useTranslation } from "react-i18next";
+import Navigation from "@/components/Navigation";
 import WebSiteSchema from "@/components/schema/WebSiteSchema";
 import OrganizationSchema from "@/components/schema/OrganizationSchema";
 import FAQSchema from "@/components/schema/FAQSchema";
@@ -27,7 +29,7 @@ interface Stats {
 }
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
   
   // Use tRPC hooks for data fetching
   const { data: eventsData, isLoading: eventsLoading } = trpc.events.list.useQuery({ limit: 6 });
@@ -67,134 +69,23 @@ export default function Home() {
         <WebSiteSchema />
         <OrganizationSchema />
         <FAQSchema faqs={faqs} />
-      {/* Header/Navigation */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3">
-            <img src="/logo.png" alt="AquaEvents.club" className="h-14 w-14 object-contain" />
-            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              AquaEvents.club
-            </span>
-          </a>
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="/eventos" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-              Eventos
-            </a>
-            <a href="/federaciones" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-              Federaciones
-            </a>
-            <a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-              Blog
-            </a>
-            <a href="/gorros-natacion" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-              Gorros Personalizados
-            </a>
-            <a href="/enviar-evento" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-              Enviar Evento
-            </a>
-            <a href="/perfil" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-              Mi Perfil
-            </a>
-            <Button 
-              className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
-              onClick={() => document.getElementById('newsletter-form')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Suscríbete Gratis
-            </Button>
-          </nav>
-          <button 
-            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-        
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t bg-white">
-            <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              <a 
-                href="/eventos" 
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Eventos
-              </a>
-              <a 
-                href="/federaciones" 
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Federaciones
-              </a>
-              <a 
-                href="/blog" 
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Blog
-              </a>
-              <a 
-                href="/gorros-natacion" 
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Gorros Personalizados
-              </a>
-              <a 
-                href="/enviar-evento" 
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Enviar Evento
-              </a>
-              <a 
-                href="/perfil" 
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Mi Perfil
-              </a>
-              <Button 
-                className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 w-full"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  document.getElementById('newsletter-form')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Suscríbete Gratis
-              </Button>
-            </nav>
-          </div>
-        )}
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section id="newsletter-form" className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent leading-tight">
-            Calendario Completo de Eventos Acuáticos en España 2026
+            {t("home.hero.title")}
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Descubre todas las competiciones de natación, triatlón, waterpolo y aguas abiertas. 
-            Actualizado mensualmente con eventos oficiales de federaciones nacionales y autonómicas.
+            {t("home.hero.subtitle")}
           </p>
           
           {/* Newsletter CTA */}
           <Card className="max-w-2xl mx-auto bg-white shadow-xl border-2 border-blue-100">
             <CardContent className="p-6 md:p-8">
               <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">
-                🏊 Descarga GRATIS la Guía de Supervivencia para Clubes Acuáticos 2025
+                {t("home.sponsor.title")}
               </h3>
               <ul className="text-left mb-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -225,13 +116,13 @@ export default function Home() {
               <div className="text-3xl md:text-4xl font-bold mb-2">
                 {loading ? "..." : stats?.upcoming || 0}+
               </div>
-              <div className="text-blue-100 text-sm md:text-base">Eventos Próximos</div>
+              <div className="text-blue-100 text-sm md:text-base">{t("home.stats.events")}</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold mb-2">
                 {loading ? "..." : (stats?.byDiscipline?.length || 0)}
               </div>
-              <div className="text-blue-100 text-sm md:text-base">Disciplinas</div>
+              <div className="text-blue-100 text-sm md:text-base">{t("home.stats.disciplines")}</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold mb-2">
@@ -252,7 +143,7 @@ export default function Home() {
       {/* Features Section */}
       <section className="container mx-auto px-4 py-12 md:py-16">
         <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 text-gray-900">
-          ¿Por qué AquaEvents.club?
+          {t("home.features.title")}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="border-2 hover:border-blue-500 transition-all hover:shadow-lg">
@@ -260,9 +151,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Calendar className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Actualizado Mensualmente</h3>
+              <h3 className="font-bold text-lg mb-2">{t("home.features.calendar.title")}</h3>
               <p className="text-gray-600 text-sm">
-                Calendario completo actualizado el día 15 de cada mes
+                {t("home.features.calendar.description")}
               </p>
             </CardContent>
           </Card>
@@ -272,9 +163,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-6 h-6 text-cyan-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Toda España</h3>
+              <h3 className="font-bold text-lg mb-2">{t("home.features.federations.title")}</h3>
               <p className="text-gray-600 text-sm">
-                Eventos de todas las comunidades autónomas
+                {t("home.features.federations.description")}
               </p>
             </CardContent>
           </Card>
@@ -284,9 +175,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Trophy className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Fuentes Oficiales</h3>
+              <h3 className="font-bold text-lg mb-2">{t("home.features.filters.title")}</h3>
               <p className="text-gray-600 text-sm">
-                Datos directos de RFEN, FETRI y federaciones autonómicas
+                {t("home.features.filters.description")}
               </p>
             </CardContent>
           </Card>
@@ -296,9 +187,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-6 h-6 text-cyan-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">Para Clubes</h3>
+              <h3 className="font-bold text-lg mb-2">{t("home.features.notifications.title")}</h3>
               <p className="text-gray-600 text-sm">
-                Recursos, guías y herramientas para gestionar tu club
+                {t("home.features.notifications.description")}
               </p>
             </CardContent>
           </Card>
@@ -341,16 +232,16 @@ export default function Home() {
       <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-            Próximos Eventos
+            {t("events.upcoming")}
           </h2>
           <Button variant="outline" className="hidden md:inline-flex" onClick={() => window.location.href = '/eventos'}>
-            Ver Todos <ChevronRight className="ml-1 w-4 h-4" />
+            {t("common.viewAll")} <ChevronRight className="ml-1 w-4 h-4" />
           </Button>
         </div>
         
         {loading ? (
           <div className="text-center text-gray-600 py-12">
-            <p>Cargando eventos...</p>
+            <p>{t("common.loading")}</p>
           </div>
         ) : events.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -387,7 +278,7 @@ export default function Home() {
                       window.location.href = `/eventos/${encodeURIComponent(slug)}`;
                     }}
                   >
-                    Ver Detalles
+                    {t("events.viewDetails")}
                   </Button>
                 </CardContent>
               </Card>
@@ -395,13 +286,13 @@ export default function Home() {
           </div>
         ) : (
           <div className="text-center text-gray-600 py-12">
-            <p>No hay eventos próximos disponibles.</p>
+            <p>{t("events.empty")}</p>
           </div>
         )}
         
         <div className="text-center mt-8 md:hidden">
           <Button variant="outline" onClick={() => window.location.href = '/eventos'}>
-            Ver Todos los Eventos <ChevronRight className="ml-1 w-4 h-4" />
+            {t("common.viewAll")} <ChevronRight className="ml-1 w-4 h-4" />
           </Button>
         </div>
       </section>
@@ -411,10 +302,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              ¿Organizas un Evento Acuático?
+              {t("home.cta.title")}
             </h2>
             <p className="text-xl mb-2 text-blue-50">
-              Gorros de natación personalizados de alta calidad para tu competición
+              {t("home.cta.description")}
             </p>
             <p className="text-lg mb-8 text-blue-100">
               25 años de experiencia | Más de 1 millón de gorros producidos | Envío gratis a toda la UE
@@ -444,18 +335,16 @@ export default function Home() {
       <section className="bg-gray-50 py-12 md:py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 text-gray-900">
-            Preguntas Frecuentes
+            {t("home.faq.title")}
           </h2>
           <div className="max-w-3xl mx-auto space-y-6">
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-lg mb-2 text-gray-900">
-                  ¿Dónde puedo encontrar eventos de natación en España 2026?
+                  {t("home.faq.q1.question")}
                 </h3>
                 <p className="text-gray-700">
-                  AquaEvents.club es el calendario más completo de eventos acuáticos en España 2026. 
-                  Recopilamos competiciones de natación, triatlón, waterpolo y aguas abiertas de todas 
-                  las federaciones oficiales, actualizado mensualmente el día 15.
+                  {t("home.faq.q1.answer")}
                 </p>
               </CardContent>
             </Card>
@@ -463,12 +352,10 @@ export default function Home() {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-lg mb-2 text-gray-900">
-                  ¿Cómo puedo inscribirme en una competición?
+                  {t("home.faq.q2.question")}
                 </h3>
                 <p className="text-gray-700">
-                  Cada evento incluye información de contacto y enlaces directos a la página oficial 
-                  de inscripción. Haz clic en "Ver Detalles" del evento que te interese para acceder 
-                  a toda la información necesaria.
+                  {t("home.faq.q2.answer")}
                 </p>
               </CardContent>
             </Card>
@@ -476,12 +363,10 @@ export default function Home() {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-lg mb-2 text-gray-900">
-                  ¿Cuándo se actualiza el calendario?
+                  {t("home.faq.q3.question")}
                 </h3>
                 <p className="text-gray-700">
-                  Actualizamos el calendario automáticamente el día 15 de cada mes con los últimos 
-                  eventos publicados por la RFEN, FETRI y todas las federaciones autonómicas. 
-                  Suscríbete a nuestro newsletter para recibir las novedades.
+                  {t("home.faq.q3.answer")}
                 </p>
               </CardContent>
             </Card>
@@ -489,11 +374,10 @@ export default function Home() {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-bold text-lg mb-2 text-gray-900">
-                  ¿Es gratis usar AquaEvents.club?
+                  {t("home.faq.q4.question")}
                 </h3>
                 <p className="text-gray-700">
-                  Sí, completamente gratis. Nuestro objetivo es facilitar el acceso a la información 
-                  de eventos acuáticos para clubes, nadadores, triatletas y aficionados en toda España.
+                  {t("home.faq.q4.answer")}
                 </p>
               </CardContent>
             </Card>

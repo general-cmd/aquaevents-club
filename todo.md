@@ -925,3 +925,62 @@
 - [ ] Create federation outreach materials (email templates, benefits list)
 - [ ] Add widget analytics (view count, click tracking)
 - [ ] Add widget customization presets (federation templates)
+
+
+## Full Site Internationalization (i18n) - IN PROGRESS 🔄
+
+- [ ] Install react-i18next and i18next libraries
+- [ ] Create translation infrastructure with language detection
+- [ ] Create translation files for 6 languages (ES, CA, EU, GL, VA, EN)
+- [ ] Add language switcher component to header navigation
+- [ ] Translate homepage (hero, features, CTA, stats, FAQ)
+- [ ] Translate main navigation menu
+- [ ] Translate events listing page (filters, buttons, empty states)
+- [ ] Translate event detail pages (labels, buttons, related events)
+- [ ] Translate event submission form
+- [ ] Translate user profile page
+- [ ] Translate authentication pages (login, register)
+- [ ] Translate blog listing and detail pages
+- [ ] Translate federation pages
+- [ ] Translate admin dashboard
+- [ ] Store user language preference in localStorage
+- [ ] Test all pages in all 6 languages
+- [ ] Update SEO meta tags with language-specific content
+- [ ] Add hreflang tags for SEO
+
+
+## AI-Powered Auto-Translation System - IN PROGRESS 🔄
+
+- [ ] Design translation cache architecture
+- [ ] Create MongoDB schema for translation cache (source_text, target_lang, translated_text, hash)
+- [ ] Build tRPC endpoints for translation (getTranslation, cacheTranslation)
+- [ ] Create LLM translation service with context awareness
+- [ ] Add language prefix routing (/ca/, /eu/, /gl/, /va/, /en/)
+- [ ] Update Navigation with correct regional flags (CAT, EUS, GAL, VAL)
+- [ ] Create TranslatedText wrapper component
+- [ ] Implement automatic translation on language switch
+- [ ] Add translation caching to avoid re-translating
+- [ ] Generate hreflang tags for SEO
+- [ ] Test translation quality in all 6 languages
+- [ ] Verify SEO meta tags update per language
+- [ ] Test language persistence in localStorage
+
+
+## Full Site Internationalization - Homepage Complete ✅
+
+- [x] Install i18next and react-i18next
+- [x] Create i18n configuration with 6 languages (ES, CA, EU, GL, VA, EN)
+- [x] Create comprehensive translation files for all 6 languages
+- [x] Add LanguageSwitcher component with proper regional identifiers (CAT, EUS, GAL, VAL)
+- [x] Add Navigation component with i18n support
+- [x] Translate homepage hero section
+- [x] Translate homepage features section
+- [x] Translate homepage stats section
+- [x] Translate homepage events preview
+- [x] Translate homepage CTA sections
+- [x] Translate homepage FAQ section
+- [x] Test all 6 languages (Spanish, Catalan, Basque, Galician, Valencian, English)
+- [ ] Translate Events listing page
+- [ ] Translate Event detail page
+- [ ] Translate forms (event submission, profile)
+- [ ] Add SEO hreflang tags for multi-language indexing

@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "events": "Events",
+    "federations": "Federations",
+    "blog": "Blog",
+    "customCaps": "Custom Caps",
+    "submitEvent": "Submit Event",
+    "myProfile": "My Profile",
+    "subscribeFree": "Subscribe Free",
+    "admin": "Admin",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "title": "Complete Calendar of Aquatic Events in Spain 2026",
+      "subtitle": "Discover all swimming, triathlon, water polo and open water competitions. Updated monthly with official events from national and regional federations.",
+      "emailPlaceholder": "Your email",
+      "subscribeButton": "Subscribe Free",
+      "consent": "I agree to receive email notifications"
+    },
+    "stats": {
+      "events": "Events",
+      "federations": "Federations",
+      "disciplines": "Disciplines"
+    },
+    "features": {
+      "title": "Everything You Need to Plan Your Season",
+      "calendar": {
+        "title": "Updated Calendar",
+        "description": "Access all official swimming, triathlon, water polo and open water events in Spain"
+      },
+      "federations": {
+        "title": "All Federations",
+        "description": "Contact information and events from national and regional federations"
+      },
+      "filters": {
+        "title": "Advanced Filters",
+        "description": "Find events by discipline, category, region and date"
+      },
+      "notifications": {
+        "title": "Notifications",
+        "description": "Receive alerts for new events matching your preferences"
+      }
+    },
+    "cta": {
+      "title": "Are You a Club or Federation?",
+      "description": "Publish your events for free and reach thousands of swimmers, triathletes and aquatic sports enthusiasts",
+      "button": "Publish Event Free"
+    },
+    "sponsor": {
+      "title": "Custom Caps for Your Club",
+      "description": "Design unique caps with your team's logo. Professional quality, fast shipping throughout Spain.",
+      "button": "View Custom Caps"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "question": "How can I publish an event?",
+        "answer": "Register as a club or federation, complete your profile and submit your event for approval. It's completely free."
+      },
+      "q2": {
+        "question": "How often is the calendar updated?",
+        "answer": "We update the calendar monthly with official events from all Spanish federations."
+      },
+      "q3": {
+        "question": "Can I receive event notifications?",
+        "answer": "Yes, subscribe for free and configure your discipline and region preferences to receive personalized alerts."
+      },
+      "q4": {
+        "question": "What disciplines are included?",
+        "answer": "Swimming, open water, triathlon, water polo, synchronized swimming, diving and all official aquatic modalities."
+      }
+    }
+  },
+  "events": {
+    "title": "Aquatic Events",
+    "upcoming": "Upcoming Events",
+    "filters": {
+      "all": "All",
+      "discipline": "Discipline",
+      "category": "Category",
+      "region": "Region",
+      "month": "Month",
+      "search": "Search events..."
+    },
+    "empty": "No events available",
+    "viewDetails": "View Details",
+    "register": "Register",
+    "addToFavorites": "Add to Favorites",
+    "removeFromFavorites": "Remove from Favorites",
+    "share": "Share",
+    "export": "Export to Calendar"
+  },
+  "eventDetail": {
+    "date": "Date",
+    "location": "Location",
+    "discipline": "Discipline",
+    "category": "Category",
+    "federation": "Federation",
+    "contact": "Contact",
+    "website": "Website",
+    "registration": "Registration",
+    "capacity": "Capacity",
+    "available": "available",
+    "full": "Full",
+    "description": "Description",
+    "relatedEvents": "Similar Events",
+    "remindMe": "Remind Me",
+    "registered": "Registered"
+  },
+  "forms": {
+    "submitEvent": {
+      "title": "Submit Event",
+      "eventInfo": "Event Information",
+      "name": "Event Name",
+      "discipline": "Discipline",
+      "category": "Category",
+      "description": "Description",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "location": "Location",
+      "city": "City",
+      "region": "Region",
+      "contactInfo": "Contact Information",
+      "contactName": "Contact Name",
+      "contactEmail": "Contact Email",
+      "contactPhone": "Contact Phone",
+      "website": "Website",
+      "registrationUrl": "Registration URL",
+      "maxCapacity": "Maximum Capacity",
+      "submit": "Submit for Approval",
+      "success": "Event submitted successfully",
+      "error": "Error submitting event"
+    },
+    "profile": {
+      "title": "My Profile",
+      "personalInfo": "Personal Information",
+      "name": "Name",
+      "email": "Email",
+      "userType": "User Type",
+      "swimmer": "Swimmer",
+      "club": "Sports Club",
+      "federation": "Federation",
+      "other": "Other",
+      "preferences": "Preferences",
+      "disciplines": "Disciplines of Interest",
+      "emailConsent": "I agree to receive email notifications",
+      "save": "Save Changes",
+      "success": "Profile updated successfully",
+      "error": "Error updating profile"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Read More",
+    "relatedPosts": "Related Articles",
+    "categories": "Categories",
+    "tags": "Tags"
+  },
+  "federations": {
+    "title": "Federations",
+    "national": "National",
+    "regional": "Regional",
+    "contact": "Contact",
+    "website": "Website",
+    "events": "Events",
+    "viewEvents": "View Events"
+  },
+  "admin": {
+    "title": "Administration Panel",
+    "dashboard": "Dashboard",
+    "events": "Events",
+    "submissions": "Submissions",
+    "blog": "Blog",
+    "users": "Users",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "approve": "Approve",
+    "reject": "Reject",
+    "publish": "Publish",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "viewAll": "View All",
+    "showMore": "Show More",
+    "showLess": "Show Less"
+  },
+  "footer": {
+    "tagline": "The most complete calendar of aquatic events in Spain",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "copyright": "© 2025 AquaEvents.club. All rights reserved."
+  }
+}

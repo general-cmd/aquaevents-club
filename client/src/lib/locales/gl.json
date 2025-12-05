@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "events": "Eventos",
+    "federations": "Federacións",
+    "blog": "Blog",
+    "customCaps": "Gorros Personalizados",
+    "submitEvent": "Enviar Evento",
+    "myProfile": "O Meu Perfil",
+    "subscribeFree": "Subscríbete Gratis",
+    "admin": "Admin",
+    "logout": "Pechar Sesión"
+  },
+  "home": {
+    "hero": {
+      "title": "Calendario Completo de Eventos Acuáticos en España 2026",
+      "subtitle": "Descobre todas as competicións de natación, tríatlon, waterpolo e augas abertas. Actualizado mensualmente con eventos oficiais de federacións nacionais e autonómicas.",
+      "emailPlaceholder": "O teu email",
+      "subscribeButton": "Subscríbete Gratis",
+      "consent": "Acepto recibir notificacións por email"
+    },
+    "stats": {
+      "events": "Eventos",
+      "federations": "Federacións",
+      "disciplines": "Disciplinas"
+    },
+    "features": {
+      "title": "Todo o que Necesitas para Planificar a Túa Tempada",
+      "calendar": {
+        "title": "Calendario Actualizado",
+        "description": "Accede a todos os eventos oficiais de natación, tríatlon, waterpolo e augas abertas en España"
+      },
+      "federations": {
+        "title": "Todas as Federacións",
+        "description": "Información de contacto e eventos de federacións nacionais e autonómicas"
+      },
+      "filters": {
+        "title": "Filtros Avanzados",
+        "description": "Atopa eventos por disciplina, categoría, rexión e data"
+      },
+      "notifications": {
+        "title": "Notificacións",
+        "description": "Recibe alertas de novos eventos que coincidan coas túas preferencias"
+      }
+    },
+    "cta": {
+      "title": "Es un Club ou Federación?",
+      "description": "Publica os teus eventos gratis e chega a miles de nadadores, triatletas e entusiastas do deporte acuático",
+      "button": "Publicar Evento Gratis"
+    },
+    "sponsor": {
+      "title": "Gorros Personalizados para o teu Club",
+      "description": "Deseña gorros únicos co logo do teu equipo. Calidade profesional, envío rápido a toda España.",
+      "button": "Ver Gorros Personalizados"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": {
+        "question": "Como podo publicar un evento?",
+        "answer": "Rexístrate como club ou federación, completa o teu perfil e envía o teu evento para aprobación. É completamente gratis."
+      },
+      "q2": {
+        "question": "Con que frecuencia se actualiza o calendario?",
+        "answer": "Actualizamos o calendario mensualmente con eventos oficiais de todas as federacións españolas."
+      },
+      "q3": {
+        "question": "Podo recibir notificacións de eventos?",
+        "answer": "Si, subscríbete gratis e configura as túas preferencias de disciplina e rexión para recibir alertas personalizadas."
+      },
+      "q4": {
+        "question": "Que disciplinas están incluídas?",
+        "answer": "Natación, augas abertas, tríatlon, waterpolo, natación sincronizada, saltos e todas as modalidades acuáticas oficiais."
+      }
+    }
+  },
+  "events": {
+    "title": "Eventos Acuáticos",
+    "upcoming": "Próximos Eventos",
+    "filters": {
+      "all": "Todos",
+      "discipline": "Disciplina",
+      "category": "Categoría",
+      "region": "Rexión",
+      "month": "Mes",
+      "search": "Buscar eventos..."
+    },
+    "empty": "Non hai eventos dispoñibles",
+    "viewDetails": "Ver Detalles",
+    "register": "Inscribirse",
+    "addToFavorites": "Engadir a Favoritos",
+    "removeFromFavorites": "Quitar de Favoritos",
+    "share": "Compartir",
+    "export": "Exportar a Calendario"
+  },
+  "eventDetail": {
+    "date": "Data",
+    "location": "Localización",
+    "discipline": "Disciplina",
+    "category": "Categoría",
+    "federation": "Federación",
+    "contact": "Contacto",
+    "website": "Sitio Web",
+    "registration": "Inscrición",
+    "capacity": "Capacidade",
+    "available": "dispoñibles",
+    "full": "Completo",
+    "description": "Descrición",
+    "relatedEvents": "Eventos Similares",
+    "remindMe": "Lembrarme",
+    "registered": "Inscrito"
+  },
+  "forms": {
+    "submitEvent": {
+      "title": "Enviar Evento",
+      "eventInfo": "Información do Evento",
+      "name": "Nome do Evento",
+      "discipline": "Disciplina",
+      "category": "Categoría",
+      "description": "Descrición",
+      "startDate": "Data de Inicio",
+      "endDate": "Data de Fin",
+      "location": "Localización",
+      "city": "Cidade",
+      "region": "Rexión",
+      "contactInfo": "Información de Contacto",
+      "contactName": "Nome de Contacto",
+      "contactEmail": "Email de Contacto",
+      "contactPhone": "Teléfono de Contacto",
+      "website": "Sitio Web",
+      "registrationUrl": "URL de Inscrición",
+      "maxCapacity": "Capacidade Máxima",
+      "submit": "Enviar para Aprobación",
+      "success": "Evento enviado correctamente",
+      "error": "Erro ao enviar o evento"
+    },
+    "profile": {
+      "title": "O Meu Perfil",
+      "personalInfo": "Información Persoal",
+      "name": "Nome",
+      "email": "Email",
+      "userType": "Tipo de Usuario",
+      "swimmer": "Nadador/a",
+      "club": "Club Deportivo",
+      "federation": "Federación",
+      "other": "Outro",
+      "preferences": "Preferencias",
+      "disciplines": "Disciplinas de Interese",
+      "emailConsent": "Acepto recibir notificacións por email",
+      "save": "Gardar Cambios",
+      "success": "Perfil actualizado correctamente",
+      "error": "Erro ao actualizar o perfil"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Ler Máis",
+    "relatedPosts": "Artigos Relacionados",
+    "categories": "Categorías",
+    "tags": "Etiquetas"
+  },
+  "federations": {
+    "title": "Federacións",
+    "national": "Nacional",
+    "regional": "Rexional",
+    "contact": "Contacto",
+    "website": "Sitio Web",
+    "events": "Eventos",
+    "viewEvents": "Ver Eventos"
+  },
+  "admin": {
+    "title": "Panel de Administración",
+    "dashboard": "Dashboard",
+    "events": "Eventos",
+    "submissions": "Envíos",
+    "blog": "Blog",
+    "users": "Usuarios",
+    "pending": "Pendentes",
+    "approved": "Aprobados",
+    "rejected": "Rexeitados",
+    "approve": "Aprobar",
+    "reject": "Rexeitar",
+    "publish": "Publicar",
+    "edit": "Editar",
+    "delete": "Eliminar"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Erro",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Gardar",
+    "close": "Pechar",
+    "back": "Volver",
+    "next": "Seguinte",
+    "previous": "Anterior",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "viewAll": "Ver Todos",
+    "showMore": "Mostrar Máis",
+    "showLess": "Mostrar Menos"
+  },
+  "footer": {
+    "tagline": "O calendario máis completo de eventos acuáticos en España",
+    "quickLinks": "Ligazóns Rápidas",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Servizo",
+    "contact": "Contacto",
+    "followUs": "Síguenos",
+    "copyright": "© 2025 AquaEvents.club. Todos os dereitos reservados."
+  }
+}

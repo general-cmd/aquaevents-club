@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "events": "Ekitaldiak",
+    "federations": "Federazioak",
+    "blog": "Bloga",
+    "customCaps": "Txano Pertsonalizatuak",
+    "submitEvent": "Ekitaldia Bidali",
+    "myProfile": "Nire Profila",
+    "subscribeFree": "Harpidetu Doan",
+    "admin": "Admin",
+    "logout": "Saioa Itxi"
+  },
+  "home": {
+    "hero": {
+      "title": "Espainiako Ur Kirol Ekitaldien Egutegi Osoa 2026",
+      "subtitle": "Aurkitu igeriketa, triatloi, ur-poloa eta ur irekiko lehiaketa guztiak. Hilero eguneratua federazio nazional eta autonomikoen ekitaldi ofizialak.",
+      "emailPlaceholder": "Zure emaila",
+      "subscribeButton": "Harpidetu Doan",
+      "consent": "Emailez jakinarazpenak jasotzea onartzen dut"
+    },
+    "stats": {
+      "events": "Ekitaldiak",
+      "federations": "Federazioak",
+      "disciplines": "Diziplinak"
+    },
+    "features": {
+      "title": "Zure Denboraldia Planifikatzeko Behar Duzun Guztia",
+      "calendar": {
+        "title": "Eguneratutako Egutegia",
+        "description": "Sartu Espainiako igeriketa, triatloi, ur-poloa eta ur irekiko ekitaldi ofizial guztietara"
+      },
+      "federations": {
+        "title": "Federazio Guztiak",
+        "description": "Federazio nazional eta autonomikoen kontaktu informazioa eta ekitaldiak"
+      },
+      "filters": {
+        "title": "Iragazki Aurreratuak",
+        "description": "Aurkitu ekitaldiak diziplina, kategoria, eskualde eta dataren arabera"
+      },
+      "notifications": {
+        "title": "Jakinarazpenak",
+        "description": "Jaso zure lehentasunekin bat datozen ekitaldi berrien alertak"
+      }
+    },
+    "cta": {
+      "title": "Kluba edo Federazioa zara?",
+      "description": "Argitaratu zure ekitaldiak doan eta iritsi milaka igerilari, triatleta eta ur kirol zaleei",
+      "button": "Argitaratu Ekitaldia Doan"
+    },
+    "sponsor": {
+      "title": "Txano Pertsonalizatuak Zure Klubarentzat",
+      "description": "Diseinatu txano esklusiboak zure taldearen logoarekin. Kalitate profesionala, bidalketa azkarra Espainia osoan.",
+      "button": "Ikusi Txano Pertsonalizatuak"
+    },
+    "faq": {
+      "title": "Maiz Egiten Diren Galderak",
+      "q1": {
+        "question": "Nola argitara dezaket ekitaldi bat?",
+        "answer": "Erregistratu klub edo federazio gisa, osatu zure profila eta bidali zure ekitaldia onartzeko. Guztiz doakoa da."
+      },
+      "q2": {
+        "question": "Zein maiztasunarekin eguneratzen da egutegia?",
+        "answer": "Egutegia hilero eguneratzen dugu Espainiako federazio guztietako ekitaldi ofizialekin."
+      },
+      "q3": {
+        "question": "Ekitaldien jakinarazpenak jaso ditzaket?",
+        "answer": "Bai, harpidetu doan eta konfiguratu zure diziplina eta eskualde lehentasunak alerta pertsonalizatuak jasotzeko."
+      },
+      "q4": {
+        "question": "Zein diziplina daude sartuta?",
+        "answer": "Igeriketa, ur irekia, triatloia, ur-poloa, igeriketa sinkronizatua, jauzia eta ur kirol modalitate ofizial guztiak."
+      }
+    }
+  },
+  "events": {
+    "title": "Ur Kirol Ekitaldiak",
+    "upcoming": "Hurrengo Ekitaldiak",
+    "filters": {
+      "all": "Guztiak",
+      "discipline": "Diziplina",
+      "category": "Kategoria",
+      "region": "Eskualdea",
+      "month": "Hilabetea",
+      "search": "Bilatu ekitaldiak..."
+    },
+    "empty": "Ez dago ekitaldirik eskuragarri",
+    "viewDetails": "Ikusi Xehetasunak",
+    "register": "Izena Eman",
+    "addToFavorites": "Gehitu Gogokoetara",
+    "removeFromFavorites": "Kendu Gogokoetatik",
+    "share": "Partekatu",
+    "export": "Esportatu Egutegira"
+  },
+  "eventDetail": {
+    "date": "Data",
+    "location": "Kokapena",
+    "discipline": "Diziplina",
+    "category": "Kategoria",
+    "federation": "Federazioa",
+    "contact": "Kontaktua",
+    "website": "Webgunea",
+    "registration": "Izen-ematea",
+    "capacity": "Edukiera",
+    "available": "eskuragarri",
+    "full": "Beteta",
+    "description": "Deskribapena",
+    "relatedEvents": "Antzeko Ekitaldiak",
+    "remindMe": "Gogoratu",
+    "registered": "Izena emanda"
+  },
+  "forms": {
+    "submitEvent": {
+      "title": "Ekitaldia Bidali",
+      "eventInfo": "Ekitaldiaren Informazioa",
+      "name": "Ekitaldiaren Izena",
+      "discipline": "Diziplina",
+      "category": "Kategoria",
+      "description": "Deskribapena",
+      "startDate": "Hasiera Data",
+      "endDate": "Amaiera Data",
+      "location": "Kokapena",
+      "city": "Hiria",
+      "region": "Eskualdea",
+      "contactInfo": "Kontaktu Informazioa",
+      "contactName": "Kontaktu Izena",
+      "contactEmail": "Kontaktu Emaila",
+      "contactPhone": "Kontaktu Telefonoa",
+      "website": "Webgunea",
+      "registrationUrl": "Izen-emate URLa",
+      "maxCapacity": "Gehienezko Edukiera",
+      "submit": "Bidali Onartzeko",
+      "success": "Ekitaldia zuzen bidali da",
+      "error": "Errorea ekitaldia bidaltzean"
+    },
+    "profile": {
+      "title": "Nire Profila",
+      "personalInfo": "Informazio Pertsonala",
+      "name": "Izena",
+      "email": "Emaila",
+      "userType": "Erabiltzaile Mota",
+      "swimmer": "Igerilaria",
+      "club": "Kirol Kluba",
+      "federation": "Federazioa",
+      "other": "Bestea",
+      "preferences": "Lehentasunak",
+      "disciplines": "Intereseko Diziplinak",
+      "emailConsent": "Emailez jakinarazpenak jasotzea onartzen dut",
+      "save": "Gorde Aldaketak",
+      "success": "Profila zuzen eguneratu da",
+      "error": "Errorea profila eguneratzean"
+    }
+  },
+  "blog": {
+    "title": "Bloga",
+    "readMore": "Irakurri Gehiago",
+    "relatedPosts": "Artikulu Erlazionatuak",
+    "categories": "Kategoriak",
+    "tags": "Etiketak"
+  },
+  "federations": {
+    "title": "Federazioak",
+    "national": "Nazionala",
+    "regional": "Eskualdekoa",
+    "contact": "Kontaktua",
+    "website": "Webgunea",
+    "events": "Ekitaldiak",
+    "viewEvents": "Ikusi Ekitaldiak"
+  },
+  "admin": {
+    "title": "Administrazio Panela",
+    "dashboard": "Aginte-panela",
+    "events": "Ekitaldiak",
+    "submissions": "Bidalketak",
+    "blog": "Bloga",
+    "users": "Erabiltzaileak",
+    "pending": "Zain",
+    "approved": "Onartuta",
+    "rejected": "Baztertuta",
+    "approve": "Onartu",
+    "reject": "Baztertu",
+    "publish": "Argitaratu",
+    "edit": "Editatu",
+    "delete": "Ezabatu"
+  },
+  "common": {
+    "loading": "Kargatzen...",
+    "error": "Errorea",
+    "success": "Arrakasta",
+    "cancel": "Ezeztatu",
+    "confirm": "Baieztatu",
+    "save": "Gorde",
+    "close": "Itxi",
+    "back": "Atzera",
+    "next": "Hurrengoa",
+    "previous": "Aurrekoa",
+    "search": "Bilatu",
+    "filter": "Iragazi",
+    "sort": "Ordenatu",
+    "viewAll": "Ikusi Guztiak",
+    "showMore": "Erakutsi Gehiago",
+    "showLess": "Erakutsi Gutxiago"
+  },
+  "footer": {
+    "tagline": "Espainiako ur kirol ekitaldien egutegi osoena",
+    "quickLinks": "Esteka Azkarrak",
+    "legal": "Legala",
+    "privacyPolicy": "Pribatutasun Politika",
+    "termsOfService": "Zerbitzu Baldintzak",
+    "contact": "Kontaktua",
+    "followUs": "Jarraitu Gaitzazu",
+    "copyright": "© 2025 AquaEvents.club. Eskubide guztiak erreserbatuak."
+  }
+}
