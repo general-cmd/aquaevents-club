@@ -3,6 +3,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { widgetRouter } from "./widgetRouter";
 import { translationRouter } from "./routers/translation";
+import { bulkImportRouter } from "./routers/bulkImport";
 import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { 
@@ -25,6 +26,7 @@ export const appRouter = router({
   system: systemRouter,
   widget: widgetRouter,
   translation: translationRouter,
+  bulkImport: bulkImportRouter,
 
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),

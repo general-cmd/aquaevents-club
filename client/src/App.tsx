@@ -22,6 +22,7 @@ import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
 import WidgetCalendar from "./pages/WidgetCalendar";
 import WidgetBuilder from "./pages/WidgetBuilder";
 import WidgetDemo from "./pages/WidgetDemo";
+import BulkImport from "./pages/BulkImport";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/mis-favoritos" component={UserFavorites} />
       <Route path="/admin" component={Admin} />
       <Route path="/admin/contacts" component={AdminContacts} />
+      <Route path="/admin/bulk-import" component={BulkImport} />
       <Route path="/federacion" component={FederationDashboard} />
       <Route path="/gorros-natacion" component={GorrosNatacion} />
       <Route path="/widget/calendar" component={WidgetCalendar} />
