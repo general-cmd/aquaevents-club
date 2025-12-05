@@ -347,6 +347,15 @@ export default function Admin() {
                 Contactos
               </Button>
             </Link>
+            <Link href="/admin/bulk-import">
+              <Button
+                variant="ghost"
+                className="rounded-b-none"
+              >
+                <Plus className="w-4 h-4 mr-2" />
+                Importar CSV
+              </Button>
+            </Link>
           </div>
 
           {/* Event Submissions Tab */}

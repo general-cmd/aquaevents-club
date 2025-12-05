@@ -237,11 +237,18 @@ export default function UserProfile() {
                 </a>
               </Link>
               {(user as any)?.role === 'admin' && (
-                <Link href="/admin">
-                  <a className="text-purple-600 hover:text-purple-700 transition-colors font-medium flex items-center gap-1">
-                    <span>🔑</span> Admin
-                  </a>
-                </Link>
+                <>
+                  <Link href="/admin">
+                    <a className="text-purple-600 hover:text-purple-700 transition-colors font-medium flex items-center gap-1">
+                      <span>🔑</span> Admin
+                    </a>
+                  </Link>
+                  <Link href="/admin/bulk-import">
+                    <a className="text-purple-600 hover:text-purple-700 transition-colors font-medium flex items-center gap-1">
+                      <span>📤</span> Importar CSV
+                    </a>
+                  </Link>
+                </>
               )}
               <Button 
                 variant="outline" 

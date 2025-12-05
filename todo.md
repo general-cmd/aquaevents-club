@@ -1238,3 +1238,17 @@ const token = jwt.sign(
 - ✅ User profile shows "Sesión Activa" with admin badge
 - ✅ Logout button appears in navigation
 - ✅ Admin link appears in navigation
+
+
+## UX Improvement - Add Bulk Import Navigation Link - COMPLETE ✅
+
+- [x] Add "Bulk Import" link to Admin dashboard page
+- [x] Add "Bulk Import" link to user profile admin section  
+- [x] Test navigation from admin areas to /admin/bulk-import
+- [x] Ready to deploy to production
+
+**Changes Made:**
+- Added "Importar CSV" button with Plus icon to Admin dashboard tabs (after Contactos)
+- Added "📤 Importar CSV" link to UserProfile admin navigation section
+- Tested: Navigation works perfectly from /admin to /admin/bulk-import
+- Bulk import page loads correctly with CSV template download and import functionality
