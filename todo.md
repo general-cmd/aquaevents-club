@@ -1105,3 +1105,11 @@
 - Code is correct and committed to GitHub
 - Issue: Railway is using cached build that doesn't include LanguageSwitcher
 - Solution: Force clean rebuild by clearing cache or making code change
+
+
+## GitHub Sync Setup - IN PROGRESS
+
+- [ ] Add GitHub remote for general-cmd/aquaevents-club
+- [ ] Push all commits to GitHub
+- [ ] Verify Railway deployment triggers automatically
+- [ ] Document GitHub sync process for future updates
