@@ -1190,3 +1190,51 @@
 - All pages now redirect to /login for email/password authentication
 - Manus OAuth still available as fallback on login page
 - Tested: Profile page → Login page redirect working correctly
+
+
+## Bug Fix - Session Cookie Not Persisting After Login
+
+**Problem:** User logs in successfully but is redirected back to login page, session cookie not being recognized
+
+- [ ] Check cookie configuration in server/_core/cookies.ts
+- [ ] Verify cookie settings for production domain (SameSite, Secure, Domain)
+- [ ] Test login flow in development environment
+- [ ] Check if cookie is being set with correct attributes
+- [ ] Fix cookie domain/path settings for production
+- [ ] Test authentication persistence in production
+- [ ] Verify hard refresh doesn't lose session
+
+
+## Bug Fix - Session Cookie Not Persisting After Login - COMPLETE ✅
+
+- [x] Investigate cookie configuration for production
+- [x] Check if cookie is being set by server
+- [x] Verify cookie settings (SameSite, Secure, Domain)
+- [x] Check if SDK verifySession is reading cookie correctly
+- [x] Fix JWT payload structure to match expected session format
+- [x] Test login flow end-to-end - WORKING!
+- [x] Ready to deploy to production
+
+**Root Cause:**
+The emailAuth router was creating JWT tokens with `{userId, email, role}` payload, but `sdk.verifySession()` expects `{openId, appId, name}` structure (lines 219-228 in sdk.ts).
+
+**Solution:**
+Updated emailAuth.ts line 152-160 to create JWT with correct payload structure:
+```typescript
+const token = jwt.sign(
+  {
+    openId: user.id,
+    appId: ENV.appId,
+    name: user.name || user.email || "",
+  },
+  ENV.cookieSecret,
+  { expiresIn: "7d" }
+);
+```
+
+**Result:**
+- ✅ Login works perfectly in development
+- ✅ Session persists across page loads
+- ✅ User profile shows "Sesión Activa" with admin badge
+- ✅ Logout button appears in navigation
+- ✅ Admin link appears in navigation

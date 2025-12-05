@@ -147,12 +147,13 @@ export const emailAuthRouter = router({
       // Update last signed in
       await db.update(users).set({ lastSignedIn: new Date() }).where(eq(users.id, user.id));
 
-      // Create JWT token
+      // Create JWT token with session payload structure expected by sdk.verifySession
+      // Must match: { openId, appId, name }
       const token = jwt.sign(
         {
-          userId: user.id,
-          email: user.email,
-          role: user.role,
+          openId: user.id,
+          appId: ENV.appId,
+          name: user.name || user.email || "",
         },
         ENV.cookieSecret,
         { expiresIn: "7d" }

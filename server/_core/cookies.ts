@@ -39,10 +39,14 @@ export function getSessionCookieOptions(
   //       ? hostname
   //       : undefined;
 
+  // For production (Railway/Vercel), always use secure cookies with lax sameSite
+  // For development (HTTP), use non-secure cookies
+  const isProduction = process.env.NODE_ENV === "production" || isSecureRequest(req);
+  
   return {
     httpOnly: true,
     path: "/",
-    sameSite: "none",
-    secure: isSecureRequest(req),
+    sameSite: "lax", // "lax" works for same-site requests (better than "none")
+    secure: isProduction, // Only secure in production (HTTPS required)
   };
 }

@@ -22,11 +22,13 @@ export default function Login() {
   const utils = trpc.useUtils();
 
   const loginMutation = trpc.emailAuth.login.useMutation({
-    onSuccess: () => {
+    onSuccess: async () => {
       // Invalidate auth query to refresh user state
-      utils.auth.me.invalidate();
+      await utils.auth.me.invalidate();
+      // Wait a bit for the refetch to complete
+      await new Promise(resolve => setTimeout(resolve, 200));
       // Redirect to profile page
-      setTimeout(() => setLocation("/perfil"), 100);
+      setLocation("/perfil");
     },
     onError: (err) => {
       setError(err.message);
