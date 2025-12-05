@@ -8,6 +8,7 @@ import { boolean, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzl
   id: varchar("id", { length: 64 }).primaryKey(),
   name: text("name"),
   email: varchar("email", { length: 320 }),
+  password: varchar("password", { length: 255 }), // Bcrypt hashed password (for email/password auth)
   loginMethod: varchar("loginMethod", { length: 64 }),
   role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
   userType: varchar("userType", { length: 50 }), // "swimmer", "club", "federation"

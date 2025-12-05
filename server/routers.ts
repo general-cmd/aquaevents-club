@@ -4,6 +4,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { widgetRouter } from "./widgetRouter";
 import { translationRouter } from "./routers/translation";
 import { bulkImportRouter } from "./routers/bulkImport";
+import { emailAuthRouter } from "./routers/emailAuth";
 import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { 
@@ -27,6 +28,7 @@ export const appRouter = router({
   widget: widgetRouter,
   translation: translationRouter,
   bulkImport: bulkImportRouter,
+  emailAuth: emailAuthRouter,
 
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),

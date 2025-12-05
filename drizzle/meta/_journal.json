@@ -71,6 +71,13 @@
       "when": 1763826130126,
       "tag": "0009_aberrant_kate_bishop",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1764946778533,
+      "tag": "0010_acoustic_absorbing_man",
+      "breakpoints": true
     }
   ]
 }

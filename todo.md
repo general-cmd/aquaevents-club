@@ -1133,3 +1133,37 @@
 - ✅ Federation Email Template: Includes Spanish & Catalan versions
 - ✅ CSV Template: Downloadable from bulk import page
 - ✅ All tests passing
+
+
+## Email/Password Authentication - COMPLETE ✅
+
+**Problem:** Manus OAuth is unreliable, preventing admin access to bulk import tool
+
+**Solution:** Implemented secure email/password auth as backup
+
+- [x] Install bcrypt package for password hashing
+- [x] Create password hashing utilities (hash, verify, validate)
+- [x] Update users schema to support password field
+- [x] Push database schema changes (migration 0010)
+- [x] Create tRPC auth procedures (register, login, changePassword)
+- [x] Build login page UI (/login)
+- [x] Build registration page UI (admin-only at /admin/register)
+- [x] Add routes to App.tsx
+- [x] Write comprehensive vitest tests (14 tests passing)
+- [x] Create bootstrap admin account (admin@aquaevents.club)
+- [x] Test login flow in browser
+
+**Security Features:**
+- ✅ Bcrypt password hashing (12 salt rounds)
+- ✅ Passwords never stored in plain text
+- ✅ JWT tokens for session management
+- ✅ HTTPS encryption
+- ✅ Minimal credit usage (~0.002 per login)
+- ✅ Password strength validation (8+ chars, uppercase, lowercase, numbers)
+- ✅ Email format validation
+- ✅ Admin-only registration (prevents spam)
+
+**Login Credentials:**
+- Email: admin@aquaevents.club
+- Password: AdminPass123
+- Login URL: https://aquaevents.club/login
