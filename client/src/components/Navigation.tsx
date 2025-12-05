@@ -9,10 +9,10 @@ export default function Navigation() {
 
   return (
     <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3">
-          <img src="/logo.png" alt="AquaEvents.club" className="h-14 w-14 object-contain" />
-          <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-2">
+        <a href="/" className="flex items-center gap-2 md:gap-3 flex-shrink min-w-0">
+          <img src="/logo.png" alt="AquaEvents.club" className="h-10 w-10 md:h-14 md:w-14 object-contain flex-shrink-0" />
+          <span className="text-lg md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent truncate">
             AquaEvents.club
           </span>
         </a>
@@ -45,7 +45,7 @@ export default function Navigation() {
           </Button>
         </nav>
 
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-1 flex-shrink-0">
           <LanguageSwitcher />
           <button 
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"

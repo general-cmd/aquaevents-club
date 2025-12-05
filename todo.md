@@ -984,3 +984,12 @@
 - [ ] Translate Event detail page
 - [ ] Translate forms (event submission, profile)
 - [ ] Add SEO hreflang tags for multi-language indexing
+
+
+## Mobile UX Fixes - COMPLETE ✅
+
+- [x] Fix language switcher overlapping logo on mobile
+- [x] Add proper regional flags (Catalonia, Basque, Galicia, Valencia)
+- [x] Improve mobile header spacing and layout (smaller logo, better flex)
+- [x] Add Unicode regional flag emojis (🏴󠁥󠁳󠁣󠁴󠁿 🏴󠁥󠁳󠁰󠁶󠁿 🏴󠁥󠁳󠁧󠁡󠁿 🏴󠁥󠁳󠁶󠁣󠁿)
+- [x] Test responsive design on desktop and mobile
