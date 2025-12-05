@@ -888,3 +888,40 @@
 - [ ] Add images with proper alt text
 - [x] Fix homepage EuroSwimCaps CTA to link to /gorros-natacion
 - [ ] Ensure swimming caps is positioned as complementary service (not primary theme) for SEO benefit
+
+
+## Widget System - COMPLETE ✅ (Dec 5, 2024)
+
+- [x] Design widget configuration interface
+- [x] Build widget iframe endpoint with query parameters (mode, style, color, lang, discipline, region, fed)
+- [x] Create widget UI components (list, calendar, cards views)
+- [x] Add multi-language support (ES, CA, EU, GL, VA, EN)
+- [x] Implement federation dashboard widget builder at /widget/builder
+- [x] Test widget embed and create demo page at /widget/demo
+- [x] Write comprehensive vitest tests for widget functionality (10 tests passing)
+
+### Widget Features Completed ✅
+- [x] Three display styles: List (vertical), Cards (grid), Calendar (by month)
+- [x] Six languages: Spanish, Catalan, Basque, Galician, Valencian, English
+- [x] Color customization (8 presets + custom hex input)
+- [x] Display mode: All events vs Own events (highlighted with border)
+- [x] Optional filters: Discipline, Region
+- [x] Live preview in widget builder with real-time updates
+- [x] HTML embed code generator with copy button
+- [x] Direct URL with copy button
+- [x] Usage instructions and quick tips
+- [x] Demo page with 4 example configurations (Spanish list, Catalan cards, Basque calendar, filtered)
+- [x] Responsive design (mobile, tablet, desktop)
+- [x] "Powered by AquaEvents.club" footer link
+
+### Widget Routes Created ✅
+- [x] /widget/calendar - Embeddable widget iframe endpoint
+- [x] /widget/builder - Visual configuration interface for federations
+- [x] /widget/demo - Showcase page with multiple examples
+
+### Widget Documentation TODO 📋
+- [ ] Add widget builder link to federation dashboard
+- [ ] Add widget demo link to main navigation
+- [ ] Create federation outreach materials (email templates, benefits list)
+- [ ] Add widget analytics (view count, click tracking)
+- [ ] Add widget customization presets (federation templates)

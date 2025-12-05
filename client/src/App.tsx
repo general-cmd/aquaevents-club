@@ -19,6 +19,9 @@ import AdminContacts from "./pages/AdminContacts";
 import FederationDashboard from "./pages/FederationDashboard";
 import GorrosNatacion from "./pages/GorrosNatacion";
 import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
+import WidgetCalendar from "./pages/WidgetCalendar";
+import WidgetBuilder from "./pages/WidgetBuilder";
+import WidgetDemo from "./pages/WidgetDemo";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -39,6 +42,9 @@ function Router() {
       <Route path="/admin/contacts" component={AdminContacts} />
       <Route path="/federacion" component={FederationDashboard} />
       <Route path="/gorros-natacion" component={GorrosNatacion} />
+      <Route path="/widget/calendar" component={WidgetCalendar} />
+      <Route path="/widget/builder" component={WidgetBuilder} />
+      <Route path="/widget/demo" component={WidgetDemo} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
