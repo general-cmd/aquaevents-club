@@ -1085,3 +1085,23 @@
 - [x] Add LanguageSwitcher to EventDetail page navigation
 - [x] Tested in Catalan - all labels translating correctly
 - [x] Tested in Spanish - all labels translating correctly
+
+
+## Production Deployment Issue - Missing Features - IN PROGRESS
+
+- [x] Investigate why language switcher is not visible on production site
+- [x] Check if AI translation features are working on production
+- [x] Compare development vs production build configuration
+- [x] Verify all translation files are included in production build
+- [x] Check if tRPC translation endpoints are accessible in production
+- [ ] Force Railway rebuild by making code change
+- [ ] Clear Railway build cache
+- [ ] Verify environment variables are set correctly in Railway
+- [ ] Test production site after fix
+
+**Root Cause Found:**
+- LanguageSwitcher component is NOT rendering in production DOM
+- EventDetail i18n labels ARE working (Información del Evento, Ubicación, Contacto)
+- Code is correct and committed to GitHub
+- Issue: Railway is using cached build that doesn't include LanguageSwitcher
+- Solution: Force clean rebuild by clearing cache or making code change

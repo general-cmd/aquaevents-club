@@ -17,6 +17,7 @@ const languages = [
   { code: "en", name: "English", flag: "/flags/uk.svg", short: "EN" },
 ];
 
+// Version: 2024-12-05 - Force rebuild for production deployment
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
