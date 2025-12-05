@@ -15,6 +15,7 @@ import { formatDate as formatDateDDMMYYYY, formatDateTime } from "@/lib/dateForm
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { useEventTitle, useEventDescription } from "@/hooks/useEventTranslation";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 interface Event {
   _id: string;
@@ -230,14 +231,17 @@ export default function EventDetail() {
                 <span className="text-2xl font-bold text-blue-600">AquaEvents.club</span>
               </a>
             </Link>
-            <nav className="hidden md:flex gap-6">
-              <Link href="/"><a className="text-gray-700 hover:text-blue-600">Inicio</a></Link>
-              <Link href="/eventos"><a className="text-gray-700 hover:text-blue-600">Eventos</a></Link>
-              <Link href="/federaciones"><a className="text-gray-700 hover:text-blue-600">Federaciones</a></Link>
-              <Link href="/blog"><a className="text-gray-700 hover:text-blue-600">Blog</a></Link>
-              <Link href="/enviar-evento"><a className="text-gray-700 hover:text-blue-600">Enviar Evento</a></Link>
-              <Link href="/perfil"><a className="text-gray-700 hover:text-blue-600">Mi Perfil</a></Link>
-            </nav>
+            <div className="flex items-center gap-4">
+              <nav className="hidden md:flex gap-6">
+                <Link href="/"><a className="text-gray-700 hover:text-blue-600">Inicio</a></Link>
+                <Link href="/eventos"><a className="text-gray-700 hover:text-blue-600">Eventos</a></Link>
+                <Link href="/federaciones"><a className="text-gray-700 hover:text-blue-600">Federaciones</a></Link>
+                <Link href="/blog"><a className="text-gray-700 hover:text-blue-600">Blog</a></Link>
+                <Link href="/enviar-evento"><a className="text-gray-700 hover:text-blue-600">Enviar Evento</a></Link>
+                <Link href="/perfil"><a className="text-gray-700 hover:text-blue-600">Mi Perfil</a></Link>
+              </nav>
+              <LanguageSwitcher />
+            </div>
           </div>
         </header>
 
@@ -290,7 +294,7 @@ export default function EventDetail() {
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 {/* Left Column - Event Info */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Información del Evento</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t("eventDetail.eventInfo")}</h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <Calendar className="w-5 h-5 text-red-500 mt-0.5" />
@@ -302,7 +306,7 @@ export default function EventDetail() {
                     <div className="flex items-start gap-3">
                       <Clock className="w-5 h-5 text-gray-500 mt-0.5" />
                       <div>
-                        <span className="font-medium">Hora:</span>
+                        <span className="font-medium">{t("eventDetail.time")}:</span>
                         <span className="ml-2">{formatTime(event.date)}</span>
                       </div>
                     </div>
@@ -310,7 +314,7 @@ export default function EventDetail() {
                       <div className="flex items-start gap-3">
                         <Users className="w-5 h-5 text-orange-500 mt-0.5" />
                         <div>
-                          <span className="font-medium">Categoría:</span>
+                          <span className="font-medium">{t("eventDetail.category")}:</span>
                           <span className="ml-2">{event.categories[0]}</span>
                         </div>
                       </div>
@@ -319,11 +323,11 @@ export default function EventDetail() {
                       <div className="flex items-start gap-3">
                         <Users className="w-5 h-5 text-green-500 mt-0.5" />
                         <div>
-                          <span className="font-medium">Capacidad:</span>
+                          <span className="font-medium">{t("eventDetail.capacity")}:</span>
                           <span className="ml-2">
                             {(event as any).currentRegistrations || 0} / {(event as any).maxCapacity}
                             {(event as any).maxCapacity !== 'ilimitado' && (event as any).currentRegistrations >= parseInt((event as any).maxCapacity) && (
-                              <Badge variant="destructive" className="ml-2">Completo</Badge>
+                              <Badge variant="destructive" className="ml-2">{t("eventDetail.full")}</Badge>
                             )}
                           </span>
                         </div>
@@ -334,19 +338,19 @@ export default function EventDetail() {
 
                 {/* Right Column - Location */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">{t("eventDetail.location")}</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t("eventDetail.locationSection")}</h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
                       <div>
-                        <span className="font-medium">Ciudad:</span>
+                        <span className="font-medium">{t("eventDetail.city")}:</span>
                         <span className="ml-2">{event.location.city}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-blue-500 mt-0.5" />
                       <div>
-                        <span className="font-medium">Región:</span>
+                        <span className="font-medium">{t("eventDetail.region")}:</span>
                         <span className="ml-2">{event.location.region}</span>
                       </div>
                     </div>
@@ -354,7 +358,7 @@ export default function EventDetail() {
                       <div className="flex items-start gap-3">
                         <MapPin className="w-5 h-5 text-orange-500 mt-0.5" />
                         <div>
-                          <span className="font-medium">Lugar:</span>
+                          <span className="font-medium">{t("eventDetail.venue")}:</span>
                           <span className="ml-2">{event.location.venue}</span>
                         </div>
                       </div>
@@ -366,12 +370,12 @@ export default function EventDetail() {
               {/* Contact Section */}
               {(event.contact?.email || event.contact?.website) && (
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4">{t("eventDetail.contact")}</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t("eventDetail.contactSection")}</h3>
                   <div className="space-y-3">
                     {event.contact.email && (
                       <div className="flex items-center gap-3">
                         <Mail className="w-5 h-5 text-blue-500" />
-                        <span className="font-medium">Email:</span>
+                        <span className="font-medium">{t("eventDetail.email")}:</span>
                         <a href={`mailto:${event.contact.email}`} className="text-blue-600 hover:underline">
                           {event.contact.email}
                         </a>
@@ -380,7 +384,7 @@ export default function EventDetail() {
                     {event.contact.website && (
                       <div className="flex items-center gap-3">
                         <Globe className="w-5 h-5 text-blue-500" />
-                        <span className="font-medium">Web:</span>
+                        <span className="font-medium">{t("eventDetail.website")}:</span>
                         <a href={event.contact.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                           {event.contact.website}
                         </a>
@@ -392,19 +396,19 @@ export default function EventDetail() {
 
               {/* Event Actions */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4">Acciones del Evento</h3>
+                <h3 className="text-xl font-semibold mb-4">{t("eventDetail.eventActions")}</h3>
                 <div className="flex flex-wrap gap-3">
                   {event.registrationUrl && (
                     <Button asChild className="bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600">
                       <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        Inscribirse al Evento
+                        {t("eventDetail.registerEvent")}
                       </a>
                     </Button>
                   )}
                   <Button onClick={handleAddToCalendar} className="bg-blue-600 hover:bg-blue-700">
                     <Calendar className="w-4 h-4 mr-2" />
-                    Añadir al Calendario
+                    {t("eventDetail.addToCalendar")}
                   </Button>
                   <Button onClick={handleShare} variant="outline">
                     <Share2 className="w-4 h-4 mr-2" />

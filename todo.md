@@ -1070,3 +1070,18 @@
 - [ ] Custom caps section "25 años de experiencia..."
 - [ ] Email placeholder "Tu email"
 - [ ] Profile page remaining labels (admin note, privacy text, edit dialog fields)
+
+
+## Bug Fix - EventDetail Mixed Language Labels - COMPLETE ✅
+
+- [x] Add missing i18n translation keys for EventDetail page labels
+- [x] Translate "Información del Evento" section header
+- [x] Translate "Location" to proper language (Ubicación/Ubicació/Kokapena/etc.)
+- [x] Translate "Contact" to proper language (Contacto/Contacte/Kontaktua/etc.)
+- [x] Translate "Acciones del Evento" section header
+- [x] Translate all static labels: Date, Hora, Ciudad, Región, Lugar, Web
+- [x] Update EventDetail.tsx to use t() for all hardcoded labels
+- [x] Test in all 6 languages to verify consistency
+- [x] Add LanguageSwitcher to EventDetail page navigation
+- [x] Tested in Catalan - all labels translating correctly
+- [x] Tested in Spanish - all labels translating correctly
