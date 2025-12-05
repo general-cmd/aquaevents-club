@@ -9,12 +9,12 @@ import {
 import { Globe } from "lucide-react";
 
 const languages = [
-  { code: "es", name: "Español", flag: "🇪🇸", short: "ES" },
-  { code: "ca", name: "Català", flag: "🏴󠁥󠁳󠁣󠁴󠁿", fallback: "CAT", short: "CAT" },
-  { code: "eu", name: "Euskara", flag: "🏴󠁥󠁳󠁰󠁶󠁿", fallback: "EUS", short: "EUS" },
-  { code: "gl", name: "Galego", flag: "🏴󠁥󠁳󠁧󠁡󠁿", fallback: "GAL", short: "GAL" },
-  { code: "va", name: "Valencià", flag: "🏴󠁥󠁳󠁶󠁣󠁿", fallback: "VAL", short: "VAL" },
-  { code: "en", name: "English", flag: "🇬🇧", short: "EN" },
+  { code: "es", name: "Español", flag: "/flags/spain.svg", short: "ES" },
+  { code: "ca", name: "Català", flag: "/flags/catalonia.svg", short: "CAT" },
+  { code: "eu", name: "Euskara", flag: "/flags/basque.svg", short: "EUS" },
+  { code: "gl", name: "Galego", flag: "/flags/galicia.svg", short: "GAL" },
+  { code: "va", name: "Valencià", flag: "/flags/valencia.svg", short: "VAL" },
+  { code: "en", name: "English", flag: "/flags/uk.svg", short: "EN" },
 ];
 
 export default function LanguageSwitcher() {
@@ -33,9 +33,11 @@ export default function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="gap-1.5 px-2 md:px-3">
           <Globe className="h-4 w-4" />
-          <span className="text-base">
-            {currentLanguage.flag}
-          </span>
+          <img 
+            src={currentLanguage.flag} 
+            alt={currentLanguage.name}
+            className="h-4 w-6 object-cover rounded-sm"
+          />
           <span className="hidden md:inline text-sm">
             {currentLanguage.name}
           </span>
@@ -48,9 +50,11 @@ export default function LanguageSwitcher() {
             onClick={() => changeLanguage(lang.code)}
             className={i18n.language === lang.code ? "bg-accent" : ""}
           >
-            <span className="mr-2 text-base">
-              {lang.flag}
-            </span>
+            <img 
+              src={lang.flag} 
+              alt={lang.name}
+              className="mr-2 h-4 w-6 object-cover rounded-sm"
+            />
             <span className="text-sm">{lang.name}</span>
           </DropdownMenuItem>
         ))}
