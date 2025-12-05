@@ -74,12 +74,26 @@ export default function BulkImport() {
   const downloadTemplate = () => {
     if (!templateQuery.data) return;
 
-    const csv = [
-      templateQuery.data.headers.join(","),
-      Object.values(templateQuery.data.example[0]).join(","),
-    ].join("\n");
+    // Helper function to escape CSV fields
+    const escapeCSV = (field: string) => {
+      if (field.includes(',') || field.includes('"') || field.includes('\n')) {
+        return `"${field.replace(/"/g, '""')}"`;
+      }
+      return field;
+    };
 
-    const blob = new Blob([csv], { type: "text/csv" });
+    // Generate CSV with header and example row
+    const headerRow = templateQuery.data.headers.join(",");
+    const exampleRow = templateQuery.data.headers
+      .map((header: string) => {
+        const value = (templateQuery.data.example[0] as any)[header] || "";
+        return escapeCSV(String(value));
+      })
+      .join(",");
+
+    const csv = [headerRow, exampleRow].join("\n");
+
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -118,8 +132,15 @@ export default function BulkImport() {
 
             {templateQuery.data && (
               <div className="mt-4">
+                <Alert className="mb-4 bg-blue-50 border-blue-200">
+                  <AlertCircle className="h-4 w-4 text-blue-600" />
+                  <AlertDescription className="text-blue-800">
+                    {(templateQuery.data as any).note || "The first row is an EXAMPLE. Replace it with your actual event data."}
+                  </AlertDescription>
+                </Alert>
+
                 <p className="text-sm font-medium mb-2">Required Columns:</p>
-                <div className="bg-gray-100 p-3 rounded text-sm font-mono">
+                <div className="bg-gray-100 p-3 rounded text-sm font-mono break-words">
                   {templateQuery.data.headers.join(", ")}
                 </div>
 
@@ -127,6 +148,15 @@ export default function BulkImport() {
                 <div className="bg-gray-100 p-3 rounded text-sm">
                   {templateQuery.data.disciplines.join(", ")}
                 </div>
+
+                {(templateQuery.data as any).organizerTypes && (
+                  <>
+                    <p className="text-sm font-medium mt-4 mb-2">Organizer Types:</p>
+                    <div className="bg-gray-100 p-3 rounded text-sm">
+                      {(templateQuery.data as any).organizerTypes.join(", ")}
+                    </div>
+                  </>
+                )}
               </div>
             )}
           </CardContent>
@@ -142,10 +172,10 @@ export default function BulkImport() {
           </CardHeader>
           <CardContent>
             <Textarea
-              placeholder="name,discipline,date,city,region,venue,organizer,website,description&#10;Campeonato de España,natacion,2026-03-15,Madrid,Madrid,Centro M-86,RFEN,https://rfen.es,Campeonato nacional"
+              placeholder="Paste your CSV data here (including header row). Download the template above to see the required format."
               value={csvText}
               onChange={(e) => setCsvText(e.target.value)}
-              rows={10}
+              rows={12}
               className="font-mono text-sm"
             />
 

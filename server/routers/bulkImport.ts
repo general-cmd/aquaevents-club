@@ -10,12 +10,20 @@ import { getEventsCollection } from "../services/mongodb";
 const csvEventSchema = z.object({
   name: z.string().min(1, "Event name is required"),
   discipline: z.string().min(1, "Discipline is required"),
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format"),
+  startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Start date must be in YYYY-MM-DD format"),
+  endDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "End date must be in YYYY-MM-DD format").optional().or(z.literal("")),
   city: z.string().optional(),
   region: z.string().optional(),
   venue: z.string().optional(),
   organizer: z.string().optional(),
+  organizerType: z.enum(["club", "federation", "other"]).optional().or(z.literal("")),
   website: z.string().url().optional().or(z.literal("")),
+  registrationUrl: z.string().url().optional().or(z.literal("")),
+  contactEmail: z.string().email().optional().or(z.literal("")),
+  contactPhone: z.string().optional(),
+  price: z.string().optional(),
+  maxCapacity: z.string().optional(),
+  categories: z.string().optional(),
   description: z.string().optional(),
 });
 
@@ -43,16 +51,27 @@ export const bulkImportRouter = router({
         const eventData = input.events[i];
         
         try {
-          // Check if event already exists (by name and date)
+          // Check if event already exists (by name and startDate)
           const existing = await eventsCollection.findOne({
             "name.es": eventData.name,
-            date: new Date(eventData.date),
+            startDate: new Date(eventData.startDate),
           });
 
           if (existing) {
             results.skipped++;
             continue;
           }
+
+          // Generate SEO-friendly slug
+          const slug = eventData.name
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '') // Remove accents
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+            .substring(0, 80);
+          
+          const canonicalUrl = `https://aquaevents.club/eventos/${slug}-${eventData.city?.toLowerCase().replace(/\s+/g, '-')}-${new Date(eventData.startDate).getFullYear()}`;
 
           // Create event document
           const event = {
@@ -73,12 +92,37 @@ export const bulkImportRouter = router({
               en: eventData.description || "",
             },
             discipline: eventData.discipline,
-            date: new Date(eventData.date),
-            city: eventData.city || "",
-            region: eventData.region || "",
-            venue: eventData.venue || "",
+            startDate: new Date(eventData.startDate),
+            endDate: eventData.endDate ? new Date(eventData.endDate) : undefined,
+            date: new Date(eventData.startDate), // Keep for backward compatibility
+            location: {
+              city: eventData.city || "",
+              region: eventData.region || "",
+              venue: eventData.venue || "",
+              address: "",
+            },
             organizer: eventData.organizer || "",
+            organizerType: eventData.organizerType || "other",
             website: eventData.website || "",
+            registrationUrl: eventData.registrationUrl || "",
+            contactEmail: eventData.contactEmail || "",
+            contactPhone: eventData.contactPhone || "",
+            price: eventData.price || "",
+            maxCapacity: eventData.maxCapacity ? parseInt(eventData.maxCapacity) : undefined,
+            categories: eventData.categories ? eventData.categories.split(";").map((c: string) => c.trim()) : [],
+            seo: {
+              canonical: canonicalUrl,
+              metaTitle: `${eventData.name} - ${eventData.city} ${new Date(eventData.startDate).getFullYear()}`,
+              metaDescription: eventData.description?.substring(0, 160) || `${eventData.name} en ${eventData.city}, ${eventData.region}. ${eventData.discipline}.`,
+              keywords: [
+                eventData.name,
+                eventData.discipline,
+                eventData.city || "",
+                eventData.region || "",
+                `eventos ${eventData.discipline}`,
+                `competiciones ${eventData.city}`,
+              ].filter(Boolean),
+            },
             status: "published" as const,
             createdAt: new Date(),
             updatedAt: new Date(),
@@ -105,25 +149,41 @@ export const bulkImportRouter = router({
       headers: [
         "name",
         "discipline",
-        "date",
+        "startDate",
+        "endDate",
         "city",
         "region",
         "venue",
         "organizer",
+        "organizerType",
         "website",
+        "registrationUrl",
+        "contactEmail",
+        "contactPhone",
+        "price",
+        "maxCapacity",
+        "categories",
         "description",
       ],
       example: [
         {
-          name: "Campeonato de España de Natación",
+          name: "EXAMPLE - Override this row with your event data",
           discipline: "natacion",
-          date: "2026-03-15",
+          startDate: "2026-03-15",
+          endDate: "2026-03-17",
           city: "Madrid",
           region: "Madrid",
           venue: "Centro Acuático M-86",
           organizer: "RFEN",
+          organizerType: "federation",
           website: "https://rfen.es",
-          description: "Campeonato nacional de natación en piscina corta",
+          registrationUrl: "https://rfen.es/inscripciones",
+          contactEmail: "info@rfen.es",
+          contactPhone: "+34 912 345 678",
+          price: "25€ (Federados) / 35€ (No federados)",
+          maxCapacity: "200",
+          categories: "Infantil; Juvenil; Absoluto; Master",
+          description: "Campeonato nacional de natación en piscina corta. Incluye todas las categorías.",
         },
       ],
       disciplines: [
@@ -134,6 +194,8 @@ export const bulkImportRouter = router({
         "aguas-abiertas",
         "triatlon",
       ],
+      organizerTypes: ["club", "federation", "other"],
+      note: "The first row is an EXAMPLE. Replace it with your actual event data. Leave endDate empty for single-day events. Separate multiple categories with semicolons (;).",
     };
   }),
 });

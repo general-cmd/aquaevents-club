@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, Share2, Heart, Bell } from "lucide-react";
+import { Calendar, MapPin, Clock, Users, ExternalLink, Mail, Globe, ArrowLeft, Share2, Heart, Bell, DollarSign, Building, Phone } from "lucide-react";
 import { Link, useParams, useLocation } from "wouter";
 import EventStructuredData from "@/components/EventStructuredData";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
@@ -300,7 +300,12 @@ export default function EventDetail() {
                       <Calendar className="w-5 h-5 text-red-500 mt-0.5" />
                       <div>
                         <span className="font-medium">{t("eventDetail.date")}:</span>
-                        <span className="ml-2">{formatDateLong(event.date)}</span>
+                        <span className="ml-2">
+                          {formatDateLong((event as any).startDate || event.date)}
+                          {(event as any).endDate && (
+                            <span> - {formatDateLong((event as any).endDate)}</span>
+                          )}
+                        </span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -315,7 +320,25 @@ export default function EventDetail() {
                         <Users className="w-5 h-5 text-orange-500 mt-0.5" />
                         <div>
                           <span className="font-medium">{t("eventDetail.category")}:</span>
-                          <span className="ml-2">{event.categories[0]}</span>
+                          <span className="ml-2">{event.categories.join(", ")}</span>
+                        </div>
+                      </div>
+                    )}
+                    {(event as any).price && (
+                      <div className="flex items-start gap-3">
+                        <DollarSign className="w-5 h-5 text-green-500 mt-0.5" />
+                        <div>
+                          <span className="font-medium">Precio:</span>
+                          <span className="ml-2">{(event as any).price}</span>
+                        </div>
+                      </div>
+                    )}
+                    {(event as any).organizerType && (
+                      <div className="flex items-start gap-3">
+                        <Building className="w-5 h-5 text-purple-500 mt-0.5" />
+                        <div>
+                          <span className="font-medium">Tipo:</span>
+                          <span className="ml-2 capitalize">{(event as any).organizerType === 'federation' ? 'Federación' : (event as any).organizerType === 'club' ? 'Club' : 'Otro'}</span>
                         </div>
                       </div>
                     )}
@@ -368,25 +391,34 @@ export default function EventDetail() {
               </div>
 
               {/* Contact Section */}
-              {(event.contact?.email || event.contact?.website) && (
+              {(event.contact?.email || event.contact?.website || (event as any).contactEmail || (event as any).contactPhone || (event as any).website) && (
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold mb-4">{t("eventDetail.contactSection")}</h3>
                   <div className="space-y-3">
-                    {event.contact.email && (
+                    {((event as any).contactEmail || event.contact?.email) && (
                       <div className="flex items-center gap-3">
                         <Mail className="w-5 h-5 text-blue-500" />
                         <span className="font-medium">{t("eventDetail.email")}:</span>
-                        <a href={`mailto:${event.contact.email}`} className="text-blue-600 hover:underline">
-                          {event.contact.email}
+                        <a href={`mailto:${(event as any).contactEmail || event.contact.email}`} className="text-blue-600 hover:underline">
+                          {(event as any).contactEmail || event.contact.email}
                         </a>
                       </div>
                     )}
-                    {event.contact.website && (
+                    {(event as any).contactPhone && (
+                      <div className="flex items-center gap-3">
+                        <Phone className="w-5 h-5 text-blue-500" />
+                        <span className="font-medium">Teléfono:</span>
+                        <a href={`tel:${(event as any).contactPhone}`} className="text-blue-600 hover:underline">
+                          {(event as any).contactPhone}
+                        </a>
+                      </div>
+                    )}
+                    {((event as any).website || event.contact?.website) && (
                       <div className="flex items-center gap-3">
                         <Globe className="w-5 h-5 text-blue-500" />
                         <span className="font-medium">{t("eventDetail.website")}:</span>
-                        <a href={event.contact.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                          {event.contact.website}
+                        <a href={(event as any).website || event.contact.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                          {(event as any).website || event.contact.website}
                         </a>
                       </div>
                     )}

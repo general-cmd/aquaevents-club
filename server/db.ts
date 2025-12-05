@@ -315,7 +315,7 @@ export async function getEvents(limit?: number, discipline?: string, region?: st
   try {
     const collection = db.collection('events');
     const query: any = {
-      date: { $gte: new Date().toISOString().split('T')[0] } // Only upcoming events
+      date: { $gte: new Date(new Date().toISOString().split('T')[0]) } // Only upcoming events
     };
 
     if (discipline) {
