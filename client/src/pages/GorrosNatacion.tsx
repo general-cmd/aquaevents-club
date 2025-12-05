@@ -36,6 +36,15 @@ export default function GorrosNatacion() {
         </div>
       </section>
 
+      {/* Discount Banner */}
+      <section className="bg-green-600 text-white py-4">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-xl font-bold">
+            🎉 ¡Oferta Especial! Usa el código <span className="bg-white text-green-600 px-3 py-1 rounded font-mono">AQUA20</span> para obtener un 20% de descuento en tu pedido
+          </p>
+        </div>
+      </section>
+
       {/* Trust Indicators */}
       <section className="bg-blue-600 text-white py-12">
         <div className="container mx-auto px-4">
@@ -518,6 +527,77 @@ export default function GorrosNatacion() {
             onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Solicitar Presupuesto Personalizado
+          </Button>
+        </div>
+      </section>
+
+      {/* Latex Caps Pricing */}
+      <section className="container mx-auto px-4 py-16 bg-gray-50">
+        <h2 className="text-3xl font-bold text-center mb-4">Gorros de Látex - Opción Económica</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Para eventos con presupuesto ajustado, ofrecemos gorros de látex de alta calidad. 
+          Perfectos para competiciones de un solo uso o eventos masivos.
+        </p>
+        
+        <div className="max-w-4xl mx-auto overflow-x-auto">
+          <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+            <thead>
+              <tr className="bg-green-600 text-white">
+                <th className="p-4 text-left">Cantidad</th>
+                <th className="p-4 text-left">Precio por Unidad</th>
+                <th className="p-4 text-left">Ahorro vs Silicona</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b hover:bg-gray-50">
+                <td className="p-4 font-semibold">50-99 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">2,10€</td>
+                <td className="p-4 text-gray-600">Ahorra 3,45€/unidad</td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50 bg-green-50">
+                <td className="p-4 font-semibold">100-249 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">1,80€</td>
+                <td className="p-4 text-gray-600">Ahorra 2,65€/unidad</td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50">
+                <td className="p-4 font-semibold">250-499 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">1,50€</td>
+                <td className="p-4 text-gray-600">Ahorra 2,15€/unidad</td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50 bg-green-50">
+                <td className="p-4 font-semibold">500-999 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">1,30€</td>
+                <td className="p-4 text-gray-600">Ahorra 1,69€/unidad</td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50">
+                <td className="p-4 font-semibold">1.000-4.999 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">1,10€</td>
+                <td className="p-4 text-gray-600">Ahorra 1,40€/unidad</td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50 bg-green-50">
+                <td className="p-4 font-semibold">5.000-14.999 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">1,05€</td>
+                <td className="p-4 text-gray-600">Ideal para grandes eventos</td>
+              </tr>
+              <tr className="border-b hover:bg-gray-50">
+                <td className="p-4 font-semibold">15.000+ unidades</td>
+                <td className="p-4 text-green-600 font-semibold">1,00€</td>
+                <td className="p-4 text-gray-600">Precio mínimo garantizado</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-sm text-gray-600 mb-4">
+            * Los gorros de látex son ideales para eventos de un solo uso. Incluyen impresión a una cara y envío a península.
+          </p>
+          <Button 
+            size="lg" 
+            className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg"
+            onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Solicitar Presupuesto de Látex
           </Button>
         </div>
       </section>
