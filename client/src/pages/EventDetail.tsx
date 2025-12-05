@@ -14,6 +14,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { formatDate as formatDateDDMMYYYY, formatDateTime } from "@/lib/dateFormat";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
+import { useEventTitle, useEventDescription } from "@/hooks/useEventTranslation";
 
 interface Event {
   _id: string;
@@ -60,6 +61,12 @@ export default function EventDetail() {
   const loading = isLoading;
   const notFound = error || (eventData && !eventData.success);
 
+  // Translate event title and description
+  const spanishTitle = event?.name?.es || event?.name || '';
+  const spanishDescription = event?.description?.es || event?.description || '';
+  const translatedTitle = useEventTitle(spanishTitle);
+  const translatedDescription = useEventDescription(spanishDescription);
+
   // Check if event is favorited
   const { data: favoriteCheck } = trpc.favorites.check.useQuery(
     { eventId: event?._id?.toString() || "" },
@@ -103,7 +110,7 @@ export default function EventDetail() {
     if (!event) return;
     createReminderMutation.mutate({
       eventId: event._id.toString(),
-      eventTitle: event.name.es,
+      eventTitle: translatedTitle,
       eventDate: event.date,
       reminderType,
     });
@@ -142,7 +149,7 @@ export default function EventDetail() {
   const handleAddToCalendar = () => {
     if (!event) return;
     const startDate = new Date(event.date).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-    const title = encodeURIComponent(event.name.es);
+    const title = encodeURIComponent(translatedTitle);
     const location = encodeURIComponent(`${event.location.venue || ''}, ${event.location.city}`);
     const description = encodeURIComponent(event.description?.es || '');
     
@@ -154,7 +161,7 @@ export default function EventDetail() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: event.name.es,
+          title: translatedTitle,
           text: event.description?.es || '',
           url: window.location.href,
         });
@@ -196,12 +203,12 @@ export default function EventDetail() {
 
   const metaDescription = event.description?.es 
     ? truncateForMeta(event.description.es) 
-    : `${event.name.es} - ${formatDateLong(event.date)} en ${event.location.city}, ${event.location.region}. Evento de ${getDisciplineLabel(event.discipline)}.`;
+    : `${translatedTitle} - ${formatDateLong(event.date)} en ${event.location.city}, ${event.location.region}. Evento de ${getDisciplineLabel(event.discipline)}.`;
 
   return (
     <>
       <SEOMeta 
-        title={`${event.name.es} | AquaEvents.club`}
+        title={`${translatedTitle} | AquaEvents.club`}
         description={metaDescription}
         url={`https://aquaevents.club/evento/${params.id}`}
         type="article"
@@ -210,7 +217,7 @@ export default function EventDetail() {
       <BreadcrumbSchema items={[
         { name: "Inicio", url: "/" },
         { name: "Eventos", url: "/eventos" },
-        { name: event.name.es, url: `/evento/${params.id}` }
+        { name: translatedTitle, url: `/evento/${params.id}` }
       ]} />
       
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -243,7 +250,7 @@ export default function EventDetail() {
             <span>/</span>
             <span className="text-gray-900">{getDisciplineLabel(event.discipline)}</span>
             <span>/</span>
-            <span className="text-gray-900">{event.name.es}</span>
+            <span className="text-gray-900">{translatedTitle}</span>
           </nav>
         </div>
 
@@ -261,7 +268,7 @@ export default function EventDetail() {
             <CardContent className="p-8">
               {/* Title and Badges */}
               <div className="mb-6">
-                <h1 className="text-4xl font-bold mb-4">{event.name.es}</h1>
+                <h1 className="text-4xl font-bold mb-4">{translatedTitle}</h1>
                 <div className="flex gap-2">
                   <Badge variant="secondary" className="text-sm">
                     {getDisciplineLabel(event.discipline)}
@@ -273,9 +280,9 @@ export default function EventDetail() {
               </div>
 
               {/* Description */}
-              {event.description?.es && (
+              {translatedDescription && (
                 <p className="text-gray-700 mb-8 text-lg">
-                  {event.description.es}
+                  {translatedDescription}
                 </p>
               )}
 

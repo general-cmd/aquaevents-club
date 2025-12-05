@@ -13,6 +13,8 @@ import { formatDate as formatDateDDMMYYYY } from "@/lib/dateFormat";
 import ItemListSchema from "@/components/schema/ItemListSchema";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import { useTranslation } from "react-i18next";
+import EventCard from "@/components/EventCard";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 interface Event {
   _id: string;
@@ -212,6 +214,7 @@ export default function Events() {
             <Link href="/perfil">
               <a className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Mi Perfil</a>
             </Link>
+            <LanguageSwitcher />
             <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
               Suscríbete Gratis
             </Button>
@@ -364,44 +367,13 @@ export default function Events() {
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEvents.map(event => (
-              <Card key={event._id} className="border-2 hover:border-blue-500 transition-all hover:shadow-lg group">
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200">
-                      {getDisciplineIcon(event.discipline)} {getDisciplineLabel(event.discipline)}
-                    </Badge>
-                    <div className="text-sm font-semibold text-gray-700">
-                      {formatDate(event.date)}
-                    </div>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                    {event.name.es}
-                  </h3>
-
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                    <MapPin className="w-4 h-4 text-blue-500" />
-                    <span>{event.location.city}, {event.location.region}</span>
-                  </div>
-
-                  <Link href={`/eventos/${(() => {
-                    // Extract slug from canonical URL or use _id as fallback
-                    if (event.seo?.canonical) {
-                      const parts = event.seo.canonical.split('/');
-                      return encodeURIComponent(parts[parts.length - 1]);
-                    }
-                    return event._id;
-                  })()}`}>
-                    <a>
-                      <Button 
-                        className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
-                      >
-                        {t("events.viewDetails")}
-                      </Button>
-                    </a>
-                  </Link>
-                </CardContent>
-              </Card>
+              <EventCard
+                key={event._id}
+                event={event}
+                getDisciplineIcon={getDisciplineIcon}
+                getDisciplineLabel={getDisciplineLabel}
+                formatDate={formatDate}
+              />
             ))}
           </div>
         )}

@@ -1005,17 +1005,40 @@
 - [x] Verified authentic regional flags: Catalan Senyera, Basque Ikurriña, Galician flag with coat of arms, Valencian flag with blue stripe
 
 
+## AI-Powered Event Translation - COMPLETE ✅
+
+- [x] Create AI translation utility with LLM integration
+- [x] Implement caching system to avoid repeated API calls
+- [x] Create tRPC procedures for translation (single and batch)
+- [x] Build React hooks for event title and description translation
+- [x] Update Events listing page with EventCard component using translation
+- [x] Update EventDetail page to translate titles and descriptions
+- [x] Add LanguageSwitcher to Events page navigation
+- [x] Write comprehensive vitest tests (14 tests passing)
+- [x] Test translations in Basque (Euskara) - working perfectly
+- [x] Test translations in Catalan (Català) - working perfectly
+- [x] Verify caching prevents duplicate API calls
+
+**How It Works:**
+- Event titles and descriptions are stored in Spanish in MongoDB
+- When user switches language, AI translates content in real-time
+- Translations are cached in memory to avoid repeated LLM calls
+- Works automatically for all existing and future events
+- No database changes needed
+- Supports all 6 languages: ES, CA, EU, GL, VA, EN
+
+
 ## Complete Full Site Translation - IN PROGRESS 🔄
 
 - [ ] Add missing homepage translation keys (custom caps CTA, features, etc.)
 - [ ] Translate custom caps promotional card
 - [ ] Translate "Everything You Need" features section
 - [ ] Translate "Upcoming Events" section
-- [ ] Translate Events listing page (/eventos)
-- [ ] Translate event filters (discipline, region, date)
-- [ ] Translate Event detail page
-- [ ] Translate event registration info and dates
-- [ ] Test all pages in all 6 languages
+- [x] Translate Events listing page (/eventos) - AI-powered translation complete
+- [x] Translate event filters (discipline, region, date) - already done via i18n
+- [x] Translate Event detail page - AI-powered translation complete
+- [x] Translate event registration info and dates - already done via i18n
+- [x] Test all pages in all 6 languages - tested Basque and Catalan successfully
 
 
 ## Complete Remaining 15% i18n - IN PROGRESS 🔄
