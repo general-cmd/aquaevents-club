@@ -223,10 +223,10 @@ export default function Events() {
       <section className="bg-gradient-to-r from-blue-600 to-cyan-500 py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 text-center">
-            Calendario de Eventos Acuáticos 2026
+            {t("pages.eventsTitle")}
           </h1>
           <p className="text-lg text-blue-100 text-center max-w-3xl mx-auto">
-            Descubre todas las competiciones de natación, triatlón, waterpolo y aguas abiertas en España
+            {t("pages.eventsSubtitle")}
           </p>
         </div>
       </section>
@@ -256,10 +256,10 @@ export default function Events() {
               {/* Discipline Filter */}
               <Select value={selectedDiscipline} onValueChange={setSelectedDiscipline}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Todas las disciplinas" />
+                  <SelectValue placeholder={t("filters.allDisciplines")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">Todas las disciplinas</SelectItem>
+                  <SelectItem value="all">{t("filters.allDisciplines")}</SelectItem>
                   {disciplines.map(discipline => (
                     <SelectItem key={discipline} value={discipline}>
                       {getDisciplineIcon(discipline)} {getDisciplineLabel(discipline)}
@@ -286,10 +286,10 @@ export default function Events() {
               {/* Region Filter */}
               <Select value={selectedRegion} onValueChange={setSelectedRegion}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Todas las regiones" />
+                  <SelectValue placeholder={t("filters.allRegions")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">Todas las regiones</SelectItem>
+                  <SelectItem value="all">{t("filters.allRegions")}</SelectItem>
                   {regions.map(region => (
                     <SelectItem key={region} value={region}>
                       {region}
@@ -301,10 +301,10 @@ export default function Events() {
               {/* Month Filter */}
               <Select value={selectedMonth} onValueChange={setSelectedMonth}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Todos los meses" />
+                  <SelectValue placeholder={t("filters.allMonths")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">Todos los meses</SelectItem>
+                  <SelectItem value="all">{t("filters.allMonths")}</SelectItem>
                   {months.map(month => (
                     <SelectItem key={month} value={month}>
                       {month}
@@ -316,10 +316,10 @@ export default function Events() {
               {/* Organizer Filter (Federation/Club) */}
               <Select value={selectedOrganizer} onValueChange={setSelectedOrganizer}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Todos los organizadores" />
+                  <SelectValue placeholder={t("filters.allOrganizers")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">Todos los organizadores</SelectItem>
+                  <SelectItem value="all">{t("filters.allOrganizers")}</SelectItem>
                   {organizers.map(organizer => (
                     <SelectItem key={organizer} value={organizer}>
                       {organizer}
@@ -332,7 +332,7 @@ export default function Events() {
             {/* Results Count and Export */}
             <div className="mt-4 flex items-center justify-between">
               <div className="text-sm text-gray-600">
-                Mostrando <span className="font-semibold text-blue-600">{filteredEvents.length}</span> eventos
+                {t("filters.showing", { count: filteredEvents.length })}
               </div>
               {filteredEvents.length > 0 && (
                 <Button
@@ -342,7 +342,7 @@ export default function Events() {
                   className="border-blue-600 text-blue-600 hover:bg-blue-50"
                 >
                   <Download className="w-4 h-4 mr-2" />
-                  Exportar ({filteredEvents.length})
+                  {t("filters.export", { count: filteredEvents.length })}
                 </Button>
               )}
             </div>

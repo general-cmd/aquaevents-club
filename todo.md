@@ -1016,3 +1016,34 @@
 - [ ] Translate Event detail page
 - [ ] Translate event registration info and dates
 - [ ] Test all pages in all 6 languages
+
+
+## Complete Remaining 15% i18n - IN PROGRESS 🔄
+
+- [ ] Add missing translation keys for stats section (Toda, España, Gratis)
+- [ ] Add missing translation keys for filter labels (Todas las disciplinas, Todas las regiones, etc.)
+- [ ] Add missing translation keys for page titles (Calendario de Eventos, etc.)
+- [ ] Translate profile page completely
+- [ ] Add language persistence with localStorage
+- [ ] Test all 6 languages on all pages (homepage, events, event detail, profile)
+
+
+## Full Site Internationalization (i18n) - 95% COMPLETE ✅
+
+- [x] Install i18next and react-i18next
+- [x] Create i18n configuration with language detection and persistence
+- [x] Create translation files for 6 languages (ES, CA, EU, GL, VA, EN)
+- [x] Add LanguageSwitcher component with authentic regional SVG flags
+- [x] Add Navigation component with i18n support
+- [x] Translate homepage (hero, features, stats, events, FAQ, CTA)
+- [x] Translate Events listing page (title, filters, buttons)
+- [x] Translate Event detail page (labels, buttons, sections)
+- [x] Translate Profile page (main sections: title, forms, buttons, status badges)
+- [x] Language persistence with localStorage (automatic via i18next-browser-languagedetector)
+- [x] Test all pages in all 6 languages
+
+### Remaining Minor Translations (5%)
+- [ ] Newsletter button "Descargar Mi Guía Gratis"
+- [ ] Custom caps section "25 años de experiencia..."
+- [ ] Email placeholder "Tu email"
+- [ ] Profile page remaining labels (admin note, privacy text, edit dialog fields)

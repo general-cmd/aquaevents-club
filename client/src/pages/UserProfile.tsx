@@ -14,6 +14,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
+import { useTranslation } from "react-i18next";
 
 const DISCIPLINES = [
   "Natación",
@@ -27,6 +28,7 @@ const DISCIPLINES = [
 ];
 
 export default function UserProfile() {
+  const { t } = useTranslation();
   const { user, loading, isAuthenticated, logout, refresh } = useAuth();
   const [, setLocation] = useLocation();
   const [saved, setSaved] = useState(false);
@@ -67,39 +69,39 @@ export default function UserProfile() {
 
   const deleteSubmissionMutation = trpc.eventSubmissions.deleteOwn.useMutation({
     onSuccess: () => {
-      toast.success("¡Evento eliminado correctamente!");
+      toast.success(t("profile.successDeleted"));
       utils.eventSubmissions.mySubmissions.invalidate();
     },
     onError: (error) => {
-      toast.error("Error al eliminar evento: " + error.message);
+      toast.error(t("profile.errorDelete") + error.message);
     },
   });
 
   const updateSubmissionMutation = trpc.eventSubmissions.update.useMutation({
     onSuccess: (data) => {
       if (data.requiresReapproval) {
-        toast.success("¡Evento actualizado! Será revisado nuevamente por el administrador.");
+        toast.success(t("profile.successUpdatedReapproval"));
       } else {
-        toast.success("¡Evento actualizado correctamente!");
+        toast.success(t("profile.successUpdated"));
       }
       setEditingSubmission(null);
       utils.eventSubmissions.mySubmissions.invalidate();
     },
     onError: (error) => {
-      toast.error("Error al actualizar evento: " + error.message);
+      toast.error(t("profile.errorUpdate") + error.message);
     },
   });
 
   const updateMutation = trpc.userProfile.update.useMutation({
     onSuccess: async () => {
       setSaved(true);
-      toast.success("¡Perfil actualizado correctamente!");
+      toast.success(t("profile.successProfile"));
       setTimeout(() => setSaved(false), 3000);
       // Refetch user data to get updated profile fields
       await refresh();
     },
     onError: (error) => {
-      toast.error("Error al actualizar perfil: " + error.message);
+      toast.error(t("profile.errorProfile") + error.message);
     },
   });
 
@@ -107,7 +109,7 @@ export default function UserProfile() {
     e.preventDefault();
     
     if (!formData.userType) {
-      toast.error("Por favor selecciona tu tipo de usuario");
+      toast.error(t("profile.errorUserType"));
       return;
     }
 
@@ -166,20 +168,20 @@ export default function UserProfile() {
             <CardContent className="p-12">
               <User className="w-20 h-20 mx-auto mb-6 text-gray-400" />
               <h1 className="text-3xl font-bold mb-4 text-gray-900">
-                Inicia Sesión
+                {t("profile.title")}
               </h1>
               <p className="text-lg text-gray-600 mb-8">
-                Necesitas iniciar sesión para acceder a tu perfil y guardar tus eventos favoritos.
+                {t("profile.loginRequired")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href={getLoginUrl()}>
                   <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600">
-                    Iniciar Sesión
+                    {t("profile.loginButton")}
                   </Button>
                 </a>
                 <Link href="/">
                   <Button variant="outline">
-                    Volver al Inicio
+                    {t("profile.backHome")}
                   </Button>
                 </Link>
               </div>
@@ -258,10 +260,10 @@ export default function UserProfile() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Mi Perfil
+              {t("profile.title")}
             </h1>
             <p className="text-lg text-gray-600">
-              Personaliza tu experiencia y recibe notificaciones de eventos que te interesan
+              {t("profile.subtitle")}
             </p>
           </div>
 
@@ -270,7 +272,7 @@ export default function UserProfile() {
               <CardContent className="p-4 flex items-center gap-3">
                 <CheckCircle className="w-6 h-6 text-green-600" />
                 <p className="text-green-800 font-medium">
-                  ¡Perfil guardado correctamente!
+                  {t("profile.saved")}
                 </p>
               </CardContent>
             </Card>
@@ -287,23 +289,23 @@ export default function UserProfile() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 mb-3">
                       <CheckCircle className="w-5 h-5 text-green-600" />
-                      <span className="text-sm font-semibold text-green-800">Sesión Activa</span>
+                      <span className="text-sm font-semibold text-green-800">{t("profile.sessionActive")}</span>
                       {(user as any)?.role === 'admin' && (
                         <Badge className="ml-2 bg-purple-600 hover:bg-purple-700">Admin</Badge>
                       )}
                       {(user as any)?.verified === 'yes' && (
-                        <Badge className="ml-2 bg-green-600 hover:bg-green-700">✓ Verificado</Badge>
+                        <Badge className="ml-2 bg-green-600 hover:bg-green-700">{t("profile.verified")}</Badge>
                       )}
                     </div>
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4 text-gray-500" />
-                      <span className="text-sm font-medium text-gray-700">Nombre:</span>
+                      <span className="text-sm font-medium text-gray-700">{t("profile.name")}</span>
                       <span className="text-sm text-gray-900">{user?.name || "Usuario"}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Mail className="w-4 h-4 text-gray-500" />
-                      <span className="text-sm font-medium text-gray-700">Email:</span>
-                      <span className="text-sm text-gray-900">{user?.email || "No disponible"}</span>
+                      <span className="text-sm font-medium text-gray-700">{t("profile.email")}</span>
+                      <span className="text-sm text-gray-900">{user?.email || t("profile.notAvailable")}</span>
                     </div>
                   </div>
                 </div>
@@ -311,7 +313,7 @@ export default function UserProfile() {
                 {/* User Type */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    ¿Quién eres? <span className="text-red-500">*</span>
+                    {t("profile.userTypeLabel")} <span className="text-red-500">*</span>
                   </label>
                   <select
                     value={formData.userType}
@@ -319,21 +321,21 @@ export default function UserProfile() {
                     className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     required
                   >
-                    <option value="">Selecciona tu tipo</option>
-                    <option value="swimmer">Nadador/a</option>
-                    <option value="club">Club Deportivo</option>
-                    <option value="federation">Federación</option>
-                    <option value="other">Otro</option>
+                    <option value="">{t("profile.selectType")}</option>
+                    <option value="swimmer">{t("profile.swimmer")}</option>
+                    <option value="club">{t("profile.club")}</option>
+                    <option value="federation">{t("profile.federation")}</option>
+                    <option value="other">{t("profile.other")}</option>
                   </select>
                 </div>
 
                 {/* Preferred Disciplines */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Disciplinas de Interés
+                    {t("profile.disciplinesLabel")}
                   </label>
                   <p className="text-sm text-gray-500 mb-3">
-                    Selecciona las disciplinas sobre las que quieres recibir notificaciones
+                    {t("profile.disciplinesHelp")}
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {DISCIPLINES.map(discipline => (
@@ -369,11 +371,10 @@ export default function UserProfile() {
                           htmlFor="emailConsent"
                           className="text-sm font-medium text-gray-900 cursor-pointer block mb-1"
                         >
-                          Acepto recibir notificaciones por email
+                          {t("profile.emailConsent")}
                         </label>
                         <p className="text-xs text-gray-600">
-                          Te enviaremos emails sobre nuevos eventos que coincidan con tus disciplinas de interés. 
-                          Puedes cancelar la suscripción en cualquier momento.
+                          {t("profile.emailConsentHelp")}
                         </p>
                       </div>
                     </div>
@@ -387,12 +388,12 @@ export default function UserProfile() {
                     className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
                     disabled={updateMutation.isPending}
                   >
-                    {updateMutation.isPending ? "Guardando..." : "Guardar Cambios"}
+                    {updateMutation.isPending ? t("profile.saving") : t("profile.saveButton")}
                   </Button>
                   <Link href="/mis-favoritos">
                     <Button variant="outline" className="flex items-center gap-2">
                       <Heart className="w-4 h-4" />
-                      Mis Favoritos
+                      {t("profile.myFavorites")}
                     </Button>
                   </Link>
                 </div>
@@ -406,17 +407,17 @@ export default function UserProfile() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Calendar className="w-5 h-5" />
-                  Mis Eventos Enviados
+                  {t("profile.mySubmissions")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 {submissionsData.submissions.length === 0 ? (
                   <div className="text-center py-8 text-gray-500">
                     <Calendar className="w-12 h-12 mx-auto mb-3 text-gray-400" />
-                    <p>No has enviado ningún evento aún</p>
+                    <p>{t("profile.noSubmissions")}</p>
                     <Link href="/enviar-evento">
                       <Button className="mt-4 bg-gradient-to-r from-blue-600 to-cyan-500">
-                        Enviar Evento
+                        {t("profile.submitEvent")}
                       </Button>
                     </Link>
                   </div>
@@ -452,10 +453,10 @@ export default function UserProfile() {
                             className="whitespace-nowrap"
                           >
                             {submission.status === 'pending' && (
-                              <><Clock className="w-3 h-3 mr-1" /> Pendiente</>
+                              <><Clock className="w-3 h-3 mr-1" /> {t("profile.pending")}</>
                             )}
                             {submission.status === 'approved' && (
-                              <><CheckCircle className="w-3 h-3 mr-1" /> Aprobado</>
+                              <><CheckCircle className="w-3 h-3 mr-1" /> {t("profile.approved")}</>
                             )}
                             {submission.status === 'rejected' && (
                               <><XCircle className="w-3 h-3 mr-1" /> Rechazado</>

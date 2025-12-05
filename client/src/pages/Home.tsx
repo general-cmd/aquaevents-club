@@ -126,15 +126,15 @@ export default function Home() {
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold mb-2">
-                Toda
+                {t("stats.all")}
               </div>
-              <div className="text-blue-100 text-sm md:text-base">España</div>
+              <div className="text-blue-100 text-sm md:text-base">{t("stats.spain")}</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold mb-2">
                 100%
               </div>
-              <div className="text-blue-100 text-sm md:text-base">Gratis</div>
+              <div className="text-blue-100 text-sm md:text-base">{t("stats.free")}</div>
             </div>
           </div>
         </div>
