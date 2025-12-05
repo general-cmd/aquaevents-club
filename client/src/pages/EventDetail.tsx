@@ -13,6 +13,7 @@ import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { formatDate as formatDateDDMMYYYY, formatDateTime } from "@/lib/dateFormat";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 interface Event {
   _id: string;
@@ -42,6 +43,7 @@ interface Event {
 }
 
 export default function EventDetail() {
+  const { t } = useTranslation();
   const params = useParams();
   const [, setLocation] = useLocation();
   const [reminderDialogOpen, setReminderDialogOpen] = useState(false);
@@ -249,7 +251,7 @@ export default function EventDetail() {
         <div className="container mx-auto px-4 mb-6">
           <Button variant="outline" onClick={() => setLocation('/eventos')}>
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver a eventos
+            {t("common.back")} {t("events.title").toLowerCase()}
           </Button>
         </div>
 
@@ -286,7 +288,7 @@ export default function EventDetail() {
                     <div className="flex items-start gap-3">
                       <Calendar className="w-5 h-5 text-red-500 mt-0.5" />
                       <div>
-                        <span className="font-medium">Fecha:</span>
+                        <span className="font-medium">{t("eventDetail.date")}:</span>
                         <span className="ml-2">{formatDateLong(event.date)}</span>
                       </div>
                     </div>
@@ -325,7 +327,7 @@ export default function EventDetail() {
 
                 {/* Right Column - Location */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Ubicación</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t("eventDetail.location")}</h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
@@ -357,7 +359,7 @@ export default function EventDetail() {
               {/* Contact Section */}
               {(event.contact?.email || event.contact?.website) && (
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4">Contacto</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t("eventDetail.contact")}</h3>
                   <div className="space-y-3">
                     {event.contact.email && (
                       <div className="flex items-center gap-3">
@@ -399,7 +401,7 @@ export default function EventDetail() {
                   </Button>
                   <Button onClick={handleShare} variant="outline">
                     <Share2 className="w-4 h-4 mr-2" />
-                    Compartir Evento
+                    {t("events.share")}
                   </Button>
                   {isAuthenticated && (
                     <Button
@@ -422,7 +424,7 @@ export default function EventDetail() {
                       <DialogTrigger asChild>
                         <Button variant="outline">
                           <Bell className="w-4 h-4 mr-2" />
-                          Recordarme
+                          {t("eventDetail.remindMe")}
                         </Button>
                       </DialogTrigger>
                       <DialogContent>

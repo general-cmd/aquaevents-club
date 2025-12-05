@@ -70,6 +70,17 @@
         "question": "Quines disciplines estan incloses?",
         "answer": "Natació, aigües obertes, triatló, waterpolo, natació sincronitzada, salts i totes les modalitats aquàtiques oficials."
       }
+    },
+    "customCaps": {
+      "title": "🎯 El teu club necessita gorros personalitzats?",
+      "features": "Lliurament ràpid • Disseny gratis • Qualitat premium",
+      "discount": "Usa AQUA20 per 20% descompte",
+      "button": "Personalitza Ara →"
+    },
+    "newsletter": {
+      "benefit1": "Més de €10,000 en Subvencions Ocultes",
+      "benefit2": "30 Dies per Augmentar Ingressos en 25%",
+      "benefit3": "Sistemes que Estalvien 10+ Hores Setmanals"
     }
   },
   "events": {

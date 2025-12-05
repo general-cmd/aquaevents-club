@@ -70,6 +70,17 @@
         "question": "Zein diziplina daude sartuta?",
         "answer": "Igeriketa, ur irekia, triatloia, ur-poloa, igeriketa sinkronizatua, jauzia eta ur kirol modalitate ofizial guztiak."
       }
+    },
+    "customCaps": {
+      "title": "🎯 Zure klubak txano pertsonalizatuak behar ditu?",
+      "features": "Entrega bizkorra • Diseinu doakoa • Kalitate premium",
+      "discount": "Erabili AQUA20 %20 deskontua lortzeko",
+      "button": "Pertsonalizatu Orain →"
+    },
+    "newsletter": {
+      "benefit1": "€10,000 baino gehiago Diru-laguntza Ezkutuetan",
+      "benefit2": "30 Egun Diru-sarrerak %25ean Handitzeko",
+      "benefit3": "Sistemak 10+ Ordu Astean Aurrezten Dutenak"
     }
   },
   "events": {

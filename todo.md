@@ -1003,3 +1003,16 @@
 - [x] Ensure flags display correctly on all devices (Android, iOS, Windows, Mac)
 - [x] Test flag display in language dropdown - all flags showing correctly
 - [x] Verified authentic regional flags: Catalan Senyera, Basque Ikurriña, Galician flag with coat of arms, Valencian flag with blue stripe
+
+
+## Complete Full Site Translation - IN PROGRESS 🔄
+
+- [ ] Add missing homepage translation keys (custom caps CTA, features, etc.)
+- [ ] Translate custom caps promotional card
+- [ ] Translate "Everything You Need" features section
+- [ ] Translate "Upcoming Events" section
+- [ ] Translate Events listing page (/eventos)
+- [ ] Translate event filters (discipline, region, date)
+- [ ] Translate Event detail page
+- [ ] Translate event registration info and dates
+- [ ] Test all pages in all 6 languages

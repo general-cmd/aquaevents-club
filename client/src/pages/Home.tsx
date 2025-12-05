@@ -90,15 +90,15 @@ export default function Home() {
               <ul className="text-left mb-6 space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold mt-0.5">✓</span>
-                  <span>Más de €10,000 en Subvenciones Ocultas</span>
+                  <span>{t("home.newsletter.benefit1")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold mt-0.5">✓</span>
-                  <span>30 Días para Aumentar Ingresos en 25%</span>
+                  <span>{t("home.newsletter.benefit2")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold mt-0.5">✓</span>
-                  <span>Sistemas que Ahorran 10+ Horas Semanales</span>
+                  <span>{t("home.newsletter.benefit3")}</span>
                 </li>
               </ul>
               {/* Newsletter signup form */}
@@ -204,22 +204,20 @@ export default function Home() {
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">
-                    🎯 ¿Tu club necesita gorros personalizados?
+                    {t("home.customCaps.title")}
                   </h3>
                   <p className="text-gray-700 mb-4">
-                    <span className="font-semibold">Entrega rápida</span> • 
-                    <span className="font-semibold"> Diseño gratis</span> • 
-                    <span className="font-semibold"> Calidad premium</span>
+                    {t("home.customCaps.features")}
                   </p>
                   <p className="text-lg font-bold text-blue-600 mb-4">
-                    Usa AQUA20 para 20% descuento
+                    {t("home.customCaps.discount")}
                   </p>
                   <Button 
                     size="lg" 
                     className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 w-full md:w-auto"
                     onClick={() => window.location.href = '/gorros-natacion'}
                   >
-                    Personaliza Ahora →
+                    {t("home.customCaps.button")}
                   </Button>
                 </div>
               </div>

@@ -52,6 +52,17 @@
       "description": "Diseña gorros únicos con el logo de tu equipo. Calidad profesional, envío rápido a toda España.",
       "button": "Ver Gorros Personalizados"
     },
+    "customCaps": {
+      "title": "🎯 ¿Tu club necesita gorros personalizados?",
+      "features": "Entrega rápida • Diseño gratis • Calidad premium",
+      "discount": "Usa AQUA20 para 20% descuento",
+      "button": "Personaliza Ahora →"
+    },
+    "newsletter": {
+      "benefit1": "Más de €10,000 en Subvenciones Ocultas",
+      "benefit2": "30 Días para Aumentar Ingresos en 25%",
+      "benefit3": "Sistemas que Ahorran 10+ Horas Semanales"
+    },
     "faq": {
       "title": "Preguntas Frecuentes",
       "q1": {

@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { formatDate as formatDateDDMMYYYY } from "@/lib/dateFormat";
 import ItemListSchema from "@/components/schema/ItemListSchema";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
+import { useTranslation } from "react-i18next";
 
 interface Event {
   _id: string;
@@ -24,6 +25,7 @@ interface Event {
 }
 
 export default function Events() {
+  const { t } = useTranslation();
   const [events, setEvents] = useState<Event[]>([]);
   const [filteredEvents, setFilteredEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
@@ -44,7 +46,7 @@ export default function Events() {
 
   const handleExportCalendar = () => {
     if (!filteredEvents || filteredEvents.length === 0) {
-      toast.error("No hay eventos para exportar");
+      toast.error(t("events.empty"));
       return;
     }
 
@@ -235,7 +237,7 @@ export default function Events() {
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-4">
               <Filter className="w-5 h-5 text-blue-600" />
-              <h2 className="text-xl font-bold text-gray-900">Filtrar Eventos</h2>
+              <h2 className="text-xl font-bold text-gray-900">{t("events.filters.all")}</h2>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
@@ -244,7 +246,7 @@ export default function Events() {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <Input
                   type="text"
-                  placeholder="Buscar evento o ciudad..."
+                  placeholder={t("events.filters.search")}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10"
@@ -394,7 +396,7 @@ export default function Events() {
                       <Button 
                         className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600"
                       >
-                        Ver Detalles
+                        {t("events.viewDetails")}
                       </Button>
                     </a>
                   </Link>

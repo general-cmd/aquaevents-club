@@ -70,6 +70,17 @@
         "question": "What disciplines are included?",
         "answer": "Swimming, open water, triathlon, water polo, synchronized swimming, diving and all official aquatic modalities."
       }
+    },
+    "customCaps": {
+      "title": "🎯 Does your club need custom caps?",
+      "features": "Fast delivery • Free design • Premium quality",
+      "discount": "Use AQUA20 for 20% discount",
+      "button": "Customize Now →"
+    },
+    "newsletter": {
+      "benefit1": "Over €10,000 in Hidden Grants",
+      "benefit2": "30 Days to Increase Revenue by 25%",
+      "benefit3": "Systems that Save 10+ Hours Weekly"
     }
   },
   "events": {
