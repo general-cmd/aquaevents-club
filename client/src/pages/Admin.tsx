@@ -695,7 +695,7 @@ export default function Admin() {
                         <div className="flex-1">
                           <h3 className="text-xl font-bold mb-2">{event.name?.es || event.name}</h3>
                           <div className="space-y-1 text-sm text-gray-600">
-                            <p><strong>Fecha:</strong> {event.date} {event.endDate && `- ${event.endDate}`}</p>
+                            <p><strong>Fecha:</strong> {event.date ? new Date(event.date).toLocaleDateString("es-ES") : "N/A"} {event.endDate && `- ${new Date(event.endDate).toLocaleDateString("es-ES")}`}</p>
                             <p><strong>Ubicación:</strong> {event.location?.city}, {event.location?.region}</p>
                             <p><strong>Disciplina:</strong> {event.discipline}</p>
                             <p><strong>Categoría:</strong> {event.category}</p>

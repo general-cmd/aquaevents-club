@@ -44,18 +44,46 @@ export default function BulkImport() {
 
   const handleImport = () => {
     try {
-      // Parse CSV text
+      // Parse CSV text with proper handling of quoted fields
       const lines = csvText.trim().split("\n");
       if (lines.length < 2) {
         alert("CSV must have at least a header row and one data row");
         return;
       }
 
-      const headers = lines[0].split(",").map((h) => h.trim());
+      // Helper to parse CSV line respecting quotes
+      const parseCSVLine = (line: string): string[] => {
+        const result: string[] = [];
+        let current = "";
+        let inQuotes = false;
+        
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          const nextChar = line[i + 1];
+          
+          if (char === '"') {
+            if (inQuotes && nextChar === '"') {
+              current += '"';
+              i++; // Skip next quote
+            } else {
+              inQuotes = !inQuotes;
+            }
+          } else if (char === ',' && !inQuotes) {
+            result.push(current.trim());
+            current = "";
+          } else {
+            current += char;
+          }
+        }
+        result.push(current.trim());
+        return result;
+      };
+
+      const headers = parseCSVLine(lines[0]);
       const events = [];
 
       for (let i = 1; i < lines.length; i++) {
-        const values = lines[i].split(",").map((v) => v.trim());
+        const values = parseCSVLine(lines[i]);
         const event: any = {};
 
         headers.forEach((header, index) => {
