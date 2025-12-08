@@ -1452,3 +1452,12 @@ Also added "private" to organizerType enum to support private organizers.
 - Events visible in MongoDB (4 total FCN events) ✅
 - Events displaying on frontend ✅
 - All 17 fields preserved ✅
+
+
+## Production CSV Import Still Failing - Investigation
+
+- [ ] Verify Railway deployment completed successfully
+- [ ] Check if user is using production (aquaevents.club) or dev preview
+- [ ] Create fully corrected CSV with all 12 FCN events (fix discipline names)
+- [ ] Test manual event submission workflow in dev
+- [ ] Identify why manual events are not appearing
