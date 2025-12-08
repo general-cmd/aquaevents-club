@@ -1426,3 +1426,29 @@ const token = jwt.sign(
 - [x] Update i18n translations (es.json)
 - [x] Test on dev server
 - [ ] Push to GitHub
+
+
+## CRITICAL BUGS - CSV Import & Event Publishing ✅
+
+- [x] Fix CSV import failing silently (12 Federación Catalana events not importing)
+- [x] Fix manually created events not appearing on frontend
+- [x] Verify event approval → publish workflow is working
+- [x] Test end-to-end: CSV import → admin approval → MongoDB publish → frontend display
+
+**Root Cause:**
+CSV validation schema was rejecting empty strings for optional URL/email fields even though `.optional()` was specified. The `.url()` and `.email()` validators fail on empty strings.
+
+**Fix Applied:**
+Replaced strict validators with `.refine()` that accepts empty strings:
+```typescript
+website: z.string().refine((val) => !val || val === "" || z.string().url().safeParse(val).success, "Invalid URL").optional()
+contactEmail: z.string().refine((val) => !val || val === "" || z.string().email().safeParse(val).success, "Invalid email").optional()
+```
+
+Also added "private" to organizerType enum to support private organizers.
+
+**Test Results:**
+- Imported 3 FCN events successfully ✅
+- Events visible in MongoDB (4 total FCN events) ✅
+- Events displaying on frontend ✅
+- All 17 fields preserved ✅
