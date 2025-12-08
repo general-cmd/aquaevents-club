@@ -25,6 +25,9 @@ import WidgetDemo from "./pages/WidgetDemo";
 import BulkImport from "./pages/BulkImport";
 import Login from "./pages/Login";
 import AdminRegister from "./pages/AdminRegister";
+import AvisoLegal from "./pages/AvisoLegal";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
+import SobreNosotros from "./pages/SobreNosotros";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -51,6 +54,9 @@ function Router() {
       <Route path="/widget/calendar" component={WidgetCalendar} />
       <Route path="/widget/builder" component={WidgetBuilder} />
       <Route path="/widget/demo" component={WidgetDemo} />
+      <Route path="/aviso-legal" component={AvisoLegal} />
+      <Route path="/politica-privacidad" component={PoliticaPrivacidad} />
+      <Route path="/sobre-nosotros" component={SobreNosotros} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

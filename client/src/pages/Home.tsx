@@ -12,6 +12,7 @@ import OrganizationSchema from "@/components/schema/OrganizationSchema";
 import FAQSchema from "@/components/schema/FAQSchema";
 import { SEOMeta } from "@/components/SEOMeta";
 import NewsletterSignupForm from "@/components/NewsletterSignupForm";
+import Footer from "@/components/Footer";
 
 interface Event {
   _id: string;
@@ -196,35 +197,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sponsor CTA Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-cyan-50 py-10">
-        <div className="container mx-auto px-4">
-          <Card className="max-w-3xl mx-auto border-2 border-blue-200 shadow-xl">
-            <CardContent className="p-6 md:p-8">
-              <div className="flex flex-col md:flex-row items-center gap-6">
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">
-                    {t("home.customCaps.title")}
-                  </h3>
-                  <p className="text-gray-700 mb-4">
-                    {t("home.customCaps.features")}
-                  </p>
-                  <p className="text-lg font-bold text-blue-600 mb-4">
-                    {t("home.customCaps.discount")}
-                  </p>
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 w-full md:w-auto"
-                    onClick={() => window.location.href = '/gorros-natacion'}
-                  >
-                    {t("home.customCaps.button")}
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+    
 
       {/* Upcoming Events Preview */}
       <section className="container mx-auto px-4 py-12 md:py-16">
@@ -295,36 +268,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Swimming Caps CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-cyan-500 py-16">
+      {/* Material para Clubes - Subtle CTA */}
+      <section className="bg-gray-100 py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {t("home.cta.title")}
-            </h2>
-            <p className="text-xl mb-2 text-blue-50">
-              {t("home.cta.description")}
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-sm text-gray-600 mb-3">
+              ℹ️ Este servicio gratuito es posible gracias a la venta de material deportivo
             </p>
-            <p className="text-lg mb-8 text-blue-100">
-              25 años de experiencia | Más de 1 millón de gorros producidos | Envío gratis a toda la UE
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">
+              ¿Tu club necesita gorros personalizados?
+            </h3>
+            <p className="text-gray-700 mb-6">
+              Diseño gratuito • Entrega rápida • Calidad profesional
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
-                onClick={() => window.location.href = '/gorros-natacion'}
-              >
-                Ver Precios y Solicitar Presupuesto
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold"
-                onClick={() => window.open('https://www.instagram.com/euroswimcaps', '_blank')}
-              >
-                Ver Ejemplos en Instagram
-              </Button>
-            </div>
+            <Button 
+              variant="outline"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50"
+              onClick={() => window.location.href = '/gorros-natacion'}
+            >
+              Ver Material para Clubes
+            </Button>
           </div>
         </div>
       </section>
@@ -383,42 +346,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-10 mt-auto">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <img src="/logo.png" alt="AquaEvents.club" className="h-10 w-10 rounded-full" />
-                <span className="font-bold text-lg">AquaEvents.club</span>
-              </div>
-              <p className="text-gray-400 text-sm">
-                El calendario más completo de eventos acuáticos en España
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Servicios</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="/eventos" className="hover:text-white">Calendario de Eventos</a></li>
-                <li><a href="/gorros-natacion" className="hover:text-white">Gorros Personalizados</a></li>
-                <li><a href="/enviar-evento" className="hover:text-white">Publicar Evento</a></li>
-                <li><a href="/blog" className="hover:text-white">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="/privacidad" className="hover:text-white">Política de Privacidad</a></li>
-                <li><a href="/terminos" className="hover:text-white">Términos de Servicio</a></li>
-                <li><a href="mailto:general@aquaevents.club" className="hover:text-white">Contacto</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
-            <p>© 2025 AquaEvents.club. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       </div>
     </>
   );

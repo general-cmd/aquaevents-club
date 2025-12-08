@@ -1361,3 +1361,60 @@ const token = jwt.sign(
 - Admin page loads without errors ✅
 - Events visible in public calendar ✅
 - All 17 fields displaying correctly ✅
+
+
+## Day 1-2: Trust Foundation (Gemini Feedback Implementation)
+
+### Legal Compliance & Transparency
+- [ ] Add comprehensive footer with BRU&YOU LTD details to all pages
+- [ ] Include company name, registration number, registered address
+- [ ] Add contact email (hola@aquaevents.club)
+- [ ] Create "Aviso Legal" page (legal notice in Spanish)
+- [ ] Create "Política de Privacidad" page (privacy policy in Spanish)
+- [ ] Add business model transparency statement
+- [ ] Create "Sobre Nosotros" (About Us) page
+
+### Spanish Localization
+- [ ] Audit all UI text for English words
+- [ ] Fix "Custom Caps" → "Material para Clubes" or hide
+- [ ] Check all error messages are in Spanish
+- [ ] Check all placeholders are in Spanish
+- [ ] Check all button text is in Spanish
+- [ ] Verify date formats use Spanish abbreviations
+
+### Homepage Trust Improvements
+- [ ] Soften/hide aggressive cap sales CTA
+- [ ] Move "Custom Caps" to secondary menu position
+- [ ] Focus homepage hero on utility value proposition
+- [ ] Add trust signals (legal footer, about us link)
+- [ ] Test mobile responsiveness
+
+### Testing & Verification
+- [ ] Test all pages on mobile devices
+- [ ] Verify footer appears on all pages
+- [ ] Check legal pages are accessible
+- [ ] Verify 100% Spanish interface
+- [ ] Test navigation and links
+
+
+## Day 1-2: Trust Foundation (Legal Compliance + Spanish Localization) ✅
+
+- [x] Add legal footer with BRU&YOU LTD company details
+- [x] Create Aviso Legal (Legal Notice) page
+- [x] Create Política de Privacidad (Privacy Policy) page
+- [x] Create Sobre Nosotros (About Us) page with business model transparency
+- [x] Audit all UI text for English/Spanish mixing
+- [x] Change "Custom Caps" to "Material para Clubes" in navigation
+- [x] Soften cap sales CTA on homepage (remove aggressive blue gradient sections)
+- [x] Test legal pages on mobile
+- [x] Verify footer displays correctly on all pages
+
+**Completed Changes:**
+- Footer now includes full BRU&YOU LTD details (Company No. 12886384, UK address)
+- Created 3 legal pages (Aviso Legal, Política de Privacidad, Sobre Nosotros)
+- Navigation updated to "Material para Clubes" (softer than "Gorros Personalizados")
+- Removed aggressive cap sales CTAs, replaced with subtle gray section
+- Added transparency message: "Este servicio gratuito es posible gracias a la venta de material deportivo"
+- All text verified 100% Spanish (no English mixing)
+- LSSI compliance achieved (Spanish law for online services)
+- RGPD/GDPR compliance with privacy policy and data protection info
