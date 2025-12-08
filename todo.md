@@ -1418,3 +1418,11 @@ const token = jwt.sign(
 - All text verified 100% Spanish (no English mixing)
 - LSSI compliance achieved (Spanish law for online services)
 - RGPD/GDPR compliance with privacy policy and data protection info
+
+
+## Homepage Hero Section - Title Update ✅
+
+- [x] Change hero title from "Gorros Personalizados para tu Club" to "Guía Gratuita para Clubes Deportivos"
+- [x] Update i18n translations (es.json)
+- [x] Test on dev server
+- [ ] Push to GitHub
