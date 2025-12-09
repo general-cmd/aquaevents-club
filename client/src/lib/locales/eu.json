@@ -129,7 +129,8 @@
     "registerEvent": "Ekitaldian Izena Eman",
     "addToCalendar": "Egutegira Gehitu",
     "remindMe": "Gogoratu",
-    "registered": "Izena emanda"
+    "registered": "Izena emanda",
+    "type": "Mota"
   },
   "forms": {
     "submitEvent": {

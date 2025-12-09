@@ -337,7 +337,7 @@ export default function EventDetail() {
                       <div className="flex items-start gap-3">
                         <Building className="w-5 h-5 text-purple-500 mt-0.5" />
                         <div>
-                          <span className="font-medium">Tipo:</span>
+                          <span className="font-medium">{t("eventDetail.type")}:</span>
                           <span className="ml-2 capitalize">{(event as any).organizerType === 'federation' ? 'Federación' : (event as any).organizerType === 'club' ? 'Club' : 'Otro'}</span>
                         </div>
                       </div>

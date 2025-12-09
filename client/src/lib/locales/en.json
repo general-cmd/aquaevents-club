@@ -129,7 +129,8 @@
     "registerEvent": "Register for Event",
     "addToCalendar": "Add to Calendar",
     "remindMe": "Remind Me",
-    "registered": "Registered"
+    "registered": "Registered",
+    "type": "Type"
   },
   "forms": {
     "submitEvent": {

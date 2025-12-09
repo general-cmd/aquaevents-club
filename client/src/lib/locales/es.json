@@ -129,7 +129,8 @@
     "registerEvent": "Inscribirse al Evento",
     "addToCalendar": "Añadir al Calendario",
     "remindMe": "Recordarme",
-    "registered": "Inscrito"
+    "registered": "Inscrito",
+    "type": "Tipo"
   },
   "forms": {
     "submitEvent": {
