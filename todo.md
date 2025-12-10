@@ -1461,3 +1461,10 @@ Also added "private" to organizerType enum to support private organizers.
 - [ ] Create fully corrected CSV with all 12 FCN events (fix discipline names)
 - [ ] Test manual event submission workflow in dev
 - [ ] Identify why manual events are not appearing
+
+
+## Sitemap & UX Improvements - Dec 08, 2025
+
+- [ ] Verify dynamic XML sitemap is working in production
+- [ ] Remove redundant "Todas" category filter from Events page
+- [ ] Test sitemap with Google Search Console
