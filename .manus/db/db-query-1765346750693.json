@@ -1,0 +1,15 @@
+{
+  "query": "SELECT id, email, role FROM users WHERE email LIKE '%youvinals%' OR email LIKE '%youlanda%'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute SELECT id, email, role FROM users WHERE email LIKE '%youvinals%' OR email LIKE '%youlanda%'",
+  "rows": [
+    {
+      "id": "hQ27YFw2qi4cuvrSZzPWXa",
+      "email": "youvinals2@gmail.com",
+      "role": "admin"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\temail\trole\nhQ27YFw2qi4cuvrSZzPWXa\tyouvinals2@gmail.com\tadmin\n",
+  "stderr": "",
+  "execution_time_ms": 137
+}

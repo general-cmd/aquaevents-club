@@ -1468,3 +1468,11 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Verify dynamic XML sitemap is working in production (50 URLs: 6 static + 18 events + 7 blog + 19 federations)
 - [x] Remove redundant "Todas" category filter from Events page
 - [ ] Test sitemap with Google Search Console (user action required)
+
+
+## User Requests - Dec 10, 2025
+
+- [x] Add youvinals2@gmail.com as admin user
+- [x] Repurpose Category filter to Type filter (club/federation/etc organizer type)
+- [x] Verify sitemap.xml working on production (200 OK, valid XML, 50+ URLs)
+- [x] Verify robots.txt working on production (contains sitemap reference)

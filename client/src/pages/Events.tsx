@@ -33,12 +33,12 @@ export default function Events() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDiscipline, setSelectedDiscipline] = useState<string>("all");
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedType, setSelectedType] = useState<string>("all");
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [selectedMonth, setSelectedMonth] = useState<string>("all");
   const [selectedOrganizer, setSelectedOrganizer] = useState<string>("all");
   const [disciplines, setDisciplines] = useState<string[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
+  const [types, setTypes] = useState<string[]>([]);
   const [regions, setRegions] = useState<string[]>([]);
   const [months, setMonths] = useState<string[]>([]);
   const [organizers, setOrganizers] = useState<string[]>([]);
@@ -70,16 +70,16 @@ export default function Events() {
       setEvents(eventsData.events as any);
       setFilteredEvents(eventsData.events as any);
       
-      // Extract unique disciplines, categories, regions, and months
+      // Extract unique disciplines, types, regions, and months
       const disciplineSet = new Set<string>();
-      const categorySet = new Set<string>();
+      const typeSet = new Set<string>();
       const regionSet = new Set<string>();
       const monthSet = new Set<string>();
       const organizerSet = new Set<string>();
       
       eventsData.events.forEach((e: any) => {
         if (e.discipline) disciplineSet.add(e.discipline);
-        if (e.category) categorySet.add(e.category);
+        if (e.organizerType) typeSet.add(e.organizerType);
         if (e.location?.region) regionSet.add(e.location.region);
         if (e.federation) organizerSet.add(e.federation);
         if (e.date) {
@@ -89,7 +89,7 @@ export default function Events() {
       });
       
       setDisciplines(Array.from(disciplineSet).filter(Boolean));
-      setCategories(Array.from(categorySet).filter(Boolean));
+      setTypes(Array.from(typeSet).filter(Boolean));
       setRegions(Array.from(regionSet).filter(Boolean));
       setMonths(Array.from(monthSet).filter(Boolean));
       setOrganizers(Array.from(organizerSet).filter(Boolean));
@@ -115,9 +115,9 @@ export default function Events() {
       filtered = filtered.filter(event => event.discipline === selectedDiscipline);
     }
 
-    // Category filter
-    if (selectedCategory !== "all") {
-      filtered = filtered.filter((event: any) => event.category === selectedCategory);
+    // Type filter (organizerType: club, federation, other, private)
+    if (selectedType !== "all") {
+      filtered = filtered.filter((event: any) => event.organizerType === selectedType);
     }
 
     // Region filter
@@ -139,7 +139,7 @@ export default function Events() {
     }
 
     setFilteredEvents(filtered);
-  }, [searchTerm, selectedDiscipline, selectedCategory, selectedRegion, selectedMonth, selectedOrganizer, events]);
+  }, [searchTerm, selectedDiscipline, selectedType, selectedRegion, selectedMonth, selectedOrganizer, events]);
 
   const getDisciplineIcon = (discipline: string) => {
     const icons: Record<string, string> = {
@@ -271,15 +271,16 @@ export default function Events() {
                 </SelectContent>
               </Select>
 
-              {/* Category Filter */}
-              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              {/* Type Filter (organizerType) */}
+              <Select value={selectedType} onValueChange={setSelectedType}>
                 <SelectTrigger>
-                  <SelectValue placeholder={t("filters.allCategories")} />
+                  <SelectValue placeholder={t("filters.allTypes")} />
                 </SelectTrigger>
                 <SelectContent>
-                  {categories.map(category => (
-                    <SelectItem key={category} value={category}>
-                      {category}
+                  <SelectItem value="all">{t("filters.allTypes")}</SelectItem>
+                  {types.map((type: string) => (
+                    <SelectItem key={type} value={type}>
+                      {type === 'club' ? 'Club' : type === 'federation' ? 'Federación' : type === 'private' ? 'Privado' : 'Otro'}
                     </SelectItem>
                   ))}
                 </SelectContent>

@@ -241,7 +241,7 @@
   },
   "filters": {
     "allDisciplines": "Todas las disciplinas",
-    "allCategories": "Todas",
+    "allTypes": "Todos los tipos",
     "allRegions": "Todas las regiones",
     "allMonths": "Todos los meses",
     "allOrganizers": "Todos los organizadores",
