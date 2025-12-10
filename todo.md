@@ -1465,6 +1465,6 @@ Also added "private" to organizerType enum to support private organizers.
 
 ## Sitemap & UX Improvements - Dec 08, 2025
 
-- [ ] Verify dynamic XML sitemap is working in production
-- [ ] Remove redundant "Todas" category filter from Events page
-- [ ] Test sitemap with Google Search Console
+- [x] Verify dynamic XML sitemap is working in production (50 URLs: 6 static + 18 events + 7 blog + 19 federations)
+- [x] Remove redundant "Todas" category filter from Events page
+- [ ] Test sitemap with Google Search Console (user action required)
