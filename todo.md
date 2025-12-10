@@ -1476,3 +1476,11 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Repurpose Category filter to Type filter (club/federation/etc organizer type)
 - [x] Verify sitemap.xml working on production (200 OK, valid XML, 50+ URLs)
 - [x] Verify robots.txt working on production (contains sitemap reference)
+
+
+## Sitemap GSC Issue - Dec 10, 2025
+
+- [x] Fix Google Search Console "Sitemap could not be read" error (added XML entity escaping)
+- [x] Added escapeXml function to properly encode &, <, >, ", ' characters in URLs
+- [x] Sitemap now generates valid XML that Google can parse
+- [ ] Wait 24-48h for Google to re-crawl or manually request re-indexing in GSC
