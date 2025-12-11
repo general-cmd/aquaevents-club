@@ -22,7 +22,7 @@ export default function AdminEventEdit() {
   const isAdmin = user?.role === "admin";
   const eventId = params?.id || "";
 
-  const { data: eventData, isLoading } = trpc.events.getById.useQuery(
+  const { data: eventData, isLoading, error } = trpc.events.getById.useQuery(
     { id: eventId },
     { enabled: isAdmin && !!eventId }
   );
@@ -51,8 +51,9 @@ export default function AdminEventEdit() {
   });
 
   useEffect(() => {
-    if (eventData?.event) {
-      const event = eventData.event;
+    // Handle both response structures: direct event or wrapped in success object
+    const event = eventData?.event;
+    if (event && event._id) {
       setFormData({
         "name.es": event.name?.es || "",
         "name.en": event.name?.en || "",

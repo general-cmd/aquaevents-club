@@ -1522,3 +1522,10 @@ Also added "private" to organizerType enum to support private organizers.
 
 - [x] Remove confusing bulk edit dialog, replace with direct link to individual editor
 - [x] Add bulk "Generate AI Descriptions" button for batch processing
+
+
+## Dec 11, 2025 - Fix Event Editor Data Loading (50 credits)
+
+- [x] Fix require() to import() in getEventById (ES modules)
+- [x] Fix editor to handle event data structure correctly
+- [ ] Debug tRPC URL encoding issue preventing getById from working

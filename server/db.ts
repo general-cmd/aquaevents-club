@@ -358,7 +358,7 @@ export async function getEventById(id: string) {
     
     if (!event) {
       // Try to find by MongoDB ObjectId
-      const { ObjectId } = require('mongodb');
+      const { ObjectId } = await import('mongodb');
       try {
         event = await collection.findOne({ _id: new ObjectId(id) });
       } catch (err) {
