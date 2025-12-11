@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Edit, Trash2, Calendar } from "lucide-react";
+import { Edit, Trash2, Calendar, ExternalLink } from "lucide-react";
 import { getLoginUrl } from "@/const";
 
 export default function AdminBulkEdit() {
@@ -206,6 +206,11 @@ export default function AdminBulkEdit() {
                         <span className="text-sm">{event.sport || event.discipline || "N/A"}</span>
                       </div>
                     </div>
+                    <a href={`/admin/events/${eventId}`} target="_blank" rel="noopener">
+                      <Button size="sm" variant="ghost">
+                        <ExternalLink className="w-4 h-4" />
+                      </Button>
+                    </a>
                   </div>
                 );
               })}

@@ -162,6 +162,69 @@ export const appRouter = router({
         return { success: true, count: input.eventIds.length };
       }),
 
+    generateDescription: protectedProcedure
+      .input(z.object({
+        eventId: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        
+        const { generateEventDescription } = await import('./eventDescriptionGenerator');
+        const { getEventsCollection } = await import('./services/mongodb');
+        const { ObjectId } = await import('mongodb');
+        
+        const collection = await getEventsCollection();
+        const event = await collection.findOne({ _id: new ObjectId(input.eventId) });
+        
+        if (!event) {
+          throw new Error('Event not found');
+        }
+        
+        const description = await generateEventDescription(event);
+        
+        await collection.updateOne(
+          { _id: new ObjectId(input.eventId) },
+          { $set: { description } }
+        );
+        
+        return { success: true, description };
+      }),
+
+    updateEvent: protectedProcedure
+      .input(z.object({
+        eventId: z.string(),
+        updates: z.record(z.string(), z.any()),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        
+        const { getEventsCollection } = await import('./services/mongodb');
+        const { ObjectId } = await import('mongodb');
+        
+        const collection = await getEventsCollection();
+        
+        const updates: any = { ...input.updates };
+        
+        // Handle date fields
+        if (updates.date && typeof updates.date === 'string') {
+          updates.date = new Date(updates.date);
+        }
+        if (updates.endDate && typeof updates.endDate === 'string') {
+          updates.endDate = new Date(updates.endDate);
+        }
+        
+        await collection.updateOne(
+          { _id: new ObjectId(input.eventId) },
+          { $set: updates }
+        );
+        
+        return { success: true };
+      }),
+
     create: protectedProcedure
       .input(z.object({
         nameEs: z.string(),

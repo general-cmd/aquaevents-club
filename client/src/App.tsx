@@ -17,6 +17,7 @@ import UserFavorites from "./pages/UserFavorites";
 import Admin from "./pages/Admin";
 import AdminContacts from "./pages/AdminContacts";
 import AdminBulkEdit from "./pages/AdminBulkEdit";
+import AdminEventEdit from "./pages/AdminEventEdit";
 import FederationDashboard from "./pages/FederationDashboard";
 import GorrosNatacion from "./pages/GorrosNatacion";
 import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
@@ -49,6 +50,7 @@ function Router() {
       <Route path="/admin/contacts" component={AdminContacts} />
       <Route path="/admin/bulk-import" component={BulkImport} />
       <Route path="/admin/bulk-edit" component={AdminBulkEdit} />
+      <Route path="/admin/events/:id" component={AdminEventEdit} />
       <Route path="/admin/register" component={AdminRegister} />
       <Route path="/login" component={Login} />
       <Route path="/federacion" component={FederationDashboard} />
