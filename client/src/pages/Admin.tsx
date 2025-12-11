@@ -295,13 +295,29 @@ export default function Admin() {
       {/* Admin Dashboard */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Panel de Administración
-            </h1>
-            <p className="text-lg text-gray-600">
-              Gestiona eventos, artículos y contenido del sitio
-            </p>
+          <div className="mb-8 flex items-center justify-between">
+            <div>
+              <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                Panel de Administración
+              </h1>
+              <p className="text-lg text-gray-600">
+                Gestiona eventos, artículos y contenido del sitio
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Link href="/admin/bulk-edit">
+                <Button variant="outline" className="gap-2">
+                  <FileText className="w-4 h-4" />
+                  Edición Masiva
+                </Button>
+              </Link>
+              <Link href="/admin/bulk-import">
+                <Button variant="outline" className="gap-2">
+                  <Plus className="w-4 h-4" />
+                  Importar CSV
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* Tabs */}

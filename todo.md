@@ -1496,3 +1496,8 @@ Also added "private" to organizerType enum to support private organizers.
 ## Dec 10, 2025 - Google Analytics
 
 - [x] Add Google Analytics tracking code (G-FKG9R9W32E) to index.html
+
+
+## Dec 11, 2025 - Admin Dashboard Navigation
+
+- [x] Add bulk edit button to admin dashboard for easy access
