@@ -4,20 +4,16 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
+
 import { toast } from "sonner";
-import { Edit, Trash2, Calendar, ExternalLink } from "lucide-react";
+import { Edit, Trash2, Calendar, ExternalLink, Sparkles } from "lucide-react";
 import { getLoginUrl } from "@/const";
 
 export default function AdminBulkEdit() {
   const { user, loading, isAuthenticated } = useAuth();
   const [selectedEvents, setSelectedEvents] = useState<Set<string>>(new Set());
-  const [bulkEditDialog, setBulkEditDialog] = useState(false);
-  const [bulkEditField, setBulkEditField] = useState<string>("");
-  const [bulkEditValue, setBulkEditValue] = useState("");
+  const generateDescriptionMutation = trpc.events.generateDescription.useMutation();
 
   const isAdmin = user?.role === "admin";
 
@@ -26,19 +22,7 @@ export default function AdminBulkEdit() {
     { enabled: isAdmin }
   );
 
-  const bulkUpdateMutation = trpc.events.bulkUpdate.useMutation({
-    onSuccess: () => {
-      toast.success(`${selectedEvents.size} eventos actualizados`);
-      setSelectedEvents(new Set());
-      setBulkEditDialog(false);
-      setBulkEditField("");
-      setBulkEditValue("");
-      refetch();
-    },
-    onError: (error: any) => {
-      toast.error("Error: " + error.message);
-    },
-  });
+
 
   const bulkDeleteMutation = trpc.events.bulkDelete.useMutation({
     onSuccess: () => {
@@ -91,18 +75,7 @@ export default function AdminBulkEdit() {
     setSelectedEvents(newSelected);
   };
 
-  const handleBulkUpdate = () => {
-    if (!bulkEditField || !bulkEditValue) {
-      toast.error("Selecciona un campo y valor");
-      return;
-    }
 
-    bulkUpdateMutation.mutate({
-      eventIds: Array.from(selectedEvents),
-      field: bulkEditField as any,
-      value: bulkEditValue,
-    });
-  };
 
   const handleBulkDelete = () => {
     if (selectedEvents.size === 0) {
@@ -137,12 +110,47 @@ export default function AdminBulkEdit() {
             <CardTitle>Edición Masiva de Eventos</CardTitle>
             <div className="flex gap-2">
               <Button
-                onClick={() => setBulkEditDialog(true)}
+                onClick={() => {
+                  if (selectedEvents.size === 1) {
+                    const eventId = Array.from(selectedEvents)[0];
+                    window.open(`/admin/events/${eventId}`, '_blank');
+                  } else {
+                    toast.info('Selecciona solo 1 evento para editar individualmente');
+                  }
+                }}
                 disabled={selectedEvents.size === 0}
                 variant="default"
               >
                 <Edit className="w-4 h-4 mr-2" />
-                Editar ({selectedEvents.size})
+                Editar Individual ({selectedEvents.size})
+              </Button>
+              <Button
+                onClick={() => {
+                  if (selectedEvents.size === 0) {
+                    toast.error('Selecciona al menos un evento');
+                    return;
+                  }
+                  if (!confirm(`¿Generar descripciones IA para ${selectedEvents.size} eventos?`)) return;
+                  
+                  let completed = 0;
+                  selectedEvents.forEach(eventId => {
+                    generateDescriptionMutation.mutate({ eventId }, {
+                      onSuccess: () => {
+                        completed++;
+                        if (completed === selectedEvents.size) {
+                          toast.success(`${completed} descripciones generadas`);
+                          setSelectedEvents(new Set());
+                          refetch();
+                        }
+                      }
+                    });
+                  });
+                }}
+                disabled={selectedEvents.size === 0}
+                variant="outline"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                Generar IA ({selectedEvents.size})
               </Button>
               <Button
                 onClick={handleBulkDelete}
@@ -219,117 +227,7 @@ export default function AdminBulkEdit() {
         </CardContent>
       </Card>
 
-      <Dialog open={bulkEditDialog} onOpenChange={setBulkEditDialog}>
-        <DialogContent className="max-w-md">
-          <DialogHeader>
-            <DialogTitle>Editar {selectedEvents.size} eventos</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4 py-4">
-            <div>
-              <Label>Campo a editar</Label>
-              <Select value={bulkEditField} onValueChange={setBulkEditField}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecciona un campo" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="organizerType">Tipo de Organizador</SelectItem>
-                  <SelectItem value="status">Estado</SelectItem>
-                  <SelectItem value="discipline">Disciplina</SelectItem>
-                  <SelectItem value="sport">Deporte</SelectItem>
-                  <SelectItem value="category">Categoría</SelectItem>
-                  <SelectItem value="date">Fecha</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
 
-            {bulkEditField === "organizerType" && (
-              <div>
-                <Label>Nuevo valor</Label>
-                <Select value={bulkEditValue} onValueChange={setBulkEditValue}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Selecciona tipo" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="club">Club</SelectItem>
-                    <SelectItem value="federación">Federación</SelectItem>
-                    <SelectItem value="privado">Privado</SelectItem>
-                    <SelectItem value="otro">Otro</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            )}
-
-            {bulkEditField === "status" && (
-              <div>
-                <Label>Nuevo estado</Label>
-                <Select value={bulkEditValue} onValueChange={setBulkEditValue}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Selecciona estado" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="upcoming">Próximo</SelectItem>
-                    <SelectItem value="ongoing">En curso</SelectItem>
-                    <SelectItem value="completed">Completado</SelectItem>
-                    <SelectItem value="cancelled">Cancelado</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            )}
-
-            {bulkEditField === "discipline" && (
-              <div>
-                <Label>Nueva disciplina</Label>
-                <Input
-                  value={bulkEditValue}
-                  onChange={(e) => setBulkEditValue(e.target.value)}
-                  placeholder="Ej: Natación, Triatlón, Waterpolo"
-                />
-              </div>
-            )}
-
-            {bulkEditField === "sport" && (
-              <div>
-                <Label>Nuevo deporte</Label>
-                <Input
-                  value={bulkEditValue}
-                  onChange={(e) => setBulkEditValue(e.target.value)}
-                  placeholder="Ej: Natación, Triatlón"
-                />
-              </div>
-            )}
-
-            {bulkEditField === "category" && (
-              <div>
-                <Label>Nueva categoría</Label>
-                <Input
-                  value={bulkEditValue}
-                  onChange={(e) => setBulkEditValue(e.target.value)}
-                  placeholder="Ej: Nacional, Regional, Local"
-                />
-              </div>
-            )}
-
-            {bulkEditField === "date" && (
-              <div>
-                <Label>Nueva fecha</Label>
-                <Input
-                  type="date"
-                  value={bulkEditValue}
-                  onChange={(e) => setBulkEditValue(e.target.value)}
-                />
-              </div>
-            )}
-          </div>
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setBulkEditDialog(false)}>
-              Cancelar
-            </Button>
-            <Button onClick={handleBulkUpdate} disabled={!bulkEditField || !bulkEditValue}>
-              Actualizar
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

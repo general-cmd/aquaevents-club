@@ -1516,3 +1516,9 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Add individual event editor showing all fields with validation highlighting
 - [x] Implement AI-generated SEO descriptions for events (bilingual ES/EN)
 - [x] Add "Generate with AI" button to event editor for instant descriptions
+
+
+## Dec 11, 2025 - Fix Event Editor Access (100 credits)
+
+- [x] Remove confusing bulk edit dialog, replace with direct link to individual editor
+- [x] Add bulk "Generate AI Descriptions" button for batch processing
