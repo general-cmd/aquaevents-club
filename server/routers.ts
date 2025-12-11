@@ -120,7 +120,7 @@ export const appRouter = router({
     bulkUpdate: protectedProcedure
       .input(z.object({
         eventIds: z.array(z.string()),
-        field: z.enum(['status', 'organizerType', 'date']),
+        field: z.string(),
         value: z.string(),
       }))
       .mutation(async ({ input, ctx }) => {

@@ -1501,3 +1501,10 @@ Also added "private" to organizerType enum to support private organizers.
 ## Dec 11, 2025 - Admin Dashboard Navigation
 
 - [x] Add bulk edit button to admin dashboard for easy access
+
+
+## Dec 11, 2025 - Bulk Edit Fixes
+
+- [x] Fix React error #31 in bulk edit page (object rendering issue)
+- [x] Make all event fields optional in bulk edit
+- [x] Add all event fields to bulk edit (organizerType, status, discipline, sport, category, date)

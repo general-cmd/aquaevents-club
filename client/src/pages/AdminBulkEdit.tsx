@@ -16,7 +16,7 @@ export default function AdminBulkEdit() {
   const { user, loading, isAuthenticated } = useAuth();
   const [selectedEvents, setSelectedEvents] = useState<Set<string>>(new Set());
   const [bulkEditDialog, setBulkEditDialog] = useState(false);
-  const [bulkEditField, setBulkEditField] = useState<"status" | "organizerType" | "date" | "">("");
+  const [bulkEditField, setBulkEditField] = useState<string>("");
   const [bulkEditValue, setBulkEditValue] = useState("");
 
   const isAdmin = user?.role === "admin";
@@ -31,6 +31,8 @@ export default function AdminBulkEdit() {
       toast.success(`${selectedEvents.size} eventos actualizados`);
       setSelectedEvents(new Set());
       setBulkEditDialog(false);
+      setBulkEditField("");
+      setBulkEditValue("");
       refetch();
     },
     onError: (error: any) => {
@@ -75,7 +77,7 @@ export default function AdminBulkEdit() {
     if (allSelected) {
       setSelectedEvents(new Set());
     } else {
-      setSelectedEvents(new Set(events.map(e => e._id.toString())));
+      setSelectedEvents(new Set(events.map((e: any) => e._id?.toString() || e._id)));
     }
   };
 
@@ -97,12 +99,17 @@ export default function AdminBulkEdit() {
 
     bulkUpdateMutation.mutate({
       eventIds: Array.from(selectedEvents),
-      field: bulkEditField,
+      field: bulkEditField as any,
       value: bulkEditValue,
     });
   };
 
   const handleBulkDelete = () => {
+    if (selectedEvents.size === 0) {
+      toast.error("Selecciona al menos un evento");
+      return;
+    }
+
     if (!confirm(`¿Eliminar ${selectedEvents.size} eventos? Esta acción no se puede deshacer.`)) {
       return;
     }
@@ -112,101 +119,119 @@ export default function AdminBulkEdit() {
     });
   };
 
-  return (
-    <div className="container py-8 max-w-7xl">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-3xl font-bold">Edición Masiva de Eventos</h1>
-          <p className="text-muted-foreground mt-1">
-            {events.length} eventos totales • {selectedEvents.size} seleccionados
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <Button
-            variant="outline"
-            onClick={() => setBulkEditDialog(true)}
-            disabled={selectedEvents.size === 0}
-          >
-            <Edit className="w-4 h-4 mr-2" />
-            Editar Seleccionados
-          </Button>
-          <Button
-            variant="destructive"
-            onClick={handleBulkDelete}
-            disabled={selectedEvents.size === 0}
-          >
-            <Trash2 className="w-4 h-4 mr-2" />
-            Eliminar Seleccionados
-          </Button>
-        </div>
-      </div>
+  const getEventName = (event: any) => {
+    if (typeof event.name === 'string') return event.name;
+    return event.name?.es || event.name?.en || 'Sin nombre';
+  };
 
+  const getEventLocation = (event: any) => {
+    if (typeof event.location === 'string') return event.location;
+    return event.location?.city || event.location?.region || 'N/A';
+  };
+
+  return (
+    <div className="container py-8">
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-4">
-            <Checkbox
-              checked={allSelected}
-              onCheckedChange={toggleAll}
-            />
-            <span className="font-medium">Seleccionar todos</span>
+          <div className="flex items-center justify-between">
+            <CardTitle>Edición Masiva de Eventos</CardTitle>
+            <div className="flex gap-2">
+              <Button
+                onClick={() => setBulkEditDialog(true)}
+                disabled={selectedEvents.size === 0}
+                variant="default"
+              >
+                <Edit className="w-4 h-4 mr-2" />
+                Editar ({selectedEvents.size})
+              </Button>
+              <Button
+                onClick={handleBulkDelete}
+                disabled={selectedEvents.size === 0}
+                variant="destructive"
+              >
+                <Trash2 className="w-4 h-4 mr-2" />
+                Eliminar ({selectedEvents.size})
+              </Button>
+            </div>
           </div>
         </CardHeader>
         <CardContent>
           {isLoading ? (
             <p>Cargando eventos...</p>
           ) : events.length === 0 ? (
-            <p className="text-muted-foreground">No hay eventos publicados</p>
+            <p>No hay eventos publicados</p>
           ) : (
             <div className="space-y-2">
-              {events.map((event) => (
-                <div
-                  key={event._id.toString()}
-                  className="flex items-center gap-4 p-3 rounded-lg border hover:bg-accent transition-colors"
-                >
-                  <Checkbox
-                    checked={selectedEvents.has(event._id.toString())}
-                    onCheckedChange={() => toggleEvent(event._id.toString())}
-                  />
-                  <div className="flex-1 grid grid-cols-4 gap-4">
-                    <div>
-                      <p className="font-medium">{event.name?.es || event.name?.en}</p>
-                      <p className="text-sm text-muted-foreground">{event.location?.city}</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-muted-foreground" />
-                      <span className="text-sm">
-                        {new Date(event.date).toLocaleDateString("es-ES")}
-                      </span>
-                    </div>
-                    <div>
-                      <span className="text-sm capitalize">{event.organizerType || "N/A"}</span>
-                    </div>
-                    <div>
-                      <span className="text-sm">{event.sport}</span>
+              <div className="flex items-center gap-4 p-3 border-b font-medium">
+                <Checkbox
+                  checked={allSelected}
+                  onCheckedChange={toggleAll}
+                />
+                <div className="flex-1 grid grid-cols-5 gap-4">
+                  <div>Nombre</div>
+                  <div>Fecha</div>
+                  <div>Ubicación</div>
+                  <div>Tipo</div>
+                  <div>Deporte</div>
+                </div>
+              </div>
+              {events.map((event: any) => {
+                const eventId = event._id?.toString() || event._id;
+                return (
+                  <div
+                    key={eventId}
+                    className="flex items-center gap-4 p-3 rounded-lg border hover:bg-accent transition-colors"
+                  >
+                    <Checkbox
+                      checked={selectedEvents.has(eventId)}
+                      onCheckedChange={() => toggleEvent(eventId)}
+                    />
+                    <div className="flex-1 grid grid-cols-5 gap-4">
+                      <div>
+                        <p className="font-medium text-sm">{getEventName(event)}</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-sm">
+                          {event.date ? new Date(event.date).toLocaleDateString("es-ES") : 'N/A'}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-sm">{getEventLocation(event)}</span>
+                      </div>
+                      <div>
+                        <span className="text-sm capitalize">{event.organizerType || "N/A"}</span>
+                      </div>
+                      <div>
+                        <span className="text-sm">{event.sport || event.discipline || "N/A"}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </CardContent>
       </Card>
 
       <Dialog open={bulkEditDialog} onOpenChange={setBulkEditDialog}>
-        <DialogContent>
+        <DialogContent className="max-w-md">
           <DialogHeader>
             <DialogTitle>Editar {selectedEvents.size} eventos</DialogTitle>
           </DialogHeader>
           <div className="space-y-4 py-4">
             <div>
               <Label>Campo a editar</Label>
-              <Select value={bulkEditField} onValueChange={(v: any) => setBulkEditField(v)}>
+              <Select value={bulkEditField} onValueChange={setBulkEditField}>
                 <SelectTrigger>
                   <SelectValue placeholder="Selecciona un campo" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="organizerType">Tipo de Organizador</SelectItem>
                   <SelectItem value="status">Estado</SelectItem>
+                  <SelectItem value="discipline">Disciplina</SelectItem>
+                  <SelectItem value="sport">Deporte</SelectItem>
+                  <SelectItem value="category">Categoría</SelectItem>
                   <SelectItem value="date">Fecha</SelectItem>
                 </SelectContent>
               </Select>
@@ -221,9 +246,9 @@ export default function AdminBulkEdit() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="club">Club</SelectItem>
-                    <SelectItem value="federation">Federación</SelectItem>
-                    <SelectItem value="private">Privado</SelectItem>
-                    <SelectItem value="other">Otro</SelectItem>
+                    <SelectItem value="federación">Federación</SelectItem>
+                    <SelectItem value="privado">Privado</SelectItem>
+                    <SelectItem value="otro">Otro</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -246,6 +271,39 @@ export default function AdminBulkEdit() {
               </div>
             )}
 
+            {bulkEditField === "discipline" && (
+              <div>
+                <Label>Nueva disciplina</Label>
+                <Input
+                  value={bulkEditValue}
+                  onChange={(e) => setBulkEditValue(e.target.value)}
+                  placeholder="Ej: Natación, Triatlón, Waterpolo"
+                />
+              </div>
+            )}
+
+            {bulkEditField === "sport" && (
+              <div>
+                <Label>Nuevo deporte</Label>
+                <Input
+                  value={bulkEditValue}
+                  onChange={(e) => setBulkEditValue(e.target.value)}
+                  placeholder="Ej: Natación, Triatlón"
+                />
+              </div>
+            )}
+
+            {bulkEditField === "category" && (
+              <div>
+                <Label>Nueva categoría</Label>
+                <Input
+                  value={bulkEditValue}
+                  onChange={(e) => setBulkEditValue(e.target.value)}
+                  placeholder="Ej: Nacional, Regional, Local"
+                />
+              </div>
+            )}
+
             {bulkEditField === "date" && (
               <div>
                 <Label>Nueva fecha</Label>
@@ -261,8 +319,8 @@ export default function AdminBulkEdit() {
             <Button variant="outline" onClick={() => setBulkEditDialog(false)}>
               Cancelar
             </Button>
-            <Button onClick={handleBulkUpdate}>
-              Actualizar {selectedEvents.size} eventos
+            <Button onClick={handleBulkUpdate} disabled={!bulkEditField || !bulkEditValue}>
+              Actualizar
             </Button>
           </DialogFooter>
         </DialogContent>
