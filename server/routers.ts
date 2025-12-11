@@ -117,6 +117,51 @@ export const appRouter = router({
         };
       }),
 
+    bulkUpdate: protectedProcedure
+      .input(z.object({
+        eventIds: z.array(z.string()),
+        field: z.enum(['status', 'organizerType', 'date']),
+        value: z.string(),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        const { getEventsCollection } = await import('./services/mongodb');
+        const collection = await getEventsCollection();
+        const { ObjectId } = await import('mongodb');
+        
+        const updateData: any = {};
+        if (input.field === 'date') {
+          updateData.date = new Date(input.value);
+        } else {
+          updateData[input.field] = input.value;
+        }
+        
+        await collection.updateMany(
+          { _id: { $in: input.eventIds.map(id => new ObjectId(id)) } },
+          { $set: updateData }
+        );
+        
+        return { success: true, count: input.eventIds.length };
+      }),
+
+    bulkDelete: protectedProcedure
+      .input(z.object({
+        eventIds: z.array(z.string()),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        if (ctx.user.role !== 'admin') {
+          throw new Error('Unauthorized');
+        }
+        
+        for (const id of input.eventIds) {
+          await deleteEventFromMongo(id);
+        }
+        
+        return { success: true, count: input.eventIds.length };
+      }),
+
     create: protectedProcedure
       .input(z.object({
         nameEs: z.string(),

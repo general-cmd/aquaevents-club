@@ -1484,3 +1484,10 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Added escapeXml function to properly encode &, <, >, ", ' characters in URLs
 - [x] Sitemap now generates valid XML that Google can parse
 - [ ] Wait 24-48h for Google to re-crawl or manually request re-indexing in GSC
+
+
+## Dec 10, 2025 - SEO & Admin Improvements (300 credits budget)
+
+- [x] Write Q1 2026 events blog post for go.aquaevents.club (meta, keywords, image, table)
+- [x] Add bulk edit functionality to admin dashboard (checkboxes + batch operations)
+- [x] Verify SSR already implemented for event detail pages (Schema.org + meta tags)
