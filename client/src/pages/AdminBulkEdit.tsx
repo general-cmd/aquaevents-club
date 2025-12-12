@@ -196,7 +196,7 @@ export default function AdminBulkEdit() {
                     />
                     <div className="flex-1 grid grid-cols-5 gap-4">
                       <div>
-                        <p className="font-medium text-sm">{getEventName(event)}</p>
+                        <p className="font-medium text-sm">{String(getEventName(event))}</p>
                       </div>
                       <div className="flex items-center gap-2">
                         <Calendar className="w-4 h-4 text-muted-foreground" />
@@ -205,13 +205,13 @@ export default function AdminBulkEdit() {
                         </span>
                       </div>
                       <div>
-                        <span className="text-sm">{getEventLocation(event)}</span>
+                        <span className="text-sm">{String(getEventLocation(event))}</span>
                       </div>
                       <div>
-                        <span className="text-sm capitalize">{event.organizerType || "N/A"}</span>
+                        <span className="text-sm capitalize">{String(event.organizerType || "N/A")}</span>
                       </div>
                       <div>
-                        <span className="text-sm">{event.sport || event.discipline || "N/A"}</span>
+                        <span className="text-sm">{String(event.sport || event.discipline || "N/A")}</span>
                       </div>
                     </div>
                     <a href={`/admin/events/${eventId}`} target="_blank" rel="noopener">

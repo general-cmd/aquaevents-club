@@ -1529,3 +1529,8 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Fix require() to import() in getEventById (ES modules)
 - [x] Fix editor to handle event data structure correctly
 - [ ] Debug tRPC URL encoding issue preventing getById from working
+
+
+## Dec 11, 2025 - Fix Bulk Edit React Error
+
+- [x] Fix React error #31 (objects not valid as children) by wrapping all rendered values in String()
