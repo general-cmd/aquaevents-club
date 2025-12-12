@@ -99,7 +99,11 @@ export default function AdminBulkEdit() {
 
   const getEventLocation = (event: any) => {
     if (typeof event.location === 'string') return event.location;
-    return event.location?.city || event.location?.region || 'N/A';
+    const city = event.location?.city || '';
+    const region = event.location?.region;
+    // Handle multilingual region object
+    const regionStr = typeof region === 'string' ? region : (region?.es || region?.en || '');
+    return city || regionStr || 'N/A';
   };
 
   return (
