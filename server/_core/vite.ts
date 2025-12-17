@@ -187,6 +187,16 @@ export async function setupVite(app: Express, server: Server) {
               structuredData.organizer["telephone"] = event.contact.phone;
             }
 
+            // Add isRelatedTo for Event → Product SEO connection
+            structuredData["isRelatedTo"] = [
+              {
+                "@type": "Product",
+                "name": "Gorros de Natación Personalizados",
+                "category": "Sports Equipment",
+                "url": "https://aquaevents.club/gorros-natacion"
+              }
+            ];
+
             const scriptTag = `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`;
             template = template.replace('</head>', `${scriptTag}</head>`);
           }
@@ -391,6 +401,16 @@ export function serveStatic(app: Express) {
           if (event.contact?.phone) {
             structuredData.organizer["telephone"] = event.contact.phone;
           }
+
+          // Add isRelatedTo for Event → Product SEO connection
+          structuredData["isRelatedTo"] = [
+            {
+              "@type": "Product",
+              "name": "Gorros de Natación Personalizados",
+              "category": "Sports Equipment",
+              "url": "https://aquaevents.club/gorros-natacion"
+            }
+          ];
 
           const scriptTag = `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`;
           html = html.replace('</head>', `${scriptTag}</head>`);
