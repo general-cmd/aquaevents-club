@@ -22,33 +22,40 @@ router.get("/sitemap.xml", async (req, res) => {
       { url: "/perfil", changefreq: "monthly", priority: "0.5", lastmod: currentDate },
     ];
 
-    // Fetch all events from MongoDB
+    // Fetch ONLY FUTURE events from MongoDB (SEO best practice)
     let eventPages: Array<{ url: string; changefreq: string; priority: string; lastmod: string }> = [];
 
     try {
       const eventsCollection = await getEventsCollection();
-      const allEvents = await eventsCollection.find({}).toArray();
+      const now = new Date();
       
-      eventPages = allEvents.map((event) => {
-        // Generate URL slug from event name
-        const eventName = event.name?.es || event.name?.en || "event";
-        const slug = eventName
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "") // Remove accents
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-+|-+$/g, "");
+      // Filter: only events with startDate >= today OR date >= today
+      const futureEvents = await eventsCollection.find({
+        $or: [
+          { startDate: { $gte: now } },
+          { date: { $gte: now } }
+        ]
+      }).toArray();
+      
+      eventPages = futureEvents
+        .filter(event => event.seo?.canonical) // Only include events with canonical URLs
+        .map((event) => {
+          // Extract slug from canonical URL
+          const canonicalUrl = event.seo.canonical;
+          const urlPath = canonicalUrl.replace('https://aquaevents.club', '');
+          
+          const eventDate = new Date(event.startDate || event.date);
+          const lastmod = event.updatedAt 
+            ? new Date(event.updatedAt).toISOString().split("T")[0]
+            : currentDate;
 
-        const eventDate = new Date(event.date);
-        const lastmod = eventDate > new Date() ? currentDate : eventDate.toISOString().split("T")[0];
-
-        return {
-          url: `/eventos/${slug}`,
-          changefreq: "weekly",
-          priority: "0.8",
-          lastmod,
-        };
-      });
+          return {
+            url: urlPath,
+            changefreq: "weekly",
+            priority: "0.8",
+            lastmod,
+          };
+        });
     } catch (error) {
       console.error("[Sitemap] Error fetching events from MongoDB:", error);
       // Continue with static pages only if MongoDB fails
