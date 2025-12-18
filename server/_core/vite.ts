@@ -197,8 +197,25 @@ export async function setupVite(app: Express, server: Server) {
               }
             ];
 
-            const scriptTag = `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`;
-            template = template.replace('</head>', `${scriptTag}</head>`);
+            // Add FAQ schema for swim caps (AI-SEO + Featured Snippets)
+            const faqSchema = {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "¿Se usan gorros de natación personalizados en este evento?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `En eventos de ${event.discipline === 'swimming' ? 'natación' : event.discipline === 'open_water' ? 'aguas abiertas' : event.discipline === 'triathlon' ? 'triatlón' : 'deportes acuáticos'} como ${event.name.es}, es habitual el uso de gorros de natación personalizados para identificar categorías, clubes o patrocinadores. Los organizadores suelen optar por gorros de silicona con logo para competidores y staff.`
+                  }
+                }
+              ]
+            };
+
+            const eventSchemaTag = `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`;
+            const faqSchemaTag = `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+            template = template.replace('</head>', `${eventSchemaTag}${faqSchemaTag}</head>`);
           }
         } catch (err) {
           console.error('[SSR] Error injecting event structured data:', err);
@@ -412,8 +429,25 @@ export function serveStatic(app: Express) {
             }
           ];
 
-          const scriptTag = `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`;
-          html = html.replace('</head>', `${scriptTag}</head>`);
+          // Add FAQ schema for swim caps (AI-SEO + Featured Snippets)
+          const faqSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Se usan gorros de natación personalizados en este evento?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": `En eventos de ${event.discipline === 'swimming' ? 'natación' : event.discipline === 'open_water' ? 'aguas abiertas' : event.discipline === 'triathlon' ? 'triatlón' : 'deportes acuáticos'} como ${event.name.es}, es habitual el uso de gorros de natación personalizados para identificar categorías, clubes o patrocinadores. Los organizadores suelen optar por gorros de silicona con logo para competidores y staff.`
+                }
+              }
+            ]
+          };
+
+          const eventSchemaTag = `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`;
+          const faqSchemaTag = `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+          html = html.replace('</head>', `${eventSchemaTag}${faqSchemaTag}</head>`);
           
           return res.status(200).set({ 'Content-Type': 'text/html' }).send(html);
         }
