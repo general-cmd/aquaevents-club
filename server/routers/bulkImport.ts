@@ -10,8 +10,8 @@ import { getEventsCollection } from "../services/mongodb";
 const csvEventSchema = z.object({
   name: z.string().min(1, "Event name is required"),
   discipline: z.string().min(1, "Discipline is required"),
-  startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Start date must be in YYYY-MM-DD format"),
-  endDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "End date must be in YYYY-MM-DD format").optional().or(z.literal("")),
+  startDate: z.string().min(1, "Start date is required"),
+  endDate: z.string().optional().or(z.literal("")),
   city: z.string().optional(),
   region: z.string().optional(),
   venue: z.string().optional(),
@@ -27,6 +27,26 @@ const csvEventSchema = z.object({
   description: z.string().optional(),
 });
 
+// Map Spanish CSV headers to English field names
+const headerMapping: Record<string, string> = {
+  "Nombre del Evento": "name",
+  "Disciplina": "discipline",
+  "Categoría": "categories",
+  "Región": "region",
+  "Ciudad": "city",
+  "Fecha de Inicio": "startDate",
+  "Hora de Inicio": "startTime",
+  "Fecha de Fin": "endDate",
+  "Hora de Fin": "endTime",
+  "Descripción del Evento": "description",
+  "Nombre de Contacto": "contactName",
+  "Email de Contacto": "contactEmail",
+  "Teléfono de Contacto": "contactPhone",
+  "SitioWeb": "website",
+  "URL de Inscripción": "registrationUrl",
+  "Capacidad Máxima": "maxCapacity",
+};
+
 export const bulkImportRouter = router({
   /**
    * Import events from CSV data
@@ -35,10 +55,57 @@ export const bulkImportRouter = router({
   importEvents: adminProcedure
     .input(
       z.object({
-        events: z.array(csvEventSchema),
+        events: z.array(z.any()), // Accept any shape, we'll transform it
       })
     )
     .mutation(async ({ input }) => {
+      // Transform Spanish headers to English if needed
+      const transformedEvents = input.events.map((event: any) => {
+        const transformed: any = {};
+        
+        // Check if this is Spanish format (has "Nombre del Evento")
+        const isSpanish = "Nombre del Evento" in event;
+        
+        if (isSpanish) {
+          // Map Spanish headers to English
+          Object.keys(event).forEach((key) => {
+            const englishKey = headerMapping[key] || key;
+            transformed[englishKey] = event[key];
+          });
+          
+          // Combine date + time fields
+          if (transformed.startDate && transformed.startTime) {
+            transformed.startDate = `${transformed.startDate}T${transformed.startTime}:00`;
+          }
+          if (transformed.endDate && transformed.endTime) {
+            transformed.endDate = `${transformed.endDate}T${transformed.endTime}:00`;
+          }
+          
+          // Normalize discipline
+          const disciplineMap: Record<string, string> = {
+            "Natación": "natacion",
+            "Aguas Abiertas": "aguas-abiertas",
+            "Triatlón": "triatlon",
+            "Waterpolo": "waterpolo",
+            "Saltos": "saltos",
+          };
+          transformed.discipline = disciplineMap[transformed.discipline] || transformed.discipline?.toLowerCase();
+          
+          // Set organizerType based on contactName
+          if (transformed.contactName?.includes("FMN") || transformed.contactName?.includes("FED")) {
+            transformed.organizerType = "federation";
+            transformed.organizer = transformed.contactName;
+          }
+        } else {
+          // Already in English format
+          Object.assign(transformed, event);
+        }
+        
+        // Validate with schema
+        return csvEventSchema.parse(transformed);
+      });
+      
+      input.events = transformedEvents;
       const eventsCollection = await getEventsCollection();
       const results = {
         total: input.events.length,
