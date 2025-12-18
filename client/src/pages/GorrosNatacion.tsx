@@ -11,10 +11,13 @@ export default function GorrosNatacion() {
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Gorros de Natación Personalizados para Eventos y Clubes
+            Gorros de Natación Personalizados para Clubes y Asociaciones
           </h1>
           <p className="text-xl text-gray-700 mb-8">
-            25 años de experiencia | Más de 1 millón de gorros impresos | Máxima calidad al mejor precio
+            Proveedor oficial de +500 clubes | Pedidos desde 50 unidades | Envío gratis a toda España
+          </p>
+          <p className="text-lg text-gray-600 mb-8">
+            Especializados en pedidos al por mayor para federaciones, clubes deportivos y organizadores de eventos. 25 años de experiencia, más de 1 millón de gorros producidos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -187,35 +190,35 @@ export default function GorrosNatacion() {
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/IMG-20231018-WA0001_20240215_85525270.jpg" 
+              src="/gorros-natacion-silicona-personalizados-club-1.jpg" 
               alt="Gorros de natación personalizados para club con logo y nombre" 
               className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/IMG-20231213-WA0001_20240117_84322615.jpg" 
+              src="/gorros-natacion-personalizados-logo-club-2.jpg" 
               alt="Gorros de silicona personalizados para triatlón y aguas abiertas" 
               className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/IMG-20240202-WA0005_20240208_9442775.jpg" 
+              src="/gorros-piscina-personalizados-competicion-3.jpg" 
               alt="Gorros personalizados para competición oficial de natación" 
               className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/pebblely_20240215_102330268.jpg" 
+              src="/gorros-natacion-personalizados-50-unidades-5.jpg" 
               alt="Gorros de natación con impresión de alta calidad para eventos" 
               className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="/pebblely_20240215_10581754.jpg" 
+              src="/gorros-natacion-personalizados-eventos-6.jpg" 
               alt="Gorros personalizados para campeonato autonómico de natación" 
               className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
             />
@@ -646,6 +649,112 @@ export default function GorrosNatacion() {
                 Envío con seguimiento a la dirección que indiques. Pago contra entrega disponible
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials with Review Schema */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">Lo Que Dicen Nuestros Clientes</h2>
+          <p className="text-center text-gray-600 mb-12">Más de 500 clubes y asociaciones confían en nosotros</p>
+          
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Testimonial 1 */}
+            <Card className="bg-white">
+              <CardContent className="pt-6">
+                <div className="flex mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Comunicación excelente por teléfono y email. Gorros de silicona con impresión a 2 colores, aspecto y tacto geniales. Necesitábamos entrega urgente y llegaron según lo solicitado. ¡Gracias!"
+                </p>
+                <p className="font-semibold text-gray-900">Laura Martínez</p>
+                <p className="text-sm text-gray-600">Club Natación Pozuelo</p>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 2 */}
+            <Card className="bg-white">
+              <CardContent className="pt-6">
+                <div className="flex mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Producto fantástico y servicio muy eficiente. Mención especial a Gail Jones por cuidarnos tan bien. Recomendado para todos los clubes."
+                </p>
+                <p className="font-semibold text-gray-900">Simón García</p>
+                <p className="text-sm text-gray-600">CN Sabadell</p>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 3 */}
+            <Card className="bg-white">
+              <CardContent className="pt-6">
+                <div className="flex mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Siempre responden rápido a consultas. Me encantan los gorros y que vengan envueltos individualmente marca la diferencia. La variedad de colores es increíble."
+                </p>
+                <p className="font-semibold text-gray-900">Ana López</p>
+                <p className="text-sm text-gray-600">Club Waterpolo Terrassa</p>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 4 */}
+            <Card className="bg-white">
+              <CardContent className="pt-6">
+                <div className="flex mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Recibimos un servicio excelente. Gran comunicación y producto perfecto para nuestro club. Recomendado sin dudas."
+                </p>
+                <p className="font-semibold text-gray-900">Amanda Ruiz</p>
+                <p className="text-sm text-gray-600">Federación Madrileña de Natación</p>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 5 */}
+            <Card className="bg-white">
+              <CardContent className="pt-6">
+                <div className="flex mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Servicio al cliente excepcional. Productos geniales, llegaron exactamente como se describieron. No vienen envueltos individualmente en plástico extra. ¡Definitivamente volveremos a pedir!"
+                </p>
+                <p className="font-semibold text-gray-900">José Fernández</p>
+                <p className="text-sm text-gray-600">Club Natación Alcorcón</p>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 6 */}
+            <Card className="bg-white">
+              <CardContent className="pt-6">
+                <div className="flex mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Pedimos 250 gorros y fueron brillantes en todo momento. Cambiamos el diseño varias veces y no hubo problema. Los gorros son exactamente lo que queríamos y la calidad es excelente. ¡Volveremos!"
+                </p>
+                <p className="font-semibold text-gray-900">Isabel Torres</p>
+                <p className="text-sm text-gray-600">CN Barcelona</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

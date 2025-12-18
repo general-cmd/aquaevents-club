@@ -48,9 +48,9 @@ export async function setupVite(app: Express, server: Server) {
           "name": "Gorros de Natación Personalizados para Competición",
           "description": "Gorros de silicona personalizados para eventos deportivos, clubes de natación y competiciones. 25 años de experiencia, más de 1 millón de gorros producidos. Envío gratis a toda Europa.",
           "image": [
-            "https://aquaevents.club/IMG-20240202-WA0005_20240208_9442775.jpg",
-            "https://aquaevents.club/pebblely_20240215_102330268.jpg",
-            "https://aquaevents.club/pebblely_20240215_10581754.jpg"
+            "https://aquaevents.club/gorros-piscina-personalizados-competicion-3.jpg",
+            "https://aquaevents.club/gorros-natacion-personalizados-50-unidades-5.jpg",
+            "https://aquaevents.club/gorros-natacion-personalizados-eventos-6.jpg"
           ],
           "brand": {
             "@type": "Brand",
@@ -120,6 +120,64 @@ export async function setupVite(app: Express, server: Server) {
           ]
         };
 
+        // Review schema for testimonials (AI-SEO)
+        const reviewSchemas = [
+          {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+              "@type": "Product",
+              "name": "Gorros de Natación Personalizados"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Laura Martínez"
+            },
+            "reviewBody": "Comunicación excelente por teléfono y email. Gorros de silicona con impresión a 2 colores, aspecto y tacto geniales. Necesitábamos entrega urgente y llegaron según lo solicitado."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+              "@type": "Product",
+              "name": "Gorros de Natación Personalizados"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "CN Sabadell"
+            },
+            "reviewBody": "Producto fantástico y servicio muy eficiente. Recomendado para todos los clubes."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+              "@type": "Product",
+              "name": "Gorros de Natación Personalizados"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "CN Barcelona"
+            },
+            "reviewBody": "Pedimos 250 gorros y fueron brillantes en todo momento. Cambiamos el diseño varias veces y no hubo problema. Los gorros son exactamente lo que queríamos y la calidad es excelente."
+          }
+        ];
+
         const metaTags = `
     <title>Gorros de Natación Personalizados al Por Mayor – 50+ Unidades | AquaEvents</title>
     <meta name="description" content="Compra gorros de natación personalizados en España. Silicona premium con logo, mínimo 50 unidades, desde 2,30€. 25 años de experiencia, +1M gorros producidos. Envío gratis UE." />
@@ -127,10 +185,11 @@ export async function setupVite(app: Express, server: Server) {
     <link rel="canonical" href="https://aquaevents.club/gorros-natacion" />
     <meta property="og:title" content="Gorros de Natación Personalizados al Por Mayor – 50+ Unidades" />
     <meta property="og:description" content="25 años fabricando gorros de silicona para eventos y clubes. Más de 1 millón producidos. Envío gratis UE." />
-    <meta property="og:image" content="https://aquaevents.club/IMG-20240202-WA0005_20240208_9442775.jpg" />
+    <meta property="og:image" content="https://aquaevents.club/gorros-piscina-personalizados-competicion-3.jpg" />
     <meta property="og:url" content="https://aquaevents.club/gorros-natacion" />
     <script type="application/ld+json">${JSON.stringify(productSchema)}</script>
-    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
+    ${reviewSchemas.map(r => `<script type="application/ld+json">${JSON.stringify(r)}</script>`).join('\n    ')}`;
         
         template = template.replace('</head>', metaTags + '</head>');
       }
@@ -273,9 +332,9 @@ export function serveStatic(app: Express) {
           "name": "Gorros de Natación Personalizados para Competición",
           "description": "Gorros de silicona personalizados para eventos deportivos, clubes de natación y competiciones. 25 años de experiencia, más de 1 millón de gorros producidos. Envío gratis a toda Europa.",
           "image": [
-            "https://aquaevents.club/IMG-20240202-WA0005_20240208_9442775.jpg",
-            "https://aquaevents.club/pebblely_20240215_102330268.jpg",
-            "https://aquaevents.club/pebblely_20240215_10581754.jpg"
+            "https://aquaevents.club/gorros-piscina-personalizados-competicion-3.jpg",
+            "https://aquaevents.club/gorros-natacion-personalizados-50-unidades-5.jpg",
+            "https://aquaevents.club/gorros-natacion-personalizados-eventos-6.jpg"
           ],
           "brand": {
             "@type": "Brand",
@@ -345,6 +404,64 @@ export function serveStatic(app: Express) {
           ]
         };
 
+        // Review schema for testimonials (AI-SEO)
+        const reviewSchemas = [
+          {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+              "@type": "Product",
+              "name": "Gorros de Natación Personalizados"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Laura Martínez"
+            },
+            "reviewBody": "Comunicación excelente por teléfono y email. Gorros de silicona con impresión a 2 colores, aspecto y tacto geniales. Necesitábamos entrega urgente y llegaron según lo solicitado."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+              "@type": "Product",
+              "name": "Gorros de Natación Personalizados"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "CN Sabadell"
+            },
+            "reviewBody": "Producto fantástico y servicio muy eficiente. Recomendado para todos los clubes."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "itemReviewed": {
+              "@type": "Product",
+              "name": "Gorros de Natación Personalizados"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "CN Barcelona"
+            },
+            "reviewBody": "Pedimos 250 gorros y fueron brillantes en todo momento. Cambiamos el diseño varias veces y no hubo problema. Los gorros son exactamente lo que queríamos y la calidad es excelente."
+          }
+        ];
+
         const metaTags = `
     <title>Gorros de Natación Personalizados al Por Mayor – 50+ Unidades | AquaEvents</title>
     <meta name="description" content="Compra gorros de natación personalizados en España. Silicona premium con logo, mínimo 50 unidades, desde 2,30€. 25 años de experiencia, +1M gorros producidos. Envío gratis UE." />
@@ -352,10 +469,11 @@ export function serveStatic(app: Express) {
     <link rel="canonical" href="https://aquaevents.club/gorros-natacion" />
     <meta property="og:title" content="Gorros de Natación Personalizados al Por Mayor – 50+ Unidades" />
     <meta property="og:description" content="25 años fabricando gorros de silicona para eventos y clubes. Más de 1 millón producidos. Envío gratis UE." />
-    <meta property="og:image" content="https://aquaevents.club/IMG-20240202-WA0005_20240208_9442775.jpg" />
+    <meta property="og:image" content="https://aquaevents.club/gorros-piscina-personalizados-competicion-3.jpg" />
     <meta property="og:url" content="https://aquaevents.club/gorros-natacion" />
     <script type="application/ld+json">${JSON.stringify(productSchema)}</script>
-    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
+    ${reviewSchemas.map(r => `<script type="application/ld+json">${JSON.stringify(r)}</script>`).join('\n    ')}`;
         
         html = html.replace('</head>', metaTags + '</head>');
         return res.status(200).set({ 'Content-Type': 'text/html' }).send(html);
