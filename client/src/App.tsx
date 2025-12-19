@@ -21,6 +21,7 @@ import AdminEventEdit from "./pages/AdminEventEdit";
 import FederationDashboard from "./pages/FederationDashboard";
 import GorrosNatacion from "./pages/GorrosNatacion";
 import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
+import BlogGuiaClub from "./pages/BlogGuiaClub";
 import WidgetCalendar from "./pages/WidgetCalendar";
 import WidgetBuilder from "./pages/WidgetBuilder";
 import WidgetDemo from "./pages/WidgetDemo";
@@ -42,6 +43,7 @@ function Router() {
       <Route path="/federaciones/:id" component={FederationDetail} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/eventos-natacion-espana-2026" component={BlogSwimmingEvents2026} />
+      <Route path="/blog/guia-pedido-gorros-club" component={BlogGuiaClub} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/enviar-evento" component={SubmitEvent} />
       <Route path="/perfil" component={UserProfile} />

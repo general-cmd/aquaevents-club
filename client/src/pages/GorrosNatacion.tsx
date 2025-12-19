@@ -439,6 +439,98 @@ export default function GorrosNatacion() {
         </div>
       </section>
 
+      {/* Material Comparison Table - AI-SEO */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">Comparativa de Materiales</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            ¿Silicona, látex o poliéster? Te ayudamos a elegir el material perfecto según tus necesidades y presupuesto.
+          </p>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-5xl mx-auto bg-white rounded-lg shadow-lg">
+              <thead className="bg-blue-600 text-white">
+                <tr>
+                  <th className="px-6 py-4 text-left font-semibold">Característica</th>
+                  <th className="px-6 py-4 text-center font-semibold">Silicona</th>
+                  <th className="px-6 py-4 text-center font-semibold">Látex</th>
+                  <th className="px-6 py-4 text-center font-semibold">Poliéster</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Durabilidad</td>
+                  <td className="px-6 py-4 text-center text-green-600 font-semibold">2-3 años</td>
+                  <td className="px-6 py-4 text-center text-yellow-600">6-12 meses</td>
+                  <td className="px-6 py-4 text-center text-yellow-600">1-2 años</td>
+                </tr>
+                <tr className="hover:bg-gray-50 bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Impermeabilidad</td>
+                  <td className="px-6 py-4 text-center text-green-600 font-semibold">100%</td>
+                  <td className="px-6 py-4 text-center text-yellow-600">95%</td>
+                  <td className="px-6 py-4 text-center text-orange-600">60%</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Comodidad</td>
+                  <td className="px-6 py-4 text-center text-green-600 font-semibold">Excelente</td>
+                  <td className="px-6 py-4 text-center text-yellow-600">Buena</td>
+                  <td className="px-6 py-4 text-center text-green-600">Muy buena</td>
+                </tr>
+                <tr className="hover:bg-gray-50 bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Apto para competición oficial</td>
+                  <td className="px-6 py-4 text-center text-green-600 font-semibold">✅ Sí</td>
+                  <td className="px-6 py-4 text-center text-green-600">✅ Sí</td>
+                  <td className="px-6 py-4 text-center text-red-600">❌ No</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Personalización</td>
+                  <td className="px-6 py-4 text-center text-green-600 font-semibold">Logo + texto</td>
+                  <td className="px-6 py-4 text-center text-yellow-600">Logo + texto</td>
+                  <td className="px-6 py-4 text-center text-orange-600">Solo logo</td>
+                </tr>
+                <tr className="hover:bg-gray-50 bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Precio (50 uds)</td>
+                  <td className="px-6 py-4 text-center font-semibold">5,55€/ud</td>
+                  <td className="px-6 py-4 text-center font-semibold">3,20€/ud</td>
+                  <td className="px-6 py-4 text-center font-semibold">2,80€/ud</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Precio (500 uds)</td>
+                  <td className="px-6 py-4 text-center font-semibold">2,80€/ud</td>
+                  <td className="px-6 py-4 text-center font-semibold">1,90€/ud</td>
+                  <td className="px-6 py-4 text-center font-semibold">1,50€/ud</td>
+                </tr>
+                <tr className="hover:bg-gray-50 bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Alergias</td>
+                  <td className="px-6 py-4 text-center text-green-600 font-semibold">Hipoalergénico</td>
+                  <td className="px-6 py-4 text-center text-red-600">Puede causar alergia</td>
+                  <td className="px-6 py-4 text-center text-green-600">Hipoalergénico</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Uso recomendado</td>
+                  <td className="px-6 py-4 text-center text-green-600 font-semibold">Competición, clubes</td>
+                  <td className="px-6 py-4 text-center text-yellow-600">Entrenamiento</td>
+                  <td className="px-6 py-4 text-center text-orange-600">Ocio, piscina pública</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-gray-700 mb-4">
+              <strong>Recomendación:</strong> Para clubes y competiciones oficiales, la <span className="text-blue-600 font-semibold">silicona</span> es la mejor opción por su durabilidad, impermeabilidad y cumplimiento de normativas FINA.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+              onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Solicitar Presupuesto Personalizado
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Table */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">Precios Transparentes y Competitivos</h2>
