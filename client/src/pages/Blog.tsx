@@ -78,6 +78,43 @@ export default function Blog() {
           </p>
         </div>
 
+        {/* Featured Static Posts */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900">Guías Destacadas</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Club Guide */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-blue-200">
+              <div className="bg-gradient-to-br from-blue-600 to-cyan-500 h-48 flex items-center justify-center">
+                <BookOpen className="w-20 h-20 text-white" />
+              </div>
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-green-600">Guía Práctica</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Guía para Presidentes de Club: Cómo Organizar un Pedido de 200 Gorros
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Proceso paso a paso para coordinar diseño, aprobaciones, pagos y entregas sin complicaciones. Incluye checklist y ejemplos reales.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Dic 2025
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    8 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/guia-pedido-gorros-club">
+                  <Button variant="outline" className="w-full">
+                    Leer guía completa
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Blog Posts Grid */}
         {isLoading ? (
           <div className="text-center py-12">
