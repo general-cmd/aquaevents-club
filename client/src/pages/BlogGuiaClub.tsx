@@ -4,6 +4,46 @@ import { Check, X, Mail, FileText, Calendar, Users } from "lucide-react";
 import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo Organizar un Pedido de 200 Gorros de Natación sin Volverse Loco",
+  "description": "Guía completa paso a paso para clubes y asociaciones deportivas sobre cómo realizar pedidos de gorros de natación personalizados al por mayor.",
+  "image": "https://aquaevents.club/blog-guia-pedido-gorros-hero.jpg",
+  "totalTime": "P3W",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "890"
+  },
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Recoger Requisitos",
+      "text": "Define cantidad exacta, presupuesto máximo, fecha límite de entrega, y diseño deseado (logo del club, colores corporativos, texto adicional)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Elegir Material y Diseño",
+      "text": "Selecciona entre silicona (durabilidad), látex (económico) o poliéster (ocio). Define posicionamiento del logo (laterales, frontal, trasero)."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Gestionar Aprobaciones",
+      "text": "Solicita mockup digital, convoca reunión de junta directiva, establece plazo de 48h para cambios, y envía aprobación final por email."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Coordinar Pago y Entrega",
+      "text": "Elige método de pago (transferencia, factura 30 días, contra entrega), confirma dirección de entrega, y verifica calidad al recibir."
+    }
+  ]
+};
+
 export default function BlogGuiaClub() {
   return (
     <div className="min-h-screen bg-white">
@@ -11,24 +51,37 @@ export default function BlogGuiaClub() {
         <title>Guía para Presidentes de Club: Cómo Organizar un Pedido de 200 Gorros sin Volverse Loco | AquaEvents</title>
         <meta name="description" content="Guía paso a paso para organizar pedidos de gorros personalizados para tu club de natación. Aprende a gestionar diseño, aprobaciones, pagos y entregas sin complicaciones." />
         <link rel="canonical" href="https://aquaevents.club/blog/guia-pedido-gorros-club" />
+        <script type="application/ld+json">
+          {JSON.stringify(howToSchema)}
+        </script>
       </Helmet>
 
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Link href="/blog" className="text-blue-600 hover:underline mb-4 inline-block">
+      {/* Hero with Image */}
+      <section className="relative bg-gradient-to-b from-blue-900 to-blue-700 text-white py-16">
+        <div className="absolute inset-0 opacity-30">
+          <img 
+            src="/blog-guia-pedido-gorros-hero.jpg" 
+            alt="Entrenador de natación revisando gorros personalizados" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 to-blue-700/80"></div>
+        <div className="relative z-10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <Link href="/blog" className="text-white hover:underline mb-4 inline-block">
               ← Volver al Blog
             </Link>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Guía para Presidentes de Club: Cómo Organizar un Pedido de 200 Gorros sin Volverse Loco
-            </h1>
-            <p className="text-xl text-gray-600 mb-4">
-              Proceso paso a paso para coordinar diseño, aprobaciones, pagos y entregas sin complicaciones
-            </p>
-            <p className="text-sm text-gray-500">
-              Tiempo de lectura: 8 minutos | Actualizado: Diciembre 2025
-            </p>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Guía para Presidentes de Club: Cómo Organizar un Pedido de 200 Gorros sin Volverse Loco
+              </h1>
+              <p className="text-xl text-blue-100 mb-4">
+                Proceso paso a paso para coordinar diseño, aprobaciones, pagos y entregas sin complicaciones
+              </p>
+              <p className="text-sm text-blue-200">
+                Tiempo de lectura: 8 minutos | Actualizado: Diciembre 2025
+              </p>
+            </div>
           </div>
         </div>
       </section>

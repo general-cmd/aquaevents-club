@@ -489,16 +489,16 @@ export default function GorrosNatacion() {
                   <td className="px-6 py-4 text-center text-orange-600">Solo logo</td>
                 </tr>
                 <tr className="hover:bg-gray-50 bg-gray-50">
-                  <td className="px-6 py-4 font-medium text-gray-900">Precio (50 uds)</td>
-                  <td className="px-6 py-4 text-center font-semibold">5,55€/ud</td>
-                  <td className="px-6 py-4 text-center font-semibold">3,20€/ud</td>
-                  <td className="px-6 py-4 text-center font-semibold">2,80€/ud</td>
+                  <td className="px-6 py-4 font-medium text-gray-900">Precio (100 uds, 1 color)</td>
+                  <td className="px-6 py-4 text-center font-semibold">4,45€/ud</td>
+                  <td className="px-6 py-4 text-center font-semibold">2,10€/ud</td>
+                  <td className="px-6 py-4 text-center font-semibold">N/A</td>
                 </tr>
                 <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-medium text-gray-900">Precio (500 uds)</td>
-                  <td className="px-6 py-4 text-center font-semibold">2,80€/ud</td>
-                  <td className="px-6 py-4 text-center font-semibold">1,90€/ud</td>
-                  <td className="px-6 py-4 text-center font-semibold">1,50€/ud</td>
+                  <td className="px-6 py-4 font-medium text-gray-900">Mínimo pedido</td>
+                  <td className="px-6 py-4 text-center font-semibold">50 uds</td>
+                  <td className="px-6 py-4 text-center font-semibold">100 uds</td>
+                  <td className="px-6 py-4 text-center font-semibold">50 uds</td>
                 </tr>
                 <tr className="hover:bg-gray-50 bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">Alergias</td>
@@ -554,9 +554,9 @@ export default function GorrosNatacion() {
             <tbody>
               <tr className="border-b hover:bg-gray-50">
                 <td className="p-4 font-semibold">50 unidades</td>
-                <td className="p-4">5,55€</td>
-                <td className="p-4">7,55€</td>
-                <td className="p-4">9,40€</td>
+                <td className="p-4">Consultar</td>
+                <td className="p-4">Consultar</td>
+                <td className="p-4">Consultar</td>
                 <td className="p-4">11,00€</td>
                 <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
@@ -564,23 +564,23 @@ export default function GorrosNatacion() {
                 <td className="p-4 font-semibold">100 unidades</td>
                 <td className="p-4 text-green-600 font-semibold">4,45€</td>
                 <td className="p-4">5,95€</td>
-                <td className="p-4">7,40€</td>
+                <td className="p-4">7,50€</td>
                 <td className="p-4">8,60€</td>
                 <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50">
                 <td className="p-4 font-semibold">250 unidades</td>
-                <td className="p-4 text-green-600 font-semibold">3,65€</td>
-                <td className="p-4">4,95€</td>
-                <td className="p-4">5,99€</td>
+                <td className="p-4 text-green-600 font-semibold">Descuento</td>
+                <td className="p-4">Descuento</td>
+                <td className="p-4">Descuento</td>
                 <td className="p-4">6,90€</td>
                 <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50 bg-blue-50">
                 <td className="p-4 font-semibold">500 unidades</td>
-                <td className="p-4 text-green-600 font-semibold">2,99€</td>
-                <td className="p-4">3,99€</td>
-                <td className="p-4">4,99€</td>
+                <td className="p-4 text-green-600 font-semibold">Descuento</td>
+                <td className="p-4">Descuento</td>
+                <td className="p-4">Descuento</td>
                 <td className="p-4">5,99€</td>
                 <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
@@ -741,6 +741,146 @@ export default function GorrosNatacion() {
                 Envío con seguimiento a la dirección que indiques. Pago contra entrega disponible
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Suede Caps Section */}
+      <section className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-center mb-4">Gorros de Silicona Suede - Máxima Elasticidad</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Tratamiento especial de superficie suede para máxima elasticidad y recuperación. Ideales para nadadores que buscan comodidad premium.
+        </p>
+        
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Características</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Superficie suede especial para máxima elasticidad</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>100% hipoalergénico</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Recuperación rápida de la forma original</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Ideal para uso diario intensivo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Personalización hasta 6 colores</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Precios (100 uds)</h3>
+              <div className="space-y-3">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">1 color</span>
+                    <span className="text-2xl font-bold text-blue-600">4,99€/ud</span>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">2 colores</span>
+                    <span className="text-2xl font-bold text-blue-600">6,40€/ud</span>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">3 colores</span>
+                    <span className="text-2xl font-bold text-blue-600">7,99€/ud</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 mt-4">
+                Mínimo 50 unidades. Descuentos significativos en 250, 500, 1000+ piezas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Long Hair Caps Section */}
+      <section className="container mx-auto px-4 py-16 bg-gray-50">
+        <h2 className="text-3xl font-bold text-center mb-4">Gorros para Pelo Largo - Diseño Especial</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Diseñados específicamente para nadadores con pelo largo. Espacio extra interior y patrón antideslizante.
+        </p>
+        
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Características</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Forma especial para pelo largo (espacio extra)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Patrón interior antideslizante</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Evita enganches y tirones</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>100% hipoalergénico</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Silicona de alta durabilidad</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>10 colores disponibles</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Precios (100 uds)</h3>
+              <div className="space-y-3">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">1 color</span>
+                    <span className="text-2xl font-bold text-blue-600">6,20€/ud</span>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">2 colores</span>
+                    <span className="text-2xl font-bold text-blue-600">7,55€/ud</span>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold">3 colores</span>
+                    <span className="text-2xl font-bold text-blue-600">9,25€/ud</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 mt-4">
+                Mínimo 50 unidades. Descuentos significativos en 250, 500, 1000+ piezas.
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 mt-8">
+            <p className="text-gray-800">
+              <strong>👩‍🦱 Ideal para nadadoras:</strong> El 80% de nuestras clientas con pelo largo prefieren este modelo por su comodidad y facilidad de uso. Elimina la necesidad de recoger el pelo en moño apretado.
+            </p>
           </div>
         </div>
       </section>
