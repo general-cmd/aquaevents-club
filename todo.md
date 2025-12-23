@@ -1665,3 +1665,14 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Expand color sections on all product pages to show 10+ colors with Pantone codes
 - [x] Match EuroSwimCaps.com color display format (color chart image + Top 10 grid with Pantone codes)
 - [x] Test all changes and push to GitHub (commit 39c75c9 pushed to general-cmd/aquaevents-club)
+
+
+## AQUA20 Promo Code & Calculator Update (Dec 23, 2025)
+- [x] Add AQUA20 promo code (20% discount on first order)
+- [x] Set promo code validity to Jan-Feb 2026 only
+- [x] Update BulkOrderCalculator component with material-specific pricing
+- [x] Add pricing calculation based on material, quantity, and number of colors
+- [x] Add orientative pricing disclaimer ("Precios orientativos, descuentos disponibles")
+- [x] Add fantastic CTA for quote requests (green gradient with email link)
+- [ ] Test calculator on all 5 material pages (silicona, latex, gamuza, pelo-largo, tela)
+- [ ] Save checkpoint and push to GitHub
