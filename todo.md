@@ -1676,3 +1676,13 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Add fantastic CTA for quote requests (green gradient with email link)
 - [x] Test calculator on all 5 material pages (tested on silicona, pricing works correctly)
 - [x] Save checkpoint (commit a0d80d0 created, ready for webdev_save_checkpoint)
+
+
+## Calculator & Color Display Fixes (Dec 23, 2025)
+- [x] Remove tRPC dependency from calculator (already client-side, no tRPC)
+- [x] Ensure calculator uses client-side pricing calculations only (confirmed)
+- [x] Add visual color backgrounds to "Top 10 Colores Más Populares" cards on all 5 material pages
+- [x] Match EuroSwimCaps.com color display style (colored backgrounds with text overlay + hover effects)
+- [ ] Test calculator on all 5 material pages (silicona, latex, gamuza, pelo-largo, tela)
+- [ ] Test color displays show actual colors visually
+- [ ] Save checkpoint and deliver to user

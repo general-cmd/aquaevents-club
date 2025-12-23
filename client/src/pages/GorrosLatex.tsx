@@ -218,21 +218,35 @@ export default function GorrosLatex() {
             <h3 className="text-2xl font-bold text-center mb-6">Top 10 Colores Más Populares</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {[
-                { code: 'S132H NEW NAVY', pantone: '(PANTONE 654C)' },
-                { code: 'F202 ORANGE', pantone: '(PANTONE 021C)' },
-                { code: 'S17 MID YELLOW', pantone: '(PANTONE 109C)' },
-                { code: 'F355C GREEN', pantone: '(PANTONE 355C)' },
-                { code: 'F286C ROYAL BLUE', pantone: '(PANTONE 286C)' },
-                { code: 'F203H RED', pantone: '(PANTONE 179C)' },
-                { code: 'F419 BLACK', pantone: '(PANTONE 419)' },
-                { code: 'F000 WHITE', pantone: '(PANTONE 000)' },
-                { code: 'B3 LIGHT ROYAL', pantone: '(PANTONE 285C)' },
-                { code: 'F213C PINK', pantone: '(PANTONE 213C)' },
+                { code: 'S132H NEW NAVY', pantone: '(PANTONE 654C)', bg: '#003366', text: 'white' },
+                { code: 'F202 ORANGE', pantone: '(PANTONE 021C)', bg: '#FF6600', text: 'white' },
+                { code: 'S17 MID YELLOW', pantone: '(PANTONE 109C)', bg: '#FFD700', text: 'black' },
+                { code: 'F355C GREEN', pantone: '(PANTONE 355C)', bg: '#00A651', text: 'white' },
+                { code: 'F286C ROYAL BLUE', pantone: '(PANTONE 286C)', bg: '#0033A0', text: 'white' },
+                { code: 'F203H RED', pantone: '(PANTONE 179C)', bg: '#E4002B', text: 'white' },
+                { code: 'F419 BLACK', pantone: '(PANTONE 419)', bg: '#000000', text: 'white' },
+                { code: 'F000 WHITE', pantone: '(PANTONE 000)', bg: '#FFFFFF', text: 'black' },
+                { code: 'B3 LIGHT ROYAL', pantone: '(PANTONE 285C)', bg: '#0066CC', text: 'white' },
+                { code: 'F213C PINK', pantone: '(PANTONE 213C)', bg: '#FF69B4', text: 'white' },
               ].map((capColor) => (
-                <Card key={capColor.code} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <CardContent className="p-4 text-center">
-                    <h3 className="font-bold text-sm mb-1">{capColor.code}</h3>
-                    <p className="text-xs text-gray-600">{capColor.pantone}</p>
+                <Card 
+                  key={capColor.code} 
+                  className="overflow-hidden hover:shadow-xl transition-all hover:scale-105 border-2"
+                  style={{ backgroundColor: capColor.bg, borderColor: capColor.bg }}
+                >
+                  <CardContent className="p-6 text-center min-h-[140px] flex flex-col justify-center">
+                    <h3 
+                      className="font-bold text-sm mb-2 leading-tight"
+                      style={{ color: capColor.text }}
+                    >
+                      {capColor.code}
+                    </h3>
+                    <p 
+                      className="text-xs leading-tight"
+                      style={{ color: capColor.text, opacity: 0.9 }}
+                    >
+                      {capColor.pantone}
+                    </p>
                   </CardContent>
                 </Card>
               ))}

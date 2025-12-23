@@ -241,21 +241,35 @@ export default function GorrosSilicona() {
             <h3 className="text-2xl font-bold text-center mb-6">Top 10 Colores Más Populares</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {[
-                { name: 'Azul Royal', code: 'F286C ROYAL BLUE', pantone: '(PANTONE 286C)' },
-                { name: 'Rojo', code: 'F203H RED', pantone: '(PANTONE 179C)' },
-                { name: 'Negro', code: 'F419 BLACK', pantone: '(PANTONE 419)' },
-                { name: 'Blanco', code: 'F000 WHITE', pantone: '(PANTONE 000)' },
-                { name: 'Amarillo', code: 'F109C YELLOW', pantone: '(PANTONE 109C)' },
-                { name: 'Verde', code: 'F355C GREEN', pantone: '(PANTONE 355C)' },
-                { name: 'Rosa', code: 'F213C PINK', pantone: '(PANTONE 213C)' },
-                { name: 'Naranja', code: 'F021C ORANGE', pantone: '(PANTONE 021C)' },
-                { name: 'Morado', code: 'F2665C PURPLE', pantone: '(PANTONE 2665C)' },
-                { name: 'Azul Claro', code: 'F298C LIGHT BLUE', pantone: '(PANTONE 298C)' },
+                { name: 'Azul Royal', code: 'F286C ROYAL BLUE', pantone: '(PANTONE 286C)', bg: '#0033A0', text: 'white' },
+                { name: 'Rojo', code: 'F203H RED', pantone: '(PANTONE 179C)', bg: '#E4002B', text: 'white' },
+                { name: 'Negro', code: 'F419 BLACK', pantone: '(PANTONE 419)', bg: '#000000', text: 'white' },
+                { name: 'Blanco', code: 'F000 WHITE', pantone: '(PANTONE 000)', bg: '#FFFFFF', text: 'black' },
+                { name: 'Amarillo', code: 'F109C YELLOW', pantone: '(PANTONE 109C)', bg: '#FFD700', text: 'black' },
+                { name: 'Verde', code: 'F355C GREEN', pantone: '(PANTONE 355C)', bg: '#00A651', text: 'white' },
+                { name: 'Rosa', code: 'F213C PINK', pantone: '(PANTONE 213C)', bg: '#FF69B4', text: 'white' },
+                { name: 'Naranja', code: 'F021C ORANGE', pantone: '(PANTONE 021C)', bg: '#FF6600', text: 'white' },
+                { name: 'Morado', code: 'F2665C PURPLE', pantone: '(PANTONE 2665C)', bg: '#8B00FF', text: 'white' },
+                { name: 'Azul Claro', code: 'F298C LIGHT BLUE', pantone: '(PANTONE 298C)', bg: '#00BFFF', text: 'white' },
               ].map((capColor) => (
-                <Card key={capColor.code} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <CardContent className="p-4 text-center">
-                    <h3 className="font-bold text-sm mb-1">{capColor.code}</h3>
-                    <p className="text-xs text-gray-600">{capColor.pantone}</p>
+                <Card 
+                  key={capColor.code} 
+                  className="overflow-hidden hover:shadow-xl transition-all hover:scale-105 border-2"
+                  style={{ backgroundColor: capColor.bg, borderColor: capColor.bg }}
+                >
+                  <CardContent className="p-6 text-center min-h-[140px] flex flex-col justify-center">
+                    <h3 
+                      className="font-bold text-sm mb-2 leading-tight"
+                      style={{ color: capColor.text }}
+                    >
+                      {capColor.code}
+                    </h3>
+                    <p 
+                      className="text-xs leading-tight"
+                      style={{ color: capColor.text, opacity: 0.9 }}
+                    >
+                      {capColor.pantone}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
