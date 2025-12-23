@@ -158,10 +158,17 @@ export default function GorrosSilicona() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                <a href="https://www.euroswimcaps.com/how-to-order" target="_blank" rel="noopener noreferrer">
-                  Solicitar Presupuesto
-                </a>
+              <Button 
+                size="lg" 
+                className="bg-white text-blue-600 hover:bg-gray-100"
+                onClick={() => {
+                  const form = document.getElementById('presupuesto');
+                  if (form) {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+              >
+                Solicitar Presupuesto
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Link href="/gorros-natacion">

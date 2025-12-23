@@ -298,14 +298,17 @@ export default function BulkOrderCalculator({ capType, capTypeLabel }: BulkOrder
             Obtén un presupuesto exacto en menos de 24 horas. ¡Sin compromiso!
           </p>
           <Button 
-            asChild
             size="lg"
             className="bg-white text-green-600 hover:bg-gray-100 font-bold text-lg px-8 py-6 shadow-lg"
+            onClick={() => {
+              const form = document.getElementById('presupuesto');
+              if (form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
-            <a href="mailto:general@aquaevents.club?subject=Presupuesto Gorros Personalizados&body=Hola, me gustaría solicitar un presupuesto para:%0D%0A%0D%0A- Material: {capTypeLabel}%0D%0A- Cantidad: {quantity} unidades%0D%0A- Colores de impresión: {colorCount}%0D%0A%0D%0APor favor, envíenme un presupuesto detallado.%0D%0A%0D%0AGracias">
-              <Mail className="mr-2 h-5 w-5" />
-              Solicitar Presupuesto Gratis
-            </a>
+            <Mail className="mr-2 h-5 w-5" />
+            Solicitar Presupuesto Gratis
           </Button>
           <p className="text-xs text-green-100 mt-3">
             📧 Respuesta garantizada en 24h | 🎨 Diseño gratuito incluido | 🚚 Envío gratis en Europa

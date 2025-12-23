@@ -1695,3 +1695,12 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Update pricing calculation to use selected material's price structure
 - [x] Test calculator shows correct prices for all materials and quantities (tested: latex 50 units = €2.10/unit ✅)
 - [x] Save checkpoint and push to GitHub for Railway deployment (in progress)
+
+
+## Fix CTAs to Scroll to On-Page Form (Dec 23, 2025)
+- [x] Update calculator "Solicitar Presupuesto Gratis" button to scroll to form (not mailto)
+- [x] Update hero section "Solicitar Presupuesto" buttons on all 5 material pages (silicona fixed, others already use #presupuesto)
+- [x] Ensure all CTAs scroll smoothly to the form section on the same page (smooth scroll implemented)
+- [x] Remove any mailto: or external links from material page CTAs (removed euroswimcaps.com link, removed mailto)
+- [x] Test all CTAs on silicona, latex, gamuza, pelo-largo, tela pages (tested hero + calculator CTAs, both work perfectly)
+- [x] Push changes to GitHub for Railway deployment (ready to push)
