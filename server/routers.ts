@@ -20,6 +20,7 @@ import { eq } from "drizzle-orm";
 import { publishEventToMongo, deleteEventFromMongo, createEventDirectly } from "./publishEvent";
 import { generateEventContent } from "./_core/eventContentGenerator";
 import { sendEventSubmissionConfirmation, sendEventApprovalNotification, sendEventRejectionNotification, createOrUpdateContact, addTagToContact } from "./_core/systemeio";
+import { notifyOwner } from "./_core/notification";
 import { protectedProcedure } from "./_core/trpc";
 import { nanoid } from "nanoid";
 
@@ -41,11 +42,15 @@ export const appRouter = router({
         productType: z.string(),
       }))
       .mutation(async ({ input }) => {
-        // Send email notification
-        const emailBody = `Nueva solicitud de presupuesto - ${input.productType}\n\nNombre: ${input.name}\nEmail: ${input.email}\nTeléfono: ${input.phone || 'No proporcionado'}\nCantidad: ${input.quantity}\nMensaje: ${input.message || 'No proporcionado'}`;
+        // Send notification to owner
+        const title = `Nueva Solicitud de Presupuesto - ${input.productType}`;
+        const content = `**Nombre:** ${input.name}\n**Email:** ${input.email}\n**Teléfono:** ${input.phone || 'No proporcionado'}\n**Cantidad:** ${input.quantity}\n**Mensaje:** ${input.message || 'No proporcionado'}`;
         
-        // TODO: Implement email sending via SMTP or service
-        console.log('[Quote Request]', emailBody);
+        const notificationSent = await notifyOwner({ title, content });
+        
+        if (!notificationSent) {
+          console.error('[Quote Request] Failed to send notification');
+        }
         
         return { success: true };
       }),

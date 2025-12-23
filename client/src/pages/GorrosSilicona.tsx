@@ -132,7 +132,7 @@ export default function GorrosSilicona() {
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-16">
-          <div className="container">
+          <div className="container grid md:grid-cols-2 gap-8 items-center">
             <nav className="text-sm mb-6 opacity-90">
               <Link href="/" className="hover:underline">INICIO</Link>
               <span className="mx-2">•</span>
@@ -165,6 +165,14 @@ export default function GorrosSilicona() {
                   Ver Todos los Gorros
                 </Link>
               </Button>
+            </div>
+            
+            <div className="hidden md:block">
+              <img
+                src="/gorro-silicona-amarillo-hero.webp"
+                alt="Gorro de silicona amarillo personalizado en agua"
+                className="w-full max-w-md mx-auto rounded-full shadow-2xl"
+              />
             </div>
           </div>
         </section>
