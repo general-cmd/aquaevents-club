@@ -553,15 +553,15 @@ export default function GorrosNatacion() {
             </thead>
             <tbody>
               <tr className="border-b hover:bg-gray-50">
-                <td className="p-4 font-semibold">50 unidades</td>
-                <td className="p-4">Consultar</td>
-                <td className="p-4">Consultar</td>
-                <td className="p-4">Consultar</td>
+                <td className="p-4 font-semibold">50-99 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">5,55€</td>
+                <td className="p-4">7,05€</td>
+                <td className="p-4">8,55€</td>
                 <td className="p-4">11,00€</td>
                 <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50 bg-blue-50">
-                <td className="p-4 font-semibold">100 unidades</td>
+                <td className="p-4 font-semibold">100-249 unidades</td>
                 <td className="p-4 text-green-600 font-semibold">4,45€</td>
                 <td className="p-4">5,95€</td>
                 <td className="p-4">7,50€</td>
@@ -569,18 +569,18 @@ export default function GorrosNatacion() {
                 <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50">
-                <td className="p-4 font-semibold">250 unidades</td>
-                <td className="p-4 text-green-600 font-semibold">Descuento</td>
-                <td className="p-4">Descuento</td>
-                <td className="p-4">Descuento</td>
+                <td className="p-4 font-semibold">250-499 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">3,65€</td>
+                <td className="p-4">5,15€</td>
+                <td className="p-4">6,65€</td>
                 <td className="p-4">6,90€</td>
                 <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>
               <tr className="border-b hover:bg-gray-50 bg-blue-50">
-                <td className="p-4 font-semibold">500 unidades</td>
-                <td className="p-4 text-green-600 font-semibold">Descuento</td>
-                <td className="p-4">Descuento</td>
-                <td className="p-4">Descuento</td>
+                <td className="p-4 font-semibold">500-999 unidades</td>
+                <td className="p-4 text-green-600 font-semibold">2,99€</td>
+                <td className="p-4">4,49€</td>
+                <td className="p-4">5,99€</td>
                 <td className="p-4">5,99€</td>
                 <td className="p-4 text-green-600 font-semibold">GRATIS</td>
               </tr>

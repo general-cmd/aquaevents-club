@@ -20,6 +20,8 @@ import AdminBulkEdit from "./pages/AdminBulkEdit";
 import AdminEventEdit from "./pages/AdminEventEdit";
 import FederationDashboard from "./pages/FederationDashboard";
 import GorrosNatacion from "./pages/GorrosNatacion";
+import GorrosNatacionMain from "./pages/GorrosNatacionMain";
+import GorrosSilicona from "./pages/GorrosSilicona";
 import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
 import BlogGuiaClub from "./pages/BlogGuiaClub";
 import WidgetCalendar from "./pages/WidgetCalendar";
@@ -56,7 +58,8 @@ function Router() {
       <Route path="/admin/register" component={AdminRegister} />
       <Route path="/login" component={Login} />
       <Route path="/federacion" component={FederationDashboard} />
-      <Route path="/gorros-natacion" component={GorrosNatacion} />
+      <Route path="/gorros-natacion" component={GorrosNatacionMain} />
+      <Route path="/gorros-natacion/silicona" component={GorrosSilicona} />
       <Route path="/widget/calendar" component={WidgetCalendar} />
       <Route path="/widget/builder" component={WidgetBuilder} />
       <Route path="/widget/demo" component={WidgetDemo} />

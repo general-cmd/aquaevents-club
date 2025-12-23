@@ -1534,3 +1534,21 @@ Also added "private" to organizerType enum to support private organizers.
 ## Dec 11, 2025 - Fix Bulk Edit React Error
 
 - [x] Fix React error #31 (objects not valid as children) by wrapping all rendered values in String()
+
+
+## Swimming Caps Section Restructure - URGENT
+
+- [x] Remove fake volume pricing tables from current gorros-natacion page
+- [x] Create main swimming caps overview page (/gorros-natacion) with 4 product cards
+- [x] Create dedicated Silicone caps page (/gorros-natacion/silicona) with accurate €4.45/€5.95/€7.50 pricing
+- [ ] Create dedicated Latex caps page (/gorros-natacion/latex) with accurate €2.10 pricing  
+- [ ] Create dedicated Suede caps page (/gorros-natacion/ante) with accurate €4.99 pricing
+- [ ] Create dedicated Long Hair caps page (/gorros-natacion/pelo-largo) with accurate €6.20 pricing
+- [x] Add Product schema markup to each cap type page
+- [x] Add breadcrumb navigation (HOME > GORROS > [TYPE])
+- [x] Update App.tsx routes for new pages
+- [ ] Add "Solicitar presupuesto" CTA buttons linking to contact form
+- [ ] Add "Descuentos disponibles para 250, 500, 1000+ unidades - Consultar" text without fake tables
+- [ ] Copy EuroSwimCaps layout structure (hero, features, color options, CTA buttons)
+- [ ] Download and optimize product images from EuroSwimCaps
+- [ ] Translate all content to Spanish maintaining SEO quality
