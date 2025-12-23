@@ -88,10 +88,8 @@ export default function DesignPreviewTool({ capType }: DesignPreviewToolProps) {
 
   // Redraw when logo properties change
   useEffect(() => {
-    if (capImage) {
-      drawPreview(capImage, logoImage);
-    }
-  }, [logoScale, logoX, logoY, capImage, logoImage]);
+    drawPreview(null, logoImage);
+  }, [logoScale, logoX, logoY, logoImage, selectedColor, template]);
 
   const drawPreview = (cap: HTMLImageElement | null, logo: HTMLImageElement | null) => {
     const canvas = canvasRef.current;
