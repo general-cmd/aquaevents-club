@@ -15,10 +15,16 @@ const CAP_TEMPLATES = {
   silicona: {
     name: "Silicona",
     colors: [
-      { name: "Azul", hex: "#0066CC", image: "/gorro-silicona-azul.webp" },
+      { name: "Azul Royal", hex: "#0066CC", image: "/gorro-silicona-azul.webp" },
       { name: "Rojo", hex: "#CC0000", image: "/gorro-silicona-rojo.webp" },
       { name: "Negro", hex: "#000000", image: "/gorro-silicona-negro.webp" },
       { name: "Blanco", hex: "#FFFFFF", image: "/gorro-silicona-blanco.webp" },
+      { name: "Amarillo", hex: "#FFD700", image: "/gorro-silicona-amarillo.webp" },
+      { name: "Verde", hex: "#00AA00", image: "/gorro-silicona-verde.webp" },
+      { name: "Rosa", hex: "#FF69B4", image: "/gorro-silicona-rosa.webp" },
+      { name: "Naranja", hex: "#FF8C00", image: "/gorro-silicona-naranja.webp" },
+      { name: "Morado", hex: "#9370DB", image: "/gorro-silicona-morado.webp" },
+      { name: "Azul Claro", hex: "#87CEEB", image: "/gorro-silicona-azul-claro.webp" },
     ],
   },
   latex: {
@@ -26,6 +32,10 @@ const CAP_TEMPLATES = {
     colors: [
       { name: "Verde", hex: "#00AA00", image: "/gorro-latex-verde.webp" },
       { name: "Azul", hex: "#0066CC", image: "/gorro-latex-azul.webp" },
+      { name: "Rojo", hex: "#CC0000", image: "/gorro-latex-rojo.webp" },
+      { name: "Amarillo", hex: "#FFD700", image: "/gorro-latex-amarillo.webp" },
+      { name: "Negro", hex: "#000000", image: "/gorro-latex-negro.webp" },
+      { name: "Blanco", hex: "#FFFFFF", image: "/gorro-latex-blanco.webp" },
     ],
   },
   gamuza: {
@@ -33,18 +43,27 @@ const CAP_TEMPLATES = {
     colors: [
       { name: "Azul", hex: "#0066CC", image: "/gorro-gamuza-azul.webp" },
       { name: "Negro", hex: "#000000", image: "/gorro-gamuza-negro.webp" },
+      { name: "Rojo", hex: "#CC0000", image: "/gorro-gamuza-rojo.webp" },
+      { name: "Verde", hex: "#00AA00", image: "/gorro-gamuza-verde.webp" },
+      { name: "Blanco", hex: "#FFFFFF", image: "/gorro-gamuza-blanco.webp" },
     ],
   },
   "pelo-largo": {
     name: "Pelo Largo",
     colors: [
       { name: "Azul", hex: "#0066CC", image: "/gorro-pelo-largo-azul-hero.webp" },
+      { name: "Negro", hex: "#000000", image: "/gorro-pelo-largo-negro.webp" },
+      { name: "Rosa", hex: "#FF69B4", image: "/gorro-pelo-largo-rosa.webp" },
+      { name: "Morado", hex: "#9370DB", image: "/gorro-pelo-largo-morado.webp" },
     ],
   },
   "tela-polyester": {
     name: "Tela Poliéster",
     colors: [
       { name: "Azul", hex: "#0066CC", image: "/gorro-lycra-hero.jpg" },
+      { name: "Rojo", hex: "#CC0000", image: "/gorro-lycra-rojo.jpg" },
+      { name: "Negro", hex: "#000000", image: "/gorro-lycra-negro.jpg" },
+      { name: "Verde", hex: "#00AA00", image: "/gorro-lycra-verde.jpg" },
     ],
   },
 };
@@ -56,7 +75,7 @@ export default function DesignPreviewTool({ capType }: DesignPreviewToolProps) {
   const [selectedColor, setSelectedColor] = useState(0);
   const [logoImage, setLogoImage] = useState<HTMLImageElement | null>(null);
   const [capImage, setCapImage] = useState<HTMLImageElement | null>(null);
-  const [logoScale, setLogoScale] = useState([50]);
+  const [logoScale, setLogoScale] = useState([80]);
   const [logoX, setLogoX] = useState([50]);
   const [logoY, setLogoY] = useState([50]);
 
@@ -116,7 +135,7 @@ export default function DesignPreviewTool({ capType }: DesignPreviewToolProps) {
     // Draw logo if available
     if (logo) {
       const scale = logoScale[0] / 100;
-      const maxLogoSize = canvas.width * 0.4; // Max 40% of canvas width
+      const maxLogoSize = canvas.width * 0.6; // Max 60% of canvas width for better visibility
       const logoWidth = logo.width * scale * (maxLogoSize / logo.width);
       const logoHeight = logo.height * scale * (maxLogoSize / logo.width);
 

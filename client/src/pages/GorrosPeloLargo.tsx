@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Truck, Clock, Shield } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 import BulkOrderCalculator from "@/components/BulkOrderCalculator";
+import CapTestimonials from "@/components/CapTestimonials";
+import DesignPreviewTool from "@/components/DesignPreviewTool";
 
 /**
  * Long Hair Swimming Caps Product Page
@@ -254,7 +256,22 @@ export default function GorrosPeloLargo() {
         {/* Bulk Order Calculator */}
         <section className="py-16 bg-gray-50">
           <div className="container max-w-4xl">
-            <BulkOrderCalculator capType="pelo-largo" capTypeLabel="Gorros para Pelo Largo" />
+            <BulkOrderCalculator capType="pelo-largo" capTypeLabel="Gorros de Pelo Largo" />
+          </div>
+        </section>
+
+        {/* Design Preview Tool */}
+        <section className="py-16">
+          <div className="container max-w-6xl">
+            <DesignPreviewTool capType="pelo-largo" />
+          </div>
+        </section>
+
+        {/* Customer Testimonials */}
+        <section className="py-16 bg-gray-50">
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-12">Lo Que Dicen Nuestros Clientes</h2>
+            <CapTestimonials capType="pelo-largo" />
           </div>
         </section>
 

@@ -1621,5 +1621,13 @@ Also added "private" to organizerType enum to support private organizers.
 
 ### 5. Deployment
 - [x] Test all features thoroughly
-- [ ] Save checkpoint with all changes
+- [x] Save checkpoint with all changes
 - [ ] Publish checkpoint to production
+
+
+## Pre-Production Fixes (Dec 23, 2025)
+- [x] Fix design preview tool to show actual cap template image in canvas background
+- [x] Add all cap color options to design preview color selector (10 colors for silicona, 6 for latex, 5 for gamuza, 4 for pelo largo, 4 for tela)
+- [x] Ensure testimonials section displays on all material pages (Látex, Gamuza, Pelo Largo, Tela)
+- [x] Ensure design preview tool displays on all material pages
+- [x] Increase logo size in design preview tool for better visibility (from 50% to 80% default, max 60% of canvas)

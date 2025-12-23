@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Truck, Clock, DollarSign } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
 import BulkOrderCalculator from "@/components/BulkOrderCalculator";
+import CapTestimonials from "@/components/CapTestimonials";
+import DesignPreviewTool from "@/components/DesignPreviewTool";
 
 /**
  * Latex Swimming Caps Product Page
@@ -220,6 +222,21 @@ export default function GorrosLatex() {
         <section className="py-16 bg-gray-50">
           <div className="container max-w-4xl">
             <BulkOrderCalculator capType="latex" capTypeLabel="Gorros de Látex" />
+          </div>
+        </section>
+
+        {/* Design Preview Tool */}
+        <section className="py-16">
+          <div className="container max-w-6xl">
+            <DesignPreviewTool capType="latex" />
+          </div>
+        </section>
+
+        {/* Customer Testimonials */}
+        <section className="py-16 bg-gray-50">
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-12">Lo Que Dicen Nuestros Clientes</h2>
+            <CapTestimonials capType="latex" />
           </div>
         </section>
 
