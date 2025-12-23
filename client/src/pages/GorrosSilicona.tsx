@@ -1,7 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import QuoteForm from "@/components/QuoteForm";
 import { CheckCircle2, Truck, Clock, Shield, Palette } from "lucide-react";
 
 /**
@@ -330,25 +331,35 @@ export default function GorrosSilicona() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
-          <div className="container text-center">
-            <h2 className="text-3xl font-bold mb-4">¿Listo para Personalizar tus Gorros de Silicona?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Solicita tu presupuesto sin compromiso. Nuestro equipo te ayudará con el diseño y te proporcionará visuales antes de la producción.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                <a href="https://www.euroswimcaps.com/how-to-order" target="_blank" rel="noopener noreferrer">
-                  Solicitar Presupuesto
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                <Link href="/blog/guia-pedido-gorros-club">
-                  Cómo Hacer un Pedido
-                </Link>
-              </Button>
+        {/* FAQ Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+            <div className="space-y-6">
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuál es el pedido mínimo?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">50 unidades. Descuentos para 250, 500, 1000+ unidades.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuántos colores puedo imprimir?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">1, 2 o 3 colores. Precios: €4.45 (1 color), €5.95 (2 colores), €7.50 (3 colores) para 100 unidades.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Son aptos para competición?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Sí, cumplen normativas FINA. Ideales para competiciones.</p></CardContent>
+              </Card>
             </div>
+          </div>
+        </section>
+
+        {/* Quote Form */}
+        <section id="presupuesto" className="py-16">
+          <div className="container max-w-2xl">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">Solicita tu Presupuesto</h2>
+              <p className="text-gray-600">Respuesta en menos de 24 horas.</p>
+            </div>
+            <QuoteForm productType="Gorros de Silicona" />
           </div>
         </section>
       </div>

@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Package, Truck, Clock, Star } from "lucide-react";
+import QuoteForm from "@/components/QuoteForm";
 
 /**
  * Main Swimming Caps Overview Page
@@ -15,7 +16,7 @@ export default function GorrosNatacionMain() {
       name: "Gorros de Silicona",
       slug: "silicona",
       price: "desde €4.45",
-      image: "/gorro-silicona-azul-personalizado.jpg",
+      image: "/gorro-silicona-amarillo-hero.webp",
       description: "Ideales para uso diario. Mayor durabilidad y resistencia al cloro. 100% hipoalergénicos.",
       features: ["Máxima durabilidad", "50GMS grosor", "Ajuste perfecto", "30+ colores"],
     },
@@ -28,10 +29,10 @@ export default function GorrosNatacionMain() {
       features: ["Mejor precio", "Eventos masivos", "Rápida entrega", "20+ colores"],
     },
     {
-      name: "Gorros de Ante",
-      slug: "ante",
+      name: "Gorros de Gamuza",
+      slug: "gamuza",
       price: "desde €4.99",
-      image: "/gorro-ante-rojo-personalizado.jpg",
+      image: "/gorro-gamuza-azul-hero.webp",
       description: "Tacto suave y cómodo. Ideal para nadadores con sensibilidad al látex. Acabado premium.",
       features: ["Tacto suave", "Sin látex", "Acabado premium", "15+ colores"],
     },
@@ -219,7 +220,7 @@ export default function GorrosNatacionMain() {
 
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                <a href="https://www.euroswimcaps.com/how-to-order" target="_blank" rel="noopener noreferrer">
+                <a href="#presupuesto">
                   Solicitar Presupuesto
                 </a>
               </Button>
@@ -288,7 +289,7 @@ export default function GorrosNatacionMain() {
                     <th className="p-4 text-left">Característica</th>
                     <th className="p-4 text-center">Silicona</th>
                     <th className="p-4 text-center">Látex</th>
-                    <th className="p-4 text-center">Ante</th>
+                    <th className="p-4 text-center">Gamuza</th>
                     <th className="p-4 text-center">Pelo Largo</th>
                   </tr>
                 </thead>
@@ -398,18 +399,16 @@ export default function GorrosNatacionMain() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
-          <div className="container text-center">
-            <h2 className="text-3xl font-bold mb-4">¿Listo para Personalizar los Gorros de tu Club?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Más de 2 millones de gorros impresos para clubes y federaciones en toda Europa. Solicita tu presupuesto sin compromiso.
-            </p>
-            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-              <a href="https://www.euroswimcaps.com/how-to-order" target="_blank" rel="noopener noreferrer">
-                Solicitar Presupuesto Ahora
-              </a>
-            </Button>
+        {/* Quote Form Section */}
+        <section id="presupuesto" className="py-16 bg-gradient-to-b from-white to-blue-50">
+          <div className="container max-w-2xl">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">Solicita tu Presupuesto</h2>
+              <p className="text-gray-600">
+                Más de 2 millones de gorros impresos para clubes y federaciones. Te responderemos en menos de 24 horas.
+              </p>
+            </div>
+            <QuoteForm productType="Gorros de Natación" />
           </div>
         </section>
       </div>

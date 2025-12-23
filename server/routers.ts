@@ -30,6 +30,27 @@ export const appRouter = router({
   bulkImport: bulkImportRouter,
   emailAuth: emailAuthRouter,
 
+  contact: router({
+    submitQuote: publicProcedure
+      .input(z.object({
+        name: z.string(),
+        email: z.string().email(),
+        phone: z.string().optional(),
+        quantity: z.string(),
+        message: z.string().optional(),
+        productType: z.string(),
+      }))
+      .mutation(async ({ input }) => {
+        // Send email notification
+        const emailBody = `Nueva solicitud de presupuesto - ${input.productType}\n\nNombre: ${input.name}\nEmail: ${input.email}\nTeléfono: ${input.phone || 'No proporcionado'}\nCantidad: ${input.quantity}\nMensaje: ${input.message || 'No proporcionado'}`;
+        
+        // TODO: Implement email sending via SMTP or service
+        console.log('[Quote Request]', emailBody);
+        
+        return { success: true };
+      }),
+  }),
+
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

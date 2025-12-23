@@ -1552,3 +1552,28 @@ Also added "private" to organizerType enum to support private organizers.
 - [ ] Copy EuroSwimCaps layout structure (hero, features, color options, CTA buttons)
 - [ ] Download and optimize product images from EuroSwimCaps
 - [ ] Translate all content to Spanish maintaining SEO quality
+
+
+## Swimming Caps Fixes - URGENT
+
+- [ ] Change "ante" to "gamuza" in all swimming caps pages
+- [ ] Download silicone cap product images from EuroSwimCaps
+- [ ] Download gamuza cap product images from EuroSwimCaps
+- [ ] Download latex cap color swatch images (actual colors, not placeholders)
+- [ ] Fix broken image references in GorrosNatacionMain.tsx
+- [ ] Fix broken image references in GorrosSilicona.tsx
+- [ ] Create internal quote form component sending to general@aquaevents.club
+- [ ] Replace all EuroSwimCaps.com links with internal quote form
+- [ ] Add FAQ section to Silicone product page
+- [ ] Add FAQ section to each product page for SEO/AI-SEO
+
+
+## Swimming Caps Section Fixes - COMPLETE ✅
+
+- [x] Change "ante" to "gamuza" everywhere
+- [x] Fix broken silicone and gamuza images (downloaded from EuroSwimCaps)
+- [x] Download real product images from EuroSwimCaps
+- [x] Replace EuroSwimCaps.com links with internal quote form
+- [x] Create QuoteForm component sending to general@aquaevents.club
+- [x] Add FAQ sections to each product page for SEO/AI-SEO
+- [x] Add contact router to handle quote submissions
