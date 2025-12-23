@@ -15,55 +15,55 @@ const CAP_TEMPLATES = {
   silicona: {
     name: "Silicona",
     colors: [
-      { name: "Azul Royal", hex: "#0066CC", image: "/gorro-silicona-azul.webp" },
-      { name: "Rojo", hex: "#CC0000", image: "/gorro-silicona-rojo.webp" },
-      { name: "Negro", hex: "#000000", image: "/gorro-silicona-negro.webp" },
-      { name: "Blanco", hex: "#FFFFFF", image: "/gorro-silicona-blanco.webp" },
-      { name: "Amarillo", hex: "#FFD700", image: "/gorro-silicona-amarillo.webp" },
-      { name: "Verde", hex: "#00AA00", image: "/gorro-silicona-verde.webp" },
-      { name: "Rosa", hex: "#FF69B4", image: "/gorro-silicona-rosa.webp" },
-      { name: "Naranja", hex: "#FF8C00", image: "/gorro-silicona-naranja.webp" },
-      { name: "Morado", hex: "#9370DB", image: "/gorro-silicona-morado.webp" },
-      { name: "Azul Claro", hex: "#87CEEB", image: "/gorro-silicona-azul-claro.webp" },
+      { name: "Azul Royal", hex: "#0066CC" },
+      { name: "Rojo", hex: "#CC0000" },
+      { name: "Negro", hex: "#000000" },
+      { name: "Blanco", hex: "#FFFFFF" },
+      { name: "Amarillo", hex: "#FFD700" },
+      { name: "Verde", hex: "#00AA00" },
+      { name: "Rosa", hex: "#FF69B4" },
+      { name: "Naranja", hex: "#FF8C00" },
+      { name: "Morado", hex: "#9370DB" },
+      { name: "Azul Claro", hex: "#87CEEB" },
     ],
   },
   latex: {
     name: "Látex",
     colors: [
-      { name: "Verde", hex: "#00AA00", image: "/gorro-latex-verde.webp" },
-      { name: "Azul", hex: "#0066CC", image: "/gorro-latex-azul.webp" },
-      { name: "Rojo", hex: "#CC0000", image: "/gorro-latex-rojo.webp" },
-      { name: "Amarillo", hex: "#FFD700", image: "/gorro-latex-amarillo.webp" },
-      { name: "Negro", hex: "#000000", image: "/gorro-latex-negro.webp" },
-      { name: "Blanco", hex: "#FFFFFF", image: "/gorro-latex-blanco.webp" },
+      { name: "Verde", hex: "#00AA00" },
+      { name: "Azul", hex: "#0066CC" },
+      { name: "Rojo", hex: "#CC0000" },
+      { name: "Amarillo", hex: "#FFD700" },
+      { name: "Negro", hex: "#000000" },
+      { name: "Blanco", hex: "#FFFFFF" },
     ],
   },
   gamuza: {
     name: "Gamuza",
     colors: [
-      { name: "Azul", hex: "#0066CC", image: "/gorro-gamuza-azul.webp" },
-      { name: "Negro", hex: "#000000", image: "/gorro-gamuza-negro.webp" },
-      { name: "Rojo", hex: "#CC0000", image: "/gorro-gamuza-rojo.webp" },
-      { name: "Verde", hex: "#00AA00", image: "/gorro-gamuza-verde.webp" },
-      { name: "Blanco", hex: "#FFFFFF", image: "/gorro-gamuza-blanco.webp" },
+      { name: "Azul", hex: "#0066CC" },
+      { name: "Negro", hex: "#000000" },
+      { name: "Rojo", hex: "#CC0000" },
+      { name: "Verde", hex: "#00AA00" },
+      { name: "Blanco", hex: "#FFFFFF" },
     ],
   },
   "pelo-largo": {
     name: "Pelo Largo",
     colors: [
-      { name: "Azul", hex: "#0066CC", image: "/gorro-pelo-largo-azul-hero.webp" },
-      { name: "Negro", hex: "#000000", image: "/gorro-pelo-largo-negro.webp" },
-      { name: "Rosa", hex: "#FF69B4", image: "/gorro-pelo-largo-rosa.webp" },
-      { name: "Morado", hex: "#9370DB", image: "/gorro-pelo-largo-morado.webp" },
+      { name: "Azul", hex: "#0066CC" },
+      { name: "Negro", hex: "#000000" },
+      { name: "Rosa", hex: "#FF69B4" },
+      { name: "Morado", hex: "#9370DB" },
     ],
   },
   "tela-polyester": {
     name: "Tela Poliéster",
     colors: [
-      { name: "Azul", hex: "#0066CC", image: "/gorro-lycra-hero.jpg" },
-      { name: "Rojo", hex: "#CC0000", image: "/gorro-lycra-rojo.jpg" },
-      { name: "Negro", hex: "#000000", image: "/gorro-lycra-negro.jpg" },
-      { name: "Verde", hex: "#00AA00", image: "/gorro-lycra-verde.jpg" },
+      { name: "Azul", hex: "#0066CC" },
+      { name: "Rojo", hex: "#CC0000" },
+      { name: "Negro", hex: "#000000" },
+      { name: "Verde", hex: "#00AA00" },
     ],
   },
 };
@@ -81,17 +81,9 @@ export default function DesignPreviewTool({ capType }: DesignPreviewToolProps) {
 
   const template = CAP_TEMPLATES[capType as keyof typeof CAP_TEMPLATES];
 
-  // Load cap template image
+  // Redraw when color changes
   useEffect(() => {
-    if (!template) return;
-    
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.src = template.colors[selectedColor].image;
-    img.onload = () => {
-      setCapImage(img);
-      drawPreview(img, logoImage);
-    };
+    drawPreview(null, logoImage);
   }, [selectedColor, template]);
 
   // Redraw when logo properties change
@@ -103,7 +95,7 @@ export default function DesignPreviewTool({ capType }: DesignPreviewToolProps) {
 
   const drawPreview = (cap: HTMLImageElement | null, logo: HTMLImageElement | null) => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || !template) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -115,22 +107,40 @@ export default function DesignPreviewTool({ capType }: DesignPreviewToolProps) {
     // Clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw cap template
-    if (cap) {
-      const aspectRatio = cap.width / cap.height;
-      let drawWidth = canvas.width;
-      let drawHeight = canvas.width / aspectRatio;
-      
-      if (drawHeight > canvas.height) {
-        drawHeight = canvas.height;
-        drawWidth = canvas.height * aspectRatio;
-      }
+    // Draw cap shape (rounded dome)
+    const capColor = template.colors[selectedColor].hex;
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radiusX = 200;
+    const radiusY = 120;
 
-      const x = (canvas.width - drawWidth) / 2;
-      const y = (canvas.height - drawHeight) / 2;
-      
-      ctx.drawImage(cap, x, y, drawWidth, drawHeight);
-    }
+    // Draw cap dome
+    ctx.beginPath();
+    ctx.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, Math.PI * 2);
+    ctx.fillStyle = capColor;
+    ctx.fill();
+    
+    // Add shadow for depth
+    ctx.shadowColor = 'rgba(0,0,0,0.3)';
+    ctx.shadowBlur = 15;
+    ctx.shadowOffsetY = 5;
+    ctx.fill();
+    ctx.shadowColor = 'transparent';
+    
+    // Add highlight
+    const gradient = ctx.createRadialGradient(centerX - 50, centerY - 30, 20, centerX, centerY, radiusX);
+    gradient.addColorStop(0, 'rgba(255,255,255,0.4)');
+    gradient.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = gradient;
+    ctx.fill();
+    
+    // Draw cap rim
+    ctx.beginPath();
+    ctx.ellipse(centerX, centerY + radiusY - 10, radiusX, 15, 0, 0, Math.PI);
+    ctx.fillStyle = capColor;
+    ctx.globalAlpha = 0.8;
+    ctx.fill();
+    ctx.globalAlpha = 1.0;
 
     // Draw logo if available
     if (logo) {
