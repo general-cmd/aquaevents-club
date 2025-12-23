@@ -221,33 +221,38 @@ export default function GorrosSilicona() {
         </section>
 
         {/* Color Options */}
-        <section className="py-16">
+        <section className="py-16 bg-gray-50">
           <div className="container max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-4">Opciones de Color</h2>
             <p className="text-center text-gray-600 mb-8">
               Tenemos la GAMA DE COLORES MÁS AMPLIA de Europa para gorros de natación. Más de 30 colores disponibles con referencias Pantone.
             </p>
 
+            {/* Color Chart Image */}
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+              <img
+                src="/euroswimcaps-silicone-colors-official.webp"
+                alt="Carta de colores oficial de gorros de silicona - Más de 30 colores con códigos Pantone"
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+
+            {/* Top 10 Colors with Pantone Codes */}
+            <h3 className="text-2xl font-bold text-center mb-6">Top 10 Colores Más Populares</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {[
-                { name: 'Azul Royal', code: 'F286C ROYAL BLUE', pantone: 'PANTONE 286C', color: '#0033A0', image: '/gorro-silicona-azul-royal.jpg' },
-                { name: 'Rojo', code: 'F203H RED', pantone: 'PANTONE 179C', color: '#E03C31', image: '/gorro-silicona-rojo.jpg' },
-                { name: 'Negro', code: 'F419 BLACK', pantone: 'PANTONE 419', color: '#1C1C1C', image: '/gorro-silicona-negro.jpg' },
-                { name: 'Blanco', code: 'F000 WHITE', pantone: 'PANTONE 000', color: '#FFFFFF', image: '/gorro-silicona-blanco.jpg' },
-                { name: 'Amarillo', code: 'F109C YELLOW', pantone: 'PANTONE 109C', color: '#FFD700', image: '/gorro-silicona-amarillo.jpg' },
-                { name: 'Verde', code: 'F355C GREEN', pantone: 'PANTONE 355C', color: '#009639', image: '/gorro-silicona-verde.jpg' },
-                { name: 'Rosa', code: 'F213C PINK', pantone: 'PANTONE 213C', color: '#FF69B4', image: '/gorro-silicona-rosa.jpg' },
-                { name: 'Naranja', code: 'F021C ORANGE', pantone: 'PANTONE 021C', color: '#FF6600', image: '/gorro-silicona-naranja.jpg' },
-                { name: 'Morado', code: 'F2665C PURPLE', pantone: 'PANTONE 2665C', color: '#8B00FF', image: '/gorro-silicona-morado.jpg' },
-                { name: 'Azul Claro', code: 'F298C LIGHT BLUE', pantone: 'PANTONE 298C', color: '#00BFFF', image: '/gorro-silicona-azul-claro.jpg' },
+                { name: 'Azul Royal', code: 'F286C ROYAL BLUE', pantone: '(PANTONE 286C)' },
+                { name: 'Rojo', code: 'F203H RED', pantone: '(PANTONE 179C)' },
+                { name: 'Negro', code: 'F419 BLACK', pantone: '(PANTONE 419)' },
+                { name: 'Blanco', code: 'F000 WHITE', pantone: '(PANTONE 000)' },
+                { name: 'Amarillo', code: 'F109C YELLOW', pantone: '(PANTONE 109C)' },
+                { name: 'Verde', code: 'F355C GREEN', pantone: '(PANTONE 355C)' },
+                { name: 'Rosa', code: 'F213C PINK', pantone: '(PANTONE 213C)' },
+                { name: 'Naranja', code: 'F021C ORANGE', pantone: '(PANTONE 021C)' },
+                { name: 'Morado', code: 'F2665C PURPLE', pantone: '(PANTONE 2665C)' },
+                { name: 'Azul Claro', code: 'F298C LIGHT BLUE', pantone: '(PANTONE 298C)' },
               ].map((capColor) => (
-                <Card key={capColor.code} className="overflow-hidden hover:shadow-xl transition-shadow">
-                  <div className="aspect-square bg-gray-100 flex items-center justify-center p-4">
-                    <div 
-                      className="w-32 h-32 rounded-full shadow-lg"
-                      style={{ backgroundColor: capColor.color, border: capColor.color === '#FFFFFF' ? '2px solid #e5e7eb' : 'none' }}
-                    />
-                  </div>
+                <Card key={capColor.code} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <CardContent className="p-4 text-center">
                     <h3 className="font-bold text-sm mb-1">{capColor.code}</h3>
                     <p className="text-xs text-gray-600">{capColor.pantone}</p>

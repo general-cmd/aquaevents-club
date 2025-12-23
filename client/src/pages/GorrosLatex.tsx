@@ -125,9 +125,9 @@ export default function GorrosLatex() {
             
             <div className="hidden md:block">
               <img
-                src="/gorro-latex-verde.webp"
-                alt="Gorro de látex verde personalizado"
-                className="w-full max-w-md mx-auto rounded-full shadow-2xl"
+                src="/gorros-silicona-personalizados-ice-swimmers.jpg"
+                alt="Gorros de natación personalizados Ice Swimmers - Pedido real de club con diseño blanco y azul"
+                className="w-full max-w-md mx-auto rounded-lg shadow-2xl"
               />
             </div>
           </div>
@@ -199,22 +199,48 @@ export default function GorrosLatex() {
 
         {/* Color Options Section */}
         <section className="py-16 bg-gray-50">
-          <div className="container max-w-4xl">
+          <div className="container max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-4">Opciones de Color</h2>
             <p className="text-center text-gray-600 mb-8">
               Disponible en una amplia gama de colores brillantes. ¡Tenemos la gama de colores MÁS GRANDE de Europa!
             </p>
 
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            {/* Color Chart Image */}
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
               <img
                 src="/gorro-colores-chart-latex.webp"
-                alt="Carta de colores de gorros de látex - 20+ colores disponibles"
+                alt="Carta de colores de gorros de látex - 20+ colores disponibles con códigos Pantone"
                 className="w-full h-auto rounded-lg"
               />
-              <p className="text-center text-sm text-gray-500 mt-4">
-                Amplia gama de colores brillantes para eventos y promociones.
-              </p>
             </div>
+
+            {/* Top 10 Colors with Pantone Codes */}
+            <h3 className="text-2xl font-bold text-center mb-6">Top 10 Colores Más Populares</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {[
+                { code: 'S132H NEW NAVY', pantone: '(PANTONE 654C)' },
+                { code: 'F202 ORANGE', pantone: '(PANTONE 021C)' },
+                { code: 'S17 MID YELLOW', pantone: '(PANTONE 109C)' },
+                { code: 'F355C GREEN', pantone: '(PANTONE 355C)' },
+                { code: 'F286C ROYAL BLUE', pantone: '(PANTONE 286C)' },
+                { code: 'F203H RED', pantone: '(PANTONE 179C)' },
+                { code: 'F419 BLACK', pantone: '(PANTONE 419)' },
+                { code: 'F000 WHITE', pantone: '(PANTONE 000)' },
+                { code: 'B3 LIGHT ROYAL', pantone: '(PANTONE 285C)' },
+                { code: 'F213C PINK', pantone: '(PANTONE 213C)' },
+              ].map((capColor) => (
+                <Card key={capColor.code} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4 text-center">
+                    <h3 className="font-bold text-sm mb-1">{capColor.code}</h3>
+                    <p className="text-xs text-gray-600">{capColor.pantone}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <p className="text-center text-sm text-gray-500 mt-8">
+              Todos los colores incluyen referencias Pantone para garantizar la precisión exacta del color. Más de 20 colores disponibles.
+            </p>
           </div>
         </section>
 

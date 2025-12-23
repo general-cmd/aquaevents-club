@@ -155,9 +155,9 @@ export default function GorrosGamuza() {
 
               <div className="flex justify-center">
                 <img
-                  src="/gorro-gamuza-azul-hero.webp"
-                  alt="Gorro de gamuza azul personalizado para natación"
-                  className="rounded-full w-96 h-96 object-cover shadow-2xl"
+                  src="/gorro-silicona-personalizado-beavers-trust.jpg"
+                  alt="Gorro personalizado The Beavers Trust - Ejemplo real de pedido con escudo bordado para club deportivo"
+                  className="rounded-lg w-96 h-96 object-cover shadow-2xl"
                 />
               </div>
             </div>
@@ -209,22 +209,48 @@ export default function GorrosGamuza() {
 
         {/* Color Options */}
         <section className="py-16 bg-gray-50">
-          <div className="container max-w-4xl">
+          <div className="container max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-4">Opciones de Color</h2>
             <p className="text-center text-gray-600 mb-8">
               15+ colores disponibles con referencias Pantone para garantizar la precisión del color.
             </p>
 
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            {/* Color Chart Image */}
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
               <img
                 src="/gorro-colores-chart-1.webp"
                 alt="Carta de colores de gorros de gamuza - 15+ colores con códigos Pantone"
                 className="w-full h-auto rounded-lg"
               />
-              <p className="text-center text-sm text-gray-500 mt-4">
-                Tacto suave premium con amplia gama de colores. Referencias Pantone para precisión exacta.
-              </p>
             </div>
+
+            {/* Top 10 Colors with Pantone Codes */}
+            <h3 className="text-2xl font-bold text-center mb-6">Top 10 Colores Más Populares</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {[
+                { code: 'F286C ROYAL BLUE', pantone: '(PANTONE 286C)' },
+                { code: 'F419 BLACK', pantone: '(PANTONE 419)' },
+                { code: 'F203H RED', pantone: '(PANTONE 179C)' },
+                { code: 'F355C GREEN', pantone: '(PANTONE 355C)' },
+                { code: 'F000 WHITE', pantone: '(PANTONE 000)' },
+                { code: 'F109C YELLOW', pantone: '(PANTONE 109C)' },
+                { code: 'F213C PINK', pantone: '(PANTONE 213C)' },
+                { code: 'F298C LIGHT BLUE', pantone: '(PANTONE 298C)' },
+                { code: 'F021C ORANGE', pantone: '(PANTONE 021C)' },
+                { code: 'F2665C PURPLE', pantone: '(PANTONE 2665C)' },
+              ].map((capColor) => (
+                <Card key={capColor.code} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4 text-center">
+                    <h3 className="font-bold text-sm mb-1">{capColor.code}</h3>
+                    <p className="text-xs text-gray-600">{capColor.pantone}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <p className="text-center text-sm text-gray-500 mt-8">
+              Tacto suave premium con amplia gama de colores. Referencias Pantone para precisión exacta. Más de 15 colores disponibles.
+            </p>
           </div>
         </section>
 

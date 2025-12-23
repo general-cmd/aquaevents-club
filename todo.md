@@ -1655,4 +1655,13 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Fix admin pricing route so /admin/cap-pricing is accessible (route exists at line 64 in App.tsx)
 - [x] Download additional printed cap images from EuroSwimCaps if needed (using existing hero images)
 - [x] Add proper alt descriptions to all portfolio images
-- [ ] Test all changes and push to GitHub for deployment
+- [x] Test all changes and push to GitHub for deployment (commit 0a5a195 pushed to general-cmd/aquaevents-club)
+
+
+## Portfolio Images & Expanded Colors (Dec 23, 2025)
+- [x] Copy 7 new portfolio images to public directory with SEO-optimized filenames
+- [x] Add all 7 images to "Proyectos Recientes" section with detailed alt descriptions
+- [x] Use portfolio images as hero images for material pages (latex: Ice Swimmers, gamuza: Beavers Trust, tela: Corsham League)
+- [x] Expand color sections on all product pages to show 10+ colors with Pantone codes
+- [x] Match EuroSwimCaps.com color display format (color chart image + Top 10 grid with Pantone codes)
+- [ ] Test all changes and push to GitHub

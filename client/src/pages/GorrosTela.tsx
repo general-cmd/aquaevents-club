@@ -125,8 +125,8 @@ export default function GorrosTela() {
             
             <div className="hidden md:block">
               <img
-                src="/gorro-lycra-hero.jpg"
-                alt="Gorros de tela personalizados - poliéster y lycra"
+                src="/gorro-silicona-personalizado-corsham-league.jpg"
+                alt="Gorro personalizado Corsham S.C. League Team - Ejemplo real de pedido amarillo con logo verde"
                 className="w-full max-w-md mx-auto rounded-lg shadow-2xl"
               />
             </div>
@@ -258,22 +258,48 @@ export default function GorrosTela() {
 
         {/* Color Options */}
         <section className="py-16 bg-gray-50">
-          <div className="container max-w-4xl">
+          <div className="container max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-4">Opciones de Color</h2>
             <p className="text-center text-gray-600 mb-8">
               Amplia gama de colores disponibles para poliéster y lycra.
             </p>
 
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            {/* Color Chart Image */}
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
               <img
                 src="/gorro-polyester-colors.jpg"
-                alt="Colores disponibles para gorros de tela - poliéster y lycra"
+                alt="Colores disponibles para gorros de tela - poliéster y lycra con códigos Pantone"
                 className="w-full h-auto rounded-lg"
               />
-              <p className="text-center text-sm text-gray-500 mt-4">
-                Colores brillantes y vibrantes. Personalización disponible con hasta 6 colores de impresión.
-              </p>
             </div>
+
+            {/* Top 10 Colors with Pantone Codes */}
+            <h3 className="text-2xl font-bold text-center mb-6">Top 10 Colores Más Populares</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {[
+                { code: 'F286C ROYAL BLUE', pantone: '(PANTONE 286C)' },
+                { code: 'F203H RED', pantone: '(PANTONE 179C)' },
+                { code: 'F419 BLACK', pantone: '(PANTONE 419)' },
+                { code: 'F355C GREEN', pantone: '(PANTONE 355C)' },
+                { code: 'F000 WHITE', pantone: '(PANTONE 000)' },
+                { code: 'F109C YELLOW', pantone: '(PANTONE 109C)' },
+                { code: 'F298C LIGHT BLUE', pantone: '(PANTONE 298C)' },
+                { code: 'F021C ORANGE', pantone: '(PANTONE 021C)' },
+                { code: 'F213C PINK', pantone: '(PANTONE 213C)' },
+                { code: 'F2665C PURPLE', pantone: '(PANTONE 2665C)' },
+              ].map((capColor) => (
+                <Card key={capColor.code} className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4 text-center">
+                    <h3 className="font-bold text-sm mb-1">{capColor.code}</h3>
+                    <p className="text-xs text-gray-600">{capColor.pantone}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <p className="text-center text-sm text-gray-500 mt-8">
+              Colores brillantes y vibrantes. Personalización disponible con hasta 6 colores de impresión. Referencias Pantone para precisión exacta.
+            </p>
           </div>
         </section>
 

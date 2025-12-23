@@ -244,53 +244,97 @@ export default function GorrosNatacionMain() {
         {/* Portfolio Examples */}
         <section className="py-16 bg-gray-50">
           <div className="container">
-            <h2 className="text-3xl font-bold text-center mb-4">Nuestros Trabajos Recientes</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">Proyectos Recientes - Gorros Personalizados para Clubes</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Más de 2 millones de gorros personalizados entregados a clubes y federaciones en toda Europa.
+              Más de 2 millones de gorros personalizados entregados a clubes, federaciones y equipos de competición en toda Europa.
             </p>
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
               <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
                 <img
-                  src="/gorro-silicona-amarillo-hero.webp"
-                  alt="Gorros de silicona amarillos personalizados para club de natación con logo impreso"
+                  src="/gorro-silicona-personalizado-the-trigent.jpg"
+                  alt="Gorro de natación silicona personalizado The Trigent - Diseño multicolor para club de triatlón con impresión de logo profesional"
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <p className="text-white text-center px-4">Gorros Silicona - Club Natación Barcelona</p>
+                  <p className="text-white text-center px-4 font-semibold">The Trigent - Triatlón Multicolor</p>
                 </div>
               </div>
 
               <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
                 <img
-                  src="/gorro-latex-verde.webp"
-                  alt="Gorros de látex verdes personalizados para evento deportivo acuático"
+                  src="/gorro-silicona-personalizado-100tri-race-team.jpg"
+                  alt="Gorros de silicona personalizados 100% TRI Race Team - Color naranja con logo blanco para equipo de competición"
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <p className="text-white text-center px-4">Gorros Látex - Triatlón Valencia 2024</p>
+                  <p className="text-white text-center px-4 font-semibold">100% TRI Race Team - Naranja</p>
                 </div>
               </div>
 
               <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
                 <img
-                  src="/gorro-gamuza-azul-hero.webp"
-                  alt="Gorros de gamuza azules personalizados para escuela de natación"
+                  src="/gorros-silicona-personalizados-ice-swimmers.jpg"
+                  alt="Gorros de natación silicona Ice Swimmers - Pedido personalizado blanco y azul para club de natación en aguas abiertas"
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <p className="text-white text-center px-4">Gorros Gamuza - Escuela Acuática Madrid</p>
+                  <p className="text-white text-center px-4 font-semibold">Ice Swimmers - Aguas Abiertas</p>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <img
+                  src="/gorros-silicona-multicolor-swimadelica.jpg"
+                  alt="Gorros de silicona multicolor Swimadelica - Producción de 6 colores diferentes con diseño artístico personalizado"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <p className="text-white text-center px-4 font-semibold">Swimadelica - 6 Colores Artísticos</p>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <img
+                  src="/gorro-silicona-personalizado-beavers-trust.jpg"
+                  alt="Gorro silicona personalizado The Beavers Trust - Color rojo con escudo bordado para club deportivo Hampton & Richmond Borough FC"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <p className="text-white text-center px-4 font-semibold">The Beavers Trust - Rojo Escudo</p>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <img
+                  src="/gorro-silicona-personalizado-bosh-winter.jpg"
+                  alt="Gorros de natación personalizados BOSH - Diseño azul celeste con logo negro para eventos de invierno"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <p className="text-white text-center px-4 font-semibold">BOSH - Eventos Invierno</p>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <img
+                  src="/gorro-silicona-personalizado-corsham-league.jpg"
+                  alt="Gorro silicona Corsham S.C. League Team - Color amarillo con logo verde para equipo de liga de natación"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <p className="text-white text-center px-4 font-semibold">Corsham S.C. - Liga Amarillo</p>
                 </div>
               </div>
 
               <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
                 <img
                   src="/gorro-pelo-largo-azul-hero.webp"
-                  alt="Gorros para pelo largo azules personalizados para equipo de sincronizada"
+                  alt="Gorros para pelo largo azules personalizados para equipo de sincronizada y natación artística"
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <p className="text-white text-center px-4">Gorros Pelo Largo - Club Sincronizada Sevilla</p>
+                  <p className="text-white text-center px-4 font-semibold">Pelo Largo - Sincronizada</p>
                 </div>
               </div>
             </div>
