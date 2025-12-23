@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Truck, Clock, Shield } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
+import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 
 /**
  * Long Hair Swimming Caps Product Page
@@ -247,6 +248,13 @@ export default function GorrosPeloLargo() {
                 Diseño especial para pelo largo disponible en múltiples colores con referencias Pantone.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Bulk Order Calculator */}
+        <section className="py-16 bg-gray-50">
+          <div className="container max-w-4xl">
+            <BulkOrderCalculator capType="pelo-largo" capTypeLabel="Gorros para Pelo Largo" />
           </div>
         </section>
 

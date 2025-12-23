@@ -1586,3 +1586,40 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Add SSR schema markup to all product pages (Silicone, Latex, Gamuza, Long Hair) - already present
 - [x] Create polyester/lycra caps product page (€2.10-€3.50 for recreational/merchandising)
 - [x] Use consistent color presentation: cap image + color codes underneath
+
+
+## New Feature Requests (Dec 23, 2025) - Swimming Caps Enhancements
+
+### 1. Customer Testimonials
+- [x] Create testimonials database schema (table: cap_testimonials)
+- [x] Add testimonials section to all product pages (Silicona, Látex, Gamuza, Pelo Largo, Tela)
+- [x] Include customer photos, club names, and quotes
+- [x] Make testimonials manageable from admin dashboard
+
+### 2. Bulk Order Calculator
+- [x] Create pricing database schema (table: cap_pricing)
+- [x] Build admin pricing management dashboard
+- [x] Create bulk order calculator component with real-time pricing
+- [x] Show pricing based on quantity tiers (50, 100, 250, 500, 1000, 1500+)
+- [x] Display pricing for different cap types and color options
+- [x] Add calculator to all product pages
+
+### 3. Design Preview Tool
+- [x] Create design preview component using Canvas API
+- [x] Implement logo upload functionality
+- [x] Generate real-time mockups on cap templates
+- [x] Allow users to adjust logo position and size
+- [x] Support multiple cap types (silicone, latex, gamuza, etc.)
+- [x] Add download/save mockup functionality
+
+### 4. Admin Pricing Dashboard
+- [x] Create admin route for pricing management
+- [x] Build CRUD interface for cap pricing
+- [x] Support pricing by cap type, quantity tier, and color count
+- [x] Auto-update calculator when prices change
+- [ ] Add pricing history/audit log (future enhancement)
+
+### 5. Deployment
+- [x] Test all features thoroughly
+- [ ] Save checkpoint with all changes
+- [ ] Publish checkpoint to production

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Truck, Clock, Users, Heart } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
+import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 
 /**
  * Polyester & Lycra Swimming Caps Product Page
@@ -271,6 +272,13 @@ export default function GorrosTela() {
                 Colores brillantes y vibrantes. Personalización disponible con hasta 6 colores de impresión.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Bulk Order Calculator */}
+        <section className="py-16 bg-gray-50">
+          <div className="container max-w-4xl">
+            <BulkOrderCalculator capType="tela-polyester" capTypeLabel="Gorros de Tela" />
           </div>
         </section>
 

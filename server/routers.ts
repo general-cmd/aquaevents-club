@@ -5,6 +5,7 @@ import { widgetRouter } from "./widgetRouter";
 import { translationRouter } from "./routers/translation";
 import { bulkImportRouter } from "./routers/bulkImport";
 import { emailAuthRouter } from "./routers/emailAuth";
+import { capManagementRouter } from "./routers/capManagement";
 import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { 
@@ -30,6 +31,7 @@ export const appRouter = router({
   translation: translationRouter,
   bulkImport: bulkImportRouter,
   emailAuth: emailAuthRouter,
+  capManagement: capManagementRouter,
 
   contact: router({
     submitQuote: publicProcedure

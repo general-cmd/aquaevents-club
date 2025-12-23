@@ -3,6 +3,9 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import QuoteForm from "@/components/QuoteForm";
+import BulkOrderCalculator from "@/components/BulkOrderCalculator";
+import CapTestimonials from "@/components/CapTestimonials";
+import DesignPreviewTool from "@/components/DesignPreviewTool";
 import { CheckCircle2, Truck, Clock, Shield, Palette } from "lucide-react";
 
 /**
@@ -334,6 +337,28 @@ export default function GorrosSilicona() {
                 </li>
               </ul>
             </div>
+          </div>
+        </section>
+
+        {/* Bulk Order Calculator */}
+        <section className="py-16">
+          <div className="container max-w-4xl">
+            <BulkOrderCalculator capType="silicona" capTypeLabel="Gorros de Silicona" />
+          </div>
+        </section>
+
+        {/* Design Preview Tool */}
+        <section className="py-16 bg-gray-50">
+          <div className="container max-w-6xl">
+            <DesignPreviewTool capType="silicona" />
+          </div>
+        </section>
+
+        {/* Customer Testimonials */}
+        <section className="py-16">
+          <div className="container max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-12">Lo Que Dicen Nuestros Clientes</h2>
+            <CapTestimonials capType="silicona" />
           </div>
         </section>
 

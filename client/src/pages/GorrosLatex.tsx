@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Truck, Clock, DollarSign } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
+import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 
 /**
  * Latex Swimming Caps Product Page
@@ -212,6 +213,13 @@ export default function GorrosLatex() {
                 Amplia gama de colores brillantes para eventos y promociones.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Bulk Order Calculator */}
+        <section className="py-16 bg-gray-50">
+          <div className="container max-w-4xl">
+            <BulkOrderCalculator capType="latex" capTypeLabel="Gorros de Látex" />
           </div>
         </section>
 

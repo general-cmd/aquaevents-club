@@ -1,4 +1,4 @@
-import { boolean, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { boolean, decimal, int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -153,3 +153,39 @@ export const newsletterSubscribers = mysqlTable("newsletterSubscribers", {
 
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 export type InsertNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;
+
+// Swimming cap pricing table (admin-managed)
+export const capPricing = mysqlTable("capPricing", {
+  id: varchar("id", { length: 64 }).primaryKey(),
+  capType: varchar("capType", { length: 50 }).notNull(), // "silicona", "latex", "gamuza", "pelo-largo", "tela-polyester", "tela-lycra"
+  colorCount: int("colorCount").notNull(), // 1, 2, 3, etc.
+  minQuantity: int("minQuantity").notNull(), // Minimum quantity for this tier (50, 100, 250, 500, 1000, 1500)
+  maxQuantity: int("maxQuantity"), // Maximum quantity for this tier (null for unlimited)
+  pricePerUnit: decimal("pricePerUnit", { precision: 10, scale: 2 }).notNull(), // Price per unit in EUR
+  currency: varchar("currency", { length: 3 }).default("EUR").notNull(),
+  active: boolean("active").default(true).notNull(),
+  createdAt: timestamp("createdAt").defaultNow(),
+  updatedAt: timestamp("updatedAt").defaultNow(),
+});
+
+export type CapPricing = typeof capPricing.$inferSelect;
+export type InsertCapPricing = typeof capPricing.$inferInsert;
+
+// Swimming cap testimonials table
+export const capTestimonials = mysqlTable("capTestimonials", {
+  id: varchar("id", { length: 64 }).primaryKey(),
+  customerName: varchar("customerName", { length: 255 }).notNull(),
+  clubName: varchar("clubName", { length: 255 }).notNull(),
+  quote: text("quote").notNull(),
+  photo: text("photo"), // URL to customer/club photo
+  capType: varchar("capType", { length: 50 }), // Which cap type this testimonial is for (null = show on all)
+  rating: int("rating").default(5), // 1-5 stars
+  featured: boolean("featured").default(false).notNull(), // Show on homepage
+  active: boolean("active").default(true).notNull(),
+  displayOrder: int("displayOrder").default(0), // For manual ordering
+  createdAt: timestamp("createdAt").defaultNow(),
+  updatedAt: timestamp("updatedAt").defaultNow(),
+});
+
+export type CapTestimonial = typeof capTestimonials.$inferSelect;
+export type InsertCapTestimonial = typeof capTestimonials.$inferInsert;

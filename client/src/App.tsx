@@ -34,6 +34,7 @@ import WidgetDemo from "./pages/WidgetDemo";
 import BulkImport from "./pages/BulkImport";
 import Login from "./pages/Login";
 import AdminRegister from "./pages/AdminRegister";
+import AdminCapPricing from "./pages/AdminCapPricing";
 import AvisoLegal from "./pages/AvisoLegal";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import SobreNosotros from "./pages/SobreNosotros";
@@ -60,6 +61,7 @@ function Router() {
       <Route path="/admin/bulk-edit" component={AdminBulkEdit} />
       <Route path="/admin/events/:id" component={AdminEventEdit} />
       <Route path="/admin/register" component={AdminRegister} />
+      <Route path="/admin/cap-pricing" component={AdminCapPricing} />
       <Route path="/login" component={Login} />
       <Route path="/federacion" component={FederationDashboard} />
       <Route path="/gorros-natacion" component={GorrosNatacionMain} />

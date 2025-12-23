@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Package, Truck, Clock } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
+import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 
 /**
  * Gamuza (Suede) Swimming Caps Product Page
@@ -263,6 +264,13 @@ export default function GorrosGamuza() {
                 <p className="text-gray-600 text-sm">Tiempo de producción estándar de 3 semanas desde aprobación y pago</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Bulk Order Calculator */}
+        <section className="py-16">
+          <div className="container max-w-4xl">
+            <BulkOrderCalculator capType="gamuza" capTypeLabel="Gorros de Gamuza" />
           </div>
         </section>
 

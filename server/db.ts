@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite, eventReminders, InsertEventReminder, newsletterSubscribers, InsertNewsletterSubscriber } from "../drizzle/schema";
+import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite, eventReminders, InsertEventReminder, newsletterSubscribers, InsertNewsletterSubscriber, capPricing, InsertCapPricing, capTestimonials, InsertCapTestimonial } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -589,3 +589,102 @@ export async function updateNewsletterSubscriberSyncStatus(
     .where(eq(newsletterSubscribers.id, id));
 }
 
+
+
+// Cap Pricing queries
+export async function getAllCapPricing() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db.select().from(capPricing).where(eq(capPricing.active, true));
+  return result;
+}
+
+export async function getCapPricingByType(capType: string) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db.select().from(capPricing)
+    .where(eq(capPricing.capType, capType));
+  return result.filter(r => r.active);
+}
+
+export async function getCapPricingById(id: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const result = await db.select().from(capPricing).where(eq(capPricing.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createCapPricing(pricing: InsertCapPricing) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(capPricing).values(pricing);
+}
+
+export async function updateCapPricing(id: string, pricing: Partial<InsertCapPricing>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.update(capPricing).set({ ...pricing, updatedAt: new Date() }).where(eq(capPricing.id, id));
+}
+
+export async function deleteCapPricing(id: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  // Soft delete by setting active to false
+  await db.update(capPricing).set({ active: false, updatedAt: new Date() }).where(eq(capPricing.id, id));
+}
+
+// Cap Testimonials queries
+export async function getAllCapTestimonials() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const result = await db.select().from(capTestimonials).where(eq(capTestimonials.active, true));
+  return result;
+}
+
+export async function getCapTestimonialsByType(capType: string | null) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  // Get testimonials for specific cap type or general testimonials (capType = null)
+  const result = await db.select().from(capTestimonials)
+    .where(eq(capTestimonials.active, true));
+  
+  return result.filter(t => t.capType === capType || t.capType === null);
+}
+
+export async function getCapTestimonialById(id: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const result = await db.select().from(capTestimonials).where(eq(capTestimonials.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createCapTestimonial(testimonial: InsertCapTestimonial) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(capTestimonials).values(testimonial);
+}
+
+export async function updateCapTestimonial(id: string, testimonial: Partial<InsertCapTestimonial>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.update(capTestimonials).set({ ...testimonial, updatedAt: new Date() }).where(eq(capTestimonials.id, id));
+}
+
+export async function deleteCapTestimonial(id: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  // Soft delete by setting active to false
+  await db.update(capTestimonials).set({ active: false, updatedAt: new Date() }).where(eq(capTestimonials.id, id));
+}
