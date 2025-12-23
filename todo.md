@@ -1577,3 +1577,12 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Create QuoteForm component sending to general@aquaevents.club
 - [x] Add FAQ sections to each product page for SEO/AI-SEO
 - [x] Add contact router to handle quote submissions
+
+
+## Immediate User Requests (Dec 23, 2025) - Swimming Caps Improvements
+- [x] Fix broken long hair hero image on overview card (main gorros page)
+- [x] Standardize color sections across all product pages with visual swatches
+- [x] Download color swatch images from EuroSwimCaps.com
+- [x] Add SSR schema markup to all product pages (Silicone, Latex, Gamuza, Long Hair) - already present
+- [x] Create polyester/lycra caps product page (€2.10-€3.50 for recreational/merchandising)
+- [x] Use consistent color presentation: cap image + color codes underneath

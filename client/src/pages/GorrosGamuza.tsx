@@ -206,33 +206,21 @@ export default function GorrosGamuza() {
 
         {/* Color Options */}
         <section className="py-16 bg-gray-50">
-          <div className="container">
+          <div className="container max-w-4xl">
             <h2 className="text-3xl font-bold text-center mb-4">Opciones de Color</h2>
-            <p className="text-center text-gray-600 mb-12">
-              12 colores disponibles con referencias Pantone para garantizar la precisión del color.
+            <p className="text-center text-gray-600 mb-8">
+              15+ colores disponibles con referencias Pantone para garantizar la precisión del color.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
-              {colors.map((color) => (
-                <div key={color.code} className="text-center">
-                  <div className="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-gray-200" style={{
-                    backgroundColor: color.code.includes('black') || color.code.includes('209') ? '#000' :
-                                   color.code.includes('silver') || color.code.includes('11s') ? '#C0C0C0' :
-                                   color.code.includes('206') ? '#0047AB' :
-                                   color.code.includes('230') ? '#87CEEB' :
-                                   color.code.includes('217') ? '#00A86B' :
-                                   color.code.includes('se28') ? '#39FF14' :
-                                   color.code.includes('203') ? '#FF0000' :
-                                   color.code.includes('sc16') ? '#FF1493' :
-                                   color.code.includes('202') ? '#FF6600' :
-                                   color.code.includes('sc17') ? '#FFD700' :
-                                   color.code.includes('83s') ? '#FFFF00' :
-                                   '#FFFFFF'
-                  }}></div>
-                  <div className="text-sm font-semibold">{color.name}</div>
-                  <div className="text-xs text-gray-500">{color.pantone}</div>
-                </div>
-              ))}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <img
+                src="/gorro-colores-chart-1.webp"
+                alt="Carta de colores de gorros de gamuza - 15+ colores con códigos Pantone"
+                className="w-full h-auto rounded-lg"
+              />
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Tacto suave premium con amplia gama de colores. Referencias Pantone para precisión exacta.
+              </p>
             </div>
           </div>
         </section>

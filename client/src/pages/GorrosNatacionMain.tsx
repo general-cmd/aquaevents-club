@@ -40,9 +40,17 @@ export default function GorrosNatacionMain() {
       name: "Gorros Pelo Largo",
       slug: "pelo-largo",
       price: "desde €6.20",
-      image: "/gorro-pelo-largo-rosa-personalizado.jpg",
+      image: "/gorro-pelo-largo-azul-hero.webp",
       description: "Diseñados específicamente para nadadores con cabello largo. Mayor capacidad y comodidad.",
       features: ["Diseño especial", "Mayor capacidad", "Ajuste cómodo", "10+ colores"],
+    },
+    {
+      name: "Gorros de Tela",
+      slug: "tela",
+      price: "desde €2.10",
+      image: "/gorro-lycra-hero.jpg",
+      description: "Poliéster y lycra para escuelas y uso recreativo. Cómodos, ligeros y económicos.",
+      features: ["Ideal niños", "Máxima comodidad", "Escuelas natación", "Varios colores"],
     },
   ];
 

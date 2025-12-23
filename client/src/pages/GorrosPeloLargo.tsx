@@ -232,31 +232,20 @@ export default function GorrosPeloLargo() {
         {/* Color Options */}
         <section className="py-16 bg-gray-50">
           <div className="container max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Opciones de Color</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">Opciones de Color</h2>
             <p className="text-center text-gray-600 mb-8">
-              Disponible en 10 colores populares. ¡Tenemos la gama de colores MÁS GRANDE de Europa!
+              Disponible en 10+ colores populares. ¡Tenemos la gama de colores MÁS GRANDE de Europa!
             </p>
-            <div className="grid grid-cols-5 md:grid-cols-10 gap-4">
-              {[
-                { name: "Negro", color: "#000000" },
-                { name: "Plata", color: "#C0C0C0" },
-                { name: "Morado", color: "#9B59B6" },
-                { name: "Azul Royal", color: "#0074D9" },
-                { name: "Azul Cielo", color: "#87CEEB" },
-                { name: "Verde Neón", color: "#39FF14" },
-                { name: "Rojo", color: "#FF4136" },
-                { name: "Rosa Neón", color: "#FF10F0" },
-                { name: "Amarillo", color: "#FFDC00" },
-                { name: "Blanco", color: "#FFFFFF" },
-              ].map((color) => (
-                <div key={color.name} className="text-center">
-                  <div
-                    className="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-gray-300"
-                    style={{ backgroundColor: color.color }}
-                  />
-                  <div className="text-xs text-gray-600">{color.name}</div>
-                </div>
-              ))}
+
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <img
+                src="/euroswimcaps-silicone-colors-official.webp"
+                alt="Carta de colores de gorros para pelo largo - 10+ colores con códigos Pantone"
+                className="w-full h-auto rounded-lg"
+              />
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Diseño especial para pelo largo disponible en múltiples colores con referencias Pantone.
+              </p>
             </div>
           </div>
         </section>

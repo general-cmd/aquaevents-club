@@ -194,36 +194,23 @@ export default function GorrosLatex() {
           </div>
         </section>
 
-        {/* Color Options */}
+        {/* Color Options Section */}
         <section className="py-16 bg-gray-50">
           <div className="container max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Opciones de Color</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">Opciones de Color</h2>
             <p className="text-center text-gray-600 mb-8">
               Disponible en una amplia gama de colores brillantes. ¡Tenemos la gama de colores MÁS GRANDE de Europa!
             </p>
-            <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
-              {[
-                { name: "Negro", color: "#000000" },
-                { name: "Blanco", color: "#FFFFFF" },
-                { name: "Azul Marino", color: "#001F3F" },
-                { name: "Azul Real", color: "#0074D9" },
-                { name: "Azul Cielo", color: "#7FDBFF" },
-                { name: "Verde", color: "#2ECC40" },
-                { name: "Amarillo", color: "#FFDC00" },
-                { name: "Naranja", color: "#FF851B" },
-                { name: "Rojo", color: "#FF4136" },
-                { name: "Rosa", color: "#F012BE" },
-                { name: "Morado", color: "#B10DC9" },
-                { name: "Plata", color: "#DDDDDD" },
-              ].map((color) => (
-                <div key={color.name} className="text-center">
-                  <div
-                    className="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-gray-300"
-                    style={{ backgroundColor: color.color }}
-                  />
-                  <div className="text-xs text-gray-600">{color.name}</div>
-                </div>
-              ))}
+
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <img
+                src="/gorro-colores-chart-latex.webp"
+                alt="Carta de colores de gorros de látex - 20+ colores disponibles"
+                className="w-full h-auto rounded-lg"
+              />
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Amplia gama de colores brillantes para eventos y promociones.
+              </p>
             </div>
           </div>
         </section>

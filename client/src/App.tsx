@@ -25,6 +25,7 @@ import GorrosSilicona from "./pages/GorrosSilicona";
 import GorrosGamuza from "./pages/GorrosGamuza";
 import GorrosLatex from "./pages/GorrosLatex";
 import GorrosPeloLargo from "./pages/GorrosPeloLargo";
+import GorrosTela from "./pages/GorrosTela";
 import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
 import BlogGuiaClub from "./pages/BlogGuiaClub";
 import WidgetCalendar from "./pages/WidgetCalendar";
@@ -66,6 +67,7 @@ function Router() {
       <Route path="/gorros-natacion/gamuza" component={GorrosGamuza} />
       <Route path="/gorros-natacion/latex" component={GorrosLatex} />
       <Route path="/gorros-natacion/pelo-largo" component={GorrosPeloLargo} />
+      <Route path="/gorros-natacion/tela" component={GorrosTela} />
       <Route path="/widget/calendar" component={WidgetCalendar} />
       <Route path="/widget/builder" component={WidgetBuilder} />
       <Route path="/widget/demo" component={WidgetDemo} />

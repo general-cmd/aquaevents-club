@@ -219,23 +219,21 @@ export default function GorrosSilicona() {
 
         {/* Color Options */}
         <section className="py-16">
-          <div className="container">
+          <div className="container max-w-4xl">
             <h2 className="text-3xl font-bold text-center mb-4">Opciones de Color</h2>
-            <p className="text-center text-gray-600 mb-12">
+            <p className="text-center text-gray-600 mb-8">
               Tenemos la GAMA DE COLORES MÁS AMPLIA de Europa para gorros de natación. Más de 30 colores disponibles con referencias Pantone.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {colors.map((color, idx) => (
-                <Card key={idx} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-full h-24 rounded-lg mb-3 bg-gradient-to-br from-blue-400 to-blue-600"></div>
-                    <p className="font-semibold text-sm">{color.name}</p>
-                    <p className="text-xs text-gray-500">{color.code}</p>
-                    <p className="text-xs text-gray-400">Pantone {color.pantone}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <img
+                src="/euroswimcaps-silicone-colors-official.webp"
+                alt="Carta de colores oficial de gorros de silicona - 30+ colores con códigos Pantone"
+                className="w-full h-auto rounded-lg"
+              />
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Todos los colores incluyen referencias Pantone para garantizar la precisión exacta del color.
+              </p>
             </div>
           </div>
         </section>
