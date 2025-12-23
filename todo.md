@@ -1686,3 +1686,12 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Test calculator on all 5 material pages (tested on latex, working correctly)
 - [x] Test color displays show actual colors visually (confirmed on latex page)
 - [x] Save checkpoint and deliver to user (commit 296d5a0 created)
+
+
+## Calculator Pricing Fix & Material Selector (Dec 23, 2025)
+- [x] Fix calculator pricing logic - removed incorrect quantity premiums on low quantities
+- [x] Ensure base prices are shown correctly (base prices now match product pages for 100 units)
+- [x] Add material selector dropdown to calculator (silicona, latex, gamuza, pelo-largo, tela)
+- [x] Update pricing calculation to use selected material's price structure
+- [x] Test calculator shows correct prices for all materials and quantities (tested: latex 50 units = €2.10/unit ✅)
+- [x] Save checkpoint and push to GitHub for Railway deployment (in progress)

@@ -13,51 +13,48 @@ interface BulkOrderCalculatorProps {
 
 const QUANTITY_PRESETS = [50, 100, 250, 500, 1000, 1500];
 
-// Material-specific base pricing (per unit for 250 units, 1 color)
-const MATERIAL_PRICING: Record<string, { base: number, colors: Record<number, number> }> = {
+// Material-specific base pricing (per unit for 100 units, prices from product pages)
+const MATERIAL_PRICING: Record<string, { base: number, colors: Record<number, number>, label: string }> = {
   "silicona": {
-    base: 4.95,
-    colors: { 1: 4.95, 2: 5.95, 3: 7.50, 4: 8.50, 5: 9.50, 6: 10.50 }
+    base: 4.45,
+    colors: { 1: 4.45, 2: 5.95, 3: 7.50 },
+    label: "Gorros de Silicona"
   },
   "latex": {
     base: 2.10,
-    colors: { 1: 2.10, 2: 2.60, 3: 3.10, 4: 3.60, 5: 4.10, 6: 4.60 }
+    colors: { 1: 2.10 },
+    label: "Gorros de Látex"
   },
   "gamuza": {
     base: 5.95,
-    colors: { 1: 5.95, 2: 6.95, 3: 8.50, 4: 9.50, 5: 10.50, 6: 11.50 }
+    colors: { 1: 5.95, 2: 7.55, 3: 9.25 },
+    label: "Gorros de Gamuza"
   },
   "pelo-largo": {
-    base: 5.95,
-    colors: { 1: 5.95, 2: 6.95, 3: 8.50, 4: 9.50, 5: 10.50, 6: 11.50 }
+    base: 6.20,
+    colors: { 1: 6.20, 2: 7.55, 3: 9.25 },
+    label: "Gorros para Pelo Largo"
   },
   "tela-polyester": {
     base: 2.10,
-    colors: { 1: 2.10, 2: 2.60, 3: 3.10, 4: 3.60, 5: 4.10, 6: 4.60 }
+    colors: { 1: 2.10, 2: 2.60, 3: 3.10 },
+    label: "Gorros de Tela/Polyester"
   },
   "tela-lycra": {
     base: 2.10,
-    colors: { 1: 2.10, 2: 2.60, 3: 3.10, 4: 3.60, 5: 4.10, 6: 4.60 }
+    colors: { 1: 2.10, 2: 2.60, 3: 3.10 },
+    label: "Gorros de Lycra"
   }
 };
 
-// Quantity-based discounts
-const QUANTITY_MULTIPLIERS: Record<number, number> = {
-  50: 1.20,    // +20% for small orders
-  100: 1.10,   // +10% for 100
-  250: 1.00,   // Base price
-  500: 0.90,   // -10% discount
-  1000: 0.80,  // -20% discount
-  1500: 0.70   // -30% discount
-};
-
+// Quantity-based discounts (base prices are for 100 units)
 function getQuantityMultiplier(quantity: number): number {
-  if (quantity >= 1500) return 0.70;
-  if (quantity >= 1000) return 0.80;
-  if (quantity >= 500) return 0.90;
-  if (quantity >= 250) return 1.00;
-  if (quantity >= 100) return 1.10;
-  return 1.20;
+  // Base price is for 100 units, discounts for larger orders
+  if (quantity >= 1500) return 0.70;  // -30% discount
+  if (quantity >= 1000) return 0.80;  // -20% discount
+  if (quantity >= 500) return 0.90;   // -10% discount
+  if (quantity >= 250) return 0.95;   // -5% discount
+  return 1.00;  // Base price (50-249 units)
 }
 
 function isPromoCodeValid(): boolean {
@@ -70,12 +67,13 @@ function isPromoCodeValid(): boolean {
 }
 
 export default function BulkOrderCalculator({ capType, capTypeLabel }: BulkOrderCalculatorProps) {
+  const [selectedMaterial, setSelectedMaterial] = useState(capType);
   const [colorCount, setColorCount] = useState(1);
   const [quantity, setQuantity] = useState(250);
   const [promoCode, setPromoCode] = useState("");
   const [promoApplied, setPromoApplied] = useState(false);
 
-  const pricing = MATERIAL_PRICING[capType] || MATERIAL_PRICING["silicona"];
+  const pricing = MATERIAL_PRICING[selectedMaterial] || MATERIAL_PRICING["silicona"];
   const basePrice = pricing.colors[colorCount] || pricing.base;
   const quantityMultiplier = getQuantityMultiplier(quantity);
   const pricePerUnit = basePrice * quantityMultiplier;
@@ -117,7 +115,29 @@ export default function BulkOrderCalculator({ capType, capTypeLabel }: BulkOrder
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Material Selector */}
+          <div className="space-y-2">
+            <Label htmlFor="material" className="text-base font-semibold">
+              Tipo de Gorro
+            </Label>
+            <Select
+              value={selectedMaterial}
+              onValueChange={(value) => setSelectedMaterial(value)}
+            >
+              <SelectTrigger id="material" className="h-12 text-lg">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="silicona">Gorros de Silicona</SelectItem>
+                <SelectItem value="latex">Gorros de Látex</SelectItem>
+                <SelectItem value="gamuza">Gorros de Gamuza</SelectItem>
+                <SelectItem value="pelo-largo">Gorros para Pelo Largo</SelectItem>
+                <SelectItem value="tela-polyester">Gorros de Tela/Polyester</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
           {/* Color Count Selector */}
           <div className="space-y-2">
             <Label htmlFor="colorCount" className="text-base font-semibold">
