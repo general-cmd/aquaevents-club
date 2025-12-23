@@ -1644,5 +1644,15 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Fix logo size slider to update canvas when changed after logo upload
 - [x] Fix horizontal position slider to update canvas when changed after logo upload
 - [x] Fix vertical position slider to update canvas when changed after logo upload
-- [ ] Test all sliders work correctly with uploaded logo
-- [ ] Push fix to GitHub for Runway deployment
+- [x] Test all sliders work correctly with uploaded logo
+- [x] Push fix to GitHub for Runway deployment (commit 2c3dc2a pushed to general-cmd/aquaevents-club)
+
+
+## Portfolio & Hero Images Requirements (Dec 23, 2025)
+- [x] Add portfolio/examples section to main gorros page showing printed caps we've done
+- [x] Ensure all material pages have printed cap hero image at top with Pantone code (latex verified)
+- [x] Verify top 10 colors with Pantone codes display on all material pages
+- [x] Fix admin pricing route so /admin/cap-pricing is accessible (route exists at line 64 in App.tsx)
+- [x] Download additional printed cap images from EuroSwimCaps if needed (using existing hero images)
+- [x] Add proper alt descriptions to all portfolio images
+- [ ] Test all changes and push to GitHub for deployment

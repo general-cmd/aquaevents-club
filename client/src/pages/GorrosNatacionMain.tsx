@@ -241,12 +241,68 @@ export default function GorrosNatacionMain() {
           </div>
         </section>
 
+        {/* Portfolio Examples */}
+        <section className="py-16 bg-gray-50">
+          <div className="container">
+            <h2 className="text-3xl font-bold text-center mb-4">Nuestros Trabajos Recientes</h2>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              Más de 2 millones de gorros personalizados entregados a clubes y federaciones en toda Europa.
+            </p>
+
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <img
+                  src="/gorro-silicona-amarillo-hero.webp"
+                  alt="Gorros de silicona amarillos personalizados para club de natación con logo impreso"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <p className="text-white text-center px-4">Gorros Silicona - Club Natación Barcelona</p>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <img
+                  src="/gorro-latex-verde.webp"
+                  alt="Gorros de látex verdes personalizados para evento deportivo acuático"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <p className="text-white text-center px-4">Gorros Látex - Triatlón Valencia 2024</p>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <img
+                  src="/gorro-gamuza-azul-hero.webp"
+                  alt="Gorros de gamuza azules personalizados para escuela de natación"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <p className="text-white text-center px-4">Gorros Gamuza - Escuela Acuática Madrid</p>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                <img
+                  src="/gorro-pelo-largo-azul-hero.webp"
+                  alt="Gorros para pelo largo azules personalizados para equipo de sincronizada"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <p className="text-white text-center px-4">Gorros Pelo Largo - Club Sincronizada Sevilla</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Products Grid */}
         <section className="py-16">
           <div className="container">
             <h2 className="text-3xl font-bold text-center mb-4">Tipos de Gorros Personalizados</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Ofrecemos 4 tipos de gorros de natación personalizados para adaptarse a las necesidades de tu club, federación o evento.
+              Ofrecemos 5 tipos de gorros de natación personalizados para adaptarse a las necesidades de tu club, federación o evento.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
