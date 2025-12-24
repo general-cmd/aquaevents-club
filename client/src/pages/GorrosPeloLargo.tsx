@@ -57,6 +57,96 @@ export default function GorrosPeloLargo() {
           })}
         </script>
 
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué diferencia hay entre gorros normales y gorros para pelo largo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Los gorros para pelo largo tienen un diseño especial con espacio extra en el interior para acomodar cabello largo sin enganches ni molestias. Tienen una forma más amplia y profunda que los gorros estándar, permitiendo recoger el pelo cómodamente sin comprimir excesivamente."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el pedido mínimo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El pedido mínimo es de 50 unidades. Ofrecemos descuentos significativos para pedidos de 250, 500, 1000 y 1500+ unidades."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué hace especial el diseño para pelo largo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El diseño incluye espacio extra en el interior para acomodar cabello largo sin enganches ni molestias, forma más amplia y profunda, interior suave que no tira del pelo, y fácil de poner y quitar sin dañar el cabello."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Son aptos para competición?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, los gorros para pelo largo cumplen con las normativas FINA y son ideales para nadadores competitivos con cabello largo. Muchas nadadoras profesionales los utilizan en competiciones oficiales."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Son hipoalergénicos?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, están fabricados en silicona 100% hipoalergénica que no contiene látex. Son ideales para personas con alergias o piel sensible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo se pone correctamente un gorro para pelo largo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Recoge el pelo en una coleta o moño bajo, coloca el gorro desde la frente hacia atrás, asegúrate de que todo el pelo quede dentro, y ajusta el gorro para que quede cómodo sin apretar demasiado."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto duran estos gorros?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Con el cuidado adecuado, los gorros para pelo largo pueden durar entre 1 y 2 años de uso regular. La silicona de alta calidad es muy resistente al cloro y al desgaste."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo se limpian y mantienen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enjuaga con agua fría después de cada uso, sécalo con una toalla y déjalo secar al aire. No lo expongas al sol directo ni uses secadora. Evita objetos punzantes y guárdalo en un lugar fresco y seco."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuántos colores de impresión puedo elegir?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Puedes elegir entre 1, 2 o 3 colores de impresión. Precios para 100 unidades: €6.20 (1 color), €7.55 (2 colores), €9.25 (3 colores)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el tiempo de entrega?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido y aprobación del diseño. Ofrecemos envío gratuito en Europa."
+                }
+              }
+            ]
+          })}
+        </script>
+
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -321,16 +411,44 @@ export default function GorrosPeloLargo() {
             <h2 className="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               <Card>
+                <CardHeader><CardTitle className="text-lg">¿Qué diferencia hay entre gorros normales y gorros para pelo largo?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Los gorros para pelo largo tienen un diseño especial con espacio extra en el interior para acomodar cabello largo sin enganches ni molestias. Tienen una forma más amplia y profunda que los gorros estándar, permitiendo recoger el pelo cómodamente sin comprimir excesivamente.</p></CardContent>
+              </Card>
+              <Card>
                 <CardHeader><CardTitle className="text-lg">¿Cuál es el pedido mínimo?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">50 unidades. Descuentos significativos para 250, 500, 1000+ unidades.</p></CardContent>
+                <CardContent><p className="text-gray-600">El pedido mínimo es de 50 unidades. Ofrecemos descuentos significativos para pedidos de 250, 500, 1000 y 1500+ unidades.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Qué hace especial el diseño para pelo largo?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Espacio extra en el interior para acomodar cabello largo sin enganches ni molestias.</p></CardContent>
+                <CardContent><p className="text-gray-600">El diseño incluye espacio extra en el interior para acomodar cabello largo sin enganches ni molestias, forma más amplia y profunda, interior suave que no tira del pelo, y fácil de poner y quitar sin dañar el cabello.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Son aptos para competición?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Sí, cumplen normativas FINA. Ideales para nadadores competitivos con cabello largo.</p></CardContent>
+                <CardContent><p className="text-gray-600">Sí, los gorros para pelo largo cumplen con las normativas FINA y son ideales para nadadores competitivos con cabello largo. Muchas nadadoras profesionales los utilizan en competiciones oficiales.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Son hipoalergénicos?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Sí, están fabricados en silicona 100% hipoalergénica que no contiene látex. Son ideales para personas con alergias o piel sensible.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cómo se pone correctamente un gorro para pelo largo?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Recoge el pelo en una coleta o moño bajo, coloca el gorro desde la frente hacia atrás, asegúrate de que todo el pelo quede dentro, y ajusta el gorro para que quede cómodo sin apretar demasiado.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuánto duran estos gorros?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Con el cuidado adecuado, los gorros para pelo largo pueden durar entre 1 y 2 años de uso regular. La silicona de alta calidad es muy resistente al cloro y al desgaste.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cómo se limpian y mantienen?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Enjuaga con agua fría después de cada uso, sécalo con una toalla y déjalo secar al aire. No lo expongas al sol directo ni uses secadora. Evita objetos punzantes y guárdalo en un lugar fresco y seco.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuántos colores de impresión puedo elegir?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Puedes elegir entre 1, 2 o 3 colores de impresión. Precios para 100 unidades: €6.20 (1 color), €7.55 (2 colores), €9.25 (3 colores).</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuál es el tiempo de entrega?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido y aprobación del diseño. Ofrecemos envío gratuito en Europa.</p></CardContent>
               </Card>
             </div>
           </div>

@@ -54,14 +54,17 @@ export default function AdminBulkEdit() {
         const desc = e.description;
         // No description field at all
         if (!desc) return true;
-        // String description (legacy format)
-        if (typeof desc === 'string') return desc.trim().length === 0;
-        // Object description - check if ALL languages are missing or empty
+        // String description (legacy format) - check if empty or too short (< 100 chars)
+        if (typeof desc === 'string') {
+          const trimmed = desc.trim();
+          return trimmed.length === 0 || trimmed.length < 100;
+        }
+        // Object description - check if ALL languages are missing/empty or too short
         const languages = ['es', 'en', 'ca', 'eu', 'gl', 'va'];
-        const hasAnyDescription = languages.some(lang => 
-          desc[lang] && typeof desc[lang] === 'string' && desc[lang].trim().length > 0
+        const hasFullDescription = languages.some(lang => 
+          desc[lang] && typeof desc[lang] === 'string' && desc[lang].trim().length >= 100
         );
-        return !hasAnyDescription;
+        return !hasFullDescription;
       });
     }
     

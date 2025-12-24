@@ -1747,3 +1747,28 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Identify why events not loading (missing onError handler in frontend, errors silently swallowed)
 - [x] Fix import issue (added error handling + created corrected CSV file)
 - [ ] Push fix to GitHub and test with corrected CSV
+
+
+## Bulk Edit Filter Bug (Dec 24, 2025) - RESOLVED
+- [x] Investigate why "Sin Descripción" filter shows 0 events (17 new events imported without descriptions)
+- [x] Investigate why "Sin Datos SEO" filter shows 0 events (17 new events imported without SEO metadata)
+- [x] Check event data structure from CSV import (description field format)
+- [x] Confirmed: CSV had short descriptions (1 sentence each), bulk import auto-generates AI descriptions
+- [x] Issue: Filter checks for empty descriptions, but CSV imports have short 1-sentence descriptions
+- [x] Fix: Changed filter to detect descriptions < 100 characters (needs AI enhancement)
+- [x] Test filters work correctly after fix
+- [ ] Push fix to GitHub
+
+## Swimming Caps SEO Enhancement (Dec 24, 2025)
+- [x] Add Schema.org Product markup to /gorros-natacion/silicona page (already exists)
+- [x] Add Schema.org Product markup to /gorros-natacion/latex page (already exists)
+- [x] Add Schema.org Product markup to /gorros-natacion/gamuza page (already exists)
+- [x] Add Schema.org Product markup to /gorros-natacion/pelo-largo page (already exists)
+- [x] Add Schema.org Product markup to /gorros-natacion/tela page (already exists)
+- [x] Create FAQ section (10 questions) on silicona page with Schema.org FAQPage
+- [x] Create FAQ section (10 questions) on latex page with Schema.org FAQPage
+- [x] Create FAQ section (10 questions) on gamuza page with Schema.org FAQPage
+- [x] Create FAQ section (10 questions) on pelo-largo page with Schema.org FAQPage
+- [x] Create FAQ section (10 questions) on tela page with Schema.org FAQPage
+- [ ] Test rich snippets with Google Rich Results Test
+- [ ] Save checkpoint and push to GitHub for Railway deployment

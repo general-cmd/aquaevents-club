@@ -103,6 +103,96 @@ export default function GorrosSilicona() {
           })}
         </script>
 
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cuál es la diferencia entre gorros de silicona y látex?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Los gorros de silicona son más duraderos, hipoalergénicos y cómodos que los de látex. La silicona es más gruesa (50GMS), no causa alergias, mantiene mejor la forma y dura hasta 3 veces más. Los gorros de látex son más económicos pero menos resistentes al cloro y pueden causar reacciones alérgicas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el pedido mínimo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El pedido mínimo es de 50 unidades. Ofrecemos descuentos progresivos para pedidos de 250, 500, 1000 y más unidades."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuántos colores puedo imprimir?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Puedes elegir entre 1, 2 o 3 colores de impresión. Precios para 100 unidades: €4.45 (1 color), €5.95 (2 colores), €7.50 (3 colores). Disponemos de más de 30 colores de gorro base."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Son aptos para competición?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, nuestros gorros de silicona cumplen con las normativas FINA y son ideales para competiciones oficiales. Son utilizados por clubes profesionales y nadadores de élite."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto duran los gorros de silicona?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Con el cuidado adecuado, los gorros de silicona pueden durar entre 1 y 2 años de uso regular. Son mucho más resistentes al cloro y al desgaste que los gorros de látex o tela."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Son hipoalergénicos?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, la silicona es 100% hipoalergénica y no contiene látex. Es ideal para personas con alergias o piel sensible. No causa irritación ni reacciones alérgicas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo se limpian y mantienen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enjuaga el gorro con agua fría después de cada uso, sécalo con una toalla y déjalo secar al aire. No lo expongas al sol directo ni uses secadora. Evita objetos punzantes y guárdalo en un lugar fresco y seco."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué grosor tienen los gorros?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nuestros gorros de silicona tienen un grosor de 50GMS (gramos por metro cuadrado), que es el estándar profesional. Este grosor garantiza durabilidad, elasticidad y comodidad óptimas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el tiempo de entrega?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido y aprobación del diseño. Ofrecemos envío gratuito a toda España."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo ver una muestra antes de hacer el pedido completo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, ofrecemos muestras físicas para pedidos grandes. También proporcionamos mockups digitales gratuitos para que puedas visualizar el diseño final antes de la producción."
+                }
+              }
+            ]
+          })}
+        </script>
+
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -415,16 +505,44 @@ export default function GorrosSilicona() {
             <h2 className="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuál es la diferencia entre gorros de silicona y látex?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Los gorros de silicona son más duraderos, hipoalergénicos y cómodos que los de látex. La silicona es más gruesa (50GMS), no causa alergias, mantiene mejor la forma y dura hasta 3 veces más. Los gorros de látex son más económicos pero menos resistentes al cloro y pueden causar reacciones alérgicas.</p></CardContent>
+              </Card>
+              <Card>
                 <CardHeader><CardTitle className="text-lg">¿Cuál es el pedido mínimo?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">50 unidades. Descuentos para 250, 500, 1000+ unidades.</p></CardContent>
+                <CardContent><p className="text-gray-600">El pedido mínimo es de 50 unidades. Ofrecemos descuentos progresivos para pedidos de 250, 500, 1000 y más unidades.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Cuántos colores puedo imprimir?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">1, 2 o 3 colores. Precios: €4.45 (1 color), €5.95 (2 colores), €7.50 (3 colores) para 100 unidades.</p></CardContent>
+                <CardContent><p className="text-gray-600">Puedes elegir entre 1, 2 o 3 colores de impresión. Precios para 100 unidades: €4.45 (1 color), €5.95 (2 colores), €7.50 (3 colores). Disponemos de más de 30 colores de gorro base.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Son aptos para competición?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Sí, cumplen normativas FINA. Ideales para competiciones.</p></CardContent>
+                <CardContent><p className="text-gray-600">Sí, nuestros gorros de silicona cumplen con las normativas FINA y son ideales para competiciones oficiales. Son utilizados por clubes profesionales y nadadores de élite.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuánto duran los gorros de silicona?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Con el cuidado adecuado, los gorros de silicona pueden durar entre 1 y 2 años de uso regular. Son mucho más resistentes al cloro y al desgaste que los gorros de látex o tela.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Son hipoalergénicos?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Sí, la silicona es 100% hipoalergénica y no contiene látex. Es ideal para personas con alergias o piel sensible. No causa irritación ni reacciones alérgicas.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cómo se limpian y mantienen?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Enjuaga el gorro con agua fría después de cada uso, sécalo con una toalla y déjalo secar al aire. No lo expongas al sol directo ni uses secadora. Evita objetos punzantes y guárdalo en un lugar fresco y seco.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Qué grosor tienen los gorros?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Nuestros gorros de silicona tienen un grosor de 50GMS (gramos por metro cuadrado), que es el estándar profesional. Este grosor garantiza durabilidad, elasticidad y comodidad óptimas.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuál es el tiempo de entrega?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido y aprobación del diseño. Ofrecemos envío gratuito a toda España.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Puedo ver una muestra antes de hacer el pedido completo?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Sí, ofrecemos muestras físicas para pedidos grandes. También proporcionamos mockups digitales gratuitos para que puedas visualizar el diseño final antes de la producción.</p></CardContent>
               </Card>
             </div>
           </div>

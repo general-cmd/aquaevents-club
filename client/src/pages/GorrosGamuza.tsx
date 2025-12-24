@@ -70,6 +70,96 @@ export default function GorrosGamuza() {
           })}
         </script>
 
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué son los gorros de gamuza?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Los gorros de gamuza (suede) son gorros de silicona con un tratamiento especial de superficie que proporciona un tacto suave premium y acabado sin arrugas. Son 100% hipoalergénicos, no contienen látex y ofrecen mayor comodidad que los gorros de silicona estándar."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es la diferencia entre gorros de gamuza y silicona?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Los gorros de gamuza tienen una superficie especial con acabado suave (suede finish) que los hace más cómodos y sin arrugas. Los gorros de silicona estándar tienen superficie lisa. Ambos son duraderos e hipoalergénicos, pero la gamuza ofrece una experiencia premium. Precio: €4.99 (gamuza) vs €4.45 (silicona estándar)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el pedido mínimo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El pedido mínimo es de 50 unidades. Ofrecemos descuentos progresivos para pedidos de 250, 500, 1000 y más unidades."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Los gorros de gamuza son aptos para personas con alergia al látex?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, los gorros de gamuza son 100% hipoalergénicos y no contienen látex. Son perfectos para nadadores con sensibilidad al látex o piel sensible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué hace especial el acabado gamuza?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El tratamiento especial de superficie proporciona un tacto suave premium similar a la gamuza, acabado sin arrugas, mayor comodidad al ponerse y quitarse, y una apariencia elegante y profesional."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Son aptos para competiciones oficiales?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, los gorros de gamuza cumplen con las normativas FINA y son ideales para competiciones oficiales. Muchos nadadores profesionales los prefieren por su comodidad superior."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto duran los gorros de gamuza?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Con el cuidado adecuado, los gorros de gamuza pueden durar entre 1 y 2 años de uso regular, similar a los gorros de silicona estándar. Son muy resistentes al cloro y al desgaste."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo se limpian y mantienen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enjuaga con agua fría después de cada uso, sécalo con una toalla suave y déjalo secar al aire. No uses productos químicos agresivos. El acabado gamuza mantiene su suavidad con el cuidado adecuado."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuántos colores de impresión puedo elegir?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Puedes elegir entre 1, 2 o 3 colores de impresión. Precios para 100 unidades: €4.99 (1 color), €6.40 (2 colores), €7.99 (3 colores). Disponemos de 12 colores de gorro base."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el tiempo de entrega?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido y aprobación del diseño. Ofrecemos envío gratuito a toda España."
+                }
+              }
+            ]
+          })}
+        </script>
+
         {/* Breadcrumb Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -337,16 +427,44 @@ export default function GorrosGamuza() {
             <h2 className="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               <Card>
+                <CardHeader><CardTitle className="text-lg">¿Qué son los gorros de gamuza?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Los gorros de gamuza (suede) son gorros de silicona con un tratamiento especial de superficie que proporciona un tacto suave premium y acabado sin arrugas. Son 100% hipoalergénicos, no contienen látex y ofrecen mayor comodidad que los gorros de silicona estándar.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuál es la diferencia entre gorros de gamuza y silicona?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Los gorros de gamuza tienen una superficie especial con acabado suave (suede finish) que los hace más cómodos y sin arrugas. Los gorros de silicona estándar tienen superficie lisa. Ambos son duraderos e hipoalergénicos, pero la gamuza ofrece una experiencia premium. Precio: €4.99 (gamuza) vs €4.45 (silicona estándar).</p></CardContent>
+              </Card>
+              <Card>
                 <CardHeader><CardTitle className="text-lg">¿Cuál es el pedido mínimo?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">50 unidades. Descuentos para 250, 500, 1000+ unidades.</p></CardContent>
+                <CardContent><p className="text-gray-600">El pedido mínimo es de 50 unidades. Ofrecemos descuentos progresivos para pedidos de 250, 500, 1000 y más unidades.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Los gorros de gamuza son aptos para personas con alergia al látex?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Sí, son 100% hipoalergénicos y perfectos para nadadores con sensibilidad al látex.</p></CardContent>
+                <CardContent><p className="text-gray-600">Sí, los gorros de gamuza son 100% hipoalergénicos y no contienen látex. Son perfectos para nadadores con sensibilidad al látex o piel sensible.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Qué hace especial el acabado gamuza?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Tratamiento especial de superficie que proporciona tacto suave premium y acabado sin arrugas.</p></CardContent>
+                <CardContent><p className="text-gray-600">El tratamiento especial de superficie proporciona un tacto suave premium similar a la gamuza, acabado sin arrugas, mayor comodidad al ponerse y quitarse, y una apariencia elegante y profesional.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Son aptos para competiciones oficiales?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Sí, los gorros de gamuza cumplen con las normativas FINA y son ideales para competiciones oficiales. Muchos nadadores profesionales los prefieren por su comodidad superior.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuánto duran los gorros de gamuza?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Con el cuidado adecuado, los gorros de gamuza pueden durar entre 1 y 2 años de uso regular, similar a los gorros de silicona estándar. Son muy resistentes al cloro y al desgaste.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cómo se limpian y mantienen?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Enjuaga con agua fría después de cada uso, sécalo con una toalla suave y déjalo secar al aire. No uses productos químicos agresivos. El acabado gamuza mantiene su suavidad con el cuidado adecuado.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuántos colores de impresión puedo elegir?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Puedes elegir entre 1, 2 o 3 colores de impresión. Precios para 100 unidades: €4.99 (1 color), €6.40 (2 colores), €7.99 (3 colores). Disponemos de 12 colores de gorro base.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuál es el tiempo de entrega?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido y aprobación del diseño. Ofrecemos envío gratuito a toda España.</p></CardContent>
               </Card>
             </div>
           </div>

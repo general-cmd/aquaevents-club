@@ -57,6 +57,96 @@ export default function GorrosTela() {
           })}
         </script>
 
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué son los gorros de tela?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Los gorros de tela son gorros de natación fabricados en poliéster o lycra, materiales textiles suaves y cómodos. Son ideales para uso recreativo, escuelas de natación, niños y merchandising. No son impermeables como la silicona, pero ofrecen máxima comodidad y son 100% hipoalergénicos."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es la diferencia entre poliéster y lycra?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Poliéster (€2.10) es más económico y ligero, ideal para eventos y merchandising. Lycra (€3.50) ofrece mayor elasticidad, ajuste ergonómico, es personalizable en ambos lados y proporciona mejor adaptación a la cabeza."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el pedido mínimo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El pedido mínimo es de 50 unidades. Ofrecemos descuentos significativos para pedidos de 250, 500, 1000 y más unidades."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Son aptos para competición?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, estos gorros están diseñados para uso recreativo, escuelas de natación y merchandising. No son impermeables y no cumplen con los requisitos de competición. Para competición recomendamos gorros de silicona."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Son hipoalergénicos?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, ambos materiales (poliéster y lycra) son 100% hipoalergénicos, no contienen látex y son seguros para pieles sensibles y niños."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Son impermeables?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, los gorros de tela no son impermeables. Absorben agua y no mantienen el pelo completamente seco. Su principal función es proteger el pelo del cloro, mantenerlo recogido y proporcionar comodidad."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Para quién son ideales los gorros de tela?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Son perfectos para niños (más cómodos que silicona), escuelas de natación (identificación de grupos), uso recreativo (máxima comodidad), merchandising y regalos (económicos y personalizables), y personas con sensibilidad a la presión de gorros de silicona."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo se limpian y mantienen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Enjuaga con agua fría después de cada uso, lava a mano con jabón suave si es necesario, déjalo secar al aire (no uses secadora), y guárdalo en un lugar seco. No uses blanqueadores ni productos químicos agresivos."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto duran los gorros de tela?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Con el cuidado adecuado, los gorros de tela pueden durar entre 6 meses y 1 año de uso regular. Son menos duraderos que los de silicona, pero su precio económico los hace ideales para reemplazo frecuente."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuál es el tiempo de entrega?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido y aprobación del diseño. Ofrecemos envío gratuito a toda España."
+                }
+              }
+            ]
+          })}
+        </script>
+
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -345,20 +435,44 @@ export default function GorrosTela() {
             <h2 className="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               <Card>
-                <CardHeader><CardTitle className="text-lg">¿Cuál es el pedido mínimo?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">50 unidades. Descuentos significativos para 250, 500, 1000+ unidades.</p></CardContent>
+                <CardHeader><CardTitle className="text-lg">¿Qué son los gorros de tela?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Los gorros de tela son gorros de natación fabricados en poliéster o lycra, materiales textiles suaves y cómodos. Son ideales para uso recreativo, escuelas de natación, niños y merchandising. No son impermeables como la silicona, pero ofrecen máxima comodidad y son 100% hipoalergénicos.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Cuál es la diferencia entre poliéster y lycra?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Poliéster (€2.10) es más económico y ligero, ideal para eventos y merchandising. Lycra (€3.50) ofrece mayor elasticidad, ajuste ergonómico y es personalizable en ambos lados.</p></CardContent>
+                <CardContent><p className="text-gray-600">Poliéster (€2.10) es más económico y ligero, ideal para eventos y merchandising. Lycra (€3.50) ofrece mayor elasticidad, ajuste ergonómico, es personalizable en ambos lados y proporciona mejor adaptación a la cabeza.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuál es el pedido mínimo?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">El pedido mínimo es de 50 unidades. Ofrecemos descuentos significativos para pedidos de 250, 500, 1000 y más unidades.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Son aptos para competición?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">No, estos gorros están diseñados para uso recreativo, escuelas de natación y merchandising. Para competición recomendamos gorros de silicona.</p></CardContent>
+                <CardContent><p className="text-gray-600">No, estos gorros están diseñados para uso recreativo, escuelas de natación y merchandising. No son impermeables y no cumplen con los requisitos de competición. Para competición recomendamos gorros de silicona.</p></CardContent>
               </Card>
               <Card>
                 <CardHeader><CardTitle className="text-lg">¿Son hipoalergénicos?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Sí, ambos materiales (poliéster y lycra) son 100% hipoalergénicos y seguros para pieles sensibles.</p></CardContent>
+                <CardContent><p className="text-gray-600">Sí, ambos materiales (poliéster y lycra) son 100% hipoalergénicos, no contienen látex y son seguros para pieles sensibles y niños.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Son impermeables?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">No, los gorros de tela no son impermeables. Absorben agua y no mantienen el pelo completamente seco. Su principal función es proteger el pelo del cloro, mantenerlo recogido y proporcionar comodidad.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Para quién son ideales los gorros de tela?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Son perfectos para niños (más cómodos que silicona), escuelas de natación (identificación de grupos), uso recreativo (máxima comodidad), merchandising y regalos (económicos y personalizables), y personas con sensibilidad a la presión de gorros de silicona.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cómo se limpian y mantienen?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Enjuaga con agua fría después de cada uso, lava a mano con jabón suave si es necesario, déjalo secar al aire (no uses secadora), y guárdalo en un lugar seco. No uses blanqueadores ni productos químicos agresivos.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuánto duran los gorros de tela?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">Con el cuidado adecuado, los gorros de tela pueden durar entre 6 meses y 1 año de uso regular. Son menos duraderos que los de silicona, pero su precio económico los hace ideales para reemplazo frecuente.</p></CardContent>
+              </Card>
+              <Card>
+                <CardHeader><CardTitle className="text-lg">¿Cuál es el tiempo de entrega?</CardTitle></CardHeader>
+                <CardContent><p className="text-gray-600">El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido y aprobación del diseño. Ofrecemos envío gratuito a toda España.</p></CardContent>
               </Card>
             </div>
           </div>
