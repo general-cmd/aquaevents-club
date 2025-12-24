@@ -9,6 +9,7 @@ import CapTestimonials from "@/components/CapTestimonials";
 import DesignPreviewTool from "@/components/DesignPreviewTool";
 import { useTranslation } from "react-i18next";
 import HrefLangTags from "@/components/HrefLangTags";
+import FAQSchema from "@/components/FAQSchema";
 
 /**
  * Latex Swimming Caps Product Page
@@ -30,6 +31,7 @@ export default function GorrosLatex() {
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion/latex" />
       </Helmet>
       <HrefLangTags basePath="/gorros-natacion/latex" />
+      <FAQSchema faqs={translations.faqs || []} />
       <Helmet>
         
         {/* Open Graph */}
@@ -62,96 +64,6 @@ export default function GorrosLatex() {
                 "name": "AquaEvents.club"
               }
             }
-          })}
-        </script>
-
-        {/* FAQPage Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "¿Cuál es la diferencia entre gorros de látex y silicona?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Los gorros de látex son más económicos (€2.10 vs €4.45) y más finos, ideales para eventos únicos y regalos promocionales. Los gorros de silicona son más duraderos, hipoalergénicos y cómodos para uso regular. El látex es menos resistente al cloro y puede causar alergias en algunas personas."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cuál es el pedido mínimo?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "El pedido mínimo es de 100 unidades. Ofrecemos descuentos significativos para pedidos de 250, 500, 1000 y 1500+ unidades."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Los gorros de látex son aptos para personas con alergia?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No, los gorros de látex contienen látex natural que puede causar reacciones alérgicas. Para personas con alergia al látex, recomendamos gorros de silicona (100% hipoalergénicos) o gamuza."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cuánto duran los gorros de látex?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Los gorros de látex son ideales para eventos únicos o uso ocasional. No son tan duraderos como los de silicona (duran 3-6 meses vs 1-2 años), pero son muy económicos y perfectos para regalos promocionales."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Son aptos para competiciones oficiales?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Sí, los gorros de látex cumplen con las normativas FINA y pueden usarse en competiciones oficiales. Sin embargo, muchos nadadores prefieren silicona para competiciones por su mayor durabilidad y comodidad."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué grosor tienen los gorros de látex?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Los gorros de látex tienen un grosor de aproximadamente 0.3-0.4mm, mucho más finos que los de silicona (50GMS). Esto los hace más ligeros y económicos, pero menos duraderos."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cómo se cuidan los gorros de látex?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Enjuaga con agua fría después de cada uso y sécalo completamente antes de guardarlo. Evita el contacto con aceites, cremas y objetos punzantes. Guárdalo en un lugar fresco y seco, lejos de la luz solar directa."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cuántos colores de impresión puedo elegir?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Puedes elegir 1 color de impresión. El precio base de €2.10 incluye impresión en 1 color. Para múltiples colores, consulta nuestras opciones de gorros de silicona."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cuál es el tiempo de entrega?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido. Ofrecemos envío gratuito en Europa."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Para qué tipo de eventos son ideales los gorros de látex?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Los gorros de látex son perfectos para eventos únicos como triatlón, travesías, campeonatos, regalos corporativos y promociones. Su precio económico los hace ideales cuando necesitas muchas unidades para un evento puntual."
-                }
-              }
-            ]
           })}
         </script>
 
@@ -379,53 +291,21 @@ export default function GorrosLatex() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16">
-          <div className="container max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Cuál es la diferencia entre gorros de látex y silicona?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Los gorros de látex son más económicos (€2.10 vs €4.45) y más finos, ideales para eventos únicos y regalos promocionales. Los gorros de silicona son más duraderos, hipoalergénicos y cómodos para uso regular. El látex es menos resistente al cloro y puede causar alergias en algunas personas.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Cuál es el pedido mínimo?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">El pedido mínimo es de 100 unidades. Ofrecemos descuentos significativos para pedidos de 250, 500, 1000 y 1500+ unidades.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Los gorros de látex son aptos para personas con alergia?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">No, los gorros de látex contienen látex natural que puede causar reacciones alérgicas. Para personas con alergia al látex, recomendamos gorros de silicona (100% hipoalergénicos) o gamuza.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Cuánto duran los gorros de látex?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Los gorros de látex son ideales para eventos únicos o uso ocasional. No son tan duraderos como los de silicona (duran 3-6 meses vs 1-2 años), pero son muy económicos y perfectos para regalos promocionales.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Son aptos para competiciones oficiales?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Sí, los gorros de látex cumplen con las normativas FINA y pueden usarse en competiciones oficiales. Sin embargo, muchos nadadores prefieren silicona para competiciones por su mayor durabilidad y comodidad.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Qué grosor tienen los gorros de látex?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Los gorros de látex tienen un grosor de aproximadamente 0.3-0.4mm, mucho más finos que los de silicona (50GMS). Esto los hace más ligeros y económicos, pero menos duraderos.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Cómo se cuidan los gorros de látex?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Enjuaga con agua fría después de cada uso y sécalo completamente antes de guardarlo. Evita el contacto con aceites, cremas y objetos punzantes. Guárdalo en un lugar fresco y seco, lejos de la luz solar directa.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Cuántos colores de impresión puedo elegir?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Puedes elegir 1 color de impresión. El precio base de €2.10 incluye impresión en 1 color. Para múltiples colores, consulta nuestras opciones de gorros de silicona.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Cuál es el tiempo de entrega?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido. Ofrecemos envío gratuito en Europa.</p></CardContent>
-              </Card>
-              <Card>
-                <CardHeader><CardTitle className="text-lg">¿Para qué tipo de eventos son ideales los gorros de látex?</CardTitle></CardHeader>
-                <CardContent><p className="text-gray-600">Los gorros de látex son perfectos para eventos únicos como triatlón, travesías, campeonatos, regalos corporativos y promociones. Su precio económico los hace ideales cuando necesitas muchas unidades para un evento puntual.</p></CardContent>
-              </Card>
+        {translations.faqs && translations.faqs.length > 0 && (
+          <section className="py-16">
+            <div className="container max-w-4xl">
+              <h2 className="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+              <div className="space-y-6">
+                {translations.faqs.map((faq: any, index: number) => (
+                  <Card key={index}>
+                    <CardHeader><CardTitle className="text-lg">{faq.question}</CardTitle></CardHeader>
+                    <CardContent><p className="text-gray-600">{faq.answer}</p></CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Quote Form */}
         <section id="presupuesto" className="py-16 bg-gradient-to-b from-white to-green-50">
