@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://aquaevents.club/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Gorros Natacion Main Page - Multilingual -->
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion?lang=ca"/>
+    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion?lang=va"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion?lang=eu"/>
+    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion?lang=gl"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Gorros Silicona - Multilingual -->
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/silicona</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/silicona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/silicona?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/silicona?lang=ca"/>
+    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/silicona?lang=va"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/silicona?lang=eu"/>
+    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/silicona?lang=gl"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Gorros Latex - Multilingual -->
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/latex</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/latex"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/latex?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/latex?lang=ca"/>
+    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/latex?lang=va"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/latex?lang=eu"/>
+    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/latex?lang=gl"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Gorros Gamuza - Multilingual -->
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/gamuza</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/gamuza"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/gamuza?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/gamuza?lang=ca"/>
+    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/gamuza?lang=va"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/gamuza?lang=eu"/>
+    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/gamuza?lang=gl"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Gorros Pelo Largo - Multilingual -->
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/pelo-largo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/pelo-largo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=ca"/>
+    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=va"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=eu"/>
+    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=gl"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Gorros Tela - Multilingual -->
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/tela</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/tela"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/tela?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/tela?lang=ca"/>
+    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/tela?lang=va"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/tela?lang=eu"/>
+    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/tela?lang=gl"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Events Page -->
+  <url>
+    <loc>https://aquaevents.club/eventos</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog Page -->
+  <url>
+    <loc>https://aquaevents.club/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>

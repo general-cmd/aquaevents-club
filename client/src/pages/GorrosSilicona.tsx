@@ -7,12 +7,18 @@ import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 import CapTestimonials from "@/components/CapTestimonials";
 import DesignPreviewTool from "@/components/DesignPreviewTool";
 import { CheckCircle2, Truck, Clock, Shield, Palette } from "lucide-react";
+import { useGorrosTranslation } from "@/hooks/useGorrosTranslation";
+import { gorrosSiliconaTranslations } from "@/translations/gorrosSilicona";
+import HrefLangTags from "@/components/HrefLangTags";
 
 /**
  * Silicone Swimming Caps Product Page
  * Mirrors EuroSwimCaps.com structure with accurate pricing
  */
 export default function GorrosSilicona() {
+  const { lang } = useGorrosTranslation();
+  const t = gorrosSiliconaTranslations[lang];
+
   const colors = [
     { name: "Azul Oscuro", code: "F208", pantone: "276c" },
     { name: "Azul Marino", code: "S132H", pantone: "654c" },
@@ -48,12 +54,15 @@ export default function GorrosSilicona() {
   return (
     <>
       <Helmet>
-        <title>Gorros de Silicona Personalizados | Desde €4.45 | Envío Gratis España</title>
+        <title>{t.pageTitle}</title>
         <meta
           name="description"
-          content="Gorros de silicona personalizados para clubes. €4.45 (1 color), €5.95 (2 colores), €7.50 (3 colores) por 100 unidades. 50GMS grosor. 30+ colores. Envío gratis. 3 semanas entrega."
+          content={t.metaDescription}
         />
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion/silicona" />
+      </Helmet>
+      <HrefLangTags basePath="/gorros-natacion/silicona" />
+      <Helmet>
         
         {/* Product Schema */}
         <script type="application/ld+json">
@@ -227,24 +236,24 @@ export default function GorrosSilicona() {
         <section className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-16">
           <div className="container grid md:grid-cols-2 gap-8 items-center">
             <nav className="text-sm mb-6 opacity-90">
-              <Link href="/" className="hover:underline">INICIO</Link>
+              <Link href="/" className="hover:underline">{t.breadcrumbHome}</Link>
               <span className="mx-2">•</span>
-              <Link href="/gorros-natacion" className="hover:underline">GORROS DE NATACIÓN</Link>
+              <Link href="/gorros-natacion" className="hover:underline">{t.breadcrumbCaps}</Link>
               <span className="mx-2">•</span>
-              <span>GORROS DE SILICONA</span>
+              <span>{t.breadcrumbSilicone}</span>
             </nav>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
-              GORROS DE SILICONA PERSONALIZADOS
+              {t.heroHeading}
             </h1>
             <p className="text-xl mb-8 max-w-3xl">
-              Somos uno de los proveedores líderes, más antiguos y de mayor confianza de Europa de gorros de natación totalmente personalizados e impresos, además de una amplia gama de otros productos y servicios.
+              {t.heroP1}
             </p>
             <p className="text-lg mb-8 max-w-3xl">
-              Nos especializamos en gorros de natación y somos expertos en esta área técnica y especializada de impresión. Ideales para usuarios diarios, con mucho más desgaste garantizado.
+              {t.heroP2}
             </p>
             <p className="text-lg mb-8 max-w-3xl">
-              Este gorro de silicona es adecuado para adultos y niños ya que es de talla única, la forma y el ajuste moldeados están diseñados para proporcionar <strong>máxima comodidad</strong> junto con <strong>máximo rendimiento</strong>.
+              {t.heroP3}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
@@ -258,7 +267,7 @@ export default function GorrosSilicona() {
                   }
                 }}
               >
-                Solicitar Presupuesto
+                {t.ctaButton}
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Link href="/gorros-natacion">
