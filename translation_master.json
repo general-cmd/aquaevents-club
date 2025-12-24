@@ -1,0 +1,298 @@
+{
+  "gorros": {
+    "silicona": {
+      "hero": {
+        "pageTitle": "Custom Silicone Swimming Caps | From €4.45 | AquaEvents.club",
+        "metaDescription": "Custom silicone swimming caps for clubs from €4.45. Premium 50GMS thickness, 100% hypoallergenic. Free shipping in Spain. 30+ colors available.",
+        "heroHeading": "CUSTOM SILICONE SWIMMING CAPS",
+        "heroP1": "We are one of Europe's leading, longest-established, and most trusted suppliers of fully custom and printed swimming caps, alongside a wide range of other products and services.",
+        "heroP2": "We specialize exclusively in swimming caps and are experts in this technical and specialized area of printing. Our caps are ideal for daily users, guaranteed to withstand much more wear and tear.",
+        "heroP3": "This one-size silicone cap is suitable for both adults and children. The molded shape and fit are engineered to provide maximum comfort alongside peak performance.",
+        "ctaButton": "REQUEST A QUOTE",
+        "breadcrumbHome": "HOME",
+        "breadcrumbCaps": "SWIMMING CAPS",
+        "breadcrumbSilicone": "SILICONE CAPS",
+        "viewAllCaps": "View All Caps"
+      },
+      "faqs": [
+        {
+          "question": "What is the difference between silicone and latex caps?",
+          "answer": "Silicone caps are more durable (1-2 years vs 3-6 months), hypoallergenic, and comfortable for regular use. Latex caps are cheaper (€2.10 vs €4.45) and thinner, ideal for one-time events. Silicone is chlorine-resistant and doesn't cause allergies."
+        },
+        {
+          "question": "What is the minimum order?",
+          "answer": "The minimum order is 50 units. We offer significant discounts for orders of 100, 250, 500, 1000 and 1500+ units."
+        },
+        {
+          "question": "Are silicone caps suitable for people with allergies?",
+          "answer": "Yes, silicone caps are 100% hypoallergenic and latex-free. They are perfect for people with latex sensitivity or allergies."
+        },
+        {
+          "question": "How long do silicone caps last?",
+          "answer": "With proper care, silicone caps last 1-2 years with regular use. They are much more durable than latex caps (3-6 months) and resistant to chlorine and UV rays."
+        },
+        {
+          "question": "Are they suitable for official competitions?",
+          "answer": "Yes, our silicone caps comply with FINA regulations and can be used in official competitions. Many professional swimmers prefer silicone for its durability and comfort."
+        },
+        {
+          "question": "What thickness do silicone caps have?",
+          "answer": "Our silicone caps have a premium thickness of 50GMS (grams per square meter), providing the perfect balance between durability, comfort, and performance."
+        },
+        {
+          "question": "How are silicone caps cared for?",
+          "answer": "Rinse with cold water after each use and dry completely before storing. Avoid contact with sharp objects and store in a cool, dry place away from direct sunlight."
+        },
+        {
+          "question": "How many print colors can I choose?",
+          "answer": "You can choose 1, 2, 3, 4, 5, or 6 print colors. The base price of €4.45 includes 1-color printing. Each additional color adds €0.60 per unit."
+        },
+        {
+          "question": "What is the delivery time?",
+          "answer": "Production and delivery time is approximately 3 weeks from order confirmation. We offer free shipping throughout Europe."
+        },
+        {
+          "question": "Can I see a design proof before production?",
+          "answer": "Yes, we will send you a digital proof for approval before starting production. You can request changes until you are completely satisfied with the design."
+        }
+      ]
+    },
+    "latex": {
+      "hero": {
+        "pageTitle": "Custom Latex Swimming Caps | From €3.95 | AquaEvents.club",
+        "metaDescription": "Custom latex swimming caps for clubs from €3.95. Economical and flexible. Free shipping Spain.",
+        "heroHeading": "CUSTOM LATEX SWIMMING CAPS",
+        "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. Latex caps are ideal for one-time events and promotional gifts.",
+        "heroP2": "Latex caps are made from a thin layer of latex, commonly used for one-time events or promotional giveaways.",
+        "ctaButton": "REQUEST A QUOTE",
+        "breadcrumbHome": "HOME",
+        "breadcrumbCaps": "SWIMMING CAPS",
+        "breadcrumbLatex": "LATEX CAPS",
+        "viewAllCaps": "View All Caps"
+      },
+      "faqs": [
+        {
+          "question": "What is the difference between latex and silicone caps?",
+          "answer": "Latex caps are cheaper (€2.10 vs €4.45) and thinner, ideal for one-time events and promotional gifts. Silicone caps are more durable, hypoallergenic, and comfortable for regular use. Latex is less chlorine-resistant and can cause allergies in some people."
+        },
+        {
+          "question": "What is the minimum order?",
+          "answer": "The minimum order is 100 units. We offer significant discounts for orders of 250, 500, 1000 and 1500+ units."
+        },
+        {
+          "question": "Are latex caps suitable for people with allergies?",
+          "answer": "No, latex caps contain natural latex that can cause allergic reactions. For people with latex allergies, we recommend silicone caps (100% hypoallergenic) or lycra."
+        },
+        {
+          "question": "How long do latex caps last?",
+          "answer": "Latex caps are ideal for one-time events or occasional use. They are not as durable as silicone caps (last 3-6 months vs 1-2 years), but are very economical and perfect for promotional gifts."
+        },
+        {
+          "question": "Are they suitable for official competitions?",
+          "answer": "Yes, latex caps comply with FINA regulations and can be used in official competitions. However, many swimmers prefer silicone for competitions due to its greater durability and comfort."
+        },
+        {
+          "question": "What thickness do latex caps have?",
+          "answer": "Latex caps have a thickness of approximately 0.3-0.4mm, much thinner than silicone caps (50GMS). This makes them lighter and more economical, but less durable."
+        },
+        {
+          "question": "How are latex caps cared for?",
+          "answer": "Rinse with cold water after each use and dry completely before storing. Avoid contact with oils, creams, and sharp objects. Store in a cool, dry place away from direct sunlight."
+        },
+        {
+          "question": "How many print colors can I choose?",
+          "answer": "You can choose 1 print color. The base price of €2.10 includes 1-color printing. For multiple colors, check our silicone cap options."
+        },
+        {
+          "question": "What is the delivery time?",
+          "answer": "Production and delivery time is approximately 3 weeks from order confirmation. We offer free shipping throughout Europe."
+        },
+        {
+          "question": "What type of events are latex caps ideal for?",
+          "answer": "Latex caps are perfect for one-time events such as triathlons, open water swims, championships, corporate gifts, and promotions. Their economical price makes them ideal when you need many units for a specific event."
+        }
+      ]
+    },
+    "gamuza": {
+      "hero": {
+        "pageTitle": "Custom Lycra Swimming Caps | From €5.95 | AquaEvents.club",
+        "metaDescription": "Custom lycra swimming caps for clubs from €5.95. Soft and comfortable. Free shipping Spain.",
+        "heroHeading": "CUSTOM LYCRA SWIMMING CAPS",
+        "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. Lycra caps offer exceptional softness and comfort.",
+        "heroP2": "Lycra caps are made with soft synthetic lycra material, ideal for swimmers seeking maximum comfort.",
+        "ctaButton": "REQUEST A QUOTE",
+        "breadcrumbHome": "HOME",
+        "breadcrumbCaps": "SWIMMING CAPS",
+        "breadcrumbGamuza": "LYCRA CAPS",
+        "viewAllCaps": "View All Caps"
+      },
+      "faqs": [
+        {
+          "question": "What is the difference between lycra and silicone caps?",
+          "answer": "Lycra caps are softer and more comfortable (€5.95), ideal for sensitive skin and long training sessions. Silicone caps are more durable and water-resistant (€4.45), better for competitions. Lycra is breathable and doesn't pull hair."
+        },
+        {
+          "question": "What is the minimum order?",
+          "answer": "The minimum order is 50 units. We offer significant discounts for orders of 100, 250, 500, 1000 and 1500+ units."
+        },
+        {
+          "question": "Are lycra caps suitable for people with allergies?",
+          "answer": "Yes, lycra caps are hypoallergenic and latex-free. They are perfect for people with latex sensitivity or sensitive skin."
+        },
+        {
+          "question": "How long do lycra caps last?",
+          "answer": "With proper care, lycra caps last 6-12 months with regular use. They are less durable than silicone but much more comfortable for long sessions."
+        },
+        {
+          "question": "Are they suitable for official competitions?",
+          "answer": "Lycra caps are more commonly used for training and recreational swimming. For competitions, we recommend silicone caps for their better hydrodynamics and durability."
+        },
+        {
+          "question": "What material are lycra caps made of?",
+          "answer": "Our lycra caps are made with a blend of polyester and elastane (lycra), providing softness, elasticity, and breathability."
+        },
+        {
+          "question": "How are lycra caps cared for?",
+          "answer": "Hand wash with cold water and mild soap after each use. Air dry away from direct sunlight. Do not machine wash or tumble dry."
+        },
+        {
+          "question": "How many print colors can I choose?",
+          "answer": "You can choose full-color sublimation printing with unlimited colors. The price of €5.95 includes full-color printing."
+        },
+        {
+          "question": "What is the delivery time?",
+          "answer": "Production and delivery time is approximately 3 weeks from order confirmation. We offer free shipping throughout Spain."
+        },
+        {
+          "question": "Are lycra caps suitable for children?",
+          "answer": "Yes, lycra caps are ideal for children due to their softness and ease of putting on. They don't pull hair and are very comfortable for swimming lessons."
+        }
+      ]
+    },
+    "peloLargo": {
+      "hero": {
+        "pageTitle": "Custom Long Hair Swimming Caps | From €6.45 | AquaEvents.club",
+        "metaDescription": "Custom long hair swimming caps from €6.45. Special design with extra space. Free shipping.",
+        "heroHeading": "CUSTOM LONG HAIR SWIMMING CAPS",
+        "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. Long hair caps feature a special design with extra space.",
+        "heroP2": "Long hair caps are designed with an extra pouch at the back to comfortably accommodate long hair.",
+        "ctaButton": "REQUEST A QUOTE",
+        "breadcrumbHome": "HOME",
+        "breadcrumbCaps": "SWIMMING CAPS",
+        "breadcrumbLongHair": "LONG HAIR CAPS",
+        "viewAllCaps": "View All Caps"
+      },
+      "faqs": [
+        {
+          "question": "What is the difference between long hair caps and regular caps?",
+          "answer": "Long hair caps have an extra pouch at the back (€6.45) to comfortably accommodate long hair without pulling or tangling. Regular silicone caps (€4.45) are designed for short hair or tucked-in hair."
+        },
+        {
+          "question": "What is the minimum order?",
+          "answer": "The minimum order is 50 units. We offer significant discounts for orders of 100, 250, 500, 1000 and 1500+ units."
+        },
+        {
+          "question": "Are long hair caps suitable for people with allergies?",
+          "answer": "Yes, our long hair caps are made of 100% hypoallergenic silicone and are latex-free. Perfect for people with latex sensitivity."
+        },
+        {
+          "question": "How long do long hair caps last?",
+          "answer": "With proper care, long hair silicone caps last 1-2 years with regular use. They are as durable as regular silicone caps and resistant to chlorine."
+        },
+        {
+          "question": "Are they suitable for official competitions?",
+          "answer": "Yes, long hair caps comply with FINA regulations and can be used in official competitions. Many professional swimmers with long hair use this type of cap."
+        },
+        {
+          "question": "What thickness do long hair caps have?",
+          "answer": "Our long hair caps have the same premium thickness as regular silicone caps (50GMS), with extra space at the back for hair."
+        },
+        {
+          "question": "How are long hair caps cared for?",
+          "answer": "Rinse with cold water after each use and dry completely before storing. Avoid contact with sharp objects and store in a cool, dry place."
+        },
+        {
+          "question": "How many print colors can I choose?",
+          "answer": "You can choose 1, 2, 3, 4, 5, or 6 print colors. The base price of €6.45 includes 1-color printing. Each additional color adds €0.60 per unit."
+        },
+        {
+          "question": "What is the delivery time?",
+          "answer": "Production and delivery time is approximately 3 weeks from order confirmation. We offer free shipping throughout Europe."
+        },
+        {
+          "question": "How much hair can fit in a long hair cap?",
+          "answer": "Long hair caps can comfortably accommodate hair up to waist length. The extra pouch provides enough space to avoid pulling or discomfort."
+        }
+      ]
+    },
+    "tela": {
+      "hero": {
+        "pageTitle": "Custom Fabric Swimming Caps | From €4.95 | AquaEvents.club",
+        "metaDescription": "Custom fabric/lycra swimming caps from €4.95. Comfortable for training. Free shipping Spain.",
+        "heroHeading": "CUSTOM FABRIC SWIMMING CAPS",
+        "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. Fabric/lycra caps are ideal for training and daily use.",
+        "heroP2": "Fabric caps are made from breathable polyester/lycra, perfect for long training sessions and recreational use.",
+        "ctaButton": "REQUEST A QUOTE",
+        "breadcrumbHome": "HOME",
+        "breadcrumbCaps": "SWIMMING CAPS",
+        "breadcrumbFabric": "FABRIC CAPS",
+        "viewAllCaps": "View All Caps"
+      },
+      "faqs": [
+        {
+          "question": "What is the difference between fabric and silicone caps?",
+          "answer": "Fabric caps are more comfortable and breathable (€4.95), ideal for training and recreational use. Silicone caps are more water-resistant and durable (€4.45), better for competitions. Fabric doesn't pull hair and is easier to put on."
+        },
+        {
+          "question": "What is the minimum order?",
+          "answer": "The minimum order is 50 units. We offer significant discounts for orders of 100, 250, 500, 1000 and 1500+ units."
+        },
+        {
+          "question": "Are fabric caps suitable for people with allergies?",
+          "answer": "Yes, fabric caps are hypoallergenic and latex-free. They are perfect for people with latex sensitivity or sensitive skin."
+        },
+        {
+          "question": "How long do fabric caps last?",
+          "answer": "With proper care, fabric caps last 6-12 months with regular use. They are less durable than silicone but much more comfortable for long sessions."
+        },
+        {
+          "question": "Are they suitable for official competitions?",
+          "answer": "Fabric caps are more commonly used for training and recreational swimming. For competitions, we recommend silicone caps for their better hydrodynamics and water resistance."
+        },
+        {
+          "question": "What material are fabric caps made of?",
+          "answer": "Our fabric caps are made with a blend of polyester and lycra/elastane, providing softness, elasticity, and breathability."
+        },
+        {
+          "question": "How are fabric caps cared for?",
+          "answer": "Hand wash with cold water and mild soap after each use. Air dry away from direct sunlight. Do not machine wash or tumble dry."
+        },
+        {
+          "question": "How many print colors can I choose?",
+          "answer": "You can choose full-color sublimation printing with unlimited colors. The price of €4.95 includes full-color printing."
+        },
+        {
+          "question": "What is the delivery time?",
+          "answer": "Production and delivery time is approximately 3 weeks from order confirmation. We offer free shipping throughout Spain."
+        },
+        {
+          "question": "Are fabric caps suitable for children and swimming schools?",
+          "answer": "Yes, fabric caps are ideal for children and swimming schools due to their softness, ease of putting on, and economical price for bulk orders."
+        }
+      ]
+    },
+    "main": {
+      "hero": {
+        "pageTitle": "Custom Swimming Caps | From €4.45 | AquaEvents.club",
+        "metaDescription": "Custom swimming caps for clubs. Silicone, latex, lycra, long hair and fabric. From €4.45. Free shipping.",
+        "heroHeading": "CUSTOM SWIMMING CAPS",
+        "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. We offer 5 types of caps for all needs.",
+        "heroP2": "With over 25 years of experience, we have supplied over 1 million caps to clubs, federations and events across Europe.",
+        "ctaButton": "REQUEST A QUOTE",
+        "breadcrumbHome": "HOME",
+        "breadcrumbCaps": "SWIMMING CAPS",
+        "viewAllCaps": "View All Caps"
+      }
+    }
+  }
+}

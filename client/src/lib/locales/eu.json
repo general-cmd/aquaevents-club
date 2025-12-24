@@ -327,17 +327,286 @@
   },
   "gorros": {
     "silicona": {
-      "pageTitle": "Silikona Txapelak Pertsonalizatuak | 4,45 €-tik | AquaEvents.club",
-      "metaDescription": "Silikona txapelak pertsonalizatuak klubentzat 4,45 €-tik. 50GMS premium, %100 hipoalergikoak. Bidalketa doakoa. +30 kolore eskuragarri.",
-      "heroHeading": "SILIKONA TXAPELAK PERTSONALIZATUAK",
-      "heroP1": "Europako hornitzaile nagusietako bat gara, zaharrenetako bat eta konfiantzazkoenetako bat, igeriketa txapel guztiz pertsonalizatuak eta inprimatuak eskaintzen ditugunak, beste produktu eta zerbitzu ugari eskaintzeaz gain.",
-      "heroP2": "Igeriketa txapeletan espezializatuta gaude eta inprimaketa eremu tekniko eta espezializatu honetan adituak gara. Eguneroko erabiltzaileentzat idealak, erabilera askoz gehiago bermatuta.",
-      "heroP3": "Silikona txapel hau helduak eta haurrak erabiltzeko egokia da, tamaina bakarra baita. Moldatutako forma eta doikuntza erosotasun maximoa eta errendimendu maximoa eskaintzeko diseinatuta daude.",
-      "ctaButton": "Aurrekontua Eskatu",
+      "pageTitle": "Silikonazko Igeriketa Txano Pertsonalizatuak | €4.45tik Aurrera | AquaEvents.club",
+      "metaDescription": "Silikonazko igeriketa txano pertsonalizatuak klubentzat €4.45etik aurrera. 50GMS lodiera premium, %100 hipoalergenikoa. Doako bidalketa Espainian. 30 kolore baino gehiago eskuragarri.",
+      "heroHeading": "SILIKONAZKO IGERIKETA TXANO PERTSONALIZATUAK",
+      "heroP1": "Europako hornitzaile nagusietako bat gara, esperientzia handienekoa eta fidagarrienetakoa, igeriketa txano guztiz pertsonalizatuak eta inprimatuak eskaintzen, beste produktu eta zerbitzu sorta zabal batekin batera.",
+      "heroP2": "Igeriketa txanoetan espezializatuta gaude soilik, eta inprimaketaren arlo tekniko eta espezializatu honetan adituak gara. Gure txanoak ezin hobeak dira egunero erabiltzen dituztenentzat, higadura askoz handiagoari aurre egiteko bermearekin.",
+      "heroP3": "Tamaina bakarreko silikonazko txano hau helduentzat zein haurrentzat egokia da. Moldeatutako forma eta doikuntza errendimendu gorenarekin batera erosotasun maximoa eskaintzeko diseinatuta daude.",
+      "ctaButton": "AURREKONTUA ESKATU",
       "breadcrumbHome": "HASIERA",
-      "breadcrumbCaps": "IGERIKETA TXAPELAK",
-      "breadcrumbSilicone": "SILIKONA TXAPELAK",
-      "viewAllCaps": "Txapel Guztiak Ikusi"
+      "breadcrumbCaps": "IGERIKETA TXANOAK",
+      "breadcrumbSilicone": "SILIKONAZKO TXANOAK",
+      "viewAllCaps": "Txano guztiak ikusi",
+      "faqs": [
+        {
+          "question": "Zein da silikonazko eta latexezko txanoen arteko aldea?",
+          "answer": "Silikonazko txanoak iraunkorragoak dira (urte 1-2, 3-6 hilabeteren aldean), hipoalergenikoak eta erosoak erabilera erregularrerako. Latexezko txanoak merkeagoak dira (€2.10, €4.45en aldean) eta meheagoak, epe bakarreko ekitaldietarako aproposak. Silikona kloroarekiko erresistentea da eta ez du alergiarik sortzen."
+        },
+        {
+          "question": "Zein da gutxieneko eskaera?",
+          "answer": "Gutxieneko eskaera 50 unitatekoa da. Deskontu garrantzitsuak eskaintzen ditugu 100, 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
+        },
+        {
+          "question": "Silikonazko txanoak egokiak al dira alergia duten pertsonentzat?",
+          "answer": "Bai, silikonazko txanoak %100 hipoalergenikoak dira eta ez dute latexik. Latexarekiko sentikortasuna edo alergiak dituzten pertsonentzat ezin hobeak dira."
+        },
+        {
+          "question": "Zenbat irauten dute silikonazko txanoek?",
+          "answer": "Zaintza egokiarekin, silikonazko txanoek 1-2 urte irauten dute erabilera erregularrarekin. Latexezko txanoak baino askoz iraunkorragoak dira (3-6 hilabete) eta kloroarekiko eta UV izpiekiko erresistenteak."
+        },
+        {
+          "question": "Lehiaketa ofizialetarako egokiak al dira?",
+          "answer": "Bai, gure silikonazko txanoek FINA araudia betetzen dute eta lehiaketa ofizialetan erabil daitezke. Igerilari profesional askok silikona nahiago dute, iraunkortasunagatik eta erosotasunagatik."
+        },
+        {
+          "question": "Zein lodiera dute silikonazko txanoek?",
+          "answer": "Gure silikonazko txanoek 50GMS-ko (gramo metro karratuko) lodiera premium dute, iraunkortasunaren, erosotasunaren eta errendimenduaren arteko oreka ezin hobea eskainiz."
+        },
+        {
+          "question": "Nola zaindu behar dira silikonazko txanoak?",
+          "answer": "Erabili ondoren ur hotzarekin garbitu eta guztiz lehortu gorde aurretik. Saihestu objektu zorrotzekin kontaktua eta gorde leku fresko eta lehor batean, eguzki-argitik urrun."
+        },
+        {
+          "question": "Zenbat inprimaketa kolore aukera ditzaket?",
+          "answer": "1, 2, 3, 4, 5 edo 6 inprimaketa kolore aukera ditzakezu. €4.45eko oinarrizko prezioak kolore 1eko inprimaketa barne hartzen du. Kolore gehigarri bakoitzak €0.60 gehitzen du unitateko."
+        },
+        {
+          "question": "Zein da entrega-epea?",
+          "answer": "Ekoizpen eta entrega-epea gutxi gorabehera 3 astekoa da, eskaera baieztatzen denetik. Doako bidalketa eskaintzen dugu Europa osoan."
+        },
+        {
+          "question": "Diseinuaren froga bat ikus dezaket ekoizpenaren aurretik?",
+          "answer": "Bai, onarpen digitaleko froga bat bidaliko dizugu ekoizpena hasi aurretik. Aldaketak eska ditzakezu diseinuarekin guztiz konforme egon arte."
+        }
+      ]
+    },
+    "latex": {
+      "pageTitle": "Latexeko Igeriketa Txano Pertsonalizatuak | €3.95tik Aurrera | AquaEvents.club",
+      "metaDescription": "Latexezko igeriketa txano pertsonalizatuak klubentzat €3.95etik. Ekonomikoak eta malguak. Doako bidalketa Espainian.",
+      "heroHeading": "LATEXEKO IGERIKETA TXANO PERTSONALIZATUAK",
+      "heroP1": "Europako igeriketa txano pertsonalizatuen hornitzaile nagusietako bat gara. Latexeko txanoak aproposak dira ekitaldi puntualetarako eta promoziozko oparietarako.",
+      "heroP2": "Latexeko txanoak latex geruza mehe batez eginda daude, eta normalean ekitaldi puntualetarako edo promoziozko banaketetarako erabiltzen dira.",
+      "ctaButton": "AURREKONTUA ESKATU",
+      "breadcrumbHome": "HASIERA",
+      "breadcrumbCaps": "IGERIKETA TXANOAK",
+      "breadcrumbLatex": "LATEX TXANOAK",
+      "viewAllCaps": "Txano guztiak ikusi",
+      "faqs": [
+        {
+          "question": "Zein da latexeko eta silikonazko txanoen arteko aldea?",
+          "answer": "Latexeko txanoak merkeagoak dira (€2.10 vs €4.45) eta meheagoak, aproposak ekitaldi puntualetarako eta promoziozko oparietarako. Silikonazko txanoak iraunkorragoak, hypoallergenic eta erosoagoak dira ohiko erabilerarako. Latexa kloroarekiko erresistenteagoa da eta pertsona batzuei alergiak sor diezazkieke."
+        },
+        {
+          "question": "Zein da gutxieneko eskaera?",
+          "answer": "Gutxieneko eskaera 100 unitatekoa da. Deskontu garrantzitsuak eskaintzen ditugu 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
+        },
+        {
+          "question": "Latexeko txanoak egokiak al dira alergia duten pertsonentzat?",
+          "answer": "Ez, latexeko txanoek latex naturala dute, eta horrek erreakzio alergikoak sor ditzake. Latexarekiko alergia duten pertsonentzat, silikonazko txanoak (%100 hypoallergenic) edo likra gomendatzen ditugu."
+        },
+        {
+          "question": "Zenbat irauten dute latexeko txanoek?",
+          "answer": "Latexeko txanoak aproposak dira ekitaldi puntualetarako edo noizbehinkako erabilerarako. Ez dira silikonazko txanoak bezain iraunkorrak (3-6 hilabete irauten dute 1-2 urtekoaren aldean), baina oso ekonomikoak dira eta ezin hobeak promoziozko oparietarako."
+        },
+        {
+          "question": "Egokiak al dira lehiaketa ofizialetarako?",
+          "answer": "Bai, latexeko txanoek FINA araudia betetzen dute eta lehiaketa ofizialetan erabil daitezke. Hala ere, igerilari askok nahiago izaten dute silikona lehiaketetarako, iraunkortasun eta erosotasun handiagoa duelako."
+        },
+        {
+          "question": "Zer lodiera dute latexeko txanoek?",
+          "answer": "Latexeko txanoek gutxi gorabehera 0.3-0.4 mm-ko lodiera dute, silikonazko txanoak baino askoz meheagoa (50GMS). Horrek arinagoak eta ekonomikoagoak bihurtzen ditu, baina ez hain iraunkorrak."
+        },
+        {
+          "question": "Nola zaindu behar dira latexeko txanoak?",
+          "answer": "Erabili ondoren ur hotzarekin garbitu eta guztiz lehortu gorde aurretik. Saihestu olioekin, kremekin eta objektu zorrotzekin kontaktua. Gorde leku fresko eta lehor batean, eguzki-argitik urrun."
+        },
+        {
+          "question": "Zenbat inprimatze kolore aukeratu ditzaket?",
+          "answer": "Inprimatzeko kolore 1 aukeratu dezakezu. €2.10eko oinarrizko prezioak kolore 1eko inprimaketa barne hartzen du. Kolore anitzetarako, begiratu gure silikonazko txanoen aukerak."
+        },
+        {
+          "question": "Zein da entregatzeko epea?",
+          "answer": "Ekoizpen eta entregatzeko epea gutxi gorabehera 3 astekoa da eskaera berresten denetik. Doako bidalketa eskaintzen dugu Europa osoan."
+        },
+        {
+          "question": "Zer ekitaldi motatarako dira aproposak latexeko txanoak?",
+          "answer": "Latexeko txanoak ezin hobeak dira ekitaldi puntualetarako, hala nola triatloiak, ur irekietako igeriketak, txapelketak, enpresako opariak eta promozioak. Haien prezio ekonomikoak ezin hobeak bihurtzen ditu ekitaldi zehatz baterako unitate asko behar direnean."
+        }
+      ]
+    },
+    "gamuza": {
+      "pageTitle": "Lycra Igeriketa Txano Pertsonalizatuak | €5.95-tik Aurrera | AquaEvents.club",
+      "metaDescription": "Lycra igeriketa txano pertsonalizatuak klubentzat, €5.95-tik aurrera. Bigunak eta erosoak. Doako bidalketa Espainian.",
+      "heroHeading": "LYCRA IGERIKETA TXANO PERTSONALIZATUAK",
+      "heroP1": "Igeriketa txano pertsonalizatuen Europako hornitzaile nagusietako bat gara. Lycra txanoek leuntasun eta erosotasun paregabea eskaintzen dute.",
+      "heroP2": "Lycra txanoak lycra sintetiko material bigunarekin eginak daude, erosotasun handiena bilatzen duten igerilarientzat aproposa.",
+      "ctaButton": "AURREKONTUA ESKATU",
+      "breadcrumbHome": "HASIERA",
+      "breadcrumbCaps": "IGERIKETA TXANOAK",
+      "breadcrumbGamuza": "LYCRA TXANOAK",
+      "viewAllCaps": "Txano Guztiak Ikusi",
+      "faqs": [
+        {
+          "question": "Zein da lycra eta silikona txanoen arteko aldea?",
+          "answer": "Lycra txanoak bigunagoak eta erosoagoak dira (€5.95), larruazal sentikorretarako eta entrenamendu luzeetarako aproposak. Silikona txanoak iraunkorragoak eta urarekiko erresistenteagoak dira (€4.45), lehiaketetarako hobeak. Lycra transpiragarria da eta ez du ilea tiratzen."
+        },
+        {
+          "question": "Zein da gutxieneko eskaera?",
+          "answer": "Gutxieneko eskaera 50 unitatekoa da. Deskontu handiak eskaintzen ditugu 100, 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
+        },
+        {
+          "question": "Lycra txanoak egokiak al dira alergia duten pertsonentzat?",
+          "answer": "Bai, lycra txanoak hipoalergenikoak dira eta ez dute latexik. Latexarekiko sentikortasuna edo larruazal sentikorra duten pertsonentzat ezin hobeak dira."
+        },
+        {
+          "question": "Zenbat irauten dute lycra txanoek?",
+          "answer": "Zainketa egokiarekin, lycra txanoek 6-12 hilabete irauten dute ohiko erabilerarekin. Silikona baino iraunkortasun txikiagoa dute, baina askoz erosoagoak dira saio luzeetarako."
+        },
+        {
+          "question": "Egokiak al dira lehiaketa ofizialetarako?",
+          "answer": "Lycra txanoak entrenamenduetarako eta aisialdiko igeriketarako erabiltzen dira gehien. Lehiaketetarako, silikona txanoak gomendatzen ditugu, beren hidrodinamika eta iraunkortasun hobeagatik."
+        },
+        {
+          "question": "Zein materialez eginda daude lycra txanoak?",
+          "answer": "Gure lycra txanoak poliester eta elastano (lycra) nahasketa batekin eginda daude, leuntasuna, elastikotasuna eta transpiragarritasuna eskainiz."
+        },
+        {
+          "question": "Nola zaindu behar dira lycra txanoak?",
+          "answer": "Eskuarekin garbitu ur hotzarekin eta xaboi leunarekin erabili ondoren. Airean lehortu, eguzki-argitik urrun. Ez garbitu makinan edo lehorgailuan."
+        },
+        {
+          "question": "Zenbat inprimatze kolore aukera ditzaket?",
+          "answer": "Kolore osoko sublimazio inprimaketa aukera dezakezu, kolore mugagabeekin. €5.95-eko prezioak kolore osoko inprimaketa barne hartzen du."
+        },
+        {
+          "question": "Zein da entregatzeko epea?",
+          "answer": "Ekoizpen eta entrega epea gutxi gorabehera 3 astekoa da eskaera berretsi zenetik. Doako bidalketa eskaintzen dugu Espainia osoan."
+        },
+        {
+          "question": "Lycra txanoak egokiak al dira haurrentzat?",
+          "answer": "Bai, lycra txanoak aproposak dira haurrentzat, beren leuntasun eta jartzeko erraztasunagatik. Ez dute ilea tiratzen eta oso erosoak dira igeriketa ikasgaietarako."
+        }
+      ]
+    },
+    "peloLargo": {
+      "pageTitle": "Ilea Luzeentzako Txapel Pertsonalizatuak | 6,45 €-tik aurrera | AquaEvents.club",
+      "metaDescription": "Ilea luzeentzako igeriketa-txapel pertsonalizatuak 6,45 €-tik aurrera. Diseinu berezia espazio gehigarriarekin. Doako bidalketa.",
+      "heroHeading": "ILEA LUZEENTZAKO IGERIKETA-TXAPEL PERTSONALIZATUAK",
+      "heroP1": "Igeriketa-txapel pertsonalizatuen Europako hornitzaile nagusietako bat gara. Ilea luzeentzako txapelek diseinu berezia dute, espazio gehigarriarekin.",
+      "heroP2": "Ilea luzeentzako txapelak atzealdean poltsa gehigarri batekin diseinatuta daude, ile luzea eroso sartzeko.",
+      "ctaButton": "AURREKONTUA ESKATU",
+      "breadcrumbHome": "HASIERA",
+      "breadcrumbCaps": "IGERIKETA-TXAPELAK",
+      "breadcrumbLongHair": "ILEA LUZEENTZAKO TXAPELAK",
+      "viewAllCaps": "Txapel guztiak ikusi",
+      "faqs": [
+        {
+          "question": "Zein da ilea luzeentzako txapelen eta ohiko txapelen arteko aldea?",
+          "answer": "Ilea luzeentzako txapelek atzealdean poltsa gehigarri bat dute (6,45 €) ile luzea eroso sartzeko, tiratu edo korapilatu gabe. Ohiko silikonazko txapelak (4,45 €) ile motzerako edo bildutako ilerako diseinatuta daude."
+        },
+        {
+          "question": "Zein da gutxieneko eskaera?",
+          "answer": "Gutxieneko eskaera 50 unitatekoa da. Deskontu handiak eskaintzen ditugu 100, 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
+        },
+        {
+          "question": "Ilea luzeentzako txapelak egokiak al dira alergia duten pertsonentzat?",
+          "answer": "Bai, gure ilea luzeentzako txapelak %100 hypoallergenic silikonaz eginak daude eta latexik gabeak dira. Latexarekiko sentikortasuna duten pertsonentzat ezin hobeak."
+        },
+        {
+          "question": "Zenbat irauten dute ilea luzeentzako txapelek?",
+          "answer": "Zainketa egokiarekin, ilea luzeentzako silikonazko txapelek 1-2 urte irauten dute ohiko erabilerarekin. Ohiko silikonazko txapelak bezain iraunkorrak dira eta kloroarekiko erresistenteak."
+        },
+        {
+          "question": "Egokiak al dira lehiaketa ofizialetarako?",
+          "answer": "Bai, ilea luzeentzako txapelek FINA araudia betetzen dute eta lehiaketa ofizialetan erabil daitezke. Ilea luzea duten igerilari profesional askok txapel mota hau erabiltzen dute."
+        },
+        {
+          "question": "Zer lodiera dute ilea luzeentzako txapelek?",
+          "answer": "Gure ilea luzeentzako txapelek ohiko silikonazko txapelen kalitate goreneko lodiera bera dute (50GMS), atzealdean ilearentzako espazio gehigarriarekin."
+        },
+        {
+          "question": "Nola zaindu behar dira ilea luzeentzako txapelak?",
+          "answer": "Erabili ondoren ur hotzarekin garbitu eta guztiz lehortu gorde aurretik. Saihestu objektu zorrotzekin kontaktua eta gorde leku fresko eta lehor batean."
+        },
+        {
+          "question": "Zenbat inprimatze-kolore aukeratu ditzaket?",
+          "answer": "1, 2, 3, 4, 5 edo 6 inprimatze-kolore aukeratu ditzakezu. 6,45 €-ko oinarrizko prezioak kolore bateko inprimatzea barne hartzen du. Kolore gehigarri bakoitzak 0,60 € gehitzen ditu unitateko."
+        },
+        {
+          "question": "Zein da entrega-epea?",
+          "answer": "Ekoizpen eta entrega-epea 3 astekoa da gutxi gorabehera, eskaera baieztatzen denetik. Doako bidalketa eskaintzen dugu Europa osoan."
+        },
+        {
+          "question": "Zenbat ile sartu daiteke ilea luzeentzako txapel batean?",
+          "answer": "Ilea luzeentzako txapelek gerriaren luzerako ilea eroso sartu dezakete. Poltsa gehigarriak espazio nahikoa eskaintzen du tira edo ondoeza ekiditeko."
+        }
+      ]
+    },
+    "tela": {
+      "pageTitle": "Oihalezko Igeriketa Txano Pertsonalizatuak | €4.95tik aurrera | AquaEvents.club",
+      "metaDescription": "Oihalezko/lycrazko igeriketa txano pertsonalizatuak €4.95tik aurrera. Erosoak entrenamendurako. Doako bidalketa Espainian.",
+      "heroHeading": "OIHALEZKO IGERIKETA TXANO PERTSONALIZATUAK",
+      "heroP1": "Igeriketa txano pertsonalizatuen Europako hornitzaile nagusietako bat gara. Oihalezko/lycrazko txanoak aproposak dira entrenamendurako eta eguneroko erabilerarako.",
+      "heroP2": "Oihalezko txanoak poliester/lycra transpiragarriz eginda daude, ezin hobeak entrenamendu luzeetarako eta erabilera aisialdirako.",
+      "ctaButton": "AURREKONTUA ESKATU",
+      "breadcrumbHome": "HASIERA",
+      "breadcrumbCaps": "IGERIKETA TXANOAK",
+      "breadcrumbFabric": "OIHALEZKO TXANOAK",
+      "viewAllCaps": "Ikusi Txano Guztiak",
+      "faqs": [
+        {
+          "question": "Zein da oihalezko eta silikonazko txanoen arteko aldea?",
+          "answer": "Oihalezko txanoak erosoagoak eta transpiragarriagoak dira (€4.95), aproposak entrenamendurako eta aisialdirako erabilerarako. Silikonazko txanoak urarekiko erresistenteagoak eta iraunkorragoak dira (€4.45), hobeak lehiaketetarako. Oihalezkoak ez du ilea tiratzen eta errazagoa da janztea."
+        },
+        {
+          "question": "Zein da gutxieneko eskaera?",
+          "answer": "Gutxieneko eskaera 50 unitatekoa da. Deskontu handiak eskaintzen ditugu 100, 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
+        },
+        {
+          "question": "Oihalezko txanoak egokiak al dira alergia duten pertsonentzat?",
+          "answer": "Bai, oihalezko txanoak hypoallergenic dira eta latexik gabeak. Ezin hobeak dira latexarekiko sentikortasuna edo larruazal sentikorra duten pertsonentzat."
+        },
+        {
+          "question": "Zenbat irauten dute oihalezko txanoek?",
+          "answer": "Zaintza egokiarekin, oihalezko txanoek 6-12 hilabete irauten dute ohiko erabilerarekin. Silikonazkoak baino iraunkortasun txikiagoa dute, baina askoz erosoagoak dira saio luzeetarako."
+        },
+        {
+          "question": "Egokiak al dira lehiaketa ofizialetarako?",
+          "answer": "Oihalezko txanoak ohikoagoak dira entrenamendurako eta aisialdiko igeriketarako. Lehiaketetarako, silikonazko txanoak gomendatzen ditugu, beren hidrodinamika eta urarekiko erresistentzia hobeagatik."
+        },
+        {
+          "question": "Zein materialez eginda daude oihalezko txanoak?",
+          "answer": "Gure oihalezko txanoak poliester eta lycra/elastano nahasketa batekin eginda daude, leuntasuna, elastikotasuna eta transpiragarritasuna eskainiz."
+        },
+        {
+          "question": "Nola zaindu behar dira oihalezko txanoak?",
+          "answer": "Eskuarekin garbitu ur hotzarekin eta xaboi leunarekin erabili ondoren. Airean lehortu eguzki-argitik urrun. Ez garbitu makinan ezta lehorgailuan ere."
+        },
+        {
+          "question": "Zenbat inprimaketa kolore aukera ditzaket?",
+          "answer": "Kolore osoko sublimazio inprimaketa aukera dezakezu, kolore mugagabeekin. €4.95eko prezioak kolore osoko inprimaketa barne hartzen du."
+        },
+        {
+          "question": "Zein da entrega-epea?",
+          "answer": "Ekoizpen eta entrega-epea 3 astekoa da gutxi gorabehera eskaera baieztatzen denetik. Doako bidalketa eskaintzen dugu Espainia osoan."
+        },
+        {
+          "question": "Oihalezko txanoak egokiak al dira haurrentzat eta igeriketa-eskolaentzat?",
+          "answer": "Bai, oihalezko txanoak aproposak dira haurrentzat eta igeriketa-eskolaentzat, beren leuntasuna, janzteko erraztasuna eta eskaera handietarako prezio ekonomikoa direla eta."
+        }
+      ]
+    },
+    "main": {
+      "pageTitle": "Igeriketa Txano Pertsonalizatuak | 4,45 €-tik aurrera | AquaEvents.club",
+      "metaDescription": "Igeriketa txano pertsonalizatuak klubentzat. Silikona, latex, likra, ile luzerako eta ehunezkoak. 4,45 €-tik aurrera. Doako bidalketa.",
+      "heroHeading": "IGERIKETA TXANO PERTSONALIZATUAK",
+      "heroP1": "Europako igeriketa txano pertsonalizatuen hornitzaile nagusietako bat gara. 5 txano mota eskaintzen ditugu, behar guztietarako.",
+      "heroP2": "25 urte baino gehiagoko esperientziarekin, milioi bat txano baino gehiago hornitu ditugu Europa osoko klub, federazio eta ekitaldietara.",
+      "ctaButton": "AURREKONTUA ESKATU",
+      "breadcrumbHome": "HASIERA",
+      "breadcrumbCaps": "IGERIKETA TXANOAK",
+      "viewAllCaps": "Ikusi Txano Guztiak"
     }
   }
 }
