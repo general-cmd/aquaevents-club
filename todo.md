@@ -1847,3 +1847,12 @@ Also added "private" to organizerType enum to support private organizers.
 - [ ] Translate testimonials sections on all gorros pages (5 pages × 6 languages)
 - [ ] Translate forms on all gorros pages (5 pages × 6 languages)
 - [ ] Full translation = 100% SEO benefit vs current 80%
+
+
+## Multilingual FAQ Bug Fixes - URGENT
+- [x] Fix English FAQs not displaying on tela page
+- [x] Fix English FAQs not displaying on silicona page
+- [x] Fix English FAQs not displaying on pelo-largo page
+- [x] Fix English reviews not displaying on tela page (reviews are testimonials, working)
+- [x] Change "gamuza" translation from "Lycra" to "Suede" in English
+- [ ] Verify all 6 languages work on all 6 gorros pages (36 combinations total)

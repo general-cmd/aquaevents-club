@@ -337,7 +337,49 @@
       "breadcrumbHome": "INICIO",
       "breadcrumbCaps": "GORROS DE NATACIÓN",
       "breadcrumbSilicone": "GORROS DE SILICONA",
-      "viewAllCaps": "Ver Todos los Gorros"
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿Qué diferencia hay entre los gorros de silicona y los de látex?",
+          "answer": "Los gorros de silicona son más duraderos (1-2 años vs 3-6 meses), hipoalergénicos y cómodos para uso regular. Los gorros de látex son más económicos (2,10 € vs 4,45 €) y más finos, ideales para eventos puntuales. La silicona es resistente al cloro y no provoca alergias."
+        },
+        {
+          "question": "¿Cuál es el pedido mínimo?",
+          "answer": "El pedido mínimo es de 50 unidades. Ofrecemos descuentos significativos para pedidos de 100, 250, 500, 1000 y más de 1500 unidades."
+        },
+        {
+          "question": "¿Los gorros de silicona son adecuados para personas con alergias?",
+          "answer": "Sí, los gorros de silicona son 100% hipoalergénicos y no contienen látex. Son perfectos para personas con sensibilidad o alergia al látex."
+        },
+        {
+          "question": "¿Cuánto duran los gorros de silicona?",
+          "answer": "Con el cuidado adecuado, los gorros de silicona duran 1-2 años con uso regular. Son mucho más duraderos que los gorros de látex (3-6 meses) y resistentes al cloro y a los rayos UV."
+        },
+        {
+          "question": "¿Son aptos para competiciones oficiales?",
+          "answer": "Sí, nuestros gorros de silicona cumplen con la normativa FINA y se pueden utilizar en competiciones oficiales. Muchos nadadores profesionales prefieren la silicona por su durabilidad y confort."
+        },
+        {
+          "question": "¿Qué grosor tienen los gorros de silicona?",
+          "answer": "Nuestros gorros de silicona tienen un grosor premium de 50GMS (gramos por metro cuadrado), proporcionando el equilibrio perfecto entre durabilidad, confort y rendimiento."
+        },
+        {
+          "question": "¿Cómo se cuidan los gorros de silicona?",
+          "answer": "Enjuáguelos con agua fría después de cada uso y séquelos completamente antes de guardarlos. Evite el contacto con objetos punzantes y guárdelos en un lugar fresco y seco, lejos de la luz solar directa."
+        },
+        {
+          "question": "¿Cuántos colores de impresión puedo elegir?",
+          "answer": "Puede elegir 1, 2, 3, 4, 5 o 6 colores de impresión. El precio base de 4,45 € incluye la impresión a 1 color. Cada color adicional supone un coste de 0,60 € por unidad."
+        },
+        {
+          "question": "¿Cuál es el plazo de entrega?",
+          "answer": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido. Ofrecemos envío gratuito a toda Europa."
+        },
+        {
+          "question": "¿Puedo ver una prueba de diseño antes de la producción?",
+          "answer": "Sí, le enviaremos una prueba digital para su aprobación antes de comenzar la producción. Puede solicitar cambios hasta que esté completamente satisfecho con el diseño."
+        }
+      ]
     },
     "main": {
       "pageTitle": "Gorros de Natación Personalizados | Desde €4.45 | AquaEvents.club",
@@ -360,7 +402,49 @@
       "breadcrumbHome": "INICIO",
       "breadcrumbCaps": "GORROS DE NATACIÓN",
       "breadcrumbLatex": "GORROS DE LÁTEX",
-      "viewAllCaps": "Ver Todos los Gorros"
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿Cuál es la diferencia entre los gorros de látex y los de silicona?",
+          "answer": "Los gorros de látex son más económicos (2,10 € frente a 4,45 €) y más delgados, ideales para eventos puntuales y regalos promocionales. Los gorros de silicona son más duraderos, hipoalergénicos y cómodos para el uso regular. El látex es menos resistente al cloro y puede causar alergias en algunas personas."
+        },
+        {
+          "question": "¿Cuál es el pedido mínimo?",
+          "answer": "El pedido mínimo es de 100 unidades. Ofrecemos descuentos significativos para pedidos de 250, 500, 1000 y más de 1500 unidades."
+        },
+        {
+          "question": "¿Son los gorros de látex adecuados para personas con alergias?",
+          "answer": "No, los gorros de látex contienen látex natural que puede causar reacciones alérgicas. Para personas con alergia al látex, recomendamos gorros de silicona (100% hipoalergénicos) o de lycra."
+        },
+        {
+          "question": "¿Cuánto duran los gorros de látex?",
+          "answer": "Los gorros de látex son ideales para eventos puntuales o uso ocasional. No son tan duraderos como los de silicona (duran 3-6 meses frente a 1-2 años), pero son muy económicos y perfectos para regalos promocionales."
+        },
+        {
+          "question": "¿Son aptos para competiciones oficiales?",
+          "answer": "Sí, los gorros de látex cumplen con la normativa FINA y pueden utilizarse en competiciones oficiales. Sin embargo, muchos nadadores prefieren la silicona para las competiciones debido a su mayor durabilidad y comodidad."
+        },
+        {
+          "question": "¿Qué grosor tienen los gorros de látex?",
+          "answer": "Los gorros de látex tienen un grosor de aproximadamente 0,3-0,4 mm, mucho más delgado que la silicona (50 GMS). Esto los hace más ligeros y económicos, pero menos duraderos."
+        },
+        {
+          "question": "¿Cómo se cuidan los gorros de látex?",
+          "answer": "Enjuague con agua fría después de cada uso y seque completamente antes de guardar. Evite el contacto con aceites, cremas y objetos afilados. Almacene en un lugar fresco y seco, lejos de la luz solar directa."
+        },
+        {
+          "question": "¿Cuántos colores de impresión puedo elegir?",
+          "answer": "Puede elegir 1 color de impresión. El precio base de 2,10 € incluye la impresión a 1 color. Para múltiples colores, consulte nuestras opciones de gorros de silicona."
+        },
+        {
+          "question": "¿Cuál es el tiempo de entrega?",
+          "answer": "El tiempo de producción y entrega es de aproximadamente 3 semanas a partir de la confirmación del pedido. Ofrecemos envío gratuito en Europa."
+        },
+        {
+          "question": "¿Para qué tipo de eventos son ideales los gorros de látex?",
+          "answer": "Los gorros de látex son perfectos para eventos puntuales como triatlones, natación en aguas abiertas, campeonatos, regalos corporativos y promociones. Su precio económico los hace ideales cuando se necesitan muchas unidades para un evento específico."
+        }
+      ]
     },
     "gamuza": {
       "pageTitle": "Gorros de Gamuza Personalizados | Desde €5.95 | AquaEvents.club",
@@ -372,7 +456,49 @@
       "breadcrumbHome": "INICIO",
       "breadcrumbCaps": "GORROS DE NATACIÓN",
       "breadcrumbGamuza": "GORROS DE GAMUZA",
-      "viewAllCaps": "Ver Todos los Gorros"
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿Qué diferencia hay entre los gorros de lycra y los de silicona?",
+          "answer": "Los gorros de lycra son más suaves y cómodos (5,95 €), ideales para pieles sensibles y sesiones largas de entrenamiento. Los de silicona son más duraderos y resistentes al agua (4,45 €), mejores para competiciones. La lycra es transpirable y no tira del cabello."
+        },
+        {
+          "question": "¿Cuál es el pedido mínimo?",
+          "answer": "El pedido mínimo es de 50 unidades. Ofrecemos descuentos significativos para pedidos de 100, 250, 500, 1000 y 1500+ unidades."
+        },
+        {
+          "question": "¿Los gorros de lycra son aptos para personas con alergias?",
+          "answer": "Sí, los gorros de lycra son hipoalergénicos y no contienen látex. Son perfectos para personas con sensibilidad al látex o piel sensible."
+        },
+        {
+          "question": "¿Cuánto tiempo duran los gorros de lycra?",
+          "answer": "Con el cuidado adecuado, los gorros de lycra duran de 6 a 12 meses con uso regular. Son menos duraderos que los de silicona, pero mucho más cómodos para sesiones largas."
+        },
+        {
+          "question": "¿Son adecuados para competiciones oficiales?",
+          "answer": "Los gorros de lycra se utilizan más habitualmente para entrenamiento y natación recreativa. Para competiciones, recomendamos gorros de silicona por su mejor hidrodinámica y durabilidad."
+        },
+        {
+          "question": "¿De qué material están hechos los gorros de lycra?",
+          "answer": "Nuestros gorros de lycra están hechos con una mezcla de poliéster y elastano (lycra), proporcionando suavidad, elasticidad y transpirabilidad."
+        },
+        {
+          "question": "¿Cómo se cuidan los gorros de lycra?",
+          "answer": "Lavar a mano con agua fría y jabón suave después de cada uso. Secar al aire lejos de la luz solar directa. No lavar a máquina ni usar secadora."
+        },
+        {
+          "question": "¿Cuántos colores de impresión puedo elegir?",
+          "answer": "Puedes elegir la impresión por sublimación a todo color con colores ilimitados. El precio de 5,95 € incluye la impresión a todo color."
+        },
+        {
+          "question": "¿Cuál es el plazo de entrega?",
+          "answer": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido. Ofrecemos envío gratuito a toda España."
+        },
+        {
+          "question": "¿Los gorros de lycra son adecuados para niños?",
+          "answer": "Sí, los gorros de lycra son ideales para niños debido a su suavidad y facilidad de colocación. No tiran del cabello y son muy cómodos para las clases de natación."
+        }
+      ]
     },
     "peloLargo": {
       "pageTitle": "Gorros para Pelo Largo Personalizados | Desde €6.45 | AquaEvents.club",
@@ -384,7 +510,49 @@
       "breadcrumbHome": "INICIO",
       "breadcrumbCaps": "GORROS DE NATACIÓN",
       "breadcrumbLongHair": "GORROS PARA PELO LARGO",
-      "viewAllCaps": "Ver Todos los Gorros"
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿Qué diferencia hay entre los gorros para cabello largo y los gorros regulares?",
+          "answer": "Los gorros para cabello largo tienen una bolsa extra en la parte posterior (6,45 €) para alojar cómodamente el cabello largo sin estirarlo ni enredarlo. Los gorros de silicona regulares (4,45 €) están diseñados para cabello corto o recogido."
+        },
+        {
+          "question": "¿Cuál es el pedido mínimo?",
+          "answer": "El pedido mínimo es de 50 unidades. Ofrecemos descuentos significativos para pedidos de 100, 250, 500, 1000 y 1500+ unidades."
+        },
+        {
+          "question": "¿Los gorros para cabello largo son aptos para personas con alergias?",
+          "answer": "Sí, nuestros gorros para cabello largo están hechos de silicona 100% hipoalergénica y no contienen látex. Son perfectos para personas con sensibilidad al látex."
+        },
+        {
+          "question": "¿Cuánto duran los gorros para cabello largo?",
+          "answer": "Con el cuidado adecuado, los gorros de silicona para cabello largo duran 1-2 años con uso regular. Son tan duraderos como los gorros de silicona regulares y resistentes al cloro."
+        },
+        {
+          "question": "¿Son aptos para competiciones oficiales?",
+          "answer": "Sí, los gorros para cabello largo cumplen con la normativa FINA y se pueden utilizar en competiciones oficiales. Muchos nadadores profesionales con cabello largo utilizan este tipo de gorro."
+        },
+        {
+          "question": "¿Qué grosor tienen los gorros para cabello largo?",
+          "answer": "Nuestros gorros para cabello largo tienen el mismo grosor premium que los gorros de silicona regulares (50GMS), con el espacio extra en la parte posterior para el cabello."
+        },
+        {
+          "question": "¿Cómo se cuidan los gorros para cabello largo?",
+          "answer": "Enjuague con agua fría después de cada uso y seque completamente antes de guardar. Evite el contacto con objetos punzantes y guárdelos en un lugar fresco y seco."
+        },
+        {
+          "question": "¿Cuántos colores de impresión puedo elegir?",
+          "answer": "Puede elegir 1, 2, 3, 4, 5 o 6 colores de impresión. El precio base de 6,45 € incluye la impresión a 1 color. Cada color adicional añade 0,60 € por unidad."
+        },
+        {
+          "question": "¿Cuál es el plazo de entrega?",
+          "answer": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido. Ofrecemos envío gratuito a toda Europa."
+        },
+        {
+          "question": "¿Cuánto cabello puede caber en un gorro para cabello largo?",
+          "answer": "Los gorros para cabello largo pueden alojar cómodamente cabello de hasta la cintura. La bolsa extra proporciona suficiente espacio para evitar estiramientos o molestias."
+        }
+      ]
     },
     "tela": {
       "pageTitle": "Gorros de Tela Personalizados | Desde €4.95 | AquaEvents.club",
@@ -396,7 +564,49 @@
       "breadcrumbHome": "INICIO",
       "breadcrumbCaps": "GORROS DE NATACIÓN",
       "breadcrumbFabric": "GORROS DE TELA",
-      "viewAllCaps": "Ver Todos los Gorros"
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿Qué diferencia hay entre los gorros de tela y los de silicona?",
+          "answer": "Los gorros de tela son más cómodos y transpirables (4,95 €), ideales para entrenamiento y uso recreativo. Los gorros de silicona son más resistentes al agua y duraderos (4,45 €), mejores para competiciones. La tela no tira del cabello y es más fácil de poner."
+        },
+        {
+          "question": "¿Cuál es el pedido mínimo?",
+          "answer": "El pedido mínimo es de 50 unidades. Ofrecemos descuentos significativos para pedidos de 100, 250, 500, 1000 y 1500+ unidades."
+        },
+        {
+          "question": "¿Los gorros de tela son aptos para personas con alergias?",
+          "answer": "Sí, los gorros de tela son hipoalergénicos y sin látex. Son perfectos para personas con sensibilidad al látex o piel sensible."
+        },
+        {
+          "question": "¿Cuánto duran los gorros de tela?",
+          "answer": "Con el cuidado adecuado, los gorros de tela duran de 6 a 12 meses con uso regular. Son menos duraderos que los de silicona, pero mucho más cómodos para sesiones largas."
+        },
+        {
+          "question": "¿Son adecuados para competiciones oficiales?",
+          "answer": "Los gorros de tela se utilizan más habitualmente para entrenamiento y natación recreativa. Para competiciones, recomendamos gorros de silicona por su mejor hidrodinámica y resistencia al agua."
+        },
+        {
+          "question": "¿De qué material están hechos los gorros de tela?",
+          "answer": "Nuestros gorros de tela están hechos con una mezcla de poliéster y lycra/elastano, proporcionando suavidad, elasticidad y transpirabilidad."
+        },
+        {
+          "question": "¿Cómo se cuidan los gorros de tela?",
+          "answer": "Lavar a mano con agua fría y jabón suave después de cada uso. Secar al aire lejos de la luz solar directa. No lavar a máquina ni utilizar secadora."
+        },
+        {
+          "question": "¿Cuántos colores de impresión puedo elegir?",
+          "answer": "Puedes elegir la impresión por sublimación a todo color con colores ilimitados. El precio de 4,95 € incluye la impresión a todo color."
+        },
+        {
+          "question": "¿Cuál es el plazo de entrega?",
+          "answer": "El tiempo de producción y entrega es de aproximadamente 3 semanas desde la confirmación del pedido. Ofrecemos envío gratuito a toda España."
+        },
+        {
+          "question": "¿Los gorros de tela son adecuados para niños y escuelas de natación?",
+          "answer": "Sí, los gorros de tela son ideales para niños y escuelas de natación por su suavidad, facilidad de colocación y precio económico para pedidos al por mayor."
+        }
+      ]
     }
   }
 }
