@@ -324,5 +324,50 @@
     "errorUpdate": "Error updating event:",
     "successProfile": "Profile updated successfully!",
     "errorProfile": "Error updating profile:"
+  },
+  "gorros": {
+    "silicona": {
+      "pageTitle": "Custom Silicone Swimming Caps | From €4.45 | AquaEvents.club",
+      "metaDescription": "Custom silicone swimming caps for clubs from €4.45. Premium 50GMS thickness, 100% hypoallergenic. Free shipping in Spain. 30+ colors available.",
+      "heroHeading": "CUSTOM SILICONE SWIMMING CAPS",
+      "heroP1": "We are one of Europe's leading, longest-established, and most trusted suppliers of fully custom and printed swimming caps, alongside a wide range of other products and services.",
+      "heroP2": "We specialize exclusively in swimming caps and are experts in this technical and specialized area of printing. Our caps are ideal for daily users, guaranteed to withstand much more wear and tear.",
+      "heroP3": "This one-size silicone cap is suitable for both adults and children. The molded shape and fit are engineered to provide maximum comfort alongside peak performance.",
+      "ctaButton": "REQUEST A QUOTE",
+      "breadcrumbHome": "HOME",
+      "breadcrumbCaps": "SWIMMING CAPS",
+      "breadcrumbSilicone": "SILICONE CAPS",
+      "viewAllCaps": "View All Caps"
+    },
+    "main": {
+      "pageTitle": "Custom Swimming Caps | From €4.45 | AquaEvents.club",
+      "metaDescription": "Custom swimming caps for clubs. Silicone, latex, lycra, long hair and fabric. From €4.45. Free shipping.",
+      "heroHeading": "CUSTOM SWIMMING CAPS",
+      "ctaButton": "REQUEST A QUOTE"
+    },
+    "latex": {
+      "pageTitle": "Custom Latex Swimming Caps | From €3.95 | AquaEvents.club",
+      "metaDescription": "Custom latex swimming caps for clubs from €3.95. Economical and flexible. Free shipping Spain.",
+      "heroHeading": "CUSTOM LATEX SWIMMING CAPS",
+      "ctaButton": "REQUEST A QUOTE"
+    },
+    "gamuza": {
+      "pageTitle": "Custom Lycra Swimming Caps | From €5.95 | AquaEvents.club",
+      "metaDescription": "Custom lycra swimming caps for clubs from €5.95. Soft and comfortable. Free shipping Spain.",
+      "heroHeading": "CUSTOM LYCRA SWIMMING CAPS",
+      "ctaButton": "REQUEST A QUOTE"
+    },
+    "peloLargo": {
+      "pageTitle": "Custom Long Hair Swimming Caps | From €6.45 | AquaEvents.club",
+      "metaDescription": "Custom long hair swimming caps from €6.45. Special design with extra space. Free shipping.",
+      "heroHeading": "CUSTOM LONG HAIR SWIMMING CAPS",
+      "ctaButton": "REQUEST A QUOTE"
+    },
+    "tela": {
+      "pageTitle": "Custom Fabric Swimming Caps | From €4.95 | AquaEvents.club",
+      "metaDescription": "Custom fabric/lycra swimming caps from €4.95. Comfortable for training. Free shipping Spain.",
+      "heroHeading": "CUSTOM FABRIC SWIMMING CAPS",
+      "ctaButton": "REQUEST A QUOTE"
+    }
   }
 }

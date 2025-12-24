@@ -324,5 +324,50 @@
     "errorUpdate": "Error al actualizar evento:",
     "successProfile": "¡Perfil actualizado correctamente!",
     "errorProfile": "Error al actualizar perfil:"
+  },
+  "gorros": {
+    "silicona": {
+      "pageTitle": "Gorros de Silicona Personalizados | Desde €4.45 | AquaEvents.club",
+      "metaDescription": "Gorros de silicona personalizados para clubes desde €4.45. 50GMS premium, 100% hipoalergénicos. Envío gratis España. +30 colores disponibles.",
+      "heroHeading": "GORROS DE SILICONA PERSONALIZADOS",
+      "heroP1": "Somos uno de los proveedores líderes, más antiguos y de mayor confianza de Europa de gorros de natación totalmente personalizados e impresos, además de una amplia gama de otros productos y servicios.",
+      "heroP2": "Nos especializamos en gorros de natación y somos expertos en esta área técnica y especializada de impresión. Ideales para usuarios diarios, con mucho más desgaste garantizado.",
+      "heroP3": "Este gorro de silicona es adecuado para adultos y niños ya que es de talla única, la forma y el ajuste moldeados están diseñados para proporcionar máxima comodidad junto con máximo rendimiento.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbSilicone": "GORROS DE SILICONA",
+      "viewAllCaps": "Ver Todos los Gorros"
+    },
+    "main": {
+      "pageTitle": "Gorros de Natación Personalizados | Desde €4.45 | AquaEvents.club",
+      "metaDescription": "Gorros de natación personalizados para clubes. Silicona, látex, gamuza, pelo largo y tela. Desde €4.45. Envío gratis.",
+      "heroHeading": "GORROS DE NATACIÓN PERSONALIZADOS",
+      "ctaButton": "Solicitar Presupuesto"
+    },
+    "latex": {
+      "pageTitle": "Gorros de Látex Personalizados | Desde €3.95 | AquaEvents.club",
+      "metaDescription": "Gorros de látex personalizados para clubes desde €3.95. Económicos y flexibles. Envío gratis España.",
+      "heroHeading": "GORROS DE LÁTEX PERSONALIZADOS",
+      "ctaButton": "Solicitar Presupuesto"
+    },
+    "gamuza": {
+      "pageTitle": "Gorros de Gamuza Personalizados | Desde €5.95 | AquaEvents.club",
+      "metaDescription": "Gorros de gamuza personalizados para clubes desde €5.95. Suaves y cómodos. Envío gratis España.",
+      "heroHeading": "GORROS DE GAMUZA PERSONALIZADOS",
+      "ctaButton": "Solicitar Presupuesto"
+    },
+    "peloLargo": {
+      "pageTitle": "Gorros para Pelo Largo Personalizados | Desde €6.45 | AquaEvents.club",
+      "metaDescription": "Gorros para pelo largo personalizados desde €6.45. Diseño especial con espacio extra. Envío gratis.",
+      "heroHeading": "GORROS PARA PELO LARGO PERSONALIZADOS",
+      "ctaButton": "Solicitar Presupuesto"
+    },
+    "tela": {
+      "pageTitle": "Gorros de Tela Personalizados | Desde €4.95 | AquaEvents.club",
+      "metaDescription": "Gorros de tela/lycra personalizados desde €4.95. Cómodos para entrenamiento. Envío gratis España.",
+      "heroHeading": "GORROS DE TELA PERSONALIZADOS",
+      "ctaButton": "Solicitar Presupuesto"
+    }
   }
 }

@@ -323,5 +323,20 @@
     "errorUpdate": "Erro ao actualizar evento:",
     "successProfile": "Perfil actualizado correctamente!",
     "errorProfile": "Erro ao actualizar perfil:"
+  },
+  "gorros": {
+    "silicona": {
+      "pageTitle": "Gorros de Silicona Personalizados | Desde 4,45 € | AquaEvents.club",
+      "metaDescription": "Gorros de silicona personalizados para clubs desde 4,45 €. 50GMS premium, 100% hipoalergénicos. Envío gratis en España. +30 cores dispoñibles.",
+      "heroHeading": "GORROS DE SILICONA PERSONALIZADOS",
+      "heroP1": "Somos un dos provedores líderes, máis antigos e de maior confianza de Europa de gorros de natación totalmente personalizados e impresos, ademais dunha ampla gama doutros produtos e servizos.",
+      "heroP2": "Especializámonos en gorros de natación e somos expertos nesta área técnica e especializada de impresión. Ideais para usuarios diarios, con moito máis desgaste garantido.",
+      "heroP3": "Este gorro de silicona é adecuado para adultos e nenos xa que é de talla única. A forma e o axuste moldeados están deseñados para proporcionar máxima comodidade xunto co máximo rendemento.",
+      "ctaButton": "Solicitar Orçamento",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbSilicone": "GORROS DE SILICONA",
+      "viewAllCaps": "Ver Todos os Gorros"
+    }
   }
 }

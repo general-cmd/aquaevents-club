@@ -7,8 +7,7 @@ import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 import CapTestimonials from "@/components/CapTestimonials";
 import DesignPreviewTool from "@/components/DesignPreviewTool";
 import { CheckCircle2, Truck, Clock, Shield, Palette } from "lucide-react";
-import { useGorrosTranslation } from "@/hooks/useGorrosTranslation";
-import { gorrosSiliconaTranslations } from "@/translations/gorrosSilicona";
+import { useTranslation } from "react-i18next";
 import HrefLangTags from "@/components/HrefLangTags";
 
 /**
@@ -16,8 +15,8 @@ import HrefLangTags from "@/components/HrefLangTags";
  * Mirrors EuroSwimCaps.com structure with accurate pricing
  */
 export default function GorrosSilicona() {
-  const { lang } = useGorrosTranslation();
-  const t = gorrosSiliconaTranslations[lang];
+  const { t } = useTranslation();
+  const translations = t('gorros.silicona', { returnObjects: true }) as any;
 
   const colors = [
     { name: "Azul Oscuro", code: "F208", pantone: "276c" },
@@ -54,10 +53,10 @@ export default function GorrosSilicona() {
   return (
     <>
       <Helmet>
-        <title>{t.pageTitle}</title>
+        <title>{translations.pageTitle}</title>
         <meta
           name="description"
-          content={t.metaDescription}
+          content={translations.metaDescription}
         />
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion/silicona" />
       </Helmet>
@@ -236,24 +235,24 @@ export default function GorrosSilicona() {
         <section className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-16">
           <div className="container grid md:grid-cols-2 gap-8 items-center">
             <nav className="text-sm mb-6 opacity-90">
-              <Link href="/" className="hover:underline">{t.breadcrumbHome}</Link>
+              <Link href="/" className="hover:underline">{translations.breadcrumbHome}</Link>
               <span className="mx-2">•</span>
-              <Link href="/gorros-natacion" className="hover:underline">{t.breadcrumbCaps}</Link>
+              <Link href="/gorros-natacion" className="hover:underline">{translations.breadcrumbCaps}</Link>
               <span className="mx-2">•</span>
-              <span>{t.breadcrumbSilicone}</span>
+              <span>{translations.breadcrumbSilicone}</span>
             </nav>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
-              {t.heroHeading}
+              {translations.heroHeading}
             </h1>
             <p className="text-xl mb-8 max-w-3xl">
-              {t.heroP1}
+              {translations.heroP1}
             </p>
             <p className="text-lg mb-8 max-w-3xl">
-              {t.heroP2}
+              {translations.heroP2}
             </p>
             <p className="text-lg mb-8 max-w-3xl">
-              {t.heroP3}
+              {translations.heroP3}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
@@ -267,7 +266,7 @@ export default function GorrosSilicona() {
                   }
                 }}
               >
-                {t.ctaButton}
+                {translations.ctaButton}
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Link href="/gorros-natacion">

@@ -1787,3 +1787,12 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Test Spanish (default) - Working perfectly
 - [ ] Apply same multilingual pattern to remaining 5 gorros pages (optional - can do later)
 - [ ] Save checkpoint and push to GitHub
+
+
+## Fix Language Switcher Integration (Dec 24, 2025)
+- [ ] Investigate existing i18n system (react-i18next)
+- [ ] Integrate gorros translations with existing i18n system
+- [ ] Ensure language switcher changes language on all gorros pages
+- [ ] Translate all 6 gorros pages (Main, Silicona, Latex, Gamuza, Pelo Largo, Tela)
+- [ ] Test language switching functionality
+- [ ] Save checkpoint and push to GitHub

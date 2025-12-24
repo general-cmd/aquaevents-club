@@ -324,5 +324,20 @@
     "errorUpdate": "Errorea ekitaldia eguneratzean:",
     "successProfile": "Profila behar bezala eguneratu da!",
     "errorProfile": "Errorea profila eguneratzean:"
+  },
+  "gorros": {
+    "silicona": {
+      "pageTitle": "Silikona Txapelak Pertsonalizatuak | 4,45 €-tik | AquaEvents.club",
+      "metaDescription": "Silikona txapelak pertsonalizatuak klubentzat 4,45 €-tik. 50GMS premium, %100 hipoalergikoak. Bidalketa doakoa. +30 kolore eskuragarri.",
+      "heroHeading": "SILIKONA TXAPELAK PERTSONALIZATUAK",
+      "heroP1": "Europako hornitzaile nagusietako bat gara, zaharrenetako bat eta konfiantzazkoenetako bat, igeriketa txapel guztiz pertsonalizatuak eta inprimatuak eskaintzen ditugunak, beste produktu eta zerbitzu ugari eskaintzeaz gain.",
+      "heroP2": "Igeriketa txapeletan espezializatuta gaude eta inprimaketa eremu tekniko eta espezializatu honetan adituak gara. Eguneroko erabiltzaileentzat idealak, erabilera askoz gehiago bermatuta.",
+      "heroP3": "Silikona txapel hau helduak eta haurrak erabiltzeko egokia da, tamaina bakarra baita. Moldatutako forma eta doikuntza erosotasun maximoa eta errendimendu maximoa eskaintzeko diseinatuta daude.",
+      "ctaButton": "Aurrekontua Eskatu",
+      "breadcrumbHome": "HASIERA",
+      "breadcrumbCaps": "IGERIKETA TXAPELAK",
+      "breadcrumbSilicone": "SILIKONA TXAPELAK",
+      "viewAllCaps": "Txapel Guztiak Ikusi"
+    }
   }
 }
