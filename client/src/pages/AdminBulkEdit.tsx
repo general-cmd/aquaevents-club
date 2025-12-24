@@ -52,15 +52,29 @@ export default function AdminBulkEdit() {
     if (filters.missingDescription) {
       filtered = filtered.filter((e: any) => {
         const desc = e.description;
+        // No description field at all
         if (!desc) return true;
+        // String description (legacy format)
         if (typeof desc === 'string') return desc.trim().length === 0;
-        return (!desc.es || desc.es.trim().length === 0) && (!desc.en || desc.en.trim().length === 0);
+        // Object description - check if ALL languages are missing or empty
+        const languages = ['es', 'en', 'ca', 'eu', 'gl', 'va'];
+        const hasAnyDescription = languages.some(lang => 
+          desc[lang] && typeof desc[lang] === 'string' && desc[lang].trim().length > 0
+        );
+        return !hasAnyDescription;
       });
     }
     
     if (filters.missingSEO) {
       filtered = filtered.filter((e: any) => {
-        return !e.seo || !e.seo.metaDescription || !e.seo.canonical;
+        // Missing SEO object entirely
+        if (!e.seo) return true;
+        // Missing critical SEO fields
+        const hasMetaDescription = e.seo.metaDescription && e.seo.metaDescription.trim().length > 0;
+        const hasCanonical = e.seo.canonical && e.seo.canonical.trim().length > 0;
+        const hasMetaTitle = e.seo.metaTitle && e.seo.metaTitle.trim().length > 0;
+        // Return true if missing any of the critical SEO fields
+        return !hasMetaDescription || !hasCanonical || !hasMetaTitle;
       });
     }
     
