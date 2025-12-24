@@ -7,6 +7,8 @@ import QuoteForm from "@/components/QuoteForm";
 import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 import CapTestimonials from "@/components/CapTestimonials";
 import DesignPreviewTool from "@/components/DesignPreviewTool";
+import { useTranslation } from "react-i18next";
+import HrefLangTags from "@/components/HrefLangTags";
 
 /**
  * Polyester & Lycra Swimming Caps Product Page
@@ -14,15 +16,21 @@ import DesignPreviewTool from "@/components/DesignPreviewTool";
  * Perfect for children, swim schools, and comfortable recreational swimming
  */
 export default function GorrosTela() {
+  const { t } = useTranslation();
+  const translations = t('gorros.tela', { returnObjects: true }) as any;
+  
   return (
     <>
       <Helmet>
-        <title>Gorros de Tela Personalizados | Poliéster y Lycra | Desde €2.10 | AquaEvents.club</title>
+        <title>{translations.pageTitle}</title>
         <meta
           name="description"
-          content="Gorros de tela (poliéster y lycra) personalizados desde €2.10. Ideales para niños, escuelas de natación y uso recreativo. Cómodos, ligeros y 100% hipoalergénicos. Envío gratis."
+          content={translations.metaDescription}
         />
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion/tela" />
+      </Helmet>
+      <HrefLangTags basePath="/gorros-natacion/tela" />
+      <Helmet>
         
         {/* Open Graph */}
         <meta property="og:title" content="Gorros de Tela Personalizados - Poliéster y Lycra" />
@@ -190,7 +198,7 @@ export default function GorrosTela() {
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
-                GORROS DE TELA PERSONALIZADOS
+                {translations.heroHeading}
               </h1>
               <p className="text-xl mb-8">
                 Gorros de poliéster y lycra ideales para escuelas de natación, niños y uso recreativo. Cómodos, ligeros y perfectos para merchandising.
@@ -202,7 +210,7 @@ export default function GorrosTela() {
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-white text-teal-600 hover:bg-gray-100">
                   <a href="#presupuesto">
-                    Solicitar Presupuesto
+                    {translations.ctaButton}
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">

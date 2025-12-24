@@ -7,6 +7,8 @@ import QuoteForm from "@/components/QuoteForm";
 import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 import CapTestimonials from "@/components/CapTestimonials";
 import DesignPreviewTool from "@/components/DesignPreviewTool";
+import { useTranslation } from "react-i18next";
+import HrefLangTags from "@/components/HrefLangTags";
 
 /**
  * Long Hair Swimming Caps Product Page
@@ -14,15 +16,21 @@ import DesignPreviewTool from "@/components/DesignPreviewTool";
  * Minimum order 50 pieces. Significant discounts at 250, 500, 1000 & 1500+ pieces.
  */
 export default function GorrosPeloLargo() {
+  const { t } = useTranslation();
+  const translations = t('gorros.peloLargo', { returnObjects: true }) as any;
+  
   return (
     <>
       <Helmet>
-        <title>Gorros de Silicona para Pelo Largo | Especial Nadadores | AquaEvents.club</title>
+        <title>{translations.pageTitle}</title>
         <meta
           name="description"
-          content="Gorros de silicona para pelo largo desde €6.20. Diseño especial sin enganches. Ideales para nadadores con cabello largo. Envío gratuito en Europa."
+          content={translations.metaDescription}
         />
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion/pelo-largo" />
+      </Helmet>
+      <HrefLangTags basePath="/gorros-natacion/pelo-largo" />
+      <Helmet>
         
         {/* Open Graph */}
         <meta property="og:title" content="Gorros de Silicona para Pelo Largo Personalizados" />
@@ -190,7 +198,7 @@ export default function GorrosPeloLargo() {
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
-                GORROS DE SILICONA PARA PELO LARGO
+                {translations.heroHeading}
               </h1>
               <p className="text-xl mb-8">
                 Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros para pelo largo están diseñados para evitar enganches.
@@ -202,7 +210,7 @@ export default function GorrosPeloLargo() {
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
                   <a href="#presupuesto">
-                    Solicitar Presupuesto
+                    {translations.ctaButton}
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">

@@ -7,12 +7,17 @@ import QuoteForm from "@/components/QuoteForm";
 import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 import CapTestimonials from "@/components/CapTestimonials";
 import DesignPreviewTool from "@/components/DesignPreviewTool";
+import { useTranslation } from "react-i18next";
+import HrefLangTags from "@/components/HrefLangTags";
 
 /**
  * Gamuza (Suede) Swimming Caps Product Page
  * Accurate pricing from EuroSwimCaps.com: €4.99 (1 color), €6.40 (2 colors), €7.99 (3 colors) for 100 caps
  */
 export default function GorrosGamuza() {
+  const { t } = useTranslation();
+  const translations = t('gorros.gamuza', { returnObjects: true }) as any;
+  
   const colors = [
     { code: "f209s", name: "Negro", pantone: "Black" },
     { code: "sd11s", name: "Plata Metálico", pantone: "877c" },
@@ -31,12 +36,15 @@ export default function GorrosGamuza() {
   return (
     <>
       <Helmet>
-        <title>Gorros de Gamuza Personalizados | Desde €4.99 | Tacto Suave Premium</title>
+        <title>{translations.pageTitle}</title>
         <meta
           name="description"
-          content="Gorros de gamuza (suede) personalizados para clubes. Tacto suave premium, sin látex, acabado antiarrugas. €4.99 por unidad (100 caps). Envío gratis España. 12 colores disponibles."
+          content={translations.metaDescription}
         />
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion/gamuza" />
+      </Helmet>
+      <HrefLangTags basePath="/gorros-natacion/gamuza" />
+      <Helmet>
 
         {/* Product Schema */}
         <script type="application/ld+json">
@@ -204,7 +212,7 @@ export default function GorrosGamuza() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                  Gorros de Gamuza Personalizados
+                  {translations.heroHeading}
                 </h1>
                 <p className="text-xl mb-8">
                   Tacto suave premium con tratamiento especial de superficie gamuza. 100% hipoalergénicos, sin arrugas, máxima elasticidad. Ideal para nadadores con sensibilidad al látex.
@@ -232,7 +240,7 @@ export default function GorrosGamuza() {
                 <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-white text-cyan-600 hover:bg-gray-100">
                   <a href="#presupuesto">
-                    Solicitar Presupuesto
+                    {translations.ctaButton}
                   </a>
                 </Button>
                   <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">

@@ -7,6 +7,8 @@ import QuoteForm from "@/components/QuoteForm";
 import BulkOrderCalculator from "@/components/BulkOrderCalculator";
 import CapTestimonials from "@/components/CapTestimonials";
 import DesignPreviewTool from "@/components/DesignPreviewTool";
+import { useTranslation } from "react-i18next";
+import HrefLangTags from "@/components/HrefLangTags";
 
 /**
  * Latex Swimming Caps Product Page
@@ -14,15 +16,21 @@ import DesignPreviewTool from "@/components/DesignPreviewTool";
  * Minimum order 100 pieces. Significant discounts at 250, 500, 1000 & 1500+ pieces.
  */
 export default function GorrosLatex() {
+  const { t } = useTranslation();
+  const translations = t('gorros.latex', { returnObjects: true }) as any;
+  
   return (
     <>
       <Helmet>
-        <title>Gorros de Látex Personalizados | Económicos para Eventos | AquaEvents.club</title>
+        <title>{translations.pageTitle}</title>
         <meta
           name="description"
-          content="Gorros de látex personalizados desde €2.10. Ideales para eventos únicos y regalos promocionales. Pedido mínimo 100 unidades. Envío gratuito en Europa."
+          content={translations.metaDescription}
         />
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion/latex" />
+      </Helmet>
+      <HrefLangTags basePath="/gorros-natacion/latex" />
+      <Helmet>
         
         {/* Open Graph */}
         <meta property="og:title" content="Gorros de Látex Personalizados para Eventos" />
@@ -190,7 +198,7 @@ export default function GorrosLatex() {
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
-                GORROS DE LÁTEX PERSONALIZADOS
+                {translations.heroHeading}
               </h1>
               <p className="text-xl mb-8">
                 Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros de látex son ideales para eventos únicos y regalos promocionales.
@@ -202,7 +210,7 @@ export default function GorrosLatex() {
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="bg-white text-green-600 hover:bg-gray-100">
                   <a href="#presupuesto">
-                    Solicitar Presupuesto
+                    {translations.ctaButton}
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
