@@ -1796,3 +1796,23 @@ Also added "private" to organizerType enum to support private organizers.
 - [ ] Translate all 6 gorros pages (Main, Silicona, Latex, Gamuza, Pelo Largo, Tela)
 - [ ] Test language switching functionality
 - [ ] Save checkpoint and push to GitHub
+
+
+## Multilingual Gorros Pages - Option 2 Implementation (Dec 24, 2025)
+- [ ] Translate FAQ sections for all 6 gorros pages (es, en, ca, va, eu, gl)
+- [ ] Update GorrosSilicona FAQ section to use i18n translations
+- [ ] Update GorrosLatex FAQ section to use i18n translations
+- [ ] Update GorrosGamuza FAQ section to use i18n translations
+- [ ] Update GorrosPeloLargo FAQ section to use i18n translations
+- [ ] Update GorrosTela FAQ section to use i18n translations
+- [ ] Add language switcher support to GorrosNatacionMain page
+- [ ] Save checkpoint and push to GitHub
+
+## Tech Debt - Full Multilingual Translation (For Next Month)
+- [ ] Translate pricing sections on all 6 gorros pages (currently Spanish only)
+- [ ] Translate features sections on all 6 gorros pages (currently Spanish only)
+- [ ] Translate testimonials sections on all 6 gorros pages (currently Spanish only)
+- [ ] Translate form labels and buttons on all 6 gorros pages (currently Spanish only)
+- [ ] Translate color names and specifications (currently Spanish only)
+- [ ] Estimated time: 12-18 hours total
+- [ ] Expected benefit: Additional +20% traffic from fully localized experience

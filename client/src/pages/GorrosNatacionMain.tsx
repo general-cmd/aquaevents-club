@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Package, Truck, Clock, Star } from "lucide-react";
 import QuoteForm from "@/components/QuoteForm";
+import { useTranslation } from "react-i18next";
+import HrefLangTags from "@/components/HrefLangTags";
 
 /**
  * Main Swimming Caps Overview Page
@@ -11,6 +13,8 @@ import QuoteForm from "@/components/QuoteForm";
  * Includes CollectionPage, FAQPage, and Review schema markup
  */
 export default function GorrosNatacionMain() {
+  const { t } = useTranslation();
+  const translations = t('gorros.main', { returnObjects: true }) as any;
   const products = [
     {
       name: "Gorros de Silicona",
@@ -113,13 +117,16 @@ export default function GorrosNatacionMain() {
   return (
     <>
       <Helmet>
-        <title>Gorros de Natación Personalizados para Clubes | Desde €2.10 | Envío Gratis España</title>
+        <title>{translations.pageTitle}</title>
         <meta
           name="description"
-          content="Gorros de natación personalizados para clubes y federaciones. Silicona €4.45, Látex €2.10, Ante €4.99. Pedido mínimo 50 unidades. Envío gratis España. +2M gorros impresos. 3 semanas entrega."
+          content={translations.metaDescription}
         />
         <meta name="keywords" content="gorros natación personalizados, gorros piscina club, gorros natación al por mayor, gorros silicona personalizados, gorros latex baratos, gorros natación competición" />
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion" />
+      </Helmet>
+      <HrefLangTags basePath="/gorros-natacion" />
+      <Helmet>
         
         {/* Open Graph */}
         <meta property="og:title" content="Gorros de Natación Personalizados para Clubes | Desde €2.10" />
@@ -201,7 +208,7 @@ export default function GorrosNatacionMain() {
             </nav>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Gorros de Natación Personalizados para Clubes y Federaciones
+              {translations.heroHeading}
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl">
               Más de 2 millones de gorros impresos. Envío gratuito a España. Entrega en 3 semanas. Desde €2.10 por unidad.
@@ -229,7 +236,7 @@ export default function GorrosNatacionMain() {
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                 <a href="#presupuesto">
-                  Solicitar Presupuesto
+                  {translations.ctaButton}
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
