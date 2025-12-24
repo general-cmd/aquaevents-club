@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
-import { Edit, Trash2, Calendar, ExternalLink, Sparkles } from "lucide-react";
+import { Edit, Trash2, Calendar, ExternalLink, Sparkles, Filter, X } from "lucide-react";
 import { getLoginUrl } from "@/const";
 
 export default function AdminBulkEdit() {
   const { user, loading, isAuthenticated } = useAuth();
   const [selectedEvents, setSelectedEvents] = useState<Set<string>>(new Set());
+  const [filters, setFilters] = useState({
+    missingDescription: false,
+    missingSEO: false,
+    createdAfter: "",
+    createdBefore: "",
+  });
   const generateDescriptionMutation = trpc.events.generateDescription.useMutation();
 
   const isAdmin = user?.role === "admin";
@@ -35,6 +42,53 @@ export default function AdminBulkEdit() {
     },
   });
 
+  // Move data processing before early returns to satisfy hooks rules
+  const allEvents = eventsData?.events || [];
+  
+  // Apply filters
+  const filteredEvents = useMemo(() => {
+    let filtered = allEvents;
+    
+    if (filters.missingDescription) {
+      filtered = filtered.filter((e: any) => {
+        const desc = e.description;
+        if (!desc) return true;
+        if (typeof desc === 'string') return desc.trim().length === 0;
+        return (!desc.es || desc.es.trim().length === 0) && (!desc.en || desc.en.trim().length === 0);
+      });
+    }
+    
+    if (filters.missingSEO) {
+      filtered = filtered.filter((e: any) => {
+        return !e.seo || !e.seo.metaDescription || !e.seo.canonical;
+      });
+    }
+    
+    if (filters.createdAfter) {
+      const afterDate = new Date(filters.createdAfter);
+      filtered = filtered.filter((e: any) => {
+        if (!e.createdAt) return false;
+        return new Date(e.createdAt) >= afterDate;
+      });
+    }
+    
+    if (filters.createdBefore) {
+      const beforeDate = new Date(filters.createdBefore);
+      beforeDate.setHours(23, 59, 59, 999); // End of day
+      filtered = filtered.filter((e: any) => {
+        if (!e.createdAt) return false;
+        return new Date(e.createdAt) <= beforeDate;
+      });
+    }
+    
+    return filtered;
+  }, [allEvents, filters]);
+  
+  const events = filteredEvents;
+  const allSelected = events.length > 0 && selectedEvents.size === events.length;
+  const activeFiltersCount = Object.values(filters).filter(v => v && v !== "").length;
+
+  // Early returns after all hooks
   if (loading) return <div className="container py-8">Cargando...</div>;
 
   if (!isAuthenticated) {
@@ -54,15 +108,27 @@ export default function AdminBulkEdit() {
     );
   }
 
-  const events = eventsData?.events || [];
-  const allSelected = events.length > 0 && selectedEvents.size === events.length;
-
   const toggleAll = () => {
     if (allSelected) {
       setSelectedEvents(new Set());
     } else {
       setSelectedEvents(new Set(events.map((e: any) => e._id?.toString() || e._id)));
     }
+  };
+  
+  const selectAllFiltered = () => {
+    setSelectedEvents(new Set(events.map((e: any) => e._id?.toString() || e._id)));
+    toast.success(`${events.length} eventos seleccionados`);
+  };
+  
+  const clearFilters = () => {
+    setFilters({
+      missingDescription: false,
+      missingSEO: false,
+      createdAfter: "",
+      createdBefore: "",
+    });
+    toast.info("Filtros eliminados");
   };
 
   const toggleEvent = (id: string) => {
@@ -168,10 +234,105 @@ export default function AdminBulkEdit() {
           </div>
         </CardHeader>
         <CardContent>
+          {/* Filters Section */}
+          <Card className="mb-6 bg-muted/50">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Filter className="w-5 h-5" />
+                  <CardTitle className="text-lg">Filtros</CardTitle>
+                  {activeFiltersCount > 0 && (
+                    <Badge variant="secondary">{activeFiltersCount} activos</Badge>
+                  )}
+                </div>
+                {activeFiltersCount > 0 && (
+                  <Button onClick={clearFilters} variant="ghost" size="sm">
+                    <X className="w-4 h-4 mr-2" />
+                    Limpiar Filtros
+                  </Button>
+                )}
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Missing Description Filter */}
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="filter-missing-desc"
+                    checked={filters.missingDescription}
+                    onCheckedChange={(checked) =>
+                      setFilters({ ...filters, missingDescription: checked as boolean })
+                    }
+                  />
+                  <Label htmlFor="filter-missing-desc" className="cursor-pointer">
+                    Sin Descripción
+                  </Label>
+                </div>
+                
+                {/* Missing SEO Filter */}
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="filter-missing-seo"
+                    checked={filters.missingSEO}
+                    onCheckedChange={(checked) =>
+                      setFilters({ ...filters, missingSEO: checked as boolean })
+                    }
+                  />
+                  <Label htmlFor="filter-missing-seo" className="cursor-pointer">
+                    Sin Datos SEO
+                  </Label>
+                </div>
+                
+                {/* Created After Filter */}
+                <div className="space-y-1">
+                  <Label htmlFor="filter-created-after" className="text-sm">
+                    Creado Después De
+                  </Label>
+                  <Input
+                    id="filter-created-after"
+                    type="date"
+                    value={filters.createdAfter}
+                    onChange={(e) =>
+                      setFilters({ ...filters, createdAfter: e.target.value })
+                    }
+                  />
+                </div>
+                
+                {/* Created Before Filter */}
+                <div className="space-y-1">
+                  <Label htmlFor="filter-created-before" className="text-sm">
+                    Creado Antes De
+                  </Label>
+                  <Input
+                    id="filter-created-before"
+                    type="date"
+                    value={filters.createdBefore}
+                    onChange={(e) =>
+                      setFilters({ ...filters, createdBefore: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+              
+              {/* Filter Results Summary */}
+              <div className="mt-4 flex items-center justify-between">
+                <p className="text-sm text-muted-foreground">
+                  Mostrando <strong>{events.length}</strong> de <strong>{allEvents.length}</strong> eventos
+                </p>
+                {events.length > 0 && (
+                  <Button onClick={selectAllFiltered} variant="outline" size="sm">
+                    Seleccionar Todos los Filtrados ({events.length})
+                  </Button>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+          
+          {/* Events List */}
           {isLoading ? (
             <p>Cargando eventos...</p>
           ) : events.length === 0 ? (
-            <p>No hay eventos publicados</p>
+            <p>No hay eventos que coincidan con los filtros</p>
           ) : (
             <div className="space-y-2">
               <div className="flex items-center gap-4 p-3 border-b font-medium">

@@ -1716,3 +1716,13 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Set appropriate priority and changefreq for product pages (priority 0.85-0.9, weekly changefreq)
 - [x] Test sitemap.xml endpoint (all 6 product pages confirmed in sitemap)
 - [x] Push to GitHub for Railway deployment (ready)
+
+
+## Bulk Edit Filters (Dec 24, 2025)
+- [x] Add "Missing Description" filter to bulk edit page
+- [x] Add "Creation Date" filter (date range selector with before/after)
+- [x] Add "Select All Filtered" button to select all events matching current filters
+- [x] Add filter chips showing active filters with clear buttons (badge + clear button)
+- [x] Add event count display showing "X of Y events" with filtered/total counts
+- [x] Test filters with real events (Sin Descripción: 0/85, date filter: working)
+- [x] Push to GitHub for Railway deployment (ready)
