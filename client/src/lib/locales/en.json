@@ -337,7 +337,8 @@
       "breadcrumbHome": "HOME",
       "breadcrumbCaps": "SWIMMING CAPS",
       "breadcrumbSilicone": "SILICONE CAPS",
-      "viewAllCaps": "View All Caps"
+      "viewAllCaps": "View All Caps",
+      "faqs": []
     },
     "main": {
       "pageTitle": "Custom Swimming Caps | From €4.45 | AquaEvents.club",
@@ -348,7 +349,8 @@
       "ctaButton": "REQUEST A QUOTE",
       "breadcrumbHome": "HOME",
       "breadcrumbCaps": "SWIMMING CAPS",
-      "viewAllCaps": "View All Caps"
+      "viewAllCaps": "View All Caps",
+      "faqs": []
     },
     "latex": {
       "pageTitle": "Custom Latex Swimming Caps | From €3.95 | AquaEvents.club",
@@ -360,7 +362,49 @@
       "breadcrumbHome": "HOME",
       "breadcrumbCaps": "SWIMMING CAPS",
       "breadcrumbLatex": "LATEX CAPS",
-      "viewAllCaps": "View All Caps"
+      "viewAllCaps": "View All Caps",
+      "faqs": [
+        {
+          "question": "What is the difference between latex and silicone caps?",
+          "answer": "Latex caps are more economical (€2.10 vs €4.45) and thinner, ideal for one-time events and promotional gifts. Silicone caps are more durable, hypoallergenic and comfortable for regular use. Latex is less resistant to chlorine and may cause allergies in some people."
+        },
+        {
+          "question": "What is the minimum order?",
+          "answer": "The minimum order is 100 units. We offer significant discounts for orders of 250, 500, 1000 and 1500+ units."
+        },
+        {
+          "question": "Are latex caps suitable for people with allergies?",
+          "answer": "No, latex caps contain natural latex which can cause allergic reactions. For people with latex allergy, we recommend silicone caps (100% hypoallergenic) or lycra."
+        },
+        {
+          "question": "How long do latex caps last?",
+          "answer": "Latex caps are ideal for one-time events or occasional use. They are not as durable as silicone (last 3-6 months vs 1-2 years), but they are very economical and perfect for promotional gifts."
+        },
+        {
+          "question": "Are they suitable for official competitions?",
+          "answer": "Yes, latex caps comply with FINA regulations and can be used in official competitions. However, many swimmers prefer silicone for competitions due to its greater durability and comfort."
+        },
+        {
+          "question": "What thickness are latex caps?",
+          "answer": "Latex caps have a thickness of approximately 0.3-0.4mm, much thinner than silicone (50GMS). This makes them lighter and more economical, but less durable."
+        },
+        {
+          "question": "How do you care for latex caps?",
+          "answer": "Rinse with cold water after each use and dry completely before storing. Avoid contact with oils, creams and sharp objects. Store in a cool, dry place away from direct sunlight."
+        },
+        {
+          "question": "How many print colors can I choose?",
+          "answer": "You can choose 1 print color. The base price of €2.10 includes 1-color printing. For multiple colors, check out our silicone cap options."
+        },
+        {
+          "question": "What is the delivery time?",
+          "answer": "The production and delivery time is approximately 3 weeks from order confirmation. We offer free shipping in Europe."
+        },
+        {
+          "question": "What type of events are latex caps ideal for?",
+          "answer": "Latex caps are perfect for one-time events such as triathlons, open water swims, championships, corporate gifts and promotions. Their economical price makes them ideal when you need many units for a specific event."
+        }
+      ]
     },
     "gamuza": {
       "pageTitle": "Custom Lycra Swimming Caps | From €5.95 | AquaEvents.club",
@@ -372,7 +416,8 @@
       "breadcrumbHome": "HOME",
       "breadcrumbCaps": "SWIMMING CAPS",
       "breadcrumbGamuza": "LYCRA CAPS",
-      "viewAllCaps": "View All Caps"
+      "viewAllCaps": "View All Caps",
+      "faqs": []
     },
     "peloLargo": {
       "pageTitle": "Custom Long Hair Swimming Caps | From €6.45 | AquaEvents.club",
@@ -384,7 +429,8 @@
       "breadcrumbHome": "HOME",
       "breadcrumbCaps": "SWIMMING CAPS",
       "breadcrumbLongHair": "LONG HAIR CAPS",
-      "viewAllCaps": "View All Caps"
+      "viewAllCaps": "View All Caps",
+      "faqs": []
     },
     "tela": {
       "pageTitle": "Custom Fabric Swimming Caps | From €4.95 | AquaEvents.club",
@@ -396,7 +442,8 @@
       "breadcrumbHome": "HOME",
       "breadcrumbCaps": "SWIMMING CAPS",
       "breadcrumbFabric": "FABRIC CAPS",
-      "viewAllCaps": "View All Caps"
+      "viewAllCaps": "View All Caps",
+      "faqs": []
     }
   }
 }
