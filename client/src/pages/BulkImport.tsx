@@ -16,11 +16,17 @@ export default function BulkImport() {
   const { user, loading } = useAuth();
   const [csvText, setCsvText] = useState("");
   const [results, setResults] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const templateQuery = trpc.bulkImport.getTemplate.useQuery();
   const importMutation = trpc.bulkImport.importEvents.useMutation({
     onSuccess: (data) => {
       setResults(data);
+      setError(null);
+    },
+    onError: (err) => {
+      setError(err.message || "Unknown error occurred during import");
+      setResults(null);
     },
   });
 
@@ -217,6 +223,16 @@ export default function BulkImport() {
             </Button>
           </CardContent>
         </Card>
+
+        {/* Error Alert */}
+        {error && (
+          <Alert className="mb-6 border-red-200 bg-red-50">
+            <XCircle className="h-4 w-4 text-red-600" />
+            <AlertDescription className="text-red-800">
+              <strong>Import Failed:</strong> {error}
+            </AlertDescription>
+          </Alert>
+        )}
 
         {/* Results Card */}
         {results && (

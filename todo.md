@@ -1738,3 +1738,12 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Analyze Copilot SEO audit checklist (comprehensive 225-point audit analyzed)
 - [x] Create progress report showing what's done vs. what's left (40% complete overall, detailed breakdown by category)
 - [x] Push fixes to GitHub (ready to push)
+
+
+## CSV Bulk Import Debugging (Dec 24, 2025)
+- [x] Analyze CSV data format from user (18 triathlon events from Madrid)
+- [x] Check for data format issues (found: row 13 has end time 14:00 before start time 16:00)
+- [x] Review bulk import router code to understand import logic
+- [x] Identify why events not loading (missing onError handler in frontend, errors silently swallowed)
+- [x] Fix import issue (added error handling + created corrected CSV file)
+- [ ] Push fix to GitHub and test with corrected CSV
