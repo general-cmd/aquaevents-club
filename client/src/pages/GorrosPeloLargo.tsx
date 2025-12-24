@@ -190,21 +190,21 @@ export default function GorrosPeloLargo() {
           <div className="container grid md:grid-cols-2 gap-8 items-center">
             <div>
               <nav className="text-sm mb-6 opacity-90">
-                <Link href="/" className="hover:underline">INICIO</Link>
+                <Link href="/" className="hover:underline">{translations.breadcrumbHome}</Link>
                 <span className="mx-2">•</span>
-                <Link href="/gorros-natacion" className="hover:underline">GORROS DE NATACIÓN</Link>
+                <Link href="/gorros-natacion" className="hover:underline">{translations.breadcrumbCaps}</Link>
                 <span className="mx-2">•</span>
-                <span>GORROS PARA PELO LARGO</span>
+                <span>{translations.breadcrumbLongHair}</span>
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
                 {translations.heroHeading}
               </h1>
               <p className="text-xl mb-8">
-                Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros para pelo largo están diseñados para evitar enganches.
+                {translations.heroP1}
               </p>
               <p className="text-lg mb-8">
-                Para nadadores con pelo largo, nuestros gorros tienen espacio extra en el interior para acomodar y evitar enganches. Estos gorros están hechos de silicona, aumentando la durabilidad y ofreciendo un rendimiento elegante.
+                {translations.heroP2}
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -215,7 +215,7 @@ export default function GorrosPeloLargo() {
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   <Link href="/gorros-natacion">
-                    Ver Todos los Gorros
+                    {translations.viewAllCaps}
                   </Link>
                 </Button>
               </div>

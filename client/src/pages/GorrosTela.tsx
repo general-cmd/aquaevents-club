@@ -190,21 +190,21 @@ export default function GorrosTela() {
           <div className="container grid md:grid-cols-2 gap-12 items-center">
             <div>
               <nav className="text-sm mb-6 opacity-90">
-                <Link href="/" className="hover:underline">INICIO</Link>
+                <Link href="/" className="hover:underline">{translations.breadcrumbHome}</Link>
                 <span className="mx-2">•</span>
-                <Link href="/gorros-natacion" className="hover:underline">GORROS DE NATACIÓN</Link>
+                <Link href="/gorros-natacion" className="hover:underline">{translations.breadcrumbCaps}</Link>
                 <span className="mx-2">•</span>
-                <span>GORROS DE TELA</span>
+                <span>{translations.breadcrumbFabric}</span>
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
                 {translations.heroHeading}
               </h1>
               <p className="text-xl mb-8">
-                Gorros de poliéster y lycra ideales para escuelas de natación, niños y uso recreativo. Cómodos, ligeros y perfectos para merchandising.
+                {translations.heroP1}
               </p>
               <p className="text-lg mb-8">
-                Nuestros gorros de tela ofrecen máxima comodidad con materiales suaves y elásticos. Disponibles en poliéster (económico) y lycra (máxima elasticidad). Perfectos para programas de aprendizaje y natación recreativa.
+                {translations.heroP2}
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -215,7 +215,7 @@ export default function GorrosTela() {
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   <Link href="/gorros-natacion">
-                    Ver Todos los Gorros
+                    {translations.viewAllCaps}
                   </Link>
                 </Button>
               </div>

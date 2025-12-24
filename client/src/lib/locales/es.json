@@ -343,31 +343,60 @@
       "pageTitle": "Gorros de Natación Personalizados | Desde €4.45 | AquaEvents.club",
       "metaDescription": "Gorros de natación personalizados para clubes. Silicona, látex, gamuza, pelo largo y tela. Desde €4.45. Envío gratis.",
       "heroHeading": "GORROS DE NATACIÓN PERSONALIZADOS",
-      "ctaButton": "Solicitar Presupuesto"
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Ofrecemos 5 tipos de gorros para todas las necesidades.",
+      "heroP2": "Con más de 25 años de experiencia, hemos suministrado más de 1 millón de gorros a clubes, federaciones y eventos en toda Europa.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "viewAllCaps": "Ver Todos los Gorros"
     },
     "latex": {
       "pageTitle": "Gorros de Látex Personalizados | Desde €3.95 | AquaEvents.club",
       "metaDescription": "Gorros de látex personalizados para clubes desde €3.95. Económicos y flexibles. Envío gratis España.",
       "heroHeading": "GORROS DE LÁTEX PERSONALIZADOS",
-      "ctaButton": "Solicitar Presupuesto"
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros de látex son ideales para eventos únicos y regalos promocionales.",
+      "heroP2": "Los gorros de látex están hechos de una fina capa de látex, comúnmente utilizados para eventos únicos o regalos promocionales.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbLatex": "GORROS DE LÁTEX",
+      "viewAllCaps": "Ver Todos los Gorros"
     },
     "gamuza": {
       "pageTitle": "Gorros de Gamuza Personalizados | Desde €5.95 | AquaEvents.club",
       "metaDescription": "Gorros de gamuza personalizados para clubes desde €5.95. Suaves y cómodos. Envío gratis España.",
       "heroHeading": "GORROS DE GAMUZA PERSONALIZADOS",
-      "ctaButton": "Solicitar Presupuesto"
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros de gamuza ofrecen suavidad y comodidad excepcionales.",
+      "heroP2": "Los gorros de gamuza están hechos con material suave tipo gamuza sintética, ideales para nadadores que buscan máxima comodidad.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbGamuza": "GORROS DE GAMUZA",
+      "viewAllCaps": "Ver Todos los Gorros"
     },
     "peloLargo": {
       "pageTitle": "Gorros para Pelo Largo Personalizados | Desde €6.45 | AquaEvents.club",
       "metaDescription": "Gorros para pelo largo personalizados desde €6.45. Diseño especial con espacio extra. Envío gratis.",
       "heroHeading": "GORROS PARA PELO LARGO PERSONALIZADOS",
-      "ctaButton": "Solicitar Presupuesto"
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros para pelo largo tienen diseño especial con espacio extra.",
+      "heroP2": "Los gorros para pelo largo están diseñados con una bolsa extra en la parte trasera para acomodar cómodamente el cabello largo.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbLongHair": "GORROS PARA PELO LARGO",
+      "viewAllCaps": "Ver Todos los Gorros"
     },
     "tela": {
       "pageTitle": "Gorros de Tela Personalizados | Desde €4.95 | AquaEvents.club",
       "metaDescription": "Gorros de tela/lycra personalizados desde €4.95. Cómodos para entrenamiento. Envío gratis España.",
       "heroHeading": "GORROS DE TELA PERSONALIZADOS",
-      "ctaButton": "Solicitar Presupuesto"
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros de tela/lycra son ideales para entrenamiento y uso diario.",
+      "heroP2": "Los gorros de tela están hechos de poliéster/lycra transpirable, perfectos para entrenamientos largos y uso recreativo.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbFabric": "GORROS DE TELA",
+      "viewAllCaps": "Ver Todos los Gorros"
     }
   }
 }

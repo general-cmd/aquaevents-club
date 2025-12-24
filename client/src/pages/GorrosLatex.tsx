@@ -190,21 +190,21 @@ export default function GorrosLatex() {
           <div className="container grid md:grid-cols-2 gap-8 items-center">
             <div>
               <nav className="text-sm mb-6 opacity-90">
-                <Link href="/" className="hover:underline">INICIO</Link>
+                <Link href="/" className="hover:underline">{translations.breadcrumbHome}</Link>
                 <span className="mx-2">•</span>
-                <Link href="/gorros-natacion" className="hover:underline">GORROS DE NATACIÓN</Link>
+                <Link href="/gorros-natacion" className="hover:underline">{translations.breadcrumbCaps}</Link>
                 <span className="mx-2">•</span>
-                <span>GORROS DE LÁTEX</span>
+                <span>{translations.breadcrumbLatex}</span>
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
                 {translations.heroHeading}
               </h1>
               <p className="text-xl mb-8">
-                Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros de látex son ideales para eventos únicos y regalos promocionales.
+                {translations.heroP1}
               </p>
               <p className="text-lg mb-8">
-                Los gorros de látex están hechos de una fina capa de látex, comúnmente utilizados para eventos únicos o regalos promocionales.
+                {translations.heroP2}
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -215,7 +215,7 @@ export default function GorrosLatex() {
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   <Link href="/gorros-natacion">
-                    Ver Todos los Gorros
+                    {translations.viewAllCaps}
                   </Link>
                 </Button>
               </div>

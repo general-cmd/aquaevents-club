@@ -202,11 +202,11 @@ export default function GorrosGamuza() {
         <section className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-20">
           <div className="container">
             <nav className="text-sm mb-6 opacity-90">
-              <Link href="/" className="hover:underline">Inicio</Link>
+              <Link href="/" className="hover:underline">{translations.breadcrumbHome}</Link>
               <span className="mx-2">/</span>
-              <Link href="/gorros-natacion" className="hover:underline">Gorros de Natación</Link>
+              <Link href="/gorros-natacion" className="hover:underline">{translations.breadcrumbCaps}</Link>
               <span className="mx-2">/</span>
-              <span>Gorros de Gamuza</span>
+              <span>{translations.breadcrumbGamuza}</span>
             </nav>
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -215,7 +215,10 @@ export default function GorrosGamuza() {
                   {translations.heroHeading}
                 </h1>
                 <p className="text-xl mb-8">
-                  Tacto suave premium con tratamiento especial de superficie gamuza. 100% hipoalergénicos, sin arrugas, máxima elasticidad. Ideal para nadadores con sensibilidad al látex.
+                  {translations.heroP1}
+                </p>
+                <p className="text-lg mb-8">
+                  {translations.heroP2}
                 </p>
 
                 <div className="space-y-3 mb-8">
@@ -245,7 +248,7 @@ export default function GorrosGamuza() {
                 </Button>
                   <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                     <Link href="/gorros-natacion">
-                      Ver Todos los Gorros
+                      {translations.viewAllCaps}
                     </Link>
                   </Button>
                 </div>

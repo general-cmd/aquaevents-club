@@ -343,31 +343,60 @@
       "pageTitle": "Custom Swimming Caps | From €4.45 | AquaEvents.club",
       "metaDescription": "Custom swimming caps for clubs. Silicone, latex, lycra, long hair and fabric. From €4.45. Free shipping.",
       "heroHeading": "CUSTOM SWIMMING CAPS",
-      "ctaButton": "REQUEST A QUOTE"
+      "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. We offer 5 types of caps for all needs.",
+      "heroP2": "With over 25 years of experience, we have supplied over 1 million caps to clubs, federations and events across Europe.",
+      "ctaButton": "REQUEST A QUOTE",
+      "breadcrumbHome": "HOME",
+      "breadcrumbCaps": "SWIMMING CAPS",
+      "viewAllCaps": "View All Caps"
     },
     "latex": {
       "pageTitle": "Custom Latex Swimming Caps | From €3.95 | AquaEvents.club",
       "metaDescription": "Custom latex swimming caps for clubs from €3.95. Economical and flexible. Free shipping Spain.",
       "heroHeading": "CUSTOM LATEX SWIMMING CAPS",
-      "ctaButton": "REQUEST A QUOTE"
+      "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. Latex caps are ideal for one-time events and promotional gifts.",
+      "heroP2": "Latex caps are made from a thin layer of latex, commonly used for one-time events or promotional giveaways.",
+      "ctaButton": "REQUEST A QUOTE",
+      "breadcrumbHome": "HOME",
+      "breadcrumbCaps": "SWIMMING CAPS",
+      "breadcrumbLatex": "LATEX CAPS",
+      "viewAllCaps": "View All Caps"
     },
     "gamuza": {
       "pageTitle": "Custom Lycra Swimming Caps | From €5.95 | AquaEvents.club",
       "metaDescription": "Custom lycra swimming caps for clubs from €5.95. Soft and comfortable. Free shipping Spain.",
       "heroHeading": "CUSTOM LYCRA SWIMMING CAPS",
-      "ctaButton": "REQUEST A QUOTE"
+      "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. Lycra caps offer exceptional softness and comfort.",
+      "heroP2": "Lycra caps are made with soft synthetic lycra material, ideal for swimmers seeking maximum comfort.",
+      "ctaButton": "REQUEST A QUOTE",
+      "breadcrumbHome": "HOME",
+      "breadcrumbCaps": "SWIMMING CAPS",
+      "breadcrumbGamuza": "LYCRA CAPS",
+      "viewAllCaps": "View All Caps"
     },
     "peloLargo": {
       "pageTitle": "Custom Long Hair Swimming Caps | From €6.45 | AquaEvents.club",
       "metaDescription": "Custom long hair swimming caps from €6.45. Special design with extra space. Free shipping.",
       "heroHeading": "CUSTOM LONG HAIR SWIMMING CAPS",
-      "ctaButton": "REQUEST A QUOTE"
+      "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. Long hair caps feature a special design with extra space.",
+      "heroP2": "Long hair caps are designed with an extra pouch at the back to comfortably accommodate long hair.",
+      "ctaButton": "REQUEST A QUOTE",
+      "breadcrumbHome": "HOME",
+      "breadcrumbCaps": "SWIMMING CAPS",
+      "breadcrumbLongHair": "LONG HAIR CAPS",
+      "viewAllCaps": "View All Caps"
     },
     "tela": {
       "pageTitle": "Custom Fabric Swimming Caps | From €4.95 | AquaEvents.club",
       "metaDescription": "Custom fabric/lycra swimming caps from €4.95. Comfortable for training. Free shipping Spain.",
       "heroHeading": "CUSTOM FABRIC SWIMMING CAPS",
-      "ctaButton": "REQUEST A QUOTE"
+      "heroP1": "We are one of Europe's leading suppliers of custom swimming caps. Fabric/lycra caps are ideal for training and daily use.",
+      "heroP2": "Fabric caps are made from breathable polyester/lycra, perfect for long training sessions and recreational use.",
+      "ctaButton": "REQUEST A QUOTE",
+      "breadcrumbHome": "HOME",
+      "breadcrumbCaps": "SWIMMING CAPS",
+      "breadcrumbFabric": "FABRIC CAPS",
+      "viewAllCaps": "View All Caps"
     }
   }
 }

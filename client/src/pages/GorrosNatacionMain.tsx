@@ -202,16 +202,19 @@ export default function GorrosNatacionMain() {
         <section className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-20">
           <div className="container">
             <nav className="text-sm mb-6 opacity-90">
-              <Link href="/" className="hover:underline">Inicio</Link>
+              <Link href="/" className="hover:underline">{translations.breadcrumbHome}</Link>
               <span className="mx-2">/</span>
-              <span>Gorros de Natación</span>
+              <span>{translations.breadcrumbCaps}</span>
             </nav>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {translations.heroHeading}
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl">
-              Más de 2 millones de gorros impresos. Envío gratuito a España. Entrega en 3 semanas. Desde €2.10 por unidad.
+              {translations.heroP1}
+            </p>
+            <p className="text-lg mb-8 max-w-3xl">
+              {translations.heroP2}
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
