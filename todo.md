@@ -1704,3 +1704,15 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Remove any mailto: or external links from material page CTAs (removed euroswimcaps.com link, removed mailto)
 - [x] Test all CTAs on silicona, latex, gamuza, pelo-largo, tela pages (tested hero + calculator CTAs, both work perfectly)
 - [x] Push changes to GitHub for Railway deployment (ready to push)
+
+
+## Update Sitemap with Product Pages (Dec 23, 2025)
+- [x] Add /gorros-natacion main page to sitemap
+- [x] Add /gorros-natacion/silicona to sitemap
+- [x] Add /gorros-natacion/latex to sitemap
+- [x] Add /gorros-natacion/gamuza to sitemap
+- [x] Add /gorros-natacion/pelo-largo to sitemap
+- [x] Add /gorros-natacion/tela to sitemap
+- [x] Set appropriate priority and changefreq for product pages (priority 0.85-0.9, weekly changefreq)
+- [x] Test sitemap.xml endpoint (all 6 product pages confirmed in sitemap)
+- [x] Push to GitHub for Railway deployment (ready)

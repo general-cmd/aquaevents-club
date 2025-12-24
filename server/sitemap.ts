@@ -20,6 +20,14 @@ router.get("/sitemap.xml", async (req, res) => {
       { url: "/blog", changefreq: "weekly", priority: "0.7", lastmod: currentDate },
       { url: "/enviar-evento", changefreq: "monthly", priority: "0.6", lastmod: currentDate },
       { url: "/perfil", changefreq: "monthly", priority: "0.5", lastmod: currentDate },
+      
+      // Custom Caps Product Pages (High Priority for SEO)
+      { url: "/gorros-natacion", changefreq: "weekly", priority: "0.9", lastmod: currentDate },
+      { url: "/gorros-natacion/silicona", changefreq: "weekly", priority: "0.85", lastmod: currentDate },
+      { url: "/gorros-natacion/latex", changefreq: "weekly", priority: "0.85", lastmod: currentDate },
+      { url: "/gorros-natacion/gamuza", changefreq: "weekly", priority: "0.85", lastmod: currentDate },
+      { url: "/gorros-natacion/pelo-largo", changefreq: "weekly", priority: "0.85", lastmod: currentDate },
+      { url: "/gorros-natacion/tela", changefreq: "weekly", priority: "0.85", lastmod: currentDate },
     ];
 
     // Fetch ONLY FUTURE events from MongoDB (SEO best practice)
