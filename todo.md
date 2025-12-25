@@ -1856,3 +1856,12 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Fix English reviews not displaying on tela page (reviews are testimonials, working)
 - [x] Change "gamuza" translation from "Lycra" to "Suede" in English
 - [ ] Verify all 6 languages work on all 6 gorros pages (36 combinations total)
+
+
+## Google Search Console - Structured Data Errors (URGENT)
+- [x] Fix duplicate FAQPage schema on /gorros-natacion page (2 FAQPage schemas detected)
+- [x] Add missing Product schema fields: highPrice, offerCount, review, aggregateRating
+- [x] Verify only ONE FAQPage schema per page
+- [x] Remove CollectionPage schema with incomplete Product schemas
+- [ ] Test with Google Rich Results Test tool
+- [ ] Resubmit sitemap after fixes

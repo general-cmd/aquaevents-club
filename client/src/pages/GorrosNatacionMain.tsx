@@ -135,28 +135,8 @@ export default function GorrosNatacionMain() {
         <meta property="og:url" content="https://aquaevents.club/gorros-natacion" />
         <meta property="og:image" content="https://aquaevents.club/gorro-silicona-azul-personalizado.jpg" />
 
-        {/* CollectionPage Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "Gorros de Natación Personalizados",
-            "description": "Gorros de natación personalizados para clubes, federaciones y eventos. Silicona, látex, ante y pelo largo con impresión personalizada.",
-            "url": "https://aquaevents.club/gorros-natacion",
-            "hasPart": products.map(p => ({
-              "@type": "Product",
-              "name": p.name,
-              "description": p.description,
-              "offers": {
-                "@type": "AggregateOffer",
-                "priceCurrency": "EUR",
-                "lowPrice": parseFloat(p.price.match(/[\d.]+/)?.[0] || "0"),
-                "availability": "https://schema.org/InStock",
-              },
-              "url": `https://aquaevents.club/gorros-natacion/${p.slug}`,
-            })),
-          })}
-        </script>
+        {/* CollectionPage schema removed - incomplete Product schemas were causing Google Search Console errors.
+             Main Product schema is injected via SSR in server/_core/vite.ts with all required fields. */}
 
         {/* FAQPage Schema */}
         <script type="application/ld+json">

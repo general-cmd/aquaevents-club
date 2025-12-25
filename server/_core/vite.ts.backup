@@ -68,55 +68,57 @@ export async function setupVite(app: Express, server: Server) {
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "500",
-            "bestRating": "5",
-            "worstRating": "1"
+            "reviewCount": "500"
           },
-          "review": [
-            {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Person",
-                "name": "Laura Martínez"
-              },
-              "reviewBody": "Comunicación excelente por teléfono y email. Gorros de silicona con impresión a 2 colores, aspecto y tacto geniales."
-            },
-            {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Organization",
-                "name": "CN Sabadell"
-              },
-              "reviewBody": "Producto fantástico y servicio muy eficiente. Recomendado para todos los clubes."
-            },
-            {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Organization",
-                "name": "CN Barcelona"
-              },
-              "reviewBody": "Pedimos 250 gorros y fueron brillantes en todo momento. La calidad es excelente."
-            }
-          ],
           "category": "Equipamiento Deportivo > Natación"
         };
 
-        // FAQPage schema removed - now handled by client-side component for multilingual support
+        const faqSchema = {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuál es el pedido mínimo de gorros personalizados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El pedido mínimo es de 50 unidades. Para clubes pequeños o eventos con menos participantes, podemos ofrecer soluciones alternativas como gorros de stock con pegatinas personalizadas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto tarda la producción de gorros personalizados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El plazo estándar es de 10-15 días laborables desde la aprobación del diseño. Ofrecemos servicio express de 7 días con un recargo del 20%. Para pedidos urgentes, consúltanos disponibilidad."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Los gorros son aptos para competiciones oficiales?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, nuestros gorros cumplen con todas las normativas de FINA (World Aquatics) y RFEN. Son utilizados en campeonatos autonómicos, nacionales e internacionales sin ningún problema."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuestan los gorros de natación personalizados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Los precios van desde 5,55€ por unidad (50 unidades) hasta 2,30€ por unidad (2.000+ unidades). Incluyen diseño personalizado, impresión y envío gratis a península. Ofrecemos descuentos para pedidos recurrentes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Ofrecen descuentos para pedidos recurrentes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, clubes y organizadores de eventos anuales reciben descuentos especiales de hasta el 15% en pedidos recurrentes. Además, almacenamos tu diseño para futuras reposiciones sin coste adicional."
+              }
+            }
+          ]
+        };
 
         // Review schema for testimonials (AI-SEO)
         const reviewSchemas = [
@@ -186,6 +188,7 @@ export async function setupVite(app: Express, server: Server) {
     <meta property="og:image" content="https://aquaevents.club/gorros-piscina-personalizados-competicion-3.jpg" />
     <meta property="og:url" content="https://aquaevents.club/gorros-natacion" />
     <script type="application/ld+json">${JSON.stringify(productSchema)}</script>
+    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
     ${reviewSchemas.map(r => `<script type="application/ld+json">${JSON.stringify(r)}</script>`).join('\n    ')}`;
         
         template = template.replace('</head>', metaTags + '</head>');
@@ -349,55 +352,57 @@ export function serveStatic(app: Express) {
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "500",
-            "bestRating": "5",
-            "worstRating": "1"
+            "reviewCount": "500"
           },
-          "review": [
-            {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Person",
-                "name": "Laura Martínez"
-              },
-              "reviewBody": "Comunicación excelente por teléfono y email. Gorros de silicona con impresión a 2 colores, aspecto y tacto geniales."
-            },
-            {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Organization",
-                "name": "CN Sabadell"
-              },
-              "reviewBody": "Producto fantástico y servicio muy eficiente. Recomendado para todos los clubes."
-            },
-            {
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "author": {
-                "@type": "Organization",
-                "name": "CN Barcelona"
-              },
-              "reviewBody": "Pedimos 250 gorros y fueron brillantes en todo momento. La calidad es excelente."
-            }
-          ],
           "category": "Equipamiento Deportivo > Natación"
         };
 
-        // FAQPage schema removed - now handled by client-side component for multilingual support
+        const faqSchema = {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuál es el pedido mínimo de gorros personalizados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El pedido mínimo es de 50 unidades. Para clubes pequeños o eventos con menos participantes, podemos ofrecer soluciones alternativas como gorros de stock con pegatinas personalizadas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto tarda la producción de gorros personalizados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El plazo estándar es de 10-15 días laborables desde la aprobación del diseño. Ofrecemos servicio express de 7 días con un recargo del 20%. Para pedidos urgentes, consúltanos disponibilidad."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Los gorros son aptos para competiciones oficiales?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, nuestros gorros cumplen con todas las normativas de FINA (World Aquatics) y RFEN. Son utilizados en campeonatos autonómicos, nacionales e internacionales sin ningún problema."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuestan los gorros de natación personalizados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Los precios van desde 5,55€ por unidad (50 unidades) hasta 2,30€ por unidad (2.000+ unidades). Incluyen diseño personalizado, impresión y envío gratis a península. Ofrecemos descuentos para pedidos recurrentes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Ofrecen descuentos para pedidos recurrentes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, clubes y organizadores de eventos anuales reciben descuentos especiales de hasta el 15% en pedidos recurrentes. Además, almacenamos tu diseño para futuras reposiciones sin coste adicional."
+              }
+            }
+          ]
+        };
 
         // Review schema for testimonials (AI-SEO)
         const reviewSchemas = [
@@ -467,6 +472,7 @@ export function serveStatic(app: Express) {
     <meta property="og:image" content="https://aquaevents.club/gorros-piscina-personalizados-competicion-3.jpg" />
     <meta property="og:url" content="https://aquaevents.club/gorros-natacion" />
     <script type="application/ld+json">${JSON.stringify(productSchema)}</script>
+    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
     ${reviewSchemas.map(r => `<script type="application/ld+json">${JSON.stringify(r)}</script>`).join('\n    ')}`;
         
         html = html.replace('</head>', metaTags + '</head>');
