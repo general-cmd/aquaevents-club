@@ -246,7 +246,7 @@
     "allMonths": "Todos los meses",
     "allOrganizers": "Todos los organizadores",
     "showing": "Mostrando {count} eventos",
-    "export": "Exportar ({count})"
+    "export": "Exportar al Calendario"
   },
   "pages": {
     "eventsTitle": "Calendario de Eventos Acuáticos 2026",

@@ -82,6 +82,7 @@ export default function Events() {
         if (e.organizerType) typeSet.add(e.organizerType);
         if (e.location?.region) regionSet.add(e.location.region);
         if (e.federation) organizerSet.add(e.federation);
+        if (e.organizer) organizerSet.add(e.organizer);
         if (e.date) {
           const month = new Date(e.date).toLocaleString('es-ES', { month: 'long', year: 'numeric' });
           monthSet.add(month);
@@ -133,9 +134,12 @@ export default function Events() {
       });
     }
 
-    // Organizer filter (federation/club)
+    // Organizer filter (federation/club/organizer)
     if (selectedOrganizer !== "all") {
-      filtered = filtered.filter((event: any) => event.federation === selectedOrganizer);
+      filtered = filtered.filter((event: any) => 
+        event.federation === selectedOrganizer || 
+        event.organizer === selectedOrganizer
+      );
     }
 
     setFilteredEvents(filtered);
@@ -332,12 +336,9 @@ export default function Events() {
               </Select>
             </div>
 
-            {/* Results Count and Export */}
-            <div className="mt-4 flex items-center justify-between">
-              <div className="text-sm text-gray-600">
-                {t("filters.showing", { count: filteredEvents.length })}
-              </div>
-              {filteredEvents.length > 0 && (
+            {/* Export Button */}
+            {filteredEvents.length > 0 && (
+              <div className="mt-4 flex justify-end">
                 <Button
                   onClick={handleExportCalendar}
                   variant="outline"
@@ -345,10 +346,10 @@ export default function Events() {
                   className="border-blue-600 text-blue-600 hover:bg-blue-50"
                 >
                   <Download className="w-4 h-4 mr-2" />
-                  {t("filters.export", { count: filteredEvents.length })}
+                  {t("filters.export")}
                 </Button>
-              )}
-            </div>
+              </div>
+            )}
           </CardContent>
         </Card>
       </section>

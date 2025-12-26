@@ -35,7 +35,7 @@ export default function OrganizationSchema() {
         "Triatlón",
         "Waterpolo",
         "Aguas Abiertas",
-        "Natación Sincronizada",
+        "Natación Artística",
         "Saltos",
         "Eventos Deportivos",
         "Competiciones Acuáticas"

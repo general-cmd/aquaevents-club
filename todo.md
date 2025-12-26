@@ -1865,3 +1865,11 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Remove CollectionPage schema with incomplete Product schemas
 - [ ] Test with Google Rich Results Test tool
 - [ ] Resubmit sitemap after fixes
+
+
+## Event Listing Page Fixes (URGENT)
+- [x] Capitalize all discipline names (Natación, Aguas Abiertas, Triatlón, Waterpolo, etc.)
+- [x] Replace "Natación Sincronizada" with "Natación Artística" everywhere (DB + code)
+- [x] Remove event count display showing "{count}" placeholder
+- [x] Fix "Todos los Organizadores" filter not working
+- [x] Clean up duplicate/inconsistent discipline entries in database

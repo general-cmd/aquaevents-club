@@ -14,7 +14,7 @@ import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 const DISCIPLINES = [
   "Natación",
   "Waterpolo",
-  "Natación Sincronizada",
+  "Natación Artística",
   "Saltos",
   "Aguas Abiertas",
   "Triatlón",

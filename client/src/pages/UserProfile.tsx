@@ -19,7 +19,7 @@ import { useTranslation } from "react-i18next";
 const DISCIPLINES = [
   "Natación",
   "Waterpolo",
-  "Natación Sincronizada",
+  "Natación Artística",
   "Saltos",
   "Aguas Abiertas",
   "Triatlón",
@@ -576,7 +576,7 @@ export default function UserProfile() {
                   <option value="">Selecciona disciplina</option>
                   <option value="Natación">Natación</option>
                   <option value="Waterpolo">Waterpolo</option>
-                  <option value="Natación Sincronizada">Natación Sincronizada</option>
+                  <option value="Natación Artística">Natación Artística</option>
                   <option value="Saltos">Saltos</option>
                   <option value="Aguas Abiertas">Aguas Abiertas</option>
                   <option value="Triatlón">Triatlón</option>

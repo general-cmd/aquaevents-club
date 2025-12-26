@@ -296,7 +296,7 @@ export default function CreateEventDialog({ open, onOpenChange, onSuccess }: Cre
                     <SelectItem value="triatlon">Triatlón</SelectItem>
                     <SelectItem value="waterpolo">Waterpolo</SelectItem>
                     <SelectItem value="aguas-abiertas">Aguas Abiertas</SelectItem>
-                    <SelectItem value="natacion-sincronizada">Natación Sincronizada</SelectItem>
+                    <SelectItem value="natacion-sincronizada">Natación Artística</SelectItem>
                     <SelectItem value="saltos">Saltos</SelectItem>
                   </SelectContent>
                 </Select>
