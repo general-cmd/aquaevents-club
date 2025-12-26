@@ -1873,3 +1873,10 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Remove event count display showing "{count}" placeholder
 - [x] Fix "Todos los Organizadores" filter not working
 - [x] Clean up duplicate/inconsistent discipline entries in database
+
+
+## Remove Export and Filter Options (Data Protection)
+- [x] Remove export button completely from Events page
+- [x] Remove event count display ("Mostrando {count} eventos")
+- [x] Remove "Todos los organizadores" option from organizer filter
+- [x] Organizer filter should only show actual federation/club names

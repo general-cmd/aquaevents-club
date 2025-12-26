@@ -7,7 +7,7 @@ import { Calendar, MapPin, Search, Filter, Download } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
-import { generateICS } from "@/utils/icsExport";
+
 import { toast } from "sonner";
 import { formatDate as formatDateDDMMYYYY } from "@/lib/dateFormat";
 import ItemListSchema from "@/components/schema/ItemListSchema";
@@ -46,24 +46,7 @@ export default function Events() {
   // Use tRPC to fetch ALL upcoming events (no limit)
   const { data: eventsData, isLoading } = trpc.events.list.useQuery({ limit: 500 });
 
-  const handleExportCalendar = () => {
-    if (!filteredEvents || filteredEvents.length === 0) {
-      toast.error(t("events.empty"));
-      return;
-    }
 
-    const icsEvents = filteredEvents.map((event: any) => ({
-      title: event.name?.es || event.name,
-      startDate: event.date,
-      endDate: event.endDate || event.date,
-      location: `${event.location?.city}, ${event.location?.region}`,
-      description: `${event.discipline || ''}`,
-      url: event.seo?.canonical || `https://aquaevents.club/evento/${event._id}`
-    }));
-
-    generateICS(icsEvents, 'eventos-acuaticos.ics');
-    toast.success(`${filteredEvents.length} eventos exportados al calendario`);
-  };
 
   useEffect(() => {
     if (eventsData?.events) {
@@ -326,7 +309,6 @@ export default function Events() {
                   <SelectValue placeholder={t("filters.allOrganizers")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">{t("filters.allOrganizers")}</SelectItem>
                   {organizers.map(organizer => (
                     <SelectItem key={organizer} value={organizer}>
                       {organizer}
@@ -336,20 +318,7 @@ export default function Events() {
               </Select>
             </div>
 
-            {/* Export Button */}
-            {filteredEvents.length > 0 && (
-              <div className="mt-4 flex justify-end">
-                <Button
-                  onClick={handleExportCalendar}
-                  variant="outline"
-                  size="sm"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  {t("filters.export")}
-                </Button>
-              </div>
-            )}
+
           </CardContent>
         </Card>
       </section>
