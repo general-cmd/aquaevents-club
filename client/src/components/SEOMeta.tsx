@@ -6,6 +6,7 @@ interface SEOMetaProps {
   image?: string;
   url?: string;
   type?: "website" | "article";
+  noindex?: boolean;
 }
 
 /**
@@ -18,6 +19,7 @@ export function SEOMeta({
   image = "https://aquaevents.club/og-image.jpg",
   url = "https://aquaevents.club",
   type = "website",
+  noindex = false,
 }: SEOMetaProps) {
   return (
     <Helmet>
@@ -42,6 +44,9 @@ export function SEOMeta({
 
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
+
+      {/* Noindex for thin content pages */}
+      {noindex && <meta name="robots" content="noindex, follow" />}
     </Helmet>
   );
 }

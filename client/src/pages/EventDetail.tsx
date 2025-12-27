@@ -206,13 +206,21 @@ export default function EventDetail() {
     ? truncateForMeta(event.description.es) 
     : `${translatedTitle} - ${formatDateLong(event.date)} en ${event.location.city}, ${event.location.region}. Evento de ${getDisciplineLabel(event.discipline)}.`;
 
+  // Calculate content length to determine if page should be indexed
+  const contentLength = (event.description?.es || '').length + (event.description?.en || '').length;
+  const shouldNoIndex = contentLength < 200; // Noindex pages with less than 200 chars of content
+
+  // Generate unique meta title with event details
+  const uniqueMetaTitle = `${translatedTitle} - ${formatDateLong(event.date)} | ${event.location.city} | AquaEvents.club`;
+
   return (
     <>
       <SEOMeta 
-        title={`${translatedTitle} | AquaEvents.club`}
+        title={uniqueMetaTitle}
         description={metaDescription}
         url={`https://aquaevents.club/evento/${params.id}`}
         type="article"
+        noindex={shouldNoIndex}
       />
       <EventStructuredData event={event} />
       <BreadcrumbSchema items={[
@@ -274,9 +282,13 @@ export default function EventDetail() {
               <div className="mb-6">
                 <h1 className="text-4xl font-bold mb-4">{translatedTitle}</h1>
                 <div className="flex gap-2">
-                  <Badge variant="secondary" className="text-sm">
-                    {getDisciplineLabel(event.discipline)}
-                  </Badge>
+                  <Link href={`/eventos?discipline=${encodeURIComponent(event.discipline)}`}>
+                    <a>
+                      <Badge variant="secondary" className="text-sm hover:bg-blue-200 cursor-pointer">
+                        {getDisciplineLabel(event.discipline)}
+                      </Badge>
+                    </a>
+                  </Link>
                   <Badge variant="outline" className="text-sm">
                     Próximo
                   </Badge>
@@ -339,6 +351,17 @@ export default function EventDetail() {
                         <div>
                           <span className="font-medium">{t("eventDetail.type")}:</span>
                           <span className="ml-2 capitalize">{(event as any).organizerType === 'federation' ? 'Federación' : (event as any).organizerType === 'club' ? 'Club' : 'Otro'}</span>
+                        </div>
+                      </div>
+                    )}
+                    {event.federation && (
+                      <div className="flex items-start gap-3">
+                        <Building className="w-5 h-5 text-blue-500 mt-0.5" />
+                        <div>
+                          <span className="font-medium">Federación:</span>
+                          <Link href={`/eventos?organizer=${encodeURIComponent(event.federation)}`}>
+                            <a className="ml-2 text-blue-600 hover:underline">{event.federation}</a>
+                          </Link>
                         </div>
                       </div>
                     )}

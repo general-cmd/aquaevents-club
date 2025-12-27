@@ -1880,3 +1880,16 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Remove event count display ("Mostrando {count} eventos")
 - [x] Remove "Todos los organizadores" option from organizer filter
 - [x] Organizer filter should only show actual federation/club names
+
+
+## Critical SEO Issues - Seobility Audit (32% Score, 5,664 Problems)
+- [x] Fix WWW-redirect configuration (301 redirects)
+- [x] Fix 450 identical HTML pages (canonical tags, unique content)
+- [x] Add text content to 451 empty pages or noindex them
+- [x] Improve internal linking on 451 pages with few links
+- [x] Generate unique page titles for 250 duplicate title pages
+- [ ] Fix 243 pages with slow response time (compression, caching)
+- [ ] Fix 451 pages with problematic meta descriptions
+- [ ] Fix 451 pages with H1 heading issues
+- [ ] Fix 456 URLs only in sitemap (add internal links)
+- [ ] Fix 451 pages with title/content keyword mismatch
