@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import net from "net";
+import compression from "compression";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
@@ -33,6 +34,20 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const app = express();
   const server = createServer(app);
+  // Gzip compression for all responses (60-80% size reduction)
+  app.use(compression({
+    level: 6, // Compression level (0-9, 6 is default balance between speed and compression)
+    threshold: 1024, // Only compress responses larger than 1KB
+    filter: (req, res) => {
+      // Don't compress if client doesn't support it
+      if (req.headers['x-no-compression']) {
+        return false;
+      }
+      // Use compression for all other responses
+      return compression.filter(req, res);
+    }
+  }));
+
   // WWW to non-WWW redirect (SEO best practice)
   app.use((req, res, next) => {
     const host = req.get('host');
