@@ -177,7 +177,6 @@ export async function setupVite(app: Express, server: Server) {
         ];
 
         const metaTags = `
-    <title>Gorros de Natación Personalizados al Por Mayor – 50+ Unidades | AquaEvents</title>
     <meta name="description" content="Compra gorros de natación personalizados en España. Silicona premium con logo, mínimo 50 unidades, desde 2,30€. 25 años de experiencia, +1M gorros producidos. Envío gratis UE." />
     <meta name="keywords" content="gorros de natación personalizados, gorros natación personalizados al por mayor, gorros de natación con logo, gorros natación 50 unidades, gorros piscina personalizados, gorros silicona personalizados" />
     <link rel="canonical" href="https://aquaevents.club/gorros-natacion" />
@@ -458,7 +457,6 @@ export function serveStatic(app: Express) {
         ];
 
         const metaTags = `
-    <title>Gorros de Natación Personalizados al Por Mayor – 50+ Unidades | AquaEvents</title>
     <meta name="description" content="Compra gorros de natación personalizados en España. Silicona premium con logo, mínimo 50 unidades, desde 2,30€. 25 años de experiencia, +1M gorros producidos. Envío gratis UE." />
     <meta name="keywords" content="gorros de natación personalizados, gorros natación personalizados al por mayor, gorros de natación con logo, gorros natación 50 unidades, gorros piscina personalizados, gorros silicona personalizados" />
     <link rel="canonical" href="https://aquaevents.club/gorros-natacion" />

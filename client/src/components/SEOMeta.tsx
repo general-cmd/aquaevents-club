@@ -7,6 +7,7 @@ interface SEOMetaProps {
   url?: string;
   type?: "website" | "article";
   noindex?: boolean;
+  lang?: "es" | "en";
 }
 
 /**
@@ -20,6 +21,7 @@ export function SEOMeta({
   url = "https://aquaevents.club",
   type = "website",
   noindex = false,
+  lang = "es",
 }: SEOMetaProps) {
   return (
     <Helmet>
@@ -44,6 +46,12 @@ export function SEOMeta({
 
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
+
+      {/* Hreflang for multilingual SEO */}
+      <link rel="alternate" hrefLang="es" href={url} />
+      <link rel="alternate" hrefLang="en" href={url.replace('/es/', '/en/')} />
+      <link rel="alternate" hrefLang="x-default" href={url} />
+      <html lang={lang} />
 
       {/* Noindex for thin content pages */}
       {noindex && <meta name="robots" content="noindex, follow" />}
