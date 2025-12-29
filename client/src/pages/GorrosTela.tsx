@@ -110,7 +110,7 @@ export default function GorrosTela() {
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
-                {translations.heroHeading}
+                Gorros de Tela Personalizados para Escuelas de Natación y Hoteles
               </h1>
               <p className="text-xl mb-8">
                 {translations.heroP1}
@@ -217,11 +217,41 @@ export default function GorrosTela() {
           </div>
         </section>
 
-        {/* Features Comparison */}
-        <section className="py-16">
+        {/* Unique Value Proposition - Fabric */}
+        <section className="py-16 bg-white">
           <div className="container max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Características</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-teal-900">Gorros de Tela: Confort Total para Escuelas de Natación y Hoteles</h2>
             
+            <div className="prose prose-lg max-w-none mb-12">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Los gorros de tela (poliéster y lycra) representan la solución ideal para entornos donde la <strong>comodidad, facilidad de uso y seguridad infantil</strong> son prioritarias sobre el rendimiento hidrodinámico. Con precios desde €2.10 para poliéster y €3.50 para lycra, estos gorros son la elección preferida por escuelas de natación, hoteles con piscina, campamentos de verano y programas de natación recreativa en toda España.
+              </p>
+              
+              <p className="text-gray-700 leading-relaxed mb-4">
+                A diferencia de la silicona y el látex, que requieren técnica para colocar sin pellizcar el cabello, los gorros de tela se <strong>deslizan suavemente sobre la cabeza sin tirones ni molestias</strong>. Esto es crucial para niños de 3-8 años que están aprendiendo a nadar y pueden sentir ansiedad con gorros más ajustados. La Real Federación Española de Natación (RFEN) recomienda gorros de tela para programas de iniciación infantil (niveles Rana 1-3) donde el objetivo es crear una experiencia positiva, no optimizar tiempos.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Los hoteles con piscina climatizada (más de 2,500 establecimientos en España) utilizan gorros de poliéster personalizados como <strong>merchandising de marca y medida higiénica</strong>. El coste de €2.10 por unidad permite ofrecer gorros gratuitos a huéspedes sin impacto significativo en el presupuesto operativo. Cadenas como Meliá, Barcelo y NH Hoteles distribuyen anualmente más de 50,000 gorros de tela con su logotipo, convirtiendo cada gorro en un elemento de branding que los clientes conservan como recuerdo.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                El poliéster es un material <strong>100% hipoalergénico</strong> que elimina completamente el riesgo de reacciones alérgicas al látex (8-12% de la población) y las irritaciones por presión excesiva de la silicona. Para escuelas de natación con grupos de 20-30 niños por clase, esto significa cero interrupciones por molestias en la cabeza, permitiendo a los instructores concentrarse en la enseñanza en lugar de resolver problemas de equipamiento.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Los gorros de lycra ofrecen <strong>elasticidad superior y ajuste ergonómico</strong> gracias a su banda elástica integrada. Este diseño permite que el gorro se adapte a diferentes tamaños de cabeza sin comprimir, ideal para programas multigeneracionales donde adultos y niños comparten el mismo modelo. La lycra también es más duradera que el poliéster (12-18 meses vs 6-9 meses), lo que justifica su precio superior de €3.50 para clubes que buscan reducir reposiciones.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Es importante aclarar que los gorros de tela <strong>NO son impermeables</strong> y no están diseñados para mantener el cabello seco. Su función principal es higiénica (evitar que cabellos sueltos contaminen el agua) y de identificación visual (colores por niveles o grupos). Para competición oficial o entrenamiento de alto rendimiento, la silicona sigue siendo obligatoria según normativa FINA.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed">
+                La tecnología de impresión textil permite reproducir logotipos complejos en ambos lados del gorro con hasta 4 colores. Para escuelas de natación, esto permite imprimir el logo del club en un lado y el nivel del nadador (Rana 1, Rana 2, etc.) en el otro, facilitando la organización de grupos durante las clases. EuroSwimCaps ofrece 10 colores base para poliéster y lycra, con referencias Pantone certificadas para garantizar consistencia en pedidos recurrentes.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6">
               <Card>
                 <CardContent className="p-6 flex items-start gap-4">

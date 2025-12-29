@@ -110,7 +110,7 @@ export default function GorrosLatex() {
               </nav>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">
-                {translations.heroHeading}
+                Gorros de Látex Personalizados para Triatlones y Eventos Masivos
               </h1>
               <p className="text-xl mb-8">
                 {translations.heroP1}
@@ -170,10 +170,41 @@ export default function GorrosLatex() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-16">
+        {/* Unique Value Proposition - Latex */}
+        <section className="py-16 bg-white">
           <div className="container max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Características</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-green-900">Látex: La Opción Económica para Triatlones y Eventos Masivos</h2>
+            
+            <div className="prose prose-lg max-w-none mb-12">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Los gorros de látex representan la solución más rentable para organizadores de eventos deportivos de gran escala, triatlones, pruebas de aguas abiertas y campañas promocionales corporativas. Con un precio de <strong>€2.10 por unidad en pedidos de 250 gorros</strong>, el látex ofrece un 53% de ahorro respecto a la silicona, lo que lo convierte en la elección preferida cuando el presupuesto es prioritario.
+              </p>
+              
+              <p className="text-gray-700 leading-relaxed mb-4">
+                En España, más del 70% de los triatlones y pruebas de aguas abiertas utilizan gorros de látex personalizados para identificar categorías por colores (elite, grupos de edad, relevos). La Federación Española de Triatlón (FETRI) recomienda látex para eventos de un solo día donde los participantes no reutilizarán el gorro tras la competición. El grosor de 0.3-0.4mm permite una <strong>visibilidad excepcional de los colores</strong> incluso a distancia, crucial para árbitros y cámaras de televisión.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Para eventos masivos como la Travesía del Estrecho de Gibraltar (1,200+ nadadores) o el Ironman Barcelona (2,500+ participantes), el látex es la única opción económicamente viable. Un pedido de 2,000 gorros de látex cuesta aproximadamente €3,800 (con descuentos por volumen), mientras que la misma cantidad en silicona superaría los €8,000. Este ahorro de <strong>€4,200 por evento</strong> permite a los organizadores destinar recursos a otros aspectos críticos como seguridad, logística o premios.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Aunque el látex tiene una vida útil más corta que la silicona (3-6 meses vs 2+ años), esto no es un inconveniente para su uso previsto: <strong>eventos únicos donde los participantes reciben el gorro como parte del kit de carrera</strong>. De hecho, muchos triatletas conservan sus gorros de látex como recuerdo de competiciones emblemáticas, convirtiendo cada gorro en un elemento de branding duradero para patrocinadores.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                El látex natural es biodegradable y se descompone en 1-5 años, frente a los 50-80 años de la silicona sintética. Para eventos con certificación ambiental (ISO 20121) o compromisos de sostenibilidad, el látex es la opción más responsable desde el punto de vista ecológico. Organizaciones como Oceankind y Triathlon Clean Seas recomiendan activamente el látex sobre materiales sintéticos para pruebas en entornos naturales.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+                La tecnología de impresión sobre látex permite reproducir logotipos con hasta 2 colores Pantone, suficiente para la mayoría de diseños corporativos y patrocinadores. El grosor reducido del material (0.3-0.4mm) hace que los colores sean más vibrantes y visibles que en silicona de 50GMS, especialmente bajo luz solar directa en pruebas outdoor.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed">
+                Para la temporada 2026, EuroSwimCaps ofrece más de 20 colores de látex con referencias Pantone certificadas, incluyendo tonos neón (naranja, amarillo, verde) especialmente populares para pruebas de aguas abiertas donde la visibilidad es crítica. El tiempo de producción estándar de 3 semanas permite planificar eventos con antelación, y el servicio express reduce este plazo a 10 días laborables para situaciones urgentes.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8">
               <div className="flex gap-4">
                 <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />

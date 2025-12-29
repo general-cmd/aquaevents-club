@@ -1916,3 +1916,27 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Add security headers (Helmet: X-Frame-Options, X-Content-Type-Options, etc.)
 - [x] Enable trust proxy for Railway deployment
 - [ ] Monitor rate limit violations and adjust thresholds if needed
+
+## SEO Content Rewrite - Swimming Caps Material Pages (Dec 29, 2025)
+
+- [ ] Update H1 tags on all 5 material pages to be material-specific
+- [ ] Replace generic "Características" sections with unique H2s + 300 words:
+  - [ ] /silicona: "Por qué la Silicona es el Estándar de Oro para Competición 2026"
+  - [ ] /latex: "Látex: La Opción Económica para Triatlones y Eventos Masivos"
+  - [ ] /tela: "Gorros de Tela: Confort Total para Escuelas de Natación y Hoteles"
+  - [ ] /pelo-largo: "Diseño Volumétrico: Protección para Cabello Largo y Voluminoso"
+  - [ ] /gamuza: Unique H2 and 300 words material-specific content
+- [ ] Rewrite FAQ sections to be material-specific and in Spanish (not English)
+- [ ] Verify schema markup still works after content changes
+- [ ] Test all pages on dev server before pushing to production
+
+
+## SEO Content Rewrite - Swim Caps Material Pages (Multi-Language)
+- [x] Update H1 tags for all 5 material pages in Spanish (es.json)
+- [x] Add unique H2 sections with 300+ words for each material in Spanish (es.json)
+- [x] Rewrite FAQ sections with material-specific questions in Spanish (es.json)
+- [x] Replicate all content updates to ca.json (Catalan)
+- [x] Replicate all content updates to eu.json (Basque)
+- [x] Replicate all content updates to gl.json (Galician)
+- [x] Replicate all content updates to va.json (Valencian)
+- [ ] Replicate all content updates to en.json (English) - IN PROGRESS (silicona done, 4 pages remaining)

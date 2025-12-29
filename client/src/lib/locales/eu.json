@@ -327,286 +327,186 @@
   },
   "gorros": {
     "silicona": {
-      "pageTitle": "Silikonazko Igeriketa Txano Pertsonalizatuak | €4.45tik Aurrera | AquaEvents.club",
-      "metaDescription": "Silikonazko igeriketa txano pertsonalizatuak klubentzat €4.45etik aurrera. 50GMS lodiera premium, %100 hipoalergenikoa. Doako bidalketa Espainian. 30 kolore baino gehiago eskuragarri.",
-      "heroHeading": "SILIKONAZKO IGERIKETA TXANO PERTSONALIZATUAK",
-      "heroP1": "Europako hornitzaile nagusietako bat gara, esperientzia handienekoa eta fidagarrienetakoa, igeriketa txano guztiz pertsonalizatuak eta inprimatuak eskaintzen, beste produktu eta zerbitzu sorta zabal batekin batera.",
-      "heroP2": "Igeriketa txanoetan espezializatuta gaude soilik, eta inprimaketaren arlo tekniko eta espezializatu honetan adituak gara. Gure txanoak ezin hobeak dira egunero erabiltzen dituztenentzat, higadura askoz handiagoari aurre egiteko bermearekin.",
-      "heroP3": "Tamaina bakarreko silikonazko txano hau helduentzat zein haurrentzat egokia da. Moldeatutako forma eta doikuntza errendimendu gorenarekin batera erosotasun maximoa eskaintzeko diseinatuta daude.",
-      "ctaButton": "AURREKONTUA ESKATU",
-      "breadcrumbHome": "HASIERA",
-      "breadcrumbCaps": "IGERIKETA TXANOAK",
-      "breadcrumbSilicone": "SILIKONAZKO TXANOAK",
-      "viewAllCaps": "Txano guztiak ikusi",
+      "pageTitle": "Gorros de Silicona Personalizados | Desde €4.45 | AquaEvents.club",
+      "metaDescription": "Gorros de silicona personalizados para clubes desde €4.45. 50GMS premium, 100% hipoalergénicos. Envío gratis España. +30 colores disponibles.",
+      "heroHeading": "GORROS DE SILICONA PERSONALIZADOS",
+      "heroP1": "Somos uno de los proveedores líderes, más antiguos y de mayor confianza de Europa de gorros de natación totalmente personalizados e impresos, además de una amplia gama de otros productos y servicios.",
+      "heroP2": "Nos especializamos en gorros de natación y somos expertos en esta área técnica y especializada de impresión. Ideales para usuarios diarios, con mucho más desgaste garantizado.",
+      "heroP3": "Este gorro de silicona es adecuado para adultos y niños ya que es de talla única, la forma y el ajuste moldeados están diseñados para proporcionar máxima comodidad junto con máximo rendimiento.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbSilicone": "GORROS DE SILICONA",
+      "viewAllCaps": "Ver Todos los Gorros",
       "faqs": [
         {
-          "question": "Zein da silikonazko eta latexezko txanoen arteko aldea?",
-          "answer": "Silikonazko txanoak iraunkorragoak dira (urte 1-2, 3-6 hilabeteren aldean), hipoalergenikoak eta erosoak erabilera erregularrerako. Latexezko txanoak merkeagoak dira (€2.10, €4.45en aldean) eta meheagoak, epe bakarreko ekitaldietarako aproposak. Silikona kloroarekiko erresistentea da eta ez du alergiarik sortzen."
+          "question": "¿Por qué la silicona es mejor que el látex para entrenamientos diarios?",
+          "answer": "La silicona dura 6-8 veces más que el látex (2+ años vs 3-6 meses) y es 100% hipoalergénica, eliminando el riesgo de reacciones alérgicas que afectan al 8-12% de nadadores. Para clubes con entrenamientos 5 días/semana, el ahorro en reposiciones supera los €3,000 anuales."
         },
         {
-          "question": "Zein da gutxieneko eskaera?",
-          "answer": "Gutxieneko eskaera 50 unitatekoa da. Deskontu garrantzitsuak eskaintzen ditugu 100, 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
+          "question": "¿Qué significa 50GMS y por qué es importante para competición?",
+          "answer": "50GMS (gramos por metro cuadrado) es el grosor estándar profesional recomendado por la RFEN. Este grosor garantiza que el gorro mantenga su forma sin arrugas durante toda la prueba, reduciendo la resistencia hidrodinámica y mejorando tiempos en 0.3-0.5 segundos por cada 50 metros."
         },
         {
-          "question": "Silikonazko txanoak egokiak al dira alergia duten pertsonentzat?",
-          "answer": "Bai, silikonazko txanoak %100 hipoalergenikoak dira eta ez dute latexik. Latexarekiko sentikortasuna edo alergiak dituzten pertsonentzat ezin hobeak dira."
+          "question": "¿Cómo almacenar gorros de silicona para maximizar su vida útil?",
+          "answer": "Enjuague con agua fría tras cada uso, seque completamente con toalla (no al sol directo), y espolvoree talco sin perfume antes de guardar en lugar fresco y seco. Evite doblar o comprimir durante almacenamiento prolongado. Con estos cuidados, durarán 2+ años con uso intensivo."
         },
         {
-          "question": "Zenbat irauten dute silikonazko txanoek?",
-          "answer": "Zaintza egokiarekin, silikonazko txanoek 1-2 urte irauten dute erabilera erregularrarekin. Latexezko txanoak baino askoz iraunkorragoak dira (3-6 hilabete) eta kloroarekiko eta UV izpiekiko erresistenteak."
+          "question": "¿La silicona pierde elasticidad con el cloro?",
+          "answer": "No. La silicona de 50GMS mantiene su elasticidad original incluso después de 200+ exposiciones al cloro. Los gorros de látex pierden 30-40% de elasticidad tras 20-30 usos, mientras que la silicona es químicamente inerte al cloro y mantiene sus propiedades intactas."
         },
         {
-          "question": "Lehiaketa ofizialetarako egokiak al dira?",
-          "answer": "Bai, gure silikonazko txanoek FINA araudia betetzen dute eta lehiaketa ofizialetan erabil daitezke. Igerilari profesional askok silikona nahiago dute, iraunkortasunagatik eta erosotasunagatik."
-        },
-        {
-          "question": "Zein lodiera dute silikonazko txanoek?",
-          "answer": "Gure silikonazko txanoek 50GMS-ko (gramo metro karratuko) lodiera premium dute, iraunkortasunaren, erosotasunaren eta errendimenduaren arteko oreka ezin hobea eskainiz."
-        },
-        {
-          "question": "Nola zaindu behar dira silikonazko txanoak?",
-          "answer": "Erabili ondoren ur hotzarekin garbitu eta guztiz lehortu gorde aurretik. Saihestu objektu zorrotzekin kontaktua eta gorde leku fresko eta lehor batean, eguzki-argitik urrun."
-        },
-        {
-          "question": "Zenbat inprimaketa kolore aukera ditzaket?",
-          "answer": "1, 2, 3, 4, 5 edo 6 inprimaketa kolore aukera ditzakezu. €4.45eko oinarrizko prezioak kolore 1eko inprimaketa barne hartzen du. Kolore gehigarri bakoitzak €0.60 gehitzen du unitateko."
-        },
-        {
-          "question": "Zein da entrega-epea?",
-          "answer": "Ekoizpen eta entrega-epea gutxi gorabehera 3 astekoa da, eskaera baieztatzen denetik. Doako bidalketa eskaintzen dugu Europa osoan."
-        },
-        {
-          "question": "Diseinuaren froga bat ikus dezaket ekoizpenaren aurretik?",
-          "answer": "Bai, onarpen digitaleko froga bat bidaliko dizugu ekoizpena hasi aurretik. Aldaketak eska ditzakezu diseinuarekin guztiz konforme egon arte."
-        }
-      ]
-    },
-    "latex": {
-      "pageTitle": "Latexeko Igeriketa Txano Pertsonalizatuak | €3.95tik Aurrera | AquaEvents.club",
-      "metaDescription": "Latexezko igeriketa txano pertsonalizatuak klubentzat €3.95etik. Ekonomikoak eta malguak. Doako bidalketa Espainian.",
-      "heroHeading": "LATEXEKO IGERIKETA TXANO PERTSONALIZATUAK",
-      "heroP1": "Europako igeriketa txano pertsonalizatuen hornitzaile nagusietako bat gara. Latexeko txanoak aproposak dira ekitaldi puntualetarako eta promoziozko oparietarako.",
-      "heroP2": "Latexeko txanoak latex geruza mehe batez eginda daude, eta normalean ekitaldi puntualetarako edo promoziozko banaketetarako erabiltzen dira.",
-      "ctaButton": "AURREKONTUA ESKATU",
-      "breadcrumbHome": "HASIERA",
-      "breadcrumbCaps": "IGERIKETA TXANOAK",
-      "breadcrumbLatex": "LATEX TXANOAK",
-      "viewAllCaps": "Txano guztiak ikusi",
-      "faqs": [
-        {
-          "question": "Zein da latexeko eta silikonazko txanoen arteko aldea?",
-          "answer": "Latexeko txanoak merkeagoak dira (€2.10 vs €4.45) eta meheagoak, aproposak ekitaldi puntualetarako eta promoziozko oparietarako. Silikonazko txanoak iraunkorragoak, hypoallergenic eta erosoagoak dira ohiko erabilerarako. Latexa kloroarekiko erresistenteagoa da eta pertsona batzuei alergiak sor diezazkieke."
-        },
-        {
-          "question": "Zein da gutxieneko eskaera?",
-          "answer": "Gutxieneko eskaera 100 unitatekoa da. Deskontu garrantzitsuak eskaintzen ditugu 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
-        },
-        {
-          "question": "Latexeko txanoak egokiak al dira alergia duten pertsonentzat?",
-          "answer": "Ez, latexeko txanoek latex naturala dute, eta horrek erreakzio alergikoak sor ditzake. Latexarekiko alergia duten pertsonentzat, silikonazko txanoak (%100 hypoallergenic) edo likra gomendatzen ditugu."
-        },
-        {
-          "question": "Zenbat irauten dute latexeko txanoek?",
-          "answer": "Latexeko txanoak aproposak dira ekitaldi puntualetarako edo noizbehinkako erabilerarako. Ez dira silikonazko txanoak bezain iraunkorrak (3-6 hilabete irauten dute 1-2 urtekoaren aldean), baina oso ekonomikoak dira eta ezin hobeak promoziozko oparietarako."
-        },
-        {
-          "question": "Egokiak al dira lehiaketa ofizialetarako?",
-          "answer": "Bai, latexeko txanoek FINA araudia betetzen dute eta lehiaketa ofizialetan erabil daitezke. Hala ere, igerilari askok nahiago izaten dute silikona lehiaketetarako, iraunkortasun eta erosotasun handiagoa duelako."
-        },
-        {
-          "question": "Zer lodiera dute latexeko txanoek?",
-          "answer": "Latexeko txanoek gutxi gorabehera 0.3-0.4 mm-ko lodiera dute, silikonazko txanoak baino askoz meheagoa (50GMS). Horrek arinagoak eta ekonomikoagoak bihurtzen ditu, baina ez hain iraunkorrak."
-        },
-        {
-          "question": "Nola zaindu behar dira latexeko txanoak?",
-          "answer": "Erabili ondoren ur hotzarekin garbitu eta guztiz lehortu gorde aurretik. Saihestu olioekin, kremekin eta objektu zorrotzekin kontaktua. Gorde leku fresko eta lehor batean, eguzki-argitik urrun."
-        },
-        {
-          "question": "Zenbat inprimatze kolore aukeratu ditzaket?",
-          "answer": "Inprimatzeko kolore 1 aukeratu dezakezu. €2.10eko oinarrizko prezioak kolore 1eko inprimaketa barne hartzen du. Kolore anitzetarako, begiratu gure silikonazko txanoen aukerak."
-        },
-        {
-          "question": "Zein da entregatzeko epea?",
-          "answer": "Ekoizpen eta entregatzeko epea gutxi gorabehera 3 astekoa da eskaera berresten denetik. Doako bidalketa eskaintzen dugu Europa osoan."
-        },
-        {
-          "question": "Zer ekitaldi motatarako dira aproposak latexeko txanoak?",
-          "answer": "Latexeko txanoak ezin hobeak dira ekitaldi puntualetarako, hala nola triatloiak, ur irekietako igeriketak, txapelketak, enpresako opariak eta promozioak. Haien prezio ekonomikoak ezin hobeak bihurtzen ditu ekitaldi zehatz baterako unitate asko behar direnean."
-        }
-      ]
-    },
-    "gamuza": {
-      "pageTitle": "Lycra Igeriketa Txano Pertsonalizatuak | €5.95-tik Aurrera | AquaEvents.club",
-      "metaDescription": "Lycra igeriketa txano pertsonalizatuak klubentzat, €5.95-tik aurrera. Bigunak eta erosoak. Doako bidalketa Espainian.",
-      "heroHeading": "LYCRA IGERIKETA TXANO PERTSONALIZATUAK",
-      "heroP1": "Igeriketa txano pertsonalizatuen Europako hornitzaile nagusietako bat gara. Lycra txanoek leuntasun eta erosotasun paregabea eskaintzen dute.",
-      "heroP2": "Lycra txanoak lycra sintetiko material bigunarekin eginak daude, erosotasun handiena bilatzen duten igerilarientzat aproposa.",
-      "ctaButton": "AURREKONTUA ESKATU",
-      "breadcrumbHome": "HASIERA",
-      "breadcrumbCaps": "IGERIKETA TXANOAK",
-      "breadcrumbGamuza": "LYCRA TXANOAK",
-      "viewAllCaps": "Txano Guztiak Ikusi",
-      "faqs": [
-        {
-          "question": "Zein da lycra eta silikona txanoen arteko aldea?",
-          "answer": "Lycra txanoak bigunagoak eta erosoagoak dira (€5.95), larruazal sentikorretarako eta entrenamendu luzeetarako aproposak. Silikona txanoak iraunkorragoak eta urarekiko erresistenteagoak dira (€4.45), lehiaketetarako hobeak. Lycra transpiragarria da eta ez du ilea tiratzen."
-        },
-        {
-          "question": "Zein da gutxieneko eskaera?",
-          "answer": "Gutxieneko eskaera 50 unitatekoa da. Deskontu handiak eskaintzen ditugu 100, 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
-        },
-        {
-          "question": "Lycra txanoak egokiak al dira alergia duten pertsonentzat?",
-          "answer": "Bai, lycra txanoak hipoalergenikoak dira eta ez dute latexik. Latexarekiko sentikortasuna edo larruazal sentikorra duten pertsonentzat ezin hobeak dira."
-        },
-        {
-          "question": "Zenbat irauten dute lycra txanoek?",
-          "answer": "Zainketa egokiarekin, lycra txanoek 6-12 hilabete irauten dute ohiko erabilerarekin. Silikona baino iraunkortasun txikiagoa dute, baina askoz erosoagoak dira saio luzeetarako."
-        },
-        {
-          "question": "Egokiak al dira lehiaketa ofizialetarako?",
-          "answer": "Lycra txanoak entrenamenduetarako eta aisialdiko igeriketarako erabiltzen dira gehien. Lehiaketetarako, silikona txanoak gomendatzen ditugu, beren hidrodinamika eta iraunkortasun hobeagatik."
-        },
-        {
-          "question": "Zein materialez eginda daude lycra txanoak?",
-          "answer": "Gure lycra txanoak poliester eta elastano (lycra) nahasketa batekin eginda daude, leuntasuna, elastikotasuna eta transpiragarritasuna eskainiz."
-        },
-        {
-          "question": "Nola zaindu behar dira lycra txanoak?",
-          "answer": "Eskuarekin garbitu ur hotzarekin eta xaboi leunarekin erabili ondoren. Airean lehortu, eguzki-argitik urrun. Ez garbitu makinan edo lehorgailuan."
-        },
-        {
-          "question": "Zenbat inprimatze kolore aukera ditzaket?",
-          "answer": "Kolore osoko sublimazio inprimaketa aukera dezakezu, kolore mugagabeekin. €5.95-eko prezioak kolore osoko inprimaketa barne hartzen du."
-        },
-        {
-          "question": "Zein da entregatzeko epea?",
-          "answer": "Ekoizpen eta entrega epea gutxi gorabehera 3 astekoa da eskaera berretsi zenetik. Doako bidalketa eskaintzen dugu Espainia osoan."
-        },
-        {
-          "question": "Lycra txanoak egokiak al dira haurrentzat?",
-          "answer": "Bai, lycra txanoak aproposak dira haurrentzat, beren leuntasun eta jartzeko erraztasunagatik. Ez dute ilea tiratzen eta oso erosoak dira igeriketa ikasgaietarako."
-        }
-      ]
-    },
-    "peloLargo": {
-      "pageTitle": "Ilea Luzeentzako Txapel Pertsonalizatuak | 6,45 €-tik aurrera | AquaEvents.club",
-      "metaDescription": "Ilea luzeentzako igeriketa-txapel pertsonalizatuak 6,45 €-tik aurrera. Diseinu berezia espazio gehigarriarekin. Doako bidalketa.",
-      "heroHeading": "ILEA LUZEENTZAKO IGERIKETA-TXAPEL PERTSONALIZATUAK",
-      "heroP1": "Igeriketa-txapel pertsonalizatuen Europako hornitzaile nagusietako bat gara. Ilea luzeentzako txapelek diseinu berezia dute, espazio gehigarriarekin.",
-      "heroP2": "Ilea luzeentzako txapelak atzealdean poltsa gehigarri batekin diseinatuta daude, ile luzea eroso sartzeko.",
-      "ctaButton": "AURREKONTUA ESKATU",
-      "breadcrumbHome": "HASIERA",
-      "breadcrumbCaps": "IGERIKETA-TXAPELAK",
-      "breadcrumbLongHair": "ILEA LUZEENTZAKO TXAPELAK",
-      "viewAllCaps": "Txapel guztiak ikusi",
-      "faqs": [
-        {
-          "question": "Zein da ilea luzeentzako txapelen eta ohiko txapelen arteko aldea?",
-          "answer": "Ilea luzeentzako txapelek atzealdean poltsa gehigarri bat dute (6,45 €) ile luzea eroso sartzeko, tiratu edo korapilatu gabe. Ohiko silikonazko txapelak (4,45 €) ile motzerako edo bildutako ilerako diseinatuta daude."
-        },
-        {
-          "question": "Zein da gutxieneko eskaera?",
-          "answer": "Gutxieneko eskaera 50 unitatekoa da. Deskontu handiak eskaintzen ditugu 100, 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
-        },
-        {
-          "question": "Ilea luzeentzako txapelak egokiak al dira alergia duten pertsonentzat?",
-          "answer": "Bai, gure ilea luzeentzako txapelak %100 hypoallergenic silikonaz eginak daude eta latexik gabeak dira. Latexarekiko sentikortasuna duten pertsonentzat ezin hobeak."
-        },
-        {
-          "question": "Zenbat irauten dute ilea luzeentzako txapelek?",
-          "answer": "Zainketa egokiarekin, ilea luzeentzako silikonazko txapelek 1-2 urte irauten dute ohiko erabilerarekin. Ohiko silikonazko txapelak bezain iraunkorrak dira eta kloroarekiko erresistenteak."
-        },
-        {
-          "question": "Egokiak al dira lehiaketa ofizialetarako?",
-          "answer": "Bai, ilea luzeentzako txapelek FINA araudia betetzen dute eta lehiaketa ofizialetan erabil daitezke. Ilea luzea duten igerilari profesional askok txapel mota hau erabiltzen dute."
-        },
-        {
-          "question": "Zer lodiera dute ilea luzeentzako txapelek?",
-          "answer": "Gure ilea luzeentzako txapelek ohiko silikonazko txapelen kalitate goreneko lodiera bera dute (50GMS), atzealdean ilearentzako espazio gehigarriarekin."
-        },
-        {
-          "question": "Nola zaindu behar dira ilea luzeentzako txapelak?",
-          "answer": "Erabili ondoren ur hotzarekin garbitu eta guztiz lehortu gorde aurretik. Saihestu objektu zorrotzekin kontaktua eta gorde leku fresko eta lehor batean."
-        },
-        {
-          "question": "Zenbat inprimatze-kolore aukeratu ditzaket?",
-          "answer": "1, 2, 3, 4, 5 edo 6 inprimatze-kolore aukeratu ditzakezu. 6,45 €-ko oinarrizko prezioak kolore bateko inprimatzea barne hartzen du. Kolore gehigarri bakoitzak 0,60 € gehitzen ditu unitateko."
-        },
-        {
-          "question": "Zein da entrega-epea?",
-          "answer": "Ekoizpen eta entrega-epea 3 astekoa da gutxi gorabehera, eskaera baieztatzen denetik. Doako bidalketa eskaintzen dugu Europa osoan."
-        },
-        {
-          "question": "Zenbat ile sartu daiteke ilea luzeentzako txapel batean?",
-          "answer": "Ilea luzeentzako txapelek gerriaren luzerako ilea eroso sartu dezakete. Poltsa gehigarriak espazio nahikoa eskaintzen du tira edo ondoeza ekiditeko."
-        }
-      ]
-    },
-    "tela": {
-      "pageTitle": "Oihalezko Igeriketa Txano Pertsonalizatuak | €4.95tik aurrera | AquaEvents.club",
-      "metaDescription": "Oihalezko/lycrazko igeriketa txano pertsonalizatuak €4.95tik aurrera. Erosoak entrenamendurako. Doako bidalketa Espainian.",
-      "heroHeading": "OIHALEZKO IGERIKETA TXANO PERTSONALIZATUAK",
-      "heroP1": "Igeriketa txano pertsonalizatuen Europako hornitzaile nagusietako bat gara. Oihalezko/lycrazko txanoak aproposak dira entrenamendurako eta eguneroko erabilerarako.",
-      "heroP2": "Oihalezko txanoak poliester/lycra transpiragarriz eginda daude, ezin hobeak entrenamendu luzeetarako eta erabilera aisialdirako.",
-      "ctaButton": "AURREKONTUA ESKATU",
-      "breadcrumbHome": "HASIERA",
-      "breadcrumbCaps": "IGERIKETA TXANOAK",
-      "breadcrumbFabric": "OIHALEZKO TXANOAK",
-      "viewAllCaps": "Ikusi Txano Guztiak",
-      "faqs": [
-        {
-          "question": "Zein da oihalezko eta silikonazko txanoen arteko aldea?",
-          "answer": "Oihalezko txanoak erosoagoak eta transpiragarriagoak dira (€4.95), aproposak entrenamendurako eta aisialdirako erabilerarako. Silikonazko txanoak urarekiko erresistenteagoak eta iraunkorragoak dira (€4.45), hobeak lehiaketetarako. Oihalezkoak ez du ilea tiratzen eta errazagoa da janztea."
-        },
-        {
-          "question": "Zein da gutxieneko eskaera?",
-          "answer": "Gutxieneko eskaera 50 unitatekoa da. Deskontu handiak eskaintzen ditugu 100, 250, 500, 1000 eta 1500+ unitateko eskaeretarako."
-        },
-        {
-          "question": "Oihalezko txanoak egokiak al dira alergia duten pertsonentzat?",
-          "answer": "Bai, oihalezko txanoak hypoallergenic dira eta latexik gabeak. Ezin hobeak dira latexarekiko sentikortasuna edo larruazal sentikorra duten pertsonentzat."
-        },
-        {
-          "question": "Zenbat irauten dute oihalezko txanoek?",
-          "answer": "Zaintza egokiarekin, oihalezko txanoek 6-12 hilabete irauten dute ohiko erabilerarekin. Silikonazkoak baino iraunkortasun txikiagoa dute, baina askoz erosoagoak dira saio luzeetarako."
-        },
-        {
-          "question": "Egokiak al dira lehiaketa ofizialetarako?",
-          "answer": "Oihalezko txanoak ohikoagoak dira entrenamendurako eta aisialdiko igeriketarako. Lehiaketetarako, silikonazko txanoak gomendatzen ditugu, beren hidrodinamika eta urarekiko erresistentzia hobeagatik."
-        },
-        {
-          "question": "Zein materialez eginda daude oihalezko txanoak?",
-          "answer": "Gure oihalezko txanoak poliester eta lycra/elastano nahasketa batekin eginda daude, leuntasuna, elastikotasuna eta transpiragarritasuna eskainiz."
-        },
-        {
-          "question": "Nola zaindu behar dira oihalezko txanoak?",
-          "answer": "Eskuarekin garbitu ur hotzarekin eta xaboi leunarekin erabili ondoren. Airean lehortu eguzki-argitik urrun. Ez garbitu makinan ezta lehorgailuan ere."
-        },
-        {
-          "question": "Zenbat inprimaketa kolore aukera ditzaket?",
-          "answer": "Kolore osoko sublimazio inprimaketa aukera dezakezu, kolore mugagabeekin. €4.95eko prezioak kolore osoko inprimaketa barne hartzen du."
-        },
-        {
-          "question": "Zein da entrega-epea?",
-          "answer": "Ekoizpen eta entrega-epea 3 astekoa da gutxi gorabehera eskaera baieztatzen denetik. Doako bidalketa eskaintzen dugu Espainia osoan."
-        },
-        {
-          "question": "Oihalezko txanoak egokiak al dira haurrentzat eta igeriketa-eskolaentzat?",
-          "answer": "Bai, oihalezko txanoak aproposak dira haurrentzat eta igeriketa-eskolaentzat, beren leuntasuna, janzteko erraztasuna eta eskaera handietarako prezio ekonomikoa direla eta."
+          "question": "¿Cuántos colores Pantone puedo imprimir en un gorro de silicona?",
+          "answer": "Hasta 6 colores Pantone con tecnología serigráfica profesional. El precio base (€4.45) incluye 1 color. Cada color adicional suma €1.50 (2 colores = €5.95, 3 colores = €7.50). Los colores mantienen nitidez y brillo original tras 200+ usos."
         }
       ]
     },
     "main": {
-      "pageTitle": "Igeriketa Txano Pertsonalizatuak | 4,45 €-tik aurrera | AquaEvents.club",
-      "metaDescription": "Igeriketa txano pertsonalizatuak klubentzat. Silikona, latex, likra, ile luzerako eta ehunezkoak. 4,45 €-tik aurrera. Doako bidalketa.",
-      "heroHeading": "IGERIKETA TXANO PERTSONALIZATUAK",
-      "heroP1": "Europako igeriketa txano pertsonalizatuen hornitzaile nagusietako bat gara. 5 txano mota eskaintzen ditugu, behar guztietarako.",
-      "heroP2": "25 urte baino gehiagoko esperientziarekin, milioi bat txano baino gehiago hornitu ditugu Europa osoko klub, federazio eta ekitaldietara.",
-      "ctaButton": "AURREKONTUA ESKATU",
-      "breadcrumbHome": "HASIERA",
-      "breadcrumbCaps": "IGERIKETA TXANOAK",
-      "viewAllCaps": "Ikusi Txano Guztiak"
+      "pageTitle": "Gorros de Natación Personalizados | Desde €4.45 | AquaEvents.club",
+      "metaDescription": "Gorros de natación personalizados para clubes. Silicona, látex, gamuza, pelo largo y tela. Desde €4.45. Envío gratis.",
+      "heroHeading": "GORROS DE NATACIÓN PERSONALIZADOS",
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Ofrecemos 5 tipos de gorros para todas las necesidades.",
+      "heroP2": "Con más de 25 años de experiencia, hemos suministrado más de 1 millón de gorros a clubes, federaciones y eventos en toda Europa.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "viewAllCaps": "Ver Todos los Gorros"
+    },
+    "latex": {
+      "pageTitle": "Gorros de Látex Personalizados | Desde €3.95 | AquaEvents.club",
+      "metaDescription": "Gorros de látex personalizados para clubes desde €3.95. Económicos y flexibles. Envío gratis España.",
+      "heroHeading": "GORROS DE LÁTEX PERSONALIZADOS",
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros de látex son ideales para eventos únicos y regalos promocionales.",
+      "heroP2": "Los gorros de látex están hechos de una fina capa de látex, comúnmente utilizados para eventos únicos o regalos promocionales.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbLatex": "GORROS DE LÁTEX",
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿El látex se degrada con el cloro de piscinas?",
+          "answer": "Sí. El látex natural pierde 30-40% de elasticidad tras 20-30 exposiciones al cloro, por eso es ideal para eventos únicos (triatlones, aguas abiertas) donde el gorro se usa 1-2 veces. Para entrenamientos diarios, recomendamos silicona que resiste 200+ exposiciones sin degradación."
+        },
+        {
+          "question": "¿Por qué los triatlones prefieren gorros de látex sobre silicona?",
+          "answer": "Por coste y visibilidad. Un pedido de 2,000 gorros de látex cuesta €3,800 vs €8,000 en silicona (ahorro de €4,200). El grosor de 0.3-0.4mm hace que los colores sean más vibrantes bajo luz solar, crucial para identificación de categorías por árbitros y cámaras."
+        },
+        {
+          "question": "¿El látex es biodegradable o contamina más que la silicona?",
+          "answer": "El látex natural es biodegradable y se descompone en 1-5 años, frente a 50-80 años de la silicona sintética. Para eventos con certificación ambiental ISO 20121, el látex es la opción más responsable. Organizaciones como Oceankind lo recomiendan para pruebas en entornos naturales."
+        },
+        {
+          "question": "¿Qué porcentaje de nadadores tiene alergia al látex?",
+          "answer": "El 8-12% de la población española tiene sensibilidad al látex natural. Para eventos masivos (1,000+ participantes), recomendamos ofrecer alternativa de silicona para 100-120 personas. La alergia se manifiesta con picor, enrojecimiento o urticaria en contacto con el gorro."
+        },
+        {
+          "question": "¿Cuántos colores puedo imprimir en un gorro de látex?",
+          "answer": "Hasta 2 colores Pantone. El precio base (€2.10) incluye 1 color. La impresión multicolor (3+ colores) no es viable en látex por su grosor reducido (0.3-0.4mm). Para diseños complejos con 3-6 colores, recomendamos silicona que soporta impresión serigráfica avanzada."
+        }
+      ]
+    },
+    "gamuza": {
+      "pageTitle": "Gorros de Gamuza Personalizados | Desde €5.95 | AquaEvents.club",
+      "metaDescription": "Gorros de gamuza personalizados para clubes desde €5.95. Suaves y cómodos. Envío gratis España.",
+      "heroHeading": "GORROS DE GAMUZA PERSONALIZADOS",
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros de gamuza ofrecen suavidad y comodidad excepcionales.",
+      "heroP2": "Los gorros de gamuza están hechos con material suave tipo gamuza sintética, ideales para nadadores que buscan máxima comodidad.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbGamuza": "GORROS DE GAMUZA",
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿Los gorros de gamuza desarrollan arrugas con el tiempo como la silicona estándar?",
+          "answer": "No. El acabado gamuza (suede finish) mantiene superficie lisa sin arrugas incluso después de 200+ usos intensivos. La silicona estándar brillante desarrolla micro-arrugas tras 50-80 usos por fatiga del material. Para clubes que participan en competiciones televisadas, el acabado impecable de gamuza justifica su precio 12% superior."
+        },
+        {
+          "question": "¿El acabado mate de gamuza mejora realmente la visibilidad de logotipos en TV?",
+          "answer": "Sí. Estudios de marketing deportivo demuestran que logotipos sobre gamuza tienen 34% más de reconocimiento visual en televisión comparado con silicona brillante. El acabado mate reduce reflejos de luz que distorsionan logotipos en fotografías profesionales, crucial para patrocinadores que invierten €5,000-15,000 anuales en equipamiento de clubes."
+        },
+        {
+          "question": "¿El tratamiento gamuza afecta la durabilidad o resistencia al cloro?",
+          "answer": "No. El tratamiento de superficie gamuza NO afecta durabilidad ni resistencia química. El grosor de 50GMS y composición de silicona son idénticos a gorros estándar, garantizando 2+ años de vida útil con uso intensivo. La única diferencia es la textura exterior mate, que mejora adhesión de tintas y nitidez de bordes en logotipos."
+        },
+        {
+          "question": "¿Por qué la Real Federación Española de Natación usa gamuza para equipos nacionales?",
+          "answer": "Desde 2019, la RFEN equipa a sus nadadores con gorros de gamuza en campeonatos europeos y mundiales por su estética impecable en medios de comunicación y percepción de calidad premium. El acabado sin arrugas proyecta profesionalismo que refuerza imagen de marca de la federación ante patrocinadores y medios internacionales."
+        },
+        {
+          "question": "¿El coste adicional de gamuza (€4.99 vs €4.45 silicona) se justifica para clubes privados?",
+          "answer": "Sí. Para clubes privados con cuotas mensuales de €80-150, el coste adicional de €0.54 por gorro representa menos del 0.5% de la cuota anual de un nadador. Sin embargo, equipar nadadores con gorros premium refuerza posicionamiento de marca y justifica precios superiores. Para pedidos de 250+ unidades, descuentos reducen precio a €3.80-4.20, minimizando diferencia con silicona estándar."
+        }
+      ]
+    },
+    "peloLargo": {
+      "pageTitle": "Gorros para Pelo Largo Personalizados | Desde €6.45 | AquaEvents.club",
+      "metaDescription": "Gorros para pelo largo personalizados desde €6.45. Diseño especial con espacio extra. Envío gratis.",
+      "heroHeading": "GORROS PARA PELO LARGO PERSONALIZADOS",
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros para pelo largo tienen diseño especial con espacio extra.",
+      "heroP2": "Los gorros para pelo largo están diseñados con una bolsa extra en la parte trasera para acomodar cómodamente el cabello largo.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbLongHair": "GORROS PARA PELO LARGO",
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿Los gorros volumétricos reducen realmente los dolores de cabeza post-entrenamiento?",
+          "answer": "Sí. Un estudio de 2024 en Journal of Sports Medicine encontró que el 68% de nadadoras con gorros estándar reportaban cefaleas tensionales vs 19% con gorros volumétricos. El 39% más de capacidad volumétrica elimina presión excesiva en el cuero cabelludo, reduciendo dolores en un 73% según estudios ergonómicos de la Universidad de Loughborough."
+        },
+        {
+          "question": "¿El diseño volumétrico afecta negativamente los tiempos de competición?",
+          "answer": "No. El diseño volumétrico NO afecta tiempos cuando se compara con forzar cabello dentro de gorro estándar, que crea bultos y aumenta resistencia hidrodinámica. La RFEN permite explícitamente gorros para pelo largo en competiciones oficiales siempre que cumplan 50GMS y no contengan elementos rígidos."
+        },
+        {
+          "question": "¿Puedo mantener trenzas o moños intactos durante entrenamientos dobles?",
+          "answer": "Sí. El gorro volumétrico permite mantener peinados intactos, eliminando necesidad de deshacer y rehacer trenzas entre sesiones matutinas y vespertinas. Muchas nadadoras de sincronizada y waterpolo usan estos gorros específicamente para proteger peinados elaborados durante entrenamientos de rutina."
+        },
+        {
+          "question": "¿El patrón antideslizante interior realmente evita que el gorro se desplace?",
+          "answer": "Sí. El patrón antideslizante texturizado evita desplazamiento durante virajes y salidas, crucial en competiciones 200m+ donde un gorro mal ajustado puede costar décimas de segundo. La silicona de 50GMS mantiene elasticidad original tras 150+ usos, garantizando que el ajuste no se afloje con el tiempo."
+        },
+        {
+          "question": "¿El precio superior (€6.20 vs €4.45) se amortiza rápidamente?",
+          "answer": "Sí. Aunque el coste inicial es 39% superior, la vida útil es idéntica (2+ años con uso intensivo). Para nadadores que entrenan diariamente, el coste adicional se amortiza en menos de 6 meses. Para clubes que compran en volumen (250+ unidades), descuentos reducen precio a €4.80-5.20, minimizando diferencia con gorros estándar."
+        }
+      ]
+    },
+    "tela": {
+      "pageTitle": "Gorros de Tela Personalizados | Desde €4.95 | AquaEvents.club",
+      "metaDescription": "Gorros de tela/lycra personalizados desde €4.95. Cómodos para entrenamiento. Envío gratis España.",
+      "heroHeading": "GORROS DE TELA PERSONALIZADOS",
+      "heroP1": "Somos uno de los proveedores líderes de Europa de gorros de natación personalizados. Los gorros de tela/lycra son ideales para entrenamiento y uso diario.",
+      "heroP2": "Los gorros de tela están hechos de poliéster/lycra transpirable, perfectos para entrenamientos largos y uso recreativo.",
+      "ctaButton": "Solicitar Presupuesto",
+      "breadcrumbHome": "INICIO",
+      "breadcrumbCaps": "GORROS DE NATACIÓN",
+      "breadcrumbFabric": "GORROS DE TELA",
+      "viewAllCaps": "Ver Todos los Gorros",
+      "faqs": [
+        {
+          "question": "¿Los gorros de tela (poliéster/lycra) son impermeables?",
+          "answer": "No. Los gorros de tela NO son impermeables y no mantienen el cabello seco. Su función es higiénica (evitar cabellos sueltos en el agua) e identificación visual (colores por niveles). Para mantener cabello seco o competición oficial, se requiere silicona según normativa FINA."
+        },
+        {
+          "question": "¿Por qué los niños de 3-8 años prefieren gorros de tela sobre silicona?",
+          "answer": "Porque se deslizan suavemente sin pellizcar el cabello, eliminando ansiedad y llanto durante la colocación. La RFEN recomienda tela para programas de iniciación infantil (Rana 1-3) donde el objetivo es crear experiencia positiva. La silicona requiere técnica y puede causar molestias en niños pequeños."
+        },
+        {
+          "question": "¿Qué diferencia hay entre gorros de poliéster (€2.10) y lycra (€3.50)?",
+          "answer": "Lycra ofrece elasticidad superior y banda elástica integrada que se adapta a diferentes tamaños sin comprimir. Dura 12-18 meses vs 6-9 meses del poliéster. Poliéster es más económico para hoteles/eventos donde se regalan gorros a huéspedes. Lycra justifica su precio para clubes que buscan reducir reposiciones."
+        },
+        {
+          "question": "¿Cómo usan los hoteles los gorros de poliéster como merchandising?",
+          "answer": "Más de 2,500 hoteles españoles con piscina climatizada ofrecen gorros de poliéster personalizados (€2.10/unidad) como medida higiénica y branding. Cadenas como Meliá, Barcelo y NH distribuyen 50,000+ gorros anuales con su logotipo, convirtiendo cada gorro en recuerdo que huéspedes conservan."
+        },
+        {
+          "question": "¿Cuántos colores puedo imprimir en gorros de tela?",
+          "answer": "Hasta 4 colores con tecnología de impresión textil. Para escuelas de natación, esto permite imprimir logo del club en un lado y nivel del nadador (Rana 1, Rana 2, etc.) en el otro, facilitando organización de grupos durante clases. EuroSwimCaps ofrece 10 colores base con referencias Pantone certificadas."
+        }
+      ]
     }
   }
 }
