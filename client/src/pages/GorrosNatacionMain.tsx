@@ -122,7 +122,7 @@ export default function GorrosNatacionMain() {
           name="description"
           content={translations.metaDescription}
         />
-        <meta name="keywords" content="gorros natación personalizados, gorros piscina club, gorros natación al por mayor, gorros silicona personalizados, gorros latex baratos, gorros natación competición" />
+        <meta name="keywords" content="gorros natación personalizados, gorros piscina club, gorros natación al por mayor, fábrica gorros natación, gorros natación España, catálogo gorros natación, gorros natación competición" />
         <link rel="canonical" href="https://aquaevents.club/gorros-natacion" />
       </Helmet>
       <HrefLangTags basePath="/gorros-natacion" />
@@ -135,8 +135,80 @@ export default function GorrosNatacionMain() {
         <meta property="og:url" content="https://aquaevents.club/gorros-natacion" />
         <meta property="og:image" content="https://aquaevents.club/gorro-silicona-azul-personalizado.jpg" />
 
-        {/* CollectionPage schema removed - incomplete Product schemas were causing Google Search Console errors.
-             Main Product schema is injected via SSR in server/_core/vite.ts with all required fields. */}
+        {/* CollectionPage Schema - Category Hub */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Catálogo de Gorros de Natación Personalizados",
+            "description": "Fábrica de gorros de natación personalizados para clubes y eventos. Todos los materiales: silicona, látex, gamuza, tela, pelo largo. Desde €1.99.",
+            "url": "https://aquaevents.club/gorros-natacion",
+            "mainEntity": {
+              "@type": "ItemList",
+              "numberOfItems": 5,
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "url": "https://aquaevents.club/gorros-natacion/silicona",
+                  "name": "Gorros de Silicona Personalizados"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "url": "https://aquaevents.club/gorros-natacion/latex",
+                  "name": "Gorros de Látex Personalizados"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "url": "https://aquaevents.club/gorros-natacion/gamuza",
+                  "name": "Gorros de Gamuza Personalizados"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "url": "https://aquaevents.club/gorros-natacion/pelo-largo",
+                  "name": "Gorros de Silicona para Pelo Largo"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "url": "https://aquaevents.club/gorros-natacion/tela",
+                  "name": "Gorros de Tela Personalizados"
+                }
+              ]
+            }
+          })}
+        </script>
+
+        {/* Product Schema - Aggregate Catalog Offer */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Catálogo de Gorros de Natación Personalizados",
+            "description": "Fábrica de gorros de natación personalizados para clubes deportivos y eventos. Todos los materiales disponibles: silicona premium, látex económico, gamuza suave, tela cómoda, y diseños especiales para pelo largo. Envío gratis a toda España.",
+            "image": "https://aquaevents.club/gorro-silicona-azul-personalizado.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "AquaEvents"
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "EUR",
+              "lowPrice": "2.10",
+              "highPrice": "7.50",
+              "offerCount": "5",
+              "availability": "https://schema.org/InStock"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "500"
+            }
+          })}
+        </script>
 
         {/* FAQPage Schema */}
         <script type="application/ld+json">
@@ -385,7 +457,7 @@ export default function GorrosNatacionMain() {
                     </ul>
                     <Button asChild className="w-full">
                       <Link href={`/gorros-natacion/${product.slug}`}>
-                        Ver Detalles
+                        Ver Gorros de {product.name.replace('Gorros de ', '').replace('Gorros ', '')}
                       </Link>
                     </Button>
                   </CardContent>

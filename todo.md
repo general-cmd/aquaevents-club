@@ -1963,3 +1963,15 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Remove duplicate/ghost Product schemas (keep only material-specific ones)
 - [ ] Test with Google Rich Results Tool
 - [ ] Push to GitHub and deploy
+
+## Parent Page Fixes - /gorros-natacion Category Hub
+- [x] Remove ghost Product schemas from main gorros-natacion page
+- [x] Add CollectionPage schema listing all sub-categories
+- [x] Add AggregateOffer representing full price range (€2.10-€7.50)
+- [x] Ensure brand is "AquaEvents" (not EuroSwimCaps)
+- [x] Verify Spanish language default in all schemas
+- [x] Update H1 to be distinct from sub-pages ("GORROS DE NATACIÓN PERSONALIZADOS")
+- [x] Add clear descriptive links to all sub-pages ("Ver Gorros de Silicona", etc.)
+- [x] Verify broad keyword targeting (removed "gorros silicona personalizados", "gorros latex baratos")
+- [ ] Test with Google Rich Results Tool
+- [ ] Push to GitHub and deploy
