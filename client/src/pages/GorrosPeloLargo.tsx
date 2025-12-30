@@ -67,6 +67,38 @@ export default function GorrosPeloLargo() {
           })}
         </script>
 
+        {/* WebApplication Schema - Price Calculator */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Precios de Gorros para Pelo Largo",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "All",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR"
+            }
+          })}
+        </script>
+
+        {/* WebApplication Schema - Price Calculator */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Precios de Gorros para Pelo Largo",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "All",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR"
+            }
+          })}
+        </script>
+
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
           {JSON.stringify({

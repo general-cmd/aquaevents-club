@@ -80,6 +80,22 @@ export default function GorrosGamuza() {
           })}
         </script>
 
+        {/* WebApplication Schema - Price Calculator */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Precios de Gorros de Gamuza",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "All",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR"
+            }
+          })}
+        </script>
+
         {/* Breadcrumb Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
