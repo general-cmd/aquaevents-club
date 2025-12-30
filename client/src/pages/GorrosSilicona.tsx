@@ -75,7 +75,7 @@ export default function GorrosSilicona() {
             "image": "https://aquaevents.club/gorro-silicona-azul-personalizado.jpg",
             "brand": {
               "@type": "Brand",
-              "name": "EuroSwimCaps",
+              "name": "AquaEvents",
             },
             "offers": {
               "@type": "AggregateOffer",

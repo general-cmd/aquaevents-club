@@ -50,7 +50,7 @@ export default function GorrosLatex() {
             "image": "https://aquaevents.club/gorro-latex-verde.webp",
             "brand": {
               "@type": "Brand",
-              "name": "EuroSwimCaps"
+              "name": "AquaEvents"
             },
             "offers": {
               "@type": "Offer",

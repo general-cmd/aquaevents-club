@@ -58,7 +58,7 @@ export default function GorrosGamuza() {
             "image": "https://aquaevents.club/gorro-gamuza-azul-hero.webp",
             "brand": {
               "@type": "Brand",
-              "name": "EuroSwimCaps",
+              "name": "AquaEvents",
             },
             "offers": {
               "@type": "AggregateOffer",

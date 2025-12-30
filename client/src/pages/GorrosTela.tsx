@@ -50,7 +50,7 @@ export default function GorrosTela() {
             "image": "https://aquaevents.club/gorro-lycra-hero.jpg",
             "brand": {
               "@type": "Brand",
-              "name": "EuroSwimCaps"
+              "name": "AquaEvents"
             },
             "offers": {
               "@type": "AggregateOffer",

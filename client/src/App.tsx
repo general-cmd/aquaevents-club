@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
+import HtmlLangSync from "./components/HtmlLangSync";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
@@ -95,6 +96,7 @@ function App() {
         defaultTheme="light"
         // switchable
       >
+        <HtmlLangSync />
         <TooltipProvider>
           <Toaster />
           <Router />

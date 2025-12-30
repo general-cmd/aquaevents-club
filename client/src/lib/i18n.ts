@@ -23,9 +23,10 @@ i18n
       en: { translation: en },
     },
     fallbackLng: "es",
+    lng: "es", // Force Spanish as default language
     supportedLngs: ["es", "ca", "eu", "gl", "va", "en"],
     detection: {
-      order: ["querystring", "localStorage", "navigator"],
+      order: ["querystring", "localStorage"], // Removed "navigator" to prevent English default
       caches: ["localStorage"],
       lookupQuerystring: "lang",
     },

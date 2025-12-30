@@ -693,15 +693,12 @@ export default function EventDetail() {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Patrocinado por</h4>
-                <a 
-                  href="https://euroswimcaps.com?coupon=AQUA20" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-300"
-                >
-                  EuroSwimCaps.com
-                </a>
+                <h4 className="font-semibold mb-4">Gorros Personalizados</h4>
+                <Link href={getSmartCapsLink()}>
+                  <a className="text-blue-400 hover:text-blue-300">
+                    AquaEvents.club
+                  </a>
+                </Link>
                 <p className="text-sm text-gray-400 mt-2">Official Equipment Partner</p>
               </div>
             </div>

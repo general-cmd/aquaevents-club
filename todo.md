@@ -1954,3 +1954,12 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Add Organization schema with AquaEvents brand to main gorros-natacion page (NOT EuroSwimCaps)
 - [ ] Test all changes
 - [ ] Deploy to production
+
+## Spanish SEO Fixes - Default Language & Schema Issues
+- [x] Set default language to Spanish (currently defaults to English)
+- [x] Fix <html lang="en"> to <html lang="es"> by default
+- [x] Make JSON-LD schema dynamic (pull from translation files, not hardcoded) - removed server-side injection
+- [x] Replace all "EuroSwimCaps" brand references with "AquaEvents" in schema
+- [x] Remove duplicate/ghost Product schemas (keep only material-specific ones)
+- [ ] Test with Google Rich Results Tool
+- [ ] Push to GitHub and deploy

@@ -50,7 +50,7 @@ export default function GorrosPeloLargo() {
             "image": "https://aquaevents.club/gorro-pelo-largo-azul-hero.webp",
             "brand": {
               "@type": "Brand",
-              "name": "EuroSwimCaps"
+              "name": "AquaEvents"
             },
             "offers": {
               "@type": "Offer",
