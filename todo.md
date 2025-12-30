@@ -1947,3 +1947,10 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Verify FAQ schema uses Spanish translations (not English) - FAQSchema component correctly uses i18n translations
 - [ ] Test schema with Google Rich Results Test (user can verify after deployment)
 - [x] Push changes to GitHub
+
+## Final SEO Logic Batch - Context-Aware Linking & Brand Identity
+- [x] Update EventDetail.tsx with context-aware internal linking logic (Triatlón→latex, Waterpolo→gamuza, Escuela→tela, default→silicona)
+- [x] Update sitemap.xml generator to set priority 0.9 for 5 material pages
+- [x] Add Organization schema with AquaEvents brand to main gorros-natacion page (NOT EuroSwimCaps)
+- [ ] Test all changes
+- [ ] Deploy to production

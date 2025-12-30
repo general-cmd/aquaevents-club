@@ -154,6 +154,26 @@ export default function GorrosNatacionMain() {
           })}
         </script>
 
+        {/* Organization Schema - AquaEvents Brand Identity */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "AquaEvents",
+            "url": "https://aquaevents.club",
+            "logo": "https://aquaevents.club/logo.png",
+            "description": "Calendario completo de eventos acuáticos en España 2026. Natación, triatlón, waterpolo y aguas abiertas.",
+            "sameAs": [
+              "https://aquaevents.club"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "url": "https://aquaevents.club/enviar-evento"
+            }
+          })}
+        </script>
+
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
           {JSON.stringify({

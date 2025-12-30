@@ -129,6 +129,34 @@ export default function EventDetail() {
     return labels[discipline] || discipline;
   };
 
+  /**
+   * Context-aware internal linking logic for swimming caps
+   * Routes users to the most relevant material page based on event type
+   */
+  const getSmartCapsLink = () => {
+    if (!event) return "/gorros-natacion/silicona";
+
+    const eventText = `${translatedTitle} ${translatedDescription} ${getDisciplineLabel(event.discipline)}`.toLowerCase();
+
+    // Triathlon, Open Water, Long Distance → Latex (economical, single-use)
+    if (eventText.match(/triatlón|travesía|aguas abiertas|ironman|open water/i)) {
+      return "/gorros-natacion/latex";
+    }
+
+    // Water Polo, Rugby → Gamuza (premium grip, no wrinkles)
+    if (eventText.match(/waterpolo|water polo|rugby/i)) {
+      return "/gorros-natacion/gamuza";
+    }
+
+    // Schools, Kids, Courses → Tela (comfortable, easy to wear)
+    if (eventText.match(/escuela|infantil|cursillo|niños|kids|school/i)) {
+      return "/gorros-natacion/tela";
+    }
+
+    // Default: Standard Swim Meets → Silicona (competition standard)
+    return "/gorros-natacion/silicona";
+  };
+
   const formatDateLong = (dateString: string) => {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat('es-ES', { 
@@ -573,17 +601,17 @@ export default function EventDetail() {
               <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100">
                 <h2 className="text-2xl font-bold mb-4 text-blue-900">Material oficial del evento</h2>
                 <p className="text-gray-700 mb-4">
-                  Muchos eventos de {getDisciplineLabel(event.discipline).toLowerCase()} utilizan <Link href="/gorros-natacion"><a className="text-blue-600 hover:underline font-semibold">gorros de natación personalizados</a></Link> para identificar categorías, clubes o patrocinadores. 
+                  Muchos eventos de {getDisciplineLabel(event.discipline).toLowerCase()} utilizan <Link href={getSmartCapsLink()}><a className="text-blue-600 hover:underline font-semibold">gorros de natación personalizados</a></Link> para identificar categorías, clubes o patrocinadores. 
                   En eventos como <strong>{translatedTitle}</strong> en {event.location.city}, los organizadores suelen optar por gorros de silicona con logo para competidores y staff.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Link href="/gorros-natacion">
+                  <Link href={getSmartCapsLink()}>
                     <a className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                       <span className="mr-2">🎽</span>
                       Ver opciones de gorros personalizados para eventos
                     </a>
                   </Link>
-                  <Link href="/gorros-natacion#precios">
+                  <Link href={`${getSmartCapsLink()}#precios`}>
                     <a className="inline-flex items-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
                       Solicitar presupuesto para {event.location.region}
                     </a>
@@ -618,7 +646,7 @@ export default function EventDetail() {
                     </a>
                   </Link>
 
-                  <Link href="/gorros-natacion">
+                  <Link href={getSmartCapsLink()}>
                     <a className="block p-4 border-2 border-orange-200 rounded-lg hover:border-orange-400 transition-colors">
                       <div className="text-2xl mb-2">🎽</div>
                       <h4 className="font-semibold mb-1">Gorros Personalizados para Eventos</h4>
