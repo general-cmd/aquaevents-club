@@ -1975,3 +1975,17 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Verify broad keyword targeting (removed "gorros silicona personalizados", "gorros latex baratos")
 - [ ] Test with Google Rich Results Tool
 - [ ] Push to GitHub and deploy
+
+## Google Merchant Center - Rich Badges (Shipping & Returns)
+- [x] Add shippingDetails to Product schema in GorrosSilicona.tsx
+- [x] Add hasMerchantReturnPolicy to Product schema in GorrosSilicona.tsx
+- [x] Add shippingDetails to Product schema in GorrosLatex.tsx
+- [x] Add hasMerchantReturnPolicy to Product schema in GorrosLatex.tsx
+- [x] Add shippingDetails to Product schema in GorrosGamuza.tsx
+- [x] Add hasMerchantReturnPolicy to Product schema in GorrosGamuza.tsx
+- [x] Add shippingDetails to Product schema in GorrosPeloLargo.tsx
+- [x] Add hasMerchantReturnPolicy to Product schema in GorrosPeloLargo.tsx
+- [x] Add shippingDetails to Product schema in GorrosTela.tsx
+- [x] Add hasMerchantReturnPolicy to Product schema in GorrosTela.tsx
+- [ ] Test with Google Rich Results Tool
+- [ ] Push to GitHub and deploy
