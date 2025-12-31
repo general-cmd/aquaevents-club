@@ -3,10 +3,125 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check, Mail, Phone, Globe } from "lucide-react";
 import { APP_LOGO, APP_TITLE } from "@/const";
 import SwimCapsInquiryForm from "@/components/SwimCapsInquiryForm";
+import { Helmet } from "react-helmet-async";
 
 export default function GorrosNatacion() {
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Gorros de Natación Personalizados para Clubes",
+    "description": "Gorros de natación personalizados al por mayor para clubes, federaciones y eventos. Pedidos desde 50 unidades con envío gratis a toda España. Silicona, látex, gamuza, pelo largo y tela.",
+    "brand": {
+      "@type": "Brand",
+      "name": "AquaEvents"
+    },
+    "image": [
+      "https://aquaevents.club/gorros/gorros-natacion-silicona-personalizados-club-1.jpg",
+      "https://aquaevents.club/gorros/gorros-natacion-personalizados-logo-club-2.jpg",
+      "https://aquaevents.club/gorros/gorros-piscina-personalizados-competicion-3.jpg"
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "url": "https://aquaevents.club/gorros-natacion",
+      "priceCurrency": "EUR",
+      "lowPrice": "2.10",
+      "highPrice": "7.50",
+      "offerCount": "5",
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2026-12-31",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "EUR"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "ES"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 14,
+            "maxValue": 21,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "ES",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "500",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "CN Sabadell"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Llevamos 3 años trabajando con ellos. La calidad de la silicona es excelente y los logos se mantienen perfectos después de toda la temporada."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "Federación Madrileña de Natación"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Proveedor oficial de nuestros campeonatos autonómicos. Siempre cumplen con los plazos y la calidad es impecable."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "CN Barcelona"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Los mejores gorros personalizados del mercado. Nuestros nadadores están encantados con la comodidad y durabilidad."
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
+      </Helmet>
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">

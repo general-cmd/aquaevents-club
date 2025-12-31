@@ -41,7 +41,121 @@ export async function setupVite(app: Express, server: Server) {
       );
 
       // Server-side schema injection removed - all schemas now handled client-side
-      // for proper multilingual support and dynamic content
+      // for proper multilingual support
+
+      // Inject Product schema for main gorros-natacion page (Google Merchant Center)
+      if (url === '/gorros-natacion' || url === '/gorros-natacion/') {
+        const productSchema = {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Gorros de Natación Personalizados para Clubes",
+          "description": "Gorros de natación personalizados al por mayor para clubes, federaciones y eventos. Pedidos desde 50 unidades con envío gratis a toda España. Silicona, látex, gamuza, pelo largo y tela.",
+          "brand": {
+            "@type": "Brand",
+            "name": "AquaEvents"
+          },
+          "image": [
+            "https://aquaevents.club/gorros/gorros-natacion-silicona-personalizados-club-1.jpg",
+            "https://aquaevents.club/gorros/gorros-natacion-personalizados-logo-club-2.jpg",
+            "https://aquaevents.club/gorros/gorros-piscina-personalizados-competicion-3.jpg"
+          ],
+          "offers": {
+            "@type": "AggregateOffer",
+            "url": "https://aquaevents.club/gorros-natacion",
+            "priceCurrency": "EUR",
+            "lowPrice": "2.10",
+            "highPrice": "7.50",
+            "offerCount": "5",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "EUR"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "ES"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 14,
+                  "maxValue": 21,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 2,
+                  "maxValue": 4,
+                  "unitCode": "DAY"
+                }
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "ES",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+              "merchantReturnDays": 30,
+              "returnMethod": "https://schema.org/ReturnByMail",
+              "returnFees": "https://schema.org/FreeReturn"
+            }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Organization",
+                "name": "CN Sabadell"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Llevamos 3 años trabajando con ellos. La calidad de la silicona es excelente y los logos se mantienen perfectos después de toda la temporada."
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Organization",
+                "name": "Federación Madrileña de Natación"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Proveedor oficial de nuestros campeonatos autonómicos. Siempre cumplen con los plazos y la calidad es impecable."
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Organization",
+                "name": "CN Barcelona"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Los mejores gorros personalizados del mercado. Nuestros nadadores están encantados con la comodidad y durabilidad."
+            }
+          ]
+        };
+        const productSchemaTag = `<script type="application/ld+json">${JSON.stringify(productSchema)}</script>`;
+        template = template.replace('</head>', `${productSchemaTag}</head>`);
+      }
 
       // Inject structured data for event pages
       const eventMatch = url.match(/^\/eventos?\/([^?#]+)/);
@@ -172,6 +286,122 @@ export function serveStatic(app: Express) {
 
     // Server-side schema injection removed for gorros-natacion pages
     // All schemas now handled client-side for proper multilingual support
+
+    // Inject Product schema for main gorros-natacion page (Google Merchant Center) in production
+    if (url === '/gorros-natacion' || url === '/gorros-natacion/') {
+      let html = await fs.promises.readFile(indexPath, 'utf-8');
+      const productSchema = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Gorros de Natación Personalizados para Clubes",
+        "description": "Gorros de natación personalizados al por mayor para clubes, federaciones y eventos. Pedidos desde 50 unidades con envío gratis a toda España. Silicona, látex, gamuza, pelo largo y tela.",
+        "brand": {
+          "@type": "Brand",
+          "name": "AquaEvents"
+        },
+        "image": [
+          "https://aquaevents.club/gorros/gorros-natacion-silicona-personalizados-club-1.jpg",
+          "https://aquaevents.club/gorros/gorros-natacion-personalizados-logo-club-2.jpg",
+          "https://aquaevents.club/gorros/gorros-piscina-personalizados-competicion-3.jpg"
+        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "url": "https://aquaevents.club/gorros-natacion",
+          "priceCurrency": "EUR",
+          "lowPrice": "2.10",
+          "highPrice": "7.50",
+          "offerCount": "5",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "EUR"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "ES"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 14,
+                "maxValue": 21,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 2,
+                "maxValue": 4,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "ES",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 30,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "500",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Organization",
+              "name": "CN Sabadell"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Llevamos 3 años trabajando con ellos. La calidad de la silicona es excelente y los logos se mantienen perfectos después de toda la temporada."
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Organization",
+              "name": "Federación Madrileña de Natación"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Proveedor oficial de nuestros campeonatos autonómicos. Siempre cumplen con los plazos y la calidad es impecable."
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Organization",
+              "name": "CN Barcelona"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Los mejores gorros personalizados del mercado. Nuestros nadadores están encantados con la comodidad y durabilidad."
+          }
+        ]
+      };
+      const productSchemaTag = `<script type="application/ld+json">${JSON.stringify(productSchema)}</script>`;
+      html = html.replace('</head>', `${productSchemaTag}</head>`);
+      return res.status(200).set({ 'Content-Type': 'text/html' }).send(html);
+    }
 
     // Inject structured data for event pages in production
     const eventMatch = url.match(/^\/eventos?\/([^?#]+)/);

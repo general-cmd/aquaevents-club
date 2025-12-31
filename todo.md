@@ -1989,3 +1989,11 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Add hasMerchantReturnPolicy to Product schema in GorrosTela.tsx
 - [ ] Test with Google Rich Results Tool
 - [ ] Push to GitHub and deploy
+
+## URGENT: Google Merchant Center Schema Fix (Dec 31, 2025)
+- [x] Identify which page is showing "Missing field 'hasMerchantReturnPolicy' (in 'offers')" - main /gorros-natacion page
+- [x] Identify which page is showing "Missing field 'shippingDetails' (in 'offers')" - main /gorros-natacion page
+- [x] Fix schema structure - ensure fields are inside offers object (not at Product level)
+- [x] Verify all 5 material pages have correct schema nesting (already correct)
+- [x] Test with browser console - schema properly injected with all required fields
+- [ ] Wait for Google Merchant Center to re-crawl (24-48 hours) and validate fix
