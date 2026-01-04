@@ -1997,3 +1997,23 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Verify all 5 material pages have correct schema nesting (already correct)
 - [x] Test with browser console - schema properly injected with all required fields
 - [ ] Wait for Google Merchant Center to re-crawl (24-48 hours) and validate fix
+
+## Product Image Schema Update (Dec 31, 2025)
+- [x] Find actual product images in project (client/public or assets)
+- [x] Verify image URLs in GorrosNatacion.tsx Product schema - already correct
+- [x] Verify image URLs in vite.ts SSR Product schema - already correct
+- [x] Verify images are accessible at the URLs - all 3 images exist
+- [x] Schema already uses actual product images (not placeholders)
+
+
+## SEO/AI Commercial Context Enhancement (Jan 2, 2026)
+- [x] Examine current event page structure (/events/[id])
+- [x] Create Equipment Service Section component
+- [x] Add dynamic content with event name, city, month
+- [x] Implement CTA with event_id tracking parameter
+- [x] Add urgency messaging (14-21 day production time)
+- [x] Update footer with commercial declaration
+- [ ] Add structured data (Service schema) for event pages (future enhancement)
+- [x] Component implemented and integrated into EventDetail.tsx
+- [ ] Test on production after publish
+- [ ] Monitor conversion tracking after launch

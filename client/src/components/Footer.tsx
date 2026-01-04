@@ -16,7 +16,8 @@ export default function Footer() {
               <span className="font-bold text-lg">AquaEvents.club</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
-              El calendario más completo de eventos acuáticos en España
+              <strong>AquaEvents.club</strong>: La mayor plataforma de gestión de eventos acuáticos en España. 
+              Proveedor líder de <strong>gorros de natación personalizados</strong> para clubes y competiciones.
             </p>
             <p className="text-gray-500 text-xs">
               Servicio gratuito financiado por la venta de material deportivo. No vendemos tus datos a terceros.

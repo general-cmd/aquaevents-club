@@ -9,6 +9,7 @@ import EventStructuredData from "@/components/EventStructuredData";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import { SEOMeta, truncateForMeta } from "@/components/SEOMeta";
 import RelatedEvents from "@/components/RelatedEvents";
+import EquipmentServiceSection from "@/components/EquipmentServiceSection";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { formatDate as formatDateDDMMYYYY, formatDateTime } from "@/lib/dateFormat";
@@ -597,26 +598,17 @@ export default function EventDetail() {
                 </div>
               )}
 
-              {/* Material oficial del evento - SEO Section */}
+              {/* Equipment Service Section - Commercial Context for SEO/AI */}
+              <EquipmentServiceSection
+                eventName={translatedTitle}
+                eventId={event._id?.toString() || params.id || ''}
+                city={event.location.city}
+                eventDate={event.date}
+                discipline={event.discipline}
+              />
+
+              {/* Original material section preserved for reference
               <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100">
-                <h2 className="text-2xl font-bold mb-4 text-blue-900">Material oficial del evento</h2>
-                <p className="text-gray-700 mb-4">
-                  Muchos eventos de {getDisciplineLabel(event.discipline).toLowerCase()} utilizan <Link href={getSmartCapsLink()}><a className="text-blue-600 hover:underline font-semibold">gorros de natación personalizados</a></Link> para identificar categorías, clubes o patrocinadores. 
-                  En eventos como <strong>{translatedTitle}</strong> en {event.location.city}, los organizadores suelen optar por gorros de silicona con logo para competidores y staff.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Link href={getSmartCapsLink()}>
-                    <a className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                      <span className="mr-2">🎽</span>
-                      Ver opciones de gorros personalizados para eventos
-                    </a>
-                  </Link>
-                  <Link href={`${getSmartCapsLink()}#precios`}>
-                    <a className="inline-flex items-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
-                      Solicitar presupuesto para {event.location.region}
-                    </a>
-                  </Link>
-                </div>
                 <p className="text-sm text-gray-500 mt-3">
                   Mínimo 50 unidades · Envío gratis península · 25 años de experiencia
                 </p>
