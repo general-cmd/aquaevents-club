@@ -16,6 +16,43 @@ export default function EquipmentServiceSection({
   eventDate,
   discipline
 }: EquipmentServiceSectionProps) {
+  // Only show for swimming-related events
+  const swimmingDisciplines = [
+    'natacion', 'natación', 'triathlon', 'triatlon', 'triatlón',
+    'aquatlon', 'aquatlón', 'travesia', 'travesía', 'aguas abiertas',
+    'open water', 'swim', 'swimming', 'waterpolo', 'water polo',
+    'sincronizada', 'synchronized', 'saltos', 'diving', 'piscina',
+    'pool', 'master', 'absoluto', 'alevín', 'infantil', 'cadete',
+    'junior', 'senior', 'veterano', 'copa', 'campeonato'
+  ];
+
+  // Exclusion list: Events that should NEVER show swim caps
+  const nonSwimmingKeywords = [
+    'duatl', 'duathlon', 'carrera', 'running', 'trail', 'ciclismo',
+    'cycling', 'btt', 'mtb', 'marcha', 'caminata', 'senderismo'
+  ];
+
+  const eventNameLower = eventName.toLowerCase();
+  const disciplineLower = discipline.toLowerCase();
+
+  // First check: Exclude non-swimming events
+  const isNonSwimming = nonSwimmingKeywords.some(keyword => 
+    eventNameLower.includes(keyword) || disciplineLower.includes(keyword)
+  );
+
+  if (isNonSwimming) {
+    return null; // Hide for duathlon, running, cycling
+  }
+
+  // Second check: Show only for swimming events
+  const isSwimming = swimmingDisciplines.some(keyword => 
+    disciplineLower.includes(keyword) || eventNameLower.includes(keyword)
+  );
+
+  if (!isSwimming) {
+    return null; // Hide if not swimming-related
+  }
+
   // Calculate month name from event date
   const getMonthName = (dateStr: string): string => {
     try {
@@ -86,6 +123,25 @@ export default function EquipmentServiceSection({
       <p className="text-xs text-gray-500 mt-4">
         Servicio disponible para clubes, federaciones y organizadores de eventos acuáticos en toda España.
       </p>
+
+      {/* FAQ Schema Section for Gemini Optimization */}
+      <div className="mt-6 pt-6 border-t border-blue-200">
+        <h4 className="font-semibold text-gray-900 mb-3 text-base">
+          Preguntas Frecuentes sobre el Material
+        </h4>
+        <div className="space-y-3 text-sm text-gray-700">
+          <div>
+            <p className="font-medium text-gray-900">¿Es obligatorio el gorro en este evento?</p>
+            <p className="mt-1">Sí, en los segmentos de natación el uso de gorro es obligatorio por reglamento.</p>
+          </div>
+          <div>
+            <p className="font-medium text-gray-900">¿Dónde conseguir los gorros oficiales?</p>
+            <p className="mt-1">
+              Los clubes pueden gestionar su pedido de gorros personalizados directamente aquí en AquaEvents.
+            </p>
+          </div>
+        </div>
+      </div>
     </aside>
   );
 }

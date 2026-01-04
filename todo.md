@@ -2017,3 +2017,13 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Component implemented and integrated into EventDetail.tsx
 - [ ] Test on production after publish
 - [ ] Monitor conversion tracking after launch
+
+
+## URGENT: Discipline Filter Fix (Jan 2, 2026)
+- [x] Add swimming discipline filter to EquipmentServiceSection
+- [x] Only show swim cap section for swimming-related events (natación, triatlón, aquatlón, travesía, waterpolo, etc.)
+- [x] Hide section for non-swimming events (duatlón, running, cycling)
+- [x] Add FAQ schema section for Gemini optimization
+- [x] Test on swimming events (should show) - ✅ All natación/triatlón events show correctly
+- [x] Test on duathlon events (should hide) - ✅ All 10 duathlon events correctly hidden
+- [ ] Push to GitHub and deploy
