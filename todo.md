@@ -2027,3 +2027,11 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Test on swimming events (should show) - ✅ All natación/triatlón events show correctly
 - [x] Test on duathlon events (should hide) - ✅ All 10 duathlon events correctly hidden
 - [ ] Push to GitHub and deploy
+
+
+## UptimeRobot Whitelist Fix (Jan 5, 2026)
+- [x] Add UptimeRobot IP ranges to rate limiter whitelist
+- [x] Update bot blocking middleware to allow UptimeRobot user agent
+- [x] Test that UptimeRobot monitoring can access the site
+- [x] Verify scraper protection still works for other bots
+- [ ] Push to GitHub and deploy

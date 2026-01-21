@@ -59,6 +59,23 @@ async function startServer() {
     crossOriginEmbedderPolicy: false, // Allow embedding resources from other origins
   }));
 
+  // UptimeRobot IP ranges (for monitoring whitelist)
+  const uptimeRobotIPs = [
+    '46.137.190.132',
+    '52.48.244.35',
+    '54.79.28.129',
+    '54.94.142.218',
+    '63.143.42.242',
+    '64.71.152.58',
+    '69.162.124.224',
+    '85.195.116.134',
+    '103.47.211.210',
+    '104.143.17.248',
+    '159.203.30.41',
+    '167.71.251.195',
+    '178.62.52.237',
+  ];
+
   // Rate limiting to prevent scraping and abuse
   const limiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour
@@ -66,9 +83,23 @@ async function startServer() {
     message: 'Too many requests from this IP, please try again later.',
     standardHeaders: true, // Return rate limit info in `RateLimit-*` headers
     legacyHeaders: false, // Disable `X-RateLimit-*` headers
-    // Skip rate limiting for static assets
+    // Skip rate limiting for static assets and monitoring services
     skip: (req) => {
-      return !!req.path.match(/\.(css|js|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|eot)$/);
+      // Skip static assets
+      if (req.path.match(/\.(css|js|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|eot)$/)) {
+        return true;
+      }
+      // Skip UptimeRobot IPs
+      const clientIP = req.ip || req.socket.remoteAddress || '';
+      if (uptimeRobotIPs.includes(clientIP)) {
+        return true;
+      }
+      // Skip UptimeRobot user agent
+      const userAgent = req.get('user-agent') || '';
+      if (userAgent.includes('UptimeRobot')) {
+        return true;
+      }
+      return false;
     },
     // Use X-Forwarded-For header for IP detection (Railway uses proxies)
     validate: { trustProxy: true },
@@ -91,7 +122,7 @@ async function startServer() {
       /node-fetch/i,
     ];
     
-    // Allow legitimate bots (Google, Bing, etc.)
+    // Allow legitimate bots (Google, Bing, monitoring services, etc.)
     const legitimateBots = [
       /googlebot/i,
       /bingbot/i,
@@ -102,6 +133,7 @@ async function startServer() {
       /facebookexternalhit/i,
       /twitterbot/i,
       /linkedinbot/i,
+      /uptimerobot/i, // UptimeRobot monitoring
     ];
     
     const isLegitimateBot = legitimateBots.some(pattern => pattern.test(userAgent));
