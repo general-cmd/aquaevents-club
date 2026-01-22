@@ -38,9 +38,8 @@ export default function AvisoLegal() {
                 En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI), se informa a los usuarios de los siguientes datos identificativos del titular del sitio web:
               </p>
               <ul className="space-y-2 text-gray-700">
-                <li><strong>Denominación social:</strong> BRU&YOU LTD</li>
-                <li><strong>Número de registro:</strong> Company No. 12886384 (England & Wales)</li>
-                <li><strong>Domicilio social:</strong> 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom</li>
+                <li><strong>Plataforma:</strong> AquaEvents.club</li>
+                <li><strong>Patrocinador:</strong> euroswimcaps.com</li>
                 <li><strong>Correo electrónico:</strong> <a href="mailto:hola@aquaevents.club" className="text-blue-600 hover:underline">hola@aquaevents.club</a></li>
                 <li><strong>Sitio web:</strong> <a href="https://aquaevents.club" className="text-blue-600 hover:underline">https://aquaevents.club</a></li>
               </ul>
@@ -76,7 +75,7 @@ export default function AvisoLegal() {
             <section>
               <h2 className="text-2xl font-bold mb-4">4. Propiedad Intelectual</h2>
               <p className="text-gray-700 mb-4">
-                Todos los contenidos del sitio web (textos, imágenes, diseño gráfico, código fuente, logotipos, etc.) son propiedad de BRU&YOU LTD o de terceros que han autorizado su uso, y están protegidos por las leyes de propiedad intelectual.
+                Todos los contenidos del sitio web (textos, imágenes, diseño gráfico, código fuente, logotipos, etc.) son propiedad de AquaEvents.club (patrocinado por euroswimcaps.com) o de terceros que han autorizado su uso, y están protegidos por las leyes de propiedad intelectual.
               </p>
               <p className="text-gray-700">
                 Los usuarios pueden visualizar, imprimir y descargar contenidos exclusivamente para uso personal y no comercial. Queda prohibida la reproducción, distribución o modificación sin autorización expresa.
@@ -87,7 +86,7 @@ export default function AvisoLegal() {
             <section>
               <h2 className="text-2xl font-bold mb-4">5. Información de Eventos</h2>
               <p className="text-gray-700 mb-4">
-                La información de eventos publicada en AquaEvents.club proviene de fuentes públicas (federaciones, clubes, organizadores) y de envíos de usuarios. BRU&YOU LTD no se responsabiliza de:
+                La información de eventos publicada en AquaEvents.club proviene de fuentes públicas (federaciones, clubes, organizadores) y de envíos de usuarios. AquaEvents.club no se responsabiliza de:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
                 <li>La exactitud, actualización o veracidad de la información de eventos</li>
@@ -103,7 +102,7 @@ export default function AvisoLegal() {
             <section>
               <h2 className="text-2xl font-bold mb-4">6. Limitación de Responsabilidad</h2>
               <p className="text-gray-700 mb-4">
-                BRU&YOU LTD no se hace responsable de:
+                AquaEvents.club no se hace responsable de:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
                 <li>Interrupciones o errores en el acceso al sitio web</li>
@@ -117,7 +116,7 @@ export default function AvisoLegal() {
             <section>
               <h2 className="text-2xl font-bold mb-4">7. Enlaces a Terceros</h2>
               <p className="text-gray-700">
-                AquaEvents.club puede contener enlaces a sitios web de terceros (federaciones, clubes, organizadores). BRU&YOU LTD no controla ni se responsabiliza del contenido, políticas de privacidad o prácticas de estos sitios externos.
+                AquaEvents.club puede contener enlaces a sitios web de terceros (federaciones, clubes, organizadores). AquaEvents.club no controla ni se responsabiliza del contenido, políticas de privacidad o prácticas de estos sitios externos.
               </p>
             </section>
 

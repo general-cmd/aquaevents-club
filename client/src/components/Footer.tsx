@@ -2,7 +2,7 @@ import { Link } from "wouter";
 
 /**
  * Shared Footer Component with Legal Compliance
- * Includes BRU&YOU LTD company details as required by Spanish law (LSSI)
+ * Includes sponsorship information and legal links
  */
 export default function Footer() {
   return (
@@ -47,18 +47,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company Info */}
+          {/* Sponsorship Info */}
           <div>
-            <h4 className="font-bold mb-4">Información de la Empresa</h4>
+            <h4 className="font-bold mb-4">Patrocinador</h4>
             <ul className="space-y-2 text-gray-400 text-xs">
-              <li><strong className="text-gray-300">BRU&YOU LTD</strong></li>
-              <li>Company No. 12886384</li>
-              <li>Registrada en Inglaterra y Gales</li>
+              <li><strong className="text-gray-300">euroswimcaps.com</strong></li>
+              <li>Proveedor líder de gorros de natación personalizados</li>
               <li className="pt-2">
-                71-75 Shelton Street<br />
-                Covent Garden<br />
-                London, WC2H 9JQ<br />
-                United Kingdom
+                <a href="https://euroswimcaps.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  Visitar euroswimcaps.com
+                </a>
               </li>
               <li className="pt-2">
                 <a href="mailto:hola@aquaevents.club" className="hover:text-white">
@@ -71,7 +69,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
-          <p>© 2025 AquaEvents.club - BRU&YOU LTD. Todos los derechos reservados.</p>
+          <p>© 2025 AquaEvents.club - Patrocinado por euroswimcaps.com. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

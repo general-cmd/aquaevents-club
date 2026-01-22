@@ -2034,4 +2034,14 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Update bot blocking middleware to allow UptimeRobot user agent
 - [x] Test that UptimeRobot monitoring can access the site
 - [x] Verify scraper protection still works for other bots
+- [x] Push to GitHub and deploy - ✅ Pushed commit a0512ea to GitHub
+
+
+## Replace Bru&You Ltd References (Jan 5, 2026)
+- [x] Search for all "Bru&You Ltd" references in codebase - Found 7 instances
+- [x] Replace with "Sponsored by euroswimcaps.com" in all files
+- [x] Update Privacy Policy (PoliticaPrivacidad.tsx)
+- [x] Update Terms and Conditions (AvisoLegal.tsx)
+- [x] Update Footer with euroswimcaps.com sponsorship
+- [x] Verify no "Bru&You" text remains anywhere - ✅ Only in todo.md history
 - [ ] Push to GitHub and deploy

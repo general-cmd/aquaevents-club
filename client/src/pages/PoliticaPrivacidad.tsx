@@ -34,7 +34,7 @@ export default function PoliticaPrivacidad() {
             {/* Introduction */}
             <section>
               <p className="text-gray-700 mb-4">
-                En BRU&YOU LTD, responsable de AquaEvents.club, nos comprometemos a proteger la privacidad de nuestros usuarios. Esta Política de Privacidad explica cómo recopilamos, usamos, compartimos y protegemos su información personal de acuerdo con el Reglamento General de Protección de Datos (RGPD) y la legislación española aplicable.
+                AquaEvents.club, patrocinado por euroswimcaps.com, se compromete a proteger la privacidad de nuestros usuarios. Esta Política de Privacidad explica cómo recopilamos, usamos, compartimos y protegemos su información personal de acuerdo con el Reglamento General de Protección de Datos (RGPD) y la legislación española aplicable.
               </p>
             </section>
 
@@ -42,10 +42,10 @@ export default function PoliticaPrivacidad() {
             <section>
               <h2 className="text-2xl font-bold mb-4">1. Responsable del Tratamiento</h2>
               <ul className="space-y-2 text-gray-700">
-                <li><strong>Denominación social:</strong> BRU&YOU LTD</li>
-                <li><strong>Número de registro:</strong> Company No. 12886384 (England & Wales)</li>
-                <li><strong>Domicilio:</strong> 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom</li>
+                <li><strong>Plataforma:</strong> AquaEvents.club</li>
+                <li><strong>Patrocinador:</strong> euroswimcaps.com</li>
                 <li><strong>Correo electrónico:</strong> <a href="mailto:hola@aquaevents.club" className="text-blue-600 hover:underline">hola@aquaevents.club</a></li>
+                <li><strong>Sitio web:</strong> <a href="https://aquaevents.club" className="text-blue-600 hover:underline">https://aquaevents.club</a></li>
               </ul>
             </section>
 
