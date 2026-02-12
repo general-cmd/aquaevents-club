@@ -2078,4 +2078,19 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Update all blog post dates to 2026 - Updated BlogGuiaClub, BlogSwimmingEvents2026, Blog.tsx
 - [x] Ensure consistent layout across all blog posts
 - [x] Test all blog posts in dev - ✅ Dev server running, no errors
+- [x] Push to GitHub and deploy - ✅ Pushed commit d3e3842f to GitHub
+
+
+## SEO Blog Posts & Social Sharing (Jan 5, 2026)
+- [x] Research high-intent keywords for swimming gear - Gafas natación, neopreno aguas abiertas
+- [x] Plan 2-3 blog post topics with affiliate strategy - Comparison guides with tables
+- [x] Write "Mejores Gafas de Natación 2026" with comparison table - ✅ Complete with 6 product reviews
+- [x] Write "Cómo Elegir Traje de Neopreno para Aguas Abiertas" guide - ✅ Complete with temperature table
+- [ ] Write third blog post (optional - based on keyword research) - Skipped for now
+- [x] Add structured data (Product schema, FAQ schema) to new posts - ✅ Article + FAQ schema
+- [ ] Generate hero images for new blog posts - Using generic hero sections
+- [x] Add affiliate product recommendations to new posts - ✅ Integrated BlogAffiliateSection
+- [x] Create SocialShareButtons component - ✅ Facebook, Twitter, LinkedIn, WhatsApp, Copy link
+- [x] Add social sharing to all blog posts (Facebook, Twitter, WhatsApp) - ✅ Added to all 4 blog posts
+- [x] Test all new blog posts and social sharing - ✅ Dev server running, TypeScript OK, no errors
 - [ ] Push to GitHub and deploy

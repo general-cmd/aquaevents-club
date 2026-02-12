@@ -29,6 +29,8 @@ import GorrosPeloLargo from "./pages/GorrosPeloLargo";
 import GorrosTela from "./pages/GorrosTela";
 import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
 import BlogGuiaClub from "./pages/BlogGuiaClub";
+import BlogMejoresGafasNatacion2026 from "./pages/BlogMejoresGafasNatacion2026";
+import BlogNeoprenoAguasAbiertas from "./pages/BlogNeoprenoAguasAbiertas";
 import WidgetCalendar from "./pages/WidgetCalendar";
 import WidgetBuilder from "./pages/WidgetBuilder";
 import WidgetDemo from "./pages/WidgetDemo";
@@ -52,6 +54,8 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/eventos-natacion-espana-2026" component={BlogSwimmingEvents2026} />
       <Route path="/blog/guia-pedido-gorros-club" component={BlogGuiaClub} />
+      <Route path="/blog/mejores-gafas-natacion-2026" component={BlogMejoresGafasNatacion2026} />
+      <Route path="/blog/neopreno-aguas-abiertas" component={BlogNeoprenoAguasAbiertas} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/enviar-evento" component={SubmitEvent} />
       <Route path="/perfil" component={UserProfile} />

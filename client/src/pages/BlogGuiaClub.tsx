@@ -4,6 +4,7 @@ import { Check, X, Mail, FileText, Calendar, Users } from "lucide-react";
 import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import BlogAffiliateSection, { SWIMMING_TRAINING_PRODUCTS } from "@/components/BlogAffiliateSection";
+import SocialShareButtons from "@/components/SocialShareButtons";
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -366,6 +367,16 @@ export default function BlogGuiaClub() {
             intro="Equipa a tus nadadores con el mejor material de entrenamiento. Productos seleccionados por entrenadores profesionales."
             products={SWIMMING_TRAINING_PRODUCTS}
           />
+
+          {/* Social Sharing */}
+          <section className="mb-12">
+            <SocialShareButtons 
+              url="https://aquaevents.club/blog/guia-pedido-gorros-club"
+              title="Guía para Presidentes de Club: Cómo Organizar un Pedido de 200 Gorros"
+              description="Proceso paso a paso para coordinar diseño, aprobaciones, pagos y entregas sin complicaciones."
+              hashtags={["clubnatacion", "gorrosnatacion", "gestionclub"]}
+            />
+          </section>
 
           {/* Conclusión */}
           <section className="mb-12">

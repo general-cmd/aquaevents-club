@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { Calendar, MapPin, Users, Trophy, Info } from "lucide-react";
 import BlogAffiliateSection, { SWIMMING_TRAINING_PRODUCTS, COMPETITION_PRODUCTS } from "@/components/BlogAffiliateSection";
+import SocialShareButtons from "@/components/SocialShareButtons";
 
 export default function BlogSwimmingEvents2026() {
   useEffect(() => {
@@ -529,6 +530,16 @@ export default function BlogSwimmingEvents2026() {
             intro="Productos recomendados por nadadores profesionales para entrenar y competir al máximo nivel. Envío rápido con Amazon Prime."
             products={COMPETITION_PRODUCTS}
           />
+
+          {/* Social Sharing */}
+          <section className="mb-12">
+            <SocialShareButtons 
+              url="https://aquaevents.club/blog/eventos-natacion-2026"
+              title="Guía Completa de Eventos de Natación en España 2026"
+              description="Descubre los mejores eventos de natación, triatlones y competiciones acuáticas en España para 2026."
+              hashtags={["natacion", "eventos2026", "competicion", "swimming"]}
+            />
+          </section>
 
           {/* FAQ Section */}
           <section id="faq" className="mb-12">
