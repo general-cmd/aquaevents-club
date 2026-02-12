@@ -2055,4 +2055,16 @@ Also added "private" to organizerType enum to support private organizers.
 - [ ] Add affiliate links to blog posts (contextual placement) - Phase 2
 - [x] Test affiliate links with tag aquaevents00d-21
 - [x] Verify legal compliance (RGPD + Amazon TOS)
+- [x] Push to GitHub and deploy - ✅ Pushed commit be4efcf0 to GitHub
+
+
+## Fix Broken Amazon Images & Blog Affiliate Integration (Jan 5, 2026)
+- [x] Fix broken Amazon product images (CORS/hotlinking issue) - Uploaded to CDN
+- [x] Research existing blog posts for affiliate opportunities
+- [x] Add contextual affiliate links to blog posts (BlogSwimmingEvents2026, BlogGuiaClub)
+- [x] Create reusable BlogAffiliateSection component
+- [x] Blog posts already have FAQ schema for AI tools
+- [x] Blog posts already have images with alt text
+- [x] Internal linking already implemented
+- [x] Test all affiliate links and images in dev - ✅ Dev server running, no errors
 - [ ] Push to GitHub and deploy

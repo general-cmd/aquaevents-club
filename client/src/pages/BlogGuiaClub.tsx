@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check, X, Mail, FileText, Calendar, Users } from "lucide-react";
 import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
+import BlogAffiliateSection, { SWIMMING_TRAINING_PRODUCTS } from "@/components/BlogAffiliateSection";
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -358,6 +359,13 @@ export default function BlogGuiaClub() {
               </div>
             </div>
           </section>
+
+          {/* Affiliate Section */}
+          <BlogAffiliateSection 
+            title="Material Recomendado para Tu Club"
+            intro="Equipa a tus nadadores con el mejor material de entrenamiento. Productos seleccionados por entrenadores profesionales."
+            products={SWIMMING_TRAINING_PRODUCTS}
+          />
 
           {/* Conclusión */}
           <section className="mb-12">

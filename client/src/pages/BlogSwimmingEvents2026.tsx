@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { Calendar, MapPin, Users, Trophy, Info } from "lucide-react";
+import BlogAffiliateSection, { SWIMMING_TRAINING_PRODUCTS, COMPETITION_PRODUCTS } from "@/components/BlogAffiliateSection";
 
 export default function BlogSwimmingEvents2026() {
   useEffect(() => {
@@ -521,6 +522,13 @@ export default function BlogSwimmingEvents2026() {
               Las travesías en aguas abiertas suelen ser más económicas que las competiciones en piscina, ya que no requieren licencia federativa y los costes de inscripción son moderados. Un nadador recreativo que participe en 5-10 travesías al año puede mantener su presupuesto por debajo de 500€ anuales, lo que convierte a las aguas abiertas en una opción atractiva para nadadores que buscan experiencias deportivas sin el compromiso económico de la competición federada.
             </p>
           </section>
+
+          {/* Affiliate Section - Training Products */}
+          <BlogAffiliateSection 
+            title="Material Esencial para Competir en 2026"
+            intro="Productos recomendados por nadadores profesionales para entrenar y competir al máximo nivel. Envío rápido con Amazon Prime."
+            products={COMPETITION_PRODUCTS}
+          />
 
           {/* FAQ Section */}
           <section id="faq" className="mb-12">

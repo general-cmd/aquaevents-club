@@ -14,7 +14,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Ultra Swipe Gafas de Natación",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://m.media-amazon.com/images/I/61vLqGxqQOL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07MDHJ8YF?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€29,99",
       rating: 4.6,
@@ -23,7 +23,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Kickboard Elite Tabla de Natación",
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://m.media-amazon.com/images/I/61nVZO8KKHL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
       amazonUrl: `https://www.amazon.es/dp/B00HZQK3LE?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€16,95",
       rating: 4.7,
@@ -32,7 +32,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Powerfin Pro Aletas de Entrenamiento",
       description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores profesionales.",
-      imageUrl: "https://m.media-amazon.com/images/I/61FtL2QHBHL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07L5QVQXZ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€34,99",
       rating: 4.5,
@@ -45,7 +45,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Zone3 Neoprene Buoy Boya de Seguridad",
       description: "Boya de natación de alta visibilidad con compartimento estanco. Esencial para aguas abiertas.",
-      imageUrl: "https://m.media-amazon.com/images/I/71QYqGxH8WL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/yDtzKeCtijeeJqtf.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07BQXH4YD?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€24,99",
       rating: 4.6,
@@ -54,7 +54,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Aqua Sphere Kayenne Gafas Aguas Abiertas",
       description: "Lentes grandes con protección UV. Máxima visibilidad en aguas abiertas.",
-      imageUrl: "https://m.media-amazon.com/images/I/61vYxH8KKSL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
       amazonUrl: `https://www.amazon.es/dp/B00HZQK2YM?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€27,95",
       rating: 4.7,
@@ -63,7 +63,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "BodyGlide Anti-Rozaduras para Triatlón",
       description: "Protección contra rozaduras en neopreno. Imprescindible para triatletas.",
-      imageUrl: "https://m.media-amazon.com/images/I/61L8xGxqQOL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
       amazonUrl: `https://www.amazon.es/dp/B0043S06GI?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€12,99",
       rating: 4.8,
@@ -76,7 +76,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Turbo Waterpolo Cap Gorro Profesional",
       description: "Gorro de waterpolo con protección auricular reforzada. Homologado FINA.",
-      imageUrl: "https://m.media-amazon.com/images/I/61nVZO8KKHL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07MDHJ8YF?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€18,99",
       rating: 4.5,
@@ -85,7 +85,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Ultra Swipe Gafas de Natación",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://m.media-amazon.com/images/I/61vLqGxqQOL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07MDHJ8YF?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€29,99",
       rating: 4.6,
@@ -94,7 +94,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Team Rucksack Mochila 30L",
       description: "Mochila impermeable con compartimentos separados para equipo mojado.",
-      imageUrl: "https://m.media-amazon.com/images/I/71FtL2QHBHL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07L5QVQXZ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€39,99",
       rating: 4.7,
@@ -107,7 +107,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Aquapure Gafas Natación Sincronizada",
       description: "Gafas de bajo perfil para natación artística. Ajuste seguro y cómodo.",
-      imageUrl: "https://m.media-amazon.com/images/I/61vYxH8KKSL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
       amazonUrl: `https://www.amazon.es/dp/B00HZQK2YM?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€19,99",
       rating: 4.5,
@@ -116,7 +116,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Ultra Swipe Gafas de Natación",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://m.media-amazon.com/images/I/61vLqGxqQOL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07MDHJ8YF?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€29,99",
       rating: 4.6,
@@ -125,7 +125,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Kickboard Elite Tabla de Natación",
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://m.media-amazon.com/images/I/61nVZO8KKHL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
       amazonUrl: `https://www.amazon.es/dp/B00HZQK3LE?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€16,95",
       rating: 4.7,
@@ -138,7 +138,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Ultra Swipe Gafas de Natación",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://m.media-amazon.com/images/I/61vLqGxqQOL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07MDHJ8YF?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€29,99",
       rating: 4.6,
@@ -147,7 +147,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Kickboard Elite Tabla de Natación",
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://m.media-amazon.com/images/I/61nVZO8KKHL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
       amazonUrl: `https://www.amazon.es/dp/B00HZQK3LE?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€16,95",
       rating: 4.7,
@@ -156,7 +156,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "SiS Go Energy Gels Pack 30 Unidades",
       description: "Geles energéticos isotónicos. Perfectos para competición y entrenamientos largos.",
-      imageUrl: "https://m.media-amazon.com/images/I/71L8xGxqQOL._AC_SL1500_.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07BQXH4YD?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€32,99",
       rating: 4.6,
