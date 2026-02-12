@@ -2045,3 +2045,14 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Update Footer with euroswimcaps.com sponsorship
 - [x] Verify no "Bru&You" text remains anywhere - ✅ Only in todo.md history
 - [ ] Push to GitHub and deploy
+
+
+## Amazon Associates Affiliate Integration (Jan 5, 2026)
+- [x] Add Amazon affiliate disclosure to Footer (legal compliance)
+- [x] Create AffiliateProductCard component (reusable)
+- [x] Create RecommendedGear component with contextual product matching
+- [x] Add affiliate section to EventDetail page (after event info)
+- [ ] Add affiliate links to blog posts (contextual placement) - Phase 2
+- [x] Test affiliate links with tag aquaevents00d-21
+- [x] Verify legal compliance (RGPD + Amazon TOS)
+- [ ] Push to GitHub and deploy

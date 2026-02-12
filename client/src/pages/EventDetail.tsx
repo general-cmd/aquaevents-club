@@ -10,6 +10,7 @@ import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import { SEOMeta, truncateForMeta } from "@/components/SEOMeta";
 import RelatedEvents from "@/components/RelatedEvents";
 import EquipmentServiceSection from "@/components/EquipmentServiceSection";
+import RecommendedGear from "@/components/RecommendedGear";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { formatDate as formatDateDDMMYYYY, formatDateTime } from "@/lib/dateFormat";
@@ -661,6 +662,14 @@ export default function EventDetail() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Recommended Gear - Amazon Affiliate Section */}
+        <div className="container mx-auto px-4 mb-12">
+          <RecommendedGear 
+            discipline={event.discipline}
+            eventName={translatedTitle}
+          />
         </div>
 
         {/* Related Events */}

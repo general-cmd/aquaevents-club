@@ -67,8 +67,18 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Amazon Affiliate Disclosure */}
+        <div className="border-t border-gray-800 pt-6 pb-4 text-center text-gray-500 text-xs">
+          <p>
+            AquaEvents.club participa en el Programa de Afiliados de Amazon ES, un programa de publicidad para afiliados 
+            diseñado para ofrecer a sitios web un modo de obtener comisiones por publicidad, publicitando e incluyendo 
+            enlaces a Amazon.es. Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los 
+            requisitos aplicables.
+          </p>
+        </div>
+
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
+        <div className="text-center text-gray-400 text-sm">
           <p>© 2025 AquaEvents.club - Patrocinado por euroswimcaps.com. Todos los derechos reservados.</p>
         </div>
       </div>
