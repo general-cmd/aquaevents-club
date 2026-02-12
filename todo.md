@@ -2093,4 +2093,16 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Create SocialShareButtons component - ✅ Facebook, Twitter, LinkedIn, WhatsApp, Copy link
 - [x] Add social sharing to all blog posts (Facebook, Twitter, WhatsApp) - ✅ Added to all 4 blog posts
 - [x] Test all new blog posts and social sharing - ✅ Dev server running, TypeScript OK, no errors
+- [x] Push to GitHub and deploy - ✅ Pushed commit 21804e30 to GitHub
+
+
+## Fix Amazon Links & Blog Listing (Jan 5, 2026)
+- [x] Fix all Amazon affiliate links to use amazon.es instead of amazon.com
+- [x] Verify all Amazon product ASINs are correct for amazon.es - ✅ Updated to B09FK77WW2, B0DRNXT7CP, B00CXTFSWQ
+- [x] Add new blog posts (Gafas, Neopreno) to /blog listing page - ✅ Added to featured section
+- [ ] Update old database blog posts with 2026 dates - Requires MongoDB access
+- [ ] Add SEO features to old blog posts (hero images, FAQ schema, social sharing) - Phase 2
+- [x] Add internal links to /gorros-natacion in all blog posts - ✅ Added to Gafas & Neopreno
+- [x] Add internal links to affiliate products in all blog posts - ✅ BlogAffiliateSection integrated
+- [x] Test all Amazon links work on amazon.es - ✅ Dev server running, no errors
 - [ ] Push to GitHub and deploy

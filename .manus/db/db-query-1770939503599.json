@@ -1,0 +1,9 @@
+{
+  "query": "-- Note: This is MongoDB, using webdev_execute_sql won't work. Need to use tRPC procedure instead.",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user zTaEsug2fFa9VnU.ec068b1410ed --database 6FwoVE5swRHi6FP8VD6Fbt --execute -- Note: This is MongoDB, using webdev_execute_sql won't work. Need to use tRPC procedure instead.",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 111
+}

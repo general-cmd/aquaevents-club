@@ -481,7 +481,10 @@ export default function BlogNeoprenoAguasAbiertas() {
 
             <Card className="bg-cyan-50 border-2 border-cyan-600">
               <CardContent className="pt-6">
-                <h3 className="text-2xl font-semibold mb-4 text-center">¿Buscas Travesías de Aguas Abiertas?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-center">¿Listo para tu Próxima Travesía?</h3>
+                <p className="text-gray-700 text-center mb-4">
+                  Descubre eventos de aguas abiertas en toda España y equipa a tu club con <Link href="/gorros-natacion"><a className="text-cyan-600 hover:underline font-semibold">gorros personalizados resistentes al cloro</a></Link>.
+                </p>
                 <p className="text-center text-gray-700 mb-6">
                   Descubre travesías, triatlones y eventos de aguas abiertas en toda España. Calendario actualizado con 290+ eventos para 2026.
                 </p>

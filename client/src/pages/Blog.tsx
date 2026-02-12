@@ -84,9 +84,11 @@ export default function Blog() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Club Guide */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-blue-200">
-              <div className="bg-gradient-to-br from-blue-600 to-cyan-500 h-48 flex items-center justify-center">
-                <BookOpen className="w-20 h-20 text-white" />
-              </div>
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/tnKtPdxJZkHLTUEi.jpg"
+                alt="Guía para Presidentes de Club"
+                className="w-full h-48 object-cover"
+              />
               <CardContent className="p-6">
                 <Badge className="mb-3 bg-green-600">Guía Práctica</Badge>
                 <h3 className="text-xl font-bold mb-2 text-gray-900">
@@ -108,6 +110,72 @@ export default function Blog() {
                 <Link href="/blog/guia-pedido-gorros-club">
                   <Button variant="outline" className="w-full">
                     Leer guía completa
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Goggles Guide */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-blue-200">
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg"
+                alt="Mejores Gafas de Natación 2026"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-blue-600">Equipo</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Las Mejores Gafas de Natación 2026: Guía Completa
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Análisis detallado de las mejores gafas para piscina y aguas abiertas. Comparativa de Speedo, Arena y Aqua Sphere con precios.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Ene 2026
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    12 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/mejores-gafas-natacion-2026">
+                  <Button variant="outline" className="w-full">
+                    Ver comparativa
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Wetsuit Guide */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-blue-200">
+              <img 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/yDtzKeCtijeeJqtf.jpg"
+                alt="Cómo Elegir Neopreno para Aguas Abiertas"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-cyan-600">Aguas Abiertas</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Cómo Elegir Traje de Neopreno para Aguas Abiertas
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Guía definitiva para elegir tu neopreno perfecto. Grosor, ajuste, flotabilidad y comparativa de marcas top para triatlón.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Ene 2026
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    10 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/neopreno-aguas-abiertas">
+                  <Button variant="outline" className="w-full">
+                    Leer guía
                   </Button>
                 </Link>
               </CardContent>

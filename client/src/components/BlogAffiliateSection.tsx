@@ -108,7 +108,7 @@ export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
     title: "Arena Cobra Ultra Swipe Gafas de Natación",
     description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B07MDHJ8YF?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    amazonUrl: `https://www.amazon.es/dp/B09FK77WW2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
     price: "€29,99",
     badge: "Más Vendido"
   },
@@ -116,7 +116,7 @@ export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
     title: "Speedo Kickboard Elite Tabla de Natación",
     description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B00HZQK3LE?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
     price: "€16,95"
   },
   {
@@ -141,7 +141,7 @@ export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
     title: "Aqua Sphere Kayenne Gafas Aguas Abiertas",
     description: "Lentes grandes con protección UV. Máxima visibilidad en aguas abiertas.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B00HZQK2YM?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
     price: "€27,95"
   },
   {
@@ -158,7 +158,7 @@ export const COMPETITION_PRODUCTS: AffiliateProduct[] = [
     title: "Arena Cobra Ultra Swipe Gafas de Competición",
     description: "Gafas de competición con tecnología anti-vaho. Homologadas FINA.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B07MDHJ8YF?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    amazonUrl: `https://www.amazon.es/dp/B09FK77WW2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
     price: "€29,99",
     badge: "FINA Approved"
   },

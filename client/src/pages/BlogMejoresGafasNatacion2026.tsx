@@ -538,7 +538,10 @@ export default function BlogMejoresGafasNatacion2026() {
 
             <Card className="bg-blue-50 border-2 border-blue-600">
               <CardContent className="pt-6">
-                <h3 className="text-2xl font-semibold mb-4 text-center">¿Buscas Más Eventos de Natación?</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-center">¿Preparado para tu Próxima Competición?</h3>
+                <p className="text-gray-700 text-center mb-4">
+                  Encuentra eventos de natación cerca de ti y equipa a tu club con <Link href="/gorros-natacion"><a className="text-blue-600 hover:underline font-semibold">gorros personalizados de alta calidad</a></Link>.
+                </p>
                 <p className="text-center text-gray-700 mb-6">
                   Descubre competiciones, travesías y eventos acuáticos en toda España. Calendario actualizado con 290+ eventos para 2026.
                 </p>
