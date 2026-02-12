@@ -2067,4 +2067,15 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Blog posts already have images with alt text
 - [x] Internal linking already implemented
 - [x] Test all affiliate links and images in dev - ✅ Dev server running, no errors
+- [x] Push to GitHub and deploy - ✅ Pushed commit 5539e6dc to GitHub
+
+
+## Blog Posts Image & Date Updates (Jan 5, 2026)
+- [x] Audit all blog posts for missing hero images
+- [x] Audit all blog posts for outdated dates (update to 2026)
+- [x] Generate/find hero image for "Guía para Presidentes de Club" - ✅ Generated and uploaded to CDN
+- [x] Add hero images to any other blog posts missing them - BlogSwimmingEvents2026 already has image
+- [x] Update all blog post dates to 2026 - Updated BlogGuiaClub, BlogSwimmingEvents2026, Blog.tsx
+- [x] Ensure consistent layout across all blog posts
+- [x] Test all blog posts in dev - ✅ Dev server running, no errors
 - [ ] Push to GitHub and deploy

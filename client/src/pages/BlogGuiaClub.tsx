@@ -10,7 +10,7 @@ const howToSchema = {
   "@type": "HowTo",
   "name": "Cómo Organizar un Pedido de 200 Gorros de Natación sin Volverse Loco",
   "description": "Guía completa paso a paso para clubes y asociaciones deportivas sobre cómo realizar pedidos de gorros de natación personalizados al por mayor.",
-  "image": "https://aquaevents.club/blog-guia-pedido-gorros-hero.jpg",
+  "image": "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/PrbJwnhUNXAvZWRT.jpg",
   "totalTime": "P3W",
   "estimatedCost": {
     "@type": "MonetaryAmount",
@@ -61,7 +61,7 @@ export default function BlogGuiaClub() {
       <section className="relative bg-gradient-to-b from-blue-900 to-blue-700 text-white py-16">
         <div className="absolute inset-0 opacity-30">
           <img 
-            src="/blog-guia-pedido-gorros-hero.jpg" 
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/PrbJwnhUNXAvZWRT.jpg" 
             alt="Entrenador de natación revisando gorros personalizados" 
             className="w-full h-full object-cover"
           />
@@ -80,7 +80,7 @@ export default function BlogGuiaClub() {
                 Proceso paso a paso para coordinar diseño, aprobaciones, pagos y entregas sin complicaciones
               </p>
               <p className="text-sm text-blue-200">
-                Tiempo de lectura: 8 minutos | Actualizado: Diciembre 2025
+                Tiempo de lectura: 8 minutos | Actualizado: Enero 2026
               </p>
             </div>
           </div>

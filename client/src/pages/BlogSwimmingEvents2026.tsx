@@ -27,8 +27,8 @@ export default function BlogSwimmingEvents2026() {
         "url": "https://aquaevents.club/logo.png"
       }
     },
-    "datePublished": "2025-11-30",
-    "dateModified": "2025-11-30"
+    "datePublished": "2026-01-05",
+    "dateModified": "2026-01-05"
   };
 
   const jsonLdFAQ = {
@@ -173,7 +173,7 @@ export default function BlogSwimmingEvents2026() {
             <div className="flex flex-wrap gap-4 text-sm">
               <span className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                Actualizado: 30 de noviembre de 2025
+                Actualizado: 5 de enero de 2026
               </span>
               <span className="flex items-center gap-2">
                 <Users className="w-4 h-4" />
@@ -317,7 +317,7 @@ export default function BlogSwimmingEvents2026() {
                 <div>
                   <p className="font-semibold mb-2">Nota sobre fechas específicas</p>
                   <p className="text-sm text-gray-700">
-                    Las federaciones autonómicas publican sus calendarios oficiales entre diciembre 2025 y febrero 2026. 
+                    Las federaciones autonómicas publican sus calendarios oficiales entre enero y marzo 2026. 
                     Esta guía se actualiza mensualmente con las fechas confirmadas. Para consultar eventos específicos con fechas exactas, 
                     visita el <Link href="/eventos"><a className="text-blue-600 hover:underline font-semibold">calendario centralizado de AquaEvents.club</a></Link>, 
                     que agrega eventos de RFEN y las 19 federaciones autonómicas.

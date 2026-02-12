@@ -98,7 +98,7 @@ export default function Blog() {
                 <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
-                    Dic 2025
+                    Ene 2026
                   </div>
                   <div className="flex items-center gap-1">
                     <BookOpen className="w-4 h-4" />
