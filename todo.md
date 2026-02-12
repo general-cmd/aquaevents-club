@@ -2105,4 +2105,20 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Add internal links to /gorros-natacion in all blog posts - ✅ Added to Gafas & Neopreno
 - [x] Add internal links to affiliate products in all blog posts - ✅ BlogAffiliateSection integrated
 - [x] Test all Amazon links work on amazon.es - ✅ Dev server running, no errors
-- [ ] Push to GitHub and deploy
+- [x] Push to GitHub and deploy - ✅ Pushed commit 7c7a85f6 to GitHub
+
+
+## Create Static SEO Blog Posts (Jan 5, 2026)
+- [x] Generate 6 hero images for blog posts - ✅ All generated and uploaded to CDN
+- [ ] Create BlogPreparacionCompeticion.tsx (Preparación Profesional) - NEXT SESSION
+- [ ] Create BlogSubvencionesClubs.tsx (Guía Subvenciones 2026) - NEXT SESSION
+- [ ] Create BlogBeneficiosAguasAbiertas.tsx (Beneficios Aguas Abiertas) - NEXT SESSION
+- [ ] Create BlogTecnicasViraje.tsx (Técnicas Avanzadas Viraje) - NEXT SESSION
+- [ ] Create BlogElegirCompeticion.tsx (Elegir Competición por Nivel) - NEXT SESSION
+- [ ] Create BlogNutricionNadadores.tsx (Nutrición Alto Rendimiento) - NEXT SESSION
+- [ ] Update Blog.tsx to list all new static posts - NEXT SESSION
+- [ ] Update App.tsx with routes for all new posts - NEXT SESSION
+- [ ] Test all blog posts - NEXT SESSION
+- [ ] Push to GitHub and deploy - NEXT SESSION
+
+**Note:** See /home/ubuntu/BLOG_POSTS_COMPLETION_GUIDE.md for detailed instructions
