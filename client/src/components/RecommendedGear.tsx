@@ -134,7 +134,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Aquasphere Seal 2.0 Swim Goggles",
       description: "Gafas de máscara con amplio campo de visión. Perfectas para aguas abiertas.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/sUWzadmGkORSXrkl.jpg",
       amazonUrl: "https://amzn.to/4qFIeBA",
       price: "€24,95",
       rating: 4.6,
