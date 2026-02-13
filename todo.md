@@ -2198,5 +2198,17 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Upload new images to reliable CDN (manus-upload-file)
 - [x] Update all 6 blog post files with verified working image URLs
 - [x] Update Blog.tsx listing page with verified working image URLs
-- [ ] Test in browser to confirm images load
-- [ ] Save checkpoint and push to GitHub
+- [x] Test in browser to confirm images load
+- [x] Save checkpoint and push to GitHub
+
+
+## Update Amazon Affiliate Links with Official URLs (User Request)
+
+- [x] Research each ASIN on Amazon.es to get correct product names, images, and details
+- [x] Map the 21 provided ASINs to appropriate product categories (pool, open water, triathlon, etc.)
+- [x] Update RecommendedGear.tsx with official affiliate links and correct product details
+- [x] Update BlogAffiliateSection.tsx with official affiliate links
+- [ ] Update ProductCarouselPopup.tsx with official affiliate links (uses products from RecommendedGear)
+- [x] Upload new product images to CDN if needed
+- [ ] Test affiliate links to ensure they work correctly
+- [ ] Save checkpoint and push to GitHub for Railway deployment

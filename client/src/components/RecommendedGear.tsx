@@ -3,91 +3,90 @@ import AffiliateProductCard, { AffiliateProduct } from "./AffiliateProductCard";
 /**
  * Recommended Gear Component
  * Displays contextual Amazon affiliate products based on event discipline
+ * Updated with official Amazon affiliate links
  */
-
-const AFFILIATE_TAG = "aquaevents00d-21";
 
 // Product database with high-converting items
 const PRODUCTS: Record<string, AffiliateProduct[]> = {
   // Pool Swimming Products
   pool: [
     {
-      title: "Arena Cobra Ultra Swipe Gafas de Natación",
-      description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€29,99",
+      title: "Speedo Biofuse 2.0 Swim Goggles",
+      description: "Gafas cómodas con tecnología Biofuse para ajuste perfecto. Ideales para entrenamientos largos.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/ohMdDoogAyLszFkv.jpg",
+      amazonUrl: "https://amzn.to/46smj9R",
+      price: "€16,99",
       rating: 4.6,
       reviewCount: 2847
     },
     {
-      title: "Speedo Kickboard Elite Tabla de Natación",
+      title: "Speedo Swimming Kickboard",
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/TgLEEIGTAlSUKZRA.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
+      amazonUrl: "https://amzn.to/3OGlOCI",
       price: "€16,95",
       rating: 4.7,
       reviewCount: 1523
     },
     {
-      title: "Arena Powerfin Pro Aletas de Entrenamiento",
+      title: "Arena Powerfin Pro II Training Fins",
       description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores profesionales.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/QixLQJWLVXjDhbGA.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B07L5QVQXZ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/OJkaStlHPPJPCHAI.jpg",
+      amazonUrl: "https://amzn.to/465OU4q",
       price: "€34,99",
       rating: 4.5,
       reviewCount: 892
     },
     {
-      title: "Speedo Biofuse Palas de Mano",
-      description: "Palas ergonómicas para mejorar fuerza de brazos. Diseño cómodo sin correas.",
+      title: "Speedo Tech Paddle (Training Tool)",
+      description: "Palas técnicas para mejorar fuerza de brazos. Diseño ergonómico sin correas.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/sRFQaWKFZiMDwbiR.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B00IUIW5KW?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      amazonUrl: "https://amzn.to/46RHZMu",
       price: "€18,95",
       rating: 4.6,
       reviewCount: 1342
     },
     {
-      title: "Speedo Pull Buoy Flotador de Entrenamiento",
-      description: "Pull buoy para mejorar técnica de brazos. Ideal para entrenamientos de fuerza.",
+      title: "Arena Pullkick Pro (Swim Training)",
+      description: "Pull buoy y kickboard 2 en 1 para entrenamientos versátiles. Ideal para mejorar técnica.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/FPGnBFdnjuxSMAcP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B000BPZJ8K?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€12,95",
+      amazonUrl: "https://amzn.to/3ZBw8OS",
+      price: "€19,95",
       rating: 4.7,
       reviewCount: 2156
     },
     {
-      title: "Aqua Sphere MP Focus Tubo Frontal",
-      description: "Tubo frontal Michael Phelps para entrenar técnica sin girar la cabeza.",
+      title: "Focevi Swimming Snorkel for Swimmers",
+      description: "Tubo frontal para entrenar técnica sin girar la cabeza. Mejora la posición del cuerpo.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/bMimtYkdUOWJJbQC.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B07FNSZ8QG?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€29,95",
+      amazonUrl: "https://amzn.to/4rAUbKd",
+      price: "€24,95",
       rating: 4.5,
       reviewCount: 987
     },
     {
-      title: "FINIS Tempo Trainer Pro Metrónomo",
-      description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xpqKKSExayLRIswm.png",
-      amazonUrl: `https://www.amazon.es/dp/B005TVYVI2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      title: "FINIS Tempo Trainer Pro",
+      description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada. Herramienta profesional.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BnMwYFnPRGKqlnrT.jpg",
+      amazonUrl: "https://amzn.to/4rHWNoU",
       price: "€34,99",
       rating: 4.8,
       reviewCount: 3421
     },
     {
-      title: "Speedo Fastskin Gorro de Competición",
-      description: "Gorro de competición Fastskin. Reduce resistencia en el agua.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xFhFzTDvLlCNZQkf.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B00IUIW5KW?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€18,95",
+      title: "Arena Cobra Ultra Swipe Racing Goggles",
+      description: "Gafas de competición con tecnología anti-vaho Swipe. Máximo rendimiento en carreras.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
+      amazonUrl: "https://amzn.to/4ky7xE2",
+      price: "€29,99",
       rating: 4.6,
       reviewCount: 1876
     },
     {
-      title: "TYR Mesh Equipment Bag Mochila de Malla",
+      title: "TYR Big Mesh Mummy Backpack Bag",
       description: "Mochila de malla para equipo de natación. Secado rápido y gran capacidad.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xAavhXJwdKvdZqcf.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B000FGUL6K?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      amazonUrl: "https://amzn.to/4arYiAI",
       price: "€24,99",
       rating: 4.7,
       reviewCount: 2543
@@ -97,108 +96,108 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
   // Open Water / Triathlon Products
   openWater: [
     {
-      title: "Zone3 Neoprene Buoy Boya de Seguridad",
-      description: "Boya de natación de alta visibilidad con compartimento estanco. Esencial para aguas abiertas.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/yDtzKeCtijeeJqtf.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B07BQXH4YD?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€24,99",
+      title: "Zone3 Swim Safety Buoy / Dry Bag (28L)",
+      description: "Boya de seguridad con compartimento estanco de 28L. Esencial para aguas abiertas.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/SVOFMiWIIokyUpnJ.jpg",
+      amazonUrl: "https://amzn.to/4rPKyqA",
+      price: "€34,99",
       rating: 4.6,
       reviewCount: 1247
     },
     {
-      title: "Aqua Sphere Kayenne Gafas Aguas Abiertas",
+      title: "Aqua Sphere Kayenne Swim Goggles",
       description: "Lentes grandes con protección UV. Máxima visibilidad en aguas abiertas.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      amazonUrl: "https://amzn.to/4qBy9FO",
       price: "€27,95",
       rating: 4.7,
       reviewCount: 3421
     },
     {
-      title: "BodyGlide Anti-Rozaduras para Triatlón",
+      title: "BodyGlide Anti-Chafe Balm (Travel Size)",
       description: "Protección contra rozaduras en neopreno. Imprescindible para triatletas.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B0043S06GI?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€12,99",
+      amazonUrl: "https://amzn.to/467hL8F",
+      price: "€9,99",
       rating: 4.8,
       reviewCount: 5632
     },
     {
-      title: "Orca Openwater Core Neopreno Triatlón",
-      description: "Neopreno de alta gama para aguas abiertas. Máxima flotabilidad y flexibilidad.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/PSaatfFLZVlTtifd.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B08CXQZ8YG?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€249,99",
+      title: "Body Glide For Her Anti-Chafe Balm",
+      description: "Protección anti-rozaduras especialmente formulada. Resistente al agua.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
+      amazonUrl: "https://amzn.to/4rAUKUl",
+      price: "€11,99",
       rating: 4.7,
-      reviewCount: 876
+      reviewCount: 3876
     },
     {
-      title: "Zone3 Neoprene Swim Socks Calcetines",
-      description: "Calcetines de neopreno para aguas frías. Ideales para triatlón y aguas abiertas.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/ENVAHpUYeymEYohP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B01N9ZYX8Y?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€22,95",
+      title: "Aquasphere Seal 2.0 Swim Goggles",
+      description: "Gafas de máscara con amplio campo de visión. Perfectas para aguas abiertas.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
+      amazonUrl: "https://amzn.to/4qFIeBA",
+      price: "€24,95",
       rating: 4.6,
-      reviewCount: 1543
+      reviewCount: 2134
     }
   ],
 
   // Waterpolo Products
   waterpolo: [
     {
-      title: "Turbo Waterpolo Cap Gorro Profesional",
-      description: "Gorro de waterpolo con protección auricular reforzada. Homologado FINA.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B09FK77WW2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€18,99",
-      rating: 4.5,
-      reviewCount: 687
-    },
-    {
-      title: "Arena Cobra Ultra Swipe Gafas de Natación",
-      description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
+      title: "Arena Cobra Ultra Swipe Racing Goggles",
+      description: "Gafas de competición con tecnología anti-vaho Swipe. Perfectas para waterpolo.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      amazonUrl: "https://amzn.to/4ky7xE2",
       price: "€29,99",
       rating: 4.6,
       reviewCount: 2847
     },
     {
-      title: "Speedo Team Rucksack Mochila 30L",
-      description: "Mochila impermeable con compartimentos separados para equipo mojado.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B07L5QVQXZ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€39,99",
+      title: "Speedo Kickboard (Tangerine/Blue)",
+      description: "Tabla ergonómica para entrenamientos de waterpolo. Material resistente.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
+      amazonUrl: "https://amzn.to/4cqb7xZ",
+      price: "€16,95",
       rating: 4.7,
       reviewCount: 1834
+    },
+    {
+      title: "Arena Team Mesh Bag (Pool Gear Bag)",
+      description: "Bolsa de malla para equipo de waterpolo. Secado rápido y gran capacidad.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/YHvaPvbWypHHBLGm.jpg",
+      amazonUrl: "https://amzn.to/4ailOS3",
+      price: "€19,99",
+      rating: 4.7,
+      reviewCount: 1543
     }
   ],
 
   // Artistic Swimming Products
   artistic: [
     {
-      title: "Speedo Aquapure Gafas Natación Sincronizada",
+      title: "Speedo Biofuse 2.0 Goggles (Clear/Smoke)",
       description: "Gafas de bajo perfil para natación artística. Ajuste seguro y cómodo.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€19,99",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/ohMdDoogAyLszFkv.jpg",
+      amazonUrl: "https://amzn.to/4cugVXj",
+      price: "€16,99",
       rating: 4.5,
       reviewCount: 432
     },
     {
-      title: "Arena Cobra Ultra Swipe Gafas de Natación",
-      description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
+      title: "Arena Cobra Edge Swipe Mirror Goggles",
+      description: "Gafas con lentes espejo para natación artística. Tecnología anti-vaho de larga duración.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€29,99",
+      amazonUrl: "https://amzn.to/4rUarFO",
+      price: "€32,99",
       rating: 4.6,
       reviewCount: 2847
     },
     {
-      title: "Speedo Kickboard Elite Tabla de Natación",
-      description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/TgLEEIGTAlSUKZRA.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      title: "Speedo Swimming Kickboard",
+      description: "Tabla ergonómica para mejorar técnica. Material resistente al cloro.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
+      amazonUrl: "https://amzn.to/3OGlOCI",
       price: "€16,95",
       rating: 4.7,
       reviewCount: 1523
@@ -208,31 +207,31 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
   // Universal products (fallback)
   default: [
     {
-      title: "Arena Cobra Ultra Swipe Gafas de Natación",
-      description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€29,99",
+      title: "Speedo Biofuse 2.0 Swim Goggles",
+      description: "Gafas cómodas con tecnología Biofuse para ajuste perfecto. Ideales para todo tipo de nadadores.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/ohMdDoogAyLszFkv.jpg",
+      amazonUrl: "https://amzn.to/46smj9R",
+      price: "€16,99",
       rating: 4.6,
       reviewCount: 2847
     },
     {
-      title: "Speedo Kickboard Elite Tabla de Natación",
+      title: "Speedo Swimming Kickboard",
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/TgLEEIGTAlSUKZRA.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
+      amazonUrl: "https://amzn.to/3OGlOCI",
       price: "€16,95",
       rating: 4.7,
       reviewCount: 1523
     },
     {
-      title: "SiS Go Energy Gels Pack 30 Unidades",
-      description: "Geles energéticos isotónicos. Perfectos para competición y entrenamientos largos.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B07BQXH4YD?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-      price: "€32,99",
-      rating: 4.6,
-      reviewCount: 2134
+      title: "FINIS Tempo Trainer Pro",
+      description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada. Herramienta profesional.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BnMwYFnPRGKqlnrT.jpg",
+      amazonUrl: "https://amzn.to/4rHWNoU",
+      price: "€34,99",
+      rating: 4.8,
+      reviewCount: 3421
     }
   ]
 };

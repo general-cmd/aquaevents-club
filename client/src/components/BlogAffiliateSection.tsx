@@ -105,75 +105,75 @@ export default function BlogAffiliateSection({
 // Pre-configured product sets for common blog topics
 export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
   {
-    title: "Arena Cobra Ultra Swipe Gafas de Natación",
+    title: "Arena Cobra Ultra Swipe Racing Goggles",
     description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    amazonUrl: "https://amzn.to/4ky7xE2",
     price: "€29,99",
     badge: "Más Vendido"
   },
   {
-    title: "Speedo Kickboard Elite Tabla de Natación",
+    title: "Speedo Swimming Kickboard",
     description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/TgLEEIGTAlSUKZRA.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
+    amazonUrl: "https://amzn.to/3OGlOCI",
     price: "€16,95"
   },
   {
-    title: "Arena Powerfin Pro Aletas de Entrenamiento",
+    title: "Arena Powerfin Pro II Training Fins",
     description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/MTfqHGwWewNPXXhl.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B07L5QVQXZ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/OJkaStlHPPJPCHAI.jpg",
+    amazonUrl: "https://amzn.to/465OU4q",
     price: "€34,99"
   }
 ];
 
 export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
   {
-    title: "Zone3 Neoprene Buoy Boya de Seguridad",
+    title: "Zone3 Swim Safety Buoy / Dry Bag (28L)",
     description: "Boya de alta visibilidad con compartimento estanco. Esencial para aguas abiertas.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/yDtzKeCtijeeJqtf.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B07BQXH4YD?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-    price: "€24,99",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/SVOFMiWIIokyUpnJ.jpg",
+    amazonUrl: "https://amzn.to/4rPKyqA",
+    price: "€34,99",
     badge: "Seguridad"
   },
   {
-    title: "Aqua Sphere Kayenne Gafas Aguas Abiertas",
+    title: "Aqua Sphere Kayenne Swim Goggles",
     description: "Lentes grandes con protección UV. Máxima visibilidad en aguas abiertas.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/bEgrihdZajYzWrJT.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B09FK77WW2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
+    amazonUrl: "https://amzn.to/4qBy9FO",
     price: "€27,95"
   },
   {
-    title: "BodyGlide Anti-Rozaduras para Triatlón",
+    title: "BodyGlide Anti-Chafe Balm (Travel Size)",
     description: "Protección contra rozaduras en neopreno. Imprescindible para triatletas.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B0043S06GI?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-    price: "€12,99"
+    amazonUrl: "https://amzn.to/467hL8F",
+    price: "€9,99"
   }
 ];
 
 export const COMPETITION_PRODUCTS: AffiliateProduct[] = [
   {
-    title: "Arena Cobra Ultra Swipe Gafas de Competición",
+    title: "Arena Cobra Ultra Swipe Racing Goggles",
     description: "Gafas de competición con tecnología anti-vaho. Homologadas FINA.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+    amazonUrl: "https://amzn.to/4ky7xE2",
     price: "€29,99",
     badge: "FINA Approved"
   },
   {
-    title: "SiS Go Energy Gels Pack 30 Unidades",
-    description: "Geles energéticos isotónicos. Perfectos para competición y entrenamientos largos.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B07BQXH4YD?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-    price: "€32,99"
+    title: "FINIS Tempo Trainer Pro",
+    description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada. Herramienta profesional.",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BnMwYFnPRGKqlnrT.jpg",
+    amazonUrl: "https://amzn.to/4rHWNoU",
+    price: "€34,99"
   },
   {
-    title: "Speedo Team Rucksack Mochila 30L",
-    description: "Mochila impermeable con compartimentos separados para equipo mojado.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-    amazonUrl: `https://www.amazon.es/dp/B07L5QVQXZ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
-    price: "€39,99"
+    title: "TYR Big Mesh Mummy Backpack Bag",
+    description: "Mochila de malla para equipo de natación. Secado rápido y gran capacidad.",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xAavhXJwdKvdZqcf.jpg",
+    amazonUrl: "https://amzn.to/4arYiAI",
+    price: "€24,99"
   }
 ];
