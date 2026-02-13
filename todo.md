@@ -2137,3 +2137,16 @@ Also added "private" to organizerType enum to support private organizers.
 ## Product Image Fixes - User Reported Issues
 - [x] Fix broken blog card image for "Guía para Presidentes de Club" on /blog page
 - [x] Replace incorrect Arena Powerfin Pro image (showing kickboard instead of swim fins)
+
+
+## New Features - User Request (SEO Blog Posts, Navigation, Affiliate Expansion, Pop-up)
+- [x] Complete 6 remaining SEO blog posts using template guide
+- [x] Add "Recursos" dropdown menu to header navigation linking to all blog guides
+- [ ] Expand Amazon affiliate product catalog with more swimming/triathlon gear
+- [ ] Search and upload correct product images for new affiliate products
+- [ ] Create personalized product carousel pop-up component ("¿Necesitas equipo para este evento?")
+- [ ] Add behavior triggers for pop-up (scroll depth, time on page, exit intent)
+- [ ] Integrate pop-up into event detail pages with relevant products
+- [ ] Integrate pop-up into blog pages with relevant products
+- [ ] Add analytics tracking for pop-up views, clicks, and conversions
+- [ ] Test all new features before deployment

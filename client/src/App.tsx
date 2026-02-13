@@ -31,6 +31,12 @@ import BlogSwimmingEvents2026 from "./pages/BlogSwimmingEvents2026";
 import BlogGuiaClub from "./pages/BlogGuiaClub";
 import BlogMejoresGafasNatacion2026 from "./pages/BlogMejoresGafasNatacion2026";
 import BlogNeoprenoAguasAbiertas from "./pages/BlogNeoprenoAguasAbiertas";
+import BlogPreparacionCompeticiones from "./pages/BlogPreparacionCompeticiones";
+import BlogSubvencionesClub2026 from "./pages/BlogSubvencionesClub2026";
+import BlogBeneficiosAguasAbiertas from "./pages/BlogBeneficiosAguasAbiertas";
+import BlogTecnicasViraje from "./pages/BlogTecnicasViraje";
+import BlogElegirCompeticion from "./pages/BlogElegirCompeticion";
+import BlogNutricionNadadores from "./pages/BlogNutricionNadadores";
 import WidgetCalendar from "./pages/WidgetCalendar";
 import WidgetBuilder from "./pages/WidgetBuilder";
 import WidgetDemo from "./pages/WidgetDemo";
@@ -56,6 +62,12 @@ function Router() {
       <Route path="/blog/guia-pedido-gorros-club" component={BlogGuiaClub} />
       <Route path="/blog/mejores-gafas-natacion-2026" component={BlogMejoresGafasNatacion2026} />
       <Route path="/blog/neopreno-aguas-abiertas" component={BlogNeoprenoAguasAbiertas} />
+      <Route path="/blog/preparacion-profesional-competiciones" component={BlogPreparacionCompeticiones} />
+      <Route path="/blog/guia-subvenciones-clubes-2026" component={BlogSubvencionesClub2026} />
+      <Route path="/blog/beneficios-natacion-aguas-abiertas" component={BlogBeneficiosAguasAbiertas} />
+      <Route path="/blog/tecnicas-avanzadas-viraje" component={BlogTecnicasViraje} />
+      <Route path="/blog/elegir-competicion-segun-nivel" component={BlogElegirCompeticion} />
+      <Route path="/blog/nutricion-nadadores-alto-rendimiento" component={BlogNutricionNadadores} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/enviar-evento" component={SubmitEvent} />
       <Route path="/perfil" component={UserProfile} />

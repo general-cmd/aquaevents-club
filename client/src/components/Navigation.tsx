@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { ChevronDown } from "lucide-react";
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -24,9 +25,41 @@ export default function Navigation() {
           <a href="/federaciones" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             {t("nav.federations")}
           </a>
-          <a href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-            {t("nav.blog")}
-          </a>
+          <div className="relative group">
+            <button className="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center gap-1">
+              Recursos
+              <ChevronDown className="w-4 h-4" />
+            </button>
+            <div className="absolute top-full left-0 mt-2 w-72 bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="p-2">
+                <a href="/blog" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors font-medium">
+                  📚 Todos los Artículos
+                </a>
+                <div className="border-t my-2"></div>
+                <a href="/blog/preparacion-profesional-competiciones" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">
+                  🏆 Preparación para Competiciones
+                </a>
+                <a href="/blog/guia-subvenciones-clubes-2026" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">
+                  💰 Guía de Subvenciones 2026
+                </a>
+                <a href="/blog/beneficios-natacion-aguas-abiertas" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">
+                  🌊 Beneficios Aguas Abiertas
+                </a>
+                <a href="/blog/tecnicas-avanzadas-viraje" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">
+                  🔄 Técnicas de Viraje
+                </a>
+                <a href="/blog/elegir-competicion-segun-nivel" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">
+                  🎯 Elegir Competición
+                </a>
+                <a href="/blog/nutricion-nadadores-alto-rendimiento" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">
+                  🍎 Nutrición Deportiva
+                </a>
+                <a href="/blog/mejores-gafas-natacion-2026" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">
+                  🥽 Mejores Gafas 2026
+                </a>
+              </div>
+            </div>
+          </div>
           <a href="/gorros-natacion" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             {t("nav.customCaps")}
           </a>

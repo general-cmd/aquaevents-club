@@ -180,6 +180,204 @@ export default function Blog() {
                 </Link>
               </CardContent>
             </Card>
+
+            {/* Competition Prep */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-purple-200">
+              <img 
+                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-1_1770939992000_na1fn_YmxvZy1wcmVwYXJhY2lvbi1jb21wZXRpY2lvbmVzLWhlcm8uanBn.jpg"
+                alt="Preparación Profesional para Competiciones"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-purple-600">Competición</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Preparación Profesional para Competiciones de Natación
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Guía completa de entrenamiento, nutrición y estrategia mental para competir al máximo nivel.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Feb 2026
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    11 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/preparacion-profesional-competiciones">
+                  <Button variant="outline" className="w-full">
+                    Leer guía
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Grants Guide */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-green-200">
+              <img 
+                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-2_1770939992000_na1fn_YmxvZy1zdWJ2ZW5jaW9uZXMtY2x1YmVzLWhlcm8uanBn.jpg"
+                alt="Guía de Subvenciones para Clubes 2026"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-green-600">Clubes</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Guía de Subvenciones para Clubes Deportivos 2026
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Todas las ayudas disponibles para clubes de natación: cómo solicitarlas, requisitos y plazos.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Feb 2026
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    10 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/guia-subvenciones-clubes-2026">
+                  <Button variant="outline" className="w-full">
+                    Ver subvenciones
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Open Water Benefits */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-teal-200">
+              <img 
+                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-3_1770939992000_na1fn_YmxvZy1hZ3Vhcy1hYmllcnRhcy1oZXJvLmpwZw.jpg"
+                alt="Beneficios de la Natación en Aguas Abiertas"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-teal-600">Aguas Abiertas</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Beneficios de la Natación en Aguas Abiertas
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Descubre por qué nadar en aguas abiertas mejora tu salud física y mental más que la piscina.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Feb 2026
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    8 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/beneficios-natacion-aguas-abiertas">
+                  <Button variant="outline" className="w-full">
+                    Leer artículo
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Turn Techniques */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-orange-200">
+              <img 
+                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-4_1770939992000_na1fn_YmxvZy12aXJhamUtaGVyby5qcGc.jpg"
+                alt="Técnicas Avanzadas de Viraje"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-orange-600">Técnica</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Técnicas Avanzadas de Viraje en Natación
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Domina los virajes de volteo y mejora tus tiempos con estas técnicas profesionales.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Feb 2026
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    7 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/tecnicas-avanzadas-viraje">
+                  <Button variant="outline" className="w-full">
+                    Ver técnicas
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Choose Competition */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-pink-200">
+              <img 
+                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-5_1770939992000_na1fn_YmxvZy1lbGVnaXItY29tcGV0aWNpb24taGVyby5qcGc.jpg"
+                alt="Elegir Competición según Nivel"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-pink-600">Competición</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Cómo Elegir la Competición Adecuada según tu Nivel
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Guía para principiantes e intermedios: qué competiciones elegir y cómo prepararte.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Feb 2026
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    9 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/elegir-competicion-segun-nivel">
+                  <Button variant="outline" className="w-full">
+                    Leer guía
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Nutrition */}
+            <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-green-200">
+              <img 
+                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-6_1770939992000_na1fn_YmxvZy1udXRyaWNpb24tbmFkYWRvcmVzLWhlcm8uanBn.jpg"
+                alt="Nutrición para Nadadores"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <Badge className="mb-3 bg-green-600">Nutrición</Badge>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  Nutrición para Nadadores de Alto Rendimiento
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Plan nutricional completo para maximizar rendimiento y recuperación en natación.
+                </p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    Feb 2026
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <BookOpen className="w-4 h-4" />
+                    13 min lectura
+                  </div>
+                </div>
+                <Link href="/blog/nutricion-nadadores-alto-rendimiento">
+                  <Button variant="outline" className="w-full">
+                    Ver plan nutricional
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
