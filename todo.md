@@ -2208,7 +2208,37 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Map the 21 provided ASINs to appropriate product categories (pool, open water, triathlon, etc.)
 - [x] Update RecommendedGear.tsx with official affiliate links and correct product details
 - [x] Update BlogAffiliateSection.tsx with official affiliate links
-- [ ] Update ProductCarouselPopup.tsx with official affiliate links (uses products from RecommendedGear)
+- [x] Update ProductCarouselPopup.tsx with official affiliate links (uses products from RecommendedGear)
 - [x] Upload new product images to CDN if needed
-- [ ] Test affiliate links to ensure they work correctly
-- [ ] Save checkpoint and push to GitHub for Railway deployment
+- [x] Test affiliate links to ensure they work correctly
+- [x] Save checkpoint and push to GitHub for Railway deployment
+
+
+## Comprehensive Affiliate Links & Images Audit (User Feedback)
+
+### Blog Posts Audit
+- [x] Check BlogPreparacionCompeticiones.tsx for affiliate section
+- [x] Check BlogSubvencionesClub2026.tsx for affiliate section
+- [x] Check BlogBeneficiosAguasAbiertas.tsx for affiliate section
+- [x] Check BlogTecnicasViraje.tsx for affiliate section
+- [x] Check BlogElegirCompeticion.tsx for affiliate section
+- [x] Check BlogNutricionNadadores.tsx for affiliate section
+- [x] Check BlogSwimmingEvents2026.tsx for affiliate section
+- [x] Check BlogGuiaClub.tsx for affiliate section
+- [x] Ensure all blog posts use correct affiliate links and product images (all use BlogAffiliateSection)
+
+### Product Carousel Pop-up Audit
+- [x] Check ProductCarouselPopup component for broken images
+- [x] Verify pop-up products match correct ASINs and affiliate links
+- [x] Ensure product images clearly show the actual product
+
+### Event Page Affiliate Products Audit
+- [x] Check EventDetail page affiliate product recommendations
+- [x] Verify products match event discipline (pool/open water/triathlon)
+- [x] Ensure all product images and links are correct
+- [x] Fix any mismatched products (wrong product for link) - updated eventProductMapping.ts
+
+### Final Verification
+- [ ] Test all affiliate links work correctly
+- [ ] Verify all product images load and show correct products
+- [ ] Save checkpoint and push to GitHub

@@ -87,28 +87,28 @@ export default function BlogMejoresGafasNatacion2026() {
 
   const popupProducts: PopupProduct[] = [
     {
-      title: "Arena Cobra Ultra Swipe Gafas de Natación",
+      title: "Arena Cobra Ultra Swipe Racing Goggles",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
-      amazonUrl: "https://www.amazon.es/dp/B0DRNXT7CP?tag=aquaevents00d-21&linkCode=ll1",
+      amazonUrl: "https://amzn.to/4ky7xE2",
       price: "€29,99",
       rating: 4.6,
       reviewCount: 2847
     },
     {
-      title: "Speedo Biofuse Palas de Mano",
-      description: "Palas ergonómicas para mejorar fuerza de brazos. Diseño cómodo sin correas.",
+      title: "Speedo Tech Paddle (Training Tool)",
+      description: "Palas técnicas para mejorar fuerza de brazos. Diseño ergonómico sin correas.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/sRFQaWKFZiMDwbiR.jpg",
-      amazonUrl: "https://www.amazon.es/dp/B00IUIW5KW?tag=aquaevents00d-21&linkCode=ll1",
+      amazonUrl: "https://amzn.to/46RHZMu",
       price: "€18,95",
       rating: 4.6,
       reviewCount: 1342
     },
     {
-      title: "FINIS Tempo Trainer Pro Metrónomo",
-      description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xpqKKSExayLRIswm.png",
-      amazonUrl: "https://www.amazon.es/dp/B005TVYVI2?tag=aquaevents00d-21&linkCode=ll1",
+      title: "FINIS Tempo Trainer Pro",
+      description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada. Herramienta profesional.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BnMwYFnPRGKqlnrT.jpg",
+      amazonUrl: "https://amzn.to/4rHWNoU",
       price: "€34,99",
       rating: 4.8,
       reviewCount: 3421
