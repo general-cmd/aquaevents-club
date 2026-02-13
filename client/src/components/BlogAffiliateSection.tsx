@@ -122,7 +122,7 @@ export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
   {
     title: "Arena Powerfin Pro Aletas de Entrenamiento",
     description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/MTfqHGwWewNPXXhl.jpg",
     amazonUrl: `https://www.amazon.es/dp/B07L5QVQXZ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
     price: "€34,99"
   }

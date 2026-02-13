@@ -2132,3 +2132,8 @@ Also added "private" to organizerType enum to support private organizers.
 - [ ] Update blog hero images to match actual products where applicable
 - [ ] Test all images load correctly
 - [ ] Push to GitHub and deploy
+
+
+## Product Image Fixes - User Reported Issues
+- [x] Fix broken blog card image for "Guía para Presidentes de Club" on /blog page
+- [x] Replace incorrect Arena Powerfin Pro image (showing kickboard instead of swim fins)
