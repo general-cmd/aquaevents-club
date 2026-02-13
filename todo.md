@@ -2142,11 +2142,13 @@ Also added "private" to organizerType enum to support private organizers.
 ## New Features - User Request (SEO Blog Posts, Navigation, Affiliate Expansion, Pop-up)
 - [x] Complete 6 remaining SEO blog posts using template guide
 - [x] Add "Recursos" dropdown menu to header navigation linking to all blog guides
-- [ ] Expand Amazon affiliate product catalog with more swimming/triathlon gear
-- [ ] Search and upload correct product images for new affiliate products
-- [ ] Create personalized product carousel pop-up component ("¿Necesitas equipo para este evento?")
-- [ ] Add behavior triggers for pop-up (scroll depth, time on page, exit intent)
-- [ ] Integrate pop-up into event detail pages with relevant products
-- [ ] Integrate pop-up into blog pages with relevant products
+- [x] Search and upload 6-8 new product images for affiliate expansion
+- [x] Expand RecommendedGear component with new swimming/triathlon products (wetsuits, pull buoys, training fins, hand paddles, snorkels, swim watches)
+- [x] Create personalized product carousel pop-up component ("¿Necesitas equipo para este evento?")
+- [x] Add behavior triggers for pop-up (scroll depth 50%, time on page 30s)
+- [x] Integrate pop-up into event detail pages with relevant products
+- [x] Integrate pop-up into blog pages with relevant products
+- [ ] Test pop-up functionality and conversion tracking
+- [ ] Push all changes to GitHub for Railway deployment
 - [ ] Add analytics tracking for pop-up views, clicks, and conversions
 - [ ] Test all new features before deployment

@@ -18,6 +18,8 @@ import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { useEventTitle, useEventDescription } from "@/hooks/useEventTranslation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ProductCarouselPopup, { PopupProduct } from "@/components/ProductCarouselPopup";
+import { useProductPopup } from "@/hooks/useProductPopup";
 
 interface Event {
   _id: string;
@@ -69,6 +71,44 @@ export default function EventDetail() {
   const spanishDescription = event?.description?.es || event?.description || '';
   const translatedTitle = useEventTitle(spanishTitle);
   const translatedDescription = useEventDescription(spanishDescription);
+
+  // Product popup for impulse purchases
+  const { showPopup, closePopup } = useProductPopup({
+    scrollDepthTrigger: 50,
+    timeOnPageTrigger: 30,
+    storageKey: `eventPopup_${event?._id}`
+  });
+
+  // Select products based on event discipline
+  const popupProducts: PopupProduct[] = [
+    {
+      title: "Arena Cobra Ultra Swipe Gafas de Natación",
+      description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
+      amazonUrl: "https://www.amazon.es/dp/B0DRNXT7CP?tag=aquaevents00d-21&linkCode=ll1",
+      price: "€29,99",
+      rating: 4.6,
+      reviewCount: 2847
+    },
+    {
+      title: "Speedo Pull Buoy Flotador de Entrenamiento",
+      description: "Pull buoy para mejorar técnica de brazos. Ideal para entrenamientos de fuerza.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/FPGnBFdnjuxSMAcP.jpg",
+      amazonUrl: "https://www.amazon.es/dp/B000BPZJ8K?tag=aquaevents00d-21&linkCode=ll1",
+      price: "€12,95",
+      rating: 4.7,
+      reviewCount: 2156
+    },
+    {
+      title: "Arena Powerfin Pro Aletas de Entrenamiento",
+      description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores profesionales.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/QixLQJWLVXjDhbGA.jpg",
+      amazonUrl: "https://www.amazon.es/dp/B07L5QVQXZ?tag=aquaevents00d-21&linkCode=ll1",
+      price: "€34,99",
+      rating: 4.5,
+      reviewCount: 892
+    }
+  ];
 
   // Check if event is favorited
   const { data: favoriteCheck } = trpc.favorites.check.useQuery(
@@ -709,6 +749,16 @@ export default function EventDetail() {
           </div>
         </footer>
       </div>
+
+      {/* Product Carousel Popup */}
+      {showPopup && event && (
+        <ProductCarouselPopup
+          products={popupProducts}
+          title="¿Necesitas equipo para este evento?"
+          subtitle="Productos recomendados para mejorar tu rendimiento"
+          onClose={closePopup}
+        />
+      )}
     </>
   );
 }

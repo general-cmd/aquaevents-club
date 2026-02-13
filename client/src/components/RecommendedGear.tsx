@@ -32,11 +32,65 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Powerfin Pro Aletas de Entrenamiento",
       description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores profesionales.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/MTfqHGwWewNPXXhl.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/QixLQJWLVXjDhbGA.jpg",
       amazonUrl: `https://www.amazon.es/dp/B07L5QVQXZ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€34,99",
       rating: 4.5,
       reviewCount: 892
+    },
+    {
+      title: "Speedo Biofuse Palas de Mano",
+      description: "Palas ergonómicas para mejorar fuerza de brazos. Diseño cómodo sin correas.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/sRFQaWKFZiMDwbiR.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B00IUIW5KW?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      price: "€18,95",
+      rating: 4.6,
+      reviewCount: 1342
+    },
+    {
+      title: "Speedo Pull Buoy Flotador de Entrenamiento",
+      description: "Pull buoy para mejorar técnica de brazos. Ideal para entrenamientos de fuerza.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/FPGnBFdnjuxSMAcP.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B000BPZJ8K?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      price: "€12,95",
+      rating: 4.7,
+      reviewCount: 2156
+    },
+    {
+      title: "Aqua Sphere MP Focus Tubo Frontal",
+      description: "Tubo frontal Michael Phelps para entrenar técnica sin girar la cabeza.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/bMimtYkdUOWJJbQC.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B07FNSZ8QG?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      price: "€29,95",
+      rating: 4.5,
+      reviewCount: 987
+    },
+    {
+      title: "FINIS Tempo Trainer Pro Metrónomo",
+      description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xpqKKSExayLRIswm.png",
+      amazonUrl: `https://www.amazon.es/dp/B005TVYVI2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      price: "€34,99",
+      rating: 4.8,
+      reviewCount: 3421
+    },
+    {
+      title: "Speedo Fastskin Gorro de Competición",
+      description: "Gorro de competición Fastskin. Reduce resistencia en el agua.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xFhFzTDvLlCNZQkf.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B00IUIW5KW?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      price: "€18,95",
+      rating: 4.6,
+      reviewCount: 1876
+    },
+    {
+      title: "TYR Mesh Equipment Bag Mochila de Malla",
+      description: "Mochila de malla para equipo de natación. Secado rápido y gran capacidad.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xAavhXJwdKvdZqcf.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B000FGUL6K?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      price: "€24,99",
+      rating: 4.7,
+      reviewCount: 2543
     }
   ],
 
@@ -68,6 +122,24 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       price: "€12,99",
       rating: 4.8,
       reviewCount: 5632
+    },
+    {
+      title: "Orca Openwater Core Neopreno Triatlón",
+      description: "Neopreno de alta gama para aguas abiertas. Máxima flotabilidad y flexibilidad.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/PSaatfFLZVlTtifd.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B08CXQZ8YG?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      price: "€249,99",
+      rating: 4.7,
+      reviewCount: 876
+    },
+    {
+      title: "Zone3 Neoprene Swim Socks Calcetines",
+      description: "Calcetines de neopreno para aguas frías. Ideales para triatlón y aguas abiertas.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/ENVAHpUYeymEYohP.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B01N9ZYX8Y?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      price: "€22,95",
+      rating: 4.6,
+      reviewCount: 1543
     }
   ],
 

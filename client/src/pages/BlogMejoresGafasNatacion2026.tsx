@@ -5,6 +5,8 @@ import { Calendar, Eye, Shield, Zap, CheckCircle2, XCircle } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card";
 import BlogAffiliateSection, { SWIMMING_TRAINING_PRODUCTS } from "@/components/BlogAffiliateSection";
 import SocialShareButtons from "@/components/SocialShareButtons";
+import ProductCarouselPopup, { PopupProduct } from "@/components/ProductCarouselPopup";
+import { useProductPopup } from "@/hooks/useProductPopup";
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -76,6 +78,43 @@ const faqSchema = {
 };
 
 export default function BlogMejoresGafasNatacion2026() {
+  // Product popup for blog readers
+  const { showPopup, closePopup } = useProductPopup({
+    scrollDepthTrigger: 60,
+    timeOnPageTrigger: 45,
+    storageKey: "blogGafasPopup"
+  });
+
+  const popupProducts: PopupProduct[] = [
+    {
+      title: "Arena Cobra Ultra Swipe Gafas de Natación",
+      description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
+      amazonUrl: "https://www.amazon.es/dp/B0DRNXT7CP?tag=aquaevents00d-21&linkCode=ll1",
+      price: "€29,99",
+      rating: 4.6,
+      reviewCount: 2847
+    },
+    {
+      title: "Speedo Biofuse Palas de Mano",
+      description: "Palas ergonómicas para mejorar fuerza de brazos. Diseño cómodo sin correas.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/sRFQaWKFZiMDwbiR.jpg",
+      amazonUrl: "https://www.amazon.es/dp/B00IUIW5KW?tag=aquaevents00d-21&linkCode=ll1",
+      price: "€18,95",
+      rating: 4.6,
+      reviewCount: 1342
+    },
+    {
+      title: "FINIS Tempo Trainer Pro Metrónomo",
+      description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada.",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xpqKKSExayLRIswm.png",
+      amazonUrl: "https://www.amazon.es/dp/B005TVYVI2?tag=aquaevents00d-21&linkCode=ll1",
+      price: "€34,99",
+      rating: 4.8,
+      reviewCount: 3421
+    }
+  ];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -558,6 +597,16 @@ export default function BlogMejoresGafasNatacion2026() {
 
         </div>
       </article>
+
+      {/* Product Carousel Popup */}
+      {showPopup && (
+        <ProductCarouselPopup
+          products={popupProducts}
+          title="¿Quieres mejorar tu técnica?"
+          subtitle="Equipo recomendado para nadadores de todos los niveles"
+          onClose={closePopup}
+        />
+      )}
     </div>
   );
 }
