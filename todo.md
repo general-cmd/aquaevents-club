@@ -2239,6 +2239,18 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Fix any mismatched products (wrong product for link) - updated eventProductMapping.ts
 
 ### Final Verification
-- [ ] Test all affiliate links work correctly
-- [ ] Verify all product images load and show correct products
+- [x] Test all affiliate links work correctly
+- [x] Verify all product images load and show correct products
+- [x] Save checkpoint and push to GitHub
+
+
+## CRITICAL Affiliate Image & Link Fixes (User Feedback)
+
+- [x] Fix Arena Cobra Edge Swipe Mirror Goggles image (B0DV9G59ZY - https://amzn.to/4rUarFO) - currently showing wrong goggles
+- [x] Fix Aqua Sphere Kayenne pop-up image (B084R8WTQH - https://amzn.to/4qBy9FO) - showing generic image instead of actual Kayenne goggles
+- [x] Update BlogNeoprenoAguasAbiertas with actual open water products (Zone3 buoy, Kayenne goggles, BodyGlide)
+- [x] Search for correct product images on Amazon/Google
+- [x] Upload correct product images to CDN
+- [x] Update all components with correct images
+- [x] Verify all affiliate links match product images
 - [ ] Save checkpoint and push to GitHub

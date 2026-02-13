@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { Calendar, Thermometer, Ruler, Waves, CheckCircle2, AlertTriangle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import BlogAffiliateSection, { SWIMMING_TRAINING_PRODUCTS } from "@/components/BlogAffiliateSection";
+import BlogAffiliateSection, { OPEN_WATER_PRODUCTS } from "@/components/BlogAffiliateSection";
 import SocialShareButtons from "@/components/SocialShareButtons";
 
 const articleSchema = {
@@ -410,11 +410,7 @@ export default function BlogNeoprenoAguasAbiertas() {
           <BlogAffiliateSection 
             title="Equipo Esencial para Aguas Abiertas"
             intro="Productos complementarios recomendados por triatletas profesionales. Envío rápido con Amazon Prime."
-            products={SWIMMING_TRAINING_PRODUCTS.filter(p => 
-              p.title.toLowerCase().includes('pull') || 
-              p.title.toLowerCase().includes('tabla') ||
-              p.title.toLowerCase().includes('aleta')
-            )}
+            products={OPEN_WATER_PRODUCTS}
           />
 
           {/* Social Sharing */}

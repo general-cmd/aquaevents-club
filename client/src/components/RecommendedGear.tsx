@@ -187,7 +187,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Edge Swipe Mirror Goggles",
       description: "Gafas con lentes espejo para natación artística. Tecnología anti-vaho de larga duración.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eRueXeUtwMPdjbHt.webp",
       amazonUrl: "https://amzn.to/4rUarFO",
       price: "€32,99",
       rating: 4.6,

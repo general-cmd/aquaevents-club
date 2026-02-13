@@ -112,7 +112,7 @@ export function getEventSpecificProducts(eventType: EventType, count: number = 3
         price: '€27,95',
         rating: 4.7,
         reviews: 3421,
-        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg',
+        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/tYUHEnMGJqogKZVO.webp',
         amazonUrl: 'https://amzn.to/4qBy9FO',
         category: 'Gafas Aguas Abiertas'
       },

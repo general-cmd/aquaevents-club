@@ -140,7 +140,7 @@ export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
   {
     title: "Aqua Sphere Kayenne Swim Goggles",
     description: "Lentes grandes con protección UV. Máxima visibilidad en aguas abiertas.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/tYUHEnMGJqogKZVO.webp",
     amazonUrl: "https://amzn.to/4qBy9FO",
     price: "€27,95"
   },
