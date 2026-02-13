@@ -123,7 +123,7 @@ export function getEventSpecificProducts(eventType: EventType, count: number = 3
         price: '€9,99',
         rating: 4.8,
         reviews: 5632,
-        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg',
+        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/DlXwQSuAqkbAWsiK.jpg',
         amazonUrl: 'https://amzn.to/467hL8F',
         category: 'Anti-rozaduras'
       }
@@ -193,7 +193,7 @@ export function getEventSpecificProducts(eventType: EventType, count: number = 3
         price: '€9,99',
         rating: 4.8,
         reviews: 5632,
-        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg',
+        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/DlXwQSuAqkbAWsiK.jpg',
         amazonUrl: 'https://amzn.to/467hL8F',
         category: 'Anti-rozaduras'
       }

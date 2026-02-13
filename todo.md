@@ -2269,4 +2269,21 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Audit BlogAffiliateSection.tsx - All products verified correct (already fixed Kayenne image earlier)
 - [x] Audit eventProductMapping.ts - All products verified correct (already fixed Kayenne image earlier)
 - [x] Fix ALL remaining mismatches - Aquasphere Seal 2.0 image fixed in RecommendedGear
+- [x] Save checkpoint and push to GitHub
+
+
+## BodyGlide Image Mismatch - CRITICAL FIX (User Feedback)
+
+### Issue
+- BodyGlide Anti-Chafe Balm (B00BEI2AHI - https://amzn.to/467hL8F) showing BLUE SWIMMING CAP image instead of actual BodyGlide stick
+- Link is correct, but image is completely wrong
+- Need to find correct BodyGlide product image and fix across ALL components
+
+### Tasks
+- [x] Search for correct BodyGlide Anti-Chafe Balm product image (B00BEI2AHI)
+- [x] Upload correct image to CDN
+- [x] Find and fix BodyGlide image in RecommendedGear.tsx (fixed 2 instances)
+- [x] Find and fix BodyGlide image in BlogAffiliateSection.tsx
+- [x] Find and fix BodyGlide image in eventProductMapping.ts (fixed 2 instances)
+- [ ] Verify ALL other products have correct images (no more mismatches)
 - [ ] Save checkpoint and push to GitHub

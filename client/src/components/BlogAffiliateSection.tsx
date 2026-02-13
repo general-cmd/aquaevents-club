@@ -147,7 +147,7 @@ export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
   {
     title: "BodyGlide Anti-Chafe Balm (Travel Size)",
     description: "Protección contra rozaduras en neopreno. Imprescindible para triatletas.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/DlXwQSuAqkbAWsiK.jpg",
     amazonUrl: "https://amzn.to/467hL8F",
     price: "€9,99"
   }
