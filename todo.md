@@ -2163,4 +2163,16 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Update BlogElegirCompeticion.tsx with CDN image URL
 - [x] Update BlogNutricionNadadores.tsx with CDN image URL
 - [x] Update Blog.tsx listing page with all 6 correct CDN image URLs
-- [ ] Push fixes to GitHub for Railway deployment
+- [x] Push fixes to GitHub for Railway deployment
+
+
+## Event-Specific Product Recommendations - User Requested
+- [x] Analyze event types and disciplines to create product mapping logic
+- [x] Create getEventSpecificProducts() helper function
+- [x] Map pool events → racing goggles, tempo trainers, racing caps
+- [x] Map open water events → wetsuits, open water goggles, neoprene accessories
+- [x] Map training events → kickboards, pull buoys, hand paddles, snorkels
+- [x] Update EventDetail page to use smart product recommendations
+- [x] Update ProductCarouselPopup to show event-specific products
+- [ ] Test product recommendations across different event types
+- [ ] Push to GitHub to trigger Railway deployment (includes blog image fixes)

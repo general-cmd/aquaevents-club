@@ -20,6 +20,7 @@ import { useEventTitle, useEventDescription } from "@/hooks/useEventTranslation"
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ProductCarouselPopup, { PopupProduct } from "@/components/ProductCarouselPopup";
 import { useProductPopup } from "@/hooks/useProductPopup";
+import { detectEventType, getEventSpecificProducts } from "@/lib/eventProductMapping";
 
 interface Event {
   _id: string;
@@ -72,43 +73,26 @@ export default function EventDetail() {
   const translatedTitle = useEventTitle(spanishTitle);
   const translatedDescription = useEventDescription(spanishDescription);
 
-  // Product popup for impulse purchases
+  // Product popup for impulse purchases with event-specific recommendations
   const { showPopup, closePopup } = useProductPopup({
     scrollDepthTrigger: 50,
     timeOnPageTrigger: 30,
     storageKey: `eventPopup_${event?._id}`
   });
 
-  // Select products based on event discipline
-  const popupProducts: PopupProduct[] = [
-    {
-      title: "Arena Cobra Ultra Swipe Gafas de Natación",
-      description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
-      amazonUrl: "https://www.amazon.es/dp/B0DRNXT7CP?tag=aquaevents00d-21&linkCode=ll1",
-      price: "€29,99",
-      rating: 4.6,
-      reviewCount: 2847
-    },
-    {
-      title: "Speedo Pull Buoy Flotador de Entrenamiento",
-      description: "Pull buoy para mejorar técnica de brazos. Ideal para entrenamientos de fuerza.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/FPGnBFdnjuxSMAcP.jpg",
-      amazonUrl: "https://www.amazon.es/dp/B000BPZJ8K?tag=aquaevents00d-21&linkCode=ll1",
-      price: "€12,95",
-      rating: 4.7,
-      reviewCount: 2156
-    },
-    {
-      title: "Arena Powerfin Pro Aletas de Entrenamiento",
-      description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores profesionales.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/QixLQJWLVXjDhbGA.jpg",
-      amazonUrl: "https://www.amazon.es/dp/B07L5QVQXZ?tag=aquaevents00d-21&linkCode=ll1",
-      price: "€34,99",
-      rating: 4.5,
-      reviewCount: 892
-    }
-  ];
+  // Smart product selection based on event type
+  const eventType = event ? detectEventType(translatedTitle, translatedDescription, event.discipline) : 'pool';
+  const smartProducts = getEventSpecificProducts(eventType, 3);
+  
+  const popupProducts: PopupProduct[] = smartProducts.map(product => ({
+    title: product.name,
+    description: product.description,
+    imageUrl: product.imageUrl,
+    amazonUrl: product.amazonUrl,
+    price: product.price,
+    rating: product.rating,
+    reviewCount: product.reviews
+  }));
 
   // Check if event is favorited
   const { data: favoriteCheck } = trpc.favorites.check.useQuery(
