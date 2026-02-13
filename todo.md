@@ -2122,3 +2122,13 @@ Also added "private" to organizerType enum to support private organizers.
 - [ ] Push to GitHub and deploy - NEXT SESSION
 
 **Note:** See /home/ubuntu/BLOG_POSTS_COMPLETION_GUIDE.md for detailed instructions
+
+
+## Fix Broken Blog Images & Use Real Product Photos (Jan 5, 2026)
+- [ ] Fix broken image on "Guía para Presidentes de Club" blog card in Blog.tsx
+- [ ] Search and download actual Amazon product images for all affiliate products
+- [ ] Replace generic mockup images with real product photos in RecommendedGear.tsx
+- [ ] Replace generic mockup images with real product photos in BlogAffiliateSection.tsx
+- [ ] Update blog hero images to match actual products where applicable
+- [ ] Test all images load correctly
+- [ ] Push to GitHub and deploy

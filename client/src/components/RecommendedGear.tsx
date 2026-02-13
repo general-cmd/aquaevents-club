@@ -14,8 +14,8 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Ultra Swipe Gafas de Natación",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B09FK77WW2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€29,99",
       rating: 4.6,
       reviewCount: 2847
@@ -23,8 +23,8 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Kickboard Elite Tabla de Natación",
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/TgLEEIGTAlSUKZRA.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€16,95",
       rating: 4.7,
       reviewCount: 1523
@@ -85,8 +85,8 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Ultra Swipe Gafas de Natación",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B09FK77WW2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€29,99",
       rating: 4.6,
       reviewCount: 2847
@@ -116,8 +116,8 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Ultra Swipe Gafas de Natación",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B09FK77WW2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€29,99",
       rating: 4.6,
       reviewCount: 2847
@@ -125,8 +125,8 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Kickboard Elite Tabla de Natación",
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/TgLEEIGTAlSUKZRA.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€16,95",
       rating: 4.7,
       reviewCount: 1523
@@ -138,8 +138,8 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Ultra Swipe Gafas de Natación",
       description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B09FK77WW2?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€29,99",
       rating: 4.6,
       reviewCount: 2847
@@ -147,8 +147,8 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Kickboard Elite Tabla de Natación",
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/VWVuuufAGBQGXvAP.jpg",
-      amazonUrl: `https://www.amazon.es/dp/B0DRNXT7CP?tag=${AFFILIATE_TAG}&linkCode=ll1`,
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/TgLEEIGTAlSUKZRA.jpg",
+      amazonUrl: `https://www.amazon.es/dp/B00CXTFSWQ?tag=${AFFILIATE_TAG}&linkCode=ll1`,
       price: "€16,95",
       rating: 4.7,
       reviewCount: 1523

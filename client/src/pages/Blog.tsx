@@ -85,7 +85,7 @@ export default function Blog() {
             {/* Club Guide */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-blue-200">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/tnKtPdxJZkHLTUEi.jpg"
+                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-1_1770939992000_na1fn_YmxvZy1wcmVwYXJhY2lvbi1jb21wZXRpY2lvbi1oZXJv.jpg"
                 alt="Guía para Presidentes de Club"
                 className="w-full h-48 object-cover"
               />
@@ -118,7 +118,7 @@ export default function Blog() {
             {/* Goggles Guide */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-blue-200">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg"
                 alt="Mejores Gafas de Natación 2026"
                 className="w-full h-48 object-cover"
               />
