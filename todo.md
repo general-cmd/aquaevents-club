@@ -2148,7 +2148,19 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Add behavior triggers for pop-up (scroll depth 50%, time on page 30s)
 - [x] Integrate pop-up into event detail pages with relevant products
 - [x] Integrate pop-up into blog pages with relevant products
-- [ ] Test pop-up functionality and conversion tracking
-- [ ] Push all changes to GitHub for Railway deployment
+- [x] Test pop-up functionality and conversion tracking
+- [x] Push all changes to GitHub for Railway deployment
 - [ ] Add analytics tracking for pop-up views, clicks, and conversions
 - [ ] Test all new features before deployment
+
+
+## Blog Post Hero Image Fix - User Reported
+- [x] Upload 6 blog post hero images to CDN (Preparación Competiciones, Subvenciones, Aguas Abiertas, Viraje, Elegir Competición, Nutrición)
+- [x] Update BlogPreparacionCompeticiones.tsx with CDN image URL
+- [x] Update BlogSubvencionesClub2026.tsx with CDN image URL
+- [x] Update BlogBeneficiosAguasAbiertas.tsx with CDN image URL
+- [x] Update BlogTecnicasViraje.tsx with CDN image URL
+- [x] Update BlogElegirCompeticion.tsx with CDN image URL
+- [x] Update BlogNutricionNadadores.tsx with CDN image URL
+- [x] Update Blog.tsx listing page with all 6 correct CDN image URLs
+- [ ] Push fixes to GitHub for Railway deployment
