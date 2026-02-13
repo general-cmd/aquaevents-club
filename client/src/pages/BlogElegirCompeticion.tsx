@@ -13,7 +13,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Cómo Elegir la Competición de Natación Adecuada según tu Nivel",
   "description": "Guía completa para elegir la competición de natación perfecta: criterios por nivel (principiante, intermedio, avanzado), tipos de competiciones, cómo prepararte y qué esperar en tu primera carrera.",
-  "image": "https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-5_1770939992000_na1fn_YmxvZy1lbGVnaXItY29tcGV0aWNpb24taGVyby5qcGc.jpg",
+  "image": "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/QNECpAWWQGkUUBtH.jpg",
   "author": { "@type": "Organization", "name": "AquaEvents.club" },
   "publisher": { "@type": "Organization", "name": "AquaEvents.club", "logo": { "@type": "ImageObject", "url": "https://aquaevents.club/logo.png" } },
   "datePublished": "2026-02-01",
@@ -48,7 +48,7 @@ export default function BlogElegirCompeticion() {
       </Helmet>
 
       <div className="relative h-[400px] bg-gradient-to-r from-purple-600 to-pink-500 overflow-hidden">
-        <img src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-5_1770939992000_na1fn_YmxvZy1lbGVnaXItY29tcGV0aWNpb24taGVyby5qcGc.jpg" alt="Cómo elegir la competición de natación adecuada" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" />
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/QNECpAWWQGkUUBtH.jpg" alt="Cómo elegir la competición de natación adecuada" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" />
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
           <Badge className="w-fit mb-4 bg-white/20 text-white border-white/40"><Trophy className="w-4 h-4 mr-2" />Guía de Competición</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-3xl">Cómo Elegir la Competición de Natación Adecuada</h1>

@@ -316,7 +316,7 @@ export default function Blog() {
             {/* Choose Competition */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-pink-200">
               <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-5_1770939992000_na1fn_YmxvZy1lbGVnaXItY29tcGV0aWNpb24taGVyby5qcGc.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/QNECpAWWQGkUUBtH.jpg"
                 alt="Elegir Competición según Nivel"
                 className="w-full h-48 object-cover"
               />
@@ -349,7 +349,7 @@ export default function Blog() {
             {/* Nutrition */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-green-200">
               <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-6_1770939992000_na1fn_YmxvZy1udXRyaWNpb24tbmFkYWRvcmVzLWhlcm8uanBn.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/bEqvgRlQNWQvuqVn.jpg"
                 alt="Nutrición para Nadadores"
                 className="w-full h-48 object-cover"
               />

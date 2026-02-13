@@ -13,7 +13,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Técnicas Avanzadas de Viraje en Natación: Guía Profesional 2026",
   "description": "Domina los virajes de natación con técnicas profesionales: viraje de volteo (crol/espalda), viraje abierto (braza/mariposa), timing perfecto y ejercicios específicos. Mejora tus tiempos en competición.",
-  "image": "https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-4_1770939992000_na1fn_YmxvZy10ZWNuaWNhcy12aXJhamUtaGVyby5qcGc.jpg",
+  "image": "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/aEfGCkSuDIQMjUDT.jpg",
   "author": { "@type": "Organization", "name": "AquaEvents.club" },
   "publisher": { "@type": "Organization", "name": "AquaEvents.club", "logo": { "@type": "ImageObject", "url": "https://aquaevents.club/logo.png" } },
   "datePublished": "2026-01-28",
@@ -48,7 +48,7 @@ export default function BlogTecnicasViraje() {
       </Helmet>
 
       <div className="relative h-[400px] bg-gradient-to-r from-orange-600 to-red-500 overflow-hidden">
-        <img src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-4_1770939992000_na1fn_YmxvZy10ZWNuaWNhcy12aXJhamUtaGVyby5qcGc.jpg" alt="Técnicas avanzadas de viraje en natación" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" />
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/aEfGCkSuDIQMjUDT.jpg" alt="Técnicas avanzadas de viraje en natación" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" />
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
           <Badge className="w-fit mb-4 bg-white/20 text-white border-white/40"><RotateCcw className="w-4 h-4 mr-2" />Técnica Avanzada</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-3xl">Técnicas Avanzadas de Viraje en Natación</h1>

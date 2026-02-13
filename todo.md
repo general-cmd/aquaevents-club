@@ -2174,5 +2174,18 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Map training events → kickboards, pull buoys, hand paddles, snorkels
 - [x] Update EventDetail page to use smart product recommendations
 - [x] Update ProductCarouselPopup to show event-specific products
-- [ ] Test product recommendations across different event types
-- [ ] Push to GitHub to trigger Railway deployment (includes blog image fixes)
+- [x] Test product recommendations across different event types
+- [x] Push to GitHub to trigger Railway deployment (includes blog image fixes)
+
+
+## URGENT: Blog Hero Images Still Broken in Dev Preview
+- [x] Investigate actual image URLs in all 6 blog post component files
+- [x] Manually fix BlogPreparacionCompeticiones.tsx hero image URL
+- [x] Manually fix BlogSubvencionesClub2026.tsx hero image URL
+- [x] Manually fix BlogBeneficiosAguasAbiertas.tsx hero image URL
+- [x] Manually fix BlogTecnicasViraje.tsx hero image URL
+- [x] Manually fix BlogElegirCompeticion.tsx hero image URL
+- [x] Manually fix BlogNutricionNadadores.tsx hero image URL
+- [x] Update Blog.tsx listing page with correct URLs
+- [ ] Test in dev preview to verify images load
+- [ ] Save checkpoint and push to GitHub

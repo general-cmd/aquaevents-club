@@ -13,7 +13,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Nutrición para Nadadores de Alto Rendimiento: Guía Completa 2026",
   "description": "Guía completa de nutrición para nadadores: macronutrientes óptimos, timing de comidas, hidratación, suplementación y planes de alimentación según fase de entrenamiento. Maximiza tu rendimiento con nutrición científica.",
-  "image": "https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-6_1770939992000_na1fn_YmxvZy1udXRyaWNpb24tbmFkYWRvcmVzLWhlcm8uanBn.jpg",
+  "image": "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/bEqvgRlQNWQvuqVn.jpg",
   "author": { "@type": "Organization", "name": "AquaEvents.club" },
   "publisher": { "@type": "Organization", "name": "AquaEvents.club", "logo": { "@type": "ImageObject", "url": "https://aquaevents.club/logo.png" } },
   "datePublished": "2026-02-05",
@@ -48,7 +48,7 @@ export default function BlogNutricionNadadores() {
       </Helmet>
 
       <div className="relative h-[400px] bg-gradient-to-r from-green-600 to-teal-500 overflow-hidden">
-        <img src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-6_1770939992000_na1fn_YmxvZy1udXRyaWNpb24tbmFkYWRvcmVzLWhlcm8uanBn.jpg" alt="Nutrición para nadadores de alto rendimiento" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" />
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/bEqvgRlQNWQvuqVn.jpg" alt="Nutrición para nadadores de alto rendimiento" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" />
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
           <Badge className="w-fit mb-4 bg-white/20 text-white border-white/40"><Utensils className="w-4 h-4 mr-2" />Nutrición Deportiva</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-3xl">Nutrición para Nadadores de Alto Rendimiento</h1>

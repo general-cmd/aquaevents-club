@@ -13,7 +13,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Guía Completa de Subvenciones para Clubes Acuáticos 2026",
   "description": "Guía actualizada 2026 de subvenciones y ayudas para clubes de natación: CSD, comunidades autónomas, diputaciones y ayuntamientos. Requisitos, plazos y cómo solicitarlas paso a paso.",
-  "image": "https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-2_1770939992000_na1fn_YmxvZy1zdWJ2ZW5jaW9uZXMtY2x1YnMtaGVyby5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODA.jpg",
+  "image": "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/jYZPaQTdmTdQdTXh.jpg",
   "author": {
     "@type": "Organization",
     "name": "AquaEvents.club"
@@ -111,7 +111,7 @@ export default function BlogSubvencionesClub2026() {
       {/* Hero Section */}
       <div className="relative h-[400px] bg-gradient-to-r from-green-600 to-emerald-500 overflow-hidden">
         <img 
-          src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-2_1770939992000_na1fn_YmxvZy1zdWJ2ZW5jaW9uZXMtY2x1YnMtaGVyby5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODA.jpg"
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/jYZPaQTdmTdQdTXh.jpg"
           alt="Guía de subvenciones para clubes acuáticos 2026"
           className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40"
         />
