@@ -2187,5 +2187,16 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Manually fix BlogElegirCompeticion.tsx hero image URL
 - [x] Manually fix BlogNutricionNadadores.tsx hero image URL
 - [x] Update Blog.tsx listing page with correct URLs
-- [ ] Test in dev preview to verify images load
+- [x] Test in dev preview to verify images load
+- [x] Save checkpoint and push to GitHub
+
+
+## CRITICAL: Blog Hero Images Still Not Loading After 1 Hour
+- [x] Verify actual image URLs currently in all 6 blog post files
+- [x] Test CDN image accessibility by attempting to download each image URL
+- [x] If CDN URLs are broken, generate new hero images using image generation
+- [x] Upload new images to reliable CDN (manus-upload-file)
+- [x] Update all 6 blog post files with verified working image URLs
+- [x] Update Blog.tsx listing page with verified working image URLs
+- [ ] Test in browser to confirm images load
 - [ ] Save checkpoint and push to GitHub

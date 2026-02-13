@@ -13,7 +13,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": "Preparación Profesional para Competiciones de Natación: Guía Completa 2026",
   "description": "Guía completa de preparación para competiciones de natación: ciclos de entrenamiento, preparación mental, nutrición pre-competición y estrategias de calentamiento. Plan profesional paso a paso.",
-  "image": "https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-1_1770939992000_na1fn_YmxvZy1wcmVwYXJhY2lvbi1jb21wZXRpY2lvbi1oZXJv.jpg",
+  "image": "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/IEgldFTtszONJcZE.jpg",
   "author": {
     "@type": "Organization",
     "name": "AquaEvents.club"

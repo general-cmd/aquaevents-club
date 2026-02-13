@@ -184,7 +184,7 @@ export default function Blog() {
             {/* Competition Prep */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-purple-200">
               <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-1_1770939992000_na1fn_YmxvZy1wcmVwYXJhY2lvbi1jb21wZXRpY2lvbmVzLWhlcm8uanBn.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/IEgldFTtszONJcZE.jpg"
                 alt="Preparación Profesional para Competiciones"
                 className="w-full h-48 object-cover"
               />
@@ -217,7 +217,7 @@ export default function Blog() {
             {/* Grants Guide */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-green-200">
               <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-2_1770939992000_na1fn_YmxvZy1zdWJ2ZW5jaW9uZXMtY2x1YmVzLWhlcm8uanBn.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/gFKMwNsNqIVGCfTP.jpg"
                 alt="Guía de Subvenciones para Clubes 2026"
                 className="w-full h-48 object-cover"
               />
@@ -250,7 +250,7 @@ export default function Blog() {
             {/* Open Water Benefits */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-teal-200">
               <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-3_1770939992000_na1fn_YmxvZy1hZ3Vhcy1hYmllcnRhcy1oZXJvLmpwZw.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/XYmkFSSAEvLBrIRs.jpg"
                 alt="Beneficios de la Natación en Aguas Abiertas"
                 className="w-full h-48 object-cover"
               />
@@ -283,7 +283,7 @@ export default function Blog() {
             {/* Turn Techniques */}
             <Card className="hover:shadow-lg transition-shadow overflow-hidden border-2 border-orange-200">
               <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/3SpND3cLoLaQvUxJEwnvJQ/sandbox/Jz8IZlQ8YdP0LKqJv1YYB0-img-4_1770939992000_na1fn_YmxvZy12aXJhamUtaGVyby5qcGc.jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/113670411/WJouLAwpZzoaTvuE.jpg"
                 alt="Técnicas Avanzadas de Viraje"
                 className="w-full h-48 object-cover"
               />
