@@ -109,7 +109,7 @@ export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
     description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
     amazonUrl: "https://amzn.to/4ky7xE2",
-    price: "€29,99",
+    price: "€75,00",
     badge: "Más Vendido"
   },
   {
@@ -117,14 +117,14 @@ export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
     description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
     amazonUrl: "https://amzn.to/3OGlOCI",
-    price: "€16,95"
+    price: "€25,99"
   },
   {
     title: "Arena Powerfin Pro II Training Fins",
     description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/OJkaStlHPPJPCHAI.jpg",
     amazonUrl: "https://amzn.to/465OU4q",
-    price: "€34,99"
+    price: "€60,00"
   }
 ];
 
@@ -134,7 +134,7 @@ export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
     description: "Boya de alta visibilidad con compartimento estanco. Esencial para aguas abiertas.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/SVOFMiWIIokyUpnJ.jpg",
     amazonUrl: "https://amzn.to/4rPKyqA",
-    price: "€34,99",
+    price: "€38,00",
     badge: "Seguridad"
   },
   {
@@ -142,14 +142,14 @@ export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
     description: "Lentes grandes con protección UV. Máxima visibilidad en aguas abiertas.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/tYUHEnMGJqogKZVO.webp",
     amazonUrl: "https://amzn.to/4qBy9FO",
-    price: "€27,95"
+    price: "€33,01"
   },
   {
-    title: "BodyGlide Anti-Chafe Balm (Travel Size)",
-    description: "Protección contra rozaduras en neopreno. Imprescindible para triatletas.",
+    title: "Speedo Aqua V Racing Swimming Cap",
+    description: "Gorro de competición de alto rendimiento. Reduce la resistencia al agua.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/DlXwQSuAqkbAWsiK.jpg",
     amazonUrl: "https://amzn.to/467hL8F",
-    price: "€9,99"
+    price: "€30,00"
   }
 ];
 
@@ -159,7 +159,7 @@ export const COMPETITION_PRODUCTS: AffiliateProduct[] = [
     description: "Gafas de competición con tecnología anti-vaho. Homologadas FINA.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
     amazonUrl: "https://amzn.to/4ky7xE2",
-    price: "€29,99",
+    price: "€75,00",
     badge: "FINA Approved"
   },
   {
@@ -167,13 +167,13 @@ export const COMPETITION_PRODUCTS: AffiliateProduct[] = [
     description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada. Herramienta profesional.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BnMwYFnPRGKqlnrT.jpg",
     amazonUrl: "https://amzn.to/4rHWNoU",
-    price: "€34,99"
+    price: "€63,95"
   },
   {
     title: "TYR Big Mesh Mummy Backpack Bag",
     description: "Mochila de malla para equipo de natación. Secado rápido y gran capacidad.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xAavhXJwdKvdZqcf.jpg",
     amazonUrl: "https://amzn.to/4arYiAI",
-    price: "€24,99"
+    price: "€24,65"
   }
 ];

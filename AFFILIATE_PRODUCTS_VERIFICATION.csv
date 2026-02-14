@@ -1,0 +1,34 @@
+ASIN,Product Name,Affiliate Link (Short),Affiliate Link (Full),Price Updated,Components Updated
+B0DRNXT7CP,Speedo Biofuse 2.0 Gafas,https://amzn.to/46smj9R,https://www.amazon.es/dp/B0DRNXT7CP,€75.00,"RecommendedGear (pool, waterpolo, artisticSwim, default), eventProductMapping (pool)"
+B094JY7C48,Speedo Tabla de Natación,https://amzn.to/3OGlOCI,https://www.amazon.es/dp/B094JY7C48,€25.99,"RecommendedGear (pool, waterpolo, artisticSwim, default), BlogAffiliateSection (SWIMMING_TRAINING_PRODUCTS), eventProductMapping (training)"
+B0BMGZP9H9,Arena Powerfin Pro II,https://amzn.to/465OU4q,https://www.amazon.es/dp/B0BMGZP9H9,€60.00,"RecommendedGear (pool), BlogAffiliateSection (SWIMMING_TRAINING_PRODUCTS), eventProductMapping (triathlon)"
+B0D3TTB615,Speedo Tech Paddle,https://amzn.to/46RHZMu,https://www.amazon.es/dp/B0D3TTB615,€22.35,"RecommendedGear (pool), eventProductMapping (training)"
+B0DV9G59ZY,Arena Cobra Edge Swipe,https://amzn.to/4rUarFO,https://www.amazon.es/dp/B0DV9G59ZY,€26.50,RecommendedGear (openWater)
+B0CDFL4NDV,Focevi Snorkel Natación,https://amzn.to/4rAUbKd,https://www.amazon.es/dp/B0CDFL4NDV,€19.99,RecommendedGear (pool)
+B005TVYVI2,FINIS Tempo Trainer Pro,https://amzn.to/4rHWNoU,https://www.amazon.es/dp/B005TVYVI2,€63.95,"RecommendedGear (pool), BlogAffiliateSection (COMPETITION_PRODUCTS), eventProductMapping (pool)"
+B00BEI2AHI,Speedo Aqua V Racing Swimming Cap,https://amzn.to/467hL8F,https://www.amazon.es/dp/B00BEI2AHI,€30.00,"RecommendedGear (openWater), BlogAffiliateSection (OPEN_WATER_PRODUCTS), eventProductMapping (open_water) - REPLACED BodyGlide"
+B00LW8DZZQ,TYR Big Mesh Mummy Backpack,https://amzn.to/4arYiAI,https://www.amazon.es/dp/B00LW8DZZQ,€24.65,"RecommendedGear (pool), BlogAffiliateSection (COMPETITION_PRODUCTS)"
+B01ALX5TF6,Zone3 Boya de Seguridad,https://amzn.to/4rPKyqA,https://www.amazon.es/dp/B01ALX5TF6,€38.00,"RecommendedGear (openWater), BlogAffiliateSection (OPEN_WATER_PRODUCTS), eventProductMapping (open_water, triathlon)"
+B084R8WTQH,Aqua Sphere Kayenne,https://amzn.to/4qBy9FO,https://www.amazon.es/dp/B084R8WTQH,€33.01,"RecommendedGear (openWater), BlogAffiliateSection (OPEN_WATER_PRODUCTS), eventProductMapping (open_water)"
+B01KKHGK4W,Body Glide For Her,https://amzn.to/4rAUKUl,https://www.amazon.es/dp/B01KKHGK4W,€58.99,RecommendedGear (openWater)
+B08TF9RCLF,ORCA Openwater Core Wetsuit,https://amzn.to/4tCh413,https://www.amazon.es/dp/B08TF9RCLF,€465.00,NOT FOUND IN CODE (may need to be added)
+B01CKLKKU6,Zone3 Heat Tech Neoprene Shoes,https://amzn.to/4qFIeBA,https://www.amazon.es/dp/B01CKLKKU6,€44.05,RecommendedGear (openWater)
+B00QSBZKTG,Arena Team Mesh Bag,https://amzn.to/4ailOS3,https://www.amazon.es/dp/B00QSBZKTG,€32.70,NOT FOUND IN CODE (may need to be added)
+B07R5BY1H3,Arena Cobra Ultra Swipe Racing,https://amzn.to/4ky7xE2,https://www.amazon.es/dp/B07R5BY1H3,€75.00,"RecommendedGear (pool, waterpolo, artisticSwim), BlogAffiliateSection (SWIMMING_TRAINING_PRODUCTS, COMPETITION_PRODUCTS), eventProductMapping (pool)"
+B08MFHVHSG,Arena Pullkick Pro,https://amzn.to/3ZBw8OS,https://www.amazon.es/dp/B08MFHVHSG,€80.00,"RecommendedGear (pool), eventProductMapping (training)"
+B0BK1Y38RD,Speedo Biofuse 2.0 Goggles (Clear),https://amzn.to/4cugVXj,https://www.amazon.es/dp/B0BK1Y38RD,€25.00,NOT FOUND IN CODE (may need to be added)
+B094JXKPB5,Speedo Kickboard (Tangerine),https://amzn.to/4cqb7xZ,https://www.amazon.es/dp/B094JXKPB5,€30.03,NOT FOUND IN CODE (may need to be added)
+B09MZHYGGG,SiS GO Isotonic Energy Gels,https://amzn.to/40b5JaG,https://www.amazon.es/dp/B09MZHYGGG,€52.86,NOT FOUND IN CODE (may need to be added)
+B08TFSM52Q,Orca Men's Openwater Core TRN Wetsuit,https://amzn.to/4bV0ovk,https://www.amazon.es/dp/B08TFSM52Q,€639.63,NOT FOUND IN CODE (may need to be added)
+
+SUMMARY:
+- Total products in spreadsheet: 21
+- Products updated in code: 15
+- Products NOT FOUND in code: 6 (B08TF9RCLF, B00QSBZKTG, B0BK1Y38RD, B094JXKPB5, B09MZHYGGG, B08TFSM52Q)
+- Critical fix: B00BEI2AHI changed from "BodyGlide" to "Speedo Aqua V Racing Swimming Cap" (€30.00)
+- All prices updated to match verified Amazon.es data
+
+NOTES:
+- 6 products from your spreadsheet are not currently used in the code
+- If you want to add them, let me know which components should display them
+- All existing products now have correct prices and affiliate links

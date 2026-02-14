@@ -15,7 +15,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Gafas cómodas con tecnología Biofuse para ajuste perfecto. Ideales para entrenamientos largos.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/ohMdDoogAyLszFkv.jpg",
       amazonUrl: "https://amzn.to/46smj9R",
-      price: "€16,99",
+      price: "€75,00",
       rating: 4.6,
       reviewCount: 2847
     },
@@ -24,7 +24,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
       amazonUrl: "https://amzn.to/3OGlOCI",
-      price: "€16,95",
+      price: "€25,99",
       rating: 4.7,
       reviewCount: 1523
     },
@@ -33,7 +33,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores profesionales.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/OJkaStlHPPJPCHAI.jpg",
       amazonUrl: "https://amzn.to/465OU4q",
-      price: "€34,99",
+      price: "€60,00",
       rating: 4.5,
       reviewCount: 892
     },
@@ -42,7 +42,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Palas técnicas para mejorar fuerza de brazos. Diseño ergonómico sin correas.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/sRFQaWKFZiMDwbiR.jpg",
       amazonUrl: "https://amzn.to/46RHZMu",
-      price: "€18,95",
+      price: "€22,35",
       rating: 4.6,
       reviewCount: 1342
     },
@@ -51,7 +51,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Pull buoy y kickboard 2 en 1 para entrenamientos versátiles. Ideal para mejorar técnica.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/FPGnBFdnjuxSMAcP.jpg",
       amazonUrl: "https://amzn.to/3ZBw8OS",
-      price: "€19,95",
+      price: "€80,00",
       rating: 4.7,
       reviewCount: 2156
     },
@@ -60,7 +60,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Tubo frontal para entrenar técnica sin girar la cabeza. Mejora la posición del cuerpo.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/bMimtYkdUOWJJbQC.jpg",
       amazonUrl: "https://amzn.to/4rAUbKd",
-      price: "€24,95",
+      price: "€19,99",
       rating: 4.5,
       reviewCount: 987
     },
@@ -69,7 +69,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada. Herramienta profesional.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BnMwYFnPRGKqlnrT.jpg",
       amazonUrl: "https://amzn.to/4rHWNoU",
-      price: "€34,99",
+      price: "€63,95",
       rating: 4.8,
       reviewCount: 3421
     },
@@ -78,7 +78,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Gafas de competición con tecnología anti-vaho Swipe. Máximo rendimiento en carreras.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
       amazonUrl: "https://amzn.to/4ky7xE2",
-      price: "€29,99",
+      price: "€75,00",
       rating: 4.6,
       reviewCount: 1876
     },
@@ -87,7 +87,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Mochila de malla para equipo de natación. Secado rápido y gran capacidad.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xAavhXJwdKvdZqcf.jpg",
       amazonUrl: "https://amzn.to/4arYiAI",
-      price: "€24,99",
+      price: "€24,65",
       rating: 4.7,
       reviewCount: 2543
     }
@@ -100,7 +100,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Boya de seguridad con compartimento estanco de 28L. Esencial para aguas abiertas.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/SVOFMiWIIokyUpnJ.jpg",
       amazonUrl: "https://amzn.to/4rPKyqA",
-      price: "€34,99",
+      price: "€38,00",
       rating: 4.6,
       reviewCount: 1247
     },
@@ -109,16 +109,16 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Lentes grandes con protección UV. Máxima visibilidad en aguas abiertas.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/apyEizadNgXIFRTI.jpg",
       amazonUrl: "https://amzn.to/4qBy9FO",
-      price: "€27,95",
+      price: "€33,01",
       rating: 4.7,
       reviewCount: 3421
     },
     {
-      title: "BodyGlide Anti-Chafe Balm (Travel Size)",
-      description: "Protección contra rozaduras en neopreno. Imprescindible para triatletas.",
+      title: "Speedo Aqua V Racing Swimming Cap",
+      description: "Gorro de competición de alto rendimiento. Reduce la resistencia al agua.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/DlXwQSuAqkbAWsiK.jpg",
       amazonUrl: "https://amzn.to/467hL8F",
-      price: "€9,99",
+      price: "€30,00",
       rating: 4.8,
       reviewCount: 5632
     },
@@ -127,7 +127,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Protección anti-rozaduras especialmente formulada. Resistente al agua.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/DlXwQSuAqkbAWsiK.jpg",
       amazonUrl: "https://amzn.to/4rAUKUl",
-      price: "€11,99",
+      price: "€58,99",
       rating: 4.7,
       reviewCount: 3876
     },
@@ -136,7 +136,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Gafas de máscara con amplio campo de visión. Perfectas para aguas abiertas.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/sUWzadmGkORSXrkl.jpg",
       amazonUrl: "https://amzn.to/4qFIeBA",
-      price: "€24,95",
+      price: "€44,05",
       rating: 4.6,
       reviewCount: 2134
     }
@@ -149,7 +149,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Gafas de competición con tecnología anti-vaho Swipe. Perfectas para waterpolo.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
       amazonUrl: "https://amzn.to/4ky7xE2",
-      price: "€29,99",
+      price: "€75,00",
       rating: 4.6,
       reviewCount: 2847
     },
@@ -198,7 +198,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Tabla ergonómica para mejorar técnica. Material resistente al cloro.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
       amazonUrl: "https://amzn.to/3OGlOCI",
-      price: "€16,95",
+      price: "€25,99",
       rating: 4.7,
       reviewCount: 1523
     }
@@ -211,7 +211,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Gafas cómodas con tecnología Biofuse para ajuste perfecto. Ideales para todo tipo de nadadores.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/ohMdDoogAyLszFkv.jpg",
       amazonUrl: "https://amzn.to/46smj9R",
-      price: "€16,99",
+      price: "€75,00",
       rating: 4.6,
       reviewCount: 2847
     },
@@ -220,7 +220,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
       amazonUrl: "https://amzn.to/3OGlOCI",
-      price: "€16,95",
+      price: "€25,99",
       rating: 4.7,
       reviewCount: 1523
     },
@@ -229,7 +229,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
       description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada. Herramienta profesional.",
       imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BnMwYFnPRGKqlnrT.jpg",
       amazonUrl: "https://amzn.to/4rHWNoU",
-      price: "€34,99",
+      price: "€63,95",
       rating: 4.8,
       reviewCount: 3421
     }
