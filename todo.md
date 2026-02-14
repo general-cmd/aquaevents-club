@@ -2306,7 +2306,7 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Update all components with correct data - Updated RecommendedGear, BlogAffiliateSection, eventProductMapping
 - [x] Replace all BodyGlide (B00BEI2AHI) with Speedo Aqua V Racing Swimming Cap (€30.00)
 - [x] Update ALL 21 product prices to match verified spreadsheet
-- [ ] Save checkpoint and push to GitHub
+- [x] Save checkpoint and push to GitHub
 
 ### Products to Verify (21 total)
 1. B0DRNXT7CP - https://amzn.to/46smj9R
@@ -2330,3 +2330,19 @@ Also added "private" to organizerType enum to support private organizers.
 19. B094JXKPB5 - https://amzn.to/4cqb7xZ
 20. B09MZHYGGG - https://amzn.to/40b5JaG
 21. B08TFSM52Q - https://amzn.to/4bV0ovk
+
+
+## URGENT: Fix Affiliate Data on Live Site (User Report)
+
+### Issue
+- User reports prices/ratings still incorrect on events, pop-ups, and blogs
+- Screenshot shows correct prices (€38.00, €33.01, €30.00) but ratings may be wrong
+- Need to verify ALL affiliate data matches verified spreadsheet
+
+### Tasks
+- [x] Check RecommendedGear component - Updated all product names, ratings, and reviews
+- [x] Check BlogAffiliateSection component - Updated all product names
+- [x] Check eventProductMapping - Updated all product names, ratings, and reviews
+- [x] Update any remaining mismatches - All corrected
+- [ ] Test on live dev server
+- [ ] Save checkpoint and push to GitHub

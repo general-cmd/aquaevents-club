@@ -105,7 +105,7 @@ export default function BlogAffiliateSection({
 // Pre-configured product sets for common blog topics
 export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
   {
-    title: "Arena Cobra Ultra Swipe Racing Goggles",
+    title: "Arena Cobra Ultra Swipe",
     description: "Tecnología anti-vaho de larga duración. Perfectas para competición y entrenamiento.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
     amazonUrl: "https://amzn.to/4ky7xE2",
@@ -113,14 +113,14 @@ export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
     badge: "Más Vendido"
   },
   {
-    title: "Speedo Swimming Kickboard",
+    title: "Speedo Tabla de Natación",
     description: "Tabla ergonómica para mejorar técnica de piernas. Material resistente al cloro.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eklFkYVPbkHXWHcv.jpg",
     amazonUrl: "https://amzn.to/3OGlOCI",
     price: "€25,99"
   },
   {
-    title: "Arena Powerfin Pro II Training Fins",
+    title: "Arena Powerfin Pro II",
     description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/OJkaStlHPPJPCHAI.jpg",
     amazonUrl: "https://amzn.to/465OU4q",
@@ -130,7 +130,7 @@ export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
 
 export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
   {
-    title: "Zone3 Swim Safety Buoy / Dry Bag (28L)",
+    title: "Zone3 Boya de Seguridad",
     description: "Boya de alta visibilidad con compartimento estanco. Esencial para aguas abiertas.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/SVOFMiWIIokyUpnJ.jpg",
     amazonUrl: "https://amzn.to/4rPKyqA",
@@ -138,14 +138,14 @@ export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
     badge: "Seguridad"
   },
   {
-    title: "Aqua Sphere Kayenne Swim Goggles",
+    title: "Aqua Sphere Kayenne",
     description: "Lentes grandes con protección UV. Máxima visibilidad en aguas abiertas.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/tYUHEnMGJqogKZVO.webp",
     amazonUrl: "https://amzn.to/4qBy9FO",
     price: "€33,01"
   },
   {
-    title: "Speedo Aqua V Racing Swimming Cap",
+    title: "Speedo Unisex Aqua V Racing Swimming Cap",
     description: "Gorro de competición de alto rendimiento. Reduce la resistencia al agua.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/DlXwQSuAqkbAWsiK.jpg",
     amazonUrl: "https://amzn.to/467hL8F",
@@ -155,7 +155,7 @@ export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
 
 export const COMPETITION_PRODUCTS: AffiliateProduct[] = [
   {
-    title: "Arena Cobra Ultra Swipe Racing Goggles",
+    title: "Arena Cobra Ultra Swipe",
     description: "Gafas de competición con tecnología anti-vaho. Homologadas FINA.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dIADXyiXhgpkLxBv.jpg",
     amazonUrl: "https://amzn.to/4ky7xE2",
@@ -170,7 +170,7 @@ export const COMPETITION_PRODUCTS: AffiliateProduct[] = [
     price: "€63,95"
   },
   {
-    title: "TYR Big Mesh Mummy Backpack Bag",
+    title: "TYR Big Mesh Mummy",
     description: "Mochila de malla para equipo de natación. Secado rápido y gran capacidad.",
     imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xAavhXJwdKvdZqcf.jpg",
     amazonUrl: "https://amzn.to/4arYiAI",
