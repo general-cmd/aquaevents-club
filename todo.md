@@ -2344,5 +2344,57 @@ Also added "private" to organizerType enum to support private organizers.
 - [x] Check BlogAffiliateSection component - Updated all product names
 - [x] Check eventProductMapping - Updated all product names, ratings, and reviews
 - [x] Update any remaining mismatches - All corrected
-- [ ] Test on live dev server
+- [x] Test on live dev server
+- [x] Save checkpoint and push to GitHub
+
+
+## CLEAN REBUILD: Amazon Affiliate Products from Google Sheet ONLY
+
+User feedback: Still seeing incorrect names, pictures, prices, and reviews despite multiple fix attempts.
+
+### Approach
+- DELETE all existing Amazon product data from all 3 components
+- REBUILD from scratch using ONLY the 21 products from Google Sheet
+- Extract and use product images directly from Google Sheet
+
+### Tasks
+- [x] Extract all 21 products with images from Google Sheet (https://docs.google.com/spreadsheets/d/1IhGabaHbUnCtUZpX8h_IZBWCS3zsJPkB4a7oPhCo-vU/edit)
+- [x] Download/extract product images from Google Sheet - Extracted 8 high-quality images
+- [x] Upload product images to CDN - All 8 images uploaded successfully
+- [ ] Delete ALL product data from RecommendedGear.tsx
+- [ ] Delete ALL product data from BlogAffiliateSection.tsx
+- [ ] Delete ALL product data from eventProductMapping.ts
+- [ ] Rebuild RecommendedGear.tsx with ONLY Google Sheet data
+- [ ] Rebuild BlogAffiliateSection.tsx with ONLY Google Sheet data
+- [ ] Rebuild eventProductMapping.ts with ONLY Google Sheet data
+- [ ] Verify all products match Google Sheet exactly
 - [ ] Save checkpoint and push to GitHub
+
+
+## CLEAN REBUILD: Amazon Affiliate Products (User Request - URGENT)
+
+### Phase 1: Product Database
+- [x] Extract all 21 products from Google Sheet with verified data
+- [x] Create complete product database JSON with names, prices, ratings, reviews, affiliate links
+- [ ] Waiting for user to provide high-quality product images
+
+### Phase 2: Delete All Existing Affiliate Data
+- [ ] Delete all products from RecommendedGear.tsx
+- [ ] Delete all products from BlogAffiliateSection.tsx
+- [ ] Delete all products from eventProductMapping.ts
+
+### Phase 3: Rebuild with Verified Data
+- [ ] Rebuild RecommendedGear.tsx with all 21 products from database
+- [ ] Rebuild BlogAffiliateSection.tsx with curated product sets
+- [ ] Rebuild eventProductMapping.ts with event-specific products
+- [ ] Use placeholder images until user provides high-quality images
+
+### Phase 4: Replace with High-Quality Images
+- [ ] Receive high-quality product images from user
+- [ ] Upload all images to CDN
+- [ ] Update all components with final product images
+
+### Phase 5: Final Verification & Deploy
+- [ ] Test all affiliate links work correctly
+- [ ] Verify all product data matches Google Sheet exactly
+- [ ] Save checkpoint and push to GitHub for Railway deployment

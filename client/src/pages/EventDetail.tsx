@@ -692,7 +692,6 @@ export default function EventDetail() {
         <div className="container mx-auto px-4 mb-12">
           <RecommendedGear 
             discipline={event.discipline}
-            eventName={translatedTitle}
           />
         </div>
 
