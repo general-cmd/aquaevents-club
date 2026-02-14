@@ -13,7 +13,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Biofuse 2.0 Gafas",
       description: "Gafas cómodas con tecnología Biofuse para ajuste perfecto. Ideales para entrenamientos largos.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/jGPjkMiKTRbWJwID.png",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/JAkSQotpFjWMHEke.png",
       amazonUrl: "https://amzn.to/46smj9R",
       price: "€75.00",
       rating: 4.6,
@@ -40,7 +40,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Speedo Tech Paddle",
       description: "Palas técnicas para mejorar fuerza de brazos. Diseño ergonómico sin correas.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/lJoLEQfXERNGevqq.png",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/fEyFHsESzHxxhwUQ.png",
       amazonUrl: "https://amzn.to/46RHZMu",
       price: "€22.35",
       rating: 4.5,
@@ -49,7 +49,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Focevi Snorkel Natación",
       description: "Tubo frontal para entrenar técnica sin girar la cabeza. Mejora la posición del cuerpo.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/OVOPsfnySgNCTypj.png",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/qPDaLcQGhGdJongo.png",
       amazonUrl: "https://amzn.to/4rAUbKd",
       price: "€19.99",
       rating: 4.5,
@@ -116,7 +116,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "ORCA Openwater Core for Men, Black High Visibility, Warm",
       description: "Neopreno de alta visibilidad para aguas abiertas. Diseño térmico para aguas frías.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/uctYhezcOUQGNRTq.png",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/fPgxJYPUBwYZjkCV.png",
       amazonUrl: "https://amzn.to/4tCh413",
       price: "€465.00",
       rating: 4.3,
@@ -125,7 +125,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "ZONE3 Heat Tech Neoprene Shoes Heat Tech Unisex Adult",
       description: "Escarpines de neopreno térmicos. Protección y calor para pies en aguas frías.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/eVjehAOAMjTcFrdz.png",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/jPyglFakIZvtCUes.png",
       amazonUrl: "https://amzn.to/4qFIeBA",
       price: "€44.05",
       rating: 4.3,
@@ -138,7 +138,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Arena Cobra Edge Swipe",
       description: "Gafas de competición con lentes espejadas. Tecnología anti-vaho Swipe de larga duración.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dYjjZdUJxbbNbRWm.png",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/qWBLiMBehDjKcoBZ.png",
       amazonUrl: "https://amzn.to/4rUarFO",
       price: "€26.50",
       rating: 4.6,
@@ -187,7 +187,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "SiS Science In Sport GO Isotonic Energy Gels, 22g Carb",
       description: "Geles energéticos isotónicos para rendimiento deportivo. 22g de carbohidratos por gel.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/KXGotYyaqFQdankY.png",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/KTXjcWViuQznMiOu.png",
       amazonUrl: "https://amzn.to/40b5JaG",
       price: "€52.86",
       rating: 4.2,
@@ -196,7 +196,7 @@ const PRODUCTS: Record<string, AffiliateProduct[]> = {
     {
       title: "Orca Men's Openwater Core TRN - Black - Warm Thermal",
       description: "Neopreno de entrenamiento para aguas abiertas. Diseño térmico para sesiones largas.",
-      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BJRKdwRnFqjVHZsZ.png",
+      imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/KghEnHWdQTjMndhD.png",
       amazonUrl: "https://amzn.to/4bV0ovk",
       price: "€639.63",
       rating: 4.7,

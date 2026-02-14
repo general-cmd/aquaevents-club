@@ -107,7 +107,7 @@ export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
   {
     title: "Speedo Biofuse 2.0 Gafas",
     description: "Gafas cómodas con tecnología Biofuse para ajuste perfecto. Ideales para entrenamientos largos.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/jGPjkMiKTRbWJwID.png",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/JAkSQotpFjWMHEke.png",
     amazonUrl: "https://amzn.to/46smj9R",
     price: "€75.00",
     badge: "Más Vendido"
@@ -172,7 +172,7 @@ export const COMPETITION_PRODUCTS: AffiliateProduct[] = [
   {
     title: "Arena Cobra Edge Swipe",
     description: "Gafas de competición con lentes espejadas. Tecnología anti-vaho Swipe de larga duración.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/dYjjZdUJxbbNbRWm.png",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/qWBLiMBehDjKcoBZ.png",
     amazonUrl: "https://amzn.to/4rUarFO",
     price: "€26.50"
   }

@@ -66,7 +66,7 @@ export function getEventSpecificProducts(eventType: EventType, count: number = 3
         price: '€75.00',
         rating: 4.6,
         reviews: 1047,
-        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/jGPjkMiKTRbWJwID.png',
+        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/JAkSQotpFjWMHEke.png',
         amazonUrl: 'https://amzn.to/46smj9R',
         category: 'Gafas Competición'
       },
@@ -123,7 +123,7 @@ export function getEventSpecificProducts(eventType: EventType, count: number = 3
         price: '€465.00',
         rating: 4.3,
         reviews: 34,
-        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/uctYhezcOUQGNRTq.png',
+        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/fPgxJYPUBwYZjkCV.png',
         amazonUrl: 'https://amzn.to/4tCh413',
         category: 'Neopreno'
       }
@@ -147,7 +147,7 @@ export function getEventSpecificProducts(eventType: EventType, count: number = 3
         price: '€22.35',
         rating: 4.5,
         reviews: 750,
-        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/lJoLEQfXERNGevqq.png',
+        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/fEyFHsESzHxxhwUQ.png',
         amazonUrl: 'https://amzn.to/46RHZMu',
         category: 'Palas'
       },
@@ -193,7 +193,7 @@ export function getEventSpecificProducts(eventType: EventType, count: number = 3
         price: '€52.86',
         rating: 4.2,
         reviews: 4524,
-        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/KXGotYyaqFQdankY.png',
+        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/KTXjcWViuQznMiOu.png',
         amazonUrl: 'https://amzn.to/40b5JaG',
         category: 'Nutrición'
       }
@@ -206,7 +206,7 @@ export function getEventSpecificProducts(eventType: EventType, count: number = 3
         price: '€75.00',
         rating: 4.6,
         reviews: 1047,
-        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/jGPjkMiKTRbWJwID.png',
+        imageUrl: 'https://files.manuscdn.com/user_upload_by_module/session_file/113670411/JAkSQotpFjWMHEke.png',
         amazonUrl: 'https://amzn.to/46smj9R',
         category: 'Gafas Competición'
       },

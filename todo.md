@@ -2398,3 +2398,12 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [ ] Test all affiliate links work correctly
 - [ ] Verify all product data matches Google Sheet exactly
 - [ ] Save checkpoint and push to GitHub for Railway deployment
+
+
+## Replace 8 Low-Quality Images with High-Quality Versions
+
+- [x] Upload 8 high-quality product images to CDN
+- [ ] Update RecommendedGear.tsx with new CDN image URLs
+- [ ] Update BlogAffiliateSection.tsx with new CDN image URLs
+- [ ] Update eventProductMapping.ts with new CDN image URLs
+- [ ] Save checkpoint and push to GitHub
