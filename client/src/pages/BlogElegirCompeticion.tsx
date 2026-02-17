@@ -5,7 +5,7 @@ import { Calendar, Trophy, Target, Users, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import BlogAffiliateSection, { SWIMMING_TRAINING_PRODUCTS } from "@/components/BlogAffiliateSection";
+import BlogAffiliateSection, { SWIMSUIT_PRODUCTS } from "@/components/BlogAffiliateSection";
 import SocialShareButtons from "@/components/SocialShareButtons";
 
 const articleSchema = {
@@ -185,7 +185,11 @@ export default function BlogElegirCompeticion() {
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Equipo para tu Primera Competición</h2>
           <p className="text-gray-700 mb-6">Prepárate con el equipamiento adecuado para rendir al máximo. Desde <Link href="/gorros-natacion" className="text-blue-600 hover:underline">gorros de competición profesionales</Link> hasta accesorios esenciales.</p>
-          <BlogAffiliateSection products={SWIMMING_TRAINING_PRODUCTS} />
+          <BlogAffiliateSection 
+            title="Material Esencial para Competición"
+            intro="Equipamiento de competición profesional para tu primera carrera."
+            products={SWIMSUIT_PRODUCTS} 
+          />
         </section>
 
         <section className="mb-12">

@@ -20,7 +20,8 @@ import { useEventTitle, useEventDescription } from "@/hooks/useEventTranslation"
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ProductCarouselPopup, { PopupProduct } from "@/components/ProductCarouselPopup";
 import { useProductPopup } from "@/hooks/useProductPopup";
-import { detectEventType, getEventSpecificProducts } from "@/lib/eventProductMapping";
+import { detectEventType, getEventSpecificProducts, shouldShowAwinBanner } from "@/lib/eventProductMapping";
+import AwinBanner from "@/components/AwinBanner";
 
 interface Event {
   _id: string;
@@ -73,7 +74,14 @@ export default function EventDetail() {
   const translatedTitle = useEventTitle(spanishTitle);
   const translatedDescription = useEventDescription(spanishDescription);
 
-  // Product popup for impulse purchases with event-specific recommendations
+  // Check if event should show Awin banner instead of Amazon products
+  const showAwin = event ? shouldShowAwinBanner(
+    event.name?.es || event.name || '',
+    event.description?.es || event.description || '',
+    event.discipline || ''
+  ) : false;
+
+  // Product popup for impulse purchases with event-specific recommendations (only for swimming events)
   const { showPopup, closePopup } = useProductPopup({
     scrollDepthTrigger: 50,
     timeOnPageTrigger: 30,
@@ -688,11 +696,24 @@ export default function EventDetail() {
           </Card>
         </div>
 
-        {/* Recommended Gear - Amazon Affiliate Section */}
+        {/* Recommended Gear - Affiliate Section */}
         <div className="container mx-auto px-4 mb-12">
-          <RecommendedGear 
-            discipline={event.discipline}
-          />
+          {shouldShowAwinBanner(
+            event.name?.es || event.name || '',
+            event.description?.es || event.description || '',
+            event.discipline || ''
+          ) ? (
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h2 className="text-2xl font-bold mb-4 text-gray-900">
+                Equipamiento Recomendado para Triatlón
+              </h2>
+              <AwinBanner className="my-4" />
+            </div>
+          ) : (
+            <RecommendedGear 
+              discipline={event.discipline}
+            />
+          )}
         </div>
 
         {/* Related Events */}

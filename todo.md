@@ -2407,3 +2407,17 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [ ] Update BlogAffiliateSection.tsx with new CDN image URLs
 - [ ] Update eventProductMapping.ts with new CDN image URLs
 - [ ] Save checkpoint and push to GitHub
+
+
+## Awin 365Rider Integration & Product Optimization
+
+- [x] Create Awin 365Rider banner component with winter offer code
+- [x] Add 365Rider banner to duathlon/triathlon event pages
+- [ ] Add 365Rider banner to triathlon/cycling blog posts (no triathlon blogs currently)
+- [x] Keep Amazon products for swimming-only events
+- [x] Optimize blog product recommendations to match blog topics (swimsuits for competition blog)
+- [x] Add 365Rider banner to product carousel pop-ups for duathlon/triathlon events
+- [x] Create centralized affiliate config file for easy updates
+- [x] Create affiliate update guide documentation
+- [ ] Test banner display across all pages
+- [ ] Push changes to GitHub for Railway deployment

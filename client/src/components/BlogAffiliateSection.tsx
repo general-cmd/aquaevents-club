@@ -1,21 +1,14 @@
 import { ExternalLink } from "lucide-react";
+import { AMAZON_PRODUCTS, type AffiliateProduct } from '@/config/affiliateConfig';
 
 /**
  * Blog Affiliate Section Component
- * Contextual affiliate product recommendations for blog posts
- * Optimized for SEO/AISEO with natural integration
+ * 
+ * ⚠️ TO UPDATE AMAZON PRODUCTS: Edit /client/src/config/affiliateConfig.tsx
+ * DO NOT edit product data in this file!
  */
 
-const AFFILIATE_TAG = "aquaevents00d-21";
-
-interface AffiliateProduct {
-  title: string;
-  description: string;
-  imageUrl: string;
-  amazonUrl: string;
-  price: string;
-  badge?: string;
-}
+// AffiliateProduct interface is now imported from affiliateConfig
 
 interface BlogAffiliateSectionProps {
   title?: string;
@@ -103,77 +96,27 @@ export default function BlogAffiliateSection({
 }
 
 // Pre-configured product sets for common blog topics
+// Products are pulled from centralized config
 export const SWIMMING_TRAINING_PRODUCTS: AffiliateProduct[] = [
-  {
-    title: "Speedo Biofuse 2.0 Gafas",
-    description: "Gafas cómodas con tecnología Biofuse para ajuste perfecto. Ideales para entrenamientos largos.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/JAkSQotpFjWMHEke.png",
-    amazonUrl: "https://amzn.to/46smj9R",
-    price: "€75.00",
-    badge: "Más Vendido"
-  },
-  {
-    title: "Arena Powerfin Pro II",
-    description: "Aletas cortas para mejorar potencia y técnica. Recomendadas por entrenadores profesionales.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/cCBVriFwuAWTHUbt.png",
-    amazonUrl: "https://amzn.to/465OU4q",
-    price: "€60.00"
-  },
-  {
-    title: "FINIS Tempo Trainer Pro",
-    description: "Metrónomo acuático para mejorar ritmo y frecuencia de brazada. Herramienta profesional.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/BXZlWrZwrgGrVxEm.png",
-    amazonUrl: "https://amzn.to/4rHWNoU",
-    price: "€63.95"
-  }
+  { ...AMAZON_PRODUCTS.SPEEDO_BIOFUSE, badge: "Más Vendido" },
+  AMAZON_PRODUCTS.ARENA_POWERFIN,
+  AMAZON_PRODUCTS.FINIS_TEMPO_TRAINER
 ];
 
 export const OPEN_WATER_PRODUCTS: AffiliateProduct[] = [
-  {
-    title: "Zone3 Boya de Seguridad",
-    description: "Boya de seguridad con compartimento estanco de 28L. Esencial para aguas abiertas.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/hlDbjoemJftSGTFG.png",
-    amazonUrl: "https://amzn.to/4rPKyqA",
-    price: "€38.00",
-    badge: "Seguridad"
-  },
-  {
-    title: "Aqua Sphere Kayenne",
-    description: "Gafas estilo máscara para aguas abiertas. Visión panorámica y máxima comodidad.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/SeVQMNKnyueaUmIx.png",
-    amazonUrl: "https://amzn.to/4qBy9FO",
-    price: "€33.01"
-  },
-  {
-    title: "Body Glide For Her",
-    description: "Bálsamo anti-rozaduras especialmente formulado. Resistente al agua y de larga duración.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/xvjfyJTxDphjkmgI.png",
-    amazonUrl: "https://amzn.to/4rAUKUl",
-    price: "€58.99"
-  }
+  { ...AMAZON_PRODUCTS.ZONE3_SAFETY_BUOY, badge: "Seguridad" },
+  AMAZON_PRODUCTS.AQUA_SPHERE_KAYENNE,
+  AMAZON_PRODUCTS.BODY_GLIDE_HER
+];
+
+export const SWIMSUIT_PRODUCTS: AffiliateProduct[] = [
+  { ...AMAZON_PRODUCTS.TURBO_SWIM_TRUNKS, badge: "Competición" },
+  AMAZON_PRODUCTS.ARENA_COBRA_ULTRA,
+  AMAZON_PRODUCTS.SPEEDO_RACING_CAP
 ];
 
 export const COMPETITION_PRODUCTS: AffiliateProduct[] = [
-  {
-    title: "Arena Cobra Ultra Swipe",
-    description: "Gafas de competición con tecnología anti-vaho Swipe. Máximo rendimiento en carreras.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/tADKuTrxoagLdzWJ.png",
-    amazonUrl: "https://amzn.to/4ky7xE2",
-    price: "€75.00",
-    badge: "FINA Approved"
-  },
-  {
-    title: "Speedo Unisex Aqua V Racing Swimming Cap | Racewear",
-    description: "Gorro de competición de alta calidad. Diseño hidrodinámico para máximo rendimiento.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/wmXvNVCmZVFKJsNt.png",
-    amazonUrl: "https://amzn.to/467hL8F",
-    price: "€30.00"
-  },
-  {
-    title: "Arena Cobra Edge Swipe",
-    description: "Gafas de competición con lentes espejadas. Tecnología anti-vaho Swipe de larga duración.",
-    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/113670411/qWBLiMBehDjKcoBZ.png",
-    amazonUrl: "https://amzn.to/4rUarFO",
-    price: "€26.50"
-  }
+  { ...AMAZON_PRODUCTS.ARENA_COBRA_ULTRA, badge: "FINA Approved" },
+  AMAZON_PRODUCTS.SPEEDO_RACING_CAP,
+  AMAZON_PRODUCTS.ARENA_COBRA_EDGE
 ];

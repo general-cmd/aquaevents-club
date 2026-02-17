@@ -19,6 +19,21 @@ export interface Product {
 export type EventType = 'pool' | 'open_water' | 'training' | 'triathlon' | 'masters' | 'youth';
 
 /**
+ * Determines if event should show Awin 365Rider banner instead of Amazon products
+ * Returns true for triathlon/duathlon events (cycling/running gear)
+ */
+export function shouldShowAwinBanner(eventTitle: string, eventDescription: string = '', discipline: string = ''): boolean {
+  const text = `${eventTitle} ${eventDescription} ${discipline}`.toLowerCase();
+  
+  // Show Awin banner for triathlon/duathlon events (no swimming or mixed sports)
+  if (text.match(/triatlón|triatlon|triathlon|ironman|duatlón|duatlon|duathlon/)) {
+    return true;
+  }
+  
+  return false;
+}
+
+/**
  * Determines event type based on event title, description, and discipline
  */
 export function detectEventType(eventTitle: string, eventDescription: string = '', discipline: string = ''): EventType {
