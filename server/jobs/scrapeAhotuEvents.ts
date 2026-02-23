@@ -21,6 +21,13 @@ export async function scrapeAhotuEvents() {
   // TODO: Implement automated scraping with Puppeteer
   const ahotuEvents: AhotuEvent[] = [
     {
+      title: "USee Swim Düsseldorf",
+      city: "Düsseldorf",
+      date: "2025-09-20",
+      distances: ["0.6 mi", "1.2 mi", "2.5 mi"],
+      eventType: "swimming"
+    },
+    {
       title: "IRONMAN 70.3 Kraichgau",
       city: "Östringen",
       date: "2026-05-31",

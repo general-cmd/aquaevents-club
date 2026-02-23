@@ -2524,3 +2524,19 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [ ] Create DSV scraper script (requires Puppeteer for dynamic content)
 - [ ] Test DSV scraper
 - [ ] Import DSV events to database
+
+
+## DSV Swimming Events Scraper (PAUSED - Using Ahotu Instead)
+
+- [x] Install Puppeteer dependency
+- [x] Create server/jobs/scrapeDSVEvents.ts with Puppeteer
+- [ ] DSV scraper paused due to complex dynamic page structure
+- [ ] Using Ahotu swimming calendar instead (more reliable)
+
+## Ahotu Swimming Events Scraper
+
+- [x] Research Ahotu swimming calendar URL structure
+- [x] Update scrapeAhotuEvents.ts to support swimming events
+- [x] Add swimming event type detection
+- [x] Test scraper with German swimming events (1 event: USee Swim Düsseldorf)
+- [x] Verify swimming events appear on /de/events page
