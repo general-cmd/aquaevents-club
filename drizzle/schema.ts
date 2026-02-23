@@ -189,3 +189,88 @@ export const capTestimonials = mysqlTable("capTestimonials", {
 
 export type CapTestimonial = typeof capTestimonials.$inferSelect;
 export type InsertCapTestimonial = typeof capTestimonials.$inferInsert;
+
+
+// World Triathlon events table (multilingual, multi-country)
+export const worldTriathlonEvents = mysqlTable("worldTriathlonEvents", {
+  id: varchar("id", { length: 64 }).primaryKey(),
+  eventId: varchar("eventId", { length: 128 }), // World Triathlon event_id or generated
+  source: varchar("source", { length: 32 }), // "world_triathlon", "scraped", "manual"
+  countryCode: varchar("countryCode", { length: 2 }), // "ES", "DE", "FR", etc.
+  
+  // Multilingual fields (JSON: { es?: string, de?: string, en?: string })
+  title: text("title"), // JSON object with translations
+  description: text("description"), // JSON object with translations
+  metaDescription: text("metaDescription"), // JSON object with translations
+  
+  // Location
+  venue: text("venue"),
+  city: varchar("city", { length: 128 }),
+  region: varchar("region", { length: 128 }),
+  country: varchar("country", { length: 128 }),
+  latitude: decimal("latitude", { precision: 10, scale: 7 }),
+  longitude: decimal("longitude", { precision: 10, scale: 7 }),
+  
+  // Dates
+  date: timestamp("date"),
+  finishDate: timestamp("finishDate"),
+  registrationDeadline: timestamp("registrationDeadline"),
+  
+  // Categories
+  eventType: varchar("eventType", { length: 32 }), // "swimming", "triathlon", "duathlon", "open_water"
+  categories: text("categories"), // JSON array
+  specifications: text("specifications"), // JSON array
+  
+  // External Links
+  registrationUrl: text("registrationUrl"),
+  officialWebsite: text("officialWebsite"),
+  worldTriathlonUrl: text("worldTriathlonUrl"),
+  
+  // SEO/AISEO
+  faqSchema: text("faqSchema"), // JSON array of FAQ objects
+  
+  // Affiliate
+  recommendedProducts: text("recommendedProducts"), // JSON array of product IDs
+  
+  // Metadata
+  createdAt: timestamp("createdAt").defaultNow(),
+  updatedAt: timestamp("updatedAt").defaultNow(),
+  lastSyncedAt: timestamp("lastSyncedAt"),
+  published: boolean("published").default(true).notNull()
+});
+
+export type WorldTriathlonEvent = typeof worldTriathlonEvents.$inferSelect;
+export type InsertWorldTriathlonEvent = typeof worldTriathlonEvents.$inferInsert;
+
+// Affiliate products table (multilingual, multi-country)
+export const affiliateProducts = mysqlTable("affiliateProducts", {
+  id: varchar("id", { length: 64 }).primaryKey(),
+  productId: varchar("productId", { length: 128 }),
+  asin: varchar("asin", { length: 32 }),
+  
+  // Multilingual
+  name: text("name"), // JSON object with translations
+  description: text("description"), // JSON object with translations
+  
+  // Pricing per country (JSON: { ES: { amount: number, currency: string }, DE: {...}, UK: {...} })
+  pricing: text("pricing"), // JSON object
+  
+  // Affiliate links per country (JSON: { ES: string, DE: string, UK: string })
+  affiliateUrls: text("affiliateUrls"), // JSON object
+  
+  // Media
+  imageUrl: text("imageUrl"),
+  
+  // Categories
+  category: varchar("category", { length: 64 }),
+  eventTypes: text("eventTypes"), // JSON array
+  
+  // Metadata
+  rating: decimal("rating", { precision: 2, scale: 1 }),
+  reviews: varchar("reviews", { length: 32 }),
+  createdAt: timestamp("createdAt").defaultNow(),
+  updatedAt: timestamp("updatedAt").defaultNow()
+});
+
+export type AffiliateProduct = typeof affiliateProducts.$inferSelect;
+export type InsertAffiliateProduct = typeof affiliateProducts.$inferInsert;

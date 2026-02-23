@@ -13,6 +13,8 @@ import eventsRouter from "../routes/events";
 import uploadImageRouter from "../routes/upload-image";
 import sitemapRouter from "../sitemap";
 import { serveStatic, setupVite } from "./vite";
+import cron from "node-cron";
+import { syncWorldTriathlonEvents } from "../jobs/syncWorldTriathlonEvents";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -223,6 +225,18 @@ async function startServer() {
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
   });
+  
+  // Schedule World Triathlon event sync - daily at 2 AM UTC
+  cron.schedule("0 2 * * *", async () => {
+    console.log("[Cron] Starting World Triathlon event sync...");
+    try {
+      await syncWorldTriathlonEvents();
+    } catch (error) {
+      console.error("[Cron] Sync failed:", error);
+    }
+  });
+  
+  console.log("[Cron] World Triathlon sync job scheduled for 2 AM UTC daily");
 }
 
 startServer().catch(console.error);

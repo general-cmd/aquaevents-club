@@ -2421,3 +2421,73 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [x] Create affiliate update guide documentation
 - [ ] Test banner display across all pages
 - [ ] Push changes to GitHub for Railway deployment
+
+
+## World Triathlon API Integration & Multi-Country Expansion
+
+### Phase 1: Database Schema (Current)
+- [x] Update drizzle/schema.ts with events table (multilingual fields)
+- [x] Update drizzle/schema.ts with products table (country-specific pricing/links)
+- [x] Run pnpm db:push to apply schema changes
+- [x] Verify tables created in database
+
+### Phase 2: Core Infrastructure
+- [x] Create server/_core/subdomain.ts (country detection from hostname)
+- [x] Create server/_core/worldTriathlon.ts (API client)
+- [ ] Add World Triathlon API key to environment variables
+- [ ] Test API client with Spain and Germany country IDs
+
+### Phase 3: Event Sync Job
+- [x] Create server/jobs/syncWorldTriathlonEvents.ts
+- [x] Implement event translation using LLM helper
+- [x] Implement FAQ schema generation using LLM helper
+- [x] Add cron job to run daily at 2 AM UTC
+- [x] Install node-cron dependency
+- [ ] Test manual sync job execution
+
+### Phase 4: Database Helpers
+- [ ] Add getEventsByCountry to server/db.ts
+- [ ] Add getEventsByCity to server/db.ts
+- [ ] Add getEventBySlug to server/db.ts
+- [ ] Create tRPC procedures for events.list and events.getBySlug
+
+### Phase 5: Frontend Pages
+- [ ] Create useLanguage hook for subdomain language detection
+- [ ] Create Events listing page (client/src/pages/Events.tsx)
+- [ ] Create EventDetail page with FAQ schema (client/src/pages/EventDetail.tsx)
+- [ ] Add routes to App.tsx
+- [ ] Test multilingual content display
+
+### Phase 6: Testing & Deployment
+- [ ] Test event sync for Spain and Germany
+- [ ] Verify FAQ schema in page source
+- [ ] Test subdomain routing (de.aquaevents.club)
+- [ ] Save checkpoint
+- [ ] Push to GitHub
+- [ ] Monitor Railway deployment
+
+
+## German Event Scraping & Integration
+
+- [ ] Scrape German swimming events from DSV calendar
+- [x] Scrape German triathlon events from Ahotu
+- [ ] Create scraper script for DSV events
+- [x] Create scraper script for Ahotu events
+- [x] Process scraped events and translate to ES/DE/EN
+- [x] Store events in worldTriathlonEvents table
+- [x] Generate FAQ schema for each event
+- [ ] Build multi-language event calendar pages (single domain)
+- [ ] Test German event pages on aquaevents.club/de/
+
+## Single-Domain Multi-Language Implementation
+
+- [ ] Update routing to support /de/, /en/, /fr/ paths
+- [ ] Create language detection middleware (from URL path)
+- [ ] Add language switcher component to header
+- [ ] Update existing pages to support multi-language routing
+- [ ] Create German event calendar page (/de/events)
+- [ ] Create German city pages (/de/berlin, /de/hamburg, etc.)
+- [ ] Add hreflang tags for SEO
+- [ ] Update cap shop pages for German (/de/personalisierte-badekappen)
+- [ ] Test conversion funnel: German event → cap shop
+- [ ] Configure geo-detection (optional)
