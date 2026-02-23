@@ -47,6 +47,8 @@ import AdminCapPricing from "./pages/AdminCapPricing";
 import AvisoLegal from "./pages/AvisoLegal";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import SobreNosotros from "./pages/SobreNosotros";
+import GermanEvents from "./pages/GermanEvents";
+import GermanCityEvents from "./pages/GermanCityEvents";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -93,6 +95,18 @@ function Router() {
       <Route path="/aviso-legal" component={AvisoLegal} />
       <Route path="/politica-privacidad" component={PoliticaPrivacidad} />
       <Route path="/sobre-nosotros" component={SobreNosotros} />
+      
+      {/* German event pages */}
+      <Route path="/de/events" component={GermanEvents} />
+      <Route path="/de/events/berlin">{() => <GermanCityEvents city="Berlin" />}</Route>
+      <Route path="/de/events/hamburg">{() => <GermanCityEvents city="Hamburg" />}</Route>
+      <Route path="/de/events/cologne">{() => <GermanCityEvents city="Cologne" />}</Route>
+      <Route path="/de/events/frankfurt">{() => <GermanCityEvents city="Frankfurt" />}</Route>
+      <Route path="/de/events/leipzig">{() => <GermanCityEvents city="Leipzig" />}</Route>
+      <Route path="/de/events/roth">{() => <GermanCityEvents city="Roth" />}</Route>
+      <Route path="/de/events/ostringen">{() => <GermanCityEvents city="Östringen" />}</Route>
+      <Route path="/de/events/lensahn">{() => <GermanCityEvents city="Lensahn" />}</Route>
+      
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

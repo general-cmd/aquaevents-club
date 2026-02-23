@@ -14,7 +14,8 @@ import {
   createEventSubmission, getAllEventSubmissions, getPendingEventSubmissions, getUserEventSubmissions, updateEventSubmission, deleteEventSubmission,
   addUserFavorite, removeUserFavorite, getUserFavorites, isEventFavorited,
   updateUserProfile, getDb,
-  createEventReminder, getUserReminders, getEventReminders, deleteEventReminder
+  createEventReminder, getUserReminders, getEventReminders, deleteEventReminder,
+  getEventsByCountry, getEventsByCity
 } from "./db";
 import { eventSubmissions } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
@@ -55,6 +56,32 @@ export const appRouter = router({
         }
         
         return { success: true };
+      }),
+  }),
+
+  germanEvents: router({
+    listByCountry: publicProcedure
+      .input(z.object({
+        countryCode: z.string(),
+      }))
+      .query(async ({ input }) => {
+        const events = await getEventsByCountry(input.countryCode);
+        return {
+          success: true,
+          events,
+        };
+      }),
+
+    listByCity: publicProcedure
+      .input(z.object({
+        city: z.string(),
+      }))
+      .query(async ({ input }) => {
+        const events = await getEventsByCity(input.city);
+        return {
+          success: true,
+          events,
+        };
       }),
   }),
 

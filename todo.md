@@ -2491,3 +2491,36 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [ ] Update cap shop pages for German (/de/personalisierte-badekappen)
 - [ ] Test conversion funnel: German event → cap shop
 - [ ] Configure geo-detection (optional)
+
+
+## Phase 1: Language Routing & Database Helpers (Current)
+
+- [x] Create language context provider for React
+- [x] Add database helper to fetch events by country and language
+- [x] Create tRPC procedure for German events
+- [x] Add URL path language detection
+
+## Phase 2: German Event Pages
+
+- [x] Create /de/events calendar page
+- [x] Create /de/berlin city page
+- [x] Create /de/hamburg city page
+- [x] Create /de/cologne city page
+- [x] Create /de/frankfurt city page
+- [x] Create /de/leipzig city page
+- [x] Create /de/roth city page
+- [x] Create /de/ostringen city page
+- [x] Create /de/lensahn city page
+
+## Phase 3: Language Switcher
+
+- [x] LanguageSwitcher component already exists (using i18n)
+- [ ] Add to header/navigation (if not already present)
+- [ ] Implement language persistence (localStorage)
+- [ ] Add hreflang tags to pages
+
+## Phase 4: DSV Swimming Events
+
+- [ ] Create DSV scraper script (requires Puppeteer for dynamic content)
+- [ ] Test DSV scraper
+- [ ] Import DSV events to database

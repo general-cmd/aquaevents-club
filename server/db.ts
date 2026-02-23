@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite, eventReminders, InsertEventReminder, newsletterSubscribers, InsertNewsletterSubscriber, capPricing, InsertCapPricing, capTestimonials, InsertCapTestimonial } from "../drizzle/schema";
+import { InsertUser, users, federations, blogPosts, InsertBlogPost, eventSubmissions, InsertEventSubmission, userFavorites, InsertUserFavorite, eventReminders, InsertEventReminder, newsletterSubscribers, InsertNewsletterSubscriber, capPricing, InsertCapPricing, capTestimonials, InsertCapTestimonial, worldTriathlonEvents } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -687,4 +687,43 @@ export async function deleteCapTestimonial(id: string) {
   
   // Soft delete by setting active to false
   await db.update(capTestimonials).set({ active: false, updatedAt: new Date() }).where(eq(capTestimonials.id, id));
+}
+
+
+// ===== World Triathlon Events (German events) =====
+
+/**
+ * Get events by country code
+ */
+export async function getEventsByCountry(countryCode: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get events: database not available");
+    return [];
+  }
+
+  const result = await db
+    .select()
+    .from(worldTriathlonEvents)
+    .where(eq(worldTriathlonEvents.countryCode, countryCode));
+
+  return result;
+}
+
+/**
+ * Get events by city
+ */
+export async function getEventsByCity(city: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get events: database not available");
+    return [];
+  }
+
+  const result = await db
+    .select()
+    .from(worldTriathlonEvents)
+    .where(eq(worldTriathlonEvents.city, city));
+
+  return result;
 }
