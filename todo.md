@@ -2540,3 +2540,11 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [x] Add swimming event type detection
 - [x] Test scraper with German swimming events (1 event: USee Swim Düsseldorf)
 - [x] Verify swimming events appear on /de/events page
+
+
+## German Events Navigation Link
+
+- [x] Find main navigation header component
+- [x] Add "Deutsche Events" link to /de/events (desktop + mobile)
+- [x] Ensure link is visible on all pages
+- [x] Test navigation from Spanish homepage to German events

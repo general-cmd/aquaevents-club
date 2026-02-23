@@ -22,6 +22,9 @@ export default function Navigation() {
           <a href="/eventos" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             {t("nav.events")}
           </a>
+          <a href="/de/events" className="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center gap-1">
+            🇩🇪 Deutsche Events
+          </a>
           <a href="/federaciones" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             {t("nav.federations")}
           </a>
@@ -108,6 +111,13 @@ export default function Navigation() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.events")}
+            </a>
+            <a 
+              href="/de/events" 
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              🇩🇪 Deutsche Events
             </a>
             <a 
               href="/federaciones" 
