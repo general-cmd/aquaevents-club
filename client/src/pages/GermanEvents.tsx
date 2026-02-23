@@ -1,4 +1,3 @@
-import { useLanguage } from "@/contexts/LanguageContext";
 import { trpc } from "@/lib/trpc";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,7 @@ import AwinBanner from "@/components/AwinBanner";
 import RecommendedGear from "@/components/RecommendedGear";
 
 export default function GermanEvents() {
-  const { language, t } = useLanguage();
+  const language = 'de'; // German language for this page
   const { data, isLoading } = trpc.germanEvents.listByCountry.useQuery({ countryCode: "DE" });
 
   if (isLoading) {
@@ -68,10 +67,10 @@ export default function GermanEvents() {
         {/* Event Tabs */}
         <Tabs defaultValue="all" className="mb-12">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-4">
-            <TabsTrigger value="all">{t('events.filter.all')}</TabsTrigger>
-            <TabsTrigger value="swimming">{t('events.filter.swimming')}</TabsTrigger>
-            <TabsTrigger value="triathlon">{t('events.filter.triathlon')}</TabsTrigger>
-            <TabsTrigger value="duathlon">{t('events.filter.duathlon')}</TabsTrigger>
+            <TabsTrigger value="all">Alle</TabsTrigger>
+            <TabsTrigger value="swimming">Schwimmen</TabsTrigger>
+            <TabsTrigger value="triathlon">Triathlon</TabsTrigger>
+            <TabsTrigger value="duathlon">Duathlon</TabsTrigger>
           </TabsList>
 
           <TabsContent value="all" className="mt-8">

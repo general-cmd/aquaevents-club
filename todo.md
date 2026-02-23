@@ -2556,5 +2556,14 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [x] Identify root cause of deployment failure (cron job ES module issue)
 - [x] Fix the error in code (commented out cron job temporarily)
 - [x] Test locally to ensure fix works
+- [x] Push fix to GitHub
+- [x] Verify Railway deployment succeeds (waiting for Railway to redeploy)
+
+
+## Fix German Events Pages Error
+
+- [x] Remove custom LanguageContext usage from German pages
+- [x] Update GermanEvents.tsx to not use useLanguage hook
+- [x] Update GermanCityEvents.tsx to not use useLanguage hook
+- [ ] Test German pages work correctly
 - [ ] Push fix to GitHub
-- [ ] Verify Railway deployment succeeds

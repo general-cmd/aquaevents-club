@@ -1,4 +1,3 @@
-import { useLanguage } from "@/contexts/LanguageContext";
 import { trpc } from "@/lib/trpc";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,7 +12,7 @@ interface GermanCityEventsProps {
 }
 
 export default function GermanCityEvents({ city }: GermanCityEventsProps) {
-  const { language } = useLanguage();
+  const language = 'de'; // German language for city pages
   const [, setLocation] = useLocation();
   const { data, isLoading } = trpc.germanEvents.listByCity.useQuery({ city });
 
@@ -51,26 +50,20 @@ export default function GermanCityEvents({ city }: GermanCityEventsProps) {
           <Button
             variant="ghost"
             className="text-white hover:text-white/80 mb-4"
-            onClick={() => setLocation(`/${language === 'es' ? '' : language + '/'}events`)}
+            onClick={() => setLocation(`/de/events`)}
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            {language === 'de' ? 'Zurück zu allen Veranstaltungen' :
-             language === 'en' ? 'Back to all events' :
-             'Volver a todos los eventos'}
+            Zurück zu allen Veranstaltungen
           </Button>
           <h1 className="text-5xl font-bold mb-4">
-            {language === 'de' ? `Veranstaltungen in ${city}` :
-             language === 'en' ? `Events in ${city}` :
-             `Eventos en ${city}`}
+            Veranstaltungen in {city}
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl">
-            {language === 'de' ? `Alle Schwimm- und Triathlon-Veranstaltungen in ${city}, Deutschland` :
-             language === 'en' ? `All swimming and triathlon events in ${city}, Germany` :
-             `Todos los eventos de natación y triatlón en ${city}, Alemania`}
+            Alle Schwimm- und Triathlon-Veranstaltungen in {city}, Deutschland
           </p>
           <div className="mt-8">
             <Badge variant="secondary" className="text-lg py-2 px-4">
-              {events.length} {language === 'de' ? 'Veranstaltungen' : language === 'en' ? 'Events' : 'Eventos'}
+              {events.length} Veranstaltungen
             </Badge>
           </div>
         </div>
@@ -87,11 +80,9 @@ export default function GermanCityEvents({ city }: GermanCityEventsProps) {
             <Button
               variant="outline"
               className="mt-4"
-              onClick={() => setLocation(`/${language === 'es' ? '' : language + '/'}events`)}
+              onClick={() => setLocation(`/de/events`)}
             >
-              {language === 'de' ? 'Alle Veranstaltungen anzeigen' :
-               language === 'en' ? 'View all events' :
-               'Ver todos los eventos'}
+              Alle Veranstaltungen anzeigen
             </Button>
           </div>
         ) : (
