@@ -2548,3 +2548,13 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [x] Add "Deutsche Events" link to /de/events (desktop + mobile)
 - [x] Ensure link is visible on all pages
 - [x] Test navigation from Spanish homepage to German events
+
+
+## Railway Deployment Failure Fix
+
+- [x] Check Railway deployment logs for error details
+- [x] Identify root cause of deployment failure (cron job ES module issue)
+- [x] Fix the error in code (commented out cron job temporarily)
+- [x] Test locally to ensure fix works
+- [ ] Push fix to GitHub
+- [ ] Verify Railway deployment succeeds
