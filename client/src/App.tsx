@@ -49,6 +49,7 @@ import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import SobreNosotros from "./pages/SobreNosotros";
 import GermanEvents from "./pages/GermanEvents";
 import GermanCityEvents from "./pages/GermanCityEvents";
+import GermanCaps from "./pages/GermanCaps";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -96,6 +97,9 @@ function Router() {
       <Route path="/politica-privacidad" component={PoliticaPrivacidad} />
       <Route path="/sobre-nosotros" component={SobreNosotros} />
       
+      {/* German caps landing page */}
+      <Route path="/de/personalisierte-badekappen" component={GermanCaps} />
+
       {/* German event pages */}
       <Route path="/de/events" component={GermanEvents} />
       <Route path="/de/events/berlin">{() => <GermanCityEvents city="Berlin" />}</Route>

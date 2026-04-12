@@ -2567,3 +2567,15 @@ User feedback: Still seeing incorrect names, pictures, prices, and reviews despi
 - [x] Update GermanCityEvents.tsx to not use useLanguage hook
 - [ ] Test German pages work correctly
 - [ ] Push fix to GitHub
+
+
+## SEO Implementation (Spain + Germany Focus) - April 2026
+
+- [x] Build German caps landing page /de/personalisierte-badekappen
+- [x] Add /de/personalisierte-badekappen route to App.tsx
+- [x] Update sitemap.xml with German pages, blog posts, lastmod dates, hreflang de
+- [ ] Add Organization schema site-wide (BRU&YOU LTD) - deferred to next session
+- [ ] Add BreadcrumbList schema to all caps pages - deferred to next session
+- [x] Add caps conversion CTA banner to German event pages
+- [x] Add /de/personalisierte-badekappen hreflang to Spanish caps pages in sitemap
+- [ ] Push all changes to GitHub

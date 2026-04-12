@@ -1,104 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
+
   <!-- Homepage -->
   <url>
     <loc>https://aquaevents.club/</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aquaevents.club/de/events"/>
   </url>
-  
-  <!-- Gorros Natacion Main Page - Multilingual -->
-  <url>
-    <loc>https://aquaevents.club/gorros-natacion</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion?lang=ca"/>
-    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion?lang=va"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion?lang=eu"/>
-    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion?lang=gl"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Gorros Silicona - Multilingual -->
-  <url>
-    <loc>https://aquaevents.club/gorros-natacion/silicona</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/silicona"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/silicona?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/silicona?lang=ca"/>
-    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/silicona?lang=va"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/silicona?lang=eu"/>
-    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/silicona?lang=gl"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Gorros Latex - Multilingual -->
-  <url>
-    <loc>https://aquaevents.club/gorros-natacion/latex</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/latex"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/latex?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/latex?lang=ca"/>
-    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/latex?lang=va"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/latex?lang=eu"/>
-    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/latex?lang=gl"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Gorros Gamuza - Multilingual -->
-  <url>
-    <loc>https://aquaevents.club/gorros-natacion/gamuza</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/gamuza"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/gamuza?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/gamuza?lang=ca"/>
-    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/gamuza?lang=va"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/gamuza?lang=eu"/>
-    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/gamuza?lang=gl"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Gorros Pelo Largo - Multilingual -->
-  <url>
-    <loc>https://aquaevents.club/gorros-natacion/pelo-largo</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/pelo-largo"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=ca"/>
-    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=va"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=eu"/>
-    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/pelo-largo?lang=gl"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Gorros Tela - Multilingual -->
-  <url>
-    <loc>https://aquaevents.club/gorros-natacion/tela</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/tela"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aquaevents.club/gorros-natacion/tela?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://aquaevents.club/gorros-natacion/tela?lang=ca"/>
-    <xhtml:link rel="alternate" hreflang="va" href="https://aquaevents.club/gorros-natacion/tela?lang=va"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://aquaevents.club/gorros-natacion/tela?lang=eu"/>
-    <xhtml:link rel="alternate" hreflang="gl" href="https://aquaevents.club/gorros-natacion/tela?lang=gl"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Events Page -->
+
+  <!-- Events -->
   <url>
     <loc>https://aquaevents.club/eventos</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Blog Page -->
+
+  <!-- Federations -->
+  <url>
+    <loc>https://aquaevents.club/federaciones</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
   <url>
     <loc>https://aquaevents.club/blog</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/eventos-natacion-espana-2026</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/guia-pedido-gorros-club</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/mejores-gafas-natacion-2026</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/neopreno-aguas-abiertas</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/preparacion-profesional-competiciones</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/guia-subvenciones-clubes-2026</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/beneficios-natacion-aguas-abiertas</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/tecnicas-avanzadas-viraje</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/elegir-competicion-segun-nivel</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/blog/nutricion-nadadores-alto-rendimiento</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Swimming Caps - Spain (HIGH PRIORITY - core business) -->
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aquaevents.club/de/personalisierte-badekappen"/>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/silicona</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/silicona"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aquaevents.club/de/personalisierte-badekappen"/>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/latex</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion/latex"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aquaevents.club/de/personalisierte-badekappen"/>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/gamuza</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/pelo-largo</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/gorros-natacion/tela</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Swimming Caps - Germany (HIGH PRIORITY - new market) -->
+  <url>
+    <loc>https://aquaevents.club/de/personalisierte-badekappen</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aquaevents.club/de/personalisierte-badekappen"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/gorros-natacion"/>
+  </url>
+
+  <!-- German Event Pages -->
+  <url>
+    <loc>https://aquaevents.club/de/events</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aquaevents.club/de/events"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aquaevents.club/eventos"/>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/de/events/berlin</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/de/events/hamburg</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/de/events/cologne</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/de/events/frankfurt</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/de/events/leipzig</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/de/events/roth</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/de/events/ostringen</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+  <url>
+    <loc>https://aquaevents.club/de/events/lensahn</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Static Pages -->
+  <url>
+    <loc>https://aquaevents.club/sobre-nosotros</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/aviso-legal</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/politica-privacidad</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://aquaevents.club/enviar-evento</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

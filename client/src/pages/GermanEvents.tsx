@@ -99,6 +99,56 @@ export default function GermanEvents() {
           </TabsContent>
         </Tabs>
 
+        {/* Personalisierte Badekappen CTA - Caps Conversion Banner */}
+        <section className="mt-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 md:p-12 text-white shadow-xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-3xl">🏊</span>
+                <span className="bg-white/20 text-white text-sm font-semibold px-3 py-1 rounded-full">Für Schwimmvereine</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Personalisierte Badekappen für Ihren Verein
+              </h2>
+              <p className="text-blue-100 text-lg mb-6">
+                Professionelle Badekappen mit Ihrem Vereinslogo. Ab 50 Stück, ab <strong className="text-white">€2,10/Stk.</strong> Kostenloser Versand nach Deutschland. Lieferzeit 3 Wochen.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="/de/personalisierte-badekappen"
+                  className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg shadow-lg"
+                >
+                  🎨 Kostenloses Angebot
+                </a>
+                <a
+                  href="/de/personalisierte-badekappen#preise"
+                  className="inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-6 py-4 rounded-xl hover:bg-white/10 transition-colors"
+                >
+                  Preise ansehen
+                </a>
+              </div>
+            </div>
+            <div className="hidden md:flex flex-col gap-3 text-blue-100">
+              <div className="flex items-center gap-3 bg-white/10 rounded-lg px-4 py-3">
+                <span className="text-2xl">✅</span>
+                <span>Silikon, Latex & Wildleder</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 rounded-lg px-4 py-3">
+                <span className="text-2xl">✅</span>
+                <span>Ab 50 Stück Mindestbestellung</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 rounded-lg px-4 py-3">
+                <span className="text-2xl">✅</span>
+                <span>Kostenloser Versand nach DE</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 rounded-lg px-4 py-3">
+                <span className="text-2xl">✅</span>
+                <span>3 Wochen Lieferzeit</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* City Quick Links */}
         <section className="mt-16 bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
           <h2 className="text-3xl font-bold mb-6">
