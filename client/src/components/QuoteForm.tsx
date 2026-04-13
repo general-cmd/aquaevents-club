@@ -10,13 +10,22 @@ interface QuoteFormProps {
   productType?: string;
   title?: string;
   description?: string;
+  language?: 'es' | 'de';
 }
 
 export default function QuoteForm({ 
   productType = "Gorros de Natación", 
-  title = "Solicitar Presupuesto",
-  description = "Completa el formulario y te responderemos en menos de 24 horas con un presupuesto personalizado."
+  title,
+  description,
+  language = 'es',
 }: QuoteFormProps) {
+  const isDE = language === 'de';
+  const resolvedTitle = title ?? (isDE ? 'Angebot anfordern' : 'Solicitar Presupuesto');
+  const resolvedDescription = description ?? (
+    isDE
+      ? 'Füllen Sie das Formular aus und wir antworten Ihnen innerhalb von 24 Stunden mit einem persönlichen Angebot.'
+      : 'Completa el formulario y te responderemos en menos de 24 horas con un presupuesto personalizado.'
+  );
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,14 +36,14 @@ export default function QuoteForm({
 
   const submitMutation = trpc.contact.submitQuote.useMutation({
     onSuccess: () => {
-      toast.success("¡Solicitud enviada!", {
-        description: "Te responderemos en menos de 24 horas.",
+      toast.success(isDE ? 'Anfrage gesendet!' : '¡Solicitud enviada!', {
+        description: isDE ? 'Wir antworten Ihnen innerhalb von 24 Stunden.' : 'Te responderemos en menos de 24 horas.',
       });
       setFormData({ name: "", email: "", phone: "", quantity: "", message: "" });
     },
     onError: (error: any) => {
-      toast.error("Error al enviar", {
-        description: error.message || "Por favor, inténtalo de nuevo.",
+      toast.error(isDE ? 'Fehler beim Senden' : 'Error al enviar', {
+        description: error.message || (isDE ? 'Bitte versuchen Sie es erneut.' : 'Por favor, inténtalo de nuevo.'),
       });
     },
   });
@@ -44,20 +53,21 @@ export default function QuoteForm({
     submitMutation.mutate({
       ...formData,
       productType,
+      language,
     });
   };
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <p className="text-sm text-gray-600">{description}</p>
+        <CardTitle>{resolvedTitle}</CardTitle>
+        <p className="text-sm text-gray-600">{resolvedDescription}</p>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <Input
-              placeholder="Nombre completo *"
+              placeholder={isDE ? 'Vollständiger Name *' : 'Nombre completo *'}
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
@@ -66,7 +76,7 @@ export default function QuoteForm({
           <div>
             <Input
               type="email"
-              placeholder="Email *"
+              placeholder="E-Mail *"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
@@ -75,7 +85,7 @@ export default function QuoteForm({
           <div>
             <Input
               type="tel"
-              placeholder="Teléfono"
+              placeholder={isDE ? 'Telefon' : 'Teléfono'}
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             />
@@ -83,7 +93,7 @@ export default function QuoteForm({
           <div>
             <Input
               type="number"
-              placeholder="Cantidad estimada de gorros *"
+              placeholder={isDE ? 'Geschätzte Menge Badekappen *' : 'Cantidad estimada de gorros *'}
               value={formData.quantity}
               onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
               required
@@ -92,14 +102,18 @@ export default function QuoteForm({
           </div>
           <div>
             <Textarea
-              placeholder="Cuéntanos sobre tu proyecto (colores, diseño, fecha necesaria, etc.)"
+              placeholder={isDE
+                ? 'Erzählen Sie uns von Ihrem Projekt (Farben, Design, gewünschtes Datum, etc.)'
+                : 'Cuéntanos sobre tu proyecto (colores, diseño, fecha necesaria, etc.)'}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               rows={4}
             />
           </div>
           <Button type="submit" className="w-full" disabled={submitMutation.isPending}>
-            {submitMutation.isPending ? "Enviando..." : "Solicitar Presupuesto"}
+            {submitMutation.isPending
+              ? (isDE ? 'Wird gesendet...' : 'Enviando...')
+              : (isDE ? 'Angebot anfordern' : 'Solicitar Presupuesto')}
           </Button>
         </form>
       </CardContent>

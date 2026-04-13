@@ -534,6 +534,7 @@ export default function GermanCaps() {
                 productType="Personalisierte Badekappen Deutschland"
                 title="Angebot anfordern"
                 description="Füllen Sie das Formular aus und wir antworten innerhalb von 24 Stunden mit einem personalisierten Angebot."
+                language="de"
               />
             </div>
           </div>

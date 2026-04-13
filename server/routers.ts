@@ -43,16 +43,41 @@ export const appRouter = router({
         quantity: z.string(),
         message: z.string().optional(),
         productType: z.string(),
+        language: z.enum(['es', 'de']).optional().default('es'),
       }))
       .mutation(async ({ input }) => {
-        // Send notification to owner
-        const title = `Nueva Solicitud de Presupuesto - ${input.productType}`;
-        const content = `**Nombre:** ${input.name}\n**Email:** ${input.email}\n**Teléfono:** ${input.phone || 'No proporcionado'}\n**Cantidad:** ${input.quantity}\n**Mensaje:** ${input.message || 'No proporcionado'}`;
+        const isDE = input.language === 'de';
         
+        // Notification title and content (bilingual)
+        const title = isDE
+          ? `Neues Angebot - ${input.productType}`
+          : `Nueva Solicitud de Presupuesto - ${input.productType}`;
+        const content = isDE
+          ? `**Name:** ${input.name}\n**E-Mail:** ${input.email}\n**Telefon:** ${input.phone || 'Nicht angegeben'}\n**Menge:** ${input.quantity}\n**Nachricht:** ${input.message || 'Nicht angegeben'}\n\n---\nAnfrage von: ${input.email}\nAn: general@aquaevents.club`
+          : `**Nombre:** ${input.name}\n**Email:** ${input.email}\n**Teléfono:** ${input.phone || 'No proporcionado'}\n**Cantidad:** ${input.quantity}\n**Mensaje:** ${input.message || 'No proporcionado'}\n\n---\nDe: ${input.email}\nPara: general@aquaevents.club`;
+        
+        // Send Manus platform notification
         const notificationSent = await notifyOwner({ title, content });
-        
         if (!notificationSent) {
           console.error('[Quote Request] Failed to send notification');
+        }
+
+        // Also notify general@aquaevents.club via Systeme.io tag automation
+        try {
+          const { createOrUpdateContact, addTagToContact } = await import('./_core/systemeio');
+          // Add the requester as a contact
+          await createOrUpdateContact(input.email, {
+            name: input.name,
+            locale: isDE ? 'de' : 'es',
+          });
+          // Tag them so Systeme.io automation can send you a notification
+          await addTagToContact(input.email, isDE ? 'quote-request-de' : 'quote-request-es');
+          // Also ensure general@aquaevents.club gets notified via Systeme.io
+          await createOrUpdateContact('general@aquaevents.club', { locale: 'es' });
+          await addTagToContact('general@aquaevents.club', isDE ? 'new-quote-de' : 'new-quote-es');
+        } catch (e) {
+          // Systeme.io is best-effort; Manus notification above is the primary channel
+          console.warn('[Quote Request] Systeme.io tag skipped:', e);
         }
         
         return { success: true };
